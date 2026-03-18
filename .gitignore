@@ -16,3 +16,6 @@ build/
 papers/raw_pdfs/
 logs/
 tests/sample_papers/
+
+# Obsidian
+.obsidian/
