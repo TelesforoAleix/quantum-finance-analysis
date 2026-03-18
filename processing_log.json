@@ -21,6 +21,39 @@
       "last_updated": "2026-03-18T20:38:05.305921",
       "step2_date": "2026-03-18T20:38:05.305921",
       "step2_model": "Mistral-Large-3"
+    },
+    "2025_Autonomous_QAOA.md": {
+      "steps_completed": [
+        1,
+        2
+      ],
+      "step1_date": "2026-03-18T20:42:25.270671",
+      "step1_model": "Mistral-Large-3",
+      "last_updated": "2026-03-18T20:42:33.228200",
+      "step2_date": "2026-03-18T20:42:33.228200",
+      "step2_model": "Mistral-Large-3"
+    },
+    "2025_Springer_QuantumFinance.md": {
+      "steps_completed": [
+        1,
+        2
+      ],
+      "step1_date": "2026-03-18T20:42:42.600255",
+      "step1_model": "Mistral-Large-3",
+      "last_updated": "2026-03-18T20:42:46.729052",
+      "step2_date": "2026-03-18T20:42:46.729052",
+      "step2_model": "Mistral-Large-3"
+    },
+    "2024_KI_QuantumFinance.md": {
+      "steps_completed": [
+        1,
+        2
+      ],
+      "step1_date": "2026-03-18T20:42:55.878867",
+      "step1_model": "Mistral-Large-3",
+      "last_updated": "2026-03-18T20:42:58.934572",
+      "step2_date": "2026-03-18T20:42:58.934572",
+      "step2_model": "Mistral-Large-3"
     }
   }
 }
