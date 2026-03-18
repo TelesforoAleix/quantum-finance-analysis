@@ -1,0 +1,41 @@
+{
+  "topic_tags": {
+    "portfolio-optimisation": "Asset allocation, portfolio construction, QUBO formulations, Markowitz variants",
+    "risk-modelling": "VaR, CVaR, credit risk, market risk, stress testing",
+    "derivatives-pricing": "Options pricing, Monte Carlo, structured products",
+    "fraud-detection": "Anomaly detection, classification, transaction monitoring",
+    "credit-scoring": "Loan approval, default prediction, creditworthiness assessment",
+    "high-frequency-trading": "Execution optimisation, latency, algorithmic trading",
+    "asset-pricing": "Factor models, pricing of financial instruments",
+    "quantum-cryptography": "QKD, post-quantum cryptography in financial contexts",
+    "regulatory-compliance": "AML, KYC, reporting automation",
+    "market-simulation": "Agent-based models, market microstructure, scenario generation"
+  },
+  "methodology_tags": {
+    "QAOA": "Quantum Approximate Optimisation Algorithm",
+    "VQE": "Variational Quantum Eigensolver",
+    "quantum-annealing": "D-Wave or similar annealing-based approaches",
+    "HHL": "Harrow-Hassidim-Lloyd algorithm for linear systems",
+    "quantum-ML": "Quantum machine learning, QNNs, quantum kernel methods",
+    "quantum-SVM": "Quantum support vector machines",
+    "amplitude-estimation": "Quantum amplitude estimation for Monte Carlo speedup",
+    "QUBO": "Quadratic Unconstrained Binary Optimisation formulation",
+    "variational": "General variational quantum algorithms (covers QAOA and VQE)",
+    "grover": "Grover's search algorithm and variants",
+    "quantum-walk": "Quantum walk algorithms",
+    "quantum-simulation": "Hamiltonian simulation for financial models",
+    "classical-simulation": "Classical simulation of quantum circuits"
+  },
+  "synthesis_tags": {
+    "idea:quantum-advantage": "A claim about where quantum outperforms classical",
+    "idea:near-term-feasibility": "Claims about NISQ-era applicability",
+    "idea:hybrid-approach": "Quantum-classical hybrid as the practical path",
+    "contradiction:classical-vs-quantum": "Paper contradicts claims about quantum superiority",
+    "contradiction:scalability": "Paper contradicts claims about scaling to real problems",
+    "limitation:qubit-count": "Insufficient qubits for practical problems",
+    "limitation:noise": "Hardware noise degrades results",
+    "limitation:data-encoding": "Cost of encoding classical financial data into quantum states",
+    "limitation:no-empirical-validation": "Theoretical claims not backed by experiment",
+    "limitation:simulation-only": "Results from classical simulation, not real QPU"
+  }
+}
