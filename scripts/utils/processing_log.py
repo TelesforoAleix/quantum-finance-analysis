@@ -1,0 +1,108 @@
+"""Manage the processing_log.json file that tracks extraction step completion."""
+
+import json
+import os
+from datetime import datetime
+
+from .logger import get_logger
+
+logger = get_logger("processing_log")
+
+
+def _find_project_root() -> str:
+    """Walk up from this file to find the directory containing CLAUDE.md."""
+    current = os.path.dirname(os.path.abspath(__file__))
+    for _ in range(10):
+        if os.path.isfile(os.path.join(current, "CLAUDE.md")):
+            return current
+        current = os.path.dirname(current)
+    return os.getcwd()
+
+
+def _log_path() -> str:
+    """Return the absolute path to processing_log.json."""
+    return os.path.join(_find_project_root(), "processing_log.json")
+
+
+def load_log() -> dict:
+    """Load the processing log from processing_log.json. Returns the full dict."""
+    path = _log_path()
+    if not os.path.isfile(path):
+        logger.warning("processing_log.json not found, returning empty log")
+        return {"papers": {}}
+    with open(path, "r", encoding="utf-8") as f:
+        return json.load(f)
+
+
+def save_log(log: dict) -> None:
+    """Write the processing log back to processing_log.json."""
+    path = _log_path()
+    with open(path, "w", encoding="utf-8") as f:
+        json.dump(log, f, indent=2, ensure_ascii=False)
+        f.write("\n")
+    logger.debug("Saved processing log to %s", path)
+
+
+def get_paper_status(paper_name: str) -> dict:
+    """Get the status dict for a specific paper. Returns {} if not found."""
+    log = load_log()
+    return log.get("papers", {}).get(paper_name, {})
+
+
+def mark_step_complete(paper_name: str, step: int, model: str) -> None:
+    """Mark a step as completed for a paper.
+
+    - Adds step number to steps_completed list (no duplicates, sorted)
+    - Records step{N}_date as current ISO timestamp
+    - Records step{N}_model
+    - Updates last_updated timestamp
+    """
+    log = load_log()
+    papers = log.setdefault("papers", {})
+    entry = papers.setdefault(paper_name, {})
+
+    steps = entry.get("steps_completed", [])
+    if step not in steps:
+        steps.append(step)
+        steps.sort()
+    entry["steps_completed"] = steps
+
+    now = datetime.now().isoformat()
+    entry[f"step{step}_date"] = now
+    entry[f"step{step}_model"] = model
+    entry["last_updated"] = now
+
+    save_log(log)
+    logger.info(
+        "Marked step %d complete for %s (model=%s)", step, paper_name, model
+    )
+
+
+def get_incomplete_papers(step: int) -> list[str]:
+    """Return paper names that have NOT completed the given step."""
+    log = load_log()
+    result = []
+    for name, entry in log.get("papers", {}).items():
+        if step not in entry.get("steps_completed", []):
+            result.append(name)
+    return result
+
+
+def get_papers_by_filter(key: str, value) -> list[str]:
+    """Return paper names where log[paper][key] == value."""
+    log = load_log()
+    return [
+        name
+        for name, entry in log.get("papers", {}).items()
+        if entry.get(key) == value
+    ]
+
+
+def update_paper_field(paper_name: str, key: str, value) -> None:
+    """Update an arbitrary field in a paper's log entry."""
+    log = load_log()
+    papers = log.setdefault("papers", {})
+    entry = papers.setdefault(paper_name, {})
+    entry[key] = value
+    save_log(log)
+    logger.debug("Updated %s.%s = %s", paper_name, key, value)

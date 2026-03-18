@@ -71,3 +71,8 @@ Start with `@orchestrator` in VS Code chat. See `CLAUDE.md` for the full specifi
 2. **Expert interviews** — validate clusters, select use case
 3. **Focused deep-dive** — re-filter knowledge base for selected use case
 4. **Experiment** — reproduce or extend key findings
+
+## Development progress
+
+### Milestone 1 — Foundation (complete)
+Repository structure, configuration files, core utilities (LLM client, frontmatter, structured logging), PDF text extraction, paper template, schema validation, and processing log. All infrastructure needed for the extraction pipeline is in place.
