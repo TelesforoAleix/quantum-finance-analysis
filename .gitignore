@@ -1,1 +1,18 @@
+# OS
 .DS_Store
+
+# Environment
+.env
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.egg-info/
+dist/
+build/
+
+# Project-specific
+papers/raw_pdfs/
+logs/
+tests/sample_papers/
