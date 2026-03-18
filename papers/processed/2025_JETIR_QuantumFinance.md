@@ -1,4 +1,8 @@
 ---
+aliases:
+- 'QUANTUM COMPUTING IN FINANCIAL RISK MANAGEMENT AND PORTFOLIO OPTIMIZATION: A Hybrid
+  Quantum–Classical Framework'
+- QUANTUM COMPUTING FINANCIAL RISK
 authors:
 - Dr. Neelotpal Dey
 - Mr. Akash Kumar
@@ -21,7 +25,7 @@ methodology_tags:
 - quantum-ML
 - amplitude-estimation
 - variational
-- classical-simulation
+- quantum-simulation
 paper_type: ''
 quantum_advantage_claim: theoretical
 related_papers: []
@@ -31,7 +35,7 @@ source_type: peer-reviewed-theoretical
 source_type_confidence: high
 step1_date: '2026-03-18T20:38:01.771281'
 step1_model: Mistral-Large-3
-step2_date: '2026-03-18T20:38:05.303419'
+step2_date: '2026-03-18T21:09:40.594070'
 step2_model: Mistral-Large-3
 step3_date: '2026-03-18T20:46:50.099983'
 step3_model: Mistral-Large-3
@@ -39,7 +43,7 @@ step4_date: '2026-03-18T20:47:00.181688'
 step4_model: Mistral-Large-3
 step5_date: '2026-03-18T20:47:09.149988'
 step5_model: Mistral-Large-3
-step6_date: '2026-03-18T20:53:27.543818'
+step6_date: '2026-03-18T21:10:12.383100'
 step6_model: Mistral-Large-3
 steps_completed:
 - 1
@@ -48,6 +52,24 @@ steps_completed:
 - 4
 - 5
 - 6
+tags:
+- topic/portfolio-optimisation
+- topic/risk-modelling
+- topic/derivatives-pricing
+- topic/fraud-detection
+- topic/asset-pricing
+- topic/market-simulation
+- method/QAOA
+- method/VQE
+- method/quantum-ML
+- method/amplitude-estimation
+- method/variational
+- method/quantum-simulation
+- idea/quantum-advantage
+- idea/near-term-feasibility
+- idea/hybrid-approach
+- contradiction/classical-vs-quantum
+- contradiction/scalability
 title: 'QUANTUM COMPUTING IN FINANCIAL RISK MANAGEMENT AND PORTFOLIO OPTIMIZATION:
   A Hybrid Quantum–Classical Framework'
 topic_tags:
@@ -55,14 +77,14 @@ topic_tags:
 - risk-modelling
 - derivatives-pricing
 - fraud-detection
-- high-frequency-trading
+- asset-pricing
 - market-simulation
 year: 2025
 zotero_key: ''
 ---
 
 ## Abstract summary
-This paper explores the application of quantum computing to financial risk management and portfolio optimization through a hybrid quantum-classical framework. It reviews key quantum techniques like QAOA, quantum machine learning, and variational quantum eigensolver, demonstrating how these can integrate with classical financial models to improve computational efficiency and accuracy. The study synthesizes theoretical and industry perspectives, highlighting real-world examples of quantum adoption in finance while addressing current challenges and practical implementation gaps.
+This paper explores the application of quantum computing to financial risk management and portfolio optimization through a hybrid quantum-classical framework. It reviews key quantum techniques like QAOA, quantum machine learning, and variational quantum eigensolver, demonstrating how they can enhance classical financial models. The study synthesizes theoretical and industry perspectives, proposing a layered hybrid model to improve decision-making under uncertainty while addressing current limitations of quantum hardware.
 ## Methodology
 The paper adopts a theoretical and conceptual research approach to explore the integration of quantum computing in financial risk management and portfolio optimization. It employs a descriptive and analytical research design, synthesizing insights from existing literature, industry reports, and theoretical models. The study proposes a Hybrid Quantum–Classical Framework structured across five implementation layers: Classical Pre-Processing, Quantum Encoding, Quantum Processing, Hybrid Integration, and Decision Layer. The framework is designed to leverage the strengths of both quantum and classical systems, with quantum algorithms such as QAOA, VQE, and Quantum Machine Learning (QML) applied to optimization and risk modeling tasks. The methodology is supported by secondary data and previously validated research, focusing on conceptual explanations and the practicality of hybrid models in the NISQ (Noisy Intermediate-Scale Quantum) era. The paper does not conduct empirical simulations but instead provides a comparative discussion of quantum and classical capabilities using case-based evidence from existing studies and industry applications.
 
@@ -120,7 +142,7 @@ The paper argues for theoretical advantages of quantum algorithms in parallel co
 - #idea:quantum-advantage — Quantum Monte Carlo methods could accelerate risk simulations and improve scenario testing accuracy compared to classical approaches
 - #idea:hybrid-approach — Industry adoption (e.g., JPMorgan Chase, Goldman Sachs) demonstrates measurable improvements in computational performance for tasks like option pricing and fraud detection using hybrid models
 ## Contradictions
-- #contradiction:classical-vs-quantum — The paper claims hybrid models show 'strong potential' for financial decision-making under uncertainty, but acknowledges most studies remain theoretical with limited empirical validation, contradicting industry reports of measurable improvements
+- #contradiction:classical-vs-quantum — The paper claims hybrid models show 'strong potential' for financial decision-making under uncertainty but acknowledges most studies remain theoretical with limited empirical validation, contradicting industry reports of measurable improvements
 - #contradiction:scalability — The paper speculates on quantum advantage for specific optimization tasks but does not empirically demonstrate scalability to large-scale financial datasets (e.g., thousands of assets)
 ## Notable quotes
 <!-- Researcher-added — verbatim quotes with page references -->

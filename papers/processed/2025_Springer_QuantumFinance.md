@@ -1,4 +1,7 @@
 ---
+aliases:
+- Applying the Quantum Grover Algorithm to Improve the Efficiency of Growth Models
+- Applying Quantum Grover Algorithm
 authors:
 - Dilnoz Muhamediyeva
 - N. S. Mamatov
@@ -31,7 +34,7 @@ source_type: conference-paper
 source_type_confidence: high
 step1_date: '2026-03-18T20:42:42.598504'
 step1_model: Mistral-Large-3
-step2_date: '2026-03-18T20:42:46.726182'
+step2_date: '2026-03-18T21:09:43.358954'
 step2_model: Mistral-Large-3
 step3_date: '2026-03-18T20:47:56.163025'
 step3_model: Mistral-Large-3
@@ -39,7 +42,7 @@ step4_date: '2026-03-18T20:48:05.358934'
 step4_model: Mistral-Large-3
 step5_date: '2026-03-18T20:48:14.933847'
 step5_model: Mistral-Large-3
-step6_date: '2026-03-18T20:53:32.952420'
+step6_date: '2026-03-18T21:10:34.747568'
 step6_model: Mistral-Large-3
 steps_completed:
 - 1
@@ -48,6 +51,17 @@ steps_completed:
 - 4
 - 5
 - 6
+tags:
+- topic/asset-pricing
+- topic/portfolio-optimisation
+- topic/risk-modelling
+- method/VQE
+- method/grover
+- method/QAOA
+- method/variational
+- idea/quantum-advantage
+- idea/near-term-feasibility
+- idea/hybrid-approach
 title: Applying the Quantum Grover Algorithm to Improve the Efficiency of Growth Models
 topic_tags:
 - asset-pricing
@@ -58,7 +72,7 @@ zotero_key: ''
 ---
 
 ## Abstract summary
-This paper explores the application of the quantum Grover algorithm to enhance the performance of growth models, a key tool in economic and financial forecasting. The authors investigate how quantum computing techniques can accelerate search and optimization processes within these models, potentially offering computational advantages over classical methods. The work focuses on the theoretical integration of quantum algorithms with traditional growth modeling frameworks.
+This paper explores the application of the quantum Grover algorithm to enhance the performance of growth models, a key tool in economic and financial forecasting. The authors investigate how quantum computing techniques can accelerate search and optimization processes within these models, potentially offering computational advantages over classical methods. The study focuses on the theoretical and practical integration of quantum algorithms into existing growth modeling frameworks.
 ## Methodology
 The paper presents a theoretical and empirical exploration of quantum algorithms for solving dynamic control problems in financial and other complex systems. The authors focus on the Variational Quantum Eigensolver (VQE) algorithm to minimize the energy function of time-varying systems. The methodology involves defining the dynamic system and objective function, applying quantum algorithms (VQE, Grover’s algorithm, and QAOA) to optimize control parameters, and modeling the system using dynamic programming principles. The research outlines the mathematical representation of dynamic optimization problems, including state transitions, cost functions, and constraints, and proposes the use of quantum computing to accelerate the search for optimal solutions. The paper emphasizes the comparative advantage of quantum algorithms over traditional methods in handling high computational costs and rapidly changing systems.
 
@@ -104,6 +118,8 @@ The paper claims theoretical advantages of quantum algorithms for dynamic contro
 - #idea:hybrid-approach — Future work suggests hybrid quantum-classical approaches to improve robustness in dynamic optimization, though no specific hybrid framework is proposed
 - #limitation:no-empirical-validation — Theoretical claims about quantum advantage are not backed by experiments on real quantum hardware or classical benchmarks
 - #limitation:simulation-only — The paper relies on theoretical modeling without classical simulation or quantum hardware implementation
+- #limitation:data-encoding — The paper does not address the cost or feasibility of encoding classical financial data into quantum states for dynamic control problems
+- #limitation:qubit-count — No assessment of qubit requirements for practical financial applications is provided
 ## Contradictions
 <!-- Step 6 output — where this paper contradicts others -->
 

@@ -1,4 +1,7 @@
 ---
+aliases:
+- 'Quantum Computational Finance: Quantum Algorithm for Portfolio Optimization'
+- Quantum Computational Finance Quantum
 authors:
 - Patrick Rebentrost
 - Seth Lloyd
@@ -19,7 +22,6 @@ methodology_tags:
 - amplitude-estimation
 - quantum-simulation
 - quantum-walk
-- classical-simulation
 paper_type: ''
 quantum_advantage_claim: theoretical
 related_papers: []
@@ -29,7 +31,7 @@ source_type: peer-reviewed-empirical
 source_type_confidence: high
 step1_date: '2026-03-18T20:42:55.877421'
 step1_model: Mistral-Large-3
-step2_date: '2026-03-18T20:42:58.932348'
+step2_date: '2026-03-18T21:09:34.762765'
 step2_model: Mistral-Large-3
 step3_date: '2026-03-18T20:48:37.976472'
 step3_model: Mistral-Large-3
@@ -37,7 +39,7 @@ step4_date: '2026-03-18T20:48:49.848123'
 step4_model: Mistral-Large-3
 step5_date: '2026-03-18T20:49:02.717007'
 step5_model: Mistral-Large-3
-step6_date: '2026-03-18T20:53:12.323487'
+step6_date: '2026-03-18T21:10:03.115993'
 step6_model: Mistral-Large-3
 steps_completed:
 - 1
@@ -46,15 +48,28 @@ steps_completed:
 - 4
 - 5
 - 6
+tags:
+- topic/portfolio-optimisation
+- topic/asset-pricing
+- method/HHL
+- method/amplitude-estimation
+- method/quantum-simulation
+- method/quantum-walk
+- idea/quantum-advantage
+- idea/near-term-feasibility
+- idea/hybrid-approach
+- contradiction/classical-vs-quantum
+- contradiction/scalability
 title: 'Quantum Computational Finance: Quantum Algorithm for Portfolio Optimization'
 topic_tags:
 - portfolio-optimisation
+- asset-pricing
 year: 2024
 zotero_key: ''
 ---
 
 ## Abstract summary
-This paper introduces a quantum algorithm designed for portfolio optimization in financial services, leveraging quantum computing to process market data and determine optimal risk-return tradeoffs. The authors propose a method that potentially achieves logarithmic runtime relative to the number of assets, offering a theoretical speedup over classical approaches. The work focuses on constructing the risk-return curve and sampling from the optimal portfolio using quantum states, addressing key computational challenges in financial data analysis.
+This paper introduces a quantum algorithm designed to optimize financial portfolios by leveraging quantum computing techniques. The authors demonstrate how quantum operations can process historical asset return data to determine the optimal risk-return tradeoff curve and sample from the optimal portfolio. The proposed algorithm aims to achieve a logarithmic runtime relative to the number of assets, offering a potential speedup over classical methods that scale polynomially with asset count.
 ## Methodology
 The paper presents a quantum algorithm for portfolio optimization in financial services, leveraging the Harrow-Hassidim-Lloyd (HHL) algorithm and its variants to solve an equality-constrained quadratic programming problem. The methodology involves quantum access to historical asset returns via quantum Random Access Memory (qRAM), enabling efficient preparation of the expected return vector and covariance matrix. The algorithm constructs the risk-return tradeoff curve and identifies the optimal portfolio as a quantum state, which can be sampled or measured. The study assumes quantum parallel access to financial data through qRAM, facilitating logarithmic runtime complexity in the number of assets and time steps. The solution is derived by solving a linear system using the HHL algorithm, with the optimal portfolio represented as a quantum state. The paper also discusses the preparation of input data structures, including expected returns and covariance matrices, and addresses challenges related to data loading, matrix conditioning, and output state utilization.
 
@@ -118,15 +133,15 @@ The paper claims a theoretical exponential speedup (logarithmic vs. polynomial r
 - Integration with quantum machine learning techniques for improved return and risk modeling
 ## Key ideas
 - #idea:quantum-advantage — Proposes a quantum algorithm for portfolio optimization with theoretical logarithmic runtime O(poly(log(TN))) vs. classical O(poly(TN)), leveraging HHL and qRAM for exponential speedup under idealized conditions
-- #idea:near-term-feasibility — Assumes qRAM and fault-tolerant quantum computing, which are not yet available, but discusses potential for near-term hybrid approaches
+- #idea:near-term-feasibility — Assumes qRAM and fault-tolerant quantum computing, which are not yet available, but discusses potential for near-term hybrid approaches to bridge the gap
 - #idea:hybrid-approach — Suggests future work on hybrid quantum-classical methods to address current hardware limitations and data encoding challenges
 - #limitation:qubit-count — Highlights that small qubit counts constrain practical applicability to small-scale problems (e.g., N < 100 assets)
 - #limitation:noise — Notes that noise and decoherence in current hardware may degrade solution quality, with no mitigation strategies discussed
 - #limitation:data-encoding — Relies on qRAM for efficient data loading, which takes O(TN) time and undermines the logarithmic runtime advantage for data preparation
 - #limitation:no-empirical-validation — Theoretical claims are not backed by empirical validation on real quantum hardware or comparison with classical state-of-the-art methods
 ## Contradictions
-- #contradiction:classical-vs-quantum — Claims potential quantum speedups over classical sampling approaches, but acknowledges that quantum-inspired classical algorithms (e.g., importance-sampling) can achieve similar logarithmic runtime advantages
-- #contradiction:scalability — Theoretical speedup is contingent on efficient qRAM and well-conditioned matrices, but scalability to production-scale problems (N > 100 assets) is untested due to hardware constraints
+- #contradiction:classical-vs-quantum — Claims potential quantum speedups over classical sampling approaches, but acknowledges that quantum-inspired classical algorithms (e.g., importance-sampling) can achieve similar logarithmic runtime advantages (e.g., 2020_Rebentrost_QuantumAlgorithmsFinance)
+- #contradiction:scalability — Theoretical speedup is contingent on efficient qRAM and well-conditioned matrices, but scalability to production-scale problems (N > 100 assets) is untested due to hardware constraints, contradicting claims of practical applicability
 ## Notable quotes
 <!-- Researcher-added — verbatim quotes with page references -->
 

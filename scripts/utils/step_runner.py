@@ -196,6 +196,15 @@ def _write_step2_results(paper_path: str, data: dict, model: str, now: str) -> N
         "step2_date": now,
     }
 
+    # Add Obsidian aliases for searchability
+    title = data.get("title", "")
+    if title:
+        words = re.findall(r'[A-Za-z]+', title)
+        stop_words = {'a', 'an', 'the', 'of', 'in', 'on', 'for', 'and', 'or', 'to', 'with', 'by', 'from', 'is', 'are', 'was', 'were'}
+        significant = [w for w in words if w.lower() not in stop_words][:4]
+        short_alias = ' '.join(significant)
+        updates["aliases"] = [title, short_alias]
+
     meta, _ = read_frontmatter(paper_path)
     steps = meta.get("steps_completed", [])
     if 2 not in steps:
@@ -359,6 +368,18 @@ def _write_step6_results(paper_path: str, data: dict, model: str, now: str) -> N
         "step6_model": model,
         "step6_date": now,
     }
+
+    # Build unified Obsidian tags field (Obsidian reads "tags:" for its tag pane)
+    all_tags = []
+    for t in data.get("topic_tags", []):
+        all_tags.append(f"topic/{t}")
+    for t in data.get("methodology_tags", []):
+        all_tags.append(f"method/{t}")
+    for t in data.get("idea_tags", []):
+        all_tags.append(t.replace(":", "/"))
+    for t in data.get("contradiction_flags", []):
+        all_tags.append(t.replace(":", "/"))
+    updates["tags"] = all_tags
 
     meta, _ = read_frontmatter(paper_path)
     steps = meta.get("steps_completed", [])

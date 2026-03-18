@@ -1,4 +1,8 @@
 ---
+aliases:
+- 'Autonomous Quantum Agents for Portfolio Optimization: Orchestrating QAOA Workflows
+  on Cloud Quantum Simulators'
+- Autonomous Quantum Agents Portfolio
 authors:
 - Kaushik Ganguly
 auto_detected: true
@@ -23,7 +27,7 @@ source_type: preprint
 source_type_confidence: high
 step1_date: '2026-03-18T21:03:27.704734'
 step1_model: Mistral-Large-3
-step2_date: '2026-03-18T21:03:30.189113'
+step2_date: '2026-03-18T21:09:46.257664'
 step2_model: Mistral-Large-3
 step3_date: '2026-03-18T21:03:44.649133'
 step3_model: Mistral-Large-3
@@ -31,7 +35,7 @@ step4_date: '2026-03-18T21:04:00.421041'
 step4_model: Mistral-Large-3
 step5_date: '2026-03-18T21:04:25.143644'
 step5_model: Mistral-Large-3
-step6_date: '2026-03-18T21:04:29.211371'
+step6_date: '2026-03-18T21:10:38.849275'
 step6_model: Mistral-Large-3
 steps_completed:
 - 1
@@ -40,6 +44,13 @@ steps_completed:
 - 4
 - 5
 - 6
+tags:
+- topic/portfolio-optimisation
+- method/QAOA
+- method/variational
+- method/classical-simulation
+- idea/near-term-feasibility
+- idea/hybrid-approach
 title: 'Autonomous Quantum Agents for Portfolio Optimization: Orchestrating QAOA Workflows
   on Cloud Quantum Simulators'
 topic_tags:
@@ -49,7 +60,7 @@ zotero_key: ''
 ---
 
 ## Abstract summary
-This preprint introduces an agentic framework that automates end-to-end portfolio optimization using quantum computing, bridging the gap between quantum algorithms and practical deployment in financial services. The system employs specialized AI agents to manage tasks such as live market data ingestion, quantum circuit construction, cloud-based quantum hardware execution, and financial interpretation of results. The approach aims to enhance reproducibility, scalability, and governance in quantum optimization workflows for near-term quantum infrastructure.
+This preprint introduces an agentic framework that automates the end-to-end process of quantum portfolio optimization by integrating autonomous AI workflows with quantum approximate optimization algorithms (QAOA) executed on cloud quantum simulators. The system addresses operational challenges in deploying quantum computing for financial decision-making, such as live data integration, circuit parameterization, and cross-platform execution, while ensuring reproducibility and governance through a maturity-gated permission model. The work demonstrates a scalable, vendor-agnostic approach to applying quantum optimization in real-world financial workflows.
 ## Methodology
 The paper presents an empirical agentic framework for end-to-end portfolio optimization that integrates autonomous AI workflow orchestration with quantum approximate optimization. The methodology employs a directed acyclic graph (DAG) state machine built on the LangGraph framework, comprising eight specialized agents, each handling distinct stages of the quantum optimization pipeline: policy enforcement, task decomposition, QAOA circuit construction from live market data, local pre-validation, cloud QPU submission, quality assurance, and financial interpretation. The quantum core implements a Quantum Approximate Optimization Algorithm (QAOA) where single-qubit rotation angles are derived from empirical annualized asset returns and two-qubit interaction strengths from pairwise covariance entries. The framework introduces a maturity-gated governance model to manage quantum resource permissions and ensures vendor-agnostic execution via the QBraid runtime platform. Experiments were conducted using live Yahoo Finance data for a five-asset universe, with the QAOA pipeline executed on two cloud quantum simulators: the AWS Tensor Network simulator and the QBraid QIR state-vector simulator.
 
@@ -120,10 +131,10 @@ The paper does not demonstrate quantum advantage; all results are from simulatio
 ## Key ideas
 - #idea:near-term-feasibility — Agentic framework automates end-to-end portfolio optimization using QAOA on cloud quantum simulators, demonstrating near-term applicability for small-scale problems
 - #idea:hybrid-approach — Hybrid quantum-classical pipeline integrates AI agents for live data ingestion, quantum circuit construction, and financial interpretation, reducing manual overhead
+- #idea:hybrid-approach — Maturity-gated governance model proposed to manage quantum resource permissions, though untested in production environments
 - #limitation:simulation-only — All quantum executions performed on simulators (AWS Tensor Network and QBraid QIR), with no validation on real quantum hardware
 - #limitation:qubit-count — Framework limited to 5 assets (5 qubits), far below real-world portfolio sizes (hundreds/thousands of assets)
 - #limitation:noise — No noise mitigation techniques applied, raising concerns about performance on NISQ devices
-- #idea:hybrid-approach — Maturity-gated governance model proposed to manage quantum resource permissions, though untested in production environments
 ## Contradictions
 <!-- Step 6 output — where this paper contradicts others -->
 

@@ -1,4 +1,8 @@
 ---
+aliases:
+- 'Autonomous Quantum Agents for Portfolio Optimization: Orchestrating QAOA Workflows
+  on Cloud Quantum Simulators'
+- Autonomous Quantum Agents Portfolio
 authors:
 - Kaushik Ganguly
 auto_detected: true
@@ -23,7 +27,7 @@ source_type: preprint
 source_type_confidence: high
 step1_date: '2026-03-18T20:42:25.269037'
 step1_model: Mistral-Large-3
-step2_date: '2026-03-18T20:42:33.225729'
+step2_date: '2026-03-18T21:09:38.025532'
 step2_model: Mistral-Large-3
 step3_date: '2026-03-18T20:47:30.739515'
 step3_model: Mistral-Large-3
@@ -31,7 +35,7 @@ step4_date: '2026-03-18T20:49:48.793651'
 step4_model: Mistral-Large-3
 step5_date: '2026-03-18T20:47:51.752712'
 step5_model: Mistral-Large-3
-step6_date: '2026-03-18T20:53:18.069521'
+step6_date: '2026-03-18T21:10:06.974847'
 step6_model: Mistral-Large-3
 steps_completed:
 - 1
@@ -40,6 +44,13 @@ steps_completed:
 - 4
 - 5
 - 6
+tags:
+- topic/portfolio-optimisation
+- method/QAOA
+- method/variational
+- method/classical-simulation
+- idea/near-term-feasibility
+- idea/hybrid-approach
 title: 'Autonomous Quantum Agents for Portfolio Optimization: Orchestrating QAOA Workflows
   on Cloud Quantum Simulators'
 topic_tags:
@@ -49,7 +60,7 @@ zotero_key: ''
 ---
 
 ## Abstract summary
-This paper introduces an agentic framework that automates the end-to-end process of quantum portfolio optimization by integrating autonomous AI workflow orchestration with the Quantum Approximate Optimization Algorithm (QAOA) executed on cloud quantum simulators. The system addresses operational challenges in deploying quantum algorithms for financial decision-making, such as live data integration, circuit parameterization, and cross-platform execution, while ensuring reproducibility and governance. The framework demonstrates a scalable, vendor-agnostic approach to applying quantum optimization in real-world financial workflows.
+This preprint introduces an agentic framework that automates end-to-end portfolio optimization using quantum computing, addressing the operational challenges of deploying quantum algorithms in financial workflows. The system integrates autonomous AI agents to manage tasks such as live market data ingestion, quantum circuit construction, cloud-based quantum hardware execution, and financial interpretation of results. The approach aims to enhance reproducibility, scalability, and governance in quantum optimization for near-term financial applications.
 ## Methodology
 The paper presents an agentic framework for end-to-end portfolio optimization that integrates autonomous AI workflow orchestration with quantum approximate optimization executed on cloud quantum simulators. The methodology employs eight specialized agents coordinated through a directed acyclic graph (DAG) state machine built on the LangGraph framework. Each agent handles a distinct stage of the quantum optimization pipeline, including policy enforcement, task decomposition, QAOA circuit construction from live market data, local pre-validation, cloud QPU submission, quality assurance, and financial interpretation. The quantum core implements a Quantum Approximate Optimization Algorithm (QAOA) where single-qubit rotation angles are derived from empirical annualized asset returns and two-qubit interaction strengths from pairwise covariance entries. The framework uses live Yahoo Finance data for a five-asset universe (AAPL, XOM, JPM, JNJ, GLD) and executes the pipeline on two cloud quantum backends via the QBraid unified runtime platform: the AWS Tensor Network simulator and the QBraid QIR state-vector simulator. The system includes a maturity-gated governance model to manage quantum resource permissions and ensures reproducibility and vendor-agnostic execution.
 

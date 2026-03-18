@@ -1,4 +1,7 @@
 ---
+aliases:
+- Q&A Quantum Computing Meets Finance
+- Q Quantum Computing Meets
 authors:
 - Rachel Berkowitz
 auto_detected: true
@@ -14,7 +17,6 @@ journal_or_venue: Physics Magazine
 methodology_tags:
 - quantum-annealing
 - quantum-simulation
-- QUBO
 paper_type: ''
 quantum_advantage_claim: speculative
 related_papers: []
@@ -24,7 +26,7 @@ source_type: other
 source_type_confidence: high
 step1_date: '2026-03-18T20:37:29.694038'
 step1_model: Mistral-Large-3
-step2_date: '2026-03-18T20:37:45.691810'
+step2_date: '2026-03-18T21:09:31.108025'
 step2_model: Mistral-Large-3
 step3_date: '2026-03-18T20:46:24.658853'
 step3_model: Mistral-Large-3
@@ -32,7 +34,7 @@ step4_date: '2026-03-18T20:46:29.497652'
 step4_model: Mistral-Large-3
 step5_date: '2026-03-18T20:46:34.983145'
 step5_model: Mistral-Large-3
-step6_date: '2026-03-18T20:53:04.843869'
+step6_date: '2026-03-18T21:09:56.498089'
 step6_model: Mistral-Large-3
 steps_completed:
 - 1
@@ -41,6 +43,16 @@ steps_completed:
 - 4
 - 5
 - 6
+tags:
+- topic/portfolio-optimisation
+- topic/asset-pricing
+- topic/risk-modelling
+- topic/derivatives-pricing
+- method/quantum-annealing
+- method/quantum-simulation
+- idea/quantum-advantage
+- idea/near-term-feasibility
+- idea/hybrid-approach
 title: Q&A Quantum Computing Meets Finance
 topic_tags:
 - portfolio-optimisation
@@ -52,7 +64,7 @@ zotero_key: ''
 ---
 
 ## Abstract summary
-This interview-based article explores the intersection of quantum computing and financial services, focusing on how quantum algorithms could address computationally intensive problems like asset pricing and portfolio optimization. The discussion highlights challenges in adapting financial models to quantum hardware and the potential long-term impact of quantum computing on the financial industry, while emphasizing the need for early investment and interdisciplinary expertise.
+This interview-based article explores the intersection of quantum computing and financial services, focusing on how quantum algorithms could address computationally intensive problems like asset pricing and portfolio optimization. The discussion highlights challenges in adapting financial models to quantum hardware and the potential long-term impact on the financial industry, while also considering the current limitations of quantum technology.
 ## Methodology
 The paper is an interview-based discussion with Eric Ghysels, a financial econometrician, exploring the potential applications of quantum computing in finance. The methodology is conceptual and theoretical, focusing on translating financial models into quantum algorithms. Ghysels discusses the adaptation of financial problems such as asset pricing, portfolio optimization, and stochastic volatility modeling for quantum computing. The approach involves reformulating financial models (e.g., quadratic unconstrained binary optimization for portfolio allocation, hidden-Markov-chain models for asset-price dynamics) to fit quantum hardware constraints. The discussion highlights the challenges of implementing continuous-time stochastic differential equations on quantum computers and the need for discretization or alternative model families. Theoretical speedups, such as quadratic improvements in credit risk and derivative pricing, are mentioned, but no empirical experimentation or formal proofs are presented.
 
