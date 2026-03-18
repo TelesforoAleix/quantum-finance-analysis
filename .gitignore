@@ -19,3 +19,5 @@ tests/sample_papers/
 
 # Obsidian
 .obsidian/
+*.canvas
+*.base
