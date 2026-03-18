@@ -16,14 +16,14 @@ pip install -r requirements.txt
 
 # Configure API keys
 cp .env.example .env
-# Edit .env with your Anthropic, OpenAI, and Zotero API keys
+# Edit .env with your Azure AI Foundry and Zotero API keys
 ```
 
 ## Usage
 
 ```bash
 # Process a single paper (all 6 steps)
-python scripts/extract_paper.py --pdf papers/raw_pdfs/sample.pdf
+python scripts/extract_paper.py --pdf papers/raw_pdfs/sample.pdf --name 2024_Author_Title.md
 
 # Run a specific extraction step
 python scripts/run_extraction_step.py --paper 2023_Bova_QuantumFinance.md --step 4
@@ -76,3 +76,15 @@ Start with `@orchestrator` in VS Code chat. See `CLAUDE.md` for the full specifi
 
 ### Milestone 1 — Foundation (complete)
 Repository structure, configuration files, core utilities (LLM client, frontmatter, structured logging), PDF text extraction, paper template, schema validation, and processing log. All infrastructure needed for the extraction pipeline is in place.
+
+### Milestone 2 — Steps 1 & 2: Classification and metadata (complete)
+Prompt templates for source classification and metadata extraction. Step runner engine with text chunking, JSON parsing, and section-aware markdown writing. CLI with `--paper`, `--step`, `--from-step`, `--batch`, `--filter`, `--pdf` flags. Switched LLM backend to Azure AI Foundry (Mistral-Large-3 + Kimi-K2.5). Live tested on 5 sample papers — all pass schema validation.
+
+### Milestone 3 — Steps 3, 4, 5: Core extraction (complete)
+Prompt templates for methodology, findings, and limitations extraction with source-type-specific guidance. Inline claim tagging ([supported], [speculative], [disputed]) and inferred limitation detection ([inferred]). Live tested on 5 papers across 4 source types. Selective re-run verified — editing step 3 and re-running step 4 preserves step 3 output.
+
+### Milestone 4 — Step 6: Synthesis and tagging (complete)
+Prompt template for cross-section synthesis. Assigns topic, methodology, and synthesis tags from controlled vocabulary (tag_registry.json). Detects key ideas, contradictions, and relevance scores. Live tested on 5 papers — all tags validate against registry.
+
+### Milestone 5 — Batch processing and orchestration (complete)
+Full pipeline orchestrator (`extract_paper.py`) runs all 6 steps from PDF to finished markdown. Obsidian sync script detects when vault already points to processed directory. All 5 sample papers fully processed through all 6 steps.
