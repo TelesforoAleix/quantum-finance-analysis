@@ -5,17 +5,28 @@ authors:
 - Mr. Sanjay Kumar Mishra
 auto_detected: true
 classification: ''
-contradiction_flags: []
+contradiction_flags:
+- contradiction:classical-vs-quantum
+- contradiction:scalability
 doi: ''
 evidence_type: ''
-idea_tags: []
+idea_tags:
+- idea:quantum-advantage
+- idea:near-term-feasibility
+- idea:hybrid-approach
 journal_or_venue: Journal of Emerging Technologies and Innovative Research (JETIR)
-methodology_tags: []
+methodology_tags:
+- QAOA
+- VQE
+- quantum-ML
+- amplitude-estimation
+- variational
+- classical-simulation
 paper_type: ''
 quantum_advantage_claim: theoretical
 related_papers: []
-relevance_phase1: ''
-relevance_phase3: not-yet-assessed
+relevance_phase1: high
+relevance_phase3: high
 source_type: peer-reviewed-theoretical
 source_type_confidence: high
 step1_date: '2026-03-18T20:38:01.771281'
@@ -28,17 +39,24 @@ step4_date: '2026-03-18T20:47:00.181688'
 step4_model: Mistral-Large-3
 step5_date: '2026-03-18T20:47:09.149988'
 step5_model: Mistral-Large-3
-step6_date: ''
-step6_model: ''
+step6_date: '2026-03-18T20:53:27.543818'
+step6_model: Mistral-Large-3
 steps_completed:
 - 1
 - 2
 - 3
 - 4
 - 5
+- 6
 title: 'QUANTUM COMPUTING IN FINANCIAL RISK MANAGEMENT AND PORTFOLIO OPTIMIZATION:
   A Hybrid Quantum–Classical Framework'
-topic_tags: []
+topic_tags:
+- portfolio-optimisation
+- risk-modelling
+- derivatives-pricing
+- fraud-detection
+- high-frequency-trading
+- market-simulation
 year: 2025
 zotero_key: ''
 ---
@@ -95,11 +113,15 @@ The paper argues for theoretical advantages of quantum algorithms in parallel co
 - Explore the use of quantum machine learning for real-time fraud detection and anomaly detection in financial transactions
 - Investigate the framework's applicability to other financial domains, such as algorithmic trading and credit risk modeling
 ## Key ideas
-<!-- Step 6 output — bullet list with idea tags -->
-
+- #idea:quantum-advantage — Quantum computing enables parallel computation of financial scenarios via superposition, potentially improving speed and accuracy for portfolio optimization and risk modeling
+- #idea:near-term-feasibility — Hybrid quantum-classical frameworks are positioned as practical solutions in the NISQ era, addressing current hardware limitations
+- #idea:hybrid-approach — A five-layer hybrid framework (classical pre-processing, quantum encoding, quantum processing, hybrid integration, decision layer) is proposed to integrate quantum and classical systems for financial applications
+- #idea:quantum-advantage — QAOA and VQE may outperform classical solvers for small-scale portfolio optimization under controlled conditions
+- #idea:quantum-advantage — Quantum Monte Carlo methods could accelerate risk simulations and improve scenario testing accuracy compared to classical approaches
+- #idea:hybrid-approach — Industry adoption (e.g., JPMorgan Chase, Goldman Sachs) demonstrates measurable improvements in computational performance for tasks like option pricing and fraud detection using hybrid models
 ## Contradictions
-<!-- Step 6 output — where this paper contradicts others -->
-
+- #contradiction:classical-vs-quantum — The paper claims hybrid models show 'strong potential' for financial decision-making under uncertainty, but acknowledges most studies remain theoretical with limited empirical validation, contradicting industry reports of measurable improvements
+- #contradiction:scalability — The paper speculates on quantum advantage for specific optimization tasks but does not empirically demonstrate scalability to large-scale financial datasets (e.g., thousands of assets)
 ## Notable quotes
 <!-- Researcher-added — verbatim quotes with page references -->
 

@@ -6,11 +6,12 @@
         2,
         3,
         4,
-        5
+        5,
+        6
       ],
       "step1_date": "2026-03-18T20:37:29.695922",
       "step1_model": "Mistral-Large-3",
-      "last_updated": "2026-03-18T20:46:34.988885",
+      "last_updated": "2026-03-18T20:53:04.845885",
       "step2_date": "2026-03-18T20:37:45.694595",
       "step2_model": "Mistral-Large-3",
       "step3_date": "2026-03-18T20:46:24.661826",
@@ -18,7 +19,9 @@
       "step4_date": "2026-03-18T20:46:29.503315",
       "step4_model": "Mistral-Large-3",
       "step5_date": "2026-03-18T20:46:34.988885",
-      "step5_model": "Mistral-Large-3"
+      "step5_model": "Mistral-Large-3",
+      "step6_date": "2026-03-18T20:53:04.845885",
+      "step6_model": "Mistral-Large-3"
     },
     "2025_JETIR_QuantumFinance.md": {
       "steps_completed": [
@@ -26,11 +29,12 @@
         2,
         3,
         4,
-        5
+        5,
+        6
       ],
       "step1_date": "2026-03-18T20:38:01.772598",
       "step1_model": "Mistral-Large-3",
-      "last_updated": "2026-03-18T20:47:09.153940",
+      "last_updated": "2026-03-18T20:53:27.548445",
       "step2_date": "2026-03-18T20:38:05.305921",
       "step2_model": "Mistral-Large-3",
       "step3_date": "2026-03-18T20:46:50.101736",
@@ -38,7 +42,9 @@
       "step4_date": "2026-03-18T20:47:00.185996",
       "step4_model": "Mistral-Large-3",
       "step5_date": "2026-03-18T20:47:09.153940",
-      "step5_model": "Mistral-Large-3"
+      "step5_model": "Mistral-Large-3",
+      "step6_date": "2026-03-18T20:53:27.548445",
+      "step6_model": "Mistral-Large-3"
     },
     "2025_Autonomous_QAOA.md": {
       "steps_completed": [
@@ -46,11 +52,12 @@
         2,
         3,
         4,
-        5
+        5,
+        6
       ],
       "step1_date": "2026-03-18T20:42:25.270671",
       "step1_model": "Mistral-Large-3",
-      "last_updated": "2026-03-18T20:49:48.796891",
+      "last_updated": "2026-03-18T20:53:18.073783",
       "step2_date": "2026-03-18T20:42:33.228200",
       "step2_model": "Mistral-Large-3",
       "step3_date": "2026-03-18T20:47:30.742319",
@@ -58,7 +65,9 @@
       "step4_date": "2026-03-18T20:49:48.796891",
       "step4_model": "Mistral-Large-3",
       "step5_date": "2026-03-18T20:47:51.756635",
-      "step5_model": "Mistral-Large-3"
+      "step5_model": "Mistral-Large-3",
+      "step6_date": "2026-03-18T20:53:18.073783",
+      "step6_model": "Mistral-Large-3"
     },
     "2025_Springer_QuantumFinance.md": {
       "steps_completed": [
@@ -66,11 +75,12 @@
         2,
         3,
         4,
-        5
+        5,
+        6
       ],
       "step1_date": "2026-03-18T20:42:42.600255",
       "step1_model": "Mistral-Large-3",
-      "last_updated": "2026-03-18T20:48:14.937580",
+      "last_updated": "2026-03-18T20:53:32.956870",
       "step2_date": "2026-03-18T20:42:46.729052",
       "step2_model": "Mistral-Large-3",
       "step3_date": "2026-03-18T20:47:56.165947",
@@ -78,7 +88,9 @@
       "step4_date": "2026-03-18T20:48:05.362519",
       "step4_model": "Mistral-Large-3",
       "step5_date": "2026-03-18T20:48:14.937580",
-      "step5_model": "Mistral-Large-3"
+      "step5_model": "Mistral-Large-3",
+      "step6_date": "2026-03-18T20:53:32.956870",
+      "step6_model": "Mistral-Large-3"
     },
     "2024_KI_QuantumFinance.md": {
       "steps_completed": [
@@ -86,11 +98,12 @@
         2,
         3,
         4,
-        5
+        5,
+        6
       ],
       "step1_date": "2026-03-18T20:42:55.878867",
       "step1_model": "Mistral-Large-3",
-      "last_updated": "2026-03-18T20:49:02.721369",
+      "last_updated": "2026-03-18T20:53:12.327846",
       "step2_date": "2026-03-18T20:42:58.934572",
       "step2_model": "Mistral-Large-3",
       "step3_date": "2026-03-18T20:48:37.980235",
@@ -98,7 +111,9 @@
       "step4_date": "2026-03-18T20:48:49.851989",
       "step4_model": "Mistral-Large-3",
       "step5_date": "2026-03-18T20:49:02.721369",
-      "step5_model": "Mistral-Large-3"
+      "step5_model": "Mistral-Large-3",
+      "step6_date": "2026-03-18T20:53:12.327846",
+      "step6_model": "Mistral-Large-3"
     }
   }
 }

@@ -6,14 +6,20 @@ classification: ''
 contradiction_flags: []
 doi: 10.1103/Physics.18.154
 evidence_type: ''
-idea_tags: []
+idea_tags:
+- idea:quantum-advantage
+- idea:near-term-feasibility
+- idea:hybrid-approach
 journal_or_venue: Physics Magazine
-methodology_tags: []
+methodology_tags:
+- quantum-annealing
+- quantum-simulation
+- QUBO
 paper_type: ''
 quantum_advantage_claim: speculative
 related_papers: []
-relevance_phase1: ''
-relevance_phase3: not-yet-assessed
+relevance_phase1: high
+relevance_phase3: medium
 source_type: other
 source_type_confidence: high
 step1_date: '2026-03-18T20:37:29.694038'
@@ -26,16 +32,21 @@ step4_date: '2026-03-18T20:46:29.497652'
 step4_model: Mistral-Large-3
 step5_date: '2026-03-18T20:46:34.983145'
 step5_model: Mistral-Large-3
-step6_date: ''
-step6_model: ''
+step6_date: '2026-03-18T20:53:04.843869'
+step6_model: Mistral-Large-3
 steps_completed:
 - 1
 - 2
 - 3
 - 4
 - 5
+- 6
 title: Q&A Quantum Computing Meets Finance
-topic_tags: []
+topic_tags:
+- portfolio-optimisation
+- asset-pricing
+- risk-modelling
+- derivatives-pricing
 year: 2025
 zotero_key: ''
 ---
@@ -89,8 +100,12 @@ The paper discusses theoretical potential for quantum speedups (e.g., quadratic 
 - Conduct empirical studies comparing quantum and classical approaches for financial problems
 - Develop hybrid quantum-classical approaches to bridge current hardware limitations
 ## Key ideas
-<!-- Step 6 output — bullet list with idea tags -->
-
+- #idea:quantum-advantage — Quantum linear algebra and quantum annealing could theoretically speed up asset pricing and portfolio optimization by exploring large solution spaces in parallel
+- #idea:near-term-feasibility — Speculative projections suggest quantum computing could generate significant value in financial services by 2035, but current hardware limitations hinder practical implementation
+- #idea:hybrid-approach — Discretization and reformulation of financial models (e.g., stochastic differential equations) are necessary to adapt them to quantum hardware, potentially requiring hybrid quantum-classical approaches
+- #limitation:noise — Current quantum hardware is not yet capable of implementing pioneering quantum algorithms, limiting practical applications in finance
+- #limitation:data-encoding — Financial models must be translated into quantum-compatible frameworks (e.g., QUBO for portfolio optimization), which may not capture all constraints or fidelity
+- #limitation:no-empirical-validation — All claims about quantum speedups are speculative and lack empirical validation or hardware demonstrations
 ## Contradictions
 <!-- Step 6 output — where this paper contradicts others -->
 

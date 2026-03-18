@@ -6,14 +6,19 @@ classification: ''
 contradiction_flags: []
 doi: ''
 evidence_type: ''
-idea_tags: []
+idea_tags:
+- idea:near-term-feasibility
+- idea:hybrid-approach
 journal_or_venue: ''
-methodology_tags: []
+methodology_tags:
+- QAOA
+- variational
+- classical-simulation
 paper_type: ''
 quantum_advantage_claim: speculative
 related_papers: []
-relevance_phase1: ''
-relevance_phase3: not-yet-assessed
+relevance_phase1: high
+relevance_phase3: medium
 source_type: preprint
 source_type_confidence: high
 step1_date: '2026-03-18T20:42:25.269037'
@@ -26,17 +31,19 @@ step4_date: '2026-03-18T20:49:48.793651'
 step4_model: Mistral-Large-3
 step5_date: '2026-03-18T20:47:51.752712'
 step5_model: Mistral-Large-3
-step6_date: ''
-step6_model: ''
+step6_date: '2026-03-18T20:53:18.069521'
+step6_model: Mistral-Large-3
 steps_completed:
 - 1
 - 2
 - 3
 - 4
 - 5
+- 6
 title: 'Autonomous Quantum Agents for Portfolio Optimization: Orchestrating QAOA Workflows
   on Cloud Quantum Simulators'
-topic_tags: []
+topic_tags:
+- portfolio-optimisation
 year: 2026
 zotero_key: ''
 ---
@@ -107,8 +114,11 @@ The paper does not demonstrate quantum advantage; all results are from simulatio
 - Evaluate the framework’s performance under stress conditions (e.g., high-frequency data, market volatility)
 - Extend the governance model to support multi-user environments with role-based access control and audit trails
 ## Key ideas
-<!-- Step 6 output — bullet list with idea tags -->
-
+- #idea:near-term-feasibility — Agentic framework automates end-to-end quantum portfolio optimization using QAOA on cloud simulators, demonstrating operational feasibility for small-scale problems
+- #idea:hybrid-approach — Integration of autonomous AI workflow orchestration with quantum optimization (QAOA) enables vendor-agnostic, reproducible execution on current cloud quantum infrastructure
+- #limitation:simulation-only — All results derived from classical simulations (AWS Tensor Network and QBraid QIR), not real quantum hardware, limiting claims about NISQ-era applicability
+- #limitation:qubit-count — Framework tested only on a 5-asset universe, with no empirical validation of scalability to larger, industrially relevant portfolios (e.g., 20+ assets)
+- #limitation:no-empirical-validation — Speculative claims about scalability and real-world performance (e.g., data-driven QAOA parameterization outperforming classical methods) lack empirical support
 ## Contradictions
 <!-- Step 6 output — where this paper contradicts others -->
 

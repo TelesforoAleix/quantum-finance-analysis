@@ -4,17 +4,27 @@ authors:
 - Seth Lloyd
 auto_detected: true
 classification: ''
-contradiction_flags: []
+contradiction_flags:
+- contradiction:classical-vs-quantum
+- contradiction:scalability
 doi: 10.1007/s13218-024-00870-9
 evidence_type: ''
-idea_tags: []
+idea_tags:
+- idea:quantum-advantage
+- idea:near-term-feasibility
+- idea:hybrid-approach
 journal_or_venue: KI - Künstliche Intelligenz
-methodology_tags: []
+methodology_tags:
+- HHL
+- amplitude-estimation
+- quantum-simulation
+- quantum-walk
+- classical-simulation
 paper_type: ''
 quantum_advantage_claim: theoretical
 related_papers: []
-relevance_phase1: ''
-relevance_phase3: not-yet-assessed
+relevance_phase1: high
+relevance_phase3: high
 source_type: peer-reviewed-empirical
 source_type_confidence: high
 step1_date: '2026-03-18T20:42:55.877421'
@@ -27,16 +37,18 @@ step4_date: '2026-03-18T20:48:49.848123'
 step4_model: Mistral-Large-3
 step5_date: '2026-03-18T20:49:02.717007'
 step5_model: Mistral-Large-3
-step6_date: ''
-step6_model: ''
+step6_date: '2026-03-18T20:53:12.323487'
+step6_model: Mistral-Large-3
 steps_completed:
 - 1
 - 2
 - 3
 - 4
 - 5
+- 6
 title: 'Quantum Computational Finance: Quantum Algorithm for Portfolio Optimization'
-topic_tags: []
+topic_tags:
+- portfolio-optimisation
 year: 2024
 zotero_key: ''
 ---
@@ -105,11 +117,16 @@ The paper claims a theoretical exponential speedup (logarithmic vs. polynomial r
 - Application to multi-period portfolio optimization and dynamic asset allocation
 - Integration with quantum machine learning techniques for improved return and risk modeling
 ## Key ideas
-<!-- Step 6 output — bullet list with idea tags -->
-
+- #idea:quantum-advantage — Proposes a quantum algorithm for portfolio optimization with theoretical logarithmic runtime O(poly(log(TN))) vs. classical O(poly(TN)), leveraging HHL and qRAM for exponential speedup under idealized conditions
+- #idea:near-term-feasibility — Assumes qRAM and fault-tolerant quantum computing, which are not yet available, but discusses potential for near-term hybrid approaches
+- #idea:hybrid-approach — Suggests future work on hybrid quantum-classical methods to address current hardware limitations and data encoding challenges
+- #limitation:qubit-count — Highlights that small qubit counts constrain practical applicability to small-scale problems (e.g., N < 100 assets)
+- #limitation:noise — Notes that noise and decoherence in current hardware may degrade solution quality, with no mitigation strategies discussed
+- #limitation:data-encoding — Relies on qRAM for efficient data loading, which takes O(TN) time and undermines the logarithmic runtime advantage for data preparation
+- #limitation:no-empirical-validation — Theoretical claims are not backed by empirical validation on real quantum hardware or comparison with classical state-of-the-art methods
 ## Contradictions
-<!-- Step 6 output — where this paper contradicts others -->
-
+- #contradiction:classical-vs-quantum — Claims potential quantum speedups over classical sampling approaches, but acknowledges that quantum-inspired classical algorithms (e.g., importance-sampling) can achieve similar logarithmic runtime advantages
+- #contradiction:scalability — Theoretical speedup is contingent on efficient qRAM and well-conditioned matrices, but scalability to production-scale problems (N > 100 assets) is untested due to hardware constraints
 ## Notable quotes
 <!-- Researcher-added — verbatim quotes with page references -->
 

@@ -10,15 +10,22 @@ classification: ''
 contradiction_flags: []
 doi: 10.1007/978-3-031-94273-0
 evidence_type: ''
-idea_tags: []
+idea_tags:
+- idea:quantum-advantage
+- idea:near-term-feasibility
+- idea:hybrid-approach
 journal_or_venue: Proceedings of the International Scientific and Practical Conference
   “Digital and Information Technologies in Economics and Management” (DITEM2024),
   Lecture Notes in Networks and Systems
-methodology_tags: []
+methodology_tags:
+- VQE
+- grover
+- QAOA
+- variational
 paper_type: ''
 quantum_advantage_claim: speculative
 related_papers: []
-relevance_phase1: ''
+relevance_phase1: medium
 relevance_phase3: not-yet-assessed
 source_type: conference-paper
 source_type_confidence: high
@@ -32,16 +39,20 @@ step4_date: '2026-03-18T20:48:05.358934'
 step4_model: Mistral-Large-3
 step5_date: '2026-03-18T20:48:14.933847'
 step5_model: Mistral-Large-3
-step6_date: ''
-step6_model: ''
+step6_date: '2026-03-18T20:53:32.952420'
+step6_model: Mistral-Large-3
 steps_completed:
 - 1
 - 2
 - 3
 - 4
 - 5
+- 6
 title: Applying the Quantum Grover Algorithm to Improve the Efficiency of Growth Models
-topic_tags: []
+topic_tags:
+- asset-pricing
+- portfolio-optimisation
+- risk-modelling
 year: 2025
 zotero_key: ''
 ---
@@ -88,8 +99,11 @@ The paper claims theoretical advantages of quantum algorithms for dynamic contro
 - Apply quantum algorithms to real-world financial use cases, such as portfolio optimization or risk management
 - Investigate the scalability of quantum algorithms for large-scale dynamic systems (e.g., >100 variables)
 ## Key ideas
-<!-- Step 6 output — bullet list with idea tags -->
-
+- #idea:quantum-advantage — VQE and Grover’s algorithm are proposed to accelerate dynamic control problems in financial optimization, potentially outperforming classical methods in speed and efficiency
+- #idea:near-term-feasibility — The paper speculatively discusses the applicability of quantum algorithms (VQE, QAOA) for dynamic optimization in NISQ-era devices, though empirical validation is lacking
+- #idea:hybrid-approach — Future work suggests hybrid quantum-classical approaches to improve robustness in dynamic optimization, though no specific hybrid framework is proposed
+- #limitation:no-empirical-validation — Theoretical claims about quantum advantage are not backed by experiments on real quantum hardware or classical benchmarks
+- #limitation:simulation-only — The paper relies on theoretical modeling without classical simulation or quantum hardware implementation
 ## Contradictions
 <!-- Step 6 output — where this paper contradicts others -->
 
