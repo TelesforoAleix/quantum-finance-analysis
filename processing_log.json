@@ -1,3 +1,26 @@
 {
-  "papers": {}
+  "papers": {
+    "2024_Ghysels_QuantumFinance.md": {
+      "steps_completed": [
+        1,
+        2
+      ],
+      "step1_date": "2026-03-18T20:37:29.695922",
+      "step1_model": "Mistral-Large-3",
+      "last_updated": "2026-03-18T20:37:45.694595",
+      "step2_date": "2026-03-18T20:37:45.694595",
+      "step2_model": "Mistral-Large-3"
+    },
+    "2025_JETIR_QuantumFinance.md": {
+      "steps_completed": [
+        1,
+        2
+      ],
+      "step1_date": "2026-03-18T20:38:01.772598",
+      "step1_model": "Mistral-Large-3",
+      "last_updated": "2026-03-18T20:38:05.305921",
+      "step2_date": "2026-03-18T20:38:05.305921",
+      "step2_model": "Mistral-Large-3"
+    }
+  }
 }

@@ -54,7 +54,7 @@ class RateLimiter:
 class LLMClient:
     """LLM client supporting Azure AI Foundry deployments.
 
-    Routes to Azure OpenAI for the configured deployment,
+    Routes to Azure OpenAI for configured deployments,
     with fallback to standard OpenAI for gpt* models.
     Implements exponential backoff (3 retries: 2s, 4s, 8s).
     """
@@ -66,7 +66,9 @@ class LLMClient:
         self._azure_client: openai.AzureOpenAI | None = None
         self._openai_client: openai.OpenAI | None = None
         self._rate_limiter = RateLimiter()
-        self._azure_deployment = os.getenv("AZURE_DEPLOYMENT", "")
+        # Comma-separated list of Azure deployment names
+        deployments = os.getenv("AZURE_DEPLOYMENTS", "")
+        self._azure_deployments = set(d.strip() for d in deployments.split(",") if d.strip())
 
     @property
     def azure_client(self) -> openai.AzureOpenAI:
@@ -93,13 +95,13 @@ class LLMClient:
     ) -> str:
         """Call an LLM and return the response text.
 
-        Routes to Azure for the configured deployment name,
+        Routes to Azure for known deployment names,
         standard OpenAI for gpt* models, and Azure as default.
 
         Raises:
             RuntimeError: If all retries are exhausted.
         """
-        if model == self._azure_deployment or not model.startswith("gpt"):
+        if model in self._azure_deployments or not model.startswith("gpt"):
             call_fn = self._call_azure
         else:
             call_fn = self._call_openai
@@ -149,12 +151,18 @@ class LLMClient:
         self, model: str, prompt: str, temperature: float, max_tokens: int
     ) -> str:
         response = self.azure_client.chat.completions.create(
-            model=self._azure_deployment,
+            model=model,
             max_tokens=max_tokens,
             temperature=temperature,
             messages=[{"role": "user", "content": prompt}],
         )
-        return response.choices[0].message.content
+        content = response.choices[0].message.content
+        if content is None:
+            raise RuntimeError(
+                f"Model {model} returned no content (finish_reason={response.choices[0].finish_reason}). "
+                "This may happen with reasoning models that exhaust tokens on thinking."
+            )
+        return content
 
     def _call_openai(
         self, model: str, prompt: str, temperature: float, max_tokens: int

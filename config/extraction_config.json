@@ -1,6 +1,6 @@
 {
-  "default_model": "Kimi-K2.5",
-  "fallback_model": "Kimi-K2.5",
+  "default_model": "Mistral-Large-3",
+  "fallback_model": "Mistral-Large-3",
   "zotero_group_id": "6475432",
   "obsidian_vault_path": "papers/processed",
   "pdf_output_path": "papers/raw_pdfs",
@@ -8,7 +8,7 @@
   "steps": {
     "step1": {
       "name": "source_classification",
-      "model": "Kimi-K2.5",
+      "model": "Mistral-Large-3",
       "temperature": 0.2,
       "max_tokens": 500,
       "prompt_file": "prompts/step1_classify.txt",
@@ -16,7 +16,7 @@
     },
     "step2": {
       "name": "metadata_extraction",
-      "model": "Kimi-K2.5",
+      "model": "Mistral-Large-3",
       "temperature": 0.1,
       "max_tokens": 800,
       "prompt_file": "prompts/step2_metadata.txt",
@@ -24,7 +24,7 @@
     },
     "step3": {
       "name": "methodology_extraction",
-      "model": "Kimi-K2.5",
+      "model": "Mistral-Large-3",
       "temperature": 0.3,
       "max_tokens": 1500,
       "prompt_file": "prompts/step3_methodology.txt",
@@ -32,7 +32,7 @@
     },
     "step4": {
       "name": "findings_extraction",
-      "model": "Kimi-K2.5",
+      "model": "Mistral-Large-3",
       "temperature": 0.3,
       "max_tokens": 1500,
       "prompt_file": "prompts/step4_findings.txt",
@@ -40,7 +40,7 @@
     },
     "step5": {
       "name": "limitations_extraction",
-      "model": "Kimi-K2.5",
+      "model": "Mistral-Large-3",
       "temperature": 0.3,
       "max_tokens": 1000,
       "prompt_file": "prompts/step5_limitations.txt",
@@ -48,7 +48,7 @@
     },
     "step6": {
       "name": "synthesis_tagging",
-      "model": "Kimi-K2.5",
+      "model": "Mistral-Large-3",
       "temperature": 0.2,
       "max_tokens": 1500,
       "prompt_file": "prompts/step6_synthesis.txt",
