@@ -38,6 +38,11 @@ python scripts/run_extraction_step.py --batch --step 6
 python scripts/validate_markdown.py --batch
 ```
 
+## Documentation
+
+- **[System Overview](docs/SYSTEM_OVERVIEW.md)** — How the entire pipeline works, from PDF to Obsidian markdown. Architecture, data flow, the 6 extraction steps, tags, output format, and CLI reference.
+- **[Tuning Guide](docs/TUNING_GUIDE.md)** — How to modify prompts, change models, add tags, tune parameters, and re-run steps. Includes common scenarios and a quick-reference table.
+
 ## Repository structure
 
 ```
