@@ -32,17 +32,17 @@ relevance_phase1: medium
 relevance_phase3: not-yet-assessed
 source_type: conference-paper
 source_type_confidence: high
-step1_date: '2026-03-18T23:13:52.333390'
+step1_date: '2026-03-19T13:00:44.283710'
 step1_model: Mistral-Large-3
-step2_date: '2026-03-18T23:13:55.875343'
+step2_date: '2026-03-19T13:00:48.920978'
 step2_model: Mistral-Large-3
-step3_date: '2026-03-18T23:15:20.270119'
+step3_date: '2026-03-19T13:01:17.713199'
 step3_model: Mistral-Large-3
-step4_date: '2026-03-18T23:15:27.192184'
+step4_date: '2026-03-19T13:01:27.035248'
 step4_model: Mistral-Large-3
-step5_date: '2026-03-18T23:15:36.172605'
+step5_date: '2026-03-19T13:01:39.704016'
 step5_model: Mistral-Large-3
-step6_date: '2026-03-18T23:15:42.365752'
+step6_date: '2026-03-19T13:02:23.620581'
 step6_model: Mistral-Large-3
 steps_completed:
 - 1
@@ -70,62 +70,65 @@ zotero_key: ''
 ---
 
 ## Abstract summary
-This paper proposes a novel framework for mutual fund portfolio management by integrating quantum-inspired techniques to enhance optimization and predictive accuracy. It combines a Quantum Neural Network (QNN) for performance forecasting with a Quantum-Inspired Evolutionary Algorithm (QEA) for portfolio optimization, aiming to overcome limitations of traditional methods. The study demonstrates how quantum computing principles can improve decision-making and risk-adjusted returns in dynamic financial markets.
+This paper proposes a novel framework for mutual fund portfolio management by integrating a Quantum Neural Network (QNN) for performance prediction and a Quantum-Inspired Evolutionary Algorithm (QEA) for portfolio optimization. The study aims to enhance the accuracy and efficiency of portfolio management by leveraging quantum computing principles to address limitations in traditional optimization techniques. The approach is evaluated through empirical testing, demonstrating improved predictive performance compared to conventional methods.
 ## Methodology
-The paper presents an empirical study combining quantum-inspired techniques for mutual fund portfolio management. The methodology integrates a Quantum Neural Network (QNN) for performance prediction and a Quantum-Inspired Evolutionary Algorithm (QEA) for portfolio optimization. The QNN leverages quantum computing principles to enhance predictive accuracy using real-time market data, while the QEA employs quantum-inspired concepts such as superposition and entanglement to explore the solution space and identify optimal portfolio configurations. The framework follows a structured workflow: data collection focusing on parameters like growth percentage, total funding, and valuation; data pre-processing involving outlier detection using Interquartile Range (IQR), Min-Max normalization, and missing value imputation; and the integration of QEA and QNN in a feedback loop for continuous improvement. The QEA optimizes portfolio allocations through iterative generations and evolutionary operators, while the QNN forecasts portfolio performance based on historical financial data and market indicators. The proposed approach is evaluated using Mean Absolute Percentage Error (MAPE) as the primary metric, comparing its performance against traditional methods.
+The paper presents an empirical study combining quantum-inspired techniques for mutual fund portfolio management. The methodology integrates a Quantum Neural Network (QNN) for performance prediction and a Quantum-Inspired Evolutionary Algorithm (QEA) for portfolio optimization. The QNN leverages quantum computing principles to enhance predictive accuracy using real-time market data, while the QEA employs quantum-inspired concepts such as superposition and entanglement to explore the solution space and identify optimal portfolio configurations. The framework follows a workflow involving data collection (parameters like growth percentage, total funding, and valuation), data pre-processing (outlier detection using Interquartile Range, Min-Max normalization, and missing value imputation), and the integration of QEA and QNN in a feedback loop. The QEA optimizes portfolio allocations through iterative evolutionary operators, and the QNN predicts portfolio performance based on historical financial data and market indicators. The proposed approach is evaluated using Mean Absolute Percentage Error (MAPE) as the primary metric, comparing its performance against traditional methods.
 
 **Algorithms used:** Quantum Neural Network (QNN), Quantum-Inspired Evolutionary Algorithm (QEA)
 **Frameworks:** Python simulation tool framework
 
-**Experimental setup:** The study was implemented using a Python-based simulation environment. No specific hardware (e.g., real quantum processing units or simulators) is mentioned, implying the use of classical computing resources to simulate quantum-inspired algorithms.
+**Experimental setup:** The study was implemented using a Python-based simulation environment. Specific hardware details (e.g., simulator vs. real quantum processing unit) are not mentioned, indicating the use of classical simulation tools to emulate quantum-inspired algorithms.
 
-**Dataset:** The dataset includes financial parameters such as growth percentage, total funding, and valuation of various companies. Specific companies mentioned include OpenAI, Fireblocks, iCapital Network, Dapper, Falconx, Chainalysis, and others. The data appears to be industry-specific valuations, funding distributions, and revenue/growth rates, though the exact source or timeframe of the dataset is not explicitly detailed.
+**Dataset:** The dataset includes financial parameters such as growth percentage, total funding, and valuation for various companies. Specific sources or timeframes for the data are not detailed, but the dataset appears to be industry-specific, focusing on sectors like transport, AI, fintech, and cybersecurity, with company-level funding and revenue metrics.
 ## Findings
-- [supported] The integrated Quantum-Inspired Evolutionary Algorithm (QEA) and Quantum Neural Network (QNN) framework achieves a Mean Absolute Percentage Error (MAPE) of 5.45% in portfolio return predictions, outperforming traditional methods (MAPE: 5.68%)
-- [supported] The proposed hybrid quantum-inspired approach demonstrates improved forecast accuracy and decision-making ability in mutual fund portfolio management compared to conventional techniques
-- [speculative] Quantum-inspired algorithms (QEA and QNN) leverage principles like superposition and entanglement to explore multiple solutions simultaneously, potentially offering exponential speed-ups in processing and improved learning capabilities
-- [speculative] The integration of QEA and QNN could transform portfolio management techniques by providing enhanced risk-adjusted returns and optimized investment strategies under turbulent market conditions
-- [speculative] The QEA efficiently navigates complex search spaces, reducing computational time and enabling rapid responses to market changes compared to traditional methods like Markowitz Mean-Variance Optimization
-- [speculative] The QNN enhances predictive accuracy by identifying subtle patterns in vast financial datasets, facilitating proactive decision-making for fund managers
+- [supported] The integrated Quantum-Inspired Evolutionary Algorithm (QEA) and Quantum Neural Network (QNN) framework achieved a Mean Absolute Percentage Error (MAPE) of 5.45% in portfolio return predictions, outperforming traditional methods (MAPE: 5.68%)
+- [supported] The proposed framework demonstrated improved predictive accuracy and decision-making ability for mutual fund portfolio management through empirical testing in a Python simulation environment
+- [speculative] Quantum-inspired techniques (QEA and QNN) may revolutionize mutual fund portfolio management by providing enhanced risk-adjusted returns and optimized investment strategies under turbulent market conditions
+- [speculative] The QEA leverages quantum-inspired principles like superposition and entanglement to efficiently explore solution spaces and escape local optima, potentially offering advantages over classical optimization methods
+- [speculative] The QNN enhances learning and prediction accuracy by incorporating quantum computing principles, enabling better modeling of complex financial data patterns
+- [speculative] The integration of QEA and QNN creates a dynamic feedback loop that could enable continuous improvement in portfolio optimization and performance prediction
+- [speculative] Quantum-inspired approaches may reduce computational time and enable rapid responses to market changes compared to traditional methods like Markowitz Mean-Variance Optimization
 
-**Results summary:** The paper presents a hybrid framework combining Quantum-Inspired Evolutionary Algorithm (QEA) for portfolio optimization and Quantum Neural Network (QNN) for performance prediction in mutual fund management. Empirical testing via simulation demonstrates that the integrated approach achieves a lower Mean Absolute Percentage Error (MAPE) of 5.45% compared to 5.68% for traditional methods, indicating improved forecast accuracy. The authors argue that quantum-inspired techniques offer advantages in computational efficiency and predictive power, though all results are derived from classical simulations rather than real quantum hardware.
+**Results summary:** The paper presents an integrated framework combining a Quantum-Inspired Evolutionary Algorithm (QEA) for portfolio optimization and a Quantum Neural Network (QNN) for performance prediction. Empirical results from simulations demonstrate that this approach achieves a lower Mean Absolute Percentage Error (5.45%) compared to traditional methods (5.68%), indicating improved forecast accuracy. The authors claim that quantum-inspired techniques offer advantages in exploring solution spaces and modeling financial data, though all results are derived from classical simulations rather than real quantum hardware.
 
 **Performance claims:**
-- MAPE of 5.45% for the proposed integrated framework vs. 5.68% for traditional methods
-- Improved risk-adjusted returns and portfolio diversity compared to conventional approaches
+- 5.45% MAPE for the proposed integrated framework vs. 5.68% for traditional methods
+- Improved predictive accuracy for portfolio returns across 10 test companies
+- Enhanced decision-making ability in portfolio management
 ## Quantum advantage claim
 **Classification:** speculative
 
-The paper claims potential quantum advantages (e.g., exponential speed-ups, improved learning capabilities) based on quantum-inspired algorithms, but all results are from classical simulations. No empirical validation on real quantum hardware is provided, and the advantages remain theoretical.
+The paper claims theoretical advantages of quantum-inspired algorithms (QEA and QNN) in portfolio optimization and prediction, but all results are from classical simulations. No empirical demonstration of quantum advantage on real quantum hardware is provided. The claimed advantages remain speculative and unvalidated in practical quantum computing environments.
 ## Limitations
-- Experiments conducted using Python simulation tools, not on actual quantum hardware [inferred]
-- No explicit mention of qubit count or hardware constraints, limiting practical applicability [inferred]
-- Results based on synthetic or limited dataset; real-world market data may yield different outcomes [inferred]
-- Mean Absolute Percentage Error (MAPE) improvement is marginal (5.45% vs. 5.68%), questioning practical significance [inferred]
-- Lack of detailed noise mitigation techniques for quantum-inspired algorithms [inferred]
-- No comparison with state-of-the-art classical machine learning or optimization methods [inferred]
-- Page-limit constraints of conference paper may have restricted detailed methodological or experimental reporting [inferred]
-- Assumptions about quantum computing principles (e.g., superposition, entanglement) may not translate directly to near-term quantum devices [inferred]
-- No discussion of scalability to larger portfolios or real-time market conditions [inferred]
-- Potential overfitting due to lack of cross-validation or out-of-sample testing details [inferred]
+- The paper uses quantum-inspired algorithms (QEA and QNN) rather than true quantum computing hardware, limiting the evaluation of real quantum advantages [inferred]
+- Experiments are conducted in a simulated environment (Python simulation tool framework), not on actual quantum hardware, which may not account for hardware noise or qubit constraints [inferred]
+- The dataset size and diversity are not explicitly mentioned, potentially limiting the generalizability of the results [inferred]
+- The comparison is made only against traditional methods (e.g., Markowitz MVO, CAPM), with no benchmarking against state-of-the-art classical machine learning or optimization techniques [inferred]
+- The Mean Absolute Percentage Error (MAPE) improvement (5.45% vs. 5.68%) is marginal, raising questions about the practical significance of the proposed framework [inferred]
+- The paper does not address scalability challenges for larger portfolios or real-world deployment constraints [inferred]
+- Page-limit constraints of the conference paper may have restricted detailed discussion of methodology, hyperparameters, or robustness checks [inferred]
+- The study relies on historical financial data, which may not fully capture future market dynamics or black swan events [inferred]
+- No discussion of quantum decoherence, error rates, or noise mitigation techniques, which are critical for real-world quantum applications [inferred]
+- The proposed framework's performance is not validated on real market data, only on synthetic or curated datasets [inferred]
 ## Open questions
-- How would the proposed QEA-QNN framework perform on real quantum hardware with noise and decoherence?
-- What is the scalability of the integrated approach for portfolios with more than 10 assets?
-- How does the framework handle non-stationary market conditions or black swan events?
-- What are the computational trade-offs between quantum-inspired algorithms and classical methods for portfolio optimization?
-- How robust is the QNN's performance prediction under varying market regimes (e.g., bull vs. bear markets)?
-- What is the impact of different normalization or outlier detection techniques on the framework's accuracy?
-- Can the framework be generalized to other financial optimization problems beyond mutual funds?
+- How would the QEA-QNN framework perform on actual quantum hardware with current qubit counts and noise levels?
+- What is the computational overhead of the proposed framework compared to classical methods for large-scale portfolio optimization?
+- How does the framework handle non-stationary market conditions or regime shifts?
+- What are the implications of quantum-inspired algorithms for regulatory compliance in financial services?
+- Can the framework be extended to multi-period or dynamic portfolio optimization?
+- What are the trade-offs between prediction accuracy and interpretability in the QNN model?
+- How sensitive is the framework to hyperparameter tuning, and what are the optimal configurations for different market conditions?
 
 **Future work:**
-- Test the integrated QEA-QNN framework on real quantum hardware
-- Extend the approach to larger portfolios and multi-period optimization
-- Incorporate noise mitigation techniques to improve robustness on near-term quantum devices
-- Compare performance with state-of-the-art classical machine learning and optimization methods
-- Explore hybrid quantum-classical approaches to leverage the strengths of both paradigms
-- Investigate the framework's adaptability to dynamic market conditions and real-time data
-- Apply the methodology to other financial domains (e.g., hedge funds, asset allocation)
-- Enhance the QNN's predictive capabilities with additional market indicators or alternative data sources
+- Test the proposed framework on real quantum hardware to evaluate its practical feasibility
+- Extend the study to include larger and more diverse datasets, including real-time market data
+- Benchmark the QEA-QNN framework against state-of-the-art classical machine learning and optimization techniques
+- Explore hybrid quantum-classical approaches to improve scalability and robustness
+- Investigate the impact of noise mitigation techniques on the framework's performance
+- Develop dynamic portfolio optimization strategies that adapt to changing market conditions
+- Assess the framework's performance in multi-period or multi-objective optimization scenarios
+- Evaluate the interpretability of the QNN model and its implications for regulatory compliance
+- Conduct sensitivity analyses to identify optimal hyperparameters for different financial use cases
 ## Key ideas
 - #idea:hybrid-approach — Integration of Quantum Neural Network (QNN) for performance forecasting and Quantum-Inspired Evolutionary Algorithm (QEA) for portfolio optimization in a feedback loop
 - #idea:near-term-feasibility — Quantum-inspired techniques (QNN and QEA) simulated classically show marginal improvement in MAPE (5.45% vs. 5.68%) over traditional methods

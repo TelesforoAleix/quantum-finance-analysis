@@ -16,6 +16,7 @@ auto_detected: true
 classification: ''
 contradiction_flags:
 - contradiction:scalability
+- contradiction:classical-vs-quantum
 doi: 10.1103/PhysRevResearch.3.013167
 evidence_type: ''
 idea_tags:
@@ -26,28 +27,27 @@ journal_or_venue: Physical Review Research
 methodology_tags:
 - quantum-simulation
 - quantum-ML
+- HHL
 - variational
-- classical-simulation
 paper_type: ''
 quantum_advantage_claim: speculative
 related_papers:
-- 2020_Rebentrost_QuantumPrincipalComponentAnalysis
-- 2019_Lloyd_QuantumAlgorithmsFinance
+- 2021_Abbas_QuantumMachineLearningFinance
 relevance_phase1: high
 relevance_phase3: high
 source_type: peer-reviewed-empirical
 source_type_confidence: high
-step1_date: '2026-03-18T22:46:19.290149'
+step1_date: '2026-03-19T12:05:56.266127'
 step1_model: Mistral-Large-3
-step2_date: '2026-03-18T22:46:23.026550'
+step2_date: '2026-03-19T12:07:29.128897'
 step2_model: Mistral-Large-3
-step3_date: '2026-03-18T22:46:28.941830'
+step3_date: '2026-03-19T12:07:47.188336'
 step3_model: Mistral-Large-3
-step4_date: '2026-03-18T22:47:12.253612'
+step4_date: '2026-03-19T12:08:57.804875'
 step4_model: Mistral-Large-3
-step5_date: '2026-03-18T22:47:21.261793'
+step5_date: '2026-03-19T12:09:20.506196'
 step5_model: Mistral-Large-3
-step6_date: '2026-03-18T22:47:28.680696'
+step6_date: '2026-03-19T12:09:31.240097'
 step6_model: Mistral-Large-3
 steps_completed:
 - 1
@@ -61,12 +61,13 @@ tags:
 - topic/asset-pricing
 - method/quantum-simulation
 - method/quantum-ML
+- method/HHL
 - method/variational
-- method/classical-simulation
 - idea/quantum-advantage
 - idea/near-term-feasibility
 - idea/hybrid-approach
 - contradiction/scalability
+- contradiction/classical-vs-quantum
 title: Toward pricing financial derivatives with an IBM quantum computer
 topic_tags:
 - derivatives-pricing
@@ -76,66 +77,63 @@ zotero_key: ''
 ---
 
 ## Abstract summary
-This paper explores the application of quantum computing to price financial derivatives, specifically focusing on the Heath-Jarrow-Morton (HJM) framework for modeling interest rate dynamics. The authors use quantum principal component analysis (qPCA) to reduce the number of noisy factors in the HJM model, improving computational efficiency. The study demonstrates the approach experimentally on an IBM quantum computer, marking an early step toward scalable quantum algorithms for financial simulations.
+This paper explores the application of quantum computing to financial derivative pricing, specifically using the Heath-Jarrow-Morton (HJM) framework for interest rate modeling. The authors implement a quantum principal component analysis (qPCA) algorithm on IBM’s five-qubit quantum computer to reduce the number of noisy factors in the HJM model, improving computational efficiency. The study demonstrates experimental results for small-scale covariance matrices derived from historical financial data, marking a step toward practical quantum advantage in financial simulations.
 ## Methodology
-The paper presents an empirical study employing quantum principal component analysis (qPCA) to reduce the number of noisy factors in the Heath-Jarrow-Morton (HJM) model for pricing interest-rate financial derivatives. The research involves a hybrid classical-quantum approach where the qPCA algorithm is implemented on the IBMQX2 superconducting quantum processor. The methodology includes estimating the principal components of cross-correlation matrices derived from historical financial data for time-maturing forward rates. The study first addresses a 2×2 covariance matrix and then extends to a 4×4 matrix, using iterative quantum circuits to approximate the largest eigenvalues and corresponding eigenvectors. The algorithm is tested both on a quantum simulator (QISKIT) and the real IBM quantum processor, with results compared to classical spectral decomposition.
+The paper presents an empirical study applying quantum principal component analysis (qPCA) to reduce the number of noisy factors in the Heath-Jarrow-Morton (HJM) model for pricing interest-rate financial derivatives. The research employs a hybrid classical-quantum approach, where the qPCA algorithm is used to estimate the principal components of cross-correlation matrices derived from historical financial data for time-maturing forward rates. The study implements the algorithm on both a quantum simulator and the IBMQX2 quantum processor, focusing on 2×2 and 3×3 covariance matrices. The methodology involves iterative refinement of eigenvector estimations, followed by quantum phase estimation to improve eigenvalue accuracy. Error mitigation techniques are discussed to address decoherence and gate errors in the quantum hardware.
 
 **Algorithms used:** Quantum Principal Component Analysis (qPCA), Quantum Phase Estimation
-**Frameworks:** QISKIT
+**Frameworks:** Qiskit
 
-**Experimental setup:** The experiments were conducted using the IBMQX2 five-qubit superconducting quantum processor and the QISKIT simulator. The quantum circuits were designed to encode the covariance matrices of financial data into quantum states, with controlled unitary operations applied to perform the qPCA. The setup involved 3 to 5 qubits for eigenvalue and eigenvector estimation, with iterative refinements to improve accuracy. Measurements were performed in multiple bases (z, x, y, and arbitrary directions) to mitigate systematic errors and enhance fidelity.
+**Experimental setup:** Experiments were conducted using the IBMQX2 five-qubit superconducting quantum processor and the Qiskit simulator. The quantum circuits were designed to encode covariance matrices into quantum states, with 2×2 and 4×4 matrices tested. The 2×2 case used three qubits (two for eigenvalue approximation, one for eigenvector), while the 4×4 case used three qubits (one for eigenvalue, two for eigenvector). Each iteration of the algorithm was averaged over 8,192 realizations to account for statistical errors. Measurements were performed in multiple bases (z, x, y, and arbitrary directions) to compute relative phases and mitigate systematic errors.
 
-**Dataset:** Historical data for 1-, 3-, and 6-month forward rates, specifically using the covariance matrix from Ref. [36] (Fig. 19.3). The 2×2 and 3×3 submatrices of this covariance matrix were used for the experiments.
+**Dataset:** Historical financial data for 1-, 3-, and 6-month time-maturing forward rates, used to construct 2×2 and 3×3 cross-correlation matrices. Specifically, the covariance matrix from Ref. [36] (Fig. 19.3) was employed, with values such as: σ3 = [[0.000189, 0.000097, 0.000091], [0.000097, 0.000106, 0.000101], [0.000091, 0.000101, 0.000126]].
 ## Findings
-- [supported] The quantum principal component analysis (qPCA) algorithm was implemented on the IBMQX2 quantum computer to reduce the number of noisy factors in the Heath-Jarrow-Morton (HJM) model for pricing interest-rate financial derivatives.
-- [supported] For a 2 × 2 cross-correlation matrix, the qPCA algorithm achieved an estimated eigenvector |umax⟩ = [(0.87 ± 0.09) - i(0.10 ± 0.09)]|0⟩ + [(0.47 ± 0.09) + i(0.10 ± 0.09)]|1⟩, with an eigenvalue estimation of 0.875 (3-bit precision) and a fidelity of 0.965 compared to the exact eigenvector.
-- [supported] The 2 × 2 matrix results were obtained from both the QISKIT simulator and the real IBMQX2 quantum processor, with the simulator yielding near-ideal results.
-- [supported] For the 4 × 4 matrix, the algorithm's depth exceeded the capabilities of the IBMQX2 processor, leading to decoherence and errors that prevented meaningful results without error mitigation techniques.
-- [supported] The study demonstrates the first experimental implementation of qPCA on a quantum computer for financial applications, specifically for interest-rate derivative pricing.
-- [speculative] The authors suggest that practical applications of quantum computers in finance will be achievable in the near future, even with current noisy intermediate-scale quantum (NISQ) technology.
-- [speculative] The paper posits that reducing the number of noisy factors in the HJM model via qPCA could enable the construction of a general quantum Monte Carlo algorithm for financial simulations.
-- [disputed] The claim of achieving useful results for the 4 × 4 matrix is disputed due to the high error rates (over 100%) observed, which render the results meaningless without error mitigation.
+- [supported] Quantum Principal Component Analysis (qPCA) was experimentally implemented on the IBMQX2 5-qubit quantum computer to reduce the number of noisy factors in the Heath-Jarrow-Morton (HJM) model for pricing interest-rate derivatives, using 2×2 and 3×3 cross-correlation matrices based on historical data.
+- [supported] For the 2×2 covariance matrix, the qPCA algorithm achieved an estimated eigenvector |umax⟩ = [(0.87 ± 0.9) - i(0.10 ± 0.9)]|0⟩ + [(0.47 ± 0.9) + i(0.10 ± 0.9)]|1⟩, with a fidelity of 0.965 compared to the ideal result from the QISKIT simulator.
+- [supported] The 3-bit quantum phase estimation for the 2×2 matrix yielded an eigenvalue approximation of 0.875 (binary 0.111), closely matching the exact eigenvalue of 0.8576.
+- [supported] Results for the 2×2 matrix were obtained on both the QISKIT simulator and real IBMQX2 hardware, with simulator results showing near-ideal performance and hardware results limited by decoherence and gate errors.
+- [supported] For the 4×4 matrix, the qPCA algorithm's depth exceeded the capabilities of the IBMQX2 processor, leading to decoherence and errors exceeding 100%, rendering results meaningless without error mitigation techniques.
+- [speculative] The authors suggest that practical applications of quantum computing in finance, including full simulation of the HJM model, will be achievable in the near future with improvements in quantum hardware.
+- [speculative] Quantum advantage in financial modeling may emerge from the ability to handle larger covariance matrices and more noisy factors than classical methods, though this remains unproven on current NISQ devices.
 
-**Results summary:** The paper presents an empirical implementation of quantum principal component analysis (qPCA) on the IBMQX2 quantum computer to reduce the dimensionality of the Heath-Jarrow-Morton (HJM) model for pricing interest-rate financial derivatives. The study successfully demonstrates the algorithm on a 2 × 2 cross-correlation matrix, achieving high fidelity (0.965) for the estimated eigenvector and eigenvalue. However, the 4 × 4 matrix implementation faced significant challenges due to the depth of the quantum circuit, leading to decoherence and high error rates on the real hardware. While the QISKIT simulator showed promise for larger matrices, the current NISQ hardware limitations prevent meaningful results without error mitigation techniques. The work marks a step toward practical quantum computing applications in finance but highlights the need for improved hardware or error correction methods.
+**Results summary:** The paper demonstrates the first experimental implementation of quantum computing for financial derivative pricing, specifically using qPCA to reduce the dimensionality of the HJM model on the IBMQX2 quantum processor. For a 2×2 covariance matrix, the algorithm successfully estimated the principal components with high fidelity (0.965) on the simulator and reasonable accuracy on real hardware, despite noise and decoherence. However, the 4×4 matrix case proved too complex for the current hardware, highlighting the limitations of NISQ devices. The results suggest that quantum computing could enhance financial modeling by enabling more accurate simulations with reduced computational trade-offs, though practical quantum advantage remains speculative at this stage.
 
 **Performance claims:**
-- 0.965 fidelity for the estimated eigenvector of the 2 × 2 matrix compared to the exact eigenvector
-- 0.875 eigenvalue estimation (3-bit precision) for the 2 × 2 matrix
-- 8% error per two-qubit gate assumed for error estimation
-- Over 100% estimated error for the 4 × 4 matrix coefficients due to the high number of entangling gates
+- Fidelity of 0.965 between the estimated and ideal eigenvector for the 2×2 matrix (simulator results)
+- Eigenvalue estimation of 0.875 (3-bit precision) for the 2×2 matrix, compared to the exact value of 0.8576
+- Error rate of ±0.9 for the 2×2 matrix eigenvector coefficients, based on two-qubit gate and measurement fidelity
+- Over 100% estimated error for the 4×4 matrix due to circuit depth and hardware limitations
 ## Quantum advantage claim
 **Classification:** speculative
 
-The paper claims that quantum computers could provide a significant computational advantage for financial simulations by reducing the number of noisy factors in the HJM model. However, this advantage is speculative as it is based on simulations and small-scale experiments on real hardware (IBMQX2), which are limited by noise and decoherence. No empirical demonstration of quantum advantage over classical methods is provided.
+The paper claims that quantum computing could provide a computational advantage for financial modeling by enabling more accurate simulations of the HJM model with reduced trade-offs between noisy factors and computational time. However, this advantage is not demonstrated on real hardware for practical problem sizes, and the results are limited to small-scale simulations (2×2 and 4×4 matrices) with significant errors for the larger case.
 ## Limitations
-- Experiments conducted on a small-scale quantum processor (IBMQX2 with 5 qubits), limiting the size of the covariance matrices (2×2 and 3×3) that could be analyzed
-- High error rates in quantum gates (estimated 8% per two-qubit gate) and decoherence effects, particularly evident in the 4×4 matrix case, leading to unreliable results
-- Algorithm depth and gate count constraints due to NISQ-era hardware limitations, preventing meaningful results for larger matrices
-- Use of synthetic or simplified covariance matrices based on historical data, which may not fully represent real-world financial market complexities
-- Lack of noise mitigation techniques applied, which could improve the fidelity of results on real hardware [inferred]
-- No comparison with classical PCA or other state-of-the-art classical methods to benchmark quantum advantage [inferred]
-- Limited reproducibility due to hardware noise and variability in quantum processor performance over time [inferred]
-- Assumption that the covariance matrix can be well-approximated by a low-rank matrix, which may not hold for all financial datasets [inferred]
-- Statistical errors in measurements due to finite sampling (8192 realizations per iteration), which may affect the accuracy of eigenvector and eigenvalue estimations
-- Dependence on hybrid classical-quantum approaches without full end-to-end quantum simulation of the HJM model
+- Experiments limited to 5 qubits (IBMQX2 quantum computer), restricting the problem size to 2×2 and 3×3 cross-correlation matrices
+- Hardware noise and decoherence significantly affect results, especially for deeper circuits (e.g., 4×4 matrix case)
+- Error rates of ~8% per two-qubit gate accumulate, leading to high total error (e.g., >100% for 4×4 matrix)
+- Only tested on historical data for 1-, 3-, and 6-month forward rates; generalizability to other financial instruments unclear
+- No noise mitigation techniques applied, limiting accuracy on real quantum hardware
+- Algorithm depth exceeds current NISQ device capabilities for larger matrices (e.g., 4×4 case)
+- Reproducibility constrained by limited access to IBMQX2 and lack of detailed error characterization
+- [inferred] No comparison with classical PCA performance or state-of-the-art classical solvers for financial derivative pricing
+- [inferred] Limited exploration of alternative quantum algorithms for principal component analysis in finance
 ## Open questions
-- How does the quantum PCA algorithm perform with larger covariance matrices (e.g., 10×10 or higher) that are more representative of real-world financial datasets?
-- What is the impact of different noise profiles (e.g., depolarizing, amplitude damping) on the accuracy of the qPCA algorithm?
-- Can error mitigation techniques (e.g., Richardson extrapolation, readout error mitigation) sufficiently improve results for larger matrices on NISQ devices?
-- How does the quantum algorithm compare to classical PCA in terms of computational time and accuracy for financial applications?
-- What are the minimum hardware requirements (qubit count, gate fidelity, coherence times) to achieve a practical quantum advantage for financial derivative pricing?
-- How sensitive is the algorithm to the choice of initial random states or measurement bases?
-- Can the algorithm be adapted to handle non-stationary financial data where covariance matrices evolve over time?
+- How does the quantum PCA algorithm scale to larger matrices (e.g., 10×10 or higher) required for practical financial applications?
+- What is the impact of different noise profiles (e.g., amplitude damping, phase flip) on solution quality?
+- Can error mitigation techniques (e.g., Richardson extrapolation, readout error mitigation) sufficiently improve results for larger matrices?
+- How does the quantum algorithm perform under real-time market data conditions compared to synthetic/historical data?
+- What is the minimum qubit count and gate fidelity required to achieve quantum advantage for financial derivative pricing?
+- How does the quantum PCA approach compare to hybrid quantum-classical methods for dimensionality reduction in finance?
 
 **Future work:**
-- Extend the algorithm to larger covariance matrices using more advanced quantum processors (e.g., IBM Eagle or Osprey)
-- Incorporate error mitigation techniques to improve the fidelity of results on NISQ devices
-- Benchmark the quantum PCA algorithm against classical PCA and other dimensionality reduction methods for financial datasets
-- Develop a full quantum simulation of the Heath-Jarrow-Morton (HJM) model for pricing interest-rate derivatives
-- Explore hybrid quantum-classical approaches to integrate the qPCA algorithm into existing financial modeling frameworks
-- Investigate the use of quantum algorithms for other financial applications, such as risk analysis or portfolio optimization
-- Test the algorithm on real-world financial datasets to validate its practical applicability
-- Optimize the quantum circuit to reduce gate count and depth, improving performance on NISQ devices
+- Test on larger quantum processors (e.g., IBM Eagle or Osprey) to evaluate scalability
+- Implement error mitigation techniques to improve accuracy for larger matrices
+- Extend the algorithm to full Heath-Jarrow-Morton model simulation for multi-factor interest rate derivatives
+- Compare quantum PCA performance with classical methods for real-world financial datasets
+- Explore alternative quantum algorithms (e.g., variational quantum eigensolvers) for principal component analysis in finance
+- Develop hybrid quantum-classical approaches to leverage near-term quantum devices for financial modeling
+- Investigate the impact of different volatility factorizations on pricing accuracy
+- Apply the method to other financial instruments (e.g., swaptions, caps/floors) beyond forward rates
 ## Key ideas
 - #idea:quantum-advantage — qPCA demonstrates potential for reducing noisy factors in the HJM model for interest-rate derivatives pricing, with high fidelity (0.965) for small matrices on real quantum hardware
 - #idea:near-term-feasibility — Paper suggests NISQ-era applicability for financial simulations despite current hardware limitations
@@ -145,7 +143,7 @@ The paper claims that quantum computers could provide a significant computationa
 - #limitation:no-empirical-validation — No direct comparison with classical PCA or benchmarking of quantum advantage
 ## Contradictions
 - #contradiction:scalability — Paper claims near-term feasibility for financial applications but fails to produce meaningful results for 4×4 matrices due to hardware limitations, contradicting its own speculative advantage claims
-- #contradiction:classical-vs-quantum — [Inferred] Lack of comparison with classical PCA leaves quantum advantage claims unsubstantiated, aligning with broader critiques in [2021_Abbas_QuantumMachineLearningFinance] about premature advantage claims in NISQ-era finance papers
+- #contradiction:classical-vs-quantum — Lack of comparison with classical PCA leaves quantum advantage claims unsubstantiated, aligning with broader critiques in [2021_Abbas_QuantumMachineLearningFinance] about premature advantage claims in NISQ-era finance papers
 ## Notable quotes
 <!-- Researcher-added — verbatim quotes with page references -->
 

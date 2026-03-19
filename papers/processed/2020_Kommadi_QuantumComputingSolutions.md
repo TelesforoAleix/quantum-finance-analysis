@@ -18,31 +18,30 @@ journal_or_venue: Apress
 methodology_tags:
 - QAOA
 - grover
+- quantum-annealing
 - quantum-ML
 - quantum-SVM
-- variational
 - quantum-walk
-- quantum-simulation
+- variational
 - classical-simulation
-- quantum-annealing
 paper_type: ''
 quantum_advantage_claim: speculative
 related_papers: []
-relevance_phase1: high
-relevance_phase3: medium
-source_type: other
-source_type_confidence: high
-step1_date: '2026-03-18T22:15:41.815553'
+relevance_phase1: medium
+relevance_phase3: not-yet-assessed
+source_type: technical-report
+source_type_confidence: medium
+step1_date: '2026-03-19T11:49:10.963640'
 step1_model: Mistral-Large-3
-step2_date: '2026-03-18T22:15:43.850060'
+step2_date: '2026-03-19T11:49:16.998169'
 step2_model: Mistral-Large-3
-step3_date: '2026-03-18T22:16:46.932299'
+step3_date: '2026-03-19T11:49:40.803623'
 step3_model: Mistral-Large-3
-step4_date: '2026-03-18T22:16:56.253179'
+step4_date: '2026-03-19T11:49:52.104175'
 step4_model: Mistral-Large-3
-step5_date: '2026-03-18T22:17:13.964195'
+step5_date: '2026-03-19T11:51:02.164083'
 step5_model: Mistral-Large-3
-step6_date: '2026-03-18T22:17:19.188107'
+step6_date: '2026-03-19T11:51:12.405037'
 step6_model: Mistral-Large-3
 steps_completed:
 - 1
@@ -54,23 +53,19 @@ steps_completed:
 tags:
 - topic/portfolio-optimisation
 - topic/risk-modelling
-- topic/derivatives-pricing
 - topic/fraud-detection
 - topic/credit-scoring
-- topic/high-frequency-trading
-- topic/asset-pricing
 - topic/quantum-cryptography
+- topic/high-frequency-trading
 - topic/regulatory-compliance
-- topic/market-simulation
 - method/QAOA
 - method/grover
+- method/quantum-annealing
 - method/quantum-ML
 - method/quantum-SVM
-- method/variational
 - method/quantum-walk
-- method/quantum-simulation
+- method/variational
 - method/classical-simulation
-- method/quantum-annealing
 - idea/quantum-advantage
 - idea/near-term-feasibility
 - idea/hybrid-approach
@@ -79,78 +74,79 @@ title: 'Quantum Computing Solutions: Solving Real-World Problems Using Quantum C
 topic_tags:
 - portfolio-optimisation
 - risk-modelling
-- derivatives-pricing
 - fraud-detection
 - credit-scoring
-- high-frequency-trading
-- asset-pricing
 - quantum-cryptography
+- high-frequency-trading
 - regulatory-compliance
-- market-simulation
 year: 2020
 zotero_key: ''
 ---
 
 ## Abstract summary
-This book provides an overview of quantum computing applications for solving practical problems across various domains, including finance. It introduces quantum algorithms, mathematical foundations, and quantum subsystems, aiming to bridge theoretical concepts with real-world implementation. The work targets readers seeking to understand how quantum computing can address complex challenges in industries like cryptography, optimization, and cybersecurity.
+This technical report provides a comprehensive overview of quantum computing applications in real-world problem-solving, particularly in financial services and other industries. It explores quantum algorithms for optimization, cryptography, and cybersecurity, demonstrating their potential to enhance computational efficiency and security. The report includes theoretical foundations, practical implementations, and case studies to illustrate how quantum computing can address complex challenges in various domains.
 ## Methodology
-The book provides a comprehensive overview of quantum computing concepts, algorithms, and their applications to real-world problems, including financial services. It adopts a pedagogical approach, introducing foundational mathematical concepts (e.g., quantum operators, vectors, matrices, tensors) before progressing to quantum subsystems, information processing frameworks, and specific quantum algorithms. The methodology is largely theoretical and instructional, with practical code samples demonstrating implementations of quantum algorithms (e.g., QAOA, Grover’s, Shor’s, VQE) and quantum machine learning techniques (e.g., quantum neural networks, classifiers, clustering). The book discusses quantum simulators, hardware platforms, and optimization algorithms, often illustrating concepts with pseudocode or executable examples. While it covers financial applications like optimization and cryptography, the focus is on explaining quantum computing principles rather than empirical validation or dataset-driven experimentation.
+This technical report provides a comprehensive overview of quantum computing solutions, focusing on the theoretical foundations, algorithms, and practical applications in various domains, including financial services. The report systematically introduces quantum computing concepts, starting with the mathematical foundations such as quantum operators, sets, vectors, matrices, and tensors. It then delves into quantum subsystems, properties, and information processing frameworks, including quantum circuits, communication, noise, and error correction. The report extensively covers quantum algorithms, optimization techniques, neural networks, classification, data processing, and AI algorithms, with a strong emphasis on practical implementation through code samples. The methodology involves a detailed explanation of quantum algorithms and their applications in real-world problems, supported by illustrative code examples and execution outputs. The report also discusses quantum simulators, hardware platforms, and commercially available quantum computers, providing technical specifications and standards for quantum computing solutions.
 
-**Algorithms used:** QAOA, Deutsch–Jozsa Algorithm, Simon’s Algorithm, Shor’s Algorithm, Grover’s Algorithm, Quantum Least Squares Fitting, Quantum Sort, Quantum Eigen Solvers, Quantum Semidefinite Programming, Quantum ANN, Quantum GAN, Variational Quantum Classifier, Quantum Sparse Support Vector Machines, Quantum K-Means, Quantum K-Medians, Quantum Clustering, Quantum Walks
+**Algorithms used:** Deutsch–Jozsa Algorithm, Simon’s Algorithm, Shor’s Algorithm, Grover’s Algorithm, QAOA (Quantum Approximate Optimization Algorithm), Quantum Least Squares Fitting, Quantum Sort, Quantum Eigen Solvers, Quantum Semidefinite Programming, Quantum K-Means, Quantum K-Medians, Quantum Walks, Quantum GAN (Generative Adversarial Network), Variational Quantum Classifier, Quantum Sparse Support Vector Machines
+**Frameworks:** Quantum Assembly Programming, Full-Stack Universal Quantum Simulator
 
-**Experimental setup:** The book includes code samples and commands for executing quantum algorithms, primarily using simulators rather than real quantum processing units (QPUs). Specific hardware platforms (e.g., commercially available quantum computers) are mentioned, but experiments are conducted in simulated environments. The setup appears to rely on generic quantum programming languages and instruction sets, though no specific frameworks (e.g., Qiskit, PennyLane) are explicitly named in the provided text.
+**Experimental setup:** The report includes code samples executed in a simulated quantum computing environment. Specific hardware platforms mentioned include commercially available quantum computers, though the primary focus is on simulations and theoretical execution using quantum programming languages and instruction sets. The experimental setup involves running quantum algorithms on simulators to demonstrate their functionality and outputs.
 ## Findings
-- [speculative] Quantum computing can solve real-world problems in cryptography, optimization, and cybersecurity more efficiently than classical computing
-- [speculative] Quantum algorithms such as QAOA, Grover’s, and Shor’s offer theoretical speedups for optimization, search, and factorization problems, respectively
-- [speculative] Quantum neural networks and quantum GANs may outperform classical counterparts in machine learning tasks, though no empirical validation is provided
-- [speculative] Quantum classification algorithms (e.g., variational quantum classifiers, quantum SVMs) could improve accuracy and speed for large-scale data processing
-- [speculative] Quantum data processing techniques, including quantum K-means and quantum clustering, may enable faster and more scalable clustering than classical methods
-- [speculative] Quantum walks and quantum deep learning are proposed as advanced tools for AI, with potential advantages in probabilistic modeling and parallelism
-- [speculative] Quantum simulators and full-stack quantum programming frameworks (e.g., quantum assembly) are presented as viable tools for developing quantum algorithms, though no performance benchmarks are provided
-- [speculative] Quantum advantage in financial services (e.g., portfolio optimization, risk analysis) is suggested but not demonstrated empirically or on real hardware
+- [speculative] Quantum computing can be applied to real-world problems in financial services, including portfolio optimization, fraud detection, and risk assessment
+- [speculative] Quantum algorithms may offer computational advantages for large-scale optimization problems, such as supply chain and asset management
+- [speculative] Quantum cryptography and quantum key distribution could provide hack-resistant security solutions for financial transactions
+- [speculative] Quantum machine learning applications in drug discovery, protein folding, and material science could accelerate research and development
+- [speculative] Quantum annealing and quantum neural networks may outperform classical approaches in solving combinatorial optimization and classification problems
+- [speculative] Quantum advantage in financial services is projected to emerge with scalable quantum hardware (e.g., 50+ qubits), though current implementations rely on simulations
+- [supported] The book provides code samples and simulations for quantum algorithms (e.g., QAOA, Grover’s, Shor’s) but does not demonstrate results on real quantum hardware
+- [speculative] Quantum computing could enable real-time fraud detection and risk optimization in banking, though empirical validation is lacking
+- [speculative] Quantum solutions infrastructure will require high-performance computing (e.g., GPU-level power) and cloud-based quantum simulators for scalability
 
-**Results summary:** The book provides a broad overview of quantum computing applications, focusing on theoretical frameworks and algorithmic implementations for domains like optimization, cryptography, machine learning, and data processing. It introduces quantum algorithms (e.g., QAOA, Grover’s, Shor’s) and quantum machine learning techniques (e.g., quantum neural networks, quantum GANs) with code samples for simulation. However, all claims are speculative, as the text lacks empirical validation, real hardware results, or comparative benchmarks against classical methods. The work is primarily instructional, demonstrating quantum concepts through simulations rather than proving quantum advantage.
+**Results summary:** The technical report presents a broad overview of quantum computing applications in financial services and other industries, emphasizing theoretical potential and simulated implementations. It highlights use cases such as portfolio optimization, fraud detection, and cryptography, but all claims are speculative due to the absence of empirical validation on real quantum hardware. The report includes code samples for quantum algorithms (e.g., QAOA, quantum neural networks) and discusses quantum advantage as a future possibility contingent on hardware advancements.
 ## Quantum advantage claim
 **Classification:** speculative
 
-The book suggests theoretical quantum advantages across multiple domains (e.g., optimization, cryptography, AI) but provides no empirical evidence or real hardware demonstrations. All claims are based on simulations and algorithmic proposals, with no quantified speedups or accuracy improvements over classical methods.
+The report suggests theoretical advantages for quantum algorithms in optimization, cryptography, and machine learning but does not provide empirical evidence or real hardware demonstrations. Claims are based on simulations and projections for future quantum hardware scalability.
 ## Limitations
-- [inferred] The book is published in 2020, which may limit the recency of quantum computing advancements discussed, particularly in hardware and algorithmic developments
-- [inferred] Focuses primarily on theoretical and simulated quantum computing solutions without empirical validation on real quantum hardware for financial services use cases
-- [inferred] Lack of detailed discussion on noise mitigation techniques and error correction methods, which are critical for practical quantum computing in financial applications
-- [inferred] No explicit comparison with classical state-of-the-art methods for financial problems (e.g., portfolio optimization, risk analysis), limiting assessment of quantum advantage
-- [inferred] Limited discussion on scalability constraints of quantum algorithms for large-scale financial datasets or real-world market conditions
-- [inferred] Heavy reliance on code samples and simulations without addressing reproducibility challenges or variability in quantum hardware performance
-- [inferred] Potential oversimplification of financial problem complexities (e.g., multi-period optimization, dynamic market conditions) in quantum algorithm demonstrations
-- [inferred] No peer-review process, which may affect the rigor and objectivity of the technical claims and solutions proposed
-- Explicitly mentions 'Limitations of Quantum Computing' (Chapter 4) but does not provide a detailed breakdown of these limitations in the context of financial services [inferred]
-- [inferred] Proprietary or vendor-specific quantum computing platforms may not be critically evaluated for bias or generalizability
+- Scope constrained to theoretical and introductory explanations of quantum computing concepts without deep empirical validation in financial services [inferred]
+- Published in 2020, which may limit the currency of data and advancements in quantum hardware and algorithms [inferred]
+- Lacks detailed case studies or empirical results from real-world financial applications (e.g., portfolio optimization, fraud detection) [inferred]
+- No explicit discussion of hardware noise or qubit count constraints, which are critical for practical deployment in financial services [inferred]
+- Institutional mandate limitations as the report is authored by an individual rather than a research institution or industry consortium [inferred]
+- Code samples provided are basic and do not address scalability or production-level challenges [inferred]
+- No comparison with classical algorithms or benchmarks to demonstrate quantum advantage in financial use cases [inferred]
+- Limited discussion on error correction and noise mitigation techniques, which are essential for reliable quantum computing [inferred]
+- Focuses broadly on quantum computing applications without a dedicated emphasis on financial services, leading to gaps in domain-specific insights [inferred]
+- Lack of peer review or validation from industry experts, which may affect the reliability of claims [inferred]
 ## Open questions
-- How do quantum algorithms like QAOA or quantum neural networks perform under real-world financial market noise and decoherence?
-- What is the minimum qubit count and coherence time required for quantum advantage in financial optimization problems (e.g., portfolio management, fraud detection)?
-- How can quantum error correction be effectively integrated into financial quantum algorithms without introducing prohibitive overhead?
-- What are the trade-offs between quantum and classical hybrid approaches for financial modeling, and under what conditions does quantum outperform classical?
-- How do quantum machine learning models (e.g., quantum GANs, quantum classifiers) generalize to unseen financial data compared to classical counterparts?
-- What are the computational and practical limits of quantum algorithms for high-frequency trading or real-time risk assessment?
-- How can quantum algorithms be adapted to handle non-convex or highly constrained financial optimization problems?
-- What are the implications of quantum computing for regulatory compliance and auditability in financial services?
+- How do quantum algorithms like QAOA or Grover's perform in real-world financial datasets compared to classical counterparts?
+- What are the specific hardware requirements (e.g., qubit count, coherence time) for deploying quantum solutions in financial services?
+- How can quantum noise and decoherence be mitigated in financial applications where precision is critical?
+- What are the trade-offs between quantum simulators and actual quantum hardware for financial use cases?
+- How scalable are the proposed quantum solutions for large-scale financial problems (e.g., portfolio optimization with thousands of assets)?
+- What are the regulatory and compliance challenges for adopting quantum computing in financial services?
+- How can quantum machine learning models be integrated with existing classical infrastructure in financial institutions?
 
 **Future work:**
-- Empirical validation of quantum algorithms on real quantum hardware (e.g., IBM, Google, or Rigetti processors) for financial use cases
-- Development of noise-resilient quantum algorithms tailored for financial applications, including error mitigation techniques
-- Benchmarking quantum algorithms against classical state-of-the-art methods for specific financial problems (e.g., portfolio optimization, option pricing)
-- Exploration of hybrid quantum-classical approaches to address scalability and practical deployment challenges in financial services
-- Extension of quantum machine learning models to handle larger datasets and more complex financial scenarios (e.g., multi-asset portfolios, dynamic risk models)
-- Investigation of quantum algorithms for real-time financial decision-making, such as high-frequency trading or fraud detection
-- Development of quantum-ready financial datasets and simulation environments to facilitate reproducibility and comparison of results
-- Collaboration with financial institutions to test quantum solutions in production-like environments and assess their economic viability
+- Empirical validation of quantum algorithms on real-world financial datasets
+- Development of hybrid quantum-classical solutions to address current hardware limitations
+- Exploration of quantum error correction techniques tailored for financial applications
+- Benchmarking quantum algorithms against state-of-the-art classical solvers in financial use cases
+- Investigation of quantum-resistant cryptography for financial data security
+- Scalability testing of quantum solutions for large-scale financial problems
+- Integration of quantum computing with existing financial IT infrastructure and workflows
+- Development of quantum machine learning models for fraud detection and risk assessment
+- Longitudinal studies to assess the long-term viability of quantum solutions in financial services
 ## Key ideas
 - #idea:quantum-advantage — Theoretical speedups for optimization, search, and factorization problems using QAOA, Grover’s, and Shor’s algorithms are proposed for financial applications like portfolio optimization and cryptography
 - #idea:quantum-advantage — Quantum machine learning techniques (e.g., quantum neural networks, quantum GANs, quantum classifiers) are speculated to outperform classical counterparts in tasks like fraud detection and credit scoring
 - #idea:near-term-feasibility — Quantum simulators and full-stack quantum programming frameworks are presented as viable tools for developing quantum algorithms, though real hardware validation is lacking
-- #idea:hybrid-approach — The book suggests hybrid quantum-classical approaches as a practical path for near-term quantum computing in finance, though details on implementation are limited
+- #idea:hybrid-approach — Hybrid quantum-classical approaches are suggested as a practical path for near-term quantum computing in finance, though implementation details are limited
 - #limitation:no-empirical-validation — All claims about quantum advantage in financial services are speculative and lack empirical validation or real hardware demonstrations
 - #limitation:simulation-only — Results and demonstrations are based on classical simulations rather than real quantum processing units (QPUs)
+- #limitation:noise — The report does not address hardware noise or qubit count constraints, which are critical for practical deployment in financial services
+- #limitation:data-encoding — The report lacks discussion on the cost and challenges of encoding classical financial data into quantum states
 ## Contradictions
 <!-- Step 6 output — where this paper contradicts others -->
 

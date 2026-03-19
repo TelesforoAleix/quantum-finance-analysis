@@ -13,7 +13,7 @@ auto_detected: true
 classification: ''
 contradiction_flags:
 - contradiction:scalability
-doi: 10.1007/978-3-031-06788-4_8
+doi: 10.1007/978-3-031-06788-4
 evidence_type: ''
 idea_tags:
 - idea:quantum-advantage
@@ -22,26 +22,27 @@ idea_tags:
 journal_or_venue: ICAIS 2022, LNCS 13339
 methodology_tags:
 - HHL
-- quantum-simulation
 - classical-simulation
 paper_type: ''
-quantum_advantage_claim: speculative
-related_papers: []
+quantum_advantage_claim: theoretical
+related_papers:
+- 2009_Lloyd_QuantumAlgorithm
+- 2020_Aaronson_HHL_Limits
 relevance_phase1: high
 relevance_phase3: medium
-source_type: conference-paper
+source_type: peer-reviewed-empirical
 source_type_confidence: high
-step1_date: '2026-03-18T22:21:25.989424'
+step1_date: '2026-03-19T12:27:20.009902'
 step1_model: Mistral-Large-3
-step2_date: '2026-03-18T22:21:28.942153'
+step2_date: '2026-03-19T12:27:26.173997'
 step2_model: Mistral-Large-3
-step3_date: '2026-03-18T22:21:32.753234'
+step3_date: '2026-03-19T12:29:05.950436'
 step3_model: Mistral-Large-3
-step4_date: '2026-03-18T22:21:39.804156'
+step4_date: '2026-03-19T12:29:22.169279'
 step4_model: Mistral-Large-3
-step5_date: '2026-03-18T22:21:46.968815'
+step5_date: '2026-03-19T12:29:33.842552'
 step5_model: Mistral-Large-3
-step6_date: '2026-03-18T22:22:24.547987'
+step6_date: '2026-03-19T12:29:41.710808'
 step6_model: Mistral-Large-3
 steps_completed:
 - 1
@@ -53,7 +54,6 @@ steps_completed:
 tags:
 - topic/portfolio-optimisation
 - method/HHL
-- method/quantum-simulation
 - method/classical-simulation
 - idea/quantum-advantage
 - idea/near-term-feasibility
@@ -69,57 +69,60 @@ zotero_key: ''
 ## Abstract summary
 This paper explores the application of the quantum HHL algorithm to solve combinatorial optimization problems in financial portfolio management. The authors frame portfolio optimization as a quadratic programming problem with equality constraints and implement the HHL algorithm using IBM’s quantum computing platform. The study demonstrates the feasibility of quantum computing for accelerating such financial problems by comparing approximate quantum solutions with exact classical solutions.
 ## Methodology
-The paper presents an empirical study applying the quantum HHL algorithm to solve portfolio optimization problems in finance. The research formulates the portfolio optimization problem as a quadratic programming problem with equality constraints, which is then transformed into a linear system of equations. The HHL algorithm is employed to solve this linear system on a quantum computing platform. The methodology involves several stages: quantum phase estimation (QPE), controlled rotation, uncompute, and measurement. The study implements the algorithm using the Qiskit package on IBM's quantum computing platform. A specific financial model with three assets is constructed, and the HHL algorithm is applied to find an approximate solution to the portfolio allocation problem. The results are compared with the exact classical solution to evaluate the accuracy and feasibility of the quantum approach.
+The paper presents an empirical study on applying the quantum HHL algorithm to solve portfolio optimization problems in finance. The research formulates the portfolio optimization problem as a quadratic programming problem with equality constraints, which is then transformed into a linear system of equations. The HHL algorithm is employed to solve this linear system on a quantum computing platform. The methodology involves encoding the financial problem into a quantum state, applying the HHL algorithm (which includes quantum phase estimation, controlled rotation, and uncompute stages), and measuring the final quantum state to obtain an approximate solution. The solution is compared to the exact classical solution to evaluate the algorithm's accuracy and feasibility for financial combinatorial optimization problems.
 
 **Algorithms used:** HHL
 **Frameworks:** Qiskit
 
-**Experimental setup:** The experiments were conducted using IBM's quantum computing platform via the Qiskit package. The HHL algorithm circuit was constructed with 9 qubits, including qubits for phase estimation, controlled rotation, and ancilla bits. The phase estimation stage was set to estimate the probability of success at 0.9 with 2 estimation bits. The quantum simulator was used to execute the circuit and measure the output states.
+**Experimental setup:** The experiments were conducted using the Qiskit package on IBM’s quantum computing platform. The HHL algorithm was implemented with a 9-qubit circuit, where 3 qubits were used to represent the input vector. The phase estimation stage was configured to estimate eigenvalues with a success probability of 0.9 using 2 bits. The quantum simulator was used to execute the circuit and measure the output states.
 
-**Dataset:** A synthetic financial dataset was used, assuming three assets with average profit rates μT = (0.05, 0.1, 0.2), asset allocation vector ⃗PT = (1, 1, 1), and a correlation matrix  = [[1, 0.5, 0], [0.5, 1, 0.1], [0, 0.1, 1]]. The expected return was set to μ0 = 0.15, and the total investment cost was ξ = 1. The input vector for the linear system was expanded to 8 dimensions to fit the qubit requirements.
+**Dataset:** A synthetic financial dataset was used to model a portfolio optimization problem with 3 assets. The average profit rates for the assets were μT = (0.05, 0.1, 0.2), and the correlation matrix Σ was defined as a 3x3 matrix with diagonal entries of 1 and off-diagonal entries representing asset correlations. The expected return was set to μ0 = 0.15, and the total investment cost was ξ = 1.
 ## Findings
-- [supported] The HHL algorithm was implemented using Qiskit on IBM’s quantum computing platform to solve a portfolio optimization problem modeled as a quadratic programming problem with equality constraints
-- [supported] The approximate solution obtained via the HHL algorithm closely matches the exact solution, with component-wise errors being very small
-- [supported] For a 3-asset portfolio problem, the ratio of the approximate solution (0.1608, 0.2557, 0.5833) aligns closely with the exact solution ratio (0.1622, 0.2568, 0.5811), demonstrating feasibility for portfolio optimization
-- [speculative] The HHL algorithm may achieve exponential acceleration over classical methods for solving linear systems under certain assumptions, as claimed in prior theoretical work
-- [speculative] The authors suggest that increasing the number of qubits could yield approximate solutions closer to the exact solution, but this would require larger quantum circuits and more quantum gates
-- [speculative] The approach could potentially be extended to larger and more complex financial problem scenarios, though this remains untested
+- [supported] The HHL algorithm was implemented using Qiskit on IBM’s quantum computing platform to solve a 3-asset portfolio optimization problem, yielding an approximate solution close to the exact solution with ratios 0.2428:0.386:0.8803 (≈3:5:12) vs. exact 0.16216216:0.25675676:0.58108108 (≈3:5:12).
+- [supported] The approximate solution obtained via the HHL algorithm on a 9-qubit circuit (simulated) matched the exact solution’s component ratios, demonstrating feasibility for portfolio optimization.
+- [speculative] The authors suggest that the HHL algorithm could achieve exponential acceleration over classical methods for solving linear systems, as originally proposed by Lloyd et al. (2009).
+- [speculative] The paper claims that quantum computing could better address combinatorial optimization problems in finance due to quantum speedup, but this is not empirically validated in the study.
+- [supported] The HHL algorithm’s performance was tested on a simplified 3-asset model with a fixed expected return (μ0 = 0.15) and total cost (ξ = 1), showing small errors in the approximate solution compared to the exact solution.
+- [disputed] The claim of exponential acceleration via HHL is disputed in literature due to practical limitations (e.g., input state preparation, error correction, and hardware noise), which are not addressed in this paper.
 
-**Results summary:** The paper demonstrates the application of the HHL algorithm to a portfolio optimization problem, framed as a quadratic programming problem with equality constraints. Using a 9-qubit implementation on IBM’s quantum simulator, the authors show that the approximate solution derived from the HHL algorithm closely matches the exact solution for a 3-asset portfolio. The results validate the feasibility of using the HHL algorithm for such financial problems, though the work is limited to simulation and small-scale problems. The paper also reiterates theoretical claims of exponential speedup for the HHL algorithm but does not empirically demonstrate quantum advantage on real hardware.
+**Results summary:** The paper empirically demonstrates the application of the HHL algorithm to a 3-asset portfolio optimization problem using a 9-qubit quantum circuit simulated on IBM’s Qiskit platform. The approximate solution derived from the quantum algorithm closely matched the exact solution’s component ratios, validating the feasibility of HHL for such problems. However, the results are based on simulations, and the claimed exponential quantum advantage remains theoretical and untested on real hardware. The study focuses on a simplified model, and scalability to larger, real-world financial problems is not addressed.
 
 **Performance claims:**
-- Approximate solution ratio (0.1608, 0.2557, 0.5833) closely matches exact solution ratio (0.1622, 0.2568, 0.5811) for a 3-asset portfolio
-- 9-qubit implementation used to represent an 8-dimensional input vector for the linear system
+- Approximate solution ratios: 0.2428:0.386:0.8803 (HHL) vs. exact 0.16216216:0.25675676:0.58108108
+- 9-qubit circuit used for simulation with phase estimation success probability set to 0.9
+- Error in approximate solution components was small, demonstrating close agreement with exact solution
 ## Quantum advantage claim
-**Classification:** speculative
+**Classification:** theoretical
 
-The paper cites theoretical claims of exponential acceleration for the HHL algorithm over classical methods for solving linear systems, but these claims are not empirically validated in this work. All results are derived from simulation on classical quantum simulators, not real quantum hardware.
+The paper cites the theoretical exponential speedup of the HHL algorithm for solving linear systems (Lloyd et al., 2009) but does not demonstrate this advantage empirically. Results are from simulation only, and the study does not address practical challenges (e.g., error rates, qubit coherence) that could undermine the claimed advantage on real hardware.
 ## Limitations
-- Experiments conducted on a small-scale problem (3 assets) with synthetic data, limiting generalizability to real-world financial scenarios
-- Qubit count constraints (9 qubits used) restrict the problem size and complexity that can be handled
-- Approximate solution ratios were compared rather than exact amplitudes, which may not fully capture solution accuracy [inferred]
-- No noise mitigation techniques were applied, which may affect performance on real quantum hardware [inferred]
-- The study only tested a simplified quadratic programming model with equality constraints, not addressing more complex financial models
-- Page-limit constraints of the conference paper may have prevented detailed discussion of error analysis and scalability [inferred]
+- Experiments conducted on a small-scale problem (3 assets) limits practical applicability to real-world portfolio optimization [inferred]
+- Use of only 9 qubits constrains the problem size and scalability of the HHL algorithm implementation
+- Approximate solution ratios were compared rather than exact amplitudes, which may not fully capture solution accuracy
+- Implementation was performed on a quantum simulator (Qiskit), not real quantum hardware, limiting assessment of noise and decoherence effects [inferred]
+- Dataset size and complexity were artificially constrained to fit qubit limitations (8-dimensional input vector)
+- No noise mitigation techniques were applied, which may significantly impact performance on real quantum devices [inferred]
+- The study only tested synthetic data with simplified assumptions (e.g., fixed asset correlation matrix), not real market data [inferred]
 - The HHL algorithm requires the matrix A to be Hermitian and well-conditioned, which may not hold for all financial problems [inferred]
-- No comparison with state-of-the-art classical solvers (e.g., interior-point methods) to benchmark quantum advantage [inferred]
-- The study did not address the impact of decoherence or gate errors on solution quality [inferred]
-- The input vector |b⟩ was padded with zeros to fit qubit requirements, which may introduce artifacts in the solution [inferred]
+- The phase estimation stage was limited to 2 bits, reducing eigenvalue approximation accuracy [inferred]
+- No comparison with state-of-the-art classical solvers (e.g., quadratic programming solvers) to benchmark quantum advantage [inferred]
 ## Open questions
-- How does the HHL algorithm perform with larger asset portfolios (e.g., 20+ assets) and real market data?
-- What is the impact of quantum noise and decoherence on the accuracy of the approximate solution?
-- Can the HHL algorithm handle ill-conditioned matrices common in financial applications?
-- How does the quantum solution compare to classical methods in terms of speed and accuracy for practical problem sizes?
-- What are the trade-offs between qubit count, circuit depth, and solution accuracy in financial applications?
-- How can the HHL algorithm be extended to handle inequality constraints in portfolio optimization?
+- How does the HHL algorithm perform with larger asset portfolios (e.g., >20 assets) given current qubit constraints?
+- What is the impact of quantum noise and decoherence on the accuracy of the HHL-based portfolio optimization?
+- Can the algorithm maintain its exponential speedup advantage when scaled to real-world financial datasets?
+- How does the solution quality degrade as the condition number of the matrix A increases?
+- What are the trade-offs between qubit count, circuit depth, and solution accuracy in practical deployments?
+- How can the HHL algorithm be adapted to handle non-Hermitian matrices common in financial models?
+- What noise mitigation strategies are most effective for HHL-based financial applications?
 
 **Future work:**
-- Apply the HHL algorithm to larger and more complex financial problem scenarios
-- Test the algorithm on real quantum hardware with noise mitigation techniques
-- Compare the performance of the HHL algorithm with classical solvers for portfolio optimization
-- Extend the model to include inequality constraints and multi-period optimization
-- Investigate methods to reduce the qubit requirements for larger problem instances
-- Explore hybrid quantum-classical approaches to improve scalability and practicality
+- Extend the HHL algorithm to larger and more complex financial problem scenarios (e.g., multi-period portfolio optimization)
+- Test the algorithm on real quantum hardware to assess noise resilience and practical performance
+- Incorporate noise mitigation techniques (e.g., error correction, dynamical decoupling) to improve solution accuracy
+- Compare the HHL algorithm with classical solvers (e.g., interior-point methods) to quantify quantum advantage
+- Explore hybrid quantum-classical approaches to overcome current qubit limitations
+- Develop methods to extract exact solution coefficients (not just ratios) from the quantum state
+- Apply the algorithm to real market data and assess its robustness to financial noise and volatility
 ## Key ideas
 - #idea:quantum-advantage — HHL algorithm demonstrates potential for exponential acceleration in solving linear systems for portfolio optimization, though empirically unvalidated in this study
 - #idea:near-term-feasibility — Study shows feasibility of HHL for small-scale portfolio problems (3 assets) using quantum simulators, but scalability to real-world scenarios remains speculative

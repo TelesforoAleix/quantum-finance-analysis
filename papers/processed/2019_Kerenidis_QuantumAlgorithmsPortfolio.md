@@ -27,17 +27,17 @@ relevance_phase1: high
 relevance_phase3: high
 source_type: conference-paper
 source_type_confidence: high
-step1_date: '2026-03-18T23:13:14.013450'
+step1_date: '2026-03-19T11:46:20.765928'
 step1_model: Mistral-Large-3
-step2_date: '2026-03-18T23:13:16.938404'
+step2_date: '2026-03-19T11:47:08.480155'
 step2_model: Mistral-Large-3
-step3_date: '2026-03-18T23:13:22.977549'
+step3_date: '2026-03-19T11:47:18.445692'
 step3_model: Mistral-Large-3
-step4_date: '2026-03-18T23:13:34.754995'
+step4_date: '2026-03-19T11:48:28.263397'
 step4_model: Mistral-Large-3
-step5_date: '2026-03-18T23:13:44.264350'
+step5_date: '2026-03-19T11:48:50.701536'
 step5_model: Mistral-Large-3
-step6_date: '2026-03-18T23:13:49.125418'
+step6_date: '2026-03-19T11:48:58.656083'
 step6_model: Mistral-Large-3
 steps_completed:
 - 1
@@ -48,7 +48,6 @@ steps_completed:
 - 6
 tags:
 - topic/portfolio-optimisation
-- topic/risk-modelling
 - method/HHL
 - method/quantum-simulation
 - method/variational
@@ -58,81 +57,81 @@ tags:
 title: Quantum Algorithms for Portfolio Optimization
 topic_tags:
 - portfolio-optimisation
-- risk-modelling
 year: 2019
 zotero_key: ''
 ---
 
 ## Abstract summary
-This paper presents the first quantum algorithm designed to solve the constrained portfolio optimization problem in financial services. The authors develop a quantum interior point method for second-order cone programs, achieving a polynomial speedup over classical algorithms while accommodating real-world constraints like budget and positivity. The work bridges quantum computing and mathematical finance, demonstrating potential practical advantages through theoretical analysis and experimental validation.
+This paper presents the first quantum algorithm for solving the constrained portfolio optimization problem in financial services. The authors develop a quantum interior point method that extends classical approaches by incorporating quantum linear algebra techniques, achieving a polynomial speedup over classical algorithms under certain conditions. The work focuses on reducing the problem to second-order cone programming and demonstrates potential practical advantages through numerical experiments.
 ## Methodology
-The paper presents a quantum algorithm for the constrained portfolio optimization problem by reducing it to a Second Order Cone Program (SOCP). The methodology involves formulating the portfolio optimization problem with positivity and budget constraints, then transforming it into an SOCP. The quantum algorithm employs a quantum short-step interior point method (IPM) to solve the SOCP. The approach leverages quantum linear algebra techniques, including block encoding of matrices and quantum linear system solvers, to achieve a polynomial speedup over classical algorithms. The algorithm iteratively solves Newton linear systems using quantum tomography to approximate solutions, ensuring convergence within a specified precision. Experimental results are provided to analyze problem-dependent parameters affecting the algorithm's running time and potential speedup over classical counterparts.
+The paper presents a quantum algorithm for the constrained portfolio optimization problem, extending previous work that was limited to unconstrained problems. The methodology involves reducing the portfolio optimization problem to a Second Order Cone Program (SOCP), which generalizes both linear and quadratic programming. The quantum algorithm is based on a quantum interior point method (IPM) for SOCPs, leveraging quantum linear algebra techniques to solve the Newton linear systems arising in each iteration of the IPM. The algorithm uses quantum data structures, specifically Quantum Random Access Memory (QRAM), to store and manipulate matrices and vectors efficiently. The quantum short-step IPM is implemented by constructing block encodings for the Newton matrices, solving the linear systems using quantum linear system solvers, and performing quantum tomography to recover classical solutions. The paper also includes experimental results to analyze the performance and convergence of the quantum algorithm, comparing it with classical methods and examining problem-dependent parameters such as condition number and tomography precision.
 
-**Algorithms used:** Quantum Interior Point Method, Quantum Linear System Solver
+**Algorithms used:** Quantum Interior Point Method (IPM), Quantum Linear System Solver
 **Frameworks:** QRAM (Quantum Random Access Memory)
 
-**Experimental setup:** The quantum algorithm is theoretically analyzed and simulated using quantum linear algebra techniques. The experimental setup involves constructing block encodings for matrices using QRAM data structures, solving Newton linear systems via quantum linear system solvers, and performing quantum tomography to recover classical solutions. The simulations focus on bounding problem-dependent parameters such as the condition number of Newton matrices to evaluate the algorithm's efficiency and potential speedup.
+**Experimental setup:** The experimental setup involves simulating the quantum algorithm on classical hardware to solve instances of the portfolio optimization problem. The dataset used consists of historical stock prices for 50 companies from the S&P 500 over 100 days. The quantum algorithm's performance is analyzed by introducing Gaussian noise to simulate tomography precision. The experiments assess the duality gap, condition number of the Newton matrix, and the impact of tomography precision on the algorithm's convergence and runtime. The quantum algorithm is compared against classical IPM solvers in terms of iteration count and problem size scaling.
 
-**Dataset:** Historical prices of financial assets are used to compute the expected reward vector (µ) and the covariance matrix (Σ). The covariance matrix is derived from historical return data over T time epochs for m assets, enabling the formulation of the portfolio optimization problem.
+**Dataset:** Historical stock prices for 50 companies from the S&P 500 index, sampled over the first 100 days of a 9-year period (2007-2016). The dataset was subsampled from the cvxportfolio repository.
 ## Findings
-- [supported] The paper presents the first quantum algorithm for the constrained portfolio optimization problem, with a running time of e^O(n√r ζ κ / δ^2 log(1/ϵ)), where r is the number of constraints, n is the number of assets, ϵ is precision, and δ, κ, ζ are problem-dependent parameters.
-- [supported] The quantum algorithm achieves a polynomial speedup over the best classical algorithms, which have a complexity of e^O(√rn^ω log(1/ϵ)), where ω is the matrix multiplication exponent (theoretically ~2.373, practically ~3).
-- [speculative] Experiments suggest that for most instances, the quantum algorithm can potentially achieve an O(n) speedup over its classical counterpart.
-- [supported] The quantum algorithm reduces the constrained portfolio optimization problem to Second Order Cone Programs (SOCP) and uses a quantum interior point method to solve it.
-- [supported] The quantum algorithm ensures the duality gap reduces by a factor of 1 - α/√r per iteration, converging in O(√r log(n/ϵ)) iterations, similar to classical methods.
-- [speculative] The quantum advantage is maximized when the number of assets (n) is large and the number of budget constraints (r) is small, as the condition number κ increases with the number of iterations.
-- [supported] The quantum algorithm outputs a solution with an objective value within ϵr of the optimum and satisfies equality constraints to precision δ.
-- [speculative] The paper claims that quantum computers could offer groundbreaking speedups in mathematical finance, though this requires more advanced hardware and collaboration between quantum algorithms and finance communities.
+- [supported] The paper presents the first quantum algorithm for constrained portfolio optimization, with a running time of eO(√r * n * κ * ζ / δ² * log(1/ϵ)), where r is the number of constraints, n is the number of assets, κ is the condition number, ζ is a parameter from the quantum linear system solver, and δ is the precision error.
+- [supported] The quantum algorithm achieves a polynomial speedup over classical algorithms, which have a complexity of eO(n^ω * √r * log(1/ϵ)), where ω is the matrix multiplication exponent (theoretically ~2.373, but closer to 3 in practice).
+- [supported] Experimental results suggest that for most instances, the quantum algorithm can achieve an O(n) speedup over classical algorithms, particularly when the number of assets (n) is large and the number of constraints (r) is small.
+- [supported] The quantum algorithm reduces the constrained portfolio optimization problem to a Second Order Cone Program (SOCP) and uses a quantum interior point method (IPM) to solve it, ensuring feasibility and convergence properties similar to classical IPMs.
+- [supported] The condition number κ of the Newton matrix does not grow significantly with problem size in practice, and the tomography precision δ scales roughly linearly with n, leading to an average-case complexity of O(n^2.387) for the quantum algorithm.
+- [speculative] The authors suggest that quantum computers could offer significant speedups for large-scale portfolio optimization problems, but note that practical realization depends on advances in quantum hardware and closer collaboration between quantum algorithm and financial communities.
+- [speculative] The paper claims that the quantum algorithm's performance is particularly suited for problems with a large number of assets and a small number of constraints, where the quantum advantage is maximized.
 
-**Results summary:** The paper introduces a quantum algorithm for constrained portfolio optimization, demonstrating a polynomial speedup over classical methods. The algorithm reduces the problem to Second Order Cone Programs (SOCP) and employs a quantum interior point method. The running time is e^O(n√r ζ κ / δ^2 log(1/ϵ)), compared to the classical e^O(√rn^ω log(1/ϵ)). Experimental results suggest potential O(n) speedups for real-world instances, though the quantum advantage is contingent on problem-specific parameters like the condition number κ. The algorithm converges in O(√r log(n/ϵ)) iterations, similar to classical methods, but leverages quantum linear algebra for efficiency. The findings are theoretical, with no empirical validation on real quantum hardware.
+**Results summary:** The paper introduces a quantum algorithm for constrained portfolio optimization, leveraging a quantum interior point method for Second Order Cone Programs (SOCPs). The algorithm demonstrates a theoretical polynomial speedup over classical methods, with a running time of eO(√r * n * κ * ζ / δ² * log(1/ϵ)). Experimental simulations on real-world financial datasets suggest that the quantum algorithm can achieve an O(n) speedup for most instances, particularly when the number of assets is large and constraints are few. The condition number κ and tomography precision δ are shown to behave favorably in practice, leading to an average-case complexity of O(n^2.387). The results are derived from simulations, as the algorithm has not been tested on real quantum hardware.
 
 **Performance claims:**
-- Running time: e^O(n√r ζ κ / δ^2 log(1/ϵ)) for the quantum algorithm
-- Classical algorithm running time: e^O(√rn^ω log(1/ϵ))
-- Potential O(n) speedup over classical methods for most instances
-- Duality gap reduction factor: 1 - α/√r per iteration
-- Convergence in O(√r log(n/ϵ)) iterations
-- Objective value within ϵr of the optimum
-- Equality constraints satisfied to precision δ
+- Running time of eO(√r * n * κ * ζ / δ² * log(1/ϵ)) for the quantum algorithm
+- Classical algorithm complexity of eO(n^ω * √r * log(1/ϵ)), where ω ~ 3 in practice
+- O(n) speedup over classical algorithms for most instances, based on experimental simulations
+- Average-case complexity of O(n^2.387) for the quantum algorithm, compared to O(n^3.5) for classical methods
 ## Quantum advantage claim
 **Classification:** theoretical
 
-The paper claims a polynomial speedup over classical algorithms based on theoretical analysis and simulations. The advantage is not demonstrated on real quantum hardware and depends on problem-specific parameters like the condition number κ. The speedup is speculative for practical applications until validated empirically.
+The paper claims a theoretical polynomial speedup over classical algorithms for constrained portfolio optimization, supported by experimental simulations. However, the results are not demonstrated on real quantum hardware, and the advantage is contingent on problem-specific parameters (e.g., condition number κ and tomography precision δ) behaving favorably in practice.
 ## Limitations
-- The quantum algorithm's running time depends on problem-dependent parameters (δ, κ, ζ) related to the well-conditioning of intermediate solutions, which may not always be favorable in practice [inferred]
-- The algorithm assumes the existence of a strictly feasible solution, which may not hold for all real-world portfolio optimization problems [inferred]
-- The quantum algorithm's speedup is contingent on the condition number κ of the Newton matrices being bounded, which is not guaranteed for all problem instances
-- The solution satisfies equality constraints only approximately to precision δ, which may not be sufficient for high-stakes financial applications [inferred]
-- The quantum algorithm requires quantum linear system solvers and tomography, introducing errors that may affect solution feasibility and optimality
-- The experiments bounding problem-dependent factors are not exhaustive and may not generalize to all real-world scenarios [inferred]
-- The quantum algorithm's performance is particularly suited for cases where the number of assets (n) is large and the number of budget constraints (r) is small, limiting its applicability to problems with many constraints [inferred]
-- The paper does not provide empirical validation on real quantum hardware, only theoretical and simulated results [inferred]
-- The quantum algorithm's convergence rate is slower per iteration compared to the classical algorithm, though the asymptotic decay rate is the same [inferred]
-- Page-limit constraints of the conference paper may have prevented a more detailed discussion of practical implementation challenges [inferred]
+- The quantum algorithm's running time depends on problem-specific parameters (κ, ζ, δ) that may not be bounded in practice, limiting its theoretical speedup
+- The algorithm assumes the existence of a strictly feasible solution, which may not always hold for real-world problems [inferred]
+- Experiments were conducted on a small subset of data (50 companies, 100 days) and may not generalize to larger, more complex financial datasets [inferred]
+- The quantum algorithm's performance is sensitive to the condition number (κ) of the Newton matrix, which could grow with problem size in practice
+- Tomography errors in quantum state reconstruction lead to approximate solutions, unlike classical methods that provide exact solutions
+- The quantum algorithm's speedup is only achievable if the number of budget constraints (r) is small compared to the number of assets (n), limiting applicability to highly constrained problems [inferred]
+- The paper does not compare the quantum algorithm's performance with state-of-the-art classical solvers beyond asymptotic complexity analysis [inferred]
+- The quantum algorithm requires QRAM data structures, which are not yet available in current quantum hardware [inferred]
+- The experiments suggest that the 1/δ² term grows roughly linearly with problem size, potentially reducing the quantum speedup for large-scale problems
+- The algorithm's convergence rate constant (α) is close to but still slower than the classical algorithm's constant (χ), leading to more iterations for the same precision [inferred]
 ## Open questions
-- How does the quantum algorithm perform on real-world financial datasets with noisy or incomplete historical price data?
-- What is the impact of quantum hardware noise and decoherence on the algorithm's performance and solution quality?
-- Can the algorithm be adapted to handle dynamic or time-varying portfolio optimization problems?
-- How does the quantum algorithm compare to state-of-the-art classical solvers in terms of solution quality and runtime for large-scale problems?
-- What are the specific values of the problem-dependent parameters (κ, ζ) for typical financial datasets, and how do they affect the algorithm's speedup?
-- Can the algorithm be extended to handle more complex constraints, such as transaction costs or regulatory requirements?
+- How does the quantum algorithm perform on real-world financial datasets with thousands of assets and complex constraints?
+- What is the exact relationship between the condition number (κ) and problem size for practical portfolio optimization instances?
+- Can the quantum algorithm be adapted to handle dynamic constraints that change over time in financial markets?
+- How would noise in near-term quantum hardware affect the algorithm's performance and convergence?
 - What is the minimum qubit count and coherence time required to achieve a practical speedup over classical methods?
+- Can the quantum interior point method be extended to handle integer constraints for discrete portfolio optimization problems?
+- How does the quantum algorithm compare with classical methods in terms of solution quality for the same computational budget?
+- What are the implications of the tomography precision requirements for the algorithm's practical implementation?
 
 **Future work:**
-- Empirical validation of the algorithm on real quantum hardware to assess its practical performance
-- Extension of the algorithm to handle dynamic portfolio optimization problems with time-varying constraints
-- Development of noise mitigation techniques to improve the algorithm's robustness on near-term quantum devices
-- Comparison of the quantum algorithm's performance with state-of-the-art classical solvers on large-scale financial datasets
-- Exploration of hybrid quantum-classical approaches to leverage the strengths of both paradigms
-- Investigation of the algorithm's applicability to other financial optimization problems, such as risk management or asset pricing
-- Development of methods to reduce the impact of problem-dependent parameters on the algorithm's running time
+- Test the algorithm on larger, more diverse financial datasets to validate scalability claims
+- Implement the algorithm on near-term quantum hardware to assess real-world performance
+- Develop noise mitigation techniques tailored to the quantum interior point method
+- Extend the algorithm to handle dynamic constraints and multi-period portfolio optimization
+- Investigate hybrid quantum-classical approaches that combine the strengths of both paradigms
+- Explore alternative quantum linear algebra techniques that may reduce the dependence on problem-specific parameters
+- Develop methods to reduce the condition number (κ) of the Newton matrix for practical problems
+- Compare the quantum algorithm's performance with state-of-the-art classical solvers on benchmark problems
+- Investigate the algorithm's performance on other financial optimization problems beyond portfolio optimization
+- Develop error bounds and robustness guarantees for the algorithm under hardware noise
 ## Key ideas
-- #idea:quantum-advantage — Quantum interior point method achieves polynomial speedup (e^O(n√r ζ κ / δ^2 log(1/ϵ))) over classical algorithms (e^O(√rn^ω log(1/ϵ))) for constrained portfolio optimization
+- #idea:quantum-advantage — Quantum interior point method achieves polynomial speedup (e^O(√r * n * κ * ζ / δ² * log(1/ϵ))) over classical algorithms (e^O(n^ω * √r * log(1/ϵ))) for constrained portfolio optimization
 - #idea:near-term-feasibility — Algorithm is theoretically designed for NISQ-era applicability but requires bounded condition numbers and problem-specific parameters for practical speedup
 - #idea:hybrid-approach — Quantum linear system solvers and tomography are used iteratively, suggesting potential for hybrid quantum-classical integration
 - #limitation:qubit-count — Performance depends on large asset counts (n) and small constraint counts (r), limiting scalability for real-world problems
 - #limitation:noise — Quantum tomography and linear system solvers introduce errors that may degrade solution feasibility and optimality
 - #limitation:no-empirical-validation — Claims are theoretical/simulated; no validation on real quantum hardware
+- #limitation:data-encoding — Requires QRAM for efficient data encoding, which is not yet available in current quantum hardware
 ## Contradictions
 <!-- Step 6 output — where this paper contradicts others -->
 

@@ -19,13 +19,13 @@ doi: 10.1109/INCOS59338.2024.10527612
 evidence_type: ''
 idea_tags:
 - idea:quantum-advantage
-- idea:near-term-feasibility
 - idea:hybrid-approach
+- idea:near-term-feasibility
 journal_or_venue: 2024 Third International Conference on Intelligent Techniques in
   Control, Optimization and Signal Processing (INCOS)
 methodology_tags:
-- quantum-SVM
 - quantum-ML
+- quantum-SVM
 - variational
 - classical-simulation
 paper_type: ''
@@ -35,17 +35,17 @@ relevance_phase1: high
 relevance_phase3: medium
 source_type: conference-paper
 source_type_confidence: high
-step1_date: '2026-03-18T22:37:58.880050'
+step1_date: '2026-03-19T12:52:47.740055'
 step1_model: Mistral-Large-3
-step2_date: '2026-03-18T22:38:35.430384'
+step2_date: '2026-03-19T12:53:33.789969'
 step2_model: Mistral-Large-3
-step3_date: '2026-03-18T22:38:44.748109'
+step3_date: '2026-03-19T12:53:55.976130'
 step3_model: Mistral-Large-3
-step4_date: '2026-03-18T22:38:57.054977'
+step4_date: '2026-03-19T12:55:05.536458'
 step4_model: Mistral-Large-3
-step5_date: '2026-03-18T22:39:06.960897'
+step5_date: '2026-03-19T12:55:58.223337'
 step5_model: Mistral-Large-3
-step6_date: '2026-03-18T22:39:12.099697'
+step6_date: '2026-03-19T12:56:22.135054'
 step6_model: Mistral-Large-3
 steps_completed:
 - 1
@@ -56,97 +56,97 @@ steps_completed:
 - 6
 tags:
 - topic/portfolio-optimisation
-- topic/quantum-ML
-- method/quantum-SVM
+- topic/risk-modelling
 - method/quantum-ML
+- method/quantum-SVM
 - method/variational
 - method/classical-simulation
 - idea/quantum-advantage
-- idea/near-term-feasibility
 - idea/hybrid-approach
+- idea/near-term-feasibility
 - contradiction/classical-vs-quantum
 - contradiction/scalability
 title: Enhancing Quantum Machine Learning Algorithms for Optimized Financial Portfolio
   Management
 topic_tags:
 - portfolio-optimisation
-- quantum-ML
+- risk-modelling
 year: 2024
 zotero_key: ''
 ---
 
 ## Abstract summary
-This paper explores the enhancement of quantum machine learning algorithms, specifically Quantum Support Vector Machines (QSVM), to improve financial portfolio management. The study develops and optimizes a quantum-classical hybrid approach, addressing challenges like quantum circuit efficiency and noise mitigation, to achieve superior portfolio performance. The research demonstrates the practical applicability of quantum algorithms in financial decision-making, aiming to bridge the gap between quantum computing advancements and real-world financial frameworks.
+This paper explores the enhancement of quantum machine learning algorithms, specifically Quantum Support Vector Machines (QSVM), for financial portfolio optimization. The authors propose a novel approach implemented in Python, integrating classical and quantum components to improve portfolio performance and risk management. The study focuses on quantum circuit optimization, noise mitigation, and hybrid computing strategies to demonstrate the potential of quantum algorithms in transforming financial decision-making.
 ## Methodology
-The paper presents an empirical study focused on enhancing Quantum Support Vector Machine (QSVM) algorithms for optimized financial portfolio management. The methodology involves a hybrid quantum-classical approach implemented in Python, integrating classical data preprocessing techniques with quantum circuit optimization. Key steps include data collection from a financial stock market dataset obtained from Kaggle, followed by Min-Max normalization for data preprocessing. Quantum circuit optimization techniques such as gate fusion, qubit mapping optimization, and circuit compilation are applied to improve the performance of QSVM. Noise mitigation strategies, including error correction codes like the Steane code or surface code, are employed to address errors in quantum computing, particularly relevant in the Noisy Intermediate-Scale Quantum (NISQ) era. The QSVM algorithm is then used for financial portfolio optimization, leveraging quantum feature space mapping to capture complex patterns in financial data. The study evaluates the proposed QSVM against existing quantum algorithms (QPCA, QBM, QKC) using metrics such as portfolio performance over time, risk-return tradeoff, and efficiency frontier.
+The paper presents an empirical study focused on enhancing Quantum Support Vector Machine (QSVM) algorithms for optimized financial portfolio management. The methodology involves several key steps: data collection from a financial stock market dataset obtained from Kaggle, data preprocessing using Min-Max normalization to standardize numerical features, and quantum circuit optimization to improve QSVM performance. Quantum circuit optimization techniques include gate fusion, qubit mapping optimization, and circuit compilation. Noise mitigation strategies, such as error correction codes (e.g., Steane code or surface code), are implemented to address errors in quantum computing. The study integrates classical and quantum components, leveraging Python for implementation. The proposed QSVM is evaluated against existing quantum algorithms (QPCA, QBM, QKC) using metrics such as portfolio performance over time, risk-return tradeoff, and efficiency frontier.
 
 **Algorithms used:** QSVM, QPCA, QBM, QKC
 **Frameworks:** Python
 
-**Experimental setup:** The study utilizes a Python-based implementation for the hybrid quantum-classical approach. Quantum circuit optimizations and noise mitigation techniques are applied, though specific hardware details (e.g., simulator vs. real QPU) are not explicitly mentioned. The experiments focus on optimizing quantum circuits for QSVM and evaluating performance on financial datasets.
+**Experimental setup:** The experiments were conducted using a Python-based implementation. The study does not explicitly mention the use of real quantum processing units (QPUs) or simulators, suggesting a theoretical or simulated quantum environment for the QSVM and other quantum algorithms.
 
-**Dataset:** An extensive financial stock market dataset obtained from Kaggle, including historical stock prices, trading volumes, and key financial indicators for publicly listed firms. The dataset also incorporates additional components such as market sentiment data, corporate financial statements, and economic indicators.
+**Dataset:** An extensive financial stock market dataset from Kaggle, including historical stock prices, trading volumes, and key financial indicators for publicly listed firms.
 ## Findings
-- [supported] The proposed Quantum Support Vector Machine (QSVM) achieves a portfolio performance of 89.65% over time, outperforming existing quantum algorithms (QPCA, QBM, QKC) by a margin of 25.15%
-- [supported] QSVM demonstrates a 25% risk-return tradeoff and a 32.12% efficiency frontier, surpassing QPCA (12.8%, 21.89%), QBM (21.11%, 29.86%), and QKC (19.78%, 22.87%)
-- [supported] Quantum circuit optimization techniques (gate fusion, qubit mapping, circuit compilation) and noise mitigation strategies (error correction codes) are implemented to enhance QSVM performance
-- [speculative] The authors claim QSVM offers a quantum advantage in financial decision-making due to its ability to process high-dimensional financial data and capture non-linear correlations
-- [speculative] The paper suggests QSVM could enable exponential speedup in portfolio optimization computations, though this is not empirically validated
-- [speculative] The integration of QSVM into existing financial frameworks is presented as a transformative step for quantum-enhanced investing strategies
-- [supported] Min-Max normalization is used for data preprocessing to standardize financial indicators, improving QSVM robustness and convergence
+- [supported] The proposed Quantum Support Vector Machine (QSVM) achieves a portfolio performance of 89.65% over time, outperforming existing quantum algorithms (QPCA, QBM, QKC) by 25.15%
+- [supported] The QSVM demonstrates a 25% risk-return tradeoff and a 32.12% efficiency frontier, surpassing other quantum methods in these metrics
+- [speculative] The QSVM's performance suggests a quantum advantage in financial decision-making and portfolio optimization
+- [speculative] Quantum circuit optimization techniques (gate fusion, qubit mapping, circuit compilation) and noise mitigation strategies enhance QSVM's reliability and efficiency in financial applications
+- [speculative] Hybrid quantum-classical approaches may further improve the robustness and scalability of financial portfolio optimization
+- [supported] Min-Max normalization is effective for preprocessing financial data to ensure consistency and improve quantum algorithm performance
+- [speculative] The integration of QSVM into existing financial frameworks could lead to a transformative impact on portfolio management strategies
 
-**Results summary:** The conference paper presents a novel Quantum Support Vector Machine (QSVM) for financial portfolio optimization, implemented in Python. The proposed QSVM achieves an 89.65% portfolio performance over time, significantly outperforming other quantum algorithms (QPCA, QBM, QKC) by over 25%. The study also demonstrates superior risk-return tradeoff (25%) and efficiency frontier (32.12%) compared to existing methods. Key techniques include quantum circuit optimization (gate fusion, qubit mapping) and noise mitigation (error correction codes). While the results are promising and empirically supported for the reported metrics, claims of quantum advantage and scalability remain speculative, as the study does not provide hardware validation or direct comparisons with classical methods.
+**Results summary:** The paper presents a novel Quantum Support Vector Machine (QSVM) approach for financial portfolio optimization, implemented in Python. The proposed QSVM demonstrates superior performance, achieving 89.65% portfolio performance over time, a 25% risk-return tradeoff, and a 32.12% efficiency frontier. These results outperform other quantum algorithms such as Quantum Principal Component Analysis (QPCA), Quantum Boltzmann Machines (QBM), and Quantum K-Means Clustering (QKC). The study emphasizes quantum circuit optimization, noise mitigation, and hybrid quantum-classical integration to enhance algorithmic efficiency and reliability. While the findings highlight the potential of QSVM in financial decision-making, all results are derived from simulations and theoretical optimizations rather than real quantum hardware.
 
 **Performance claims:**
-- 89.65% portfolio performance over time (QSVM)
-- 25.15% performance improvement over existing quantum algorithms
-- 25% risk-return tradeoff (QSVM)
-- 32.12% efficiency frontier (QSVM)
-- 78.34% portfolio performance (QPCA)
-- 64.67% portfolio performance (QBM)
-- 71.89% portfolio performance (QKC)
+- 89.65% portfolio performance over time for QSVM
+- 25% risk-return tradeoff for QSVM
+- 32.12% efficiency frontier for QSVM
+- QSVM outperforms QPCA, QBM, and QKC by 25.15% in portfolio performance
 ## Quantum advantage claim
 **Classification:** speculative
 
-The paper claims quantum advantage for QSVM based on its ability to handle high-dimensional financial data and capture non-linear correlations, but these claims are not empirically validated. Results are derived from simulations, and no real hardware demonstrations or direct comparisons with classical methods are provided to substantiate the advantage.
+The claimed quantum advantage is based on simulated results and theoretical optimizations. The paper does not provide empirical validation on real quantum hardware, and the performance metrics are not benchmarked against classical methods under equivalent conditions.
 ## Limitations
-- The paper does not specify the number of qubits used in the experiments, which may limit practical applicability on current NISQ devices [inferred]
-- Experiments rely on financial stock market data from Kaggle, which may not fully represent real-world market conditions or proprietary financial datasets [inferred]
-- Noise mitigation techniques (e.g., error correction codes) are mentioned but not quantitatively evaluated for their impact on QSVM performance
-- The comparison with existing quantum algorithms (QPCA, QBM, QKC) is based on aggregate metrics without detailed statistical significance testing [inferred]
-- Page-limit constraints of the conference paper may have restricted the depth of methodological details, such as quantum circuit optimization parameters [inferred]
-- The study does not address scalability challenges for larger asset universes or multi-period portfolio optimization [inferred]
-- No empirical validation on real quantum hardware is reported; results are likely based on simulations [inferred]
-- The 89.65% portfolio performance metric lacks clarity on the baseline (e.g., classical SVM or random portfolio) for fair comparison [inferred]
-- Potential overfitting risks due to the use of a single dataset (Kaggle) without cross-validation or out-of-sample testing [inferred]
-- The hybrid quantum-classical integration is described conceptually but lacks implementation details or benchmarks against pure classical approaches
+- Experiments conducted using a Kaggle financial stock market dataset, which may not fully represent real-world market conditions or complexities [inferred]
+- No explicit mention of the number of qubits used in the quantum hardware, limiting assessment of scalability and practical applicability [inferred]
+- Performance comparison limited to other quantum algorithms (QPCA, QBM, QKC); no benchmarking against state-of-the-art classical machine learning methods [inferred]
+- Noise mitigation techniques (e.g., Steane code, surface code) are mentioned but not quantitatively evaluated for their impact on results [inferred]
+- Page-limit constraints of the conference paper may have restricted detailed discussion of methodology, error analysis, or reproducibility [inferred]
+- Lack of empirical validation on real quantum hardware; results are likely based on simulations or theoretical implementations [inferred]
+- Potential overfitting due to the use of a single dataset (Kaggle) without cross-validation or testing on diverse financial datasets [inferred]
+- No discussion of computational resource requirements (e.g., runtime, memory) for the proposed QSVM, which may limit practical deployment [inferred]
+- The paper does not address the impact of quantum decoherence or gate errors on the stability of the QSVM algorithm [inferred]
+- Min-Max normalization may not be the most robust preprocessing technique for financial data, which often contains outliers and non-stationary distributions [inferred]
 ## Open questions
-- How would the QSVM algorithm perform on real quantum hardware with current qubit counts and noise levels?
-- What is the computational overhead of quantum circuit optimization and noise mitigation techniques in practical deployment?
-- Can the proposed QSVM maintain its performance advantage when applied to larger asset universes (e.g., >100 assets)?
-- How does the algorithm handle dynamic market conditions, such as regime shifts or black swan events?
-- What are the trade-offs between quantum speedup and classical preprocessing in hybrid implementations?
-- Are there specific financial datasets or asset classes where QSVM underperforms relative to classical methods?
-- How sensitive is the QSVM to variations in hyperparameters (e.g., kernel choice, circuit depth)?
+- How does the proposed QSVM perform on real quantum hardware with current qubit counts and noise levels?
+- What is the scalability of the QSVM algorithm when applied to larger portfolios (e.g., 100+ assets) or higher-dimensional financial datasets?
+- How does the QSVM compare to classical machine learning methods (e.g., deep learning, reinforcement learning) in terms of performance and computational efficiency?
+- What are the specific noise mitigation techniques that most significantly improve the QSVM's performance, and how do they vary across different quantum hardware?
+- How robust is the QSVM algorithm to market regime changes (e.g., bull vs. bear markets) or extreme volatility events?
+- What are the trade-offs between quantum circuit depth, gate count, and error rates in the context of financial portfolio optimization?
+- Can the QSVM algorithm be adapted to handle multi-period portfolio optimization, and what are the challenges in doing so?
+- How does the choice of kernel in QSVM affect its performance in financial applications, and are there quantum-specific kernels that outperform classical ones?
 
 **Future work:**
-- Validate the QSVM algorithm on real quantum hardware (e.g., IBM Quantum or Rigetti systems)
-- Extend the methodology to multi-period portfolio optimization and dynamic asset allocation
-- Conduct comparative studies with state-of-the-art classical machine learning methods (e.g., deep reinforcement learning)
-- Explore the integration of quantum algorithms with alternative financial models (e.g., Black-Litterman or factor investing)
-- Investigate the impact of different noise mitigation strategies on QSVM performance in NISQ-era devices
-- Develop benchmarks for quantum advantage in financial portfolio management using standardized datasets
-- Assess the scalability of the QSVM approach for institutional-scale portfolios (e.g., >1,000 assets)
-- Incorporate real-time market data feeds to evaluate the algorithm's adaptability to live trading conditions
+- Validate the QSVM algorithm on real quantum hardware (e.g., IBM Quantum, Rigetti) to assess its practical performance and noise resilience
+- Extend the QSVM to multi-period portfolio optimization to capture dynamic market conditions and investor preferences
+- Benchmark the QSVM against state-of-the-art classical machine learning methods to quantify its quantum advantage
+- Explore hybrid quantum-classical approaches to improve scalability and robustness for large-scale financial datasets
+- Investigate the use of alternative preprocessing techniques (e.g., robust scaling, feature engineering) to enhance the QSVM's performance on financial data
+- Develop adaptive noise mitigation strategies tailored to financial applications to improve the reliability of quantum algorithms
+- Apply the QSVM to other financial tasks, such as risk management, fraud detection, or algorithmic trading
+- Assess the computational resource requirements (e.g., runtime, memory) for deploying the QSVM in production environments
+- Explore the integration of quantum machine learning with classical financial frameworks to enable seamless adoption in industry settings
 ## Key ideas
 - #idea:quantum-advantage — QSVM achieves 89.65% portfolio performance, outperforming other quantum algorithms (QPCA, QBM, QKC) by 25.15%
-- #idea:hybrid-approach — Hybrid quantum-classical approach integrates classical preprocessing with quantum circuit optimization for portfolio management
-- #idea:near-term-feasibility — Noise mitigation strategies (e.g., error correction codes) are employed to address NISQ-era challenges
-- #limitation:no-empirical-validation — Claims of quantum advantage are speculative and lack empirical validation on real hardware
+- #idea:hybrid-approach — Hybrid quantum-classical approach integrates classical preprocessing (e.g., Min-Max normalization) with quantum circuit optimization for portfolio management
+- #idea:near-term-feasibility — Noise mitigation strategies (e.g., error correction codes) are employed to address NISQ-era challenges, though not quantitatively evaluated
+- #limitation:no-empirical-validation — Claims of quantum advantage are speculative and lack empirical validation on real quantum hardware
 - #limitation:simulation-only — Results are derived from simulations, not real quantum processing units (QPUs)
+- #limitation:data-encoding — Preprocessing techniques (e.g., Min-Max normalization) may not be robust for financial data with outliers and non-stationary distributions
 ## Contradictions
-- #contradiction:classical-vs-quantum — The paper claims QSVM offers quantum advantage in financial decision-making, but no direct comparison with classical SVM or other classical methods is provided to substantiate this claim
-- #contradiction:scalability — The paper suggests QSVM could enable exponential speedup in portfolio optimization, but scalability to larger asset universes (>100 assets) is not addressed or empirically validated
+- #contradiction:classical-vs-quantum — The paper claims QSVM offers quantum advantage in financial decision-making, but no direct comparison with classical SVM or other classical methods (e.g., deep learning) is provided to substantiate this claim
+- #contradiction:scalability — The paper suggests QSVM could enable exponential speedup in portfolio optimization, but scalability to larger asset universes (>100 assets) is not addressed or empirically validated, and qubit requirements are not discussed
 ## Notable quotes
 <!-- Researcher-added — verbatim quotes with page references -->
 

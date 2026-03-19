@@ -16,112 +16,135 @@ authors:
 - Bartolomeo Montrucchio
 auto_detected: true
 classification: ''
-contradiction_flags: []
+contradiction_flags:
+- contradiction:scalability
 doi: 10.1109/QCE65121.2025.00267
 evidence_type: ''
-idea_tags: []
+idea_tags:
+- idea:quantum-advantage
+- idea:near-term-feasibility
+- idea:hybrid-approach
 journal_or_venue: 2025 IEEE International Conference on Quantum Computing and Engineering
   (QCE)
-methodology_tags: []
+methodology_tags:
+- amplitude-estimation
+- quantum-simulation
+- classical-simulation
 paper_type: ''
 quantum_advantage_claim: speculative
 related_papers: []
-relevance_phase1: ''
-relevance_phase3: not-yet-assessed
+relevance_phase1: high
+relevance_phase3: high
 source_type: conference-paper
 source_type_confidence: high
-step1_date: '2026-03-18T23:43:38.333348'
+step1_date: '2026-03-19T13:16:18.085900'
 step1_model: Mistral-Large-3
-step2_date: '2026-03-18T23:43:41.961086'
+step2_date: '2026-03-19T13:16:36.844320'
 step2_model: Mistral-Large-3
-step3_date: '2026-03-18T23:43:45.493056'
+step3_date: '2026-03-19T13:17:11.161497'
 step3_model: Mistral-Large-3
-step4_date: '2026-03-18T23:44:14.063324'
+step4_date: '2026-03-19T13:17:51.007512'
 step4_model: Mistral-Large-3
-step5_date: '2026-03-18T23:44:23.733986'
+step5_date: '2026-03-19T13:18:35.935223'
 step5_model: Mistral-Large-3
-step6_date: ''
-step6_model: ''
+step6_date: '2026-03-19T13:19:05.996538'
+step6_model: Mistral-Large-3
 steps_completed:
 - 1
 - 2
 - 3
 - 4
 - 5
+- 6
+tags:
+- topic/derivatives-pricing
+- method/amplitude-estimation
+- method/quantum-simulation
+- method/classical-simulation
+- idea/quantum-advantage
+- idea/near-term-feasibility
+- idea/hybrid-approach
+- contradiction/scalability
 title: Autocallable Options Pricing with Integration-Based Exponential Amplitude Loading
-topic_tags: []
+topic_tags:
+- derivatives-pricing
 year: 2025
 zotero_key: ''
 ---
 
 ## Abstract summary
-This paper introduces a quantum algorithm designed to price autocallable options, a type of path-dependent financial derivative. The authors propose an improved integration-based exponential amplitude loading technique that reduces quantum circuit depth compared to existing methods. The study includes experimental validation through simulations on high-performance computing hardware, demonstrating convergence to classical pricing benchmarks and a significant reduction in computational complexity.
+This paper introduces a quantum algorithm for pricing autocallable options, a type of path-dependent financial derivative. The authors enhance an existing integration-based exponential amplitude loading technique to reduce quantum circuit depth, achieving a significant reduction in T-depth compared to prior methods. The work includes a full implementation and experimental validation through simulations on high-performance computing hardware, demonstrating convergence toward classical benchmark results.
 ## Methodology
-The paper presents a quantum algorithm for pricing autocallable options, a type of path-dependent financial derivative. The methodology involves two main steps: probability distribution encoding and payoff evaluation. The authors enhance the integration-based exponential amplitude loading technique to improve the normalization factor for post-processing, thereby reducing circuit depth. The algorithm leverages the re-parameterization method to load standard Gaussian distributions for each time step, adjusts mean and variance using arithmetic operations, and accumulates log-returns. Comparators are applied in the log-return space to check binary and put option conditions. Instead of transitioning to the return space using quantum arithmetic, the improved integration amplitude loading technique is used. The payoff is encoded into the amplitude of a target qubit, and Iterative Quantum Amplitude Estimation (IQAE) is employed to estimate the expected discounted payoff. The complexity analysis focuses on minimizing T-depth, a critical resource in fault-tolerant quantum computing.
+The paper presents a quantum algorithm for pricing autocallable options, a type of path-dependent financial derivative. The methodology builds on an improved integration-based exponential amplitude loading technique to reduce quantum circuit depth. The algorithm involves two main steps: probability distribution encoding and payoff evaluation. First, a probability distribution over discretized asset paths is loaded into a quantum register using Gaussian state preparation. Second, the discounted payoff function is encoded into the amplitude of a target qubit using an enhanced integration amplitude loading method. The algorithm avoids expensive quantum arithmetic by leveraging partial exponential state preparation and comparators. The expected payoff is estimated using Iterative Quantum Amplitude Estimation (IQAE). The paper includes a complexity analysis comparing the T-depth of the proposed method with state-of-the-art approaches, demonstrating a significant reduction in resources required. Experimental validation was conducted through simulations on high-performance computing (HPC) hardware, including the LEONARDO pre-exascale supercomputer, to validate convergence to classical Monte Carlo results under constrained precision and discretization.
 
 **Algorithms used:** Quantum Amplitude Estimation (QAE), Iterative Quantum Amplitude Estimation (IQAE), Integration-based Exponential Amplitude Loading
-**Frameworks:** Qmod
+**Frameworks:** Qmod, Classiq platform, Cirq, cuQuantum
 
-**Experimental setup:** Experiments were conducted using simulations on the LEONARDO pre-exascale supercomputer with up to 33 qubits. The quantum circuits were built using the Qmod language. The simulations aimed to validate the proposed algorithm against classical benchmarks and analyze scaling effects.
+**Experimental setup:** Experiments were conducted using quantum simulators due to the limited coherence times and fidelity of current quantum hardware. The Classiq platform was used to synthesize high-level functional models into optimized gate-based quantum circuits. Simulations were performed on the Classiq default simulator for circuits up to 25 qubits, the Nvidia simulator on a single GPU for circuits up to 30 qubits, and the LEONARDO HPC system using the Cirq simulator with multiple GPUs for circuits exceeding 30 qubits. The experimental setup focused on validating the algorithm's convergence to classical Monte Carlo results by incrementally increasing the number of qubits allocated for Gaussian encoding and quantum arithmetic precision.
 
-**Dataset:** The paper does not specify a particular dataset but uses parameters derived from the Black-Scholes model (e.g., historical log-returns, volatility, drift) to simulate asset price paths for autocallable options pricing.
+**Dataset:** The paper used synthetic financial data for autocallable options with specific parameters: notional value (18$), time step (1 year), number of time steps (3), annual volatility (0.2382), annual average log-return (0.1274), put barrier (0.7), put strike return (1), risk-free rate (4%), and predefined binary option strikes and payoffs. No real-world financial datasets were explicitly mentioned.
 ## Findings
-- [supported] The proposed integration-based exponential amplitude loading technique reduces circuit depth, achieving a ∼50x reduction in T-depth for the payoff component relative to previous methods.
-- [supported] The algorithm was validated through simulations on the LEONARDO pre-exascale supercomputer with up to 33 qubits, demonstrating convergence to classically estimated values for autocallable option pricing.
-- [supported] The improved integration amplitude loading method mitigates normalization issues, enhancing postprocessing accuracy compared to prior work [7].
-- [speculative] The authors suggest that the proposed methodology represents a step toward achieving quantum utility, defined as a practical advantage over classical methods for complex derivative pricing.
-- [speculative] Quantum advantage in derivative pricing may be achievable with further optimization, particularly for path-dependent options like autocallables.
-- [supported] The complexity analysis shows that the proposed algorithm reduces the logical clock rate needed for quantum advantage by a factor of ∼5x compared to [5], with ∼16x fewer T-gates and ∼4x fewer logical qubits.
-- [speculative] The quadratic speedup promised by Quantum Amplitude Estimation (QAE) over classical Monte Carlo methods (O(1/ϵ) vs. O(1/ϵ²)) could be fully exploited with fault-tolerant quantum hardware.
+- [supported] The proposed integration-based exponential amplitude loading technique reduces circuit depth compared to state-of-the-art approaches, achieving a ~50x reduction in T-depth for the payoff component in a relevant setting.
+- [supported] The algorithm was validated through simulations on high-performance computing (HPC) hardware, including the LEONARDO pre-exascale supercomputer, with experiments conducted up to 33 qubits.
+- [supported] The quantum algorithm demonstrates convergence to classical Monte Carlo results when increasing the number of qubits allocated for Gaussian encoding and quantum arithmetic precision.
+- [speculative] The authors suggest that the proposed methodology represents a step toward achieving quantum utility, defined as a practical advantage of quantum computing over classical methods in derivative pricing.
+- [speculative] The paper claims that the quadratic speedup offered by Quantum Amplitude Estimation (QAE) over classical Monte Carlo methods could be realized for autocallable options pricing, contingent on fault-tolerant quantum hardware.
+- [supported] The complexity analysis shows that the proposed method reduces the logical clock rate needed for quantum advantage by a factor of ~5x compared to prior work, along with reductions in T-gates (~16x) and logical qubits (~4x).
+- [disputed] The claim of a ~50x reduction in T-depth is based on a specific setting and may not generalize across all problem instances or hardware configurations, as noted in comparisons with QSP-based approaches.
 
-**Results summary:** The paper presents a quantum algorithm for pricing autocallable options, a path-dependent financial derivative, using an improved integration-based exponential amplitude loading technique. The algorithm was validated through high-performance computing simulations (up to 33 qubits) and demonstrated a ∼50x reduction in T-depth for the payoff component compared to state-of-the-art methods. The authors conducted a detailed complexity analysis, showing significant resource savings (e.g., ∼16x fewer T-gates, ∼4x fewer logical qubits) relative to prior work. While the results are promising and empirically supported via simulation, the paper acknowledges that achieving practical quantum advantage remains speculative and dependent on fault-tolerant quantum hardware.
+**Results summary:** The paper presents a quantum algorithm for pricing autocallable options, leveraging an improved integration-based exponential amplitude loading technique. The algorithm was validated through extensive simulations on HPC hardware, demonstrating convergence to classical Monte Carlo results as qubit precision and Gaussian discretization increased. A detailed complexity analysis revealed significant reductions in T-depth (~50x), T-gates (~16x), and logical qubits (~4x) compared to prior state-of-the-art methods. While the results are promising, the quantum advantage claims remain speculative due to the reliance on simulations rather than real hardware execution.
 
 **Performance claims:**
-- ∼50x reduction in T-depth for the payoff component relative to previous methods
-- ∼5x reduction in logical clock rate compared to [5]
-- ∼16x fewer T-gates and ∼4x fewer logical qubits compared to [5]
-- Simulations validated on up to 33 qubits using the LEONARDO supercomputer
-- Convergence to classically estimated values for autocallable option pricing
+- ~50x reduction in T-depth for the payoff component relative to previous methods
+- ~16x reduction in required T-gates compared to QSP-based approaches
+- ~4x reduction in necessary logical qubits compared to prior work
+- ~5x reduction in logical clock rate needed for quantum advantage
+- Simulations conducted with up to 33 qubits on the LEONARDO supercomputer
 ## Quantum advantage claim
 **Classification:** speculative
 
-The paper claims a theoretical quadratic speedup via Quantum Amplitude Estimation (QAE) and demonstrates resource efficiency improvements in simulation. However, quantum advantage is not empirically demonstrated on real hardware, and the authors frame their results as a step toward 'quantum utility' rather than a definitive advantage.
+The paper claims a theoretical quantum advantage based on complexity analysis and simulation results, but this advantage has not been demonstrated on real quantum hardware. The quadratic speedup from Quantum Amplitude Estimation (QAE) is cited as a potential advantage, but its practical realization depends on fault-tolerant quantum computing, which is not yet available.
 ## Limitations
-- Experiments conducted only on simulated quantum hardware (LEONARDO pre-exascale supercomputer), not on real quantum devices [inferred]
-- Limited to small instances of the autocallable pricing problem (up to 33 qubits), which may not reflect real-world complexity
-- Algorithm validated only against classical benchmarks; no direct comparison with state-of-the-art quantum or classical methods for autocallable pricing [inferred]
-- Page-limit constraints of the conference paper may have restricted detailed discussion of error analysis or alternative implementations [inferred]
-- Assumes fault-tolerant quantum computing for full advantage, which is not currently available
-- Complexity analysis focuses on T-depth, but other resource metrics (e.g., qubit count, gate count) are not fully explored
-- Normalization factor issues in integration-based amplitude loading may affect accuracy for restricted input domains
-- Partial exponential state preparation requires exact amplitude amplification, which may introduce additional overhead [inferred]
-- No empirical validation of the algorithm's performance on real market data; only synthetic or simplified scenarios tested
-- Rescaling factor amplifies errors in the probability domain, potentially limiting practical accuracy
+- Experiments limited to simulations on HPC hardware (LEONARDO supercomputer) due to current quantum hardware constraints [inferred]
+- Algorithm validated only on a small instance of the autocallable pricing problem (single asset, three time steps, two binary options)
+- Circuit size exceeds current quantum hardware capabilities, making real hardware tests infeasible without error mitigation techniques [inferred]
+- Simulations constrained by qubit count (up to 33 qubits), limiting scalability to more complex financial instruments
+- Use of synthetic data for validation rather than real market data [inferred]
+- Page-limit constraints of conference paper may have restricted detailed discussion of certain implementation aspects [inferred]
+- Normalization factor degradation in integration-based exponential amplitude loading (mitigated but not fully resolved in the proposed method)
+- Dependence on Classiq platform for circuit synthesis may limit reproducibility on other quantum development frameworks [inferred]
+- Error analysis assumes fault-tolerant quantum computing, which is not yet available [inferred]
+- Complexity analysis focuses on T-depth, potentially overlooking other important metrics like gate count or connectivity requirements [inferred]
 ## Open questions
-- How does the algorithm perform on real quantum hardware with noise and decoherence?
-- What is the impact of larger qubit counts (e.g., 50+ qubits) on the algorithm's scalability and accuracy?
-- Can the integration-based amplitude loading technique be extended to other path-dependent derivatives beyond autocallables?
-- How does the proposed method compare to classical Monte Carlo simulations in terms of runtime and accuracy for real-world autocallable pricing?
-- What are the trade-offs between T-depth reduction and other resource requirements (e.g., qubit count, circuit depth)?
-- How sensitive is the algorithm to variations in market parameters (e.g., volatility, correlation between assets)?
-- Can the partial exponential state preparation be optimized further to reduce overhead?
-- What are the implications of using alternative probability distribution models (e.g., stochastic volatility) for derivative pricing?
+- How does the algorithm perform with larger numbers of assets (beyond 3) and longer time horizons (beyond 20 timesteps)?
+- What is the impact of quantum noise and decoherence on solution quality when running on real quantum hardware?
+- Can the ∼50x T-depth reduction be maintained when scaling to production-scale financial problems?
+- How would the algorithm perform under more complex volatility models (e.g., stochastic or local volatility)?
+- What are the exact hardware requirements (qubit count, coherence time) needed to achieve quantum advantage for this application?
+- How does the integration-based approach compare with QSP-based methods in terms of practical implementation challenges?
+- What error mitigation techniques would be most effective for this algorithm on NISQ devices?
+- How would the algorithm perform with real market data that may violate some of the Black-Scholes model assumptions?
 
 **Future work:**
-- Test the algorithm on real quantum hardware (e.g., IBM Quantum, IonQ) to assess noise resilience and practical performance
-- Extend the methodology to multi-asset autocallable options (e.g., best-of or worst-of baskets)
-- Explore hybrid quantum-classical approaches to mitigate current hardware limitations
-- Investigate the use of error mitigation techniques to improve accuracy on noisy intermediate-scale quantum (NISQ) devices
-- Benchmark the algorithm against state-of-the-art classical and quantum methods for derivative pricing
-- Apply the integration-based amplitude loading technique to other complex financial derivatives (e.g., Asian options, barriers)
-- Develop optimized implementations for specific quantum architectures to reduce resource requirements
-- Study the impact of different probability distribution models (e.g., local or stochastic volatility) on the algorithm's performance
+- Test the algorithm on real quantum hardware with error mitigation techniques
+- Extend the methodology to more complex volatility models beyond Black-Scholes
+- Optimize circuit size to make the algorithm feasible for current NISQ devices
+- Validate the approach with real market data rather than synthetic data
+- Explore hybrid quantum-classical approaches to handle larger problem instances
+- Investigate alternative state preparation methods to further reduce circuit depth
+- Develop more comprehensive benchmarking against classical methods for larger problem sizes
+- Extend the algorithm to handle multi-asset autocallable options with more complex payoff structures
+- Implement and test the partial exponential state preparation method described in Section III-B for optimal rescaling
+- Explore the use of different quantum amplitude estimation techniques to improve accuracy
 ## Key ideas
-<!-- Step 6 output — bullet list with idea tags -->
-
+- #idea:quantum-advantage — Proposed integration-based exponential amplitude loading technique achieves ~50x reduction in T-depth for autocallable options pricing, demonstrating potential quantum advantage via QAE's quadratic speedup over classical Monte Carlo
+- #idea:near-term-feasibility — Algorithm validated through HPC simulations (up to 33 qubits) with convergence to classical benchmarks, suggesting near-term applicability despite current hardware limitations
+- #idea:hybrid-approach — Classical HPC simulations and quantum circuit synthesis tools (Classiq, Cirq) used to bridge the gap between theoretical quantum algorithms and practical implementation
+- #limitation:noise — Noise and decoherence on real quantum hardware remain unaddressed, with simulations assuming fault-tolerant conditions
+- #limitation:qubit-count — Current qubit requirements (up to 33) exceed NISQ device capabilities, limiting real-world validation
+- #limitation:data-encoding — Synthetic data used for validation, raising questions about performance with real market data violating Black-Scholes assumptions
 ## Contradictions
-<!-- Step 6 output — where this paper contradicts others -->
-
+- #contradiction:scalability — Claims of ~50x T-depth reduction are context-specific (single asset, 3 time steps) and may not generalize to larger problem instances (e.g., multi-asset autocallables with >20 timesteps), contradicting broader quantum advantage claims for derivatives pricing
 ## Notable quotes
 <!-- Researcher-added — verbatim quotes with page references -->
 

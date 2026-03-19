@@ -18,7 +18,6 @@ idea_tags:
 - idea:hybrid-approach
 journal_or_venue: arXiv
 methodology_tags:
-- QAOA
 - variational
 - quantum-simulation
 paper_type: ''
@@ -28,17 +27,17 @@ relevance_phase1: medium
 relevance_phase3: not-yet-assessed
 source_type: preprint
 source_type_confidence: high
-step1_date: '2026-03-18T22:59:39.492892'
+step1_date: '2026-03-19T11:57:26.288950'
 step1_model: Mistral-Large-3
-step2_date: '2026-03-18T22:59:41.933073'
+step2_date: '2026-03-19T11:57:33.525838'
 step2_model: Mistral-Large-3
-step3_date: '2026-03-18T23:00:16.343301'
+step3_date: '2026-03-19T11:58:24.730615'
 step3_model: Mistral-Large-3
-step4_date: '2026-03-18T23:01:23.660958'
+step4_date: '2026-03-19T11:58:43.694846'
 step4_model: Mistral-Large-3
-step5_date: '2026-03-18T23:01:34.081607'
+step5_date: '2026-03-19T11:59:03.093004'
 step5_model: Mistral-Large-3
-step6_date: '2026-03-18T23:02:27.130111'
+step6_date: '2026-03-19T11:59:32.113125'
 step6_model: Mistral-Large-3
 steps_completed:
 - 1
@@ -50,8 +49,6 @@ steps_completed:
 tags:
 - topic/portfolio-optimisation
 - topic/risk-modelling
-- topic/derivatives-pricing
-- method/QAOA
 - method/variational
 - method/quantum-simulation
 - idea/quantum-advantage
@@ -61,79 +58,77 @@ title: Improved approximation algorithms for bounded-degree local Hamiltonians
 topic_tags:
 - portfolio-optimisation
 - risk-modelling
-- derivatives-pricing
 year: 2021
 zotero_key: ''
 ---
 
 ## Abstract summary
-This preprint presents rigorous algorithms to improve the approximation of ground state energies for local quantum Hamiltonians on bounded-degree graphs. The authors introduce shallow quantum circuits that enhance the performance of product-state approximations, demonstrating energy improvements proportional to the variance of the initial state. The work bridges quantum optimization challenges with classical approximation techniques, offering theoretical bounds for variational quantum algorithms in near-term quantum computing applications.
+This preprint presents rigorous bounds on the performance of shallow quantum circuits for approximating the ground state energy of local Hamiltonians on bounded-degree graphs. The authors introduce a family of quantum algorithms that improve the approximation ratio achieved by product states, leveraging the variance of the energy. The work extends these results to k-local Hamiltonians and entangled initial states, offering insights into the potential advantages of quantum computing for optimization problems in physics and computer science.
 ## Methodology
-The paper presents a theoretical analysis of improved approximation algorithms for estimating the ground state energy of local Hamiltonians on bounded-degree graphs. The methodology focuses on deriving rigorous bounds on the performance of shallow quantum circuits in approximating the largest eigenvalue (or ground state energy) of two-local quantum Hamiltonians. The authors propose a variational family of states obtained by applying a quantum circuit composed of nearest-neighbor commuting gates to an initial product state. The key contribution is a theorem (Theorem 1) that guarantees an improvement in the approximation ratio of the energy for product states under specific variance conditions. The proof leverages a second theorem (Theorem 2) that bounds the energy improvement after applying the quantum circuit. The paper extends these results to k-local Hamiltonians and entangled initial states, as well as to random product states, demonstrating generalizations of known algorithms for classical constraint satisfaction problems. The analysis is theoretical, with no empirical experiments or hardware implementations described.
-
-**Algorithms used:** QAOA
+The paper presents a theoretical framework for improving approximation algorithms for bounded-degree local Hamiltonians, focusing on the task of approximating the ground state energy of two-local quantum Hamiltonians on bounded-degree graphs. The authors derive rigorous bounds on the performance of shallow quantum circuits in estimating the ground state energy. The methodology involves starting with an n-qubit product state and applying a variational family of shallow quantum circuits composed of nearest-neighbor commuting gates on the interaction graph. The improvement in energy is analyzed using the variance of the energy of the initial product state. The paper extends the results to k-local Hamiltonians and entangled initial states, and also explores the improvement of approximation ratios for random product states and states prepared by bounded-depth quantum circuits. Theoretical proofs and propositions are provided to establish the bounds and improvements.
 ## Findings
-- [supported] The paper presents a family of shallow quantum circuits that improve the approximation ratio of a given product state for the ground state energy of two-local Hamiltonians on bounded-degree graphs, with an energy improvement proportional to Varv(H)^2 / (d^2 |E|).
-- [supported] Theorem 1 demonstrates that for a product state |v⟩ with variance Varv(H) = Ω(|E|), a depth-(d+1) quantum circuit can achieve an energy improvement of Ω(Varv(H)^2 / (d^2 |E|)).
-- [supported] Theorem 2 provides a lower bound on the energy improvement using a variational quantum circuit, showing that ⟨ψ|H|ψ⟩ ≥ ⟨v|H|v⟩ + Ω(|E| α^2 / d), where α is defined in Eq. (5).
-- [supported] The results extend to k-local Hamiltonians and entangled initial states, with Theorem 3 showing similar energy improvements for states prepared by bounded-depth quantum circuits.
-- [speculative] The authors suggest that quantum computers may offer advantages for approximating ground state energies of local Hamiltonians, though the extent of quantum advantage for low-temperature properties remains unknown.
-- [speculative] The paper posits that shallow quantum circuits could provide improvements over classical product-state approximations for quantum optimization problems, but notes that no general treatment of variational quantum algorithms' efficacy exists.
-- [speculative] The authors claim that their algorithm generalizes the performance guarantees of known algorithms for bounded-occurrence classical constraint satisfaction problems when applied to random product states.
-- [speculative] The paper suggests that their results could inform the development of new local Hamiltonian systems with the almost-linear NLTS (No Low-energy Trivial States) property.
+- [supported] For local Hamiltonians on bounded-degree graphs, the approximation ratio achieved by a product state can be improved by applying a shallow quantum circuit of depth d+1, assuming the variance of the energy satisfies Var_v(H) = Ω(|E|).
+- [supported] The energy improvement is proportional to Var_v(H)^2 / (d^2 |E|), where Var_v(H) is the variance of the energy for the initial product state |v⟩.
+- [supported] Theorem 1 provides a rigorous lower bound on the energy improvement: ⟨ψ|H|ψ⟩ ≥ ⟨v|H|v⟩ + Ω(Var_v(H)^2 / (d^2 |E|)), where |ψ⟩ is the state after applying the shallow quantum circuit.
+- [supported] For locally optimal product states, the energy improvement bound tightens to ⟨ψ|H|ψ⟩ ≥ ⟨v|H|v⟩ + Ω(Var_v(H)^2 / (d |E|)).
+- [supported] The results extend to k-local Hamiltonians and entangled initial states prepared by constant-depth quantum circuits, with energy improvement bounds adjusted for lightcone size and locality.
+- [speculative] Quantum advantage for approximating ground state energies of local Hamiltonians may emerge due to the inefficiency of classical methods in capturing entanglement, but this remains unproven for general cases.
+- [speculative] The authors suggest that shallow quantum circuits could provide a scalable approach for quantum optimization problems in near-term quantum devices, though empirical validation is lacking.
+- [supported] For the quantum Max-Cut problem, the approximation ratio of any product state can be improved by a shallow quantum circuit, with the improvement scaling as Ω(r^4 / d), where r is the initial approximation ratio.
+- [supported] For random product states on triangle-free graphs, the approximation ratio can be improved by Ω(1/√d) using shallow quantum circuits, matching the performance of known classical local algorithms.
+- [speculative] The paper posits that shallow quantum circuits may offer advantages over product-state approximations for quantum optimization, but this claim is not empirically demonstrated on real hardware.
 
-**Results summary:** The paper rigorously analyzes the performance of shallow quantum circuits in approximating the ground state energy of local Hamiltonians on bounded-degree graphs. It introduces a method to improve the approximation ratio of product states using depth-(d+1) quantum circuits, achieving an energy gain proportional to the variance of the energy squared divided by the degree and number of edges. The results are extended to k-local Hamiltonians and states prepared by bounded-depth circuits, with theoretical guarantees provided for energy improvements. The work also explores applications to quantum Max-Cut and classical constraint satisfaction problems, demonstrating how shallow quantum circuits can enhance approximation ratios beyond classical product-state methods. However, the quantum advantage claims remain speculative, as the results are theoretical and not empirically validated on real hardware.
+**Results summary:** The paper presents rigorous theoretical results on improving the approximation ratios for ground state energies of local Hamiltonians using shallow quantum circuits. The key contribution is a family of shallow quantum circuits that enhance the energy of product states by an amount proportional to the variance of the energy, scaled by the graph degree and number of edges. The results are extended to k-local Hamiltonians and entangled initial states, with bounds adjusted for circuit depth and lightcone size. Specific applications to the quantum Max-Cut problem and random product states on triangle-free graphs demonstrate improvements in approximation ratios. While the theoretical guarantees are strong, the paper does not provide empirical validation on real quantum hardware, leaving claims of quantum advantage speculative.
 
 **Performance claims:**
-- Energy improvement of Ω(Varv(H)^2 / (d^2 |E|)) for product states using depth-(d+1) quantum circuits
-- Energy improvement of Ω(|E| α^2 / d) using variational quantum circuits, where α is defined in Eq. (5)
-- For quantum Max-Cut, approximation ratio improvement from r to r + Ω(r^4 / d) for product states
+- Energy improvement of Ω(Var_v(H)^2 / (d^2 |E|)) for product states on bounded-degree graphs
+- Energy improvement of Ω(Var_v(H)^2 / (d |E|)) for locally optimal product states
+- Approximation ratio improvement of Ω(r^4 / d) for the quantum Max-Cut problem
+- Approximation ratio improvement of Ω(1/√d) for random product states on triangle-free graphs
 ## Quantum advantage claim
 **Classification:** speculative
 
-The paper presents theoretical results suggesting that shallow quantum circuits can improve approximation ratios for ground state energy problems beyond classical product-state methods. However, these claims are speculative as they are not empirically demonstrated on real quantum hardware and rely on assumptions about variance and graph structure.
+The paper argues theoretically that shallow quantum circuits could provide advantages over classical product-state approximations for quantum optimization problems, particularly in capturing entanglement. However, these claims are not empirically validated on real quantum hardware, and the results are derived from simulations and theoretical bounds. The extent of quantum advantage remains speculative, as classical methods may still compete effectively for the problem sizes and structures considered.
 ## Limitations
-- The paper is a preprint and has not undergone peer review, which may affect the validity and robustness of the results [inferred]
-- The results are primarily theoretical with rigorous bounds, but lack empirical validation on real quantum hardware [inferred]
-- Assumes bounded-degree graphs for local Hamiltonians, limiting generalizability to arbitrary graph structures [inferred]
-- The improvement in approximation ratio is proportional to Varv(H)^2 / (d^2 |E|), which may be small for certain Hamiltonians or initial states
-- Condition (i) (Varv(H) = Ω(|E|)) is not satisfied for classical Hamiltonians where |v⟩ is a computational basis state, limiting applicability to purely classical optimization problems
-- The optimality of the improvement (Eq. 2) is demonstrated only for specific Hamiltonians and product states, not universally [inferred]
-- The quantum circuits used are shallow (depth d+1), but the energy improvement may not scale favorably for larger or more complex systems [inferred]
-- The extension to k-local Hamiltonians is discussed in the supplemental material but not fully explored in the main text [inferred]
+- The paper is a preprint and has not undergone peer review [inferred]
+- The results are primarily theoretical with no empirical validation on real quantum hardware [inferred]
+- Assumes bounded-degree graphs, limiting applicability to general graphs or real-world financial networks [inferred]
+- The improvement in approximation ratio depends on the variance condition Var_v(H) = Ω(|E|), which may not hold for all product states [stated]
+- The shallow quantum circuit depth depends on the graph degree (d+1), which may not scale well for high-degree graphs [stated]
+- The optimality of the improvement (Eq. 2) is demonstrated only for specific Hamiltonians and product states [stated]
+- The extension to k-local Hamiltonians shows a worse dependence on the degree (Ω(1/d^4)) compared to 2-local Hamiltonians (Ω(1/d^2)) [stated]
+- The analysis assumes noiseless quantum operations, which is unrealistic for near-term quantum devices [inferred]
+- The improvement strategy is limited to product states or bounded-depth states, excluding more complex entangled states [stated]
 - The paper does not compare the proposed algorithm with state-of-the-art classical approximation methods for the same problems [inferred]
-- The results for bounded-depth states (Theorem 3) require a non-constant-depth circuit U, which may limit practical implementation on near-term quantum devices [inferred]
-- The improvement for random product states (Theorem 4) is probabilistic and may not guarantee consistent performance across all instances [inferred]
-- The paper does not address noise or error mitigation techniques, which are critical for real-world quantum hardware [inferred]
 ## Open questions
-- What are the ultimate limits of efficient quantum algorithms for approximating the ground state energy of local Hamiltonians?
-- Can the quantum PCP conjecture provide stronger limitations on achievable approximation ratios for local Hamiltonians?
-- How does the performance of shallow quantum circuits compare to deeper variational quantum algorithms for ground state preparation?
-- Can the results be extended to Hamiltonians with unbounded-degree graphs or more complex interaction structures?
-- What is the impact of noise and decoherence on the energy improvements achieved by the proposed shallow quantum circuits?
-- Are there specific classes of Hamiltonians where the proposed algorithm fails to provide meaningful improvements?
-- How can the algorithm be adapted to improve approximation ratios for classical optimization problems where Varv(H) = 0?
-- Can the results be used to exhibit new local Hamiltonian systems with the almost-linear NLTS property?
-- What are the trade-offs between circuit depth and approximation ratio improvement in practical implementations?
-- How does the algorithm perform on real-world financial optimization problems, such as portfolio optimization or risk analysis?
+- What are the ultimate limits of efficient quantum algorithms for approximating ground state energies of local Hamiltonians?
+- Can the quantum PCP conjecture provide stronger limitations on achievable approximation ratios for quantum optimization problems?
+- How does the algorithm perform on graphs with higher degrees or more complex topologies beyond bounded-degree graphs?
+- What is the impact of noise and decoherence on the performance of the proposed shallow quantum circuits?
+- Can the improvement in approximation ratio be extended to more general families of quantum states beyond product states or bounded-depth states?
+- How does the proposed algorithm compare with classical approximation algorithms for the same class of problems?
+- Can the results be generalized to other types of Hamiltonians relevant to financial services, such as those modeling portfolio optimization or risk analysis?
+- What are the implications of the almost-linear NLTS property for the approximation ratios achievable by shallow quantum circuits?
+- How can the algorithm be adapted to handle the constraints and objectives specific to financial optimization problems?
 
 **Future work:**
-- Empirical validation of the proposed algorithms on real quantum hardware (e.g., IBM Eagle processor)
-- Extension of the results to k-local Hamiltonians and more general interaction terms
-- Comparison of the proposed quantum algorithms with state-of-the-art classical approximation methods
-- Exploration of noise mitigation techniques to improve the robustness of the algorithm on near-term quantum devices
-- Investigation of the algorithm's performance on specific financial optimization problems, such as portfolio optimization or option pricing
-- Development of hybrid quantum-classical algorithms that combine the strengths of shallow quantum circuits and classical optimization techniques
-- Study of the algorithm's scalability to larger systems and its applicability to industry-relevant problem sizes
-- Extension of the results to entangled initial states beyond product states
-- Exploration of the algorithm's potential to exhibit new local Hamiltonian systems with the almost-linear NLTS property
-- Application of the algorithm to other domains, such as materials science or quantum chemistry, where ground state energy estimation is critical
+- Empirical validation of the algorithm on real quantum hardware
+- Extension of the results to more general graph structures beyond bounded-degree graphs
+- Investigation of noise mitigation techniques to improve performance on near-term quantum devices
+- Comparison with state-of-the-art classical approximation algorithms for the same problems
+- Exploration of the algorithm's applicability to financial optimization problems, such as portfolio optimization or risk analysis
+- Development of hybrid quantum-classical algorithms that combine the strengths of both approaches
+- Study of the impact of the quantum PCP conjecture on the limits of quantum approximation algorithms
+- Generalization of the improvement strategy to more complex quantum states beyond product states or bounded-depth states
+- Investigation of the almost-linear NLTS property in the context of local Hamiltonian systems
+- Application of the algorithm to other scientific domains, such as materials science or quantum chemistry
 ## Key ideas
 - #idea:quantum-advantage — Shallow quantum circuits improve approximation ratios for ground state energy problems beyond classical product-state methods, with potential applications in portfolio optimization and risk modelling
 - #idea:near-term-feasibility — Theoretical bounds suggest near-term applicability of variational quantum algorithms for local Hamiltonian problems on bounded-degree graphs
 - #idea:hybrid-approach — The paper bridges quantum optimization with classical approximation techniques, implying hybrid quantum-classical approaches for practical implementation
 - #limitation:no-empirical-validation — Theoretical claims lack empirical validation on real quantum hardware, limiting direct applicability to financial use cases
 - #limitation:qubit-count — Assumptions about bounded-degree graphs and shallow circuits may not scale to real-world financial problems requiring larger qubit counts
+- #limitation:noise — The analysis assumes noiseless quantum operations, which is unrealistic for near-term quantum devices
 ## Contradictions
 <!-- Step 6 output — where this paper contradicts others -->
 

@@ -20,13 +20,13 @@ idea_tags:
 journal_or_venue: Int J Adv Nano Comput Anal
 methodology_tags:
 - QAOA
-- HHL
 - quantum-annealing
+- HHL
 - quantum-ML
 - amplitude-estimation
 - QUBO
-- grover
-- quantum-simulation
+- quantum-SVM
+- quantum-walk
 paper_type: ''
 quantum_advantage_claim: speculative
 related_papers: []
@@ -34,17 +34,17 @@ relevance_phase1: high
 relevance_phase3: medium
 source_type: review-article
 source_type_confidence: high
-step1_date: '2026-03-18T23:10:04.632366'
+step1_date: '2026-03-19T12:39:34.351364'
 step1_model: Mistral-Large-3
-step2_date: '2026-03-18T23:10:07.516290'
+step2_date: '2026-03-19T12:39:39.700214'
 step2_model: Mistral-Large-3
-step3_date: '2026-03-18T23:10:12.249869'
+step3_date: '2026-03-19T12:40:52.889815'
 step3_model: Mistral-Large-3
-step4_date: '2026-03-18T23:10:19.682982'
+step4_date: '2026-03-19T12:41:29.778289'
 step4_model: Mistral-Large-3
-step5_date: '2026-03-18T23:11:08.225562'
+step5_date: '2026-03-19T12:42:34.207575'
 step5_model: Mistral-Large-3
-step6_date: '2026-03-18T23:12:12.730515'
+step6_date: '2026-03-19T12:42:54.768099'
 step6_model: Mistral-Large-3
 steps_completed:
 - 1
@@ -57,21 +57,16 @@ tags:
 - topic/portfolio-optimisation
 - topic/risk-modelling
 - topic/derivatives-pricing
-- topic/fraud-detection
-- topic/credit-scoring
-- topic/high-frequency-trading
-- topic/asset-pricing
 - topic/quantum-cryptography
-- topic/regulatory-compliance
 - topic/market-simulation
 - method/QAOA
-- method/HHL
 - method/quantum-annealing
+- method/HHL
 - method/quantum-ML
 - method/amplitude-estimation
 - method/QUBO
-- method/grover
-- method/quantum-simulation
+- method/quantum-SVM
+- method/quantum-walk
 - idea/quantum-advantage
 - idea/near-term-feasibility
 - idea/hybrid-approach
@@ -81,85 +76,69 @@ topic_tags:
 - portfolio-optimisation
 - risk-modelling
 - derivatives-pricing
-- fraud-detection
-- credit-scoring
-- high-frequency-trading
-- asset-pricing
 - quantum-cryptography
-- regulatory-compliance
 - market-simulation
 year: 2023
 zotero_key: ''
 ---
 
 ## Abstract summary
-This review article provides a comprehensive overview of the potential applications of quantum computing across various fields, including machine learning, optimization, simulation, cybersecurity, and pharmaceuticals. The authors examine how quantum computing could address complex computational problems that are currently intractable for classical computers, highlighting its transformative potential in industries like finance and drug discovery while acknowledging the technology's early developmental stage.
+This review article explores the potential of quantum computing to transform advanced computational applications across multiple industries. It systematically examines how quantum computers could address complex problems in machine learning, optimization, simulation, and other domains, with a focus on applications in finance, pharmaceuticals, cybersecurity, and material technology. The paper highlights current advancements, challenges, and the need for further research to fully realize quantum computing's capabilities.
 ## Methodology
-This review article conducts a comprehensive survey of advanced computational applications of quantum computing across multiple domains, including finance, cybersecurity, pharmaceuticals, supply chain management, energy, machine learning, climate modeling, and material technology. The methodology involves a systematic literature review approach, where the authors synthesize existing research and industry developments to highlight the potential and current state of quantum computing applications. The paper outlines key quantum algorithms and their theoretical applications in various fields, referencing seminal works and recent advancements. The review does not conduct original empirical or theoretical research but instead categorizes and summarizes findings from a broad range of sources, including academic papers, industry projects, and startups. The inclusion criteria appear to focus on high-impact or illustrative examples of quantum computing applications, particularly those involving optimization, simulation, and machine learning tasks.
+This review article conducts a comprehensive survey of advanced computational applications of quantum computing across multiple industries, including finance, cybersecurity, pharmaceuticals, supply chain management, energy, machine learning, climate modeling, and material technology. The methodology involves a systematic synthesis of existing literature, theoretical frameworks, and proposed quantum algorithms. The paper outlines key quantum algorithms and their potential applications, particularly in finance for risk analysis and portfolio optimization, without conducting original empirical experiments. The review categorizes applications based on domain-specific challenges and highlights quantum algorithms such as QAOA, QLSA, and quantum machine learning techniques. Inclusion criteria appear to focus on seminal and recent works in quantum computing applications, though explicit search strategy and inclusion/exclusion criteria are not detailed. The synthesis method is narrative, organizing findings by industry and discussing the theoretical potential and limitations of quantum computing in each domain.
 
-**Algorithms used:** Quantum Approximate Optimization Algorithm (QAOA), Quantum Linear Systems Algorithm (QLSA), Quantum Key Distribution (QKD), Quantum Monte Carlo algorithms, Quantum Annealing algorithms, Quantum Machine Learning algorithms, Shor’s algorithm
+**Algorithms used:** QAOA, QLSA, Quantum Monte Carlo, Quantum Annealing, Quantum Machine Learning, Quantum Key Distribution (QKD)
 ## Findings
 - [speculative] Quantum computing has the potential to revolutionize numerous areas of science and technology, including machine learning, optimization, and simulation
 - [speculative] Quantum computers could improve the accuracy and efficiency of machine learning algorithms
-- [speculative] Quantum computers can address complex optimization problems in logistics and finance
-- [speculative] Quantum computers could enable the simulation of intricate systems like molecules and materials, leading to advancements in physics and material technology
-- [speculative] Shor’s algorithm demonstrates the potential for quantum computers to solve certain problems (e.g., factoring large integers) much faster than classical computers
+- [speculative] Quantum computers may address complex optimization problems in logistics and finance more effectively than classical computers
+- [speculative] Quantum computers could enable the simulation of intricate systems like molecules and materials, advancing fields like pharmaceuticals and material technology
 - [speculative] Quantum key distribution (QKD) could provide secure communication immune to certain cyber-attacks, though practical challenges remain
-- [speculative] Quantum computers could revolutionize drug discovery by simulating molecular behavior and predicting protein interactions with high accuracy
-- [speculative] Quantum algorithms like QAOA could be used to find the lowest energy configurations of molecules, aiding drug discovery
-- [speculative] Quantum computers could perform risk analysis and portfolio optimization in finance more quickly and accurately than classical computers
-- [speculative] Quantum linear systems algorithm (QLSA) could solve systems of linear equations efficiently, benefiting financial decision-making
-- [speculative] Quantum computers could optimize supply chain management through route optimization, inventory management, and demand forecasting
-- [speculative] Quantum computers could optimize the design of catalysts and batteries, leading to more efficient energy usage
-- [speculative] Quantum computers could improve the accuracy and speed of machine learning algorithms, particularly in training large models
-- [speculative] Quantum computers could enhance climate modeling by enabling more precise simulations of complex systems like the Earth’s climate
-- [speculative] Quantum computers could advance material technology by simulating material properties at the atomic and molecular scale with greater precision
-- [speculative] Quantum computers could simulate quantum systems, dark matter, and black holes, advancing fundamental physics research
+- [speculative] Quantum algorithms like QAOA and quantum linear systems algorithm (QLSA) could significantly improve drug discovery and financial risk analysis, respectively
+- [speculative] Quantum computing could optimize supply chain management through faster solutions to logistics problems like route optimization and demand forecasting
+- [speculative] Quantum computers may enhance energy efficiency by optimizing the design of catalysts, batteries, and power grids
+- [speculative] Quantum computing could advance climate modelling by enabling more precise simulations of complex systems like the Earth’s climate
+- [speculative] Quantum computers hold potential for simulating quantum systems in physics, including dark matter and black holes, to deepen understanding of fundamental physics
+- [speculative] The market size of quantum computing is expected to grow with the increase in qubit numbers and computational complexity
+- [disputed] While quantum computing is promising, it is still in early developmental stages, and widespread impact may take significant time
 
-**Results summary:** This review article provides a comprehensive overview of the potential applications of quantum computing across various industries, including cybersecurity, pharmaceuticals, finance, supply chain management, energy, machine learning, climate modeling, and material technology. The paper highlights theoretical advancements such as Shor’s algorithm and quantum key distribution (QKD) but notes that most applications remain speculative due to the early stage of quantum computing development. While quantum computing is posited to solve intractable problems for classical computers, the review emphasizes the need for further research and development to realize its full potential.
+**Results summary:** This review article synthesizes the potential applications and current state of quantum computing across multiple industries, including finance, cybersecurity, pharmaceuticals, supply chain management, energy, machine learning, climate modelling, and material technology. The paper highlights speculative advancements such as improved optimization, simulation, and machine learning capabilities, while acknowledging that quantum computing remains in its early stages. No empirical results or demonstrated quantum advantage are presented, and claims are largely theoretical or based on projected future developments.
 ## Quantum advantage claim
 **Classification:** speculative
 
-The paper discusses theoretical advantages of quantum computing (e.g., Shor’s algorithm, QAOA) but does not provide empirical evidence or real hardware demonstrations. All claims of quantum advantage are based on theoretical propositions or simulations.
+The review discusses theoretical advantages of quantum computing in various domains but does not provide empirical evidence or demonstrations of quantum advantage. All claims are forward-looking and lack validation on real quantum hardware.
 ## Limitations
-- [inferred] The review does not provide a systematic or exhaustive search strategy, potentially leading to search coverage gaps in the literature
-- [inferred] The review may suffer from recency bias, as the field of quantum computing is rapidly evolving and the paper was published in December 2023
-- [inferred] Language bias may be present, as the review does not specify inclusion criteria for non-English papers
-- [inferred] Grey literature and industry reports are likely excluded, limiting the scope to peer-reviewed sources
-- [inferred] The review focuses broadly on quantum computing applications across multiple industries, which may dilute depth in financial services-specific insights
-- [inferred] No critical assessment of the maturity or readiness level of quantum computing applications in financial services (e.g., risk analysis, portfolio optimization) is provided
-- [inferred] Lack of empirical validation or case studies demonstrating real-world performance of quantum algorithms in financial services
-- [inferred] The review does not address hardware constraints (e.g., qubit count, error rates, decoherence) that limit current quantum computing applications
-- [inferred] No discussion of scalability challenges for quantum algorithms in financial services, such as handling large-scale datasets or real-time processing
-- [inferred] Potential overemphasis on theoretical potential without sufficient discussion of practical barriers (e.g., noise, error correction, algorithmic efficiency)
-- [inferred] The review does not compare quantum computing approaches with state-of-the-art classical methods in financial services, leaving performance gaps unclear
+- [inferred] Search coverage may be limited to high-profile or well-documented applications, potentially overlooking niche or emerging use cases in financial services
+- [inferred] Review may not include the most recent developments due to publication lag (published December 2023)
+- [inferred] Language bias toward English-language sources, excluding non-English research on quantum computing in financial services
+- [inferred] Grey literature (e.g., industry blogs, preprints, technical reports) is excluded, which may omit practical insights or early-stage innovations
+- [inferred] Lack of critical comparison between quantum and classical approaches for financial applications (e.g., portfolio optimization, risk analysis)
+- [inferred] No discussion of hardware-specific limitations (e.g., qubit coherence times, error rates) that may impact financial use cases
+- [inferred] Limited depth in discussing regulatory or ethical challenges specific to quantum computing in finance (e.g., cryptographic risks, data privacy)
+- Quantum computing is still in the early stages of development, requiring further research to fully realize its potential in advanced computational applications (author-stated)
+- [inferred] No empirical validation or case studies demonstrating quantum computing's superiority over classical methods in financial services
 ## Open questions
-- How will quantum computing overcome current hardware limitations (e.g., qubit count, error rates) to achieve practical applications in financial services?
-- What are the specific performance benchmarks for quantum algorithms (e.g., QLSA, QAOA) in financial use cases compared to classical solvers?
-- How can quantum computing be integrated with existing classical infrastructure in financial institutions?
-- What are the data requirements and preprocessing challenges for quantum algorithms in financial services (e.g., portfolio optimization, risk analysis)?
-- How will quantum computing impact the security and robustness of financial systems, particularly in the context of post-quantum cryptography?
-- What are the economic and operational barriers to adopting quantum computing in financial services, and how can they be mitigated?
-- How do quantum algorithms perform under real-world financial market conditions, including noise and dynamic data?
-- What are the ethical and regulatory implications of quantum computing in financial services, particularly for risk modeling and decision-making?
+- How will quantum computing address the scalability challenges in financial modeling (e.g., large-scale portfolio optimization or real-time risk analysis)?
+- What are the specific quantum algorithms that will outperform classical methods in financial applications, and under what conditions?
+- How will quantum computing impact the security of financial systems, particularly in the context of post-quantum cryptography?
+- What are the hardware requirements (e.g., qubit count, error correction) for quantum computers to become viable for financial use cases?
+- How will quantum computing integrate with existing classical infrastructure in financial institutions?
+- What are the potential risks or unintended consequences of adopting quantum computing in finance (e.g., market manipulation, systemic risks)?
 
 **Future work:**
-- Conduct empirical studies to validate the performance of quantum algorithms in financial services (e.g., portfolio optimization, risk analysis) on real quantum hardware
-- Develop hybrid quantum-classical approaches to address current hardware limitations and improve scalability for financial applications
-- Explore noise mitigation and error correction techniques tailored for quantum algorithms in financial services
-- Investigate the integration of quantum computing with classical systems in financial institutions to enable practical deployment
-- Expand research on quantum machine learning for financial forecasting, fraud detection, and algorithmic trading
-- Assess the economic viability and cost-benefit analysis of quantum computing adoption in financial services
-- Develop standardized benchmarks for comparing quantum and classical algorithms in financial use cases
-- Explore the potential of quantum computing for real-time financial modeling and decision-making
-- Investigate the impact of quantum computing on financial regulations, compliance, and cybersecurity frameworks
-- Conduct longitudinal studies to track the evolution of quantum computing applications in financial services as hardware matures
+- Further research and development to advance quantum computing applications in finance, including risk analysis and portfolio optimization
+- Exploration of hybrid quantum-classical approaches to address current limitations in quantum hardware
+- Development of quantum algorithms tailored for financial use cases, such as quantum linear systems algorithms (QLSA) for risk modeling
+- Investigation of quantum machine learning techniques to improve predictive analytics in finance
+- Collaboration between academia, industry, and regulators to establish standards and frameworks for quantum computing in financial services
+- Empirical validation of quantum computing's advantages over classical methods in real-world financial scenarios
+- Expansion of quantum computing education and workforce development to support adoption in finance
 ## Key ideas
 - #idea:quantum-advantage — Quantum algorithms like QAOA and QLSA are theoretically posited to outperform classical methods in portfolio optimization, risk analysis, and financial decision-making
 - #idea:near-term-feasibility — The paper highlights speculative but broad potential for quantum computing in finance, despite current hardware limitations
 - #idea:hybrid-approach — Implicit suggestion that hybrid quantum-classical approaches may be necessary to address current hardware constraints in financial applications
 - #limitation:no-empirical-validation — All claims of quantum advantage in finance are theoretical, with no empirical validation or real-world demonstrations
-- #limitation:noise — Hardware noise and error rates are not addressed but are critical barriers to practical deployment in financial services
+- #limitation:noise — Hardware noise and error rates are critical barriers to practical deployment in financial services, though not explicitly addressed in the paper
 - #limitation:qubit-count — Insufficient qubit counts limit the scalability of quantum algorithms for real-world financial problems
 ## Contradictions
 <!-- Step 6 output — where this paper contradicts others -->
