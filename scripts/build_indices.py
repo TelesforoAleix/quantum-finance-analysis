@@ -180,6 +180,7 @@ def _collect_paper_data(papers: list[str]) -> list[dict]:
             "contradiction_flags": [t for t in contradiction_flags if isinstance(t, str)],
             "quantum_advantage_claim": meta.get("quantum_advantage_claim", ""),
             "relevance_phase1": meta.get("relevance_phase1", ""),
+            "body": body,
             "findings_bullets": _extract_findings_bullets(body),
             "open_questions": _extract_open_questions(body),
             "has_experiment_details": bool(_extract_section(body, "Experiment details")),
@@ -583,6 +584,288 @@ def build_overview(papers: list[dict], citation_data: dict) -> str:
 
 
 # ---------------------------------------------------------------------------
+# Experiment landscape
+# ---------------------------------------------------------------------------
+
+_HARDWARE_KEYWORDS = {
+    "qiskit": "Qiskit simulator",
+    "pennylane": "PennyLane",
+    "cirq": "Cirq",
+    "d-wave": "D-Wave",
+    "dwave": "D-Wave",
+    "ibm quantum": "IBM Quantum (real)",
+    "ibm_quantum": "IBM Quantum (real)",
+    "ibmq": "IBM Quantum (real)",
+    "ionq": "IonQ",
+    "rigetti": "Rigetti",
+    "amazon braket": "Amazon Braket",
+    "simulator": "Simulator (unspecified)",
+    "real qpu": "Real QPU (unspecified)",
+}
+
+
+def _extract_subsection(section_text: str, subsection_name: str) -> str:
+    """Extract a ### subsection from a ## section's text."""
+    parts = re.split(r"^### ", section_text, flags=re.MULTILINE)
+    for part in parts:
+        if part.lower().startswith(subsection_name.lower()):
+            # Remove the header line itself
+            lines = part.split("\n", 1)
+            return lines[1].strip() if len(lines) > 1 else ""
+    return ""
+
+
+def _detect_hardware(text: str) -> str:
+    """Detect hardware/simulator from text using keyword matching."""
+    lower = text.lower()
+    for keyword, label in _HARDWARE_KEYWORDS.items():
+        if keyword in lower:
+            return label
+    return ""
+
+
+def _extract_qubits(text: str) -> str:
+    """Try to extract qubit count from parameters text."""
+    # Look for patterns like "qubits: 8", "8 qubits", "n_qubits=8", "qubits_per_X: 4"
+    patterns = [
+        r"qubit[\w]*[:\s=]+([\d]+)",
+        r"([\d]+)\s*qubit",
+    ]
+    for pat in patterns:
+        m = re.search(pat, text, re.IGNORECASE)
+        if m:
+            return m.group(1)
+    return ""
+
+
+def _extract_experiment_info(body: str) -> dict | None:
+    """Extract structured experiment info from a paper body.
+
+    Returns None if no experiment details section or content is mostly N/A.
+    """
+    section = _extract_section(body, "Experiment details")
+    if not section:
+        return None
+
+    # Check if content is mostly N/A
+    stripped = re.sub(r"###\s+\w+", "", section).strip()
+    non_na = stripped.replace("N/A", "").replace("n/a", "").replace("—", "").strip()
+    if len(non_na) < 20:
+        return None
+
+    input_text = _extract_subsection(section, "Input")
+    params_text = _extract_subsection(section, "Parameters")
+    hardware_text = _extract_subsection(section, "Hardware")
+
+    # Build input summary (first ~100 chars)
+    input_summary = input_text[:100].rstrip()
+    if len(input_text) > 100:
+        input_summary += "..."
+
+    # Detect hardware — check hardware subsection first, fall back to full section
+    hardware = _detect_hardware(hardware_text)
+    if not hardware:
+        hardware = _detect_hardware(section)
+
+    # Extract qubit count from parameters, fall back to full section
+    qubits = _extract_qubits(params_text)
+    if not qubits:
+        qubits = _extract_qubits(section)
+
+    # Algorithm from Methodology section
+    methodology = _extract_section(body, "Methodology")
+    algorithm = ""
+    if methodology:
+        # Look for known algorithm names
+        algo_patterns = [
+            (r"\bQAOA\b", "QAOA"),
+            (r"\bVQE\b", "VQE"),
+            (r"\bHHL\b", "HHL"),
+            (r"\bGrover", "Grover"),
+            (r"quantum annealing", "Quantum Annealing"),
+            (r"amplitude estimation", "Amplitude Estimation"),
+            (r"\bQUBO\b", "QUBO"),
+            (r"quantum walk", "Quantum Walk"),
+            (r"quantum.?SVM", "Quantum SVM"),
+            (r"quantum neural network|QNN", "QNN"),
+            (r"quantum kernel", "Quantum Kernel"),
+            (r"variational", "Variational"),
+        ]
+        found = []
+        for pat, name in algo_patterns:
+            if re.search(pat, methodology, re.IGNORECASE):
+                found.append(name)
+        algorithm = ", ".join(found[:3])  # cap at 3
+
+    return {
+        "input_summary": input_summary or "—",
+        "hardware": hardware or "—",
+        "qubits": qubits or "—",
+        "algorithm": algorithm or "—",
+    }
+
+
+def build_experiment_landscape(papers: list[dict]) -> str:
+    """Generate analysis/experiment_landscape.md — summary of experimental approaches."""
+    now = datetime.now(timezone.utc).strftime("%Y-%m-%d")
+    total = len(papers)
+
+    # Collect experiment info per paper
+    experiments: list[tuple[dict, dict]] = []  # (paper, info)
+    for p in papers:
+        info = _extract_experiment_info(p.get("body", ""))
+        if info:
+            experiments.append((p, info))
+
+    exp_count = len(experiments)
+
+    # Group by topic
+    topic_experiments: dict[str, list[tuple[dict, dict]]] = {}
+    for paper, info in experiments:
+        topics = paper["topic_tags"] or ["untagged"]
+        for t in topics:
+            topic_experiments.setdefault(t, []).append((paper, info))
+
+    # Hardware distribution
+    hw_counter: Counter = Counter()
+    for _, info in experiments:
+        hw = info["hardware"]
+        if hw and hw != "—":
+            hw_counter[hw] += 1
+
+    # Determine most common hardware category
+    sim_count = sum(c for hw, c in hw_counter.items() if "simulator" in hw.lower() or "sim" in hw.lower())
+    qpu_count = sum(c for hw, c in hw_counter.items() if "real" in hw.lower() or "qpu" in hw.lower())
+
+    # Dataset catalog
+    dataset_counter: Counter = Counter()
+    dataset_topics: dict[str, set[str]] = {}
+    for paper, info in experiments:
+        summary = info["input_summary"]
+        if summary and summary != "—":
+            # Use a simplified label (first 40 chars)
+            label = summary[:40].rstrip()
+            if len(summary) > 40:
+                label += "..."
+            dataset_counter[label] += 1
+            for t in paper["topic_tags"]:
+                dataset_topics.setdefault(label, set()).add(t)
+
+    # Most common setup description
+    if hw_counter:
+        most_common_hw = hw_counter.most_common(1)[0][0]
+    else:
+        most_common_hw = "unknown"
+
+    # Build markdown
+    lines: list[str] = []
+    lines.append("# Experiment Landscape")
+    lines.append("")
+    lines.append("Summary of experimental approaches across the quantum finance literature.")
+    lines.append("")
+    lines.append(f"Generated: {now}")
+    lines.append("")
+
+    # Summary
+    lines.append("## Summary")
+    lines.append("")
+    lines.append(f"- Papers with experiment details: {exp_count} / {total} total")
+    lines.append(f"- Most common experimental setup: {most_common_hw}")
+    lines.append(f"- Most common hardware: simulator ({sim_count} papers), real QPU ({qpu_count} papers)")
+    lines.append("")
+
+    # Experiments by topic
+    lines.append("## Experiments by Topic")
+    lines.append("")
+    for tag in sorted(topic_experiments.keys()):
+        entries = topic_experiments[tag]
+        display = _tag_display_name(tag)
+        lines.append(f"### {display} ({len(entries)} experiments)")
+        lines.append("")
+        lines.append("| Paper | Year | Algorithm | Qubits | Hardware | Dataset |")
+        lines.append("|-------|------|-----------|--------|----------|---------|")
+        sorted_entries = sorted(entries, key=lambda x: x[0].get("year") or 0, reverse=True)
+        for paper, info in sorted_entries:
+            link = _wiki_link(paper["filename"])
+            year = paper["year"] or "—"
+            algo = _escape_pipe(info["algorithm"])
+            qubits = _escape_pipe(info["qubits"])
+            hw = _escape_pipe(info["hardware"])
+            dataset = _escape_pipe(info["input_summary"][:50])
+            lines.append(f"| {link} | {year} | {algo} | {qubits} | {hw} | {dataset} |")
+        lines.append("")
+
+    # Hardware distribution
+    lines.append("## Hardware Distribution")
+    lines.append("")
+    lines.append("| Hardware Type | Papers |")
+    lines.append("|---------------|--------|")
+    for hw, count in hw_counter.most_common():
+        lines.append(f"| {_escape_pipe(hw)} | {count} |")
+    if not hw_counter:
+        lines.append("| No hardware data available | — |")
+    lines.append("")
+
+    # Dataset catalog
+    lines.append("## Dataset Catalog")
+    lines.append("")
+    lines.append("| Dataset | Used By | Papers |")
+    lines.append("|---------|---------|--------|")
+    for ds, count in dataset_counter.most_common():
+        topics = ", ".join(sorted(dataset_topics.get(ds, set())))
+        lines.append(f"| {_escape_pipe(ds)} | {topics} | {count} |")
+    if not dataset_counter:
+        lines.append("| No dataset data available | — | — |")
+    lines.append("")
+
+    # Methodology gaps
+    all_topics_set = set()
+    for p in papers:
+        all_topics_set.update(p["topic_tags"])
+    topics_with_experiments = set(topic_experiments.keys())
+    topics_without = sorted(all_topics_set - topics_with_experiments)
+
+    sim_only_methods: set[str] = set()
+    for paper, info in experiments:
+        hw_lower = info["hardware"].lower()
+        if "simulator" in hw_lower or "sim" in hw_lower or info["hardware"] == "—":
+            for m in paper["methodology_tags"]:
+                sim_only_methods.add(m)
+    # Remove methods that also have real QPU experiments
+    for paper, info in experiments:
+        hw_lower = info["hardware"].lower()
+        if "real" in hw_lower or "qpu" in hw_lower or "ibm quantum" in hw_lower:
+            for m in paper["methodology_tags"]:
+                sim_only_methods.discard(m)
+
+    # Papers claiming "demonstrated" QA but simulation-only
+    demo_sim_only: list[str] = []
+    for paper, info in experiments:
+        if paper["quantum_advantage_claim"] == "demonstrated":
+            hw_lower = info["hardware"].lower()
+            if "simulator" in hw_lower or "sim" in hw_lower or info["hardware"] == "—":
+                demo_sim_only.append(_wiki_link(paper["filename"]))
+
+    # Topics where all QA claims are speculative
+    speculative_topics: list[str] = []
+    for tag in sorted(all_topics_set):
+        tagged_papers = [p for p in papers if tag in p["topic_tags"]]
+        qa_claims = {p["quantum_advantage_claim"] for p in tagged_papers if p["quantum_advantage_claim"]}
+        if qa_claims and qa_claims <= {"speculative"}:
+            speculative_topics.append(tag)
+
+    lines.append("## Methodology Gaps")
+    lines.append("")
+    lines.append(f"- Topics with no experiment details: {', '.join(topics_without) if topics_without else 'none'}")
+    lines.append(f"- Methods tested only in simulation: {', '.join(sorted(sim_only_methods)) if sim_only_methods else 'none'}")
+    lines.append(f'- Papers with "demonstrated" QA claim but simulation-only: {', '.join(demo_sim_only) if demo_sim_only else 'none'}')
+    lines.append(f"- Topics where all QA claims are \"speculative\": {', '.join(speculative_topics) if speculative_topics else 'none'}")
+    lines.append("")
+
+    return "\n".join(lines)
+
+
+# ---------------------------------------------------------------------------
 # File writers
 # ---------------------------------------------------------------------------
 
@@ -693,6 +976,13 @@ def main() -> None:
         out_path = os.path.join(ANALYSIS_DIR, "overview.md")
         _write_file(out_path, content)
 
+    # Experiment landscape
+    if build_all or args.overview_only:
+        print("Building experiment landscape...")
+        content = build_experiment_landscape(all_papers)
+        out_path = os.path.join(ANALYSIS_DIR, "experiment_landscape.md")
+        _write_file(out_path, content)
+
     # Summary
     parts = []
     if topic_count:
@@ -703,6 +993,7 @@ def main() -> None:
         parts.append(f"{claim_count} claim indices")
     if build_all or args.overview_only:
         parts.append("1 overview dashboard")
+        parts.append("1 experiment landscape")
 
     print(f"Generated {', '.join(parts)}")
     logger.info("Index generation complete: %s", ", ".join(parts))

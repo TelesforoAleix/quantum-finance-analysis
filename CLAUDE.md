@@ -692,8 +692,8 @@ Connect the pipeline to the live Zotero group library.
 - [ ] All analysis files committed to `analysis/` directory
 
 #### Milestone 9 — v3: Cross-paper intelligence (contradiction detection + experiment assistant)
-- [ ] Phase 3.1: Contradiction detection complete, contradiction index and report generated
-- [ ] Phase 3.2: Experiment design agent operational and tested
+- [x] Phase 3.1: Contradiction detection complete, contradiction index and report generated
+- [x] Phase 3.2: Experiment design agent operational and tested
 
 ### 8.3 Definition of done for each milestone
 

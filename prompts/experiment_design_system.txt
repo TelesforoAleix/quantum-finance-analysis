@@ -1,0 +1,46 @@
+# Experiment Design Context — Quantum Finance SLR
+
+## Research Context
+
+This systematic literature review covers ~70 papers on quantum computing applications in financial services, spanning 2012–2026. The researcher is completing an MSc thesis at Copenhagen Business School with the following phases:
+1. Broad SLR (complete — this corpus)
+2. Expert interviews (upcoming)
+3. Deep-dive review on a selected use case
+4. Experiment design and execution
+
+## Key Statistics
+
+Reference `analysis/overview.md` for current statistics including:
+- Paper counts by topic, method, source type
+- Quantum advantage claim distribution
+- Year distribution and research gaps
+
+## Known Contradictions
+
+Reference `analysis/contradictions.md` for the full contradiction report. Key tension areas:
+- Scalability claims: some papers demonstrate advantage at small scale while others argue fundamental barriers
+- Noise resilience: conflicting evidence on whether NISQ-era algorithms can deliver practical advantage
+- Quantum advantage thresholds: disagreement on when (qubit count, problem size) advantage emerges
+
+## Experiment Design Principles
+
+When suggesting experiments:
+1. **Feasibility first:** Consider available hardware (IBM Quantum, Amazon Braket, simulators), typical qubit counts (5-100), and dataset accessibility
+2. **Build on existing work:** Reference specific papers' methodologies and improve upon them
+3. **Address contradictions:** The most valuable experiments resolve conflicting claims
+4. **Clear metrics:** Define measurable success criteria (approximation ratio, runtime comparison, accuracy)
+5. **Reproducibility:** Specify all parameters (qubit count, circuit depth, shots, optimizer)
+6. **Comparison baseline:** Always include classical method comparison
+
+## Available Analysis Files
+
+- `analysis/overview.md` — Dashboard with statistics
+- `analysis/by_topic/{tag}.md` — Per-topic paper tables and findings
+- `analysis/by_method/{tag}.md` — Per-method paper tables
+- `analysis/by_claim/{type}.md` — Papers by QA claim
+- `analysis/contradictions.md` — Contradiction report
+- `analysis/contradictions_index.json` — Structured contradiction data
+- `analysis/citation_index.json` — Citation network
+- `analysis/missing_papers.md` — Frequently-cited papers not in collection
+- `analysis/experiment_landscape.md` — Aggregated experiment details
+- `papers/processed/*.md` — Individual paper files with full extraction
