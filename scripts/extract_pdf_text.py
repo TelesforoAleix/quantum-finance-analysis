@@ -1,4 +1,4 @@
-"""Extract plain text from PDF files using PyMuPDF."""
+"""Extract plain text from PDF files using pypdf."""
 
 import argparse
 import os
@@ -9,7 +9,7 @@ import sys
 # regardless of how the script is invoked.
 sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))
 
-import fitz  # noqa: E402
+from pypdf import PdfReader  # noqa: E402
 
 from scripts.utils.logger import get_logger  # noqa: E402
 
@@ -19,18 +19,18 @@ MIN_TEXT_LENGTH = 100
 
 
 def extract_text(pdf_path: str) -> tuple[str, bool]:
-    """Extract plain text from a PDF file using PyMuPDF.
+    """Extract plain text from a PDF file using pypdf.
 
     Returns:
         tuple: (extracted_text, is_valid)
         - extracted_text: the full text content
         - is_valid: False if text < 100 chars (likely image-only PDF)
     """
-    doc = fitz.open(pdf_path)
+    reader = PdfReader(pdf_path)
     pages = []
-    for page in doc:
-        pages.append(page.get_text())
-    doc.close()
+    for page in reader.pages:
+        page_text = page.extract_text() or ""
+        pages.append(page_text)
 
     text = "\n\n".join(pages)
     # Collapse 3+ consecutive newlines to 2
@@ -68,11 +68,8 @@ def main() -> None:
 
     try:
         text, is_valid = extract_text(args.file)
-    except (FileNotFoundError, fitz.FileNotFoundError):
+    except FileNotFoundError:
         logger.error("File not found", extra={"pdf_path": args.file})
-        sys.exit(1)
-    except fitz.FileDataError:
-        logger.error("Not a valid PDF file", extra={"pdf_path": args.file})
         sys.exit(1)
     except Exception as exc:
         logger.error(

@@ -1,5 +1,5 @@
 openai>=1.50.0
-PyMuPDF>=1.24.0
+pypdf>=4.0.0
 python-frontmatter>=1.1.0
 PyYAML>=6.0
 requests>=2.31.0
