@@ -21,6 +21,14 @@ Return a JSON object with these fields:
 - "frameworks": A list of frameworks, libraries, or platforms used (e.g. ["Qiskit", "PennyLane"]). Empty list if none
 - "experimental_setup": Description of the experimental setup, hardware, simulator, or computational environment. Empty string if not applicable
 - "dataset_used": Description of datasets or financial data used. Empty string if not applicable
+- "experiment_input": Dataset details — source, size, number of features, preprocessing steps, time period. Use null if not applicable (e.g. review papers, theoretical papers)
+- "experiment_process": Algorithm pipeline — step-by-step process, parameter choices, number of iterations/shots, convergence criteria, optimization loop. Use null if not applicable
+- "experiment_output": Result format — metrics reported, comparison baselines, output format. Use null if not applicable
+- "experiment_parameters": Key experimental parameters as a JSON object — qubit count, circuit depth, number of shots, optimizer name, learning rate, hyperparameters. Use null if not applicable
+- "hardware_details": Hardware — simulator name, QPU model, cloud provider, transpilation settings. Use null if not applicable
+- "reproducibility_notes": Reproducibility assessment — is code available? Is data available? Is there enough detail to replicate? Brief assessment string. Use null if not applicable
+
+For non-empirical papers (review-article, peer-reviewed-theoretical, industry-whitepaper, industry-report, technical-report), set all experiment_* fields, hardware_details, and reproducibility_notes to null.
 
 Example output format:
 {{
@@ -28,7 +36,13 @@ Example output format:
   "algorithms_used": ["VQE", "QAOA"],
   "frameworks": ["Qiskit"],
   "experimental_setup": "Experiments run on IBM Quantum simulator with 20 qubits",
-  "dataset_used": "Historical stock prices from S&P 500 (2015-2020)"
+  "dataset_used": "Historical stock prices from S&P 500 (2015-2020)",
+  "experiment_input": "S&P 500 daily closing prices, 500 assets, 5 years (2015-2020), returns computed as log-returns, normalized to zero mean",
+  "experiment_process": "1. Encode portfolio weights as qubit rotations. 2. Run VQE with COBYLA optimizer. 3. 1000 shots per circuit evaluation. 4. Converge when energy change < 1e-6 over 10 iterations",
+  "experiment_output": "Portfolio Sharpe ratio, annualized return, max drawdown. Compared against classical mean-variance optimization and equal-weight baseline",
+  "experiment_parameters": {{"qubits": 20, "circuit_depth": 4, "shots": 1000, "optimizer": "COBYLA", "convergence_threshold": 1e-6}},
+  "hardware_details": "IBM Qiskit Aer statevector simulator, no noise model applied",
+  "reproducibility_notes": "Code available on GitHub (link provided). Data is public (Yahoo Finance). Sufficient detail to replicate."
 }}
 
 Respond ONLY with valid JSON. No additional text before or after the JSON.

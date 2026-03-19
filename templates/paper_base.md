@@ -40,6 +40,9 @@ step6_date: ""
 ## Methodology
 <!-- Step 3 output — varies by source type -->
 
+## Experiment details
+<!-- Step 3 output — experiment replication details -->
+
 ## Findings
 <!-- Step 4 output — results, claims, performance -->
 

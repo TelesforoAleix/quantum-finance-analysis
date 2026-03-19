@@ -260,6 +260,39 @@ def _write_step3_results(paper_path: str, data: dict, model: str, now: str) -> N
     if parts:
         _write_body_section(paper_path, "Methodology", "\n".join(parts))
 
+    # Build experiment details section
+    exp_fields = [
+        ("experiment_input", "Input"),
+        ("experiment_process", "Process"),
+        ("experiment_output", "Output"),
+        ("experiment_parameters", "Parameters"),
+        ("hardware_details", "Hardware"),
+        ("reproducibility_notes", "Reproducibility"),
+    ]
+
+    has_experiment_data = any(
+        data.get(key) is not None and data.get(key) != ""
+        for key, _ in exp_fields
+    )
+
+    if has_experiment_data:
+        exp_parts = []
+        for key, heading in exp_fields:
+            value = data.get(key)
+            exp_parts.append(f"### {heading}")
+            if value is None or value == "":
+                exp_parts.append("N/A")
+            elif key == "experiment_parameters" and isinstance(value, dict):
+                for pk, pv in value.items():
+                    exp_parts.append(f"- {pk}: {pv}")
+            else:
+                exp_parts.append(str(value))
+            exp_parts.append("")  # blank line after each subsection
+
+        _write_body_section(
+            paper_path, "Experiment details", "\n".join(exp_parts).rstrip()
+        )
+
 
 def _write_step4_results(paper_path: str, data: dict, model: str, now: str) -> None:
     """Write step 4 results to Findings and Quantum advantage claim sections."""

@@ -33,7 +33,7 @@ step1_date: '2026-03-19T12:09:42.864358'
 step1_model: Mistral-Large-3
 step2_date: '2026-03-19T12:09:49.867122'
 step2_model: Mistral-Large-3
-step3_date: '2026-03-19T12:10:20.218176'
+step3_date: '2026-03-19T22:01:12.730616'
 step3_model: Mistral-Large-3
 step4_date: '2026-03-19T12:11:42.537567'
 step4_model: Mistral-Large-3
@@ -69,13 +69,13 @@ zotero_key: ''
 ## Abstract summary
 This paper explores quantum algorithms for computing market risk in financial derivatives, focusing on quantum gradient estimation methods. The authors extend quantum amplitude estimation techniques to achieve quadratic advantages in both error scaling and the number of market sensitivities (greeks) compared to classical Monte Carlo methods. They numerically simulate these algorithms on practical financial derivatives, demonstrating reduced resource requirements and potential for quantum advantage in financial risk computation.
 ## Methodology
-The paper presents an empirical study on quantum algorithms for computing financial market risk, specifically focusing on the estimation of financial derivatives' sensitivities (greeks) using quantum gradient algorithms. The research extends quantum amplitude estimation (QAE) to market risk computation, demonstrating quadratic error scaling advantages. The authors apply the Gilyén-Arunachalam-Wiebe (GAW) quantum gradient algorithm and introduce a Simulation-Free Quantum Gradient (SFQG) method, which avoids block encoding or Hamiltonian simulation. The study numerically simulates these algorithms on two types of financial derivatives: a European call option (for benchmarking) and a path-dependent basket option (representative of practical financial contracts). The experimental approach involves comparing quantum gradient methods (GAW, SFQG) with classical finite difference methods (with and without common random numbers) and semi-classical quantum gradient methods. The evaluation metrics include query complexity (number of oracle calls), error scaling (ϵ), and success probability (≥85%). The study also explores the impact of parallelization across multiple quantum processing units (QPUs) and employs maximum likelihood estimation (MLE) to improve gradient estimation accuracy and confidence intervals.
+The paper presents an empirical study on quantum algorithms for computing financial market risk, specifically focusing on the estimation of financial derivatives' sensitivities (greeks) using quantum gradient algorithms. The research extends quantum amplitude estimation (QAE) to achieve quadratic error scaling advantages in market risk computation and further improves this with quantum gradient estimation algorithms. The study numerically simulates quantum gradient algorithms on two types of financial derivatives: a European call option and a path-dependent basket option. The authors introduce a second-order accurate quantum gradient algorithm (Simulation-Free Quantum Gradient, SFQG) and enhance gradient estimation using classical maximum likelihood estimation (MLE). The methodology involves comparing quantum, semi-classical, and classical approaches for gradient estimation, with a focus on resource requirements and error scaling. The paper updates resource estimates for achieving quantum advantage in financial derivative pricing and risk computation.
 
-**Algorithms used:** Quantum Amplitude Estimation, GAW Quantum Gradient Algorithm, Jordan's Quantum Gradient Algorithm, Simulation-Free Quantum Gradient (SFQG)
+**Algorithms used:** Quantum Amplitude Estimation, Quantum Gradient Estimation, Jordan's Quantum Gradient Algorithm, GAW Quantum Gradient Algorithm, Simulation-Free Quantum Gradient (SFQG)
 
-**Experimental setup:** Numerical simulations were conducted using classical emulation of quantum circuits due to the prohibitive size and depth of actual quantum circuits. The simulations targeted a k-dimensional gradient estimation with n qubits per dimension (n=4 or 6) to achieve a target error ϵ. The experiments were run on classical hardware, emulating quantum operations such as the Quantum Fourier Transform and Grover operators. The study also considered theoretical resource estimates for execution on quantum simulators or real QPUs, including parallelization across up to 60 QPUs. The Hamiltonian simulation phase error was set to ϵ_phase = 10^-4 for simulations.
+**Experimental setup:** Numerical simulations of quantum gradient algorithms were performed using classical emulation of quantum circuits. The simulations targeted specific financial derivatives (European call option and path-dependent basket option) to estimate gradients (greeks) within a defined error margin. The study used parameters such as qubit precision, central-difference approximation order, and spacing to optimize the algorithm performance. Maximum likelihood estimation (MLE) was applied post-simulation to refine gradient estimates.
 
-**Dataset:** 1. European call option under the Black-Scholes-Merton model with parameters: spot price S=99.5, strike K=100, risk-free rate r=1%, volatility σ=20%, time to expiration T=0.1 years. 2. Path-dependent basket option with knock-in feature on three underlying assets undergoing Geometric Brownian Motion (GBM) with parameters: spot prices S=(2.0, 2.0, 2.0), volatilities σ=(20%, 20%, 10%), risk-free rate r=1%, expiration T=3 years, strike K=1.0, barrier B=2.5, and observation days t_B=[0.6, 1.2, 1.8, 2.4, 3.0] years.
+**Dataset:** Financial derivatives data including: (1) European call option under the Black-Scholes-Merton model with parameters (S=99.5, K=100, r=1%, σ=20%, T=0.1), (2) Path-dependent basket option with knock-in feature on three underlying assets undergoing Geometric Brownian Motion (GBM) with parameters (spot prices S=(2.0, 2.0, 2.0), volatilities σ=(20%, 20%, 10%), risk-free rate r=1%, expiration T=3 years, strike K=1.0, barrier B=2.5).
 ## Findings
 - [supported] Quantum amplitude estimation (QAE) achieves quadratic error scaling advantage (O(1/ϵ)) over classical Monte Carlo methods (O(1/ϵ²)) for derivative pricing [supported]
 - [supported] Quantum gradient estimation algorithms (GAW) demonstrate O(√k/ϵ) scaling for k-dimensional gradients, improving over classical finite difference methods (O(k/ϵ²)) [supported]
@@ -147,3 +147,30 @@ Quantum advantage is theoretically demonstrated through asymptotic complexity an
 
 ## Researcher notes
 <!-- Researcher-added — not LLM generated -->
+
+## Experiment details
+### Input
+For the European call option: asset price (S=99.5), strike price (K=100), risk-free rate (r=1%), volatility (σ=20%), time to expiration (T=0.1). For the path-dependent basket option: three underlying assets with spot prices (2.0, 2.0, 2.0), volatilities (20%, 20%, 10%), weights (0.5, 0.3, 0.2), risk-free rate (1%), expiration (3 years), strike (1.0), barrier (2.5). Data preprocessing involved discretizing the parameter space and encoding financial parameters into quantum states.
+
+### Process
+1. Encode financial derivative parameters into quantum states using the operator A. 2. Apply quantum amplitude estimation (QAE) to estimate derivative prices. 3. Use quantum gradient algorithms (Jordan's, GAW, SFQG) to compute gradients (greeks) by evaluating the phase oracle on a superposition of points in a hypercube around the target parameter. 4. For SFQG, construct a second-order phase oracle without Hamiltonian simulation. 5. Apply inverse Quantum Fourier Transform to extract gradient estimates. 6. Use maximum likelihood estimation (MLE) to refine gradient estimates and compute confidence intervals. 7. Compare quantum algorithm performance against classical finite difference methods and semi-classical approaches.
+
+### Output
+Gradient estimates (delta, rho, vega, theta) for the European call option and path-dependent basket option. Performance metrics included query complexity (number of oracle calls), error margin (ϵ), and success probability (≥85%). Comparisons were made against classical finite difference methods (CFD, CFD-CRN) and semi-classical quantum gradient (SQG) methods in terms of computational resource requirements and error scaling.
+
+### Parameters
+- qubits_per_gradient: 4
+- precision_bits: 6
+- central_difference_order: [1, 3]
+- spacing_parameter: [0.25, 0.58, 0.65]
+- target_error: [0.02, 0.0625]
+- success_probability: 0.85
+- hamiltonian_simulation_error: 0.0001
+- shots: [30, 60]
+- greeks_count: [2, 3, 4, 1000]
+
+### Hardware
+N/A
+
+### Reproducibility
+The paper provides detailed descriptions of the quantum algorithms and numerical simulation methods, including parameter choices and error analysis. However, the code and datasets used for simulations are not explicitly made available in the text. The methodology is sufficiently detailed to allow replication of the numerical simulations using classical emulation of quantum circuits.

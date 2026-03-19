@@ -26,9 +26,9 @@
       "name": "methodology_extraction",
       "model": "Mistral-Large-3",
       "temperature": 0.3,
-      "max_tokens": 4000,
+      "max_tokens": 6000,
       "prompt_file": "prompts/step3_methodology.txt",
-      "input_tokens": 13000
+      "input_tokens": 15000
     },
     "step4": {
       "name": "findings_extraction",

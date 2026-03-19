@@ -40,7 +40,7 @@ step1_date: '2026-03-19T12:32:40.681979'
 step1_model: Mistral-Large-3
 step2_date: '2026-03-19T12:32:44.945774'
 step2_model: Mistral-Large-3
-step3_date: '2026-03-19T12:32:56.543908'
+step3_date: '2026-03-19T22:01:38.042823'
 step3_model: Mistral-Large-3
 step4_date: '2026-03-19T12:33:46.362800'
 step4_model: Mistral-Large-3
@@ -84,14 +84,9 @@ zotero_key: ''
 ## Abstract summary
 This review paper systematically examines classical and quantum machine learning approaches for mutual fund portfolio optimization, analyzing 44 papers published between 2003 and 2023. The authors focus specifically on mutual funds and equity markets, providing an overview of problem types, preferred methodologies, benchmarks, and research gaps to guide future work in quantum computing applications for financial services.
 ## Methodology
-The paper conducts a systematic literature review (SLR) following the PRISMA methodology to examine classical and quantum machine learning approaches for mutual fund portfolio optimization. The review includes 44 papers published between 2003 and 2023, sourced from databases such as Scopus, arXiv.org, and academic journals like Nature, Quantum Journal, and Physical Review Research. The inclusion criteria focused on papers addressing mutual funds or equities, particularly those leveraging quantum machine learning (QML) and classical machine learning (ML). The synthesis method involved categorizing the literature based on problem types (e.g., asset allocation, diversification, risk management), approaches (classical vs. quantum), and benchmarks. A classification taxonomy was developed to highlight prominent research works, research gaps, and trends in the field. The review also critically analyzed milestone papers and identified key observations and gaps in the existing literature.
+This review article employs a systematic literature review (SLR) approach following the PRISMA methodology to examine classical and quantum machine learning (QML) approaches for mutual fund portfolio optimization. The authors conducted a comprehensive search across academic databases such as Scopus, arXiv.org, and other academic search engines, focusing on papers published between 2003 and 2023. The inclusion criteria prioritized papers addressing mutual funds or equities, particularly those leveraging QML and machine learning (ML) techniques. A total of 44 papers were selected for detailed analysis, with exceptions made for two highly cited milestone papers. The review synthesized findings by categorizing problems in mutual fund portfolio optimization (e.g., asset allocation, diversification, risk management) and comparing classical and quantum approaches. The authors also identified research gaps and trends in the field, such as the dominance of hybrid quantum-classical techniques and the limited application of QML to mutual funds specifically.
 
-**Algorithms used:** Quantum Approximate Optimization Algorithm (QAOA), Variational Quantum Eigensolver (VQE), Harrow-Hassidim-Lloyd (HHL), Grover’s algorithm, Quantum Annealing, Reverse Quantum Annealing, Quadratic Unconstrained Binary Optimization (QUBO), Quantum Walk Optimization Algorithm
-**Frameworks:** D-Wave Quantum Annealer, IBM-Q, Ion-trap Quantum Computers
-
-**Experimental setup:** The reviewed papers employed a mix of quantum hardware and simulators. Specific setups included the D-Wave Quantum Annealer for quantum annealing and reverse quantum annealing, IBM-Q for gate-based quantum computing, and Ion-trap Quantum Computers for specific quantum machine learning experiments. Classical benchmarks such as Genetic Algorithms, Simulated Annealing, and the Gekko solver were also used for comparative evaluations.
-
-**Dataset:** The datasets used in the reviewed papers primarily included mutual fund data, equity markets data, Fund of Funds data spanning 1-year, and 5-year adjusted closing prices for ETFs and stocks. Specific metrics such as variance, Treynor Index, rate of return, standard deviation, turnover rate, covariance, and expected return were commonly utilized for evaluation.
+**Algorithms used:** Quantum Approximate Optimization Algorithm (QAOA), Variational Quantum Eigensolver (VQE), Harrow-Hassidim-Lloyd (HHL), Quantum Annealing, Quadratic Unconstrained Binary Optimization (QUBO), Quantum Walk Optimization Algorithm, Reverse Quantum Annealing, Genetic Algorithm, Simulated Annealing
 ## Findings
 - [supported] The review analyzes 44 papers from 2003 to 2023 on classical and quantum machine learning (QML) approaches for mutual fund portfolio optimization (PO), identifying key trends and gaps in the literature.
 - [supported] Approximately 67.81% of the reviewed papers were published between 2019 and 2023, indicating QML as a rapidly developing field in financial services.
