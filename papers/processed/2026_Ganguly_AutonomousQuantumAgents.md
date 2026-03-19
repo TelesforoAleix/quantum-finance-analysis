@@ -25,17 +25,17 @@ relevance_phase1: high
 relevance_phase3: medium
 source_type: preprint
 source_type_confidence: high
-step1_date: '2026-03-18T21:03:27.704734'
+step1_date: '2026-03-18T22:11:50.697273'
 step1_model: Mistral-Large-3
-step2_date: '2026-03-18T21:09:46.257664'
+step2_date: '2026-03-18T22:11:52.079846'
 step2_model: Mistral-Large-3
-step3_date: '2026-03-18T21:03:44.649133'
+step3_date: '2026-03-18T22:11:59.219471'
 step3_model: Mistral-Large-3
-step4_date: '2026-03-18T21:04:00.421041'
+step4_date: '2026-03-18T22:13:31.448253'
 step4_model: Mistral-Large-3
-step5_date: '2026-03-18T21:04:25.143644'
+step5_date: '2026-03-18T22:13:40.503009'
 step5_model: Mistral-Large-3
-step6_date: '2026-03-18T21:10:38.849275'
+step6_date: '2026-03-18T22:13:42.971061'
 step6_model: Mistral-Large-3
 steps_completed:
 - 1
@@ -60,81 +60,76 @@ zotero_key: ''
 ---
 
 ## Abstract summary
-This preprint introduces an agentic framework that automates the end-to-end process of quantum portfolio optimization by integrating autonomous AI workflows with quantum approximate optimization algorithms (QAOA) executed on cloud quantum simulators. The system addresses operational challenges in deploying quantum computing for financial decision-making, such as live data integration, circuit parameterization, and cross-platform execution, while ensuring reproducibility and governance through a maturity-gated permission model. The work demonstrates a scalable, vendor-agnostic approach to applying quantum optimization in real-world financial workflows.
+This preprint introduces an agentic framework that automates end-to-end portfolio optimization using quantum computing, addressing the operational challenges of deploying quantum algorithms in financial services. The system integrates autonomous AI agents to manage tasks such as live market data ingestion, quantum circuit construction, cloud-based quantum hardware execution, and financial interpretation of results. The work demonstrates a reproducible, vendor-agnostic approach to quantum optimization workflows, emphasizing scalability and governance for practical deployment.
 ## Methodology
-The paper presents an empirical agentic framework for end-to-end portfolio optimization that integrates autonomous AI workflow orchestration with quantum approximate optimization. The methodology employs a directed acyclic graph (DAG) state machine built on the LangGraph framework, comprising eight specialized agents, each handling distinct stages of the quantum optimization pipeline: policy enforcement, task decomposition, QAOA circuit construction from live market data, local pre-validation, cloud QPU submission, quality assurance, and financial interpretation. The quantum core implements a Quantum Approximate Optimization Algorithm (QAOA) where single-qubit rotation angles are derived from empirical annualized asset returns and two-qubit interaction strengths from pairwise covariance entries. The framework introduces a maturity-gated governance model to manage quantum resource permissions and ensures vendor-agnostic execution via the QBraid runtime platform. Experiments were conducted using live Yahoo Finance data for a five-asset universe, with the QAOA pipeline executed on two cloud quantum simulators: the AWS Tensor Network simulator and the QBraid QIR state-vector simulator.
+The paper presents an agentic framework for end-to-end portfolio optimization that integrates autonomous AI workflow orchestration with quantum approximate optimization executed on cloud quantum simulators. The methodology employs eight specialized agents coordinated through a directed acyclic graph (DAG) state machine built on the LangGraph framework. Each agent handles a distinct stage of the quantum optimization pipeline, including policy enforcement, task decomposition, QAOA circuit construction from live market data, local pre-validation, cloud QPU submission, quality assurance, and financial interpretation. The quantum core implements a Quantum Approximate Optimization Algorithm (QAOA) where single-qubit rotation angles are derived from empirical annualized asset returns and two-qubit interaction strengths from pairwise covariance entries. The framework uses live Yahoo Finance data for a five-asset universe (AAPL, XOM, JPM, JNJ, GLD) and executes the pipeline on two cloud quantum backends via the QBraid unified runtime platform: the AWS Tensor Network simulator and the QBraid QIR state-vector simulator. The system includes a maturity-gated governance model to manage quantum resource permissions and ensure reproducibility and scalability.
 
 **Algorithms used:** QAOA
-**Frameworks:** LangGraph, Qiskit, QBraid, QBraid runtime, yfinance
+**Frameworks:** LangGraph, Qiskit, QBraid, yfinance
 
-**Experimental setup:** The experimental setup involved executing the QAOA pipeline on two cloud quantum simulators through the QBraid unified runtime platform: the AWS Tensor Network simulator (aws:aws:sim:tn1, 1000 shots) and the QBraid QIR state-vector simulator (qbraid:qbraid:sim:qir-sv, 2000 shots). The QAOA circuit was constructed with 5 qubits and 5 layers, using live market data for parameterization. Local pre-validation was performed using Qiskit Aer AerSimulator and BasicSimulator as fallbacks. The agentic overhead constituted less than 2% of total pipeline execution time.
+**Experimental setup:** The experiments were conducted using the QBraid unified runtime platform to execute QAOA circuits on two cloud quantum simulators: the AWS Tensor Network simulator (aws:aws:sim:tn1, 1000 shots) and the QBraid QIR state-vector simulator (qbraid:qbraid:sim:qir-sv, 2000 shots). The QAOA circuit was constructed with 5 qubits and 5 layers, totaling 210 gates and a compiled circuit depth of 93. The framework ensures vendor-agnostic execution, allowing the same Qiskit circuit to be submitted to different backends without modification.
 
-**Dataset:** Live Yahoo Finance data for five assets spanning technology, energy, finance, healthcare, and commodities (AAPL, XOM, JPM, JNJ, GLD). The dataset includes one year of daily closing prices (approximately 252 trading days, ending February 2026), from which annualized returns and covariance matrices were computed using daily log-returns.
+**Dataset:** Live Yahoo Finance data for five assets spanning technology, energy, finance, healthcare, and commodities (AAPL, XOM, JPM, JNJ, GLD). The dataset includes one year of daily closing prices (approximately 252 trading days ending February 2026), from which annualized returns and covariance matrices were computed using daily log-returns.
 ## Findings
-- [supported] The agentic framework for portfolio optimization using QAOA on cloud quantum simulators achieved consistent normalized measurement distribution means of 0.6712 and 0.6713 on AWS Tensor Network and QBraid QIR state-vector simulators, respectively
-- [supported] The dominant measured bitstring (01011) appeared in 23.55% of shots, 7.6 times the uniform baseline probability, corresponding to a portfolio with an annualized return of 31.17%, volatility of 19.29%, and Sharpe ratio of 1.62
-- [supported] The agentic overhead constituted less than 2% of total pipeline execution time, demonstrating efficient orchestration
-- [supported] The framework executed a 5-asset portfolio optimization using live Yahoo Finance data, with QAOA circuit parameters derived directly from empirical annualized returns and covariance matrices
-- [speculative] The agentic framework could scale to larger asset universes (e.g., 20+ assets) by leveraging decomposition techniques similar to those in prior work, though this was not empirically validated in the paper
-- [speculative] The maturity-gated governance model could prevent inadvertent hardware expenditure in production environments, but its effectiveness was not tested in real-world financial workflows
-- [speculative] The cross-platform consistency observed in simulations suggests vendor-agnostic deployment is feasible, but this claim requires validation on real quantum hardware
-- [supported] The QAOA circuit for 5 assets and 5 layers required 210 gates with a compiled depth of 93, as reported by the Qiskit transpiler
+- [supported] An agentic framework for end-to-end portfolio optimization using QAOA on cloud quantum simulators achieves consistent normalized measurement distribution means of 0.6712 and 0.6713 across AWS Tensor Network and QBraid QIR state-vector simulators, demonstrating cross-platform transpilation consistency
+- [supported] The dominant measured bitstring (01011) appears in 23.55% of shots—7.6 times the uniform baseline probability—achieving an annualized return of 31.17%, volatility of 19.29%, and a Sharpe ratio of 1.62 for a 5-asset portfolio (AAPL, XOM, JPM, JNJ, GLD)
+- [supported] The agentic overhead constitutes less than 2% of total pipeline execution time, indicating minimal computational cost for automation
+- [supported] A maturity-gated governance model prevents inadvertent hardware expenditure during development by mapping job lifecycle stages to quantum resource permissions (e.g., QPU access denied at 'Concept' stage)
+- [speculative] The framework could scale to larger asset universes (e.g., 20+ assets) where classical methods face computational challenges due to exponential search space growth
+- [speculative] Quantum advantage may emerge for portfolio optimization problems with 50+ assets, leveraging QAOA's ability to encode dense, correlated objective functions more efficiently than classical heuristics
+- [supported] The QAOA ansatz parameterizes single-qubit rotation angles from empirical annualized returns and two-qubit interaction strengths from pairwise covariance entries, ensuring market-data-driven circuit construction
+- [speculative] The agentic architecture could generalize to other quantum optimization workflows beyond finance, given its modular design and vendor-agnostic execution via QBraid
 
-**Results summary:** The paper presents an agentic framework for end-to-end portfolio optimization using QAOA on cloud quantum simulators. The system automates the pipeline from live market data ingestion to financially interpreted quantum optimization results, employing eight specialized agents coordinated via a DAG state machine. Experimental results on a 5-asset universe (AAPL, XOM, JPM, JNJ, GLD) demonstrated consistent performance across two cloud simulators, with the dominant portfolio achieving a 31.17% annualized return and a Sharpe ratio of 1.62. The framework introduces a maturity-gated governance model to manage quantum resource permissions and achieves low overhead (<2%). While the results are promising, all quantum executions were performed on simulators, and scalability to larger asset universes remains speculative.
+**Results summary:** The paper presents an agentic framework that automates the end-to-end pipeline for quantum portfolio optimization, from live market data ingestion to financially interpreted QAOA results. The system demonstrates reproducible execution on cloud quantum simulators (AWS and QBraid), achieving consistent measurement distributions and a dominant portfolio configuration with a Sharpe ratio of 1.62. The framework introduces maturity-gated governance to prevent costly hardware misuse and leverages a DAG-structured agent pipeline for modular orchestration. While results are validated on a 5-asset universe, the authors suggest the approach could scale to larger problems where classical methods struggle, though quantum advantage remains speculative at this stage.
 
 **Performance claims:**
-- Normalized measurement distribution means of 0.6712 (AWS Tensor Network simulator) and 0.6713 (QBraid QIR state-vector simulator)
-- Dominant bitstring (01011) appeared in 23.55% of shots (7.6x uniform baseline)
-- Portfolio annualized return: 31.17%
-- Portfolio volatility: 19.29%
-- Portfolio Sharpe ratio: 1.62
-- Agentic overhead: <2% of total pipeline execution time
-- QAOA circuit for 5 assets and 5 layers: 210 gates, depth 93
+- Normalized measurement distribution means of 0.6712 (AWS) and 0.6713 (QBraid) across platforms
+- Dominant bitstring (01011) appears in 23.55% of shots (7.6x uniform baseline)
+- Annualized return of 31.17% with volatility of 19.29% and Sharpe ratio of 1.62 for the dominant portfolio
+- Agentic overhead < 2% of total pipeline execution time
+- QAOA circuit with 210 gates (5 layers, 5 qubits) and depth 93
 ## Quantum advantage claim
 **Classification:** speculative
 
-The paper does not demonstrate quantum advantage; all results are from simulations. The authors speculate that the framework could enable quantum advantage for larger asset universes (e.g., 20+ assets) by leveraging decomposition techniques, but this is not empirically supported in the work.
+Quantum advantage is not demonstrated in this work; all results are from simulations (no real hardware execution). The authors speculate that the framework could provide advantage for larger asset universes (50+ assets) where classical methods face exponential scaling challenges, but this remains unvalidated empirically.
 ## Limitations
-- Experiments limited to a small asset universe (5 assets), which does not reflect real-world portfolio optimization scenarios with hundreds or thousands of assets
-- Only tested on cloud quantum simulators (AWS Tensor Network and QBraid QIR state-vector), not real quantum hardware; performance on NISQ devices may differ significantly due to noise and decoherence [inferred]
-- Lack of peer review as this is a preprint, which may affect the rigor and validity of the findings [inferred]
-- No comparison with state-of-the-art classical portfolio optimization methods (e.g., branch-and-bound, heuristic solvers) to benchmark quantum advantage [inferred]
-- QAOA circuit depth (93) and gate count (210) may not be feasible on current NISQ devices with limited coherence times [inferred]
-- No noise mitigation techniques (e.g., error correction, dynamical decoupling) were applied, which could degrade performance on real hardware [inferred]
-- Fixed trade-off parameter (λ = 0.5) may not generalize to all market conditions or investor risk preferences [inferred]
-- Agentic framework overhead (2% of pipeline execution time) may increase with larger asset universes or more complex workflows [inferred]
-- No evaluation of the framework's scalability to larger qubit counts (e.g., 20+ qubits) or more complex financial models (e.g., multi-period optimization) [inferred]
-- Live market data from Yahoo Finance may not be representative of all financial markets or time periods [inferred]
-- No analysis of the impact of data staleness or missing data on the QAOA parameterization and results [inferred]
-- Maturity-gated governance model assumes a linear progression of job lifecycle stages, which may not reflect real-world deployment complexities [inferred]
+- Experiments limited to a small asset universe (5 assets), which does not test scalability to larger portfolios [inferred]
+- Only tested on quantum simulators (AWS Tensor Network and QBraid QIR state-vector), not real quantum hardware, limiting assessment of noise and decoherence effects
+- Lack of peer review as the paper is a preprint, which may affect the rigor and validity of the findings [inferred]
+- No comparison with state-of-the-art classical portfolio optimization methods (e.g., branch-and-bound, heuristic solvers) to benchmark performance
+- QAOA circuit depth (93) and gate count (210) may not be feasible on current noisy intermediate-scale quantum (NISQ) hardware for larger problem sizes [inferred]
+- Maturity-gated governance model assumes predefined maturity levels, which may not generalize to all financial use cases or regulatory environments [inferred]
+- Live market data from Yahoo Finance may not be representative of all market conditions or asset classes, limiting generalizability [inferred]
+- No noise mitigation techniques (e.g., error correction, error mitigation) were applied, which could significantly impact results on real hardware [inferred]
+- Agentic framework overhead (2% of pipeline execution time) may increase with more complex workflows or larger datasets [inferred]
+- Cross-platform validation limited to two simulators; no validation on diverse quantum hardware (e.g., trapped-ion, superconducting) to test robustness [inferred]
 ## Open questions
-- How does the agentic framework perform with larger asset universes (e.g., 20+ assets) and more complex financial models?
+- How does the agentic framework perform with larger asset universes (e.g., 20+ assets) where classical methods struggle?
 - What is the impact of hardware noise and decoherence on the QAOA solution quality when executed on real quantum devices?
-- Can the framework be extended to handle cardinality-constrained portfolio optimization (e.g., selecting exactly K assets from n)?
-- How does the performance of the QAOA-based approach compare to classical solvers (e.g., heuristic methods) for industrially relevant problem sizes?
-- What are the trade-offs between circuit depth, shot count, and solution quality in the context of portfolio optimization?
-- How sensitive is the framework to variations in market data (e.g., different time periods, asset classes, or correlation structures)?
-- Can the agentic workflow be adapted to other quantum algorithms (e.g., digitized counterdiabatic optimization) for portfolio optimization?
-- What are the implications of the maturity-gated governance model for production deployment in financial institutions?
+- Can the maturity-gated governance model be adapted to comply with financial regulations or institutional policies?
+- How does the framework compare to hybrid quantum-classical approaches (e.g., QAOA with classical post-processing) in terms of solution quality and runtime?
+- What are the trade-offs between circuit depth, shot count, and solution quality for larger portfolio optimization problems?
+- How robust is the agentic pipeline to real-time market data fluctuations or missing data?
+- Can the framework be extended to handle dynamic portfolio rebalancing or multi-period optimization?
 
 **Future work:**
-- Test the framework on real quantum hardware (e.g., IBM Quantum, IonQ, Rigetti) to evaluate performance under noise and decoherence
-- Extend the asset universe to larger sizes (e.g., 20+ assets) and evaluate scalability of the agentic workflow
+- Test the framework on real quantum hardware (e.g., IBM Quantum, IonQ, Rigetti) to assess noise resilience and solution quality
+- Extend the asset universe to larger portfolios (e.g., 20+ assets) and evaluate scalability
 - Incorporate noise mitigation techniques (e.g., error correction, dynamical decoupling) to improve performance on NISQ devices
-- Compare the QAOA-based approach with classical portfolio optimization methods (e.g., branch-and-bound, heuristic solvers) to benchmark quantum advantage
-- Explore the use of alternative quantum algorithms (e.g., digitized counterdiabatic optimization) within the agentic framework
-- Extend the framework to handle cardinality-constrained portfolio optimization and multi-period optimization models
-- Evaluate the framework's robustness to variations in market data (e.g., different time periods, asset classes, or correlation structures)
-- Investigate the integration of the agentic framework with existing financial decision-making workflows in production environments
-- Develop a more dynamic maturity-gated governance model that adapts to real-world deployment complexities
-- Assess the economic viability of the framework for large-scale portfolio optimization in terms of quantum resource costs and classical overhead
+- Benchmark the agentic framework against state-of-the-art classical solvers (e.g., Gurobi, heuristic methods) for portfolio optimization
+- Explore hybrid quantum-classical approaches (e.g., QAOA with classical post-processing) to enhance solution quality
+- Adapt the maturity-gated governance model to align with financial regulatory requirements or institutional policies
+- Integrate dynamic portfolio rebalancing or multi-period optimization into the agentic workflow
+- Validate the framework on diverse market datasets (e.g., different asset classes, time periods) to assess generalizability
+- Investigate the use of alternative quantum algorithms (e.g., digitized counterdiabatic QAOA, warm-starting techniques) for portfolio optimization
 ## Key ideas
 - #idea:near-term-feasibility — Agentic framework automates end-to-end portfolio optimization using QAOA on cloud quantum simulators, demonstrating near-term applicability for small-scale problems
 - #idea:hybrid-approach — Hybrid quantum-classical pipeline integrates AI agents for live data ingestion, quantum circuit construction, and financial interpretation, reducing manual overhead
-- #idea:hybrid-approach — Maturity-gated governance model proposed to manage quantum resource permissions, though untested in production environments
-- #limitation:simulation-only — All quantum executions performed on simulators (AWS Tensor Network and QBraid QIR), with no validation on real quantum hardware
-- #limitation:qubit-count — Framework limited to 5 assets (5 qubits), far below real-world portfolio sizes (hundreds/thousands of assets)
-- #limitation:noise — No noise mitigation techniques applied, raising concerns about performance on NISQ devices
+- #idea:hybrid-approach — Maturity-gated governance model proposed to manage quantum resource permissions, enabling scalable and reproducible quantum workflows
+- #limitation:simulation-only — All quantum executions performed on simulators (AWS Tensor Network and QBraid QIR), with no validation on real quantum hardware, limiting assessment of noise and decoherence effects
+- #limitation:qubit-count — Framework limited to 5 assets (5 qubits), far below real-world portfolio sizes (hundreds/thousands of assets), constraining practical applicability
+- #limitation:noise — No noise mitigation techniques applied, raising concerns about performance degradation on NISQ devices
+- #limitation:no-empirical-validation — Lack of comparison with state-of-the-art classical portfolio optimization methods (e.g., branch-and-bound, heuristic solvers) to benchmark performance
 ## Contradictions
 <!-- Step 6 output — where this paper contradicts others -->
 
