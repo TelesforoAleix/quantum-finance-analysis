@@ -38,6 +38,31 @@ python scripts/run_extraction_step.py --batch --step 6
 python scripts/validate_markdown.py --batch
 ```
 
+### Cross-paper analysis (v2/v3)
+
+```bash
+# Discover new tags across all papers
+python scripts/discover_tags.py
+
+# Review and approve suggested tags
+python scripts/approve_tags.py --approve tag1,tag2
+
+# Build citation graph from OpenAlex
+python scripts/build_citation_graph.py --rebuild
+
+# Report frequently-cited papers missing from collection
+python scripts/report_missing_papers.py --threshold 3
+
+# Generate thematic indices
+python scripts/build_indices.py --rebuild
+
+# Detect contradictions across papers
+python scripts/detect_contradictions.py --rebuild
+
+# Use experiment design assistant (VS Code chat)
+# @experiment-designer suggest an experiment for portfolio optimisation
+```
+
 ## Documentation
 
 - **[System Overview](docs/SYSTEM_OVERVIEW.md)** — How the entire pipeline works, from PDF to Obsidian markdown. Architecture, data flow, the 6 extraction steps, tags, output format, and CLI reference.
@@ -47,16 +72,18 @@ python scripts/validate_markdown.py --batch
 
 ```
 CLAUDE.md                    # Full project spec (single source of truth)
-.github/agents/              # VS Code Copilot agents (orchestrator, designer, coder, tester)
+.github/agents/              # VS Code Copilot agents (orchestrator, designer, coder, tester, experiment-designer)
 config/                      # JSON configs (extraction steps, tags, source types)
 templates/                   # Markdown templates for paper files
-prompts/                     # LLM prompt templates for each extraction step
+prompts/                     # LLM prompt templates for extraction + analysis
 scripts/                     # Python CLI tools and pipeline scripts
-scripts/utils/               # Shared utilities (LLM client, frontmatter, logging)
+scripts/utils/               # Shared utilities (LLM client, frontmatter, logging, OpenAlex)
 papers/raw_pdfs/             # Incoming PDFs from Zotero (git-ignored)
 papers/processed/            # Generated markdown files (Obsidian vault)
+analysis/                    # Cross-paper analysis outputs (indices, citations, contradictions)
 tests/                       # Test suites and sample papers
 logs/                        # Pipeline run logs (git-ignored)
+docs/                        # System documentation (overview, tuning guide)
 ```
 
 ## Development
@@ -93,3 +120,15 @@ Prompt template for cross-section synthesis. Assigns topic, methodology, and syn
 
 ### Milestone 5 — Batch processing and orchestration (complete)
 Full pipeline orchestrator (`extract_paper.py`) runs all 6 steps from PDF to finished markdown. Obsidian sync script detects when vault already points to processed directory. All 5 sample papers fully processed through all 6 steps.
+
+### Milestone 6 — Zotero integration (complete)
+Connected pipeline to live Zotero group library. Fetch by collection, single item, or list. End-to-end flow: DOI → Zotero → PDF → pipeline → Obsidian. 77 papers processed through all 6 steps.
+
+### Milestone 7 — v2: Data enrichment (in progress)
+Tag discovery pipeline (LLM suggests new tags for registry), enhanced experiment details in Step 3 (replication-grade capture), and API-based citation graph (OpenAlex, identifies missing papers).
+
+### Milestone 8 — v2: Cross-paper indexing (planned)
+Thematic index files in `analysis/` organized by topic, methodology, and claim type. Overview dashboard with tag frequencies, evidence breakdown, and research gaps.
+
+### Milestone 9 — v3: Cross-paper intelligence (planned)
+LLM-powered contradiction detection across papers within topics. Interactive experiment design agent for Phase 4 research planning.

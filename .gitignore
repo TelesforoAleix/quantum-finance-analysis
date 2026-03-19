@@ -17,6 +17,9 @@ papers/raw_pdfs/
 logs/
 tests/sample_papers/
 
+# Analysis cache (API responses)
+analysis/openalex_cache/
+
 # Obsidian
 .obsidian/
 *.canvas

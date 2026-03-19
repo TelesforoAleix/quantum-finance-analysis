@@ -71,6 +71,18 @@ Layer 3: Obsidian vault (knowledge synthesis)
             → Researcher reviews, edits, re-runs steps as needed
 ```
 
+**v2/v3 cross-paper analysis flow:**
+
+```
+[Processed .md files in papers/processed/]
+  → Tag discovery (LLM suggests new tags → researcher approves)
+  → Enhanced experiment details (Step 3 expanded)
+  → Citation graph (OpenAlex API → analysis/citation_index.json)
+  → Thematic indices (analysis/by_topic/, analysis/by_method/, analysis/by_claim/)
+    → Contradiction detection (LLM compares claims across papers)
+      → Experiment design assistant (interactive agent)
+```
+
 ### 2.3 Technology stack
 
 | Component | Tool | Notes |
@@ -135,6 +147,13 @@ The Zotero API returns attachment metadata and download links but does not extra
 
 - **Input:** PDF full text + `source_type`
 - **Output fields:** `methodology_description`, `algorithms_used`, `frameworks`, `experimental_setup`, `dataset_used`
+- **Experiment detail fields (v2):**
+  - `experiment_input`: dataset details (source, size, features, preprocessing)
+  - `experiment_process`: algorithm pipeline, parameter choices, convergence criteria
+  - `experiment_output`: result format, metrics reported, baselines
+  - `experiment_parameters`: qubit count, circuit depth, shots, optimizer, hyperparameters
+  - `hardware_details`: simulator name, QPU model, cloud provider
+  - `reproducibility_notes`: code availability, data availability, replication feasibility
 - **Edit behaviour:** Editable. Re-run steps 5–6 if corrected.
 
 **Source-type extraction emphasis for Step 3:**
@@ -279,6 +298,9 @@ step6_date: ""
 
 ## Methodology
 [Step 3 output — varies by source type]
+
+## Experiment details
+[Step 3 output — structured experiment replication details]
 
 ## Findings
 [Step 4 output — results, claims, performance]
@@ -441,7 +463,8 @@ project-root/
 │       ├── orchestrator.agent.md    # Primary coordinator agent
 │       ├── designer.agent.md        # Config/schema/template specialist
 │       ├── coder.agent.md           # Python implementation agent
-│       └── tester.agent.md          # Validation and QA agent
+│       ├── tester.agent.md          # Validation and QA agent
+│       └── experiment-designer.agent.md  # Interactive experiment design assistant
 │
 ├── config/
 │   ├── extraction_config.json       # Step parameters, model selections, token limits
@@ -465,6 +488,12 @@ project-root/
 │   ├── extract_pdf_text.py          # PDF to plain text (PyMuPDF wrapper)
 │   ├── validate_markdown.py         # Check paper files against schema
 │   ├── sync_obsidian.py             # Push processed files to Obsidian vault path
+│   ├── discover_tags.py             # LLM-based tag suggestion across papers
+│   ├── approve_tags.py              # Merge approved tag suggestions into registry
+│   ├── build_citation_graph.py      # Build citation network via OpenAlex API
+│   ├── report_missing_papers.py     # Report frequently-cited papers not in collection
+│   ├── build_indices.py             # Generate thematic index files
+│   ├── detect_contradictions.py     # Cross-paper contradiction detection
 │   └── utils/
 │       ├── __init__.py
 │       ├── llm_client.py            # Model-agnostic LLM call wrapper
@@ -473,7 +502,8 @@ project-root/
 │       ├── text_chunker.py          # Token-aware text truncation and chunking
 │       ├── step_runner.py           # Step dispatch: load prompt, call LLM, parse, write
 │       ├── tag_validator.py         # Validate tags against registry
-│       └── paper_index.py           # Cross-paper index builder (idea-tags → papers)
+│       ├── paper_index.py           # Cross-paper index builder (idea-tags → papers)
+│       └── openalex_client.py       # OpenAlex API wrapper with caching
 │
 ├── prompts/
 │   ├── step1_classify.txt           # LLM prompt template for source classification
@@ -481,11 +511,27 @@ project-root/
 │   ├── step3_methodology.txt        # LLM prompt template (parameterized by source_type)
 │   ├── step4_findings.txt           # LLM prompt template (parameterized by source_type)
 │   ├── step5_limitations.txt        # LLM prompt template
-│   └── step6_synthesis.txt          # LLM prompt template (reads all prior sections)
+│   ├── step6_synthesis.txt          # LLM prompt template (reads all prior sections)
+│   ├── tag_discovery.txt            # LLM prompt for suggesting new tags
+│   ├── contradiction_detection.txt  # LLM prompt for cross-paper contradiction analysis
+│   └── experiment_design_system.txt # System prompt for experiment design agent
 │
 ├── papers/
 │   ├── raw_pdfs/                    # Incoming PDFs from Zotero (not committed to git)
 │   └── processed/                   # Generated markdown files (Obsidian vault)
+│
+├── analysis/                        # Cross-paper analysis outputs
+│   ├── overview.md                  # Dashboard: tag frequencies, evidence breakdown
+│   ├── tag_suggestions.json         # LLM-suggested tags for review
+│   ├── citation_index.json          # Citation graph data
+│   ├── missing_papers.md            # Papers cited frequently but not in collection
+│   ├── contradictions_index.json    # Cross-paper contradiction data
+│   ├── contradictions.md            # Human-readable contradiction report
+│   ├── experiment_landscape.md      # Aggregated experiment details
+│   ├── openalex_cache/              # API response cache (git-ignored)
+│   ├── by_topic/                    # Index files by topic tag
+│   ├── by_method/                   # Index files by methodology tag
+│   └── by_claim/                    # Index files by QA claim type
 │
 ├── logs/                            # Pipeline run logs (not committed to git)
 │
@@ -580,61 +626,74 @@ project-root/
 #### Milestone 1 — Foundation
 Build the infrastructure that every subsequent step depends on.
 
-- [ ] Repository structure created as per Section 6
-- [ ] `config/extraction_config.json` populated with all step definitions
-- [ ] `config/tag_registry.json` populated with initial tag vocabulary
-- [ ] `utils/llm_client.py` — model-agnostic wrapper supporting Anthropic and OpenAI APIs
-- [ ] `utils/frontmatter.py` — read and write YAML frontmatter in markdown files
-- [ ] `scripts/extract_pdf_text.py` — PDF to plain text via PyMuPDF
-- [ ] `scripts/fetch_from_zotero.py` — fetch attachment by Zotero item key
-- [ ] `templates/paper_base.md` — blank paper template with all sections
-- [ ] `.env.example` with all required variable names
-- [ ] `tests/test_schema_validation.py` — validates a markdown file against the frontmatter spec
+- [x] Repository structure created as per Section 6
+- [x] `config/extraction_config.json` populated with all step definitions
+- [x] `config/tag_registry.json` populated with initial tag vocabulary
+- [x] `utils/llm_client.py` — model-agnostic wrapper supporting Anthropic and OpenAI APIs
+- [x] `utils/frontmatter.py` — read and write YAML frontmatter in markdown files
+- [x] `scripts/extract_pdf_text.py` — PDF to plain text via PyMuPDF
+- [x] `scripts/fetch_from_zotero.py` — fetch attachment by Zotero item key
+- [x] `templates/paper_base.md` — blank paper template with all sections
+- [x] `.env.example` with all required variable names
+- [x] `tests/test_schema_validation.py` — validates a markdown file against the frontmatter spec
 
 #### Milestone 2 — Step 1 and step 2 (classification and metadata)
 Get the first two steps working end-to-end on a single paper.
 
-- [ ] `prompts/step1_classify.txt` — source classification prompt
-- [ ] `prompts/step2_metadata.txt` — metadata extraction prompt
-- [ ] `scripts/run_extraction_step.py` — supports `--paper`, `--step`, `--from-step`
-- [ ] Step 1 tested on 5 sample papers — validate source type detection accuracy
-- [ ] Step 2 tested on 5 sample papers — validate metadata accuracy vs. Zotero
-- [ ] `tests/test_extraction_steps.py` — unit tests for steps 1 and 2
+- [x] `prompts/step1_classify.txt` — source classification prompt
+- [x] `prompts/step2_metadata.txt` — metadata extraction prompt
+- [x] `scripts/run_extraction_step.py` — supports `--paper`, `--step`, `--from-step`
+- [x] Step 1 tested on 5 sample papers — validate source type detection accuracy
+- [x] Step 2 tested on 5 sample papers — validate metadata accuracy vs. Zotero
+- [x] `tests/test_extraction_steps.py` — unit tests for steps 1 and 2
 
 #### Milestone 3 — Steps 3, 4, 5 (core extraction)
 The substantive extraction steps with source-type parameterization.
 
-- [ ] `prompts/step3_methodology.txt` — parameterized by `{source_type}`
-- [ ] `prompts/step4_findings.txt` — parameterized by `{source_type}`
-- [ ] `prompts/step5_limitations.txt`
-- [ ] Source-type template files for each type in `templates/`
-- [ ] Steps 3–5 tested on sample papers across at least 3 different source types
-- [ ] Selective re-run tested: edit step 3 output, re-run from step 4, confirm step 3 is unchanged
+- [x] `prompts/step3_methodology.txt` — parameterized by `{source_type}`
+- [x] `prompts/step4_findings.txt` — parameterized by `{source_type}`
+- [x] `prompts/step5_limitations.txt`
+- [x] Source-type template files for each type in `templates/`
+- [x] Steps 3–5 tested on sample papers across at least 3 different source types
+- [x] Selective re-run tested: edit step 3 output, re-run from step 4, confirm step 3 is unchanged
 
 #### Milestone 4 — Step 6 (synthesis and tagging)
 Cross-paper synthesis and the unified tag layer.
 
-- [ ] `prompts/step6_synthesis.txt` — reads all prior sections, outputs tags
-- [ ] Tag validation against `config/tag_registry.json` — reject unknown tags
-- [ ] Step 6 tested on 10 processed papers
-- [ ] Verify tag output is consistent across similar papers
+- [x] `prompts/step6_synthesis.txt` — reads all prior sections, outputs tags
+- [x] Tag validation against `config/tag_registry.json` — reject unknown tags
+- [x] Step 6 tested on 10 processed papers
+- [x] Verify tag output is consistent across similar papers
 
 #### Milestone 5 — Batch processing and orchestration
 Run the full pipeline at scale.
 
-- [ ] `scripts/extract_paper.py` — orchestrator running all 6 steps on one paper
-- [ ] `scripts/run_extraction_step.py` — `--batch` flag with `--filter` support
-- [ ] Batch test on 20 papers — log errors, track step completion per paper
-- [ ] `scripts/validate_markdown.py` — batch validation of all processed papers
-- [ ] `scripts/sync_obsidian.py` — copy processed files to Obsidian vault path
+- [x] `scripts/extract_paper.py` — orchestrator running all 6 steps on one paper
+- [x] `scripts/run_extraction_step.py` — `--batch` flag with `--filter` support
+- [x] Batch test on 20 papers — log errors, track step completion per paper
+- [x] `scripts/validate_markdown.py` — batch validation of all processed papers
+- [x] `scripts/sync_obsidian.py` — copy processed files to Obsidian vault path
 
 #### Milestone 6 — Zotero integration
 Connect the pipeline to the live Zotero group library.
 
-- [ ] `scripts/fetch_from_zotero.py` — fetch by collection tag (`phase1-included`)
-- [ ] End-to-end test: DOI → Zotero → PDF → pipeline → Obsidian markdown
-- [ ] Handle missing PDFs gracefully (log, skip, flag in frontmatter)
-- [ ] Handle API rate limits and retries
+- [x] `scripts/fetch_from_zotero.py` — fetch by collection tag (`phase1-included`)
+- [x] End-to-end test: DOI → Zotero → PDF → pipeline → Obsidian markdown
+- [x] Handle missing PDFs gracefully (log, skip, flag in frontmatter)
+- [x] Handle API rate limits and retries
+
+#### Milestone 7 — v2: Data enrichment (tag discovery + experiment details + citation graph)
+- [ ] Phase 2.1: Tag discovery pipeline complete and tested
+- [ ] Phase 2.2: Step 3 enhanced with experiment details, all papers re-processed
+- [ ] Phase 2.3: Citation graph built, missing papers report generated
+
+#### Milestone 8 — v2: Cross-paper indexing (thematic indices)
+- [ ] Phase 2.4: Thematic indices generated (by_topic, by_method, by_claim, overview dashboard)
+- [ ] All analysis files committed to `analysis/` directory
+
+#### Milestone 9 — v3: Cross-paper intelligence (contradiction detection + experiment assistant)
+- [ ] Phase 3.1: Contradiction detection complete, contradiction index and report generated
+- [ ] Phase 3.2: Experiment design agent operational and tested
 
 ### 8.3 Definition of done for each milestone
 
@@ -669,3 +728,100 @@ The following decisions were made during the planning phase and apply to all dev
 | Processing log | Flat JSON file (`processing_log.json`) | Simple, git-trackable, no extra dependency |
 | Obsidian vault path | Same repo (`papers/processed/`) | No sync step needed — Obsidian opens the folder directly |
 | Prompt templating | Python `str.format()` | Simple variable substitution, no extra dependency |
+| Experiment details location | Enhance Step 3 | Reuses re-run infrastructure, avoids pipeline complexity |
+| Analysis outputs directory | `analysis/` (committed) | Separates generated analysis from Obsidian paper data |
+| Citation data source | OpenAlex API (free) | More accurate than LLM extraction, no cost per query |
+| Experiment design tool | Interactive VS Code agent | Conversational interface for iterative research design |
+| Tag discovery output | `analysis/tag_suggestions.json` | Researcher reviews before any tags enter the registry |
+
+---
+
+## 10. v2/v3 Development roadmap
+
+v1 (complete) handles per-paper extraction. v2 adds cross-paper data enrichment and indexing. v3 adds intelligence layers for contradiction detection and experiment design.
+
+### 10.1 Design decisions for v2/v3
+
+| Decision | Choice | Rationale |
+|----------|--------|----------|
+| Experiment details | Enhance Step 3 (not new step) | Reuses existing re-run infrastructure, avoids pipeline complexity |
+| Thematic indices | `analysis/` directory | Separates generated analysis from primary paper data in Obsidian |
+| Citation data source | OpenAlex API | Free, no API key needed, more accurate than LLM extraction from PDF references |
+| Experiment design assistant | Interactive VS Code agent | Conversational interface better for iterative research design |
+| Analysis outputs | Committed to git (except cache) | Enables version tracking and collaboration |
+
+### 10.2 Phase 2.1 — Tag discovery pipeline
+
+Batch LLM analysis suggests new tags not in the registry, aggregated with frequency counts for researcher review.
+
+- [ ] `prompts/tag_discovery.txt` — prompt for suggesting new tags given paper content + existing registry
+- [ ] `scripts/discover_tags.py` — CLI: reads all papers, calls LLM, writes `analysis/tag_suggestions.json`
+- [ ] `scripts/approve_tags.py` — CLI: merges approved suggestions into `config/tag_registry.json` and updates `prompts/step6_synthesis.txt`
+- [ ] Test: run on 10 papers, verify suggestions are novel, approval workflow works, step 6 re-run picks up new tags
+
+### 10.3 Phase 2.2 — Enhanced experiment details (Step 3)
+
+Expand Step 3 to capture replication-grade experiment details for empirical papers.
+
+- [ ] Update `prompts/step3_methodology.txt` with experiment detail fields (input, process, output, parameters, hardware, reproducibility)
+- [ ] Update `scripts/utils/step_runner.py` `_write_step3_results()` to write `## Experiment details` section
+- [ ] Update `templates/paper_base.md` to include `## Experiment details` placeholder
+- [ ] Update `config/extraction_config.json` step3: `max_tokens` 4000→6000, `input_tokens` 13000→15000
+- [ ] Re-run step 3 on all papers (`--batch --step 3`)
+- [ ] Test: 3 empirical papers have details populated, 1 review paper has empty/N/A fields
+
+### 10.4 Phase 2.3 — Citation graph (API-based)
+
+Build citation network via OpenAlex API. Identify frequently-cited papers missing from the collection.
+
+- [ ] `scripts/utils/openalex_client.py` — API wrapper with rate limiting, caching to `analysis/openalex_cache/`
+- [ ] `scripts/build_citation_graph.py` — CLI: reads DOIs from frontmatter, queries OpenAlex, outputs `analysis/citation_index.json`
+- [ ] `scripts/report_missing_papers.py` — CLI: generates `analysis/missing_papers.md` (papers cited by ≥N collection papers but absent)
+- [ ] Test: 5 papers with known DOIs, verify citation data matches OpenAlex, papers without DOIs gracefully skipped
+
+### 10.5 Phase 2.4 — Thematic indices
+
+Auto-generate browsable markdown index files organized by topic, methodology, and claim type.
+
+- [ ] `scripts/build_indices.py` — CLI: generates `analysis/by_topic/`, `analysis/by_method/`, `analysis/by_claim/`, `analysis/overview.md`
+- [ ] Index format: paper table (year, method, QA claim, evidence), aggregated findings, open questions
+- [ ] Dashboard (`overview.md`): counts, tag frequencies, year distribution, evidence breakdown, gaps
+- [ ] Test: every paper appears in at least one topic index, overview counts match paper count
+
+### 10.6 Phase 3.1 — Contradiction detection
+
+LLM compares claims across papers within each topic to systematically identify contradictions.
+
+- [ ] `prompts/contradiction_detection.txt` — prompt receiving grouped claims from papers in same topic
+- [ ] `scripts/detect_contradictions.py` — CLI: groups papers by topic (via indices), sends claims to LLM, outputs `analysis/contradictions_index.json` + `analysis/contradictions.md`
+- [ ] Severity levels: high (direct contradiction), medium (tension), low (different emphasis)
+- [ ] Optional `--update-papers` flag: enriches individual paper `## Contradictions` sections
+- [ ] Test: run on topics with known disagreements, verify at least some contradictions detected
+
+### 10.7 Phase 3.2 — Experiment design assistant
+
+Interactive VS Code agent that reads all analysis outputs to help design Phase 4 experiments.
+
+- [ ] `.github/agents/experiment-designer.agent.md` — read-only tools (`read`, `search`)
+- [ ] `prompts/experiment_design_system.txt` — system prompt with research landscape context
+- [ ] Extend `scripts/build_indices.py` to generate `analysis/experiment_landscape.md`
+- [ ] Capabilities: suggest experiments for a topic, identify methodology gaps, propose designs to resolve contradictions
+- [ ] Test: agent cites real papers, suggests methods present in literature, doesn't hallucinate
+
+### 10.8 Dependencies and parallelism
+
+```
+Phase 2.1: Tag Discovery ──────────────────────┐
+Phase 2.2: Experiment Details ─────────────┐    │
+Phase 2.3: Citation Graph ────────────┐    │    │
+                                      ▼    ▼    ▼
+Phase 2.4: Thematic Indices ─────────── (enriched by all above)
+                                      │
+                                      ▼
+Phase 3.1: Contradiction Detection ─── (needs 2.4 grouping)
+                                      │
+                                      ▼
+Phase 3.2: Experiment Design Agent ─── (needs 2.2 + 2.4 + 3.1)
+```
+
+Phases 2.1, 2.2, 2.3 are fully independent. Critical path: 2.4 → 3.1 → 3.2.
