@@ -19,7 +19,6 @@ idea_tags:
 journal_or_venue: Preprints.org
 methodology_tags:
 - HHL
-- QAOA
 - grover
 - quantum-walk
 - amplitude-estimation
@@ -32,17 +31,17 @@ relevance_phase1: high
 relevance_phase3: high
 source_type: preprint
 source_type_confidence: high
-step1_date: '2026-03-18T23:20:17.261507'
+step1_date: '2026-03-20T00:23:51.151835'
 step1_model: Mistral-Large-3
-step2_date: '2026-03-19T13:32:35.102357'
+step2_date: '2026-03-20T00:24:00.666841'
 step2_model: Mistral-Large-3
-step3_date: '2026-03-19T13:32:49.443002'
+step3_date: '2026-03-20T00:24:06.104629'
 step3_model: Mistral-Large-3
-step4_date: '2026-03-19T13:33:35.604007'
+step4_date: '2026-03-20T00:25:00.239162'
 step4_model: Mistral-Large-3
-step5_date: '2026-03-18T23:20:53.338932'
+step5_date: '2026-03-20T00:25:07.244628'
 step5_model: Mistral-Large-3
-step6_date: '2026-03-19T13:36:29.937488'
+step6_date: '2026-03-20T00:25:20.281668'
 step6_model: Mistral-Large-3
 steps_completed:
 - 1
@@ -60,9 +59,9 @@ tags:
 - topic/high-frequency-trading
 - topic/asset-pricing
 - topic/quantum-cryptography
+- topic/regulatory-compliance
 - topic/market-simulation
 - method/HHL
-- method/QAOA
 - method/grover
 - method/quantum-walk
 - method/amplitude-estimation
@@ -81,70 +80,70 @@ topic_tags:
 - high-frequency-trading
 - asset-pricing
 - quantum-cryptography
+- regulatory-compliance
 - market-simulation
 year: 2025
 zotero_key: ''
 ---
 
 ## Abstract summary
-This preprint provides a technical review of quantum computing applications in finance and economics, targeting researchers and practitioners in quantum computing and quantitative finance. The paper surveys key quantum algorithms relevant to financial and economic problems, then maps specific use-cases—such as portfolio optimization, risk management, and economic modeling—to these algorithms. It also discusses challenges in achieving practical quantum advantage and aims to foster interdisciplinary collaboration to accelerate progress in the field.
+This preprint provides a technical review of quantum computing applications in finance and economics, targeting researchers and quantitative analysts. The paper surveys quantum algorithms relevant to financial and economic problems, maps specific use-cases to these algorithms, and discusses challenges in achieving practical quantum advantage. It aims to foster interdisciplinary collaboration to accelerate the adoption of quantum technologies in solving complex sector-specific problems.
 ## Methodology
-This preprint presents a technical review of quantum computing use-cases in finance and economics, structured as a survey-based analysis. The methodology involves two main parts: (i) a survey of quantum algorithms pertinent to finance and economics, categorized into simulation, optimization, quantum machine learning, and quantum cryptography; and (ii) a mapping of financial and economic use-cases to these quantum algorithms. The review synthesizes existing literature, mathematical formulations of use-cases, and theoretical foundations of quantum algorithms. It does not involve original empirical experimentation or dataset analysis but rather consolidates proof-of-concept implementations and theoretical proposals from prior work. The focus is on identifying potential quantum advantage, challenges, and pathways to practical quantum advantage (PQA) in financial services and economics.
+This paper is a technical review article that systematically surveys quantum computing use-cases in finance and economics. The methodology involves a two-part structure: (i) a survey of quantum algorithms pertinent to problems in finance and economics, and (ii) a mapping of use-cases in these sectors to the potential quantum algorithms identified in part (i). The review categorizes quantum algorithms into four problem domains: simulation algorithms (e.g., Quantum Monte Carlo Integration, quantum solvers for Stochastic Differential Equations), optimization algorithms (e.g., combinatorial and convex optimization), quantum machine learning algorithms, and quantum cryptography methods. The use-cases in finance and economics are grouped into banking and investment, risk management and cybersecurity, and economics. The review also discusses challenges on the pathway to achieving quantum advantage and provides an interdisciplinary perspective to accelerate practical quantum advantage in these sectors.
 
-**Algorithms used:** Quantum Phase Estimation (QPE), Quantum Amplitude Amplification (QAA), Quantum Amplitude Estimation (QAE), Quantum Unstructured Search (Grover's Algorithm), Discrete-Time Quantum Walk (DTQW), Continuous-Time Quantum Walk (CTQW), Harrow-Hassidim-Lloyd (HHL) Algorithm, Quantum Monte Carlo Integration, Quantum Singular Value Estimation (QSVE), Quantum Approximate Optimization Algorithm (QAOA)
+**Algorithms used:** Quantum Phase Estimation (QPE), Quantum Amplitude Amplification (QAA), Quantum Amplitude Estimation (QAE), Quantum Unstructured Search (Grover's Algorithm), Discrete-Time Quantum Walk (DTQW), Continuous-Time Quantum Walk (CTQW), Harrow-Hassidim-Lloyd (HHL) Algorithm, Quantum Singular Value Transformation (QSVT)
 ## Findings
-- [speculative] Quantum computing has the potential to accelerate computation for solving complex problems in finance and economics, particularly those with computationally heavy requirements like risk assessment, portfolio optimization, fraud detection, and high-frequency trading.
-- [speculative] Quantum computing could handle large-scale, high-dimensional problems efficiently without resorting to approximations or truncations required by classical methods.
-- [speculative] Quantum computing may significantly reduce computational time and improve accuracy for certain categories of problems in finance and economics.
-- [speculative] Quantum advantage in finance is projected to contribute up to $622 billion globally by 2035, with the UK potentially seeing an 8.3% economy-wide productivity boost by 2055.
-- [speculative] The financial services sector is predicted to be one of the first industries to reap the benefits of quantum technologies.
-- [speculative] Quantum algorithms such as Quantum Phase Estimation (QPE), Quantum Amplitude Amplification (QAA), Quantum Amplitude Estimation (QAE), and Quantum Unstructured Search (Grover’s Algorithm) offer theoretical speedups for problems like Monte Carlo integration, optimization, and search.
-- [speculative] Quantum walks (discrete-time and continuous-time) could provide quadratic speedups in mixing and hitting times compared to classical random walks, with applications in search algorithms and diffusion processes.
-- [speculative] The Quantum Linear Systems Problem (QLSP) could achieve exponential speedups over classical methods for solving linear systems, particularly when the matrix is sparse and well-conditioned.
-- [speculative] The Harrow-Hassidim-Lloyd (HHL) algorithm for QLSP could offer exponential speedups in matrix inversion problems, though it only outputs a quantum state proportional to the solution rather than the full solution vector.
-- [speculative] Practical Quantum Advantage (PQA) is considered a monumental milestone for quantum computing, where quantum computers solve real-world problems more efficiently than the most advanced classical methods.
-- [speculative] Current bottlenecks to achieving quantum advantage include data loading/readout challenges, noise in near-term quantum hardware, and the need for quantum error correction.
-- [speculative] Variants of quantum algorithms (e.g., Iterative Quantum Phase Estimation, low-depth QAE) are being developed to make them feasible for Noisy Intermediate-Scale Quantum (NISQ) devices.
+- [speculative] Quantum computing is expected to solve problems intractable for classical computing, such as simulation of complex quantum many-body systems, with linear scaling in system size compared to exponential scaling for classical methods
+- [speculative] Quantum computing could provide speed-ups for classically tractable problems like searching, with proposed algorithms ranging from quadratic to exponential speed-ups over classical counterparts
+- [speculative] Finance and economics, due to their reliance on complex calculations, large datasets, and optimization problems, are high-potential sectors for quantum computing applications, particularly in risk assessment, portfolio optimization, fraud detection, and high-frequency trading
+- [speculative] Quantum computing could enable efficient handling of large-scale, high-dimensional problems in finance and economics without resorting to approximations or truncations required by classical methods, potentially improving accuracy and reducing computational time
+- [speculative] Quantum computing may face bottlenecks in data loading and readout efficiency, limiting near-term practical gains
+- [speculative] Three definitions of quantum advantage are proposed: Computational Advantage (quantum supremacy), Quantum Utility, and Practical Quantum Advantage (PQA), with PQA being the most relevant for real-world applications in finance and economics
+- [speculative] Practical Quantum Advantage (PQA) in finance could contribute up to $622 billion globally by 2035, with the UK potentially seeing an 8.3% economy-wide productivity boost by 2055 due to quantum computing adoption
+- [speculative] Quantum Phase Estimation (QPE) is a foundational quantum subroutine with applications in Shor’s algorithm, Hamiltonian diagonalization, and solving linear systems, but requires fault-tolerant quantum computing for high accuracy
+- [speculative] Quantum Amplitude Amplification (QAA) and Quantum Amplitude Estimation (QAE) offer potential quadratic speed-ups over classical methods for tasks like Monte Carlo integration, with QAE enabling high-precision amplitude estimation
+- [speculative] Quantum Unstructured Search (Grover’s algorithm) provides a quadratic speed-up for unstructured search problems, with applications in optimization, pattern matching, and homomorphic encryption, but requires deep circuits infeasible for current NISQ hardware
+- [speculative] Quantum walks (discrete-time and continuous-time) exhibit ballistic propagation and faster diffusion compared to classical random walks, with potential polynomial speed-ups in mixing and hitting times for graph-based problems
+- [speculative] The Harrow-Hassidim-Lloyd (HHL) algorithm for solving quantum linear systems could achieve exponential speed-ups over classical methods for sparse, well-conditioned matrices, but faces practical challenges in data encoding and readout
 
-**Results summary:** This preprint provides a technical review of quantum computing use-cases in finance and economics, surveying key quantum algorithms and their potential applications. The authors discuss theoretical foundations, proof-of-concept implementations, and future implications for areas like option pricing, risk management, and economic modeling. While the paper highlights the speculative potential for quantum advantage—such as exponential speedups in solving linear systems or quadratic speedups in search and optimization—it acknowledges significant challenges, including hardware limitations, data loading issues, and the need for fault-tolerant quantum computing. The review emphasizes the importance of interdisciplinary collaboration to accelerate the realization of Practical Quantum Advantage (PQA) in financial services.
+**Results summary:** This preprint provides a technical review of quantum computing use-cases in finance and economics, surveying key quantum algorithms and their potential applications. The authors discuss theoretical foundations, proof-of-concept implementations, and challenges in achieving Practical Quantum Advantage (PQA). Key quantum algorithms reviewed include Quantum Phase Estimation (QPE), Quantum Amplitude Amplification (QAA), Quantum Amplitude Estimation (QAE), Quantum Unstructured Search (Grover’s algorithm), quantum walks, and the Quantum Linear System Solver (HHL algorithm). The review highlights speculative claims about quantum speed-ups, improved computational efficiency, and economic impacts, while noting current bottlenecks such as data loading/readout and hardware limitations. The paper aims to bridge interdisciplinary gaps between quantum computing researchers and financial practitioners to accelerate the development of quantum-ready solutions.
 ## Quantum advantage claim
 **Classification:** speculative
 
-The paper presents quantum advantage claims as speculative, as they are based on theoretical speedups (e.g., exponential or quadratic) without empirical validation on real quantum hardware. Claims of practical impact, such as economic productivity boosts or industry adoption timelines, are also speculative and rely on projections rather than demonstrated results.
+The paper discusses theoretical and speculative claims of quantum advantage across multiple algorithms and applications, but notes that these claims are not empirically validated. Quantum advantage is framed as a future milestone (Practical Quantum Advantage) rather than a demonstrated outcome, with current implementations limited by hardware constraints and lack of fault tolerance.
 ## Limitations
-- Lack of peer review, which may affect the rigor and validity of the findings [inferred]
-- Review is not comprehensive, focusing only on a subset of use-cases with high potential impact and published proof-of-concept research [author-stated]
-- Assumes familiarity with quantum mechanics and related terminology, limiting accessibility to non-specialist audiences [author-stated]
-- Technical challenges in efficiently loading and reading out data from quantum computers are noted but not deeply explored [author-stated]
-- [inferred] No empirical validation or experimental results on real quantum hardware are provided to support theoretical claims
-- [inferred] Potential bias toward optimistic projections of quantum advantage without sufficient discussion of current hardware limitations (e.g., qubit count, noise, error rates)
-- [inferred] Limited discussion on the gap between theoretical speedups and practical performance in financial applications
-- [inferred] No detailed comparison with state-of-the-art classical methods for the use-cases discussed
-- Review does not cover all quantum algorithms or use-cases in finance and economics, potentially missing emerging or niche applications [author-stated]
-- [inferred] Lack of discussion on the economic or operational feasibility of integrating quantum computing into existing financial systems
+- Lack of peer review [inferred]
+- Review is not comprehensive, covering only a subset of quantum algorithms and use-cases in finance and economics [author-stated]
+- Assumes familiarity with quantum mechanics and related terminology, limiting accessibility to non-experts [author-stated]
+- [inferred] Potential bias toward theoretical advantages without sufficient empirical validation on real-world financial datasets
+- [inferred] No detailed analysis of hardware noise or qubit count constraints affecting practical implementation
+- [inferred] Limited discussion on data loading and readout challenges, which are critical bottlenecks for quantum computing in finance
+- Review focuses on simpler formulations of quantum algorithms, omitting more complex approaches [author-stated]
+- [inferred] No direct comparison with state-of-the-art classical methods for the discussed financial use-cases
+- [inferred] Lack of reproducibility guidelines for the proposed quantum algorithms in financial applications
+- Potential recency bias, as the review may not cover the latest advancements post-November 2025 [inferred]
+- No empirical validation of the quantum algorithms' performance on real quantum hardware [inferred]
+- [inferred] Limited discussion on the scalability of quantum algorithms to production-level financial problems
 ## Open questions
-- What is a viable path toward achieving Practical Quantum Advantage (PQA) in finance and economics?
-- What are the specific engineering and algorithmic hurdles that must be overcome to realize PQA?
-- How can interdisciplinary collaboration be accelerated to bridge the gap between quantum computing research and financial applications?
-- What are the trade-offs between quantum utility and practical quantum advantage for real-world financial problems?
-- How will quantum computing impact the security and encryption protocols currently used in financial services?
-- What are the implications of quantum noise and error rates on the accuracy and reliability of financial computations?
-- How do quantum algorithms perform on real-world financial datasets compared to synthetic or simplified models?
-- What are the scalability limits of current quantum algorithms for large-scale financial problems (e.g., portfolio optimization with thousands of assets)?
-- How can quantum computing be integrated into existing classical computational pipelines in finance?
-- What are the ethical and regulatory considerations for adopting quantum computing in financial services?
+- What are the specific engineering and algorithmic hurdles to overcome for achieving Practical Quantum Advantage (PQA) in finance and economics?
+- How can quantum computing efficiently handle data loading and readout for large-scale financial datasets?
+- What is the impact of decoherence and noise on the performance of quantum algorithms in real-world financial applications?
+- How do quantum algorithms compare with classical methods in terms of accuracy, speed, and cost for specific financial use-cases?
+- What are the most viable paths toward demonstrating quantum utility in finance, given current hardware limitations?
+- How can interdisciplinary collaboration between quantum computing researchers and financial practitioners be accelerated?
+- What are the potential risks and unintended consequences of integrating quantum computing into financial systems?
 
 **Future work:**
-- Develop and test quantum algorithms on real quantum hardware for financial use-cases (e.g., IBM Eagle processor or other NISQ devices)
-- Extend the review to include a broader range of quantum algorithms and financial/economic use-cases
-- Conduct empirical studies to validate theoretical claims about quantum speedups in finance
-- Explore hybrid quantum-classical approaches to address current hardware limitations
-- Investigate noise mitigation and error correction techniques tailored for financial applications
-- Develop benchmarks to compare quantum and classical methods for specific financial problems
-- Expand interdisciplinary research to include economists, financial practitioners, and quantum computing experts
-- Assess the economic and operational feasibility of integrating quantum computing into financial systems
-- Explore quantum-safe cryptography protocols to prepare for future cybersecurity threats
-- Investigate the potential of quantum machine learning for real-world financial datasets and applications
+- Extend the review to include more complex quantum algorithms and their applications in finance and economics
+- Conduct empirical validation of quantum algorithms on real quantum hardware for financial use-cases
+- Develop noise mitigation techniques tailored for quantum algorithms in financial applications
+- Compare quantum algorithms with state-of-the-art classical methods to identify specific advantages and limitations
+- Explore hybrid quantum-classical approaches to address current hardware constraints
+- Investigate efficient data loading and readout methods for quantum computing in finance
+- Expand the scope to include more use-cases in economics, such as macroeconomic forecasting and game theory
+- Develop reproducibility guidelines and benchmarks for quantum algorithms in finance
+- Foster interdisciplinary research collaborations to accelerate the development of practical quantum solutions for finance
+- Assess the economic impact and feasibility of quantum computing adoption in the financial sector
 ## Key ideas
 - #idea:quantum-advantage — Quantum computing is theorized to provide exponential or quadratic speed-ups for financial problems like portfolio optimization, risk modeling, and derivatives pricing, with potential for Practical Quantum Advantage (PQA) in real-world applications
 - #idea:quantum-advantage — Quantum algorithms (e.g., QPE, QAA, QAE, Grover’s) offer theoretical speedups for Monte Carlo integration, optimization, and search in finance, though empirical validation is lacking

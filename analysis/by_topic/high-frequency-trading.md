@@ -1,76 +1,79 @@
 # High Frequency Trading
 
-**Papers:** 13 | **Empirical:** 1 | **Theoretical:** 3 | **Review:** 1
+**Papers:** 16 | **Empirical:** 2 | **Theoretical:** 4 | **Review:** 2
 
 ## Papers
 
 | Paper | Year | Source Type | Methods | QA Claim | Relevance |
 |-------|------|-------------|---------|----------|-----------|
-| [[2026_Azfar_ShallowRobustQaoa]] | 2026 | preprint | QAOA, quantum-annealing, variational, QUBO, grover | speculative | medium |
+| [[2026_Azfar_ShallowRobustQaoa]] | 2026 | preprint | QAOA, QUBO, variational, grover, quantum-simulation, classical-simulation | speculative | medium |
 | [[2026_DECCANINTERNATIONALACADEMICPUBLISHERS_QuantumComputingAlgorithms]] | 2026 | other | grover, variational, quantum-simulation, classical-simulation, quantum-ML | speculative | medium |
-| [[2026_Nawaz_ExploringQuantumMachine]] | 2026 | peer-reviewed-theoretical | QAOA, VQE, quantum-ML, quantum-SVM, grover, quantum-simulation, variational, classical-simulation | theoretical | high |
-| [[2025_Gibadullin_QuantumAlgorithmsSolving]] | 2025 | conference-paper | VQE, QAOA, grover, variational, classical-simulation | speculative | medium |
-| [[2025_Hlatshwayo_TechnicalReviewQuantum]] | 2025 | preprint | HHL, QAOA, grover, quantum-walk, amplitude-estimation, quantum-simulation, quantum-ML | speculative | high |
-| [[2025_Jiang_RasenganTransitionHamiltonian]] | 2025 | conference-paper | variational, QAOA, quantum-annealing, QUBO, quantum-simulation | speculative | high |
-| [[2025_Malhotra_ComparativeStudyQuantum]] | 2025 | conference-paper | QAOA, grover, quantum-ML, classical-simulation | speculative | medium |
-| [[2025_Vangibhuratha_QuantumMachineLearning]] | 2025 | peer-reviewed-theoretical | quantum-ML, quantum-SVM, variational, quantum-annealing, QAOA, quantum-simulation, classical-simulation | theoretical | high |
+| [[2026_Nawaz_ExploringQuantumMachine]] | 2026 | peer-reviewed-theoretical | QAOA, VQE, quantum-ML, quantum-SVM, grover, variational, quantum-simulation | theoretical | high |
+| [[2025_Ganguly_HybridClassicalQuantum]] | 2025 | conference-paper | quantum-ML, variational, QUBO, classical-simulation | speculative | high |
+| [[2025_Gibadullin_QuantumAlgorithmsSolving]] | 2025 | conference-paper | VQE, QAOA, grover, variational | speculative | medium |
+| [[2025_Hlatshwayo_TechnicalReviewQuantum]] | 2025 | preprint | HHL, grover, quantum-walk, amplitude-estimation, quantum-simulation, quantum-ML | speculative | high |
+| [[2025_JETIR_QuantumFinance]] | 2025 | peer-reviewed-theoretical | QAOA, VQE, quantum-ML, amplitude-estimation, variational, classical-simulation | theoretical | high |
+| [[2025_Jiang_RasenganTransitionHamiltonian]] | 2025 | conference-paper | variational, QAOA, VQE, quantum-annealing, QUBO | theoretical | high |
+| [[2025_NeelotpalDey_QuantumComputingFinancial]] | 2025 | peer-reviewed-theoretical | QAOA, VQE, quantum-ML, amplitude-estimation, QUBO, variational, classical-simulation | theoretical | high |
+| [[2025_Vangibhuratha_QuantumMachineLearning]] | 2025 | peer-reviewed-theoretical | quantum-ML, quantum-SVM, variational, quantum-annealing, QAOA, HHL, quantum-simulation, classical-simulation | theoretical | high |
 | [[2025_Vellaipandiyan_HybridQlstmFramework]] | 2025 | conference-paper | quantum-ML, variational | speculative | high |
-| [[2026_Mahmod_StateQuantumComputing]] | 2025 | review-article | HHL, QAOA, VQE, quantum-annealing, grover, quantum-ML, quantum-SVM, variational, QUBO, quantum-simulation, classical-simulation | speculative | high |
-| [[2023_Vishwakarma_QuantumComputingAlgorithms]] | 2023 | peer-reviewed-empirical | QAOA, VQE, variational, quantum-ML, hybrid-approach, classical-simulation | speculative | high |
-| [[2020_Kommadi_QuantumComputingSolutions]] | 2020 | technical-report | QAOA, grover, quantum-annealing, quantum-ML, quantum-SVM, quantum-walk, variational, classical-simulation | speculative | medium |
-| [[2016_Petrosyan_GroverSearchAlgorithm]] | 2015 | peer-reviewed-theoretical | grover | theoretical | medium |
+| [[2026_Mahmod_StateQuantumComputing]] | 2025 | review-article | HHL, QAOA, VQE, quantum-annealing, grover, quantum-ML, quantum-SVM, variational, QUBO, quantum-simulation | theoretical | high |
+| [[2025_Deshmukh_QuantumMachineLearning]] | 2024 | peer-reviewed-empirical | quantum-ML, quantum-SVM, VQE, QAOA, variational | speculative | high |
+| [[2023_Markna_UnveilingAdvancedComputational]] | 2023 | review-article | QAOA, quantum-annealing, HHL, quantum-ML, quantum-SVM, amplitude-estimation, QUBO, variational, grover, quantum-simulation, classical-simulation | speculative | high |
+| [[2023_Vishwakarma_QuantumComputingAlgorithms]] | 2023 | peer-reviewed-empirical | QAOA, VQE, variational, quantum-ML, hybrid-approach | speculative | high |
+| [[2016_Petrosyan_GroverSearchAlgorithm]] | 2015 | preprint | grover | speculative | medium |
 
 ## Key Findings
 
-- [supported] Linear-Ramp LC-QAOA improves convergence and feasibility compared to standard QAOA, Two-Step QAOA, and Grover-Mixer QAOA in noiseless and shot-based simulations on small VRP instances. — [[2026_Azfar_ShallowRobustQaoa]]
-- [supported] Linear-Chain (LC) QAOA reduces two-qubit gate depth and boosts noise robustness, achieving the shallowest circuits on IBM Eagle/Heron hardware. — [[2026_Azfar_ShallowRobustQaoa]]
-- [supported] On real hardware (IBM Eagle/Heron), LC-QAOA with XpXm dynamical decoupling more than doubles feasibility (from <1% to >2%) and recovers the optimal VRP solution in several trials. — [[2026_Azfar_ShallowRobustQaoa]]
-- [supported] Grover-Mixer QAOA and Two-Step QAOA show high feasibility in simulation (e.g., 21% for GM-QAOA at p=8) but are hampered by deeper circuits, making them less effective on real hardware. — [[2026_Azfar_ShallowRobustQaoa]]
-- [supported] Linear-ramp initialization (LRI-QAOA) concentrates probability on feasible solutions, outperforming random initialization in simulations (e.g., 47.6% feasibility vs. 2% for standard QAOA at p=8). — [[2026_Azfar_ShallowRobustQaoa]]
-- [supported] Dynamical decoupling (XpXm) improves hardware performance (e.g., optimal solution rank improved from 235 to 15 on IBM Rensselaer), while heavier error mitigation (e.g., ZNE, Pauli twirling) degrades performance due to circuit distortion. — [[2026_Azfar_ShallowRobustQaoa]]
-- [supported] LC-QAOA scales efficiently to larger VRP instances (30 qubits), reliably recovering the optimal route at depths p>16 on both IBM Eagle and Heron, with higher success on lower-error devices. — [[2026_Azfar_ShallowRobustQaoa]]
-- [supported] CVaR (Conditional Value at Risk) objective improves optimization by biasing search toward high-quality solutions, enabling reliable performance at larger scales. — [[2026_Azfar_ShallowRobustQaoa]]
-- [supported] The study provides a unified comparative framework for QML optimization algorithms, highlighting their practical feasibility and identifying key research gaps hindering real-world deployment — [[2026_Nawaz_ExploringQuantumMachine]]
-- [supported] Challenges such as quantum noise, scalability, and hardware limitations remain significant barriers to the practical deployment of QML algorithms — [[2026_Nawaz_ExploringQuantumMachine]]
-- [supported] The Variational Quantum Eigensolver (VQE) algorithm is proposed as an effective tool for minimizing the energy function of time-varying dynamic control systems, demonstrating potential for quantum acceleration in optimization tasks. — [[2025_Gibadullin_QuantumAlgorithmsSolving]]
-- [supported] Quantum algorithms, including VQE, Grover’s algorithm, and QAOA, are applied to dynamic control problems, showing numerical optimization results for differential equation-based systems. — [[2025_Gibadullin_QuantumAlgorithmsSolving]]
-- [supported] The paper presents pseudocode and numerical results for optimizing control actions in a dynamic system described by nonlinear differential equations, achieving a minimal objective function value of 0.4047 for a linear system and 2.619e-08 for a nonlinear system. — [[2025_Gibadullin_QuantumAlgorithmsSolving]]
-- [supported] Rasengan improves accuracy by 4.12× compared to the state-of-the-art QAOA (Choco-Q) on constrained binary optimization problems across 2000 cases from five domains (facility location, k-partition, job scheduling, set cover, and graph coloring). — [[2025_Jiang_RasenganTransitionHamiltonian]]
-- [supported] Rasengan achieves a 379× improvement in solution quality over baseline methods on real-world quantum platforms (IBM Kyiv and Brisbane). — [[2025_Jiang_RasenganTransitionHamiltonian]]
-- [supported] Rasengan reduces circuit depth by 1.96× compared to prior variational quantum algorithms (VQAs) and by 49× compared to Choco-Q, making it deployable on NISQ devices. — [[2025_Jiang_RasenganTransitionHamiltonian]]
-- [supported] Rasengan is the first quantum algorithm to outperform the mean quality of feasible solution baselines on real hardware, achieving an approximation ratio gap (ARG) as low as 0.01 for small-scale problems. — [[2025_Jiang_RasenganTransitionHamiltonian]]
-- [supported] Hamiltonian simplification and pruning techniques reduce circuit depth by over 94.6%, while probability-preserving segmented execution further reduces depth to ~50, suitable for current quantum hardware. — [[2025_Jiang_RasenganTransitionHamiltonian]]
-- [supported] Error mitigation via solution purification improves accuracy by more than 303× on noisy hardware. — [[2025_Jiang_RasenganTransitionHamiltonian]]
-- [supported] Rasengan maintains a 100% in-constraints rate (feasible solutions) on real hardware, unlike penalty-term-based QAOA, which often violates constraints. — [[2025_Jiang_RasenganTransitionHamiltonian]]
+- [supported] Linear-Ramp LC-QAOA improves convergence and feasibility compared to standard QAOA, Two-Step QAOA, and Grover-Mixer QAOA on small Vehicle Routing Problem (VRP) instances in noiseless simulations. — [[2026_Azfar_ShallowRobustQaoa]]
+- [supported] Linear-Chain (LC) QAOA reduces two-qubit gate depth and boosts noise robustness, achieving the shallowest circuit depth on IBM Eagle/Heron hardware. — [[2026_Azfar_ShallowRobustQaoa]]
+- [supported] On real hardware (IBM Eagle/Heron), LC-QAOA with XpXm dynamical decoupling more than doubles feasibility (<1% to >2%) and recovers the optimum in several trials. — [[2026_Azfar_ShallowRobustQaoa]]
+- [supported] Linear-ramp initialization (LRI-QAOA) concentrates probability on feasible solutions, improving feasibility rates from ~2% (standard QAOA) to ~47.6% in statevector simulations. — [[2026_Azfar_ShallowRobustQaoa]]
+- [supported] Grover-Mixer QAOA yields high feasibility in simulations (21% at p=8) but is hampered by deep circuits on hardware, failing to compile for p > 5. — [[2026_Azfar_ShallowRobustQaoa]]
+- [supported] Two-Step QAOA improves feasibility over standard QAOA in simulations (5.6% vs. 2.4% at p=4) but struggles with constraint leakage and deeper circuits. — [[2026_Azfar_ShallowRobustQaoa]]
+- [supported] Dynamical decoupling (XpXm) improves hardware performance, boosting feasibility from 1.14% to 1.60% and improving optimal solution rank from 16 to 6 on IBM Fez. — [[2026_Azfar_ShallowRobustQaoa]]
+- [supported] Heavy error mitigation (e.g., Pauli twirling, ZNE) underperforms compared to lightweight dynamical decoupling, reducing feasibility from 1.80% to 0.60%. — [[2026_Azfar_ShallowRobustQaoa]]
+- [supported] LC-QAOA scales to larger VRP instances (30 qubits), reliably recovering the optimal route at p > 16 on IBM Eagle/Heron, with CVaR objective further improving results. — [[2026_Azfar_ShallowRobustQaoa]]
+- [supported] The study provides a unified comparative framework for QML algorithms, highlighting their optimization capabilities, practical feasibility, and limitations within a single analytical structure — [[2026_Nawaz_ExploringQuantumMachine]]
+- [supported] Key challenges hindering real-world deployment of QML include quantum noise, scalability constraints, hardware limitations, and algorithmic performance trade-offs — [[2026_Nawaz_ExploringQuantumMachine]]
+- [supported] QLSTM test predictions for NVIDIA stock data were slightly superior to classical LSTM, particularly around volatile peaks, indicating better alignment with real-life data — [[2025_Ganguly_HybridClassicalQuantum]]
+- [supported] QLSTM demonstrated earlier prediction of turning points in stock market trends compared to classical LSTM, potentially offering advantages in forecasting market movements — [[2025_Ganguly_HybridClassicalQuantum]]
+- [supported] QLSTM training loss exhibited smoothing over time, unlike classical LSTM where loss spikes appeared more pronounced toward the end of training — [[2025_Ganguly_HybridClassicalQuantum]]
+- [supported] qGAN successfully modeled cryptocurrency data distributions with fewer iterations than classical GANs, achieving equilibrium in generator and discriminator loss functions — [[2025_Ganguly_HybridClassicalQuantum]]
+- [supported] qGAN combined with QUBO optimization predicted BNBBTC as the optimal cryptocurrency investment based on real-world Binance data — [[2025_Ganguly_HybridClassicalQuantum]]
+- [supported] QCBM with SPSA optimization closely approximated the target probability distribution for the synthetic BAS dataset, outperforming other optimizers like Cobyla — [[2025_Ganguly_HybridClassicalQuantum]]
+- [supported] Training time for QLSTM was highly dependent on GPU type, with NVIDIA RTX 3070 showing a 50% reduction in training time per epoch compared to RTX 3060 (780s vs. 1600s) — [[2025_Ganguly_HybridClassicalQuantum]]
+- [supported] CUDA-Q acceleration significantly improved QLSTM training performance, reducing training time per epoch from 780s to 18s on an RTX 3070 — [[2025_Ganguly_HybridClassicalQuantum]]
+- [supported] Numerical experiments demonstrated that the proposed dynamic control model using quantum-inspired optimization achieved a minimal objective function value of 0.4047, indicating effective system management — [[2025_Gibadullin_QuantumAlgorithmsSolving]]
 
 ## Methodologies Used
 
 | Method | Papers |
 |--------|--------|
-| QAOA | 10 |
-| variational | 10 |
-| grover | 9 |
-| quantum-ML | 9 |
-| classical-simulation | 8 |
-| quantum-simulation | 6 |
-| quantum-annealing | 5 |
-| VQE | 4 |
-| quantum-SVM | 4 |
-| QUBO | 3 |
-| HHL | 2 |
-| quantum-walk | 2 |
-| amplitude-estimation | 1 |
+| variational | 14 |
+| quantum-ML | 12 |
+| QAOA | 11 |
+| grover | 8 |
+| VQE | 8 |
+| quantum-simulation | 7 |
+| classical-simulation | 7 |
+| QUBO | 6 |
+| quantum-SVM | 5 |
+| HHL | 4 |
+| amplitude-estimation | 4 |
+| quantum-annealing | 4 |
+| quantum-walk | 1 |
 | hybrid-approach | 1 |
 
 ## Open Questions
 
-- How does the algorithm perform with more than 5 nodes or 2 vehicles in hardware experiments? — [[2026_Azfar_ShallowRobustQaoa]]
-- What is the impact of decoherence and gate errors on solution quality at higher depths (p > 20)? — [[2026_Azfar_ShallowRobustQaoa]]
-- Can the linear-ramp schedule and LC-QAOA maintain performance on larger, more constrained problems (e.g., capacitated VRP)? — [[2026_Azfar_ShallowRobustQaoa]]
-- How do the proposed methods compare to quantum annealing or hybrid quantum-classical approaches for the same problem instances? — [[2026_Azfar_ShallowRobustQaoa]]
-- What is the minimum hardware fidelity required to achieve >10% feasibility for VRP instances? — [[2026_Azfar_ShallowRobustQaoa]]
-- Can adaptive schedules or parameter transfer techniques improve performance across diverse problem instances? — [[2026_Azfar_ShallowRobustQaoa]]
-- How does the choice of penalty weight (λ) affect feasibility and solution quality in larger instances? — [[2026_Azfar_ShallowRobustQaoa]]
-- What are the trade-offs between qubit count, circuit depth, and solution quality for industry-relevant problem sizes? — [[2026_Azfar_ShallowRobustQaoa]]
-- Can hardware-aware compilation (e.g., qubit placement, chain orientation) further reduce circuit depth without sacrificing performance? — [[2026_Azfar_ShallowRobustQaoa]]
-- Expand problem realism by incorporating capacities, time windows, and multi-objective costs (e.g., emissions) into VRP benchmarks — [[2026_Azfar_ShallowRobustQaoa]]
+- How does LC-QAOA perform on larger, more realistic VRP instances (e.g., 20+ nodes) with real-world constraints? — [[2026_Azfar_ShallowRobustQaoa]]
+- What is the trade-off between circuit depth and solution quality for LC-QAOA at scale? — [[2026_Azfar_ShallowRobustQaoa]]
+- Can adaptive schedules (e.g., gradient-based) outperform fixed linear-ramp initialization? — [[2026_Azfar_ShallowRobustQaoa]]
+- How do hardware-aware compilation techniques (e.g., qubit placement, chain orientation) impact performance? — [[2026_Azfar_ShallowRobustQaoa]]
+- What is the minimal qubit count and gate fidelity required for QAOA to outperform classical solvers on VRP? — [[2026_Azfar_ShallowRobustQaoa]]
+- How does the performance of QAOA variants compare to quantum annealing or hybrid quantum-classical methods? — [[2026_Azfar_ShallowRobustQaoa]]
+- What is the impact of different penalty weights (λ) on feasibility and solution quality? — [[2026_Azfar_ShallowRobustQaoa]]
+- Can error mitigation techniques be co-designed with QAOA to improve robustness without increasing circuit depth? — [[2026_Azfar_ShallowRobustQaoa]]
+- How does the choice of mixer Hamiltonian (e.g., XY vs. Grover) affect feasibility and convergence? — [[2026_Azfar_ShallowRobustQaoa]]
+- What is the role of warm-starting (e.g., classical heuristics) in improving QAOA performance? — [[2026_Azfar_ShallowRobustQaoa]]

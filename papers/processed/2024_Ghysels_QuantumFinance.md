@@ -1,12 +1,13 @@
 ---
 aliases:
-- Q&A Quantum Computing Meets Finance
-- Q Quantum Computing Meets
+- Quantum Computing Meets Finance
+- Quantum Computing Meets Finance
 authors:
 - Rachel Berkowitz
 auto_detected: true
 classification: ''
-contradiction_flags: []
+contradiction_flags:
+- contradiction:classical-vs-quantum
 doi: 10.1103/Physics.18.154
 evidence_type: ''
 idea_tags:
@@ -16,6 +17,7 @@ idea_tags:
 journal_or_venue: Physics Magazine
 methodology_tags:
 - quantum-annealing
+- QUBO
 - quantum-simulation
 paper_type: ''
 quantum_advantage_claim: speculative
@@ -24,17 +26,17 @@ relevance_phase1: high
 relevance_phase3: medium
 source_type: other
 source_type_confidence: high
-step1_date: '2026-03-18T20:37:29.694038'
+step1_date: '2026-03-19T23:54:43.683284'
 step1_model: Mistral-Large-3
-step2_date: '2026-03-18T21:09:31.108025'
+step2_date: '2026-03-19T23:54:44.982190'
 step2_model: Mistral-Large-3
-step3_date: '2026-03-18T20:46:24.658853'
+step3_date: '2026-03-19T23:54:46.737703'
 step3_model: Mistral-Large-3
-step4_date: '2026-03-18T20:46:29.497652'
+step4_date: '2026-03-19T23:54:51.403271'
 step4_model: Mistral-Large-3
-step5_date: '2026-03-18T20:46:34.983145'
+step5_date: '2026-03-19T23:55:39.746252'
 step5_model: Mistral-Large-3
-step6_date: '2026-03-18T21:09:56.498089'
+step6_date: '2026-03-19T23:55:43.878963'
 step6_model: Mistral-Large-3
 steps_completed:
 - 1
@@ -48,69 +50,72 @@ tags:
 - topic/asset-pricing
 - topic/risk-modelling
 - topic/derivatives-pricing
+- topic/credit-scoring
 - method/quantum-annealing
+- method/QUBO
 - method/quantum-simulation
 - idea/quantum-advantage
 - idea/near-term-feasibility
 - idea/hybrid-approach
-title: Q&A Quantum Computing Meets Finance
+- contradiction/classical-vs-quantum
+title: Quantum Computing Meets Finance
 topic_tags:
 - portfolio-optimisation
 - asset-pricing
 - risk-modelling
 - derivatives-pricing
+- credit-scoring
 year: 2025
 zotero_key: ''
 ---
 
 ## Abstract summary
-This interview-based article explores the intersection of quantum computing and financial services, focusing on how quantum algorithms could address computationally intensive problems like asset pricing and portfolio optimization. The discussion highlights challenges in adapting financial models to quantum hardware and the potential long-term impact on the financial industry, while also considering the current limitations of quantum technology.
+This interview-based article explores the intersection of quantum computing and financial services, focusing on how quantum algorithms could address computationally intensive problems like asset pricing and portfolio optimization. The discussion highlights challenges in adapting financial models to quantum hardware and the potential long-term impact of quantum computing on the financial industry, while emphasizing the need for early investment and interdisciplinary expertise.
 ## Methodology
-The paper is an interview-based discussion with Eric Ghysels, a financial econometrician, exploring the potential applications of quantum computing in finance. The methodology is conceptual and theoretical, focusing on translating financial models into quantum algorithms. Ghysels discusses the adaptation of financial problems such as asset pricing, portfolio optimization, and stochastic volatility modeling for quantum computing. The approach involves reformulating financial models (e.g., quadratic unconstrained binary optimization for portfolio allocation, hidden-Markov-chain models for asset-price dynamics) to fit quantum hardware constraints. The discussion highlights the challenges of implementing continuous-time stochastic differential equations on quantum computers and the need for discretization or alternative model families. Theoretical speedups, such as quadratic improvements in credit risk and derivative pricing, are mentioned, but no empirical experimentation or formal proofs are presented.
+The paper is an interview-based Q&A with economist Eric Ghysels discussing the potential applications of quantum computing in financial services, particularly in asset pricing, portfolio optimization, and computationally intensive financial problems. The discussion highlights theoretical and conceptual approaches to adapting financial models for quantum algorithms, including the translation of portfolio allocation problems into quadratic unconstrained binary optimization (QUBO) and the use of quantum annealing for combinatorial optimization. The interview also explores the challenges of implementing stochastic volatility models on quantum hardware and proposes alternative approaches such as hidden-Markov-chain models for capturing dynamic patterns in asset pricing. The focus is on theoretical adaptations rather than empirical experimentation or algorithmic implementation details.
 
-**Algorithms used:** quantum annealing, quantum linear algebra
+**Algorithms used:** Quantum Annealing
 ## Findings
 - [speculative] Quantum linear algebra could potentially speed up solving integral or partial differential equations in financial asset pricing
 - [speculative] Quantum information theory provides tools for embedding notions of ambiguity in pricing models
 - [speculative] Quantum annealing algorithms can solve combinatorial optimization problems like portfolio allocation more efficiently by exploring large solution spaces in parallel
 - [speculative] Hidden-Markov-chain models adapted for quantum hardware could enable quadratic speedups in credit risk and derivative-pricing computations
 - [speculative] Quantum computing use cases in financial services could generate up to $622 billion in value by 2035, per a McKinsey & Company report
-- [speculative] Industrial-scale quantum computers may be achievable before 2030, according to IBM and Google
-- [supported] MIDAS (mixed-data sampling) methods are regression-based techniques for combining data at different frequencies in econometrics
-- [speculative] Discretization of continuous-time stochastic differential equations for asset-price dynamics is necessary for quantum implementation but results in coarse approximations
-- [speculative] Current quantum hardware limitations and a 'quantum algorithm winter' hinder progress in implementing finance-specific quantum algorithms
+- [speculative] IBM and Google are aiming for industrial-scale quantum computers before 2030
+- [supported] Quantum annealing hardware is currently the most reliable scaled hardware for optimization tasks in finance
+- [disputed] The paper notes a 'quantum algorithm winter,' suggesting progress on quantum algorithms has stalled, which may contradict optimistic industry projections
 
-**Results summary:** The interview with Eric Ghysels explores the potential of quantum computing in financial services, particularly for asset pricing, portfolio optimization, and risk modeling. While theoretical advantages are proposed—such as quantum linear algebra for solving differential equations and quantum annealing for optimization—no empirical results or hardware demonstrations are presented. Challenges include hardware limitations, algorithmic gaps, and the need to adapt financial models to quantum frameworks. The discussion also highlights speculative projections, such as a $622 billion market impact by 2035, and the historical parallel of physics graduates transitioning into finance.
+**Results summary:** The interview with Eric Ghysels explores the potential of quantum computing in financial services, particularly for asset pricing, portfolio optimization, and risk modeling. While quantum linear algebra and quantum annealing are identified as promising approaches, the discussion highlights significant challenges, including hardware limitations, algorithmic gaps, and the need to adapt financial models for quantum computation. Ghysels suggests that quadratic speedups may be achievable in specific applications like credit risk and derivative pricing but emphasizes that current implementations require compromises. The paper also cites industry projections for quantum computing's financial impact, though these remain speculative.
 ## Quantum advantage claim
 **Classification:** speculative
 
-The paper discusses theoretical potential for quantum speedups (e.g., quadratic speedups in credit risk computations) but provides no empirical validation or hardware demonstrations. All claims are based on algorithmic theory or industry projections, not experimental results.
+The paper discusses theoretical potential for quantum speedups (e.g., quadratic speedups in credit risk and derivative pricing) and efficiency gains in optimization, but no empirical demonstration or real-hardware validation is provided. Claims are based on algorithmic theory and industry projections rather than concrete results.
 ## Limitations
 - Current quantum hardware is not yet capable of implementing pioneering quantum algorithms from the 1990s, limiting practical applications in finance [inferred]
-- Quantum algorithm development for finance is still in early stages, described as a 'quantum algorithm winter'
-- Quantum annealing hardware is limited to problems that fit its specific optimization framework, requiring compromises in problem formulation
-- Stochastic volatility diffusion models cannot be directly implemented on quantum computers, requiring coarse discretization that may lose model fidelity
-- Portfolio allocation problems must be translated into quadratic unconstrained binary optimization, which may not capture all financial constraints
-- Quantum solutions produce quantum states that require creative approaches to extract salient properties for asset pricing [inferred]
-- Lack of scalable quantum hardware is a major barrier to commercial viability [inferred]
-- No empirical validation of quantum speedups in real-world financial applications mentioned [inferred]
-- Source is an interview/Q&A format, which may lack technical depth and peer-reviewed rigor [inferred]
-- Potential bias toward optimistic industry projections (e.g., McKinsey report) without critical assessment [inferred]
+- Quantum annealing hardware is limited to problems that fit quadratic unconstrained binary optimization (QUBO), requiring compromises in problem formulation
+- Stochastic volatility diffusion models cannot be directly implemented on quantum computers, necessitating coarse discretizations that may not capture realistic asset-price dynamics
+- Translation of financial problems into quantum-compatible models (e.g., hidden-Markov-chain models) may oversimplify or distort the original problem [inferred]
+- Quantum linear algebra solutions are quantum states, requiring creative methods to extract salient properties of numerical solutions for asset-pricing models
+- Lack of scalable quantum hardware is a major barrier to commercial viability in financial services [inferred]
+- The field is experiencing a 'quantum algorithm winter,' indicating slow progress in developing new algorithms for finance [inferred]
+- No empirical validation or real-world testing of quantum algorithms in financial services is mentioned, limiting confidence in practical performance [inferred]
+- Potential vendor bias in industry reports (e.g., McKinsey & Company) regarding quantum computing's financial impact [inferred]
+- The interview format limits depth of technical discussion, potentially omitting key constraints or challenges [inferred]
 ## Open questions
 - When will quantum computers achieve commercially viable applications in finance?
-- How can financial models be effectively rewritten to be amenable to quantum hardware without losing key properties?
-- What are the trade-offs between model fidelity and quantum computability in asset pricing?
-- How will quantum computing handle the ambiguity in risk factors for asset pricing?
-- What is the realistic timeline for industrial-scale quantum computers in financial services?
-- How can quantum algorithms be adapted to handle high-frequency financial data effectively?
+- How can quantum algorithms be adapted to handle time-varying volatility in asset-pricing models without significant loss of accuracy?
+- What are the trade-offs between problem fidelity and quantum hardware constraints in portfolio optimization?
+- How will quantum computing impact the accuracy and speed of credit risk and derivative-pricing computations in real-world scenarios?
+- What are the long-term implications of discretizing continuous-time financial models for quantum implementation?
+- How can quantum information theory better address ambiguity in risk factors for asset pricing?
 
 **Future work:**
-- Develop quantum algorithms specifically tailored for financial applications beyond existing optimization frameworks
-- Explore hidden-Markov-chain models for quantum implementations in credit risk and derivative pricing
-- Investigate methods to extract meaningful financial insights from quantum states in asset pricing
-- Expand financial engineering education to include quantum computing fundamentals
-- Conduct empirical studies comparing quantum and classical approaches for financial problems
-- Develop hybrid quantum-classical approaches to bridge current hardware limitations
+- Develop quantum algorithms that can handle stochastic volatility models without excessive discretization
+- Explore hybrid quantum-classical approaches to bridge the gap between theoretical quantum speedups and practical financial applications
+- Investigate the use of hidden-Markov-chain models for quantum implementation in derivative pricing and credit risk
+- Expand financial-engineering programs to include quantum computing fundamentals alongside traditional finance education
+- Conduct empirical studies to validate quantum algorithms on real financial datasets and hardware
+- Collaborate with industry to identify finance problems that naturally fit quantum annealing or other quantum optimization frameworks
 ## Key ideas
 - #idea:quantum-advantage — Quantum linear algebra and quantum annealing could theoretically speed up asset pricing and portfolio optimization by exploring large solution spaces in parallel
 - #idea:near-term-feasibility — Speculative projections suggest quantum computing could generate significant value in financial services by 2035, but current hardware limitations hinder practical implementation
@@ -119,8 +124,7 @@ The paper discusses theoretical potential for quantum speedups (e.g., quadratic 
 - #limitation:data-encoding — Financial models must be translated into quantum-compatible frameworks (e.g., QUBO for portfolio optimization), which may not capture all constraints or fidelity
 - #limitation:no-empirical-validation — All claims about quantum speedups are speculative and lack empirical validation or hardware demonstrations
 ## Contradictions
-<!-- Step 6 output — where this paper contradicts others -->
-
+- #contradiction:classical-vs-quantum — The paper notes a 'quantum algorithm winter,' suggesting progress on quantum algorithms has stalled, which contradicts optimistic industry projections (e.g., McKinsey & Company's $622 billion value claim by 2035)
 ## Notable quotes
 <!-- Researcher-added — verbatim quotes with page references -->
 

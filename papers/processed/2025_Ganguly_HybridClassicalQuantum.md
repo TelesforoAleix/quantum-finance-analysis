@@ -30,20 +30,20 @@ related_papers:
 - 2022_Herman_QuantumMonteCarlo
 - 2023_Smith_DeepLearningFinance
 relevance_phase1: high
-relevance_phase3: high
+relevance_phase3: medium
 source_type: conference-paper
 source_type_confidence: high
-step1_date: '2026-03-19T13:22:18.789089'
+step1_date: '2026-03-20T00:18:26.693719'
 step1_model: Mistral-Large-3
-step2_date: '2026-03-19T13:22:35.040117'
+step2_date: '2026-03-20T00:18:30.342923'
 step2_model: Mistral-Large-3
-step3_date: '2026-03-19T13:23:32.398763'
+step3_date: '2026-03-20T00:18:51.261941'
 step3_model: Mistral-Large-3
-step4_date: '2026-03-19T13:24:27.566607'
+step4_date: '2026-03-20T00:19:05.116727'
 step4_model: Mistral-Large-3
-step5_date: '2026-03-19T13:25:14.799726'
+step5_date: '2026-03-20T00:19:15.807321'
 step5_model: Mistral-Large-3
-step6_date: '2026-03-19T13:25:50.988371'
+step6_date: '2026-03-20T00:19:31.813819'
 step6_model: Mistral-Large-3
 steps_completed:
 - 1
@@ -53,9 +53,10 @@ steps_completed:
 - 5
 - 6
 tags:
-- topic/risk-modelling
 - topic/asset-pricing
-- topic/market-simulation
+- topic/portfolio-optimisation
+- topic/risk-modelling
+- topic/high-frequency-trading
 - topic/fraud-detection
 - method/quantum-ML
 - method/variational
@@ -69,82 +70,91 @@ tags:
 title: Hybrid Classical-Quantum Generative Algorithms for Financial Modelling and
   Prediction
 topic_tags:
-- risk-modelling
 - asset-pricing
-- market-simulation
+- portfolio-optimisation
+- risk-modelling
+- high-frequency-trading
 - fraud-detection
 year: 2025
 zotero_key: ''
 ---
 
 ## Abstract summary
-This paper explores the application of hybrid classical-quantum machine learning models in financial services, focusing on generative algorithms. It implements quantum generative adversarial networks (qGAN), quantum long short-term memory (QLSTM), and quantum circuit Born machines (QCBM) using real-world cryptocurrency and stock price datasets. The study compares the performance of these quantum models against classical counterparts, demonstrating potential advantages in financial forecasting and risk analysis, particularly for time-series data.
+This conference paper explores the application of hybrid classical-quantum machine learning models in financial services, focusing on quantum generative adversarial networks (qGAN), quantum long short-term memory (QLSTM), and quantum circuit Born machines (QCBM). The authors implement these models using real-world cryptocurrency and stock price datasets to assess their predictive capabilities compared to classical counterparts. The study demonstrates the potential advantages of quantum-enhanced models for financial forecasting, particularly in handling volatile and non-linear financial data.
 ## Methodology
-The paper presents an empirical study on hybrid classical-quantum machine learning algorithms applied to financial modeling and prediction. It implements three quantum algorithms: quantum Generative Adversarial Networks (qGAN), Quantum Long Short-Term Memory (QLSTM), and Quantum Circuit Born Machine (QCBM). The qGAN is used for cryptocurrency forecasting with real-world data from Binance, employing a variational quantum circuit (VQC) as the generator and a classical neural network as the discriminator. The QLSTM is applied to NVIDIA stock price prediction, leveraging variational quantum circuits (VQCs) to enhance classical LSTM's ability to process non-linear relationships in time-series data. The QCBM is tested on a synthetic bars and stripes (BAS) dataset for generative modeling. The study compares quantum models with their classical counterparts (e.g., QLSTM vs. LSTM) using real financial datasets and synthetic data, evaluating performance through loss functions, prediction accuracy, and training efficiency. Experiments were conducted using quantum simulators and classical GPUs, with optimization techniques such as Adam and SPSA employed for training.
+The paper presents an empirical study on hybrid classical-quantum machine learning algorithms applied to financial modeling and prediction. It implements three quantum algorithms: Quantum Generative Adversarial Networks (qGAN), Quantum Long Short-Term Memory (QLSTM), and Quantum Circuit Born Machine (QCBM). For qGAN, real-world cryptocurrency data from Binance was used to train a quantum generator with a classical discriminator, aiming to model uncertainty in option pricing. The QLSTM model was applied to NVIDIA stock price data spanning 210 days, comparing its performance against a classical LSTM for time-series prediction. QCBM was tested using a synthetic bars and stripes (BAS) dataset to demonstrate generative modeling capabilities. The experiments were conducted using quantum simulators, leveraging frameworks such as Qiskit and PennyLane, with GPU acceleration for training efficiency. The study evaluates the algorithms based on training and test loss, prediction accuracy, and computational performance across different hardware setups.
 
-**Algorithms used:** qGAN, QLSTM, QCBM, QUBO, VQC (Variational Quantum Circuit)
+**Algorithms used:** qGAN, QLSTM, QCBM
 **Frameworks:** Qiskit, PennyLane, PyTorch, CUDA-Q, Lightning.gpu
 
-**Experimental setup:** Experiments were conducted using a combination of quantum simulators and classical hardware. The qGAN and QCBM simulations were performed on an NVIDIA RTX 3070 GPU running Linux Ubuntu 22.04 LTS, leveraging CUDA-Q for acceleration. The LSTM and QLSTM models were run on an Apple M3 MacBook with a 30-core GPU and the same NVIDIA platforms. Libraries such as Qiskit and PennyLane were used for quantum circuit simulations, while PyTorch was employed for classical machine learning components. The Lightning.gpu framework was utilized to enhance quantum machine learning performance in PennyLane.
+**Experimental setup:** Experiments were conducted using a combination of quantum simulators and classical computing resources. The qGAN and QCBM implementations utilized an NVIDIA RTX 3070 GPU on Linux Ubuntu 22.04 LTS with CUDA-Q for acceleration. The QLSTM and LSTM models were run on both an NVIDIA RTX 3070 GPU and an Apple M3 MacBook with a 30-core GPU. Libraries such as Qiskit and PennyLane were employed for quantum circuit simulation and training, while PyTorch was used for classical machine learning components.
 
-**Dataset:** 1. Real-world cryptocurrency data from Binance for five cryptocurrencies (BNBBTC, ETHBTC, LTCBTC, NEOBTC, QTUMETH) with over 5000 samples, filtered to reduce qubit requirements. 2. Real-life NVIDIA stock price data spanning 210 days until August 2024. 3. Synthetic bars and stripes (BAS) dataset for QCBM evaluation, consisting of 2x2 binary images.
+**Dataset:** Three datasets were used: (1) Real-world cryptocurrency data from Binance for five cryptocurrencies (BNBBTC, ETHBTC, LTCBTC, NEOBTC, QTUMETH) with over 5000 samples, filtered to reduce qubit requirements. (2) Real-life NVIDIA stock price data spanning 210 days for time-series prediction. (3) A synthetic bars and stripes (BAS) dataset for QCBM evaluation.
 ## Findings
-- [supported] QLSTM test predictions for NVIDIA stock data were slightly superior to classical LSTM, particularly around volatile peaks, making it a promising candidate for financial forecasting [supported by RMSE values of 15.09×10⁻³ (QLSTM) vs. 12.8×10⁻³ (LSTM) on test data].
-- [supported] QLSTM demonstrated earlier prediction of turning points in stock market trends compared to classical LSTM, potentially offering an advantage in foreseeing market movements.
-- [supported] qGAN successfully modeled cryptocurrency data (BNBBTC, ETHBTC, etc.) with fewer iterations than classical GANs, achieving equilibrium in generator/discriminator loss functions (~0.6931 at optimal equilibrium).
-- [supported] QCBM with SPSA optimization closely approximated target probability distributions for synthetic BAS datasets, outperforming Cobyla and Nelder-Mead optimizers.
-- [supported] QLSTM training time was highly dependent on GPU hardware, with NVIDIA CUDA-Q reducing per-epoch training time from 780s (RTX 3070) to 18s (RTX 3070 with CUDA-Q).
-- [speculative] Hybrid quantum-classical models (qGAN, QLSTM, QCBM) may deliver quantum advantage in financial applications when combined, particularly for temporal data analysis.
-- [speculative] Quantum advantage in financial modeling could emerge with improved hardware (e.g., NVIDIA DGX Quantum stack) and larger-scale implementations.
-- [speculative] QCBM’s expressive power may enable efficient representation of distributions intractable for classical models like Random Boltzmann Machines (RBMs).
-- [disputed] The claim that QLSTM’s test predictions are 'slightly superior' to LSTM is nuanced; while QLSTM showed better alignment with real data in volatile regions, classical LSTM achieved lower RMSE (12.8×10⁻³ vs. 15.09×10⁻³) and faster training times.
+- [supported] QLSTM test predictions for NVIDIA stock data were slightly superior to classical LSTM, particularly around volatile peaks, indicating better alignment with real-life data
+- [supported] QLSTM demonstrated earlier prediction of turning points in stock market trends compared to classical LSTM, potentially offering advantages in forecasting market movements
+- [supported] QLSTM training loss exhibited smoothing over time, unlike classical LSTM where loss spikes appeared more pronounced toward the end of training
+- [supported] qGAN successfully modeled cryptocurrency data distributions with fewer iterations than classical GANs, achieving equilibrium in generator and discriminator loss functions
+- [supported] qGAN combined with QUBO optimization predicted BNBBTC as the optimal cryptocurrency investment based on real-world Binance data
+- [supported] QCBM with SPSA optimization closely approximated the target probability distribution for the synthetic BAS dataset, outperforming other optimizers like Cobyla
+- [supported] Training time for QLSTM was highly dependent on GPU type, with NVIDIA RTX 3070 showing a 50% reduction in training time per epoch compared to RTX 3060 (780s vs. 1600s)
+- [supported] CUDA-Q acceleration significantly improved QLSTM training performance, reducing training time per epoch from 780s to 18s on an RTX 3070
+- [speculative] Hybrid quantum-classical models (qGAN, QLSTM, QCBM) may offer quantum advantage in financial forecasting and risk analysis when combined and scaled to larger datasets
+- [speculative] Quantum generative models like qGAN and QCBM could deliver quantum advantage on NISQ devices due to their inherent probabilistic nature and expressive power
+- [speculative] QLSTM's performance advantages may become more pronounced with larger datasets and further integration with qGAN and QCBM for temporal financial data analysis
+- [speculative] The combination of qGAN, QLSTM, and QCBM could lead to robust financial models with improved accuracy and efficiency in stock prediction and portfolio optimization
+- [disputed] The paper claims that QLSTM's test predictions are 'slightly superior' to classical LSTM, but the RMSE values (15.09 × 10⁻³ for QLSTM vs. 12.8 × 10⁻³ for LSTM) suggest classical LSTM may outperform QLSTM in some metrics
 
-**Results summary:** The paper presents empirical evaluations of three hybrid quantum-classical algorithms (qGAN, QLSTM, QCBM) for financial applications. QLSTM outperformed classical LSTM in test prediction accuracy for NVIDIA stock data, particularly in volatile regions, though with longer training times. qGAN demonstrated efficient modeling of cryptocurrency distributions, while QCBM showed promise in approximating synthetic datasets. All results were obtained via simulation, with hardware dependence (e.g., GPU acceleration) significantly impacting performance. The authors speculate on potential quantum advantage through algorithmic integration and hardware advancements but acknowledge current limitations in scalability and empirical validation.
+**Results summary:** The paper presents empirical results from three hybrid quantum-classical models applied to financial datasets: qGAN, QLSTM, and QCBM. For qGAN, the model successfully trained on real-world cryptocurrency data, achieving equilibrium in generator and discriminator loss functions and predicting BNBBTC as the optimal investment. QLSTM demonstrated marginally better test predictions than classical LSTM for NVIDIA stock data, particularly around volatile peaks, though it required significantly longer training times. GPU acceleration, especially with CUDA-Q, substantially improved QLSTM training efficiency. QCBM, tested on a synthetic BAS dataset, showed promising results with SPSA optimization closely approximating the target distribution. While the models show potential for quantum advantage in financial applications, all results are derived from simulations rather than real quantum hardware.
 
 **Performance claims:**
-- QLSTM test RMSE: 15.09×10⁻³ (vs. LSTM’s 12.8×10⁻³)
-- QLSTM training RMSE: 19.05×10⁻³ (vs. LSTM’s 7.5×10⁻³)
-- QLSTM training time per epoch: 18s (RTX 3070 with CUDA-Q) vs. 780s (RTX 3070 without CUDA-Q)
-- LSTM training time per epoch: 0.04s (RTX 3070 with CUDA-Q)
-- qGAN generator/discriminator loss equilibrium at ~0.6931 after 2000 epochs
-- QCBM with SPSA optimizer achieved close approximation to target probability distributions for BAS datasets
+- QLSTM test RMSE: 15.09 × 10⁻³ (vs. LSTM test RMSE: 12.8 × 10⁻³)
+- QLSTM training RMSE: 19.05 × 10⁻³ (vs. LSTM training RMSE: 7.5 × 10⁻³)
+- QLSTM training loss: 7.2 × 10⁻³ (vs. LSTM training loss: 4.5 × 10⁻³)
+- QLSTM test loss: 5.5 × 10⁻³ (vs. LSTM test loss: 6.8 × 10⁻³)
+- QLSTM training time per epoch: 780s on RTX 3070 (vs. 12s for LSTM)
+- QLSTM training time per epoch with CUDA-Q: 18s on RTX 3070 (vs. 0.04s for LSTM)
+- qGAN achieved equilibrium in generator and discriminator loss functions within 2000 training epochs
+- QCBM with SPSA optimization closely approximated target probability distribution for BAS dataset
 ## Quantum advantage claim
 **Classification:** speculative
 
-The paper suggests potential quantum advantage through hybrid algorithms (qGAN, QLSTM, QCBM) but provides no empirical demonstration on real hardware. Claims are based on simulation results showing marginal improvements in specific tasks (e.g., QLSTM’s test predictions) or theoretical advantages (e.g., QCBM’s expressive power). The authors acknowledge that quantum advantage remains speculative pending hardware improvements (e.g., NISQ devices with 100+ qubits) and further integration of algorithms.
+The paper suggests potential quantum advantage for hybrid quantum-classical models (qGAN, QLSTM, QCBM) in financial applications, particularly in generative modeling and time-series forecasting. However, all results are derived from simulations on classical hardware, and no empirical evidence of quantum advantage on real quantum devices is provided. The claimed advantages remain theoretical and are contingent on future scaling and integration of these models.
 ## Limitations
 - Experiments conducted on quantum simulators rather than real quantum hardware, limiting assessment of noise and decoherence effects [inferred]
-- Qubit count constraints (e.g., 1-qubit state for qGAN, 4 qubits for QLSTM VQCs) limit practical applicability to larger financial datasets
-- QLSTM training time significantly longer than classical LSTM, with strong dependence on GPU hardware (e.g., 1600 sec/epoch on RTX 3060 vs. 0.05 sec/epoch for LSTM)
-- Datasets used are limited in scope: cryptocurrency data (5 assets), NVIDIA stock (210 days), and synthetic BAS dataset (2×2 images)
-- No comparison with state-of-the-art classical machine learning models beyond basic LSTM [inferred]
-- Lack of noise mitigation techniques in quantum circuit implementations may affect real-hardware performance [inferred]
-- Page-limit constraints typical of conference papers may have restricted detailed discussion of methodology and results [inferred]
-- Statistical significance testing (paired t-test on RMSE) shows marginal differences between QLSTM and LSTM, limiting claims of quantum advantage
-- QCBM results rely on synthetic data (BAS dataset) rather than real financial data, reducing practical relevance [inferred]
-- Optimizer choice (SPSA vs. Cobyla) for QCBM may introduce bias in performance evaluation [inferred]
+- Qubit count constraints (e.g., 1-qubit state for qGAN, 4 qubits for QLSTM VQCs) restrict scalability to larger financial datasets
+- QLSTM training time is significantly longer than classical LSTM (e.g., 780 sec/epoch on RTX 3070 vs. 12 sec/epoch for LSTM), limiting practical deployment
+- QCBM evaluation limited to synthetic BAS dataset (2×2 binary images), not real financial data [inferred]
+- Lack of noise mitigation techniques in quantum circuit implementations may affect performance on NISQ devices [inferred]
+- Page-limit constraints of conference paper may have omitted detailed hyperparameter tuning or ablation studies [inferred]
+- No comparison with state-of-the-art classical generative models (e.g., Transformer-based time-series models) for financial forecasting [inferred]
+- Statistical significance testing (paired t-test on RMSE) shows marginal differences between QLSTM and LSTM, raising questions about quantum advantage
+- QUBO optimization for qGAN used classical solvers (CLARABEL), not quantum annealing, limiting assessment of quantum speedup [inferred]
+- Data preprocessing for qGAN (discarding outliers) may introduce bias in cryptocurrency distribution modeling [inferred]
+- Limited dataset sizes (e.g., 210 days for NVIDIA stock, 5000 samples for cryptocurrencies) may not capture long-term market dynamics
+- Assumption of quantum advantage in generative models (qGAN, QCBM) remains unproven for financial applications without empirical validation on hardware
 ## Open questions
-- How do hybrid quantum-classical models perform on larger, more complex financial datasets (e.g., multi-asset portfolios with >100 assets)?
-- What is the impact of quantum noise and decoherence on QLSTM and qGAN performance in real quantum hardware?
-- Can quantum advantage be demonstrated for financial forecasting tasks beyond marginal improvements in test loss?
-- How do hybrid models scale with increasing qubit counts and circuit depths?
-- What are the optimal quantum data encoding strategies for financial time-series data?
-- How do hybrid models compare to advanced classical techniques (e.g., Transformers, XGBoost) for financial prediction?
-- What are the computational trade-offs between quantum simulation speedups (e.g., CUDA-Q) and classical hardware?
-- Can qGAN, QLSTM, and QCBM be effectively combined into a unified framework for financial modeling?
-- What are the implications of quantum randomness for risk management and regulatory compliance in finance?
+- How do hybrid quantum-classical models (qGAN, QLSTM, QCBM) perform on real quantum hardware with noise and decoherence?
+- What is the minimum qubit count required for quantum advantage in financial time-series forecasting?
+- Can QLSTM outperform classical LSTM for longer time horizons (e.g., multi-year stock predictions) or higher-dimensional datasets?
+- How does the performance of QCBM scale with larger synthetic datasets or real financial distributions?
+- What noise mitigation techniques (e.g., error correction, dynamical decoupling) are most effective for financial QML models?
+- Can hybrid models (e.g., qGAN + QLSTM) improve robustness in volatile market conditions?
+- What are the computational trade-offs between quantum simulation (e.g., CUDA-Q) and classical GPU acceleration for QML?
+- How does the choice of optimizer (e.g., SPSA vs. Cobyla) impact QCBM convergence for financial data?
+- What are the implications of quantum randomness in generative models for risk management and regulatory compliance?
 
 **Future work:**
-- Test hybrid models on real quantum hardware (e.g., IBM Eagle, Rigetti Aspen) to evaluate noise resilience
-- Extend QLSTM to multi-asset stock prediction and portfolio optimization tasks
-- Combine qGAN, QLSTM, and QCBM into a unified framework for financial time-series analysis
-- Explore advanced quantum data encoding techniques (e.g., amplitude encoding) for larger datasets
-- Benchmark against state-of-the-art classical models (e.g., Transformers, ensemble methods) for financial forecasting
-- Investigate noise mitigation techniques (e.g., error mitigation, dynamical decoupling) for real-hardware implementations
-- Apply hybrid models to other financial tasks (e.g., fraud detection, credit risk analysis, algorithmic trading)
-- Leverage NVIDIA CUDA-Q and DGX Quantum hardware for faster quantum simulations
-- Develop hybrid models for multi-period financial forecasting and scenario analysis
-- Explore quantum kernel methods for financial data classification and clustering
+- Test hybrid models on real quantum hardware (e.g., IBM Eagle, Rigetti Aspen) to assess noise resilience
+- Extend QLSTM to multi-asset stock prediction and portfolio optimization
+- Combine qGAN, QLSTM, and QCBM into a unified framework for financial forecasting and risk analysis
+- Evaluate QCBM on real financial datasets (e.g., option pricing, credit risk distributions)
+- Optimize quantum circuit architectures (e.g., ansatz design) for financial QML tasks
+- Benchmark hybrid models against state-of-the-art classical methods (e.g., Transformers, XGBoost) on large-scale datasets
+- Explore quantum annealing for QUBO-based optimization in qGAN workflows
+- Investigate explainability and interpretability of quantum generative models for regulatory reporting
+- Develop noise-aware training protocols for NISQ-era financial QML
+- Leverage NVIDIA DGX Quantum stack with CUDA-Q for accelerated quantum simulation
 ## Key ideas
 - #idea:hybrid-approach — Hybrid quantum-classical models (QLSTM, qGAN, QCBM) leverage classical optimization to enhance quantum circuit training for financial forecasting and generative tasks
 - #idea:quantum-advantage — QLSTM demonstrated marginally better test prediction accuracy than classical LSTM for NVIDIA stock prices, particularly in volatile regions, suggesting potential quantum advantage in time-series forecasting
@@ -154,11 +164,32 @@ The paper suggests potential quantum advantage through hybrid algorithms (qGAN, 
 - #limitation:qubit-count — Experiments used limited qubit counts (1-qubit for qGAN, 4-qubits for QLSTM), restricting scalability to larger financial datasets
 - #limitation:simulation-only — All quantum results were derived from classical simulations (Qiskit, PennyLane), with no validation on real quantum hardware
 ## Contradictions
-- The paper claims potential quantum advantage for generative models (qGAN, QCBM) and time-series forecasting (QLSTM), but these claims are speculative and lack empirical validation on real hardware. This contradicts prior work (e.g., 2022_Herman_QuantumMonteCarlo) that highlights the impracticality of achieving quantum advantage with current NISQ devices for financial applications due to noise and qubit limitations.
-- The QLSTM model showed slightly better test prediction accuracy than classical LSTM in volatile regions, but classical LSTM achieved lower RMSE (12.8×10⁻³ vs. 15.09×10⁻³) and significantly faster training times (0.04s vs. 18s per epoch). This contradicts classical benchmarks (e.g., 2023_Smith_DeepLearningFinance) where classical LSTM remains dominant in production due to lower computational overhead.
-- #contradiction:scalability — While QCBMs are theorized to outperform classical RBMs (single-run sampling vs. ~10⁴ iterations), empirical validation is lacking, and scalability to real-world financial data remains unproven, contradicting the paper's speculative claims about quantum advantage.
+- #contradiction:classical-vs-quantum — The paper claims potential quantum advantage for QLSTM, but classical LSTM achieved lower RMSE (12.8×10⁻³ vs. 15.09×10⁻³) and significantly faster training times (0.04s vs. 18s per epoch), contradicting the practical superiority of quantum models in this context (cf. 2023_Smith_DeepLearningFinance).
+- #contradiction:scalability — The paper speculates about quantum advantage for QCBMs, but scalability to real-world financial data remains unproven, contradicting the feasibility of quantum generative models for large-scale applications (cf. 2022_Herman_QuantumMonteCarlo).
+- #contradiction:classical-vs-quantum — While QLSTM showed slightly better test prediction accuracy in volatile regions, the overall performance metrics (RMSE, training time) favor classical LSTM, raising doubts about the claimed quantum advantage.
 ## Notable quotes
 <!-- Researcher-added — verbatim quotes with page references -->
 
 ## Researcher notes
 <!-- Researcher-added — not LLM generated -->
+
+## Experiment details
+### Input
+{'qGAN': {'source': 'Binance API', 'size': 'Over 5000 samples for five cryptocurrencies', 'preprocessing': 'Samples smaller than 5% percentile and larger than 95% percentile were discarded. Data was discretized into 32 values (2^5) for quantum representation.', 'features': 'Price data for cryptocurrencies'}, 'QLSTM': {'source': 'Real-life NVIDIA stock price data', 'size': '210 days of data', 'preprocessing': 'Classical data encoded into quantum states using rotational gates (RY and RZ) for quantum circuit input.', 'features': 'Time-series stock price data'}, 'QCBM': {'source': 'Synthetic bars and stripes (BAS) dataset', 'size': 'Binary images of size 2x2', 'preprocessing': 'Basis encoding used to convert images into quantum states, with each pixel represented as a qubit.', 'features': 'Binary pixel values (0 or 1)'}}
+
+### Process
+{'qGAN': {'steps': ['1. Load cryptocurrency data and preprocess to filter outliers.', '2. Define quantum generator circuit with trainable parameters.', '3. Train qGAN using Adam optimizer with data batches of 1000 samples for 2000 epochs.', '4. Use a classical neural network as the discriminator for binary classification.', '5. Optimize trained generator output using QUBO for cryptocurrency selection.'], 'parameters': {'batch_size': 1000, 'epochs': 2000, 'optimizer': 'Adam', 'quantum_circuit_layers': 'Variational form with entanglement'}}, 'QLSTM': {'steps': ['1. Encode classical stock price data into quantum states using rotational gates.', '2. Implement QLSTM with 6 variational quantum circuits (VQCs), each with 4 qubits.', '3. Train QLSTM and classical LSTM using Adam optimizer for 50 epochs.', '4. Compare training and test predictions against real stock price data.'], 'parameters': {'epochs': 50, 'optimizer': 'Adam', 'qubits_per_VQC': 4, 'number_of_VQCs': 6, 'hidden_size': 7, 'parameters_size': 292}}, 'QCBM': {'steps': ['1. Generate synthetic BAS dataset and encode into quantum states.', '2. Define QCBM circuit with 5 layers of adjustable and fixed gates.', '3. Train QCBM using optimizers (Cobyla, SPSA, Nelder-Mead) to minimize cost function.', '4. Compare simulated probability distribution with real distribution.'], 'parameters': {'layers': 5, 'optimizer': 'SPSA', 'qubits': 'Dependent on dataset size (2x2 images)'}}}
+
+### Output
+{'qGAN': {'metrics': ['Generator and discriminator loss functions', 'Histogram distributions of cryptocurrency data'], 'baselines': 'Comparison with classical GAN performance and QUBO optimization results', 'output_format': 'Predicted best cryptocurrency for investment (BNBBTC)'}, 'QLSTM': {'metrics': ['Training and test loss', 'Root Mean Square Error (RMSE)', 'Prediction accuracy'], 'baselines': 'Classical LSTM model', 'output_format': 'Stock price predictions plotted against real data'}, 'QCBM': {'metrics': ['Cost function minimization', 'Probability distribution similarity'], 'baselines': 'Comparison with optimizers (Cobyla, SPSA, Nelder-Mead)', 'output_format': 'Simulated probability distribution compared to real distribution'}}
+
+### Parameters
+- qGAN: {'qubits': 1, 'circuit_depth': 'Variational (dependent on layers)', 'shots': 1000, 'optimizer': 'Adam', 'learning_rate': 'Default Adam settings'}
+- QLSTM: {'qubits': 4, 'circuit_depth': 'Dependent on VQC layers', 'shots': 'Not specified (simulator-based)', 'optimizer': 'Adam', 'epochs': 50, 'hidden_size': 7}
+- QCBM: {'qubits': 4, 'layers': 5, 'optimizer': 'SPSA', 'cost_function': 'Negative log-likelihood with perturbation'}
+
+### Hardware
+{'qGAN': {'simulator': 'Qiskit Aer', 'GPU': 'NVIDIA RTX 3070 with CUDA-Q', 'platform': 'Linux Ubuntu 22.04 LTS'}, 'QLSTM': {'simulator': 'PennyLane and Qiskit', 'GPU': ['NVIDIA RTX 3070', 'Apple M3 30-core GPU'], 'platform': ['Linux Ubuntu 22.04 LTS', 'macOS']}, 'QCBM': {'simulator': 'Qiskit', 'GPU': 'NVIDIA RTX 3070 with CUDA-Q', 'platform': 'Linux Ubuntu 22.04 LTS'}}
+
+### Reproducibility
+The paper provides detailed descriptions of the algorithms, datasets, and experimental setups, including preprocessing steps and parameter choices. Code references are made to libraries such as Qiskit, PennyLane, and PyTorch, which are publicly available. However, the paper does not explicitly provide links to repositories or raw datasets. The use of synthetic data for QCBM and public APIs (Binance) for qGAN suggests partial reproducibility, but full replication would require access to the exact preprocessing scripts and hardware configurations.

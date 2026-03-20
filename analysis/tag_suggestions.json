@@ -1,22 +1,310 @@
 {
-  "run_date": "2026-03-19T21:56:57.551624",
+  "run_date": "2026-03-20T01:11:39.833467",
   "model": "Mistral-Large-3",
-  "papers_analyzed": 3,
+  "papers_analyzed": 68,
   "suggestions": [
-    {
-      "tag": "adiabatic-quantum-optimization",
-      "category": "methodology",
-      "description": "Adiabatic quantum optimization techniques for solving combinatorial problems in finance",
-      "frequency": 1,
-      "example_papers": [
-        "2012_Dickson_AlgorithmicApproachAdiabatic.md"
-      ],
-      "status": "pending"
-    },
     {
       "tag": "quantum-monte-carlo",
       "category": "methodology",
       "description": "Quantum Monte Carlo methods for simulating quantum algorithms in financial applications",
+      "frequency": 5,
+      "example_papers": [
+        "2012_Dickson_AlgorithmicApproachAdiabatic.md",
+        "2018_Rebentrost_QuantumComputationalFinance.md",
+        "2025_JETIR_QuantumFinance.md",
+        "2025_NeelotpalDey_QuantumComputingFinancial.md",
+        "2025_ThirumalGunasekaran_ExploringRevolutionaryPotential.md"
+      ],
+      "status": "pending"
+    },
+    {
+      "tag": "limitation:circuit-depth",
+      "category": "limitation",
+      "description": "Increased circuit depth as a trade-off for reduced qubit requirements in quantum algorithms",
+      "frequency": 5,
+      "example_papers": [
+        "2020_Miyamoto_ReductionQubitsQuantum.md",
+        "2021_Martin_TowardPricingFinancial.md",
+        "2025_Aggarwal_BridgingQuantumAlgorithms.md",
+        "2025_Cibrario_AutocallableOptionsPricing.md",
+        "2026_Dechant_ErrorResourceEstimates.md"
+      ],
+      "status": "pending"
+    },
+    {
+      "tag": "quantum-neural-networks",
+      "category": "methodology",
+      "description": "Quantum neural network architectures designed for financial forecasting and classification tasks",
+      "frequency": 4,
+      "example_papers": [
+        "2023_Thakkar_ImprovedFinancialForecasting.md",
+        "2024_M_OptimizingMutualFund.md",
+        "2025_Benamer_VariationalQuantumAlgorithms.md",
+        "2025_Vellaipandiyan_HybridQlstmFramework.md"
+      ],
+      "status": "pending"
+    },
+    {
+      "tag": "quantum-generative-models",
+      "category": "methodology",
+      "description": "Quantum circuits designed to generate probability distributions for financial modeling or data synthesis",
+      "frequency": 4,
+      "example_papers": [
+        "2025_Benamer_VariationalQuantumAlgorithms.md",
+        "2025_Deshmukh_QuantumMachineLearning.md",
+        "2025_Ganguly_HybridClassicalQuantum.md",
+        "2025_ThirumalGunasekaran_ExploringRevolutionaryPotential.md"
+      ],
+      "status": "pending"
+    },
+    {
+      "tag": "limitation:classical-baseline-comparison",
+      "category": "limitation",
+      "description": "Lack of comparison with state-of-the-art classical optimizers to benchmark quantum advantage",
+      "frequency": 3,
+      "example_papers": [
+        "2021_Kolotouros_EvolvingObjectiveFunction.md",
+        "2023_Giron_ApproachingCollateralOptimization.md",
+        "2025_Cai_EnhancingQuantumApproximate.md"
+      ],
+      "status": "pending"
+    },
+    {
+      "tag": "limitation:barren-plateaus",
+      "category": "limitation",
+      "description": "Optimization challenges due to barren plateaus in quantum neural networks or variational algorithms",
+      "frequency": 3,
+      "example_papers": [
+        "2024_Mustafa_QuantumGraphNeural.md",
+        "2025_Deshmukh_QuantumMachineLearning.md",
+        "2026_Nawaz_ExploringQuantumMachine.md"
+      ],
+      "status": "pending"
+    },
+    {
+      "tag": "idea:quadratic-speedup",
+      "category": "idea",
+      "description": "Explicit demonstration or claim of quadratic speedup in computational steps for financial applications",
+      "frequency": 2,
+      "example_papers": [
+        "2018_Rebentrost_QuantumComputationalFinance.md",
+        "2025_Berkowitz_QuantumComputingMeets.md"
+      ],
+      "status": "pending"
+    },
+    {
+      "tag": "quantum-linear-algebra",
+      "category": "methodology",
+      "description": "Quantum algorithms for linear algebra operations, including linear system solvers and matrix inversion, applied to financial problems",
+      "frequency": 2,
+      "example_papers": [
+        "2019_Kerenidis_QuantumAlgorithmsPortfolio.md",
+        "2025_Berkowitz_QuantumComputingMeets.md"
+      ],
+      "status": "pending"
+    },
+    {
+      "tag": "quantum-pca",
+      "category": "methodology",
+      "description": "Quantum principal component analysis for dimensionality reduction in financial data",
+      "frequency": 2,
+      "example_papers": [
+        "2021_Martin_TowardPricingFinancial.md",
+        "2025_Vangibhuratha_QuantumMachineLearning.md"
+      ],
+      "status": "pending"
+    },
+    {
+      "tag": "quantum-phase-estimation",
+      "category": "methodology",
+      "description": "Quantum phase estimation algorithm for eigenvalue approximation in financial models",
+      "frequency": 2,
+      "example_papers": [
+        "2021_Martin_TowardPricingFinancial.md",
+        "2025_Hlatshwayo_TechnicalReviewQuantum.md"
+      ],
+      "status": "pending"
+    },
+    {
+      "tag": "limitation:benchmark-gap",
+      "category": "limitation",
+      "description": "Lack of comparison with state-of-the-art classical or quantum solvers to establish relative performance",
+      "frequency": 2,
+      "example_papers": [
+        "2022_Biesner_SolvingSubsetSum.md",
+        "2025_Aggarwal_BridgingQuantumAlgorithms.md"
+      ],
+      "status": "pending"
+    },
+    {
+      "tag": "idea:quantum-dynamic-programming",
+      "category": "idea",
+      "description": "Quantum algorithms enabling dynamic programming in superposition for recursive financial decision problems",
+      "frequency": 2,
+      "example_papers": [
+        "2022_Doriguello_QuantumAlgorithmStochastic.md",
+        "2025_Gibadullin_QuantumAlgorithmsSolving.md"
+      ],
+      "status": "pending"
+    },
+    {
+      "tag": "quantum-arithmetic-optimisation",
+      "category": "methodology",
+      "description": "Optimisation techniques for quantum arithmetic operations (e.g., addition, multiplication, square root) in financial computing",
+      "frequency": 2,
+      "example_papers": [
+        "2022_Saha_IntermediateQutritBased.md",
+        "2025_Cibrario_AutocallableOptionsPricing.md"
+      ],
+      "status": "pending"
+    },
+    {
+      "tag": "quantum-pde-solvers",
+      "category": "methodology",
+      "description": "Quantum algorithms for solving partial differential equations in financial modeling",
+      "frequency": 2,
+      "example_papers": [
+        "2022_Zhao_QuantumInspiredVariational.md",
+        "2025_Chaudhary_PracticalQuantumSolver.md"
+      ],
+      "status": "pending"
+    },
+    {
+      "tag": "contradiction:quantum-advantage-claims",
+      "category": "contradiction",
+      "description": "Paper disputes prior claims of quantum advantage for specific NP-hard problems in financial optimization",
+      "frequency": 2,
+      "example_papers": [
+        "2023_Giron_ApproachingCollateralOptimization.md",
+        "2025_Vellaipandiyan_HybridQlstmFramework.md"
+      ],
+      "status": "pending"
+    },
+    {
+      "tag": "limitation:classical-benchmark-gap",
+      "category": "limitation",
+      "description": "Lack of comparison with state-of-the-art classical optimization methods (e.g., convex optimization, genetic algorithms)",
+      "frequency": 2,
+      "example_papers": [
+        "2023_Shan_QuantumComputingSimulated.md",
+        "2024_Leipold_TrainScalingQuantum.md"
+      ],
+      "status": "pending"
+    },
+    {
+      "tag": "limitation:classical-overhead",
+      "category": "limitation",
+      "description": "Computational or practical overheads of simulating quantum-inspired models on classical hardware",
+      "frequency": 2,
+      "example_papers": [
+        "2024_Chou_QutritBasedQuantum.md",
+        "2025_Jiang_RasenganTransitionHamiltonian.md"
+      ],
+      "status": "pending"
+    },
+    {
+      "tag": "limitation:model-discretization",
+      "category": "limitation",
+      "description": "Need to coarsely discretize continuous financial models (e.g., stochastic differential equations) for quantum compatibility, potentially losing fidelity",
+      "frequency": 2,
+      "example_papers": [
+        "2024_Ghysels_QuantumFinance.md",
+        "2025_Berkowitz_QuantumComputingMeets.md"
+      ],
+      "status": "pending"
+    },
+    {
+      "tag": "idea:barren-plateaus-mitigation",
+      "category": "idea",
+      "description": "Claims about techniques to mitigate barren plateaus in variational quantum algorithms for financial problems",
+      "frequency": 2,
+      "example_papers": [
+        "2024_Leipold_TrainScalingQuantum.md",
+        "2025_Benamer_VariationalQuantumAlgorithms.md"
+      ],
+      "status": "pending"
+    },
+    {
+      "tag": "limitation:benchmarking-gap",
+      "category": "limitation",
+      "description": "Lack of comparison against state-of-the-art classical machine learning or optimization techniques",
+      "frequency": 2,
+      "example_papers": [
+        "2024_M_OptimizingMutualFund.md",
+        "2025_Vangibhuratha_QuantumMachineLearning.md"
+      ],
+      "status": "pending"
+    },
+    {
+      "tag": "idea:automated-quantum-workflows",
+      "category": "idea",
+      "description": "Claims about the benefits of automated, AI-driven quantum computing pipelines for financial applications",
+      "frequency": 2,
+      "example_papers": [
+        "2025_Autonomous_QAOA.md",
+        "2026_Ganguly_AutonomousQuantumAgents.md"
+      ],
+      "status": "pending"
+    },
+    {
+      "tag": "limitation:cloud-quantum-latency",
+      "category": "limitation",
+      "description": "Performance bottlenecks due to cloud quantum job wait times and execution latency",
+      "frequency": 2,
+      "example_papers": [
+        "2025_Autonomous_QAOA.md",
+        "2026_Ganguly_AutonomousQuantumAgents.md"
+      ],
+      "status": "pending"
+    },
+    {
+      "tag": "limitation:static-parameterization",
+      "category": "limitation",
+      "description": "Use of non-variational, analytically determined parameters in quantum algorithms limiting optimization performance",
+      "frequency": 2,
+      "example_papers": [
+        "2025_Autonomous_QAOA.md",
+        "2026_Ganguly_AutonomousQuantumAgents.md"
+      ],
+      "status": "pending"
+    },
+    {
+      "tag": "dynamic-control-optimisation",
+      "category": "topic",
+      "description": "Application of quantum algorithms to time-varying system control and optimisation problems in finance and other domains",
+      "frequency": 2,
+      "example_papers": [
+        "2025_Gibadullin_QuantumAlgorithmsSolving.md",
+        "2025_Springer_QuantumFinance.md"
+      ],
+      "status": "pending"
+    },
+    {
+      "tag": "quantum-ethics",
+      "category": "topic",
+      "description": "Ethical considerations and risks associated with quantum computing in financial services, including bias, transparency, and data privacy",
+      "frequency": 2,
+      "example_papers": [
+        "2025_JETIR_QuantumFinance.md",
+        "2026_Mahmod_StateQuantumComputing.md"
+      ],
+      "status": "pending"
+    },
+    {
+      "tag": "limitation:operational-integration",
+      "category": "limitation",
+      "description": "Challenges in integrating quantum and classical systems into a single operational model for financial decision-making",
+      "frequency": 2,
+      "example_papers": [
+        "2025_JETIR_QuantumFinance.md",
+        "2025_NeelotpalDey_QuantumComputingFinancial.md"
+      ],
+      "status": "pending"
+    },
+    {
+      "tag": "adiabatic-quantum-optimization",
+      "category": "methodology",
+      "description": "Adiabatic quantum optimization algorithms for solving combinatorial problems in finance",
       "frequency": 1,
       "example_papers": [
         "2012_Dickson_AlgorithmicApproachAdiabatic.md"
@@ -24,9 +312,9 @@
       "status": "pending"
     },
     {
-      "tag": "idea:phase-transition-avoidance",
-      "category": "idea",
-      "description": "Proposals to avoid first-order quantum phase transitions in adiabatic quantum optimization",
+      "tag": "limitation:problem-specificity",
+      "category": "limitation",
+      "description": "Algorithm or approach is tailored to specific problem structures and may not generalize",
       "frequency": 1,
       "example_papers": [
         "2012_Dickson_AlgorithmicApproachAdiabatic.md"
@@ -36,7 +324,7 @@
     {
       "tag": "contradiction:adiabatic-efficiency",
       "category": "contradiction",
-      "description": "Challenges to theoretical claims about adiabatic quantum optimization inefficiency for NP-complete problems",
+      "description": "Paper contradicts prior claims about the inefficiency of adiabatic quantum optimization for NP-complete problems",
       "frequency": 1,
       "example_papers": [
         "2012_Dickson_AlgorithmicApproachAdiabatic.md"
@@ -44,9 +332,9 @@
       "status": "pending"
     },
     {
-      "tag": "limitation:closed-system-assumption",
-      "category": "limitation",
-      "description": "Assumptions of closed quantum systems that may not hold in real hardware implementations",
+      "tag": "idea:tunable-hamiltonians",
+      "category": "idea",
+      "description": "Proposes tuning Hamiltonian parameters to improve quantum optimization performance",
       "frequency": 1,
       "example_papers": [
         "2012_Dickson_AlgorithmicApproachAdiabatic.md"
@@ -56,7 +344,17 @@
     {
       "tag": "quantum-dynamics-simulation",
       "category": "topic",
-      "description": "Simulation of quantum dynamics and time evolution in financial or quantum systems",
+      "description": "Simulation of real-time quantum dynamics for financial or physical systems using quantum or hybrid methods",
+      "frequency": 1,
+      "example_papers": [
+        "2015_McClean_ClockQuantumMonte.md"
+      ],
+      "status": "pending"
+    },
+    {
+      "tag": "sign-problem-mitigation",
+      "category": "methodology",
+      "description": "Techniques to reduce or manage the dynamical sign problem in quantum Monte Carlo simulations",
       "frequency": 1,
       "example_papers": [
         "2015_McClean_ClockQuantumMonte.md"
@@ -66,27 +364,7 @@
     {
       "tag": "feynman-kitaev-clock",
       "category": "methodology",
-      "description": "Use of the Feynman-Kitaev Clock construction to map quantum dynamics to ground state problems",
-      "frequency": 1,
-      "example_papers": [
-        "2015_McClean_ClockQuantumMonte.md"
-      ],
-      "status": "pending"
-    },
-    {
-      "tag": "fciqmc",
-      "category": "methodology",
-      "description": "Full Configuration Interaction Quantum Monte Carlo for ground state or dynamics simulation",
-      "frequency": 1,
-      "example_papers": [
-        "2015_McClean_ClockQuantumMonte.md"
-      ],
-      "status": "pending"
-    },
-    {
-      "tag": "limitation:sign-problem",
-      "category": "limitation",
-      "description": "The dynamical sign problem in quantum Monte Carlo limits scalability and accuracy",
+      "description": "Use of the Feynman-Kitaev Clock construction to map quantum dynamics to a ground state problem",
       "frequency": 1,
       "example_papers": [
         "2015_McClean_ClockQuantumMonte.md"
@@ -96,7 +374,17 @@
     {
       "tag": "idea:parallel-in-time-scaling",
       "category": "idea",
-      "description": "Potential for parallel-in-time simulation of quantum dynamics for computational efficiency",
+      "description": "Claims about the efficiency or feasibility of parallel-in-time simulation for quantum dynamics",
+      "frequency": 1,
+      "example_papers": [
+        "2015_McClean_ClockQuantumMonte.md"
+      ],
+      "status": "pending"
+    },
+    {
+      "tag": "limitation:sign-problem-scalability",
+      "category": "limitation",
+      "description": "The dynamical sign problem limits scalability to larger quantum systems or longer simulation times",
       "frequency": 1,
       "example_papers": [
         "2015_McClean_ClockQuantumMonte.md"
@@ -116,7 +404,7 @@
     {
       "tag": "quantum-stochastic-simulation",
       "category": "methodology",
-      "description": "Quantum stochastic (Monte-Carlo) wavefunction simulations for analyzing quantum algorithm performance under noise",
+      "description": "Quantum Monte Carlo wavefunction simulations for modeling dissipative quantum dynamics under noise",
       "frequency": 1,
       "example_papers": [
         "2016_Petrosyan_GroverSearchAlgorithm.md"
@@ -124,9 +412,9 @@
       "status": "pending"
     },
     {
-      "tag": "limitation:atomic-decay",
+      "tag": "limitation:rydberg-decoherence",
       "category": "limitation",
-      "description": "Performance degradation in quantum algorithms due to atomic decay processes in qubit implementations",
+      "description": "Performance degradation due to Rydberg state decay and dephasing in atomic quantum computing implementations",
       "frequency": 1,
       "example_papers": [
         "2016_Petrosyan_GroverSearchAlgorithm.md"
@@ -134,9 +422,9 @@
       "status": "pending"
     },
     {
-      "tag": "idea:error-tolerance",
+      "tag": "idea:rydberg-scalability",
       "category": "idea",
-      "description": "Algorithms demonstrating inherent resilience to moderate errors, reducing the need for strict error correction",
+      "description": "Speculative claims about scaling Rydberg-blockaded atom systems for quantum algorithms beyond current experimental limits",
       "frequency": 1,
       "example_papers": [
         "2016_Petrosyan_GroverSearchAlgorithm.md"
@@ -144,12 +432,2542 @@
       "status": "pending"
     },
     {
-      "tag": "limitation:interaction-precision",
+      "tag": "limitation:payoff-function-computability",
       "category": "limitation",
-      "description": "Requirements for precise control of interatomic interactions in quantum computing implementations",
+      "description": "Assumption that derivative payoff functions can be efficiently computed within quantum circuits",
       "frequency": 1,
       "example_papers": [
-        "2016_Petrosyan_GroverSearchAlgorithm.md"
+        "2018_Rebentrost_QuantumComputationalFinance.md"
+      ],
+      "status": "pending"
+    },
+    {
+      "tag": "topic:XVA-calculations",
+      "category": "topic",
+      "description": "Quantum computing applications for valuation adjustments (e.g., CVA, FVA) in risk management",
+      "frequency": 1,
+      "example_papers": [
+        "2018_Rebentrost_QuantumComputationalFinance.md"
+      ],
+      "status": "pending"
+    },
+    {
+      "tag": "methodology:continuous-variable-quantum-computing",
+      "category": "methodology",
+      "description": "Use of continuous-variable (CV) quantum systems for financial modeling and Gaussian state preparation",
+      "frequency": 1,
+      "example_papers": [
+        "2018_Rebentrost_QuantumComputationalFinance.md"
+      ],
+      "status": "pending"
+    },
+    {
+      "tag": "quantum-interior-point-method",
+      "category": "methodology",
+      "description": "Quantum algorithms for solving optimization problems using interior point methods, particularly for constrained portfolio optimization",
+      "frequency": 1,
+      "example_papers": [
+        "2019_Kerenidis_QuantumAlgorithmsPortfolio.md"
+      ],
+      "status": "pending"
+    },
+    {
+      "tag": "second-order-cone-programming",
+      "category": "topic",
+      "description": "Formulation and solution of financial optimization problems using Second Order Cone Programs (SOCP)",
+      "frequency": 1,
+      "example_papers": [
+        "2019_Kerenidis_QuantumAlgorithmsPortfolio.md"
+      ],
+      "status": "pending"
+    },
+    {
+      "tag": "limitation:constraint-scalability",
+      "category": "limitation",
+      "description": "Algorithm performance degrades as the number of constraints increases, limiting applicability to highly constrained problems",
+      "frequency": 1,
+      "example_papers": [
+        "2019_Kerenidis_QuantumAlgorithmsPortfolio.md"
+      ],
+      "status": "pending"
+    },
+    {
+      "tag": "idea:polynomial-speedup",
+      "category": "idea",
+      "description": "Claims of polynomial speedup over classical algorithms for specific financial optimization problems",
+      "frequency": 1,
+      "example_papers": [
+        "2019_Kerenidis_QuantumAlgorithmsPortfolio.md"
+      ],
+      "status": "pending"
+    },
+    {
+      "tag": "quantum-semidefinite-programming",
+      "category": "methodology",
+      "description": "Quantum algorithms for solving semidefinite programming problems in financial optimization",
+      "frequency": 1,
+      "example_papers": [
+        "2020_Kommadi_QuantumComputingSolutions.md"
+      ],
+      "status": "pending"
+    },
+    {
+      "tag": "quantum-GAN",
+      "category": "methodology",
+      "description": "Quantum Generative Adversarial Networks for financial data generation or fraud detection",
+      "frequency": 1,
+      "example_papers": [
+        "2020_Kommadi_QuantumComputingSolutions.md"
+      ],
+      "status": "pending"
+    },
+    {
+      "tag": "quantum-deep-learning",
+      "category": "methodology",
+      "description": "Quantum-enhanced deep learning models for financial forecasting or risk modeling",
+      "frequency": 1,
+      "example_papers": [
+        "2020_Kommadi_QuantumComputingSolutions.md"
+      ],
+      "status": "pending"
+    },
+    {
+      "tag": "idea:autonomous-decision-making",
+      "category": "idea",
+      "description": "Speculative claims about quantum frameworks enabling autonomous decision-making in financial contexts",
+      "frequency": 1,
+      "example_papers": [
+        "2020_Kommadi_QuantumComputingSolutions.md"
+      ],
+      "status": "pending"
+    },
+    {
+      "tag": "limitation:outdated-claims",
+      "category": "limitation",
+      "description": "Paper's findings or projections may be outdated due to rapid advancements in quantum hardware and algorithms",
+      "frequency": 1,
+      "example_papers": [
+        "2020_Kommadi_QuantumComputingSolutions.md"
+      ],
+      "status": "pending"
+    },
+    {
+      "tag": "quantum-copula-modeling",
+      "category": "topic",
+      "description": "Quantum implementations of copula functions for dependence modeling and risk analysis",
+      "frequency": 1,
+      "example_papers": [
+        "2020_Milek_QuantumImplementationRisk.md"
+      ],
+      "status": "pending"
+    },
+    {
+      "tag": "quantum-probability-estimation",
+      "category": "methodology",
+      "description": "Quantum algorithms for estimating probabilities and quantiles in financial risk models",
+      "frequency": 1,
+      "example_papers": [
+        "2020_Milek_QuantumImplementationRisk.md"
+      ],
+      "status": "pending"
+    },
+    {
+      "tag": "limitation:discretization-error",
+      "category": "limitation",
+      "description": "Approximation errors introduced by discretizing continuous financial variables into quantum states",
+      "frequency": 1,
+      "example_papers": [
+        "2020_Milek_QuantumImplementationRisk.md"
+      ],
+      "status": "pending"
+    },
+    {
+      "tag": "idea:quantum-tail-dependence",
+      "category": "idea",
+      "description": "Potential for quantum algorithms to model complex tail dependence structures in multivariate risk models",
+      "frequency": 1,
+      "example_papers": [
+        "2020_Milek_QuantumImplementationRisk.md"
+      ],
+      "status": "pending"
+    },
+    {
+      "tag": "contradiction:copula-scalability",
+      "category": "contradiction",
+      "description": "Claims about the scalability of quantum copula implementations to high-dimensional problems",
+      "frequency": 1,
+      "example_papers": [
+        "2020_Milek_QuantumImplementationRisk.md"
+      ],
+      "status": "pending"
+    },
+    {
+      "tag": "quantum-prng",
+      "category": "methodology",
+      "description": "Quantum circuit implementations of pseudo-random number generators for Monte Carlo simulations",
+      "frequency": 1,
+      "example_papers": [
+        "2020_Miyamoto_ReductionQubitsQuantum.md"
+      ],
+      "status": "pending"
+    },
+    {
+      "tag": "idea:qubit-efficiency",
+      "category": "idea",
+      "description": "Approaches to reduce qubit requirements in quantum algorithms for financial applications",
+      "frequency": 1,
+      "example_papers": [
+        "2020_Miyamoto_ReductionQubitsQuantum.md"
+      ],
+      "status": "pending"
+    },
+    {
+      "tag": "topic:credit-risk-measurement",
+      "category": "topic",
+      "description": "Quantum algorithms for measuring credit risk, including portfolio loss calculations and default probability estimation",
+      "frequency": 1,
+      "example_papers": [
+        "2020_Miyamoto_ReductionQubitsQuantum.md"
+      ],
+      "status": "pending"
+    },
+    {
+      "tag": "limitation:prng-quality",
+      "category": "limitation",
+      "description": "Limitations related to the quality, period, or statistical properties of pseudo-random number generators in quantum circuits",
+      "frequency": 1,
+      "example_papers": [
+        "2020_Miyamoto_ReductionQubitsQuantum.md"
+      ],
+      "status": "pending"
+    },
+    {
+      "tag": "shallow-quantum-circuits",
+      "category": "methodology",
+      "description": "Quantum circuits with bounded depth (e.g., depth proportional to graph degree) for approximating ground state energies",
+      "frequency": 1,
+      "example_papers": [
+        "2021_Anshu_ImprovedApproximationAlgorithms.md"
+      ],
+      "status": "pending"
+    },
+    {
+      "tag": "local-hamiltonian-optimisation",
+      "category": "topic",
+      "description": "Optimisation problems framed as finding the ground state energy of local Hamiltonians on bounded-degree graphs",
+      "frequency": 1,
+      "example_papers": [
+        "2021_Anshu_ImprovedApproximationAlgorithms.md"
+      ],
+      "status": "pending"
+    },
+    {
+      "tag": "limitation:graph-constraints",
+      "category": "limitation",
+      "description": "Assumptions about graph structure (e.g., bounded-degree, triangle-free) limit applicability to real-world problems",
+      "frequency": 1,
+      "example_papers": [
+        "2021_Anshu_ImprovedApproximationAlgorithms.md"
+      ],
+      "status": "pending"
+    },
+    {
+      "tag": "idea:variance-driven-improvement",
+      "category": "idea",
+      "description": "Energy improvements in quantum algorithms are proportional to the variance of the Hamiltonian in the initial state",
+      "frequency": 1,
+      "example_papers": [
+        "2021_Anshu_ImprovedApproximationAlgorithms.md"
+      ],
+      "status": "pending"
+    },
+    {
+      "tag": "contradiction:depth-scalability",
+      "category": "contradiction",
+      "description": "Claims about shallow circuits' scalability may conflict with practical constraints on circuit depth for large problems",
+      "frequency": 1,
+      "example_papers": [
+        "2021_Anshu_ImprovedApproximationAlgorithms.md"
+      ],
+      "status": "pending"
+    },
+    {
+      "tag": "quantum-walk-optimisation",
+      "category": "methodology",
+      "description": "Quantum walk-based algorithms for combinatorial optimisation problems in finance",
+      "frequency": 1,
+      "example_papers": [
+        "2021_Bennett_QuantumOptimisationVia.md"
+      ],
+      "status": "pending"
+    },
+    {
+      "tag": "amplitude-amplification",
+      "category": "methodology",
+      "description": "Quantum algorithms that amplify the amplitude of optimal solutions in combinatorial search problems",
+      "frequency": 1,
+      "example_papers": [
+        "2021_Bennett_QuantumOptimisationVia.md"
+      ],
+      "status": "pending"
+    },
+    {
+      "tag": "idea:circuit-depth-constraints",
+      "category": "idea",
+      "description": "Algorithms designed to operate under restricted quantum circuit depth conditions typical of near-term devices",
+      "frequency": 1,
+      "example_papers": [
+        "2021_Bennett_QuantumOptimisationVia.md"
+      ],
+      "status": "pending"
+    },
+    {
+      "tag": "contradiction:expectation-value-optimisation",
+      "category": "contradiction",
+      "description": "Paper disputes the effectiveness of optimising for expectation value of quality in quantum algorithms",
+      "frequency": 1,
+      "example_papers": [
+        "2021_Bennett_QuantumOptimisationVia.md"
+      ],
+      "status": "pending"
+    },
+    {
+      "tag": "limitation:graph-structure-dependence",
+      "category": "limitation",
+      "description": "Algorithm performance is dependent on specific graph structures, limiting generalizability",
+      "frequency": 1,
+      "example_papers": [
+        "2021_Bennett_QuantumOptimisationVia.md"
+      ],
+      "status": "pending"
+    },
+    {
+      "tag": "ascending-cvar",
+      "category": "methodology",
+      "description": "Dynamic Conditional Value-at-Risk (CVaR) objective function that evolves during optimization to improve convergence and solution quality",
+      "frequency": 1,
+      "example_papers": [
+        "2021_Kolotouros_EvolvingObjectiveFunction.md"
+      ],
+      "status": "pending"
+    },
+    {
+      "tag": "limitation:hyperparameter-sensitivity",
+      "category": "limitation",
+      "description": "Performance depends heavily on tuning of hyperparameters that may vary across problem instances",
+      "frequency": 1,
+      "example_papers": [
+        "2021_Kolotouros_EvolvingObjectiveFunction.md"
+      ],
+      "status": "pending"
+    },
+    {
+      "tag": "idea:dynamic-optimization",
+      "category": "idea",
+      "description": "Dynamic adjustment of optimization parameters during runtime to improve solution quality and convergence",
+      "frequency": 1,
+      "example_papers": [
+        "2021_Kolotouros_EvolvingObjectiveFunction.md"
+      ],
+      "status": "pending"
+    },
+    {
+      "tag": "idea:error-mitigation-potential",
+      "category": "idea",
+      "description": "Suggestion that error mitigation techniques could improve near-term quantum algorithm performance in finance",
+      "frequency": 1,
+      "example_papers": [
+        "2021_Martin_TowardPricingFinancial.md"
+      ],
+      "status": "pending"
+    },
+    {
+      "tag": "topic:interest-rate-models",
+      "category": "topic",
+      "description": "Quantum computing applications for interest-rate modeling and derivatives pricing",
+      "frequency": 1,
+      "example_papers": [
+        "2021_Martin_TowardPricingFinancial.md"
+      ],
+      "status": "pending"
+    },
+    {
+      "tag": "quantum-gradient-estimation",
+      "category": "methodology",
+      "description": "Quantum algorithms for estimating gradients of financial functions, including greeks and other sensitivities",
+      "frequency": 1,
+      "example_papers": [
+        "2021_Stamatopoulos_TowardsQuantumAdvantage.md"
+      ],
+      "status": "pending"
+    },
+    {
+      "tag": "greeks-computation",
+      "category": "topic",
+      "description": "Quantum methods for computing financial derivatives' sensitivities (delta, gamma, vega, theta, rho)",
+      "frequency": 1,
+      "example_papers": [
+        "2021_Stamatopoulos_TowardsQuantumAdvantage.md"
+      ],
+      "status": "pending"
+    },
+    {
+      "tag": "idea:quadratic-advantage-greeks",
+      "category": "idea",
+      "description": "Claims about quadratic advantage in the number of greeks (O(\u221ak/\u03f5) vs. O(k/\u03f5\u00b2)) for quantum gradient estimation",
+      "frequency": 1,
+      "example_papers": [
+        "2021_Stamatopoulos_TowardsQuantumAdvantage.md"
+      ],
+      "status": "pending"
+    },
+    {
+      "tag": "limitation:phase-oracle-overhead",
+      "category": "limitation",
+      "description": "Overhead and approximation errors introduced by phase oracle construction in quantum gradient algorithms",
+      "frequency": 1,
+      "example_papers": [
+        "2021_Stamatopoulos_TowardsQuantumAdvantage.md"
+      ],
+      "status": "pending"
+    },
+    {
+      "tag": "methodology:simulation-free-quantum-algorithms",
+      "category": "methodology",
+      "description": "Quantum algorithms that avoid Hamiltonian simulation or block encoding to reduce resource requirements",
+      "frequency": 1,
+      "example_papers": [
+        "2021_Stamatopoulos_TowardsQuantumAdvantage.md"
+      ],
+      "status": "pending"
+    },
+    {
+      "tag": "automated-auditing",
+      "category": "topic",
+      "description": "Application of quantum or quantum-inspired algorithms to automate financial auditing tasks",
+      "frequency": 1,
+      "example_papers": [
+        "2022_Biesner_SolvingSubsetSum.md"
+      ],
+      "status": "pending"
+    },
+    {
+      "tag": "hopfield-networks",
+      "category": "methodology",
+      "description": "Use of Hopfield Networks for optimization problems in financial contexts",
+      "frequency": 1,
+      "example_papers": [
+        "2022_Biesner_SolvingSubsetSum.md"
+      ],
+      "status": "pending"
+    },
+    {
+      "tag": "limitation:problem-scaling",
+      "category": "limitation",
+      "description": "Algorithm performance degrades with problem size or magnitude, limiting practical applicability",
+      "frequency": 1,
+      "example_papers": [
+        "2022_Biesner_SolvingSubsetSum.md"
+      ],
+      "status": "pending"
+    },
+    {
+      "tag": "idea:classical-quantum-synergy",
+      "category": "idea",
+      "description": "Proposals for leveraging classical and quantum computing synergistically for financial problems",
+      "frequency": 1,
+      "example_papers": [
+        "2022_Biesner_SolvingSubsetSum.md"
+      ],
+      "status": "pending"
+    },
+    {
+      "tag": "stochastic-optimal-stopping",
+      "category": "topic",
+      "description": "Quantum and classical methods for solving optimal stopping problems in finance, such as American option pricing",
+      "frequency": 1,
+      "example_papers": [
+        "2022_Doriguello_QuantumAlgorithmStochastic.md"
+      ],
+      "status": "pending"
+    },
+    {
+      "tag": "quantum-least-squares-monte-carlo",
+      "category": "methodology",
+      "description": "Quantum adaptations of the least squares Monte Carlo (LSM) algorithm for optimal stopping and financial modeling",
+      "frequency": 1,
+      "example_papers": [
+        "2022_Doriguello_QuantumAlgorithmStochastic.md"
+      ],
+      "status": "pending"
+    },
+    {
+      "tag": "limitation:exponential-time-dependence",
+      "category": "limitation",
+      "description": "Algorithmic runtime scales exponentially with problem parameters (e.g., time steps), limiting practical applicability",
+      "frequency": 1,
+      "example_papers": [
+        "2022_Doriguello_QuantumAlgorithmStochastic.md"
+      ],
+      "status": "pending"
+    },
+    {
+      "tag": "limitation:smoothness-assumptions",
+      "category": "limitation",
+      "description": "Performance guarantees rely on smoothness or differentiability assumptions that may not hold in real-world financial data",
+      "frequency": 1,
+      "example_papers": [
+        "2022_Doriguello_QuantumAlgorithmStochastic.md"
+      ],
+      "status": "pending"
+    },
+    {
+      "tag": "dynamic-objective-functions",
+      "category": "methodology",
+      "description": "Variational quantum algorithms that adjust their objective function during optimization to avoid local minima",
+      "frequency": 1,
+      "example_papers": [
+        "2022_Kolotouros_EvolvingObjectiveFunction.md"
+      ],
+      "status": "pending"
+    },
+    {
+      "tag": "idea:local-minima-avoidance",
+      "category": "idea",
+      "description": "Claims about methods designed to escape or avoid suboptimal local minima in quantum optimization",
+      "frequency": 1,
+      "example_papers": [
+        "2022_Kolotouros_EvolvingObjectiveFunction.md"
+      ],
+      "status": "pending"
+    },
+    {
+      "tag": "limitation:hyperparameter-tuning",
+      "category": "limitation",
+      "description": "Dependence on problem-specific hyperparameter tuning for optimal performance",
+      "frequency": 1,
+      "example_papers": [
+        "2022_Kolotouros_EvolvingObjectiveFunction.md"
+      ],
+      "status": "pending"
+    },
+    {
+      "tag": "topic:combinatorial-optimisation",
+      "category": "topic",
+      "description": "Quantum approaches to combinatorial optimization problems beyond portfolio optimization",
+      "frequency": 1,
+      "example_papers": [
+        "2022_Kolotouros_EvolvingObjectiveFunction.md"
+      ],
+      "status": "pending"
+    },
+    {
+      "tag": "qutrit-based-computation",
+      "category": "methodology",
+      "description": "Use of three-level quantum systems (qutrits) instead of qubits for quantum arithmetic operations in financial algorithms",
+      "frequency": 1,
+      "example_papers": [
+        "2022_Saha_IntermediateQutritBased.md"
+      ],
+      "status": "pending"
+    },
+    {
+      "tag": "idea:asymptotic-resource-improvement",
+      "category": "idea",
+      "description": "Claims about asymptotic reductions in gate count, circuit depth, or other computational resources for quantum algorithms",
+      "frequency": 1,
+      "example_papers": [
+        "2022_Saha_IntermediateQutritBased.md"
+      ],
+      "status": "pending"
+    },
+    {
+      "tag": "limitation:higher-dimensional-errors",
+      "category": "limitation",
+      "description": "Increased error rates or noise due to higher-dimensional quantum systems (e.g., qutrits vs. qubits)",
+      "frequency": 1,
+      "example_papers": [
+        "2022_Saha_IntermediateQutritBased.md"
+      ],
+      "status": "pending"
+    },
+    {
+      "tag": "limitation:fixed-point-arithmetic",
+      "category": "limitation",
+      "description": "Approximation errors introduced by fixed-point arithmetic in quantum financial calculations",
+      "frequency": 1,
+      "example_papers": [
+        "2022_Saha_IntermediateQutritBased.md"
+      ],
+      "status": "pending"
+    },
+    {
+      "tag": "hessian-analysis",
+      "category": "methodology",
+      "description": "Use of Hessian matrices to analyze loss landscapes and optimization dynamics in variational quantum algorithms",
+      "frequency": 1,
+      "example_papers": [
+        "2022_Sen_VariationalQuantumClassifiers.md"
+      ],
+      "status": "pending"
+    },
+    {
+      "tag": "idea:barren-plateaus",
+      "category": "idea",
+      "description": "Explicit discussion of barren plateaus as a fundamental challenge in training variational quantum algorithms",
+      "frequency": 1,
+      "example_papers": [
+        "2022_Sen_VariationalQuantumClassifiers.md"
+      ],
+      "status": "pending"
+    },
+    {
+      "tag": "limitation:loss-landscape-visualization",
+      "category": "limitation",
+      "description": "Constraints in visualizing high-dimensional loss landscapes of variational quantum algorithms due to computational complexity",
+      "frequency": 1,
+      "example_papers": [
+        "2022_Sen_VariationalQuantumClassifiers.md"
+      ],
+      "status": "pending"
+    },
+    {
+      "tag": "quantum-data-encoding",
+      "category": "topic",
+      "description": "Methods for encoding classical financial or tabular data into quantum states for variational quantum algorithms",
+      "frequency": 1,
+      "example_papers": [
+        "2022_Sen_VariationalQuantumClassifiers.md"
+      ],
+      "status": "pending"
+    },
+    {
+      "tag": "contradiction:barren-plateaus",
+      "category": "contradiction",
+      "description": "Paper contradicts claims about the universality or inevitability of barren plateaus in variational quantum algorithms",
+      "frequency": 1,
+      "example_papers": [
+        "2022_Sen_VariationalQuantumClassifiers.md"
+      ],
+      "status": "pending"
+    },
+    {
+      "tag": "quantum-linear-system",
+      "category": "methodology",
+      "description": "Quantum algorithms specifically designed to solve linear systems of equations in financial contexts",
+      "frequency": 1,
+      "example_papers": [
+        "2022_Sun_PortfolioOptimizationBased.md"
+      ],
+      "status": "pending"
+    },
+    {
+      "tag": "limitation:matrix-conditions",
+      "category": "limitation",
+      "description": "Constraints on matrix properties (e.g., Hermitian, well-conditioned) required by quantum algorithms",
+      "frequency": 1,
+      "example_papers": [
+        "2022_Sun_PortfolioOptimizationBased.md"
+      ],
+      "status": "pending"
+    },
+    {
+      "tag": "limitation:ratio-only-solutions",
+      "category": "limitation",
+      "description": "Quantum solutions that provide only proportional ratios rather than absolute values for financial decision-making",
+      "frequency": 1,
+      "example_papers": [
+        "2022_Sun_PortfolioOptimizationBased.md"
+      ],
+      "status": "pending"
+    },
+    {
+      "tag": "idea:exponential-acceleration-claim",
+      "category": "idea",
+      "description": "Claims about exponential speedup over classical methods without empirical validation at scale",
+      "frequency": 1,
+      "example_papers": [
+        "2022_Sun_PortfolioOptimizationBased.md"
+      ],
+      "status": "pending"
+    },
+    {
+      "tag": "limitation:classical-baseline-missing",
+      "category": "limitation",
+      "description": "Lack of comparison with state-of-the-art classical methods in the study",
+      "frequency": 1,
+      "example_papers": [
+        "2022_Sun_PortfolioOptimizationBased.md"
+      ],
+      "status": "pending"
+    },
+    {
+      "tag": "neural-network-quantum-states",
+      "category": "methodology",
+      "description": "Use of neural networks to parameterize quantum states in variational quantum algorithms",
+      "frequency": 1,
+      "example_papers": [
+        "2022_Zhao_QuantumInspiredVariational.md"
+      ],
+      "status": "pending"
+    },
+    {
+      "tag": "idea:curse-of-dimensionality-mitigation",
+      "category": "idea",
+      "description": "Claims about quantum methods overcoming the curse-of-dimensionality in financial applications",
+      "frequency": 1,
+      "example_papers": [
+        "2022_Zhao_QuantumInspiredVariational.md"
+      ],
+      "status": "pending"
+    },
+    {
+      "tag": "limitation:boundary-conditions",
+      "category": "limitation",
+      "description": "Challenges in handling non-trivial or complex boundary conditions in quantum financial models",
+      "frequency": 1,
+      "example_papers": [
+        "2022_Zhao_QuantumInspiredVariational.md"
+      ],
+      "status": "pending"
+    },
+    {
+      "tag": "limitation:time-stepping-accuracy",
+      "category": "limitation",
+      "description": "Numerical instability or inaccuracies introduced by time-stepping schemes in quantum PDE solvers",
+      "frequency": 1,
+      "example_papers": [
+        "2022_Zhao_QuantumInspiredVariational.md"
+      ],
+      "status": "pending"
+    },
+    {
+      "tag": "mutual-funds",
+      "category": "topic",
+      "description": "Portfolio optimization and risk modelling specifically for mutual funds, distinct from equities or other asset classes",
+      "frequency": 1,
+      "example_papers": [
+        "2023_Fernandes_SystematicLiteratureReview.md"
+      ],
+      "status": "pending"
+    },
+    {
+      "tag": "quantum-walk-optimization",
+      "category": "methodology",
+      "description": "Quantum walk-based algorithms tailored for optimization problems in financial contexts",
+      "frequency": 1,
+      "example_papers": [
+        "2023_Fernandes_SystematicLiteratureReview.md"
+      ],
+      "status": "pending"
+    },
+    {
+      "tag": "limitation:data-availability",
+      "category": "limitation",
+      "description": "Lack of real-world financial datasets for empirical validation of quantum algorithms",
+      "frequency": 1,
+      "example_papers": [
+        "2023_Fernandes_SystematicLiteratureReview.md"
+      ],
+      "status": "pending"
+    },
+    {
+      "tag": "idea:dynamic-investment-decision",
+      "category": "idea",
+      "description": "Potential for quantum computing to enable real-time, dynamic investment decisions in complex market scenarios",
+      "frequency": 1,
+      "example_papers": [
+        "2023_Fernandes_SystematicLiteratureReview.md"
+      ],
+      "status": "pending"
+    },
+    {
+      "tag": "limitation:geographical-bias",
+      "category": "limitation",
+      "description": "Overrepresentation of research from specific regions, limiting generalizability of findings",
+      "frequency": 1,
+      "example_papers": [
+        "2023_Fernandes_SystematicLiteratureReview.md"
+      ],
+      "status": "pending"
+    },
+    {
+      "tag": "collateral-optimisation",
+      "category": "topic",
+      "description": "Optimization of collateral allocation and posting costs in financial services, including QUBO and MILP formulations",
+      "frequency": 1,
+      "example_papers": [
+        "2023_Giron_ApproachingCollateralOptimization.md"
+      ],
+      "status": "pending"
+    },
+    {
+      "tag": "quantum-inspired-algorithms",
+      "category": "methodology",
+      "description": "Classical algorithms inspired by quantum principles, such as simulated annealing and digital annealing, applied to financial problems",
+      "frequency": 1,
+      "example_papers": [
+        "2023_Giron_ApproachingCollateralOptimization.md"
+      ],
+      "status": "pending"
+    },
+    {
+      "tag": "idea:unbalanced-penalization",
+      "category": "idea",
+      "description": "Use of unbalanced penalization in QUBO formulations to reduce resource requirements, despite potential trade-offs in solution quality",
+      "frequency": 1,
+      "example_papers": [
+        "2023_Giron_ApproachingCollateralOptimization.md"
+      ],
+      "status": "pending"
+    },
+    {
+      "tag": "quantum-circuit-learning",
+      "category": "methodology",
+      "description": "Quantum neural networks implemented via parameterized quantum circuits for financial prediction tasks",
+      "frequency": 1,
+      "example_papers": [
+        "2023_Kobayashi_CrossSectionalStock.md"
+      ],
+      "status": "pending"
+    },
+    {
+      "tag": "tensor-networks",
+      "category": "methodology",
+      "description": "Quantum-inspired tensor network models (e.g., Matrix Product States) for financial machine learning",
+      "frequency": 1,
+      "example_papers": [
+        "2023_Kobayashi_CrossSectionalStock.md"
+      ],
+      "status": "pending"
+    },
+    {
+      "tag": "idea:quantum-overfitting-control",
+      "category": "idea",
+      "description": "Speculative claims about quantum models having inherent advantages in mitigating overfitting in financial data",
+      "frequency": 1,
+      "example_papers": [
+        "2023_Kobayashi_CrossSectionalStock.md"
+      ],
+      "status": "pending"
+    },
+    {
+      "tag": "limitation:feature-scalability",
+      "category": "limitation",
+      "description": "Constraints on the number of features that can be effectively encoded in quantum models for financial applications",
+      "frequency": 1,
+      "example_papers": [
+        "2023_Kobayashi_CrossSectionalStock.md"
+      ],
+      "status": "pending"
+    },
+    {
+      "tag": "limitation:market-specificity",
+      "category": "limitation",
+      "description": "Results or models validated only on specific markets (e.g., Japanese stocks) without cross-market generalization",
+      "frequency": 1,
+      "example_papers": [
+        "2023_Kobayashi_CrossSectionalStock.md"
+      ],
+      "status": "pending"
+    },
+    {
+      "tag": "quantum-supply-chain-optimisation",
+      "category": "topic",
+      "description": "Quantum algorithms applied to logistics, route optimization, inventory management, and demand forecasting in supply chains",
+      "frequency": 1,
+      "example_papers": [
+        "2023_Markna_UnveilingAdvancedComputational.md"
+      ],
+      "status": "pending"
+    },
+    {
+      "tag": "quantum-linear-systems-algorithm",
+      "category": "methodology",
+      "description": "Quantum algorithms for solving systems of linear equations, including QLSA and variants for financial applications",
+      "frequency": 1,
+      "example_papers": [
+        "2023_Markna_UnveilingAdvancedComputational.md"
+      ],
+      "status": "pending"
+    },
+    {
+      "tag": "idea:cross-industry-potential",
+      "category": "idea",
+      "description": "Claims about quantum computing's transformative potential across multiple industries beyond finance",
+      "frequency": 1,
+      "example_papers": [
+        "2023_Markna_UnveilingAdvancedComputational.md"
+      ],
+      "status": "pending"
+    },
+    {
+      "tag": "limitation:search-coverage-gaps",
+      "category": "limitation",
+      "description": "Review omits or underrepresents key subdomains, empirical studies, or non-peer-reviewed sources in its analysis",
+      "frequency": 1,
+      "example_papers": [
+        "2023_Markna_UnveilingAdvancedComputational.md"
+      ],
+      "status": "pending"
+    },
+    {
+      "tag": "contradiction:speculative-vs-realized",
+      "category": "contradiction",
+      "description": "Paper acknowledges speculative nature of quantum advantage claims while still presenting them as likely future outcomes",
+      "frequency": 1,
+      "example_papers": [
+        "2023_Markna_UnveilingAdvancedComputational.md"
+      ],
+      "status": "pending"
+    },
+    {
+      "tag": "investor-risk-preference",
+      "category": "topic",
+      "description": "Modeling and incorporation of investor risk tolerance (e.g., risk-seeking vs. risk-averse) in quantum financial algorithms",
+      "frequency": 1,
+      "example_papers": [
+        "2023_Shan_QuantumComputingSimulated.md"
+      ],
+      "status": "pending"
+    },
+    {
+      "tag": "limitation:binary-asset-representation",
+      "category": "limitation",
+      "description": "Use of binary variables to represent asset inclusion/exclusion, oversimplifying real-world portfolio allocation",
+      "frequency": 1,
+      "example_papers": [
+        "2023_Shan_QuantumComputingSimulated.md"
+      ],
+      "status": "pending"
+    },
+    {
+      "tag": "idea:quantum-tunneling-advantage",
+      "category": "idea",
+      "description": "Explicit claim that quantum tunneling enables escape from local optima in financial optimization problems",
+      "frequency": 1,
+      "example_papers": [
+        "2023_Shan_QuantumComputingSimulated.md"
+      ],
+      "status": "pending"
+    },
+    {
+      "tag": "limitation:parameter-tuning",
+      "category": "limitation",
+      "description": "Arbitrary or heuristic parameter selection (e.g., penalty coefficients, smoothness indices) without rigorous optimization",
+      "frequency": 1,
+      "example_papers": [
+        "2023_Shan_QuantumComputingSimulated.md"
+      ],
+      "status": "pending"
+    },
+    {
+      "tag": "determinantal-point-processes",
+      "category": "methodology",
+      "description": "Determinantal Point Processes (DPP) and their quantum-enhanced variants for sampling in financial machine learning",
+      "frequency": 1,
+      "example_papers": [
+        "2023_Thakkar_ImprovedFinancialForecasting.md"
+      ],
+      "status": "pending"
+    },
+    {
+      "tag": "limitation:parameter-efficiency-tradeoff",
+      "category": "limitation",
+      "description": "Reduced parameter count in quantum models may sacrifice expressivity or performance compared to classical counterparts",
+      "frequency": 1,
+      "example_papers": [
+        "2023_Thakkar_ImprovedFinancialForecasting.md"
+      ],
+      "status": "pending"
+    },
+    {
+      "tag": "idea:quantum-inspired-classical",
+      "category": "idea",
+      "description": "Classical algorithms inspired by quantum principles that outperform traditional classical methods",
+      "frequency": 1,
+      "example_papers": [
+        "2023_Thakkar_ImprovedFinancialForecasting.md"
+      ],
+      "status": "pending"
+    },
+    {
+      "tag": "limitation:hardware-connectivity",
+      "category": "limitation",
+      "description": "Constraints imposed by quantum hardware connectivity (e.g., nearest-neighbor gates) on circuit design and performance",
+      "frequency": 1,
+      "example_papers": [
+        "2023_Thakkar_ImprovedFinancialForecasting.md"
+      ],
+      "status": "pending"
+    },
+    {
+      "tag": "quantum-gradient-methods",
+      "category": "methodology",
+      "description": "Quantum algorithms that leverage gradient-based optimization for solving nonlinear problems in finance",
+      "frequency": 1,
+      "example_papers": [
+        "2023_Vishwakarma_QuantumComputingAlgorithms.md"
+      ],
+      "status": "pending"
+    },
+    {
+      "tag": "limitation:gradient-precision",
+      "category": "limitation",
+      "description": "Challenges in maintaining precision of quantum gradient calculations due to noise or encoding limitations",
+      "frequency": 1,
+      "example_papers": [
+        "2023_Vishwakarma_QuantumComputingAlgorithms.md"
+      ],
+      "status": "pending"
+    },
+    {
+      "tag": "idea:quantum-parallelism-exploitation",
+      "category": "idea",
+      "description": "Claims about leveraging quantum parallelism to explore solution spaces simultaneously for optimization problems",
+      "frequency": 1,
+      "example_papers": [
+        "2023_Vishwakarma_QuantumComputingAlgorithms.md"
+      ],
+      "status": "pending"
+    },
+    {
+      "tag": "limitation:benchmarking-absence",
+      "category": "limitation",
+      "description": "Lack of standardized benchmarks for comparing quantum optimization methods against classical or other quantum approaches",
+      "frequency": 1,
+      "example_papers": [
+        "2023_Vishwakarma_QuantumComputingAlgorithms.md"
+      ],
+      "status": "pending"
+    },
+    {
+      "tag": "topic:nonlinear-optimization",
+      "category": "topic",
+      "description": "Application of quantum computing to nonlinear optimization problems in finance, logistics, and machine learning",
+      "frequency": 1,
+      "example_papers": [
+        "2023_Vishwakarma_QuantumComputingAlgorithms.md"
+      ],
+      "status": "pending"
+    },
+    {
+      "tag": "quantum-circuit-optimisation",
+      "category": "methodology",
+      "description": "Techniques for reducing gate count, circuit depth, or improving qubit mapping in quantum financial algorithms",
+      "frequency": 1,
+      "example_papers": [
+        "2024_Bhasin_EnhancingQuantumMachine.md"
+      ],
+      "status": "pending"
+    },
+    {
+      "tag": "quantum-error-mitigation",
+      "category": "methodology",
+      "description": "Strategies to reduce noise effects in NISQ-era quantum algorithms without full error correction",
+      "frequency": 1,
+      "example_papers": [
+        "2024_Bhasin_EnhancingQuantumMachine.md"
+      ],
+      "status": "pending"
+    },
+    {
+      "tag": "limitation:circuit-optimisation-assumptions",
+      "category": "limitation",
+      "description": "Assumptions about idealized quantum circuit optimization not accounting for real-world hardware constraints",
+      "frequency": 1,
+      "example_papers": [
+        "2024_Bhasin_EnhancingQuantumMachine.md"
+      ],
+      "status": "pending"
+    },
+    {
+      "tag": "limitation:dataset-representativeness",
+      "category": "limitation",
+      "description": "Financial datasets used may not capture real-world market complexities or non-stationary distributions",
+      "frequency": 1,
+      "example_papers": [
+        "2024_Bhasin_EnhancingQuantumMachine.md"
+      ],
+      "status": "pending"
+    },
+    {
+      "tag": "idea:quantum-parallelism-potential",
+      "category": "idea",
+      "description": "Speculative claims about exponential speedup from quantum parallelism in financial applications",
+      "frequency": 1,
+      "example_papers": [
+        "2024_Bhasin_EnhancingQuantumMachine.md"
+      ],
+      "status": "pending"
+    },
+    {
+      "tag": "qutrit-based-optimisation",
+      "category": "methodology",
+      "description": "Optimisation techniques leveraging qutrit (three-level quantum) systems for encoding and solving financial problems",
+      "frequency": 1,
+      "example_papers": [
+        "2024_Chou_QutritBasedQuantum.md"
+      ],
+      "status": "pending"
+    },
+    {
+      "tag": "quantum-inspired-optimisation",
+      "category": "methodology",
+      "description": "Classical algorithms inspired by quantum principles (e.g., superposition, entanglement) for financial applications",
+      "frequency": 1,
+      "example_papers": [
+        "2024_Chou_QutritBasedQuantum.md"
+      ],
+      "status": "pending"
+    },
+    {
+      "tag": "idea:ternary-encoding-advantage",
+      "category": "idea",
+      "description": "Claims about the benefits of ternary (qutrit-based) encoding over binary (qubit-based) for financial problem-solving",
+      "frequency": 1,
+      "example_papers": [
+        "2024_Chou_QutritBasedQuantum.md"
+      ],
+      "status": "pending"
+    },
+    {
+      "tag": "limitation:asymmetric-market-conditions",
+      "category": "limitation",
+      "description": "Assumptions in models that may not hold under asymmetric market conditions (e.g., volatility regimes)",
+      "frequency": 1,
+      "example_papers": [
+        "2024_Chou_QutritBasedQuantum.md"
+      ],
+      "status": "pending"
+    },
+    {
+      "tag": "quantum-stochastic-models",
+      "category": "topic",
+      "description": "Adaptation of stochastic processes (e.g., volatility models, hidden Markov chains) for quantum hardware in financial applications",
+      "frequency": 1,
+      "example_papers": [
+        "2024_Ghysels_QuantumFinance.md"
+      ],
+      "status": "pending"
+    },
+    {
+      "tag": "idea:quantum-algorithm-winter",
+      "category": "idea",
+      "description": "Observation that progress in developing new quantum algorithms for finance has stalled or slowed significantly",
+      "frequency": 1,
+      "example_papers": [
+        "2024_Ghysels_QuantumFinance.md"
+      ],
+      "status": "pending"
+    },
+    {
+      "tag": "limitation:quantum-state-extraction",
+      "category": "limitation",
+      "description": "Challenge of extracting meaningful numerical results from quantum states in financial applications (e.g., asset pricing models)",
+      "frequency": 1,
+      "example_papers": [
+        "2024_Ghysels_QuantumFinance.md"
+      ],
+      "status": "pending"
+    },
+    {
+      "tag": "contradiction:industry-projections",
+      "category": "contradiction",
+      "description": "Paper contradicts optimistic industry projections about quantum computing's near-term financial impact or scalability",
+      "frequency": 1,
+      "example_papers": [
+        "2024_Ghysels_QuantumFinance.md"
+      ],
+      "status": "pending"
+    },
+    {
+      "tag": "quantum-random-access-memory",
+      "category": "methodology",
+      "description": "Quantum Random Access Memory (qRAM) for efficient data loading and processing in financial quantum algorithms",
+      "frequency": 1,
+      "example_papers": [
+        "2024_KI_QuantumFinance.md"
+      ],
+      "status": "pending"
+    },
+    {
+      "tag": "idea:exponential-speedup-assumptions",
+      "category": "idea",
+      "description": "Claims of exponential speedup in quantum algorithms that rely on strong or unrealistic assumptions",
+      "frequency": 1,
+      "example_papers": [
+        "2024_KI_QuantumFinance.md"
+      ],
+      "status": "pending"
+    },
+    {
+      "tag": "limitation:output-bottleneck",
+      "category": "limitation",
+      "description": "Challenges in extracting classical information from quantum states without negating potential speedups",
+      "frequency": 1,
+      "example_papers": [
+        "2024_KI_QuantumFinance.md"
+      ],
+      "status": "pending"
+    },
+    {
+      "tag": "contradiction:quantum-vs-classical-parity",
+      "category": "contradiction",
+      "description": "Claims that classical methods can match or exceed quantum algorithm performance under similar assumptions",
+      "frequency": 1,
+      "example_papers": [
+        "2024_KI_QuantumFinance.md"
+      ],
+      "status": "pending"
+    },
+    {
+      "tag": "quantum-state-exponentiation",
+      "category": "methodology",
+      "description": "Techniques for simulating matrix exponentiation on quantum states, particularly for covariance matrices in finance",
+      "frequency": 1,
+      "example_papers": [
+        "2024_KI_QuantumFinance.md"
+      ],
+      "status": "pending"
+    },
+    {
+      "tag": "train-and-scale",
+      "category": "methodology",
+      "description": "Iterative QAOA training method that progressively increases problem size and circuit depth using warm-start parameters",
+      "frequency": 1,
+      "example_papers": [
+        "2024_Leipold_TrainScalingQuantum.md"
+      ],
+      "status": "pending"
+    },
+    {
+      "tag": "limitation:survivorship-bias",
+      "category": "limitation",
+      "description": "Dataset limitations due to survivorship bias affecting generalizability of results",
+      "frequency": 1,
+      "example_papers": [
+        "2024_Leipold_TrainScalingQuantum.md"
+      ],
+      "status": "pending"
+    },
+    {
+      "tag": "topic:portfolio-diversification",
+      "category": "topic",
+      "description": "Quantum approaches to portfolio diversification, including graph-based formulations like Maximum Independent Set",
+      "frequency": 1,
+      "example_papers": [
+        "2024_Leipold_TrainScalingQuantum.md"
+      ],
+      "status": "pending"
+    },
+    {
+      "tag": "quantum-inspired-evolutionary-algorithms",
+      "category": "methodology",
+      "description": "Classical algorithms inspired by quantum principles such as superposition and entanglement for optimization",
+      "frequency": 1,
+      "example_papers": [
+        "2024_M_OptimizingMutualFund.md"
+      ],
+      "status": "pending"
+    },
+    {
+      "tag": "idea:quantum-inspired-advantage",
+      "category": "idea",
+      "description": "Claims about advantages of quantum-inspired algorithms over classical methods in financial applications",
+      "frequency": 1,
+      "example_papers": [
+        "2024_M_OptimizingMutualFund.md"
+      ],
+      "status": "pending"
+    },
+    {
+      "tag": "limitation:quantum-inspired-vs-quantum",
+      "category": "limitation",
+      "description": "Distinction between quantum-inspired algorithms (classical simulations) and actual quantum algorithms, with implications for practical deployment",
+      "frequency": 1,
+      "example_papers": [
+        "2024_M_OptimizingMutualFund.md"
+      ],
+      "status": "pending"
+    },
+    {
+      "tag": "quantum-graph-neural-networks",
+      "category": "methodology",
+      "description": "Hybrid quantum-classical graph neural networks using parameterized quantum circuits for message-passing or feature embedding",
+      "frequency": 1,
+      "example_papers": [
+        "2024_Mustafa_QuantumGraphNeural.md"
+      ],
+      "status": "pending"
+    },
+    {
+      "tag": "idea:quantum-embedding-strategies",
+      "category": "idea",
+      "description": "Exploration of different quantum embedding techniques (e.g., amplitude, angle) for encoding classical financial data into quantum states",
+      "frequency": 1,
+      "example_papers": [
+        "2024_Mustafa_QuantumGraphNeural.md"
+      ],
+      "status": "pending"
+    },
+    {
+      "tag": "topic:financial-time-series-forecasting",
+      "category": "topic",
+      "description": "Quantum or hybrid approaches for predicting stock price movements or other financial time series data",
+      "frequency": 1,
+      "example_papers": [
+        "2024_Mustafa_QuantumGraphNeural.md"
+      ],
+      "status": "pending"
+    },
+    {
+      "tag": "limitation:graph-representation-bias",
+      "category": "limitation",
+      "description": "Limitations arising from graph construction methods (e.g., correlation-based edges) in financial datasets",
+      "frequency": 1,
+      "example_papers": [
+        "2024_Mustafa_QuantumGraphNeural.md"
+      ],
+      "status": "pending"
+    },
+    {
+      "tag": "transaction-costs",
+      "category": "topic",
+      "description": "Incorporation of transaction costs into quantum portfolio optimization models",
+      "frequency": 1,
+      "example_papers": [
+        "2025_Aggarwal_BridgingQuantumAlgorithms.md"
+      ],
+      "status": "pending"
+    },
+    {
+      "tag": "multi-objective-optimisation",
+      "category": "topic",
+      "description": "Quantum approaches to portfolio optimization with multiple competing objectives beyond risk-return tradeoffs",
+      "frequency": 1,
+      "example_papers": [
+        "2025_Aggarwal_BridgingQuantumAlgorithms.md"
+      ],
+      "status": "pending"
+    },
+    {
+      "tag": "idea:parameter-sensitivity",
+      "category": "idea",
+      "description": "Exploration of how parameter choices (e.g., risk aversion) affect quantum optimization outcomes",
+      "frequency": 1,
+      "example_papers": [
+        "2025_Aggarwal_BridgingQuantumAlgorithms.md"
+      ],
+      "status": "pending"
+    },
+    {
+      "tag": "agentic-quantum-frameworks",
+      "category": "methodology",
+      "description": "Autonomous AI-driven workflow orchestration systems for quantum computing pipelines in finance",
+      "frequency": 1,
+      "example_papers": [
+        "2025_Autonomous_QAOA.md"
+      ],
+      "status": "pending"
+    },
+    {
+      "tag": "quantum-backend-interoperability",
+      "category": "methodology",
+      "description": "Vendor-agnostic quantum execution platforms and runtime systems for financial applications",
+      "frequency": 1,
+      "example_papers": [
+        "2025_Autonomous_QAOA.md"
+      ],
+      "status": "pending"
+    },
+    {
+      "tag": "barren-plateaus",
+      "category": "limitation",
+      "description": "Exponential vanishing of gradients in variational quantum circuits with increasing depth or qubit count",
+      "frequency": 1,
+      "example_papers": [
+        "2025_Benamer_VariationalQuantumAlgorithms.md"
+      ],
+      "status": "pending"
+    },
+    {
+      "tag": "limitation:measurement-overhead",
+      "category": "limitation",
+      "description": "High number of repeated quantum measurements required to estimate observables accurately in VQAs",
+      "frequency": 1,
+      "example_papers": [
+        "2025_Benamer_VariationalQuantumAlgorithms.md"
+      ],
+      "status": "pending"
+    },
+    {
+      "tag": "hidden-markov-models-quantum",
+      "category": "topic",
+      "description": "Adaptation of hidden Markov models for quantum computing in credit risk and derivative pricing",
+      "frequency": 1,
+      "example_papers": [
+        "2025_Berkowitz_QuantumComputingMeets.md"
+      ],
+      "status": "pending"
+    },
+    {
+      "tag": "limitation:stochastic-volatility-models",
+      "category": "limitation",
+      "description": "Inability to directly implement stochastic volatility diffusion models on quantum hardware",
+      "frequency": 1,
+      "example_papers": [
+        "2025_Berkowitz_QuantumComputingMeets.md"
+      ],
+      "status": "pending"
+    },
+    {
+      "tag": "warm-start-techniques",
+      "category": "methodology",
+      "description": "Classical optimization-based initialization methods for quantum algorithms (e.g., SDP relaxations, QUBO relaxations)",
+      "frequency": 1,
+      "example_papers": [
+        "2025_Bhattacharyya_SolvingGeneralQubos.md"
+      ],
+      "status": "pending"
+    },
+    {
+      "tag": "idea:problem-mapping",
+      "category": "idea",
+      "description": "Explicit transformation of financial problems into alternative formulations (e.g., QUBO-to-Max-Cut) to leverage quantum algorithm strengths",
+      "frequency": 1,
+      "example_papers": [
+        "2025_Bhattacharyya_SolvingGeneralQubos.md"
+      ],
+      "status": "pending"
+    },
+    {
+      "tag": "limitation:problem-dependency",
+      "category": "limitation",
+      "description": "Performance of quantum algorithms varies significantly across different problem types or instances, limiting generalizability",
+      "frequency": 1,
+      "example_papers": [
+        "2025_Bhattacharyya_SolvingGeneralQubos.md"
+      ],
+      "status": "pending"
+    },
+    {
+      "tag": "limitation:classical-benchmarking",
+      "category": "limitation",
+      "description": "Lack of comparison against state-of-the-art classical solvers (e.g., Gurobi, CPLEX) to validate quantum advantage claims",
+      "frequency": 1,
+      "example_papers": [
+        "2025_Bhattacharyya_SolvingGeneralQubos.md"
+      ],
+      "status": "pending"
+    },
+    {
+      "tag": "quantum-connectivity-constraints",
+      "category": "methodology",
+      "description": "Consideration of qubit connectivity limitations in NISQ-era hardware for financial algorithm implementations",
+      "frequency": 1,
+      "example_papers": [
+        "2025_Bhattacharyya_SolvingGeneralQubos.md"
+      ],
+      "status": "pending"
+    },
+    {
+      "tag": "quantum-classical-hybrid-optimisation",
+      "category": "methodology",
+      "description": "Integration of classical machine learning models (e.g., CNNs) with quantum algorithms for parameter optimisation in combinatorial problems",
+      "frequency": 1,
+      "example_papers": [
+        "2025_Cai_EnhancingQuantumApproximate.md"
+      ],
+      "status": "pending"
+    },
+    {
+      "tag": "idea:cvars-quantum-optimisation",
+      "category": "idea",
+      "description": "Use of Conditional Value at Risk (CVaR) as a loss function in quantum optimisation algorithms to prioritise better outcomes",
+      "frequency": 1,
+      "example_papers": [
+        "2025_Cai_EnhancingQuantumApproximate.md"
+      ],
+      "status": "pending"
+    },
+    {
+      "tag": "limitation:pretraining-overhead",
+      "category": "limitation",
+      "description": "Requirement for extensive pretraining of classical components (e.g., CNNs) in hybrid quantum-classical algorithms",
+      "frequency": 1,
+      "example_papers": [
+        "2025_Cai_EnhancingQuantumApproximate.md"
+      ],
+      "status": "pending"
+    },
+    {
+      "tag": "methodology:quantum-parameter-transfer",
+      "category": "methodology",
+      "description": "Techniques for transferring optimised quantum parameters across different circuit depths or problem instances",
+      "frequency": 1,
+      "example_papers": [
+        "2025_Cai_EnhancingQuantumApproximate.md"
+      ],
+      "status": "pending"
+    },
+    {
+      "tag": "idea:quantum-pde-advantage",
+      "category": "idea",
+      "description": "Claims about quantum advantage specifically for solving partial differential equations in finance or other domains",
+      "frequency": 1,
+      "example_papers": [
+        "2025_Chaudhary_PracticalQuantumSolver.md"
+      ],
+      "status": "pending"
+    },
+    {
+      "tag": "limitation:classical-preprocessing-bottleneck",
+      "category": "limitation",
+      "description": "Classical preprocessing steps (e.g., discretization, decomposition) limit the overall quantum speedup or introduce approximations",
+      "frequency": 1,
+      "example_papers": [
+        "2025_Chaudhary_PracticalQuantumSolver.md"
+      ],
+      "status": "pending"
+    },
+    {
+      "tag": "financial-pde-applications",
+      "category": "topic",
+      "description": "Applications of quantum computing to solving financial partial differential equations (e.g., Black-Scholes, Heston model)",
+      "frequency": 1,
+      "example_papers": [
+        "2025_Chaudhary_PracticalQuantumSolver.md"
+      ],
+      "status": "pending"
+    },
+    {
+      "tag": "contradiction:circuit-depth-scalability",
+      "category": "contradiction",
+      "description": "Paper contradicts or qualifies claims about the scalability of circuit depth in quantum PDE solvers",
+      "frequency": 1,
+      "example_papers": [
+        "2025_Chaudhary_PracticalQuantumSolver.md"
+      ],
+      "status": "pending"
+    },
+    {
+      "tag": "path-dependent-options",
+      "category": "topic",
+      "description": "Quantum algorithms for pricing financial derivatives with path-dependent payoffs, such as autocallables and barriers",
+      "frequency": 1,
+      "example_papers": [
+        "2025_Cibrario_AutocallableOptionsPricing.md"
+      ],
+      "status": "pending"
+    },
+    {
+      "tag": "idea:quantum-utility",
+      "category": "idea",
+      "description": "Claims about achieving practical, real-world advantage of quantum computing over classical methods in specific financial applications",
+      "frequency": 1,
+      "example_papers": [
+        "2025_Cibrario_AutocallableOptionsPricing.md"
+      ],
+      "status": "pending"
+    },
+    {
+      "tag": "limitation:fault-tolerance-assumption",
+      "category": "limitation",
+      "description": "Reliance on fault-tolerant quantum computing assumptions in algorithm design or complexity analysis",
+      "frequency": 1,
+      "example_papers": [
+        "2025_Cibrario_AutocallableOptionsPricing.md"
+      ],
+      "status": "pending"
+    },
+    {
+      "tag": "quantum-reinforcement-learning",
+      "category": "methodology",
+      "description": "Quantum-enhanced reinforcement learning algorithms for financial modeling and optimization",
+      "frequency": 1,
+      "example_papers": [
+        "2025_Deshmukh_QuantumMachineLearning.md"
+      ],
+      "status": "pending"
+    },
+    {
+      "tag": "idea:quantum-data-generation",
+      "category": "idea",
+      "description": "Potential for quantum models to generate synthetic financial data for training or simulation purposes",
+      "frequency": 1,
+      "example_papers": [
+        "2025_Deshmukh_QuantumMachineLearning.md"
+      ],
+      "status": "pending"
+    },
+    {
+      "tag": "limitation:benchmark-generalizability",
+      "category": "limitation",
+      "description": "Results from benchmark datasets (e.g., MNIST) may not generalize to real-world financial applications",
+      "frequency": 1,
+      "example_papers": [
+        "2025_Deshmukh_QuantumMachineLearning.md"
+      ],
+      "status": "pending"
+    },
+    {
+      "tag": "quantum-time-series",
+      "category": "methodology",
+      "description": "Quantum algorithms specifically designed for time-series forecasting and sequential data analysis",
+      "frequency": 1,
+      "example_papers": [
+        "2025_Ganguly_HybridClassicalQuantum.md"
+      ],
+      "status": "pending"
+    },
+    {
+      "tag": "limitation:gpu-dependency",
+      "category": "limitation",
+      "description": "Performance heavily reliant on GPU acceleration for quantum circuit simulation and training",
+      "frequency": 1,
+      "example_papers": [
+        "2025_Ganguly_HybridClassicalQuantum.md"
+      ],
+      "status": "pending"
+    },
+    {
+      "tag": "idea:quantum-generative-advantage",
+      "category": "idea",
+      "description": "Claim that quantum generative models may offer inherent advantages in financial modeling due to their probabilistic nature",
+      "frequency": 1,
+      "example_papers": [
+        "2025_Ganguly_HybridClassicalQuantum.md"
+      ],
+      "status": "pending"
+    },
+    {
+      "tag": "contradiction:quantum-vs-classical-accuracy",
+      "category": "contradiction",
+      "description": "Paper presents conflicting evidence about whether quantum models outperform classical counterparts in prediction accuracy",
+      "frequency": 1,
+      "example_papers": [
+        "2025_Ganguly_HybridClassicalQuantum.md"
+      ],
+      "status": "pending"
+    },
+    {
+      "tag": "strategic-automation",
+      "category": "topic",
+      "description": "Systematic approaches to identifying and implementing automation technologies in financial operations",
+      "frequency": 1,
+      "example_papers": [
+        "2025_GauthamPanneerSelvam_DrivingOperationalEfficiency.md"
+      ],
+      "status": "pending"
+    },
+    {
+      "tag": "operational-excellence",
+      "category": "topic",
+      "description": "Frameworks and methodologies for achieving efficiency and quality improvements in financial processes",
+      "frequency": 1,
+      "example_papers": [
+        "2025_GauthamPanneerSelvam_DrivingOperationalEfficiency.md"
+      ],
+      "status": "pending"
+    },
+    {
+      "tag": "idea:classical-automation-benchmark",
+      "category": "idea",
+      "description": "Classical automation technologies (RPA, AI, cloud) serve as a performance benchmark for evaluating quantum computing potential",
+      "frequency": 1,
+      "example_papers": [
+        "2025_GauthamPanneerSelvam_DrivingOperationalEfficiency.md"
+      ],
+      "status": "pending"
+    },
+    {
+      "tag": "limitation:case-study-generalizability",
+      "category": "limitation",
+      "description": "Findings from specific case studies may not generalize to broader financial operations contexts",
+      "frequency": 1,
+      "example_papers": [
+        "2025_GauthamPanneerSelvam_DrivingOperationalEfficiency.md"
+      ],
+      "status": "pending"
+    },
+    {
+      "tag": "limitation:dynamic-model-simplification",
+      "category": "limitation",
+      "description": "Over-simplification of dynamic models (e.g., differential equations with sine functions) that may not reflect real-world financial scenarios",
+      "frequency": 1,
+      "example_papers": [
+        "2025_Gibadullin_QuantumAlgorithmsSolving.md"
+      ],
+      "status": "pending"
+    },
+    {
+      "tag": "limitation:classical-comparison-gap",
+      "category": "limitation",
+      "description": "Lack of rigorous benchmarking against state-of-the-art classical methods for the same problem",
+      "frequency": 1,
+      "example_papers": [
+        "2025_Gibadullin_QuantumAlgorithmsSolving.md"
+      ],
+      "status": "pending"
+    },
+    {
+      "tag": "quantum-amplitude-amplification",
+      "category": "methodology",
+      "description": "Quantum Amplitude Amplification techniques for speeding up search and optimization problems in financial contexts",
+      "frequency": 1,
+      "example_papers": [
+        "2025_Hlatshwayo_TechnicalReviewQuantum.md"
+      ],
+      "status": "pending"
+    },
+    {
+      "tag": "quantum-walk-finance",
+      "category": "methodology",
+      "description": "Discrete-time and continuous-time quantum walks applied to graph-based financial problems like market simulation and network analysis",
+      "frequency": 1,
+      "example_papers": [
+        "2025_Hlatshwayo_TechnicalReviewQuantum.md"
+      ],
+      "status": "pending"
+    },
+    {
+      "tag": "quantum-singular-value-transformation",
+      "category": "methodology",
+      "description": "Quantum Singular Value Transformation and its applications in solving linear algebra problems in finance",
+      "frequency": 1,
+      "example_papers": [
+        "2025_Hlatshwayo_TechnicalReviewQuantum.md"
+      ],
+      "status": "pending"
+    },
+    {
+      "tag": "idea:practical-quantum-advantage",
+      "category": "idea",
+      "description": "Proposes Practical Quantum Advantage (PQA) as a framework for assessing real-world quantum benefits in finance and economics",
+      "frequency": 1,
+      "example_papers": [
+        "2025_Hlatshwayo_TechnicalReviewQuantum.md"
+      ],
+      "status": "pending"
+    },
+    {
+      "tag": "knapsack-formulation",
+      "category": "methodology",
+      "description": "Reformulation of financial problems as knapsack problems for quantum optimization",
+      "frequency": 1,
+      "example_papers": [
+        "2025_Huot_CorrectionsEnhancingKnapsack.md"
+      ],
+      "status": "pending"
+    },
+    {
+      "tag": "limitation:problem-reformulation",
+      "category": "limitation",
+      "description": "Constraints or nuances lost when reformulating financial problems for quantum algorithms",
+      "frequency": 1,
+      "example_papers": [
+        "2025_Huot_CorrectionsEnhancingKnapsack.md"
+      ],
+      "status": "pending"
+    },
+    {
+      "tag": "idea:classical-quantum-integration",
+      "category": "idea",
+      "description": "Explicit integration of classical financial models (e.g., Markowitz) with quantum algorithms",
+      "frequency": 1,
+      "example_papers": [
+        "2025_Huot_CorrectionsEnhancingKnapsack.md"
+      ],
+      "status": "pending"
+    },
+    {
+      "tag": "expert-validation-framework",
+      "category": "topic",
+      "description": "Integration of human financial expertise to assess and refine quantum-generated financial solutions",
+      "frequency": 1,
+      "example_papers": [
+        "2025_Innan_QuantumPortfolioOptimization.md"
+      ],
+      "status": "pending"
+    },
+    {
+      "tag": "limitation:ansatz-bias",
+      "category": "limitation",
+      "description": "Bias introduced by specific ansatz architectures or circuit depth choices in quantum algorithms",
+      "frequency": 1,
+      "example_papers": [
+        "2025_Innan_QuantumPortfolioOptimization.md"
+      ],
+      "status": "pending"
+    },
+    {
+      "tag": "idea:adaptive-financial-systems",
+      "category": "idea",
+      "description": "Potential for quantum-classical hybrid systems to adapt dynamically to market fluctuations and investor preferences",
+      "frequency": 1,
+      "example_papers": [
+        "2025_Innan_QuantumPortfolioOptimization.md"
+      ],
+      "status": "pending"
+    },
+    {
+      "tag": "limitation:fixed-parameters",
+      "category": "limitation",
+      "description": "Constraints imposed by fixed algorithmic parameters that may not reflect dynamic market conditions",
+      "frequency": 1,
+      "example_papers": [
+        "2025_Innan_QuantumPortfolioOptimization.md"
+      ],
+      "status": "pending"
+    },
+    {
+      "tag": "quantum-ansatz-benchmarking",
+      "category": "methodology",
+      "description": "Systematic evaluation of different quantum ansatz architectures for financial optimization problems",
+      "frequency": 1,
+      "example_papers": [
+        "2025_Innan_QuantumPortfolioOptimization.md"
+      ],
+      "status": "pending"
+    },
+    {
+      "tag": "idea:competitive-advantage",
+      "category": "idea",
+      "description": "Claims about early adopters of quantum computing gaining a competitive edge in financial services",
+      "frequency": 1,
+      "example_papers": [
+        "2025_JETIR_QuantumFinance.md"
+      ],
+      "status": "pending"
+    },
+    {
+      "tag": "limitation:cost-effectiveness",
+      "category": "limitation",
+      "description": "Lack of analysis on the cost-effectiveness of quantum or hybrid approaches compared to classical alternatives",
+      "frequency": 1,
+      "example_papers": [
+        "2025_JETIR_QuantumFinance.md"
+      ],
+      "status": "pending"
+    },
+    {
+      "tag": "constrained-binary-optimisation",
+      "category": "topic",
+      "description": "Optimisation problems with binary variables and hard constraints, including feasibility-preserving quantum formulations",
+      "frequency": 1,
+      "example_papers": [
+        "2025_Jiang_RasenganTransitionHamiltonian.md"
+      ],
+      "status": "pending"
+    },
+    {
+      "tag": "transition-hamiltonian",
+      "category": "methodology",
+      "description": "Quantum algorithms using transition Hamiltonians to explore feasible solution spaces from an initial feasible state",
+      "frequency": 1,
+      "example_papers": [
+        "2025_Jiang_RasenganTransitionHamiltonian.md"
+      ],
+      "status": "pending"
+    },
+    {
+      "tag": "idea:feasibility-preservation",
+      "category": "idea",
+      "description": "Claims about quantum algorithms maintaining solution feasibility throughout the optimisation process",
+      "frequency": 1,
+      "example_papers": [
+        "2025_Jiang_RasenganTransitionHamiltonian.md"
+      ],
+      "status": "pending"
+    },
+    {
+      "tag": "limitation:constraint-topology",
+      "category": "limitation",
+      "description": "Performance degradation due to complex or irregular constraint structures in optimisation problems",
+      "frequency": 1,
+      "example_papers": [
+        "2025_Jiang_RasenganTransitionHamiltonian.md"
+      ],
+      "status": "pending"
+    },
+    {
+      "tag": "quantum-frameworks",
+      "category": "methodology",
+      "description": "Quantum computing software frameworks and toolkits for algorithm development and hardware integration",
+      "frequency": 1,
+      "example_papers": [
+        "2025_Malhotra_ComparativeStudyQuantum.md"
+      ],
+      "status": "pending"
+    },
+    {
+      "tag": "quantum-hardware-comparison",
+      "category": "topic",
+      "description": "Comparative analysis of quantum hardware platforms, including qubit count, coherence time, and performance metrics",
+      "frequency": 1,
+      "example_papers": [
+        "2025_Malhotra_ComparativeStudyQuantum.md"
+      ],
+      "status": "pending"
+    },
+    {
+      "tag": "limitation:framework-maturity",
+      "category": "limitation",
+      "description": "Limitations related to the maturity, documentation, or ecosystem support of quantum computing frameworks",
+      "frequency": 1,
+      "example_papers": [
+        "2025_Malhotra_ComparativeStudyQuantum.md"
+      ],
+      "status": "pending"
+    },
+    {
+      "tag": "idea:framework-accessibility",
+      "category": "idea",
+      "description": "Claims about the ease of use, documentation quality, or beginner-friendliness of quantum computing frameworks",
+      "frequency": 1,
+      "example_papers": [
+        "2025_Malhotra_ComparativeStudyQuantum.md"
+      ],
+      "status": "pending"
+    },
+    {
+      "tag": "quantum-volume",
+      "category": "methodology",
+      "description": "Use of quantum volume as a metric for evaluating quantum computer performance and scalability",
+      "frequency": 1,
+      "example_papers": [
+        "2025_Malhotra_ComparativeStudyQuantum.md"
+      ],
+      "status": "pending"
+    },
+    {
+      "tag": "idea:systemic-risk-monitoring",
+      "category": "idea",
+      "description": "Claims about quantum computing improving systemic risk assessment by mapping interconnections and simulating shock propagation",
+      "frequency": 1,
+      "example_papers": [
+        "2025_NeelotpalDey_QuantumComputingFinancial.md"
+      ],
+      "status": "pending"
+    },
+    {
+      "tag": "limitation:latency-in-hybrid-workflows",
+      "category": "limitation",
+      "description": "Potential delays introduced by hybrid quantum-classical workflows, critical for real-time applications",
+      "frequency": 1,
+      "example_papers": [
+        "2025_NeelotpalDey_QuantumComputingFinancial.md"
+      ],
+      "status": "pending"
+    },
+    {
+      "tag": "ethical-quantum-finance",
+      "category": "topic",
+      "description": "Ethical considerations in quantum computing applications for finance, including bias, transparency, and data privacy",
+      "frequency": 1,
+      "example_papers": [
+        "2025_NeelotpalDey_QuantumComputingFinancial.md"
+      ],
+      "status": "pending"
+    },
+    {
+      "tag": "idea:quantum-dynamic-systems",
+      "category": "idea",
+      "description": "Claims about quantum algorithms enabling superior control or optimisation of dynamic systems compared to classical methods",
+      "frequency": 1,
+      "example_papers": [
+        "2025_Springer_QuantumFinance.md"
+      ],
+      "status": "pending"
+    },
+    {
+      "tag": "limitation:continuous-time-assumptions",
+      "category": "limitation",
+      "description": "Assumptions about continuous-time models may not hold for discrete or stochastic financial systems",
+      "frequency": 1,
+      "example_papers": [
+        "2025_Springer_QuantumFinance.md"
+      ],
+      "status": "pending"
+    },
+    {
+      "tag": "methodology:quantum-optimal-control",
+      "category": "methodology",
+      "description": "Quantum algorithms applied to optimal control theory, including Hamiltonian-based formulations",
+      "frequency": 1,
+      "example_papers": [
+        "2025_Springer_QuantumFinance.md"
+      ],
+      "status": "pending"
+    },
+    {
+      "tag": "idea:quantum-data-synthesis",
+      "category": "idea",
+      "description": "Claims about quantum computing enabling superior synthetic data generation for risk analysis and stress testing",
+      "frequency": 1,
+      "example_papers": [
+        "2025_ThirumalGunasekaran_ExploringRevolutionaryPotential.md"
+      ],
+      "status": "pending"
+    },
+    {
+      "tag": "limitation:regulatory-barriers",
+      "category": "limitation",
+      "description": "Regulatory and compliance challenges (e.g., GDPR, PCI DSS) hindering quantum adoption in financial services",
+      "frequency": 1,
+      "example_papers": [
+        "2025_ThirumalGunasekaran_ExploringRevolutionaryPotential.md"
+      ],
+      "status": "pending"
+    },
+    {
+      "tag": "limitation:data-access-control",
+      "category": "limitation",
+      "description": "Challenges in managing data access and security for quantum computing in regulated financial environments",
+      "frequency": 1,
+      "example_papers": [
+        "2025_ThirumalGunasekaran_ExploringRevolutionaryPotential.md"
+      ],
+      "status": "pending"
+    },
+    {
+      "tag": "idea:quantum-inspired-algorithms",
+      "category": "idea",
+      "description": "Classical algorithms leveraging quantum principles to achieve computational advantages without quantum hardware",
+      "frequency": 1,
+      "example_papers": [
+        "2025_Vangibhuratha_QuantumMachineLearning.md"
+      ],
+      "status": "pending"
+    },
+    {
+      "tag": "limitation:regulatory-gaps",
+      "category": "limitation",
+      "description": "Underdeveloped regulatory frameworks for quantum machine learning applications in finance",
+      "frequency": 1,
+      "example_papers": [
+        "2025_Vangibhuratha_QuantumMachineLearning.md"
+      ],
+      "status": "pending"
+    },
+    {
+      "tag": "limitation:hardware-cost",
+      "category": "limitation",
+      "description": "High cost of quantum hardware as a barrier to adoption in financial services",
+      "frequency": 1,
+      "example_papers": [
+        "2025_Vangibhuratha_QuantumMachineLearning.md"
+      ],
+      "status": "pending"
+    },
+    {
+      "tag": "time-series-forecasting",
+      "category": "topic",
+      "description": "Quantum-enhanced models for predicting financial time series data, including stock prices and market trends",
+      "frequency": 1,
+      "example_papers": [
+        "2025_Vellaipandiyan_HybridQlstmFramework.md"
+      ],
+      "status": "pending"
+    },
+    {
+      "tag": "hybrid-quantum-classical-ml",
+      "category": "methodology",
+      "description": "Integration of classical machine learning models with quantum computing components for financial applications",
+      "frequency": 1,
+      "example_papers": [
+        "2025_Vellaipandiyan_HybridQlstmFramework.md"
+      ],
+      "status": "pending"
+    },
+    {
+      "tag": "limitation:dataset-scope",
+      "category": "limitation",
+      "description": "Limitations due to narrow or non-representative datasets that may not generalize to broader financial contexts",
+      "frequency": 1,
+      "example_papers": [
+        "2025_Vellaipandiyan_HybridQlstmFramework.md"
+      ],
+      "status": "pending"
+    },
+    {
+      "tag": "quantum-logistics",
+      "category": "topic",
+      "description": "Application of quantum computing to logistics problems such as vehicle routing, supply chain optimization, and delivery scheduling",
+      "frequency": 1,
+      "example_papers": [
+        "2026_Azfar_ShallowRobustQaoa.md"
+      ],
+      "status": "pending"
+    },
+    {
+      "tag": "methodology:hardware-aware-design",
+      "category": "methodology",
+      "description": "Algorithms explicitly co-designed with hardware constraints (e.g., qubit connectivity, gate depth, noise profiles) to improve performance on NISQ devices",
+      "frequency": 1,
+      "example_papers": [
+        "2026_Azfar_ShallowRobustQaoa.md"
+      ],
+      "status": "pending"
+    },
+    {
+      "tag": "methodology:dynamical-decoupling",
+      "category": "methodology",
+      "description": "Error suppression techniques using pulse-level control sequences (e.g., XpXm) to mitigate decoherence and gate errors in quantum circuits",
+      "frequency": 1,
+      "example_papers": [
+        "2026_Azfar_ShallowRobustQaoa.md"
+      ],
+      "status": "pending"
+    },
+    {
+      "tag": "idea:ansatz-expressiveness-tradeoff",
+      "category": "idea",
+      "description": "Trade-offs between ansatz expressiveness and hardware feasibility, where simplified ans\u00e4tze may improve noise robustness at the cost of solution quality",
+      "frequency": 1,
+      "example_papers": [
+        "2026_Azfar_ShallowRobustQaoa.md"
+      ],
+      "status": "pending"
+    },
+    {
+      "tag": "contradiction:error-mitigation-effectiveness",
+      "category": "contradiction",
+      "description": "Paper contradicts prior claims about the effectiveness of advanced error mitigation techniques (e.g., ZNE, Pauli twirling) in improving quantum algorithm performance",
+      "frequency": 1,
+      "example_papers": [
+        "2026_Azfar_ShallowRobustQaoa.md"
+      ],
+      "status": "pending"
+    },
+    {
+      "tag": "encoding-strategies",
+      "category": "methodology",
+      "description": "Quantum data encoding techniques for financial variables, including multi-qubit and multi-asset representations",
+      "frequency": 1,
+      "example_papers": [
+        "2026_Barbaresco_QPortQuantum.md"
+      ],
+      "status": "pending"
+    },
+    {
+      "tag": "idea:encoding-tradeoffs",
+      "category": "idea",
+      "description": "Trade-offs between encoding efficiency (qubit usage) and solution precision in quantum financial algorithms",
+      "frequency": 1,
+      "example_papers": [
+        "2026_Barbaresco_QPortQuantum.md"
+      ],
+      "status": "pending"
+    },
+    {
+      "tag": "limitation:encoding-granularity",
+      "category": "limitation",
+      "description": "Loss of granularity or precision due to compressed encoding strategies in quantum financial models",
+      "frequency": 1,
+      "example_papers": [
+        "2026_Barbaresco_QPortQuantum.md"
+      ],
+      "status": "pending"
+    },
+    {
+      "tag": "quantum-resource-efficiency",
+      "category": "topic",
+      "description": "Analysis and optimization of qubit, gate, and circuit resources in quantum financial applications",
+      "frequency": 1,
+      "example_papers": [
+        "2026_Barbaresco_QPortQuantum.md"
+      ],
+      "status": "pending"
+    },
+    {
+      "tag": "limitation:benchmark-comparison",
+      "category": "limitation",
+      "description": "Lack of comparison with state-of-the-art classical or quantum benchmarks beyond basic methods",
+      "frequency": 1,
+      "example_papers": [
+        "2026_Barbaresco_QPortQuantum.md"
+      ],
+      "status": "pending"
+    },
+    {
+      "tag": "quantum-amplitude-estimation-variants",
+      "category": "methodology",
+      "description": "Specific variants of Quantum Amplitude Estimation (e.g., IAE, MLAE) tailored for financial applications",
+      "frequency": 1,
+      "example_papers": [
+        "2026_Barbaresco_QuantumAmplitudeEstimation.md"
+      ],
+      "status": "pending"
+    },
+    {
+      "tag": "limitation:discretization-resolution",
+      "category": "limitation",
+      "description": "Insufficient discretization resolution in quantum encodings to capture low-probability, high-impact financial events",
+      "frequency": 1,
+      "example_papers": [
+        "2026_Barbaresco_QuantumAmplitudeEstimation.md"
+      ],
+      "status": "pending"
+    },
+    {
+      "tag": "idea:adaptive-encoding",
+      "category": "idea",
+      "description": "Proposals for adaptive or nonuniform data encoding strategies to improve quantum algorithm performance in finance",
+      "frequency": 1,
+      "example_papers": [
+        "2026_Barbaresco_QuantumAmplitudeEstimation.md"
+      ],
+      "status": "pending"
+    },
+    {
+      "tag": "quantum-payoff-encoding",
+      "category": "methodology",
+      "description": "Techniques for encoding financial payoff functions into quantum circuits, including piecewise linear transformations and controlled rotations",
+      "frequency": 1,
+      "example_papers": [
+        "2026_Barbaresco_QuantumAmplitudeEstimation.md"
+      ],
+      "status": "pending"
+    },
+    {
+      "tag": "quantum-education",
+      "category": "topic",
+      "description": "Educational resources, curricula, or pedagogical approaches for quantum computing in finance",
+      "frequency": 1,
+      "example_papers": [
+        "2026_DECCANINTERNATIONALACADEMICPUBLISHERS_QuantumComputingAlgorithms.md"
+      ],
+      "status": "pending"
+    },
+    {
+      "tag": "quantum-architectures",
+      "category": "methodology",
+      "description": "Hardware platforms for quantum computing, including superconducting qubits, trapped ions, and photonic systems",
+      "frequency": 1,
+      "example_papers": [
+        "2026_DECCANINTERNATIONALACADEMICPUBLISHERS_QuantumComputingAlgorithms.md"
+      ],
+      "status": "pending"
+    },
+    {
+      "tag": "limitation:lack-of-peer-review",
+      "category": "limitation",
+      "description": "Claims or findings not validated through traditional peer-review processes",
+      "frequency": 1,
+      "example_papers": [
+        "2026_DECCANINTERNATIONALACADEMICPUBLISHERS_QuantumComputingAlgorithms.md"
+      ],
+      "status": "pending"
+    },
+    {
+      "tag": "idea:knowledge-dissemination",
+      "category": "idea",
+      "description": "Emphasis on the importance of academic and professional education for quantum computing adoption",
+      "frequency": 1,
+      "example_papers": [
+        "2026_DECCANINTERNATIONALACADEMICPUBLISHERS_QuantumComputingAlgorithms.md"
+      ],
+      "status": "pending"
+    },
+    {
+      "tag": "limitation:proprietary-data-gap",
+      "category": "limitation",
+      "description": "Absence of real-world or proprietary financial datasets in algorithm validation",
+      "frequency": 1,
+      "example_papers": [
+        "2026_DECCANINTERNATIONALACADEMICPUBLISHERS_QuantumComputingAlgorithms.md"
+      ],
+      "status": "pending"
+    },
+    {
+      "tag": "quantum-differential-equations",
+      "category": "topic",
+      "description": "Quantum algorithms for solving ordinary and partial differential equations in financial modeling",
+      "frequency": 1,
+      "example_papers": [
+        "2026_Dechant_ErrorResourceEstimates.md"
+      ],
+      "status": "pending"
+    },
+    {
+      "tag": "runge-kutta-methods",
+      "category": "methodology",
+      "description": "Classical Runge-Kutta methods adapted for quantum algorithms to solve differential equations",
+      "frequency": 1,
+      "example_papers": [
+        "2026_Dechant_ErrorResourceEstimates.md"
+      ],
+      "status": "pending"
+    },
+    {
+      "tag": "limitation:representation-error",
+      "category": "limitation",
+      "description": "Errors arising from the choice of quantum Ansatz in variational algorithms, not accounted for in some analyses",
+      "frequency": 1,
+      "example_papers": [
+        "2026_Dechant_ErrorResourceEstimates.md"
+      ],
+      "status": "pending"
+    },
+    {
+      "tag": "idea:resource-optimization",
+      "category": "idea",
+      "description": "Strategies for minimizing quantum resource usage (e.g., circuit evaluations, measurements) in financial applications",
+      "frequency": 1,
+      "example_papers": [
+        "2026_Dechant_ErrorResourceEstimates.md"
+      ],
+      "status": "pending"
+    },
+    {
+      "tag": "parameter-extrapolation",
+      "category": "methodology",
+      "description": "Techniques for deriving optimal quantum algorithm parameters for large problems from smaller subproblems",
+      "frequency": 1,
+      "example_papers": [
+        "2026_Dehn_ExtrapolationMethodOptimize.md"
+      ],
+      "status": "pending"
+    },
+    {
+      "tag": "idea:quantum-scaling-advantage",
+      "category": "idea",
+      "description": "Claims about quantum algorithms demonstrating superior runtime scaling exponents compared to classical counterparts",
+      "frequency": 1,
+      "example_papers": [
+        "2026_Dehn_ExtrapolationMethodOptimize.md"
+      ],
+      "status": "pending"
+    },
+    {
+      "tag": "limitation:extrapolation-validity",
+      "category": "limitation",
+      "description": "Uncertainty about whether parameter extrapolation from small subproblems generalizes to larger, real-world problems",
+      "frequency": 1,
+      "example_papers": [
+        "2026_Dehn_ExtrapolationMethodOptimize.md"
+      ],
+      "status": "pending"
+    },
+    {
+      "tag": "quantum-runtime-metrics",
+      "category": "methodology",
+      "description": "Quantification of quantum algorithm performance using circuit depth, gate count, or other hardware-agnostic metrics",
+      "frequency": 1,
+      "example_papers": [
+        "2026_Dehn_ExtrapolationMethodOptimize.md"
+      ],
+      "status": "pending"
+    },
+    {
+      "tag": "contradiction:scaling-claims",
+      "category": "contradiction",
+      "description": "Paper contradicts broader literature on the scalability or advantage of quantum algorithms for specific problems",
+      "frequency": 1,
+      "example_papers": [
+        "2026_Dehn_ExtrapolationMethodOptimize.md"
+      ],
+      "status": "pending"
+    },
+    {
+      "tag": "quantum-agentic-frameworks",
+      "category": "methodology",
+      "description": "Multi-agent systems designed to orchestrate end-to-end quantum workflows in financial applications",
+      "frequency": 1,
+      "example_papers": [
+        "2026_Ganguly_AutonomousQuantumAgents.md"
+      ],
+      "status": "pending"
+    },
+    {
+      "tag": "quantum-governance-models",
+      "category": "topic",
+      "description": "Frameworks for managing quantum resource permissions, reproducibility, and vendor-agnostic execution in financial contexts",
+      "frequency": 1,
+      "example_papers": [
+        "2026_Ganguly_AutonomousQuantumAgents.md"
+      ],
+      "status": "pending"
+    },
+    {
+      "tag": "macroeconomic-forecasting",
+      "category": "topic",
+      "description": "Quantum-enhanced models for predicting macroeconomic indicators, systemic risk, and policy-relevant scenarios",
+      "frequency": 1,
+      "example_papers": [
+        "2026_Gnal_ScenarioBasedMacroeconomic.md"
+      ],
+      "status": "pending"
+    },
+    {
+      "tag": "quantum-scenario-analysis",
+      "category": "methodology",
+      "description": "Quantum algorithms for generating and evaluating financial or macroeconomic scenarios under uncertainty",
+      "frequency": 1,
+      "example_papers": [
+        "2026_Gnal_ScenarioBasedMacroeconomic.md"
+      ],
+      "status": "pending"
+    },
+    {
+      "tag": "quantum-kernel-methods",
+      "category": "methodology",
+      "description": "Quantum kernel methods for classification and feature mapping in financial datasets",
+      "frequency": 1,
+      "example_papers": [
+        "2026_Gnal_ScenarioBasedMacroeconomic.md"
+      ],
+      "status": "pending"
+    },
+    {
+      "tag": "limitation:interpretability",
+      "category": "limitation",
+      "description": "Challenges in interpreting quantum model outputs for policy or regulatory decision-making",
+      "frequency": 1,
+      "example_papers": [
+        "2026_Gnal_ScenarioBasedMacroeconomic.md"
+      ],
+      "status": "pending"
+    },
+    {
+      "tag": "limitation:non-stationarity",
+      "category": "limitation",
+      "description": "Difficulties in handling non-stationary data or regime shifts in quantum-enhanced financial models",
+      "frequency": 1,
+      "example_papers": [
+        "2026_Gnal_ScenarioBasedMacroeconomic.md"
+      ],
+      "status": "pending"
+    },
+    {
+      "tag": "quantum-logistics-optimisation",
+      "category": "topic",
+      "description": "Quantum algorithms applied to supply chain, routing, and logistics problems in financial and industrial contexts",
+      "frequency": 1,
+      "example_papers": [
+        "2026_Mahmod_StateQuantumComputing.md"
+      ],
+      "status": "pending"
+    },
+    {
+      "tag": "quantum-gradient-descent",
+      "category": "methodology",
+      "description": "Quantum variants of gradient descent algorithms for optimisation and machine learning tasks",
+      "frequency": 1,
+      "example_papers": [
+        "2026_Mahmod_StateQuantumComputing.md"
+      ],
+      "status": "pending"
+    },
+    {
+      "tag": "limitation:workforce-shortage",
+      "category": "limitation",
+      "description": "Scarcity of specialized expertise in quantum computing limits adoption and scalability in financial services",
+      "frequency": 1,
+      "example_papers": [
+        "2026_Mahmod_StateQuantumComputing.md"
+      ],
+      "status": "pending"
+    },
+    {
+      "tag": "contradiction:broad-quantum-advantage",
+      "category": "contradiction",
+      "description": "Disputes claims of quantum advantage being broadly applicable beyond specific, narrow use cases",
+      "frequency": 1,
+      "example_papers": [
+        "2026_Mahmod_StateQuantumComputing.md"
+      ],
+      "status": "pending"
+    },
+    {
+      "tag": "quantum-clustering",
+      "category": "methodology",
+      "description": "Quantum algorithms for clustering tasks, including quantum K-means and other unsupervised learning approaches",
+      "frequency": 1,
+      "example_papers": [
+        "2026_Nawaz_ExploringQuantumMachine.md"
+      ],
+      "status": "pending"
+    },
+    {
+      "tag": "quantum-dimensionality-reduction",
+      "category": "methodology",
+      "description": "Quantum techniques for reducing data dimensionality, such as Quantum Principal Component Analysis (QPCA)",
+      "frequency": 1,
+      "example_papers": [
+        "2026_Nawaz_ExploringQuantumMachine.md"
+      ],
+      "status": "pending"
+    },
+    {
+      "tag": "limitation:hardware-variability",
+      "category": "limitation",
+      "description": "Performance inconsistencies across different quantum hardware platforms and architectures",
+      "frequency": 1,
+      "example_papers": [
+        "2026_Nawaz_ExploringQuantumMachine.md"
+      ],
+      "status": "pending"
+    },
+    {
+      "tag": "idea:dynamic-quantum-algorithms",
+      "category": "idea",
+      "description": "Adaptive or dynamic quantum algorithms designed to improve noise resilience or optimization performance",
+      "frequency": 1,
+      "example_papers": [
+        "2026_Nawaz_ExploringQuantumMachine.md"
+      ],
+      "status": "pending"
+    },
+    {
+      "tag": "stochastic-differential-equations",
+      "category": "topic",
+      "description": "Quantum algorithms for solving stochastic differential equations in finance and other domains",
+      "frequency": 1,
+      "example_papers": [
+        "2026_Prasad_QuantumAlgorithmsStochastic.md"
+      ],
+      "status": "pending"
+    },
+    {
+      "tag": "quantum-random-number-generation",
+      "category": "methodology",
+      "description": "Quantum algorithms for generating random numbers used in stochastic processes and simulations",
+      "frequency": 1,
+      "example_papers": [
+        "2026_Prasad_QuantumAlgorithmsStochastic.md"
+      ],
+      "status": "pending"
+    },
+    {
+      "tag": "idea:barren-plateau-mitigation",
+      "category": "idea",
+      "description": "Strategies to mitigate barren plateaus in variational quantum algorithms for financial applications",
+      "frequency": 1,
+      "example_papers": [
+        "2026_Prasad_QuantumAlgorithmsStochastic.md"
+      ],
+      "status": "pending"
+    },
+    {
+      "tag": "limitation:state-space-truncation",
+      "category": "limitation",
+      "description": "Bias introduced by truncating state space in quantum simulations of financial models",
+      "frequency": 1,
+      "example_papers": [
+        "2026_Prasad_QuantumAlgorithmsStochastic.md"
+      ],
+      "status": "pending"
+    },
+    {
+      "tag": "limitation:discretization-assumptions",
+      "category": "limitation",
+      "description": "Constraints imposed by discretization assumptions in high-dimensional quantum simulations",
+      "frequency": 1,
+      "example_papers": [
+        "2026_Prasad_QuantumAlgorithmsStochastic.md"
       ],
       "status": "pending"
     }

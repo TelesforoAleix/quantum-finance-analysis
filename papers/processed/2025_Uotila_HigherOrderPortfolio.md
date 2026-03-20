@@ -17,13 +17,12 @@ idea_tags:
 - idea:quantum-advantage
 - idea:near-term-feasibility
 - idea:hybrid-approach
-journal_or_venue: 2025 IEEE International Conference on Quantum Computing and Engineering
+journal_or_venue: IEEE International Conference on Quantum Computing and Engineering
   (QCE)
 methodology_tags:
 - QAOA
 - QUBO
 - variational
-- classical-simulation
 paper_type: ''
 quantum_advantage_claim: speculative
 related_papers: []
@@ -31,17 +30,17 @@ relevance_phase1: high
 relevance_phase3: high
 source_type: conference-paper
 source_type_confidence: high
-step1_date: '2026-03-19T13:49:01.879582'
+step1_date: '2026-03-20T00:37:58.849470'
 step1_model: Mistral-Large-3
-step2_date: '2026-03-19T13:49:06.285848'
+step2_date: '2026-03-20T00:38:03.207568'
 step2_model: Mistral-Large-3
-step3_date: '2026-03-19T13:49:14.069748'
+step3_date: '2026-03-20T00:38:15.227144'
 step3_model: Mistral-Large-3
-step4_date: '2026-03-19T13:50:22.315431'
+step4_date: '2026-03-20T00:38:23.012294'
 step4_model: Mistral-Large-3
-step5_date: '2026-03-19T13:50:36.064313'
+step5_date: '2026-03-20T00:40:10.021128'
 step5_model: Mistral-Large-3
-step6_date: '2026-03-19T13:50:43.809215'
+step6_date: '2026-03-20T00:40:13.054323'
 step6_model: Mistral-Large-3
 steps_completed:
 - 1
@@ -55,7 +54,6 @@ tags:
 - method/QAOA
 - method/QUBO
 - method/variational
-- method/classical-simulation
 - idea/quantum-advantage
 - idea/near-term-feasibility
 - idea/hybrid-approach
@@ -69,78 +67,76 @@ zotero_key: ''
 ---
 
 ## Abstract summary
-This paper introduces a quantum formulation for portfolio optimization that incorporates higher-order moments (skewness and kurtosis) to better model return distributions. Unlike classical approaches, which often assume normally distributed returns, this method translates the problem into a higher-order unconstrained binary optimization (HUBO) framework solvable via the Quantum Approximate Optimization Algorithm (QAOA). The study benchmarks the quantum approach against classical continuous-variable solutions with integer programming-based discretization, demonstrating that the HUBO formulation frequently yields superior portfolio allocations.
+This paper introduces a quantum formulation for portfolio optimization that incorporates higher-order moments (skewness and kurtosis) to better model return distributions. Unlike classical approaches, which often assume normally distributed returns, this method translates the problem into a higher-order unconstrained binary optimization (HUBO) suitable for quantum algorithms like QAOA. The study benchmarks the quantum approach against classical continuous-variable solutions with integer programming-based discretization, demonstrating that the HUBO formulation often yields superior portfolio allocations.
 ## Methodology
-The paper presents an empirical study on higher-order portfolio optimization using the Quantum Approximate Optimization Algorithm (QAOA). The research develops a quantum formulation for portfolio optimization that incorporates higher-order moments (skewness and kurtosis), leading to a higher-order unconstrained binary optimization (HUBO) problem. The methodology involves encoding realistic integer variables and a capital-based budget constraint into the quantum framework. The study compares the quantum approach with classical continuous variable solutions discretized via integer programming. The experimental evaluation includes 100 randomly generated portfolio optimization problems using stock market data from the Dow Jones Industrial Average (DJIA). The QAOA performance is benchmarked against classical baselines, and the exact spectrum of the HUBO problems is computed for smaller instances (less than 14 qubits). The evaluation metrics focus on the normalized value of the cost function and budget utilization.
+The paper presents an empirical study on higher-order portfolio optimization using the Quantum Approximate Optimization Algorithm (QAOA). The research develops a quantum formulation for portfolio optimization that includes higher-order moments (skewness and kurtosis), leading to a higher-order unconstrained binary optimization (HUBO) problem. The methodology involves encoding realistic integer variables and a capital-based budget constraint into the quantum framework. The study benchmarks the QAOA performance against classical continuous variable solutions with integer programming-based discretization. Experiments are conducted on 100 randomly generated portfolio optimization problems using stock market data from the Dow Jones Industrial Average (DJIA) over a 10-year period. The QAOA circuit is constructed from the Hamiltonian representing the HUBO problem, and classical optimizers are employed in the quantum-classical optimization loop. The evaluation metrics include normalized portfolio returns, budget utilization, and comparison against classical baselines.
 
 **Algorithms used:** QAOA
 **Frameworks:** Qiskit, PennyLane, SciPy, CVXPY
 
-**Experimental setup:** Experiments were conducted using quantum simulators, specifically targeting up to 15 qubits. The QAOA circuits were constructed and optimized using classical optimizers such as CMA-ES (Covariance Matrix Adaptation Evolution Strategy). The classical baseline solutions were obtained using Sequential Least Squares Programming (SLSQP) for continuous variable optimization and CVXPY for integer programming-based discretization. The exact solutions for smaller problems (6-13 qubits) were computed using standard eigenvalue solvers, while sparse eigenvalue solvers were used for 14-15 qubit problems.
+**Experimental setup:** Experiments were conducted using a quantum simulator with up to 15 qubits. The study utilized stock market data from the Dow Jones Industrial Average (DJIA) spanning 10 years (2015-2025). Portfolio optimization problems were randomly generated by sampling between 2 and 10 companies from the DJIA and assigning random budgets up to $6000. The QAOA circuits were constructed for each problem instance, and classical optimizers (e.g., CMA-ES) were used in the optimization loop. Exact eigensolvers were employed for problems with fewer than 14 qubits, while sparse eigensolvers were used for 14-15 qubit problems.
 
-**Dataset:** Stock market data from the Dow Jones Industrial Average (DJIA) spanning ten years (January 1, 2015, to January 1, 2025) was used. The dataset includes 30 large, publicly traded U.S. companies across various industries. Randomly sampled subsets of 2 to 10 companies were selected to create 100 portfolio optimization problems with budgets limited to $6000.
+**Dataset:** Historical stock prices from the Dow Jones Industrial Average (DJIA) index, consisting of 30 large publicly traded U.S. companies across various industries.
 ## Findings
-- [supported] The paper develops the first quantum formulation for portfolio optimization with higher-order moments (skewness and kurtosis), enabling more realistic modeling of portfolio return distributions.
-- [supported] Experimental evaluation of 100 portfolio optimization problems shows that the higher-order unconstrained binary optimization (HUBO) formulation often produces better portfolio allocations than the classical continuous variable formulation with integer programming-based discretization.
-- [supported] The HUBO formulation demonstrates potential for encoding portfolio allocations that outperform classical baselines, as shown in Table II and Figure 6, motivating further research into quantum methods for higher-order optimization.
-- [supported] QAOA performance on HUBO problems is benchmarked, with results indicating challenges in matching the solution quality of exact methods or classical algorithms, particularly as qubit counts increase (6-15 qubits tested).
-- [supported] The average QAOA enhancement factor is 14.43x, meaning the probability of measuring the optimal state is significantly higher than random sampling, though performance varies widely (3.79x to 108.94x).
-- [supported] Higher-order portfolio optimization (HUBO) produces more diverse portfolios compared to mean-variance (QUBO) formulations, as measured by KL divergence from uniform allocations (Figure 5b).
-- [speculative] Quantum advantage may emerge for HUBO problems due to classical solvers' limitations in handling higher-order terms, though current hardware constraints limit practical demonstration.
-- [speculative] The rugged optimization landscape of HUBO problems, with many local minima (Figure 5c), suggests that modified QAOA strategies (e.g., tensor networks, Bayesian optimizers) could improve performance.
-- [supported] The capital-based budget constraint and integer variable encoding in the quantum formulation align more closely with real-world portfolio optimization requirements than prior quantum approaches (Table I).
-- [disputed] The paper claims that higher-order moments (skewness/kurtosis) are necessary due to non-normal return distributions (Figure 3), but this is debated in finance literature where mean-variance models remain dominant for practical applications.
+- [supported] The paper presents the first quantum formulation for portfolio optimization with higher-order moments (skewness and kurtosis), extending beyond traditional mean-variance optimization to better model return distributions.
+- [supported] Experimental evaluation on 100 portfolio optimization problems shows that the higher-order unconstrained binary optimization (HUBO) formulation often yields better portfolio allocations than the classical continuous variable formulation with integer programming-based discretization.
+- [supported] The HUBO formulation requires more qubits and deeper circuits than quadratic unconstrained binary optimization (QUBO), with gate counts and circuit depths scaling less favorably for higher-order terms (Fig. 5a).
+- [supported] QAOA performance on HUBO problems degrades as qubit count increases, with optimization challenges attributed to rugged landscapes and many local minima (Fig. 5c).
+- [supported] The average QAOA enhancement factor across all cases is 14.43x, meaning the probability of measuring the optimal state is 14.43 times higher than random sampling, though this varies widely (range: 3.79x to 108.94x).
+- [supported] Higher-order portfolio optimization produces more diverse portfolios compared to mean-variance optimization, as measured by KL divergence from uniform allocations (Fig. 5b).
+- [speculative] The authors suggest that quantum-native approaches to HUBO problems could address scalability limitations faced by classical methods, though this is not empirically validated in the paper.
+- [speculative] Future improvements to QAOA, such as tensor networks or Bayesian optimizers, may enhance performance on HUBO problems, but this remains untested.
 
-**Results summary:** The paper introduces a quantum formulation for portfolio optimization incorporating higher-order moments (skewness and kurtosis) via a higher-order unconstrained binary optimization (HUBO) approach. Experimental results on 100 problem instances demonstrate that the HUBO formulation frequently outperforms classical continuous variable methods in solution quality, though QAOA struggles to match exact or classical baselines as problem size grows. The study highlights the potential of quantum methods for more realistic portfolio modeling but identifies optimization challenges, including rugged landscapes and scalability limitations. Comparative analysis shows HUBO produces more diversified portfolios than QUBO (mean-variance) formulations, and the quantum approach achieves a 14.43x average enhancement in measuring optimal states over random sampling.
+**Results summary:** The paper introduces a quantum formulation for portfolio optimization incorporating higher-order moments (skewness and kurtosis) via a higher-order unconstrained binary optimization (HUBO) model. Experimental results on 100 portfolio problems demonstrate that HUBO often outperforms classical continuous variable methods in solution quality, though QAOA struggles with scalability and optimization complexity as qubit counts increase. The study highlights the trade-off between improved modeling realism (via higher-order terms) and increased quantum resource requirements. While HUBO shows promise for more diverse portfolio allocations, its practical advantage over classical methods remains limited by current quantum hardware and algorithmic maturity.
 
 **Performance claims:**
-- HUBO formulation outperforms classical baselines in 53% of cases (min-max normalized objective ≥ 0.95) for budget utilization between 95-105% (Table II).
-- QAOA achieves an average 14.43x enhancement factor in measuring optimal states compared to random sampling.
-- HUBO solutions maintain closer proximity to uniform allocations (lower KL divergence) than QUBO, indicating greater portfolio diversification (Figure 5b).
-- QAOA performance degrades with increasing qubit counts (6-15 qubits tested), with only 3-23% of cases matching exact solutions (Table II).
-- Optimal λ values for budget constraint penalization in QAOA are typically >1, with higher values improving performance.
+- 74% of HUBO solutions achieved budget utilization between 95% and 105% (Table II).
+- 70% of HUBO solutions achieved a min-max normalized objective value ≥0.95 (Table II).
+- 50% of HUBO solutions met both budget utilization and objective value thresholds (Table II).
+- QAOA enhancement factor of 14.43x (average) for measuring optimal states compared to random sampling.
+- HUBO circuits require significantly more gates and deeper depths than QUBO for the same problem size (Fig. 5a).
 ## Quantum advantage claim
 **Classification:** speculative
 
-The paper suggests theoretical potential for quantum advantage in solving HUBO-based portfolio optimization due to classical methods' exponential complexity with higher-order terms. However, all results are from simulations, and the claimed advantage is not demonstrated on real hardware. Performance gaps between QAOA and exact/classical methods further temper the speculation.
+The paper claims potential quantum advantage for HUBO-based portfolio optimization due to classical methods' scalability limitations, but this is not empirically demonstrated. Results are based on simulations, and QAOA performance degrades with problem size. The advantage is framed as theoretical, contingent on future algorithmic and hardware improvements.
 ## Limitations
-- Experiments limited to 15 qubits due to simulator resource constraints [inferred]
-- No testing on real quantum hardware, only simulations were performed
-- QAOA performance degrades as the number of qubits increases, indicating scalability challenges
-- Budget constraint encoding does not strictly prevent over-investment, only penalizes it equally with under-investment
-- Higher-order terms (skewness and kurtosis) have small impact on the spectrum for small qubit counts (10^-9 to 10^-11 difference from QUBO)
-- Optimal λ parameter for budget constraint penalty varies across problem instances and requires manual tuning
-- Classical optimizers used in QAOA subroutine may not be optimal for higher-order optimization landscapes
-- No noise mitigation techniques were applied, which may affect results on real hardware [inferred]
-- Page-limit constraints likely prevented deeper analysis of optimization landscapes and parameter sensitivity [inferred]
-- Dataset limited to Dow Jones Industrial Average stocks, which may not represent broader market diversity [inferred]
-- No comparison with state-of-the-art classical HUBO solvers beyond basic integer programming approaches
-- QAOA enhancement factor varies significantly (3.79x to 108.94x), indicating inconsistent performance across problem instances
+- Experiments limited to a maximum of 15 qubits due to simulator constraints, restricting scalability assessment [inferred]
+- QAOA performance degrades as the number of qubits increases, indicating challenges in optimizing higher-order portfolio problems with current methods
+- Budget constraint encoding in the quantum formulation does not strictly prevent over-investment, treating under- and over-budget allocations equally due to symmetric penalty term (z⊤pτ − C)²
+- Higher-order terms (skewness and kurtosis) have minimal impact on the eigenvalue spectrum for small qubit counts (differences at 10⁻⁹ to 10⁻¹¹ level), limiting their practical influence in early-stage experiments
+- Lack of real quantum hardware validation; all experiments conducted on simulators, which may not capture hardware noise, decoherence, or gate errors [inferred]
+- No comparison with state-of-the-art classical HUBO solvers (e.g., tensor networks, advanced integer programming), limiting benchmarking rigor [inferred]
+- Optimization landscape for higher-order portfolio problems is rugged with many local minima, posing challenges for gradient-free optimizers like CMA-ES
+- Selection of hyperparameters (e.g., λ for budget constraint, risk aversion values q₀, q₁, q₂) is ad-hoc and may not generalize across problem instances
+- Dataset limited to synthetic portfolio problems derived from DJIA stocks, with no validation on real-world financial datasets or alternative asset classes [inferred]
+- Page-limit constraints of the conference paper may have omitted detailed analysis of optimizer performance, noise resilience, or alternative QAOA variants [inferred]
+- No empirical validation of the claimed advantage of higher-order moments in improving portfolio diversification under realistic market conditions
+- QAOA enhancement factor (14.43x on average) may not translate to practical advantages on noisy quantum hardware [inferred]
 ## Open questions
-- How does QAOA perform on higher-order portfolio optimization problems with more than 15 qubits?
-- What is the impact of quantum hardware noise on the solution quality for this HUBO formulation?
-- Can alternative quantum algorithms (e.g., digitized counterdiabatic approaches) better handle the complex optimization landscapes of HUBO problems?
-- How sensitive is the solution quality to the choice of risk aversion parameters (q0, q1, q2)?
-- What is the minimum qubit count required for quantum advantage in higher-order portfolio optimization?
-- How does the performance compare between capital-based and asset-based budget constraints in quantum formulations?
-- What is the relationship between the spectral properties of HUBO problems and QAOA trainability?
-- Can hybrid quantum-classical approaches (e.g., tensor networks) improve solution quality for larger problem instances?
-- How do different classical optimizers affect QAOA's performance on HUBO problems beyond the CMA-ES results shown?
-- What is the impact of different variable encoding schemes on solution quality and circuit depth?
+- How does QAOA performance scale beyond 15 qubits for higher-order portfolio optimization problems?
+- What is the impact of hardware noise (e.g., gate errors, decoherence) on the solution quality of HUBO-based portfolio optimization?
+- Can alternative quantum algorithms (e.g., digitized counterdiabatic QAOA, VQE) outperform standard QAOA for higher-order financial problems?
+- How do the weights of higher-order moments (skewness, kurtosis) affect the optimization landscape and solution quality in practice?
+- What is the trade-off between portfolio diversification (favored by HUBO) and computational tractability on near-term quantum devices?
+- Can hybrid quantum-classical approaches (e.g., tensor networks for classical subroutines) mitigate the scalability limitations of QAOA for HUBO problems?
+- How does the choice of budget constraint encoding (e.g., logarithmic vs. symmetric penalty) influence solution feasibility and optimality?
+- What are the real-world financial implications of including higher-order moments in portfolio optimization, beyond synthetic datasets?
+- Can Bayesian optimization or other advanced classical optimizers improve QAOA’s performance for HUBO problems?
+- How does the performance of quantum solvers compare to classical HUBO solvers (e.g., graph neural networks, simulated annealing) for large-scale problems?
 
 **Future work:**
-- Test the algorithm on real quantum hardware (e.g., IBM Eagle processor)
-- Develop and evaluate noise mitigation techniques for HUBO problems on NISQ devices
-- Explore alternative quantum algorithms for higher-order optimization (e.g., bias-field digitized counterdiabatic approaches)
-- Investigate tensor network methods for improving QAOA performance on HUBO problems
-- Extend the evaluation to larger problem sizes (beyond 15 qubits) using more efficient simulators or quantum hardware
-- Develop automated methods for selecting optimal λ parameters for budget constraints
-- Compare performance with state-of-the-art classical HUBO solvers
-- Explore Bayesian optimization for QAOA parameter tuning in HUBO problems
-- Investigate the impact of different risk aversion parameter settings on portfolio diversity and solution quality
-- Apply the higher-order formulation to other financial optimization problems beyond portfolio optimization
-- Develop methods to strictly enforce budget constraints in quantum formulations without excessive qubit overhead
-- Study the relationship between portfolio diversification and higher-order moments in quantum formulations
+- Extend experiments to real quantum hardware (e.g., IBM Eagle, Rigetti) to validate simulator results under noise
+- Investigate alternative QAOA variants (e.g., adaptive QAOA, multi-angle QAOA) to improve optimization of higher-order terms
+- Benchmark against state-of-the-art classical HUBO solvers (e.g., tensor networks, integer programming) to establish quantum advantage baselines
+- Explore hybrid quantum-classical approaches (e.g., quantum-enhanced tensor networks) to scale beyond 15 qubits
+- Develop noise-resilient encodings for budget constraints to prevent over-investment in quantum formulations
+- Validate the practical benefits of higher-order moments (skewness, kurtosis) using real-world financial datasets and backtesting
+- Optimize hyperparameters (e.g., λ, risk aversion values) systematically using automated tuning methods
+- Study the impact of alternative variable encodings (e.g., one-hot, binary-reflected Gray codes) on QAOA performance
+- Apply digitized counterdiabatic quantum algorithms to higher-order portfolio optimization to mitigate optimization challenges
+- Investigate the use of Bayesian optimization or other gradient-free methods for QAOA parameter optimization in HUBO problems
+- Extend the framework to multi-period portfolio optimization or dynamic rebalancing scenarios
+- Explore the integration of quantum machine learning techniques (e.g., quantum kernels) to improve moment estimation in portfolio optimization
 ## Key ideas
 - #idea:quantum-advantage — First quantum formulation for portfolio optimization incorporating higher-order moments (skewness/kurtosis) via HUBO, outperforming classical continuous variable approaches in solution quality for 100 instances
 - #idea:near-term-feasibility — Demonstrates QAOA's applicability to higher-order portfolio optimization on simulated hardware, though scalability to larger asset universes remains untested
@@ -149,8 +145,6 @@ The paper suggests theoretical potential for quantum advantage in solving HUBO-b
 - #limitation:qubit-count — Integer variable encoding introduces logarithmic qubit overhead, potentially limiting problem size on near-term devices
 - #limitation:noise — Potential noise and decoherence effects not accounted for due to simulation-only experiments
 - #limitation:data-encoding — Logarithmic overhead in qubit requirements for integer-to-binary variable encoding limits practical applicability
-- #contradiction:scalability — QAOA performance degrades with increasing qubit counts (6-15 qubits), with only 3-23% of cases matching exact solutions, contradicting claims of scalability
-- #contradiction:classical-vs-quantum — The necessity of higher-order moments (skewness/kurtosis) is disputed in finance literature, where mean-variance models remain dominant for practical applications
 ## Contradictions
 - The paper claims superiority of HUBO-based portfolio optimization over classical methods, but QAOA performance degrades with increasing qubit counts (6-15 qubits), with only 3-23% of cases matching exact solutions, undermining scalability claims.
 - The paper argues that higher-order moments (skewness/kurtosis) are necessary due to non-normal return distributions, but this is debated in finance literature where mean-variance (QUBO) models remain widely used for practical applications.
@@ -159,3 +153,29 @@ The paper suggests theoretical potential for quantum advantage in solving HUBO-b
 
 ## Researcher notes
 <!-- Researcher-added — not LLM generated -->
+
+## Experiment details
+### Input
+{'source': 'Downloaded from Yahoo Finance using the yfinance Python library', 'size': '100 randomly generated portfolio optimization problems', 'number_of_features': 'Varies (2 to 10 companies per problem)', 'preprocessing_steps': 'Returns computed from price data, annualized mean returns using geometric mean, covariance matrix, coskewness and cokurtosis tensors calculated, normalization of returns to zero mean', 'time_period': 'January 1, 2015, to January 1, 2025'}
+
+### Process
+1. Encode portfolio optimization problem as a higher-order unconstrained binary optimization (HUBO) problem. 2. Map HUBO problem to a Hamiltonian for quantum computation. 3. Construct QAOA circuit from the Hamiltonian. 4. Use CMA-ES optimizer in the quantum-classical loop with parameter σ=0.1. 5. Run QAOA with varying penalty constants λ for budget constraint (λ ∈ {0.001, 0.01, 0.1, 0.9, 1.0, 10, 100, 1000}). 6. Measure expectation value of the cost Hamiltonian. 7. Compare QAOA solutions against classical baselines (constrained and unconstrained continuous variable formulations with integer programming-based discretization).
+
+### Output
+{'metrics_reported': ['Normalized portfolio objective value (min-max normalized)', 'Budget utilization percentage', 'QAOA enhancement factor (probability of measuring optimal state compared to random sampling)'], 'comparison_baselines': ['Classical constrained continuous variable formulation', 'Classical unconstrained continuous variable formulation', 'Exact eigensolver solutions'], 'output_format': 'Portfolio allocations (number of assets per company), leftover budget, normalized objective function values, budget utilization percentages'}
+
+### Parameters
+- qubit_count: 6 to 15 qubits (depending on problem instance)
+- circuit_depth: Varies based on problem size and higher-order terms (up to 4th order interactions)
+- shots: Not explicitly stated (assumed sufficient for convergence)
+- optimizer: CMA-ES
+- optimizer_parameters: {'σ': 0.1, 'iterations': 'Limited (not specified)', 'default_hyperparameters': 'Used otherwise'}
+- penalty_constant_λ: Explored values: [0.001, 0.01, 0.1, 0.9, 1.0, 10, 100, 1000]
+- risk_aversion: 3
+- moment_weights: {'q0': 'risk_aversion^2 / 2 = 4.5', 'q1': 'risk_aversion^6 / 6 ≈ 121.5', 'q2': 'risk_aversion^24 / 24 ≈ 1.6e10'}
+
+### Hardware
+{'simulator': 'Qiskit Aer statevector simulator (assumed based on framework usage)', 'noise_model': 'No noise model applied (ideal simulator)', 'transpilation_settings': 'Not specified'}
+
+### Reproducibility
+Code available on GitHub (link provided in paper). Data is publicly available from Yahoo Finance. Sufficient methodological detail provided to replicate experiments, including problem generation, encoding, and optimization processes.

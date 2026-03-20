@@ -25,31 +25,31 @@ idea_tags:
 - idea:near-term-feasibility
 - idea:hybrid-approach
 journal_or_venue: 58th IEEE/ACM International Symposium on Microarchitecture (MICRO
-  ’25)
+  '25)
 methodology_tags:
 - variational
 - QAOA
+- VQE
 - quantum-annealing
 - QUBO
-- quantum-simulation
 paper_type: ''
-quantum_advantage_claim: speculative
+quantum_advantage_claim: theoretical
 related_papers: []
 relevance_phase1: high
 relevance_phase3: high
 source_type: conference-paper
 source_type_confidence: high
-step1_date: '2026-03-19T13:39:55.793698'
+step1_date: '2026-03-20T00:29:20.569861'
 step1_model: Mistral-Large-3
-step2_date: '2026-03-19T13:40:07.737184'
+step2_date: '2026-03-20T00:29:24.214426'
 step2_model: Mistral-Large-3
-step3_date: '2026-03-19T13:41:19.056379'
+step3_date: '2026-03-20T00:29:36.563889'
 step3_model: Mistral-Large-3
-step4_date: '2026-03-19T13:41:29.910578'
+step4_date: '2026-03-20T00:30:27.509332'
 step4_model: Mistral-Large-3
-step5_date: '2026-03-19T13:42:29.991027'
+step5_date: '2026-03-20T00:30:37.542891'
 step5_model: Mistral-Large-3
-step6_date: '2026-03-19T13:42:38.566520'
+step6_date: '2026-03-20T00:30:45.458242'
 step6_model: Mistral-Large-3
 steps_completed:
 - 1
@@ -67,9 +67,9 @@ tags:
 - topic/high-frequency-trading
 - method/variational
 - method/QAOA
+- method/VQE
 - method/quantum-annealing
 - method/QUBO
-- method/quantum-simulation
 - idea/quantum-advantage
 - idea/near-term-feasibility
 - idea/hybrid-approach
@@ -89,75 +89,73 @@ zotero_key: ''
 ---
 
 ## Abstract summary
-This conference paper introduces Rasengan, a novel variational quantum algorithm designed to solve constrained binary optimization problems with high precision and low circuit complexity. Unlike traditional methods that shrink the search space from a superposition of all possible solutions, Rasengan expands the space from a single feasible solution using a transition Hamiltonian, ensuring all explored states remain feasible. The paper also presents optimization techniques to reduce circuit depth and improve deployability on noisy quantum hardware.
+This paper introduces Rasengan, a novel variational quantum algorithm designed to solve constrained binary optimization problems with high precision and low circuit complexity. Unlike traditional methods that shrink the search space from a superposition of all possible solutions, Rasengan expands the feasible solution space from a single feasible solution using a transition Hamiltonian. This approach ensures that the algorithm remains within the feasible solution space while exponentially exploring all valid solutions, improving accuracy and deployability on near-term quantum devices.
 ## Methodology
-The paper introduces Rasengan, a novel variational quantum algorithm designed to solve constrained binary optimization problems, which are prevalent in financial services and other domains. The methodology employs a transition Hamiltonian-based approach that expands the search space from an initial feasible solution rather than shrinking the entire solution space, as done in traditional variational quantum algorithms (VQAs) like QAOA and HEA. The transition Hamiltonian is formulated to explore the feasible solution space using homogeneous basis vectors derived from linear algebra, ensuring that all generated solutions adhere to the problem constraints. The algorithm incorporates three key optimization techniques to enhance deployability on noisy intermediate-scale quantum (NISQ) devices: Hamiltonian simplification and pruning to reduce circuit complexity, segmented execution to manage circuit depth, and solution purification for error mitigation. The experimental evaluation compares Rasengan against state-of-the-art VQAs (HEA, P-QAOA, Choco-Q) using benchmarks from facility location, k-partition, job scheduling, set covering, and graph coloring problems. The study includes both noise-free simulations and real-world quantum hardware experiments on IBM Quantum platforms (Kyiv and Brisbane). Evaluation metrics include approximation ratio gap (ARG), circuit depth, number of parameters, and in-constraints rate.
+The paper introduces Rasengan, a novel variational quantum algorithm designed to solve constrained binary optimization problems. The core methodology involves an expansion-based approach using a transition Hamiltonian, which starts from a single feasible solution and exponentially explores the entire feasible solution space via homogeneous basis vectors. This contrasts with traditional variational quantum algorithms (VQAs) that shrink the search space from a superposition of all possible states. The transition Hamiltonian is formulated to ensure that quantum state evolution remains within the feasible solution space, leveraging quantum parallelism for efficient exploration. The paper also proposes three optimization techniques to enhance deployability on noisy quantum hardware: Hamiltonian simplification and pruning to reduce circuit complexity, segmented execution to manage circuit depth, and solution purification for error mitigation. The algorithm is evaluated on both simulators and real quantum devices, demonstrating significant improvements in accuracy and latency over existing VQAs like QAOA and HEA.
 
-**Algorithms used:** Transition Hamiltonian, Variational Quantum Algorithm (VQA), QAOA, HEA
-**Frameworks:** Qiskit
+**Algorithms used:** QAOA, VQE
 
-**Experimental setup:** Experiments were conducted using both noise-free quantum simulators and real quantum processing units (QPUs) on IBM Quantum platforms (Kyiv and Brisbane with 127-qubit Eagle r3 processors). The classical optimization part was executed on an AMD EPYC 9554 64-core server with 1TB RAM, and quantum circuit simulations were accelerated using the DDSim simulator for Rasengan and CUDA-quantum for QAOA/HEA on an NVIDIA A100 GPU. The evaluation involved 2000 cases across five problem domains, with benchmarks ranging from 6 to 28 qubits. The experimental setup included comparisons with baseline VQAs (HEA, P-QAOA, Choco-Q) using identical layer repetitions and optimization iterations. Circuit depths and gate counts were analyzed post-compilation for real hardware deployment.
+**Experimental setup:** Experiments were conducted using both noise-free simulators (DDSim) and real quantum devices (IBM Kyiv and Brisbane). The classical optimization part was executed on an AMD EPYC 9554 64-core server with 1TB RAM, while quantum simulations were accelerated using DDSim for Rasengan and CUDA-quantum for QAOA/HEA on an A100 GPU. The evaluation covered five problem domains: facility location, k-partition, job scheduling, set cover, and graph coloring problems, with 400 cases compiled for each domain.
 
-**Dataset:** The study utilized synthetic benchmarks from five problem domains: facility location problem (FLP), k-partition problem (KPP), job scheduling problem (JSP), set covering problem (SCP), and graph coloring problem (GCP). Each domain included 400 cases compiled from relevant literature, with problem sizes ranging from 6 to 24 variables (qubits) and varying constraint complexities. Specific datasets were not named but were designed to represent real-world scenarios in financial services and other optimization fields.
+**Dataset:** The paper evaluates Rasengan on synthetic and real-world benchmarks from five problem domains: facility location problem (FLP), k-partition problem (KPP), job scheduling problem (JSP), set cover problem (SCP), and graph coloring problem (GCP). Each domain includes 400 cases with varying numbers of variables (qubits) and constraints, as detailed in Table 2 of the paper.
 ## Findings
-- [supported] Rasengan improves accuracy by 4.12× compared to the state-of-the-art QAOA (Choco-Q) on constrained binary optimization problems across 2000 cases from five domains (facility location, k-partition, job scheduling, set cover, and graph coloring).
-- [supported] Rasengan achieves a 379× improvement in solution quality over baseline methods on real-world quantum platforms (IBM Kyiv and Brisbane).
-- [supported] Rasengan reduces circuit depth by 1.96× compared to prior variational quantum algorithms (VQAs) and by 49× compared to Choco-Q, making it deployable on NISQ devices.
-- [supported] Rasengan is the first quantum algorithm to outperform the mean quality of feasible solution baselines on real hardware, achieving an approximation ratio gap (ARG) as low as 0.01 for small-scale problems.
-- [supported] Hamiltonian simplification and pruning techniques reduce circuit depth by over 94.6%, while probability-preserving segmented execution further reduces depth to ~50, suitable for current quantum hardware.
-- [supported] Error mitigation via solution purification improves accuracy by more than 303× on noisy hardware.
-- [speculative] Rasengan’s transition Hamiltonian-based approach may theoretically scale to larger problem sizes (100+ qubits) due to its exponential exploration of feasible solution spaces.
-- [speculative] The authors claim that Rasengan eliminates the need for encoding objective Hamiltonians in higher-order problems, offering greater generality than QAOA.
-- [supported] Rasengan maintains a 100% in-constraints rate (feasible solutions) on real hardware, unlike penalty-term-based QAOA, which often violates constraints.
-- [disputed] The paper claims Rasengan achieves quantum advantage on real hardware, but this is disputed as the results are compared to classical baselines and not demonstrated against the best classical solvers for the tested problems.
+- [supported] Rasengan improves accuracy by 4.12× compared to state-of-the-art QAOA (Choco-Q) on constrained binary optimization problems across 2000 cases from five domains (facility location, k-partition, job scheduling, set covering, and graph coloring).
+- [supported] Rasengan reduces circuit depth by 1.96× compared to prior variational quantum algorithms (VQAs) in noise-free simulations.
+- [supported] On real-world quantum hardware (IBM Kyiv and Brisbane), Rasengan achieves a 379× improvement in solution quality over the mean quality of feasible solution baselines, marking the first quantum algorithm to outperform this baseline.
+- [supported] Rasengan’s Hamiltonian simplification and pruning techniques reduce circuit depth by over 94.6%, making it deployable on current NISQ devices (e.g., reducing depth from ~7000 to ~50 for a 24-variable graph coloring problem).
+- [supported] Rasengan’s error mitigation technique improves accuracy by more than 303× on noisy hardware by purifying infeasible solutions after each segment.
+- [supported] Rasengan achieves lower approximation ratio gaps (ARG) than HEA, penalty-term-based QAOA (P-QAOA), and commute-Hamiltonian-based QAOA (Choco-Q) across all tested benchmarks, with ARG values as low as 0.01 for small-scale problems.
+- [supported] Rasengan’s segmented execution strategy partitions transition Hamiltonians into segments with depths as low as 34n (where n is the number of qubits), enabling execution on NISQ devices while preserving solution quality.
+- [speculative] Rasengan’s transition Hamiltonian approach could theoretically scale to larger problem sizes (e.g., 100+ qubits) due to its polynomial circuit depth complexity (O(nm²), where m is the number of homogeneous basis vectors).
+- [speculative] The authors claim that Rasengan’s expansion-based methodology avoids the expressivity limits of traditional VQAs, which are prone to trapping in suboptimal solutions due to their shrinking search space approach.
+- [disputed] The paper claims Rasengan is the first quantum algorithm to beat the mean quality of feasible solution baseline on real hardware, but this may depend on the specific baseline definition and problem instances used.
 
-**Results summary:** The paper introduces Rasengan, a transition Hamiltonian-based variational quantum algorithm for constrained binary optimization problems in financial services and other domains. Rasengan outperforms state-of-the-art QAOA (Choco-Q) and hardware-efficient ansatz (HEA) methods in both accuracy (4.12× improvement) and circuit depth (1.96×–49× reduction). Key innovations include exponential exploration of feasible solution spaces, Hamiltonian simplification/pruning, segmented execution, and error mitigation via purification. On real quantum hardware (IBM Kyiv/Brisbane), Rasengan achieves a 379× improvement in solution quality and is the first quantum algorithm to surpass feasible solution baselines. However, quantum advantage claims remain speculative as the paper does not compare against optimized classical solvers.
+**Results summary:** The paper introduces Rasengan, a novel variational quantum algorithm for constrained binary optimization problems, which leverages a transition Hamiltonian to exponentially explore the feasible solution space from an initial feasible solution. Unlike traditional VQAs that shrink the search space from a superposition of all states, Rasengan expands the space while ensuring all generated solutions remain feasible. The algorithm demonstrates significant improvements in accuracy (4.12× over Choco-Q) and circuit depth (1.96× reduction) in noise-free simulations across 2000 cases from five domains. On real quantum hardware, Rasengan achieves a 379× improvement in solution quality over baseline methods, with circuit depth reductions of over 94.6% through Hamiltonian simplification, pruning, and segmented execution. Error mitigation techniques further enhance accuracy by 303× on noisy devices. Rasengan’s polynomial circuit depth complexity and deployability on NISQ devices position it as a promising approach for practical quantum optimization.
 
 **Performance claims:**
-- 4.12× accuracy improvement over Choco-Q (QAOA) on 2000 cases across five domains
-- 379× improvement in solution quality on real quantum hardware (IBM platforms)
-- 1.96×–49× reduction in circuit depth compared to prior VQAs
-- 94.6% reduction in circuit depth via Hamiltonian simplification/pruning
-- 303× accuracy improvement via error mitigation on noisy hardware
-- 100% in-constraints rate (feasible solutions) on real hardware
-- ARG as low as 0.01 for small-scale problems (e.g., facility location with 6 qubits)
+- 4.12× improvement in accuracy over Choco-Q (state-of-the-art QAOA) across 2000 cases
+- 1.96× reduction in circuit depth compared to prior VQAs
+- 379× improvement in solution quality on real quantum hardware (IBM Kyiv/Brisbane)
+- 94.6% reduction in circuit depth via Hamiltonian simplification and pruning
+- 303× improvement in accuracy on noisy hardware via error mitigation
+- ARG as low as 0.01 for small-scale problems (e.g., facility location with 6 variables)
+- Circuit depth reduced from ~7000 to ~50 for a 24-variable graph coloring problem
+- Segmented execution with depths as low as 34n (n = number of qubits)
 ## Quantum advantage claim
-**Classification:** speculative
+**Classification:** theoretical
 
-The paper claims quantum advantage based on superior performance over other VQAs and classical baselines on real hardware. However, the advantage is speculative because: (1) results are not compared against the best classical solvers for the tested problems, (2) the demonstrated improvements are relative to other quantum algorithms (not absolute speedups), and (3) the hardware used (IBM NISQ devices) is error-prone, limiting generalizability to fault-tolerant quantum computing.
+Rasengan demonstrates a theoretical quantum advantage through its transition Hamiltonian approach, which exponentially explores the feasible solution space with polynomial circuit depth (O(nm²)). While the paper provides empirical results from simulations and real hardware showing superior accuracy and circuit efficiency compared to classical and quantum baselines, the claimed advantage is not yet demonstrated at scale (e.g., 100+ qubits) or for problems where classical methods are intractable. The advantage is supported by algorithmic design and small-scale empirical results but remains theoretical for larger problem instances.
 ## Limitations
-- Experiments conducted on noise-free simulators and small-scale real quantum devices (IBM Kyiv and Brisbane), limiting assessment of performance on larger, noisier hardware [inferred]
-- Evaluation limited to 20 benchmarks across five problem domains (FLP, KPP, JSP, SCP, GCP), which may not generalize to all constrained binary optimization problems [inferred]
-- Maximum problem size tested is 105 variables (qubits), which may not reflect scalability to industrial-scale financial optimization problems [inferred]
-- Initialization of feasible solutions for some problems (e.g., graph coloring) may require linear time, which could be a bottleneck for very large instances [inferred]
-- Hamiltonian simplification and pruning techniques reduce circuit depth but introduce offline preprocessing overhead (O(m²n) complexity) [inferred]
-- Segmented execution strategy assumes probability preservation between segments, which may not hold under high noise levels [inferred]
-- Error mitigation via purification relies on classical post-processing, which may not scale efficiently for very large solution spaces [inferred]
-- Comparison with classical solvers is not provided, leaving the quantum advantage unclear [inferred]
-- Conference paper page limits may have constrained detailed discussion of certain optimizations or failure cases [inferred]
-- Theoretical upper bound of m³ transition Hamiltonian simulations for non-totally unimodular matrices may limit practical applicability for some problem types
-- Performance on real hardware (IBM devices) shows significant degradation compared to noise-free simulations, highlighting sensitivity to noise
+- Experiments conducted on noise-free simulators and small-scale real quantum hardware (IBM Kyiv and Brisbane), limiting assessment of performance under realistic NISQ conditions [inferred]
+- Circuit depth reduction techniques (e.g., Hamiltonian simplification and pruning) may not generalize equally well across all problem types, particularly those with complex constraint topologies
+- Scalability analysis limited to facility location problems (FLP); performance on other benchmarks (e.g., graph coloring) may vary due to differing constraint structures [inferred]
+- Segmented execution strategy assumes probability preservation across segments, which may degrade under high noise levels or deep circuits [inferred]
+- Error mitigation via purification introduces classical overhead, though minimal, which could become significant for very large problem sizes [inferred]
+- Maximum evaluated problem size (105 variables) may not reflect performance on industrial-scale financial optimization problems (e.g., portfolio optimization with thousands of assets) [inferred]
+- Comparison with classical solvers (e.g., state-of-the-art heuristics or exact methods) is missing, leaving quantum advantage unclear [inferred]
+- Conference paper page limits may have constrained detailed discussion of failure cases or edge conditions [inferred]
+- Theoretical upper bound of m³ transition Hamiltonians for non-unimodular matrices may lead to impractical circuit depths for certain problems [inferred]
+- Initialization complexity for feasible solutions varies by problem type (e.g., O(d) for FLP vs. O(g) for GCP), potentially limiting applicability to problems with hard-to-find feasible solutions [inferred]
 ## Open questions
-- How does Rasengan perform on problem instances with non-linear constraints, which are common in financial services?
-- What is the impact of different noise profiles (e.g., gate errors, decoherence) on the segmented execution strategy?
-- Can the Hamiltonian simplification algorithm be optimized further to reduce preprocessing time for very large problems?
-- How does the algorithm handle problems where the feasible solution space is extremely sparse relative to the total search space?
-- What are the trade-offs between segment size, shot allocation, and solution quality in segmented execution?
-- How does Rasengan compare to state-of-the-art classical solvers (e.g., CPLEX, Gurobi) in terms of solution quality and runtime for large-scale problems?
-- Can the transition Hamiltonian approach be extended to handle continuous or mixed-integer optimization problems?
-- What is the minimum qubit coherence time required for Rasengan to outperform classical methods on real hardware?
+- How does Rasengan perform on financial optimization problems with non-linear constraints (e.g., risk parity portfolios)?
+- What is the impact of different noise models (e.g., amplitude damping, phase flip) on solution quality across problem domains?
+- Can the segmented execution strategy be optimized further to minimize probability distortion in high-noise environments?
+- How does the algorithm scale when the number of homogeneous basis vectors grows exponentially with problem size?
+- What are the trade-offs between circuit depth, shot count, and solution quality in real-world deployment?
+- How does Rasengan compare to hybrid quantum-classical approaches (e.g., QAOA with warm-start initialization) for large-scale problems?
+- What is the minimal qubit coherence time required for Rasengan to outperform classical methods on industrially relevant problems?
+- How sensitive is the algorithm to the choice of initial feasible solution, and can this be automated for arbitrary problems?
 
 **Future work:**
-- Extend Rasengan to handle non-linear constraints and mixed-integer optimization problems
-- Develop adaptive noise mitigation techniques tailored to the segmented execution strategy
-- Optimize the Hamiltonian simplification algorithm to reduce preprocessing overhead for large-scale problems
+- Extend Rasengan to handle non-linear constraints and mixed-integer optimization problems relevant to finance
+- Evaluate performance on larger-scale quantum hardware (e.g., IBM Heron or future error-corrected devices)
+- Develop adaptive segmented execution strategies that dynamically adjust segment size based on real-time noise characterization
+- Integrate Rasengan with classical optimization techniques (e.g., branch-and-bound) to create hybrid solvers for industrial-scale problems
+- Explore automated methods for generating initial feasible solutions across diverse problem domains
 - Conduct comparative studies with state-of-the-art classical solvers to quantify quantum advantage
-- Explore hybrid quantum-classical approaches that combine Rasengan with classical optimization techniques
-- Test Rasengan on larger quantum processors (e.g., 433-qubit IBM Osprey or 1121-qubit IBM Condor) to assess scalability
-- Investigate the use of Rasengan for dynamic optimization problems in financial services, such as real-time portfolio rebalancing
-- Develop techniques to reduce the number of parameters in Rasengan without sacrificing solution quality
-- Apply Rasengan to other NP-hard problems in financial services, such as credit risk assessment or fraud detection
-- Explore the integration of Rasengan with quantum machine learning models for enhanced optimization capabilities
+- Investigate the use of machine learning to optimize Hamiltonian simplification and pruning for specific problem classes
+- Apply Rasengan to real-world financial datasets (e.g., portfolio optimization, option pricing) and benchmark against industry standards
+- Develop error mitigation techniques tailored to the transition Hamiltonian framework to improve robustness on NISQ devices
 ## Key ideas
 - #idea:quantum-advantage — Rasengan achieves 4.12× accuracy improvement over QAOA (Choco-Q) for constrained binary optimization problems, with exponential exploration of feasible solution spaces via transition Hamiltonians
 - #idea:near-term-feasibility — Algorithm-hardware co-design optimizations (Hamiltonian simplification, segmented execution, error mitigation) reduce circuit depth by 94.6% for NISQ deployability
@@ -174,3 +172,27 @@ The paper claims quantum advantage based on superior performance over other VQAs
 
 ## Researcher notes
 <!-- Researcher-added — not LLM generated -->
+
+## Experiment details
+### Input
+{'source': 'Synthetic benchmarks compiled from relevant literature for each problem domain (FLP, KPP, JSP, SCP, GCP).', 'size': '400 cases per problem domain, with variable counts ranging from 6 to 105 qubits and constraints ranging from 3 to 15.', 'preprocessing_steps': 'Feasible solutions were pre-calculated for initialization. Homogeneous basis vectors were derived from linear constraints, and redundant transition Hamiltonians were pruned. Input states were normalized and encoded as qubit rotations for quantum circuits.', 'features': 'Binary decision variables (0 or 1) with linear equality or inequality constraints transformed into equality constraints using auxiliary variables.'}
+
+### Process
+1. Initialize the quantum circuit with an arbitrary feasible solution. 2. Apply transition Hamiltonian simulations sequentially to expand the feasible solution space. 3. Optimize the evolution time parameters using a classical optimizer (COBYLA). 4. Partition the sequence of transition Hamiltonians into segments and execute each segment individually, preserving probability distributions. 5. Apply error mitigation by purifying noisy solutions after each segment. 6. Repeat until convergence or maximum iterations (300 for small-scale, 1000 for large-scale problems). 7. Measure the final quantum state to obtain the optimal feasible solution.
+
+### Output
+The primary output metrics include the approximation ratio gap (ARG), in-constraints rate, and latency. ARG measures the gap between the algorithm's solution and the optimal solution, with lower values indicating better performance. The in-constraints rate evaluates the probability that output solutions satisfy the constraints. Latency includes compilation time, circuit execution time, and parameter updating time. Rasengan's performance was compared against HEA, penalty-term-based QAOA (P-QAOA), and commute-Hamiltonian-based QAOA (Choco-Q).
+
+### Parameters
+- qubits: Ranged from 6 to 105 depending on the problem scale.
+- circuit_depth: Varied from 22 to 102 for Rasengan after optimization, compared to 46 to 3848 for baselines.
+- shots: 1024 shots per segment for segmented execution, dynamically adjusted based on probability distributions.
+- optimizer: COBYLA (Constrained Optimization by Linear Approximation).
+- convergence_threshold: Maximum iterations set to 300 for small-scale and 1000 for large-scale problems.
+- hyperparameters: {'evolution_time': 'Tuned by the classical optimizer for each transition Hamiltonian.', 'segments': 'Number of segments dynamically determined based on circuit depth and problem size.', 'penalty_coefficient': 'Not applicable (Rasengan does not use penalty terms).'}
+
+### Hardware
+{'simulator': 'DDSim for Rasengan, CUDA-quantum for QAOA/HEA.', 'QPU_model': 'IBM Kyiv and Brisbane (127-qubit Eagle r3).', 'cloud_provider': 'IBM Quantum.', 'transpilation_settings': 'Circuits were transpiled to match the hardware topology of IBM devices, with error rates calibrated from device data (e.g., two-qubit gate error rate of 0.82% for Brisbane).'}
+
+### Reproducibility
+Code for Rasengan is publicly available on GitHub (https://github.com/JanusQ/rasengan). The paper provides sufficient detail on the algorithm design, optimization techniques, and experimental setup to replicate the results. Benchmark datasets are synthetic but derived from standard problem formulations in the literature, ensuring reproducibility.

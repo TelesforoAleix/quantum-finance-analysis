@@ -24,26 +24,27 @@ methodology_tags:
 - QAOA
 - quantum-annealing
 - QUBO
+- variational
 - classical-simulation
 paper_type: ''
 quantum_advantage_claim: speculative
 related_papers:
 - 2022_Pusey_Nazzaro_QuantumAnnealingNPHard
 relevance_phase1: high
-relevance_phase3: medium
+relevance_phase3: high
 source_type: peer-reviewed-empirical
 source_type_confidence: high
-step1_date: '2026-03-19T12:34:28.124997'
+step1_date: '2026-03-19T23:30:48.128706'
 step1_model: Mistral-Large-3
-step2_date: '2026-03-19T12:34:32.485052'
+step2_date: '2026-03-19T23:30:52.105617'
 step2_model: Mistral-Large-3
-step3_date: '2026-03-19T12:34:56.623785'
+step3_date: '2026-03-19T23:31:07.504954'
 step3_model: Mistral-Large-3
-step4_date: '2026-03-19T12:35:11.983763'
+step4_date: '2026-03-19T23:31:34.573415'
 step4_model: Mistral-Large-3
-step5_date: '2026-03-19T12:36:12.289378'
+step5_date: '2026-03-19T23:31:45.976777'
 step5_model: Mistral-Large-3
-step6_date: '2026-03-19T12:36:18.520357'
+step6_date: '2026-03-19T23:31:50.338234'
 step6_model: Mistral-Large-3
 steps_completed:
 - 1
@@ -54,9 +55,11 @@ steps_completed:
 - 6
 tags:
 - topic/portfolio-optimisation
+- topic/risk-modelling
 - method/QAOA
 - method/quantum-annealing
 - method/QUBO
+- method/variational
 - method/classical-simulation
 - idea/quantum-advantage
 - idea/near-term-feasibility
@@ -66,76 +69,82 @@ tags:
 title: Approaching Collateral Optimization for NISQ and Quantum-Inspired Computing
 topic_tags:
 - portfolio-optimisation
+- risk-modelling
 year: 2023
 zotero_key: ''
 ---
 
 ## Abstract summary
-This paper explores the application of quantum and quantum-inspired computing techniques to collateral optimization in financial services. The authors formulate the collateral optimization problem as a mixed-integer linear programming (MILP) model and then convert it into a quadratic unconstrained binary optimization (QUBO) framework, making it suitable for noisy intermediate-scale quantum (NISQ) devices and quantum-inspired solvers. The study tests small-scale instances using various solvers and discusses the potential for scaling these approaches to larger, more complex financial optimization problems.
+This paper explores the application of quantum and quantum-inspired computing techniques to collateral optimization in financial services. The authors formulate the collateral optimization problem as a mixed-integer linear programming (MILP) model and then convert it into a quadratic unconstrained binary optimization (QUBO) framework suitable for noisy intermediate-scale quantum (NISQ) devices. The study conducts small-scale computational tests to assess the performance of these formulations, highlighting their potential for large-scale financial optimization problems despite current hardware limitations.
 ## Methodology
-The paper presents a study on collateral optimization in financial services using quantum and quantum-inspired computing approaches. The research begins with a mixed-integer linear programming (MILP) formulation of the collateral optimization problem, which is then transformed into a quadratic unconstrained binary optimization (QUBO) model to leverage quantum and quantum-inspired solvers. The authors conduct small-scale computational experiments using various software development kits to evaluate the performance of different QUBO formulations. The study explores both balanced and unbalanced penalization methods for QUBO formulations, comparing their effectiveness in solving the collateral optimization problem. The experiments are performed on classical simulators emulating quantum and quantum-inspired hardware, with a focus on evaluating the feasibility and potential of these approaches for larger problem instances.
+The paper presents a study on collateral optimization (ColOpt) in financial services, focusing on formulating the problem as a mixed-integer linear programming (MILP) model and subsequently as a quadratic unconstrained binary optimization (QUBO) model. The goal is to minimize the cost of posting collateral while satisfying exposure requirements and other constraints. The authors explore both balanced and unbalanced QUBO formulations, leveraging slack variables and penalization techniques. Small-scale computational tests are conducted using various software development kits, including Qiskit, PyQUBO, ToQUBO.jl, and Fujitsu’s digital annealer emulator. The study also surveys alternative approaches for solving combinatorial optimization problems, such as quantum annealing (QA), variational quantum algorithms (VQAs), and quantum-inspired methods like simulated annealing (SA). The MILP formulation serves as a baseline, while QUBO formulations are tested for their potential applicability on near-term quantum and quantum-inspired hardware.
 
 **Algorithms used:** QAOA, Quantum Annealing, Simulated Annealing
-**Frameworks:** Qiskit, PyQUBO, ToQUBO.jl, D-Wave Neal, Fujitsu Digital Annealer
+**Frameworks:** Qiskit, PyQUBO, ToQUBO.jl, Fujitsu Digital Annealer
 
-**Experimental setup:** The experiments were conducted using classical simulators to emulate quantum and quantum-inspired hardware. Specifically, the study utilized Qiskit’s optimization module, PyQUBO, ToQUBO.jl (a Julia package), D-Wave’s simulated annealer (via the neal package), and Fujitsu’s digital annealer emulator. The small-scale tests involved solving instances of the Knapsack problem and collateral optimization problem using these frameworks.
+**Experimental setup:** The experiments involve small-scale problem instances of collateral optimization and the knapsack problem. The QUBO formulations are tested using emulators of quantum and quantum-inspired solvers, including D-Wave’s simulated annealer (via the neal package), Qiskit’s optimization module, and Fujitsu’s digital annealer. The MILP formulations are solved using classical solvers like HiGHS and GLPK. The study focuses on algorithmic reformulation and heuristic evaluation rather than hardware-specific performance.
 
-**Dataset:** The study used a small-scale, synthetic dataset for the Knapsack problem to inform the collateral optimization problem. For collateral optimization, the dataset included hypothetical financial assets with associated characteristics such as market value, tier (quality), and constraints on allocation to different accounts. Specific numerical values or real-world datasets were not detailed but were designed to reflect typical collateral optimization scenarios in financial institutions.
+**Dataset:** Synthetic small-scale datasets for the knapsack problem and collateral optimization problem. The knapsack problem instance includes 10 items with predefined weights and values. The collateral optimization problem involves hypothetical assets and accounts with parameters such as asset quantity, market value, tier, haircut, and exposure requirements.
 ## Findings
-- [supported] The paper presents a mixed-integer linear programming (MILP) formulation for the collateral optimization (ColOpt) problem, followed by a quadratic unconstrained binary optimization (QUBO) formulation for hybrid-quantum and NISQ-era approaches.
-- [supported] Small-scale experiments using QUBO-based approaches failed to find global optima but achieved solutions reasonably close to optimal, suggesting potential for larger instances.
-- [supported] The QUBO formulations for the Knapsack problem (a simplified version of ColOpt) were tested using simulated annealing (SA) and digital annealing emulators, with some methods (e.g., log encoding, one-hot encoding) successfully finding optimal solutions.
-- [supported] The unbalanced penalization approach for QUBO formulations reduced the number of variables required but occasionally violated constraints, indicating trade-offs between resource efficiency and solution quality.
-- [speculative] The authors suggest that quantum or quantum-inspired solvers may provide computational or business advantage for large-scale ColOpt instances, though this is not empirically demonstrated in the paper.
-- [speculative] The paper posits that NISQ-era devices could be suitable for financial optimization problems like ColOpt, citing literature on quantum finance applications (e.g., stochastic modeling, machine learning, and optimization).
-- [disputed] The paper notes that some studies (e.g., Pusey-Nazzaro et al.) report that quantum annealing (e.g., D-Wave) and classical SA failed to outperform branch-and-bound methods for certain combinatorial problems, contradicting claims of quantum advantage.
-- [supported] The MILP formulation for ColOpt was tested on small-scale problems, but the paper acknowledges that MILP solvers remain the standard for industrial and academic applications due to their convergence guarantees.
+- [supported] The QUBO-based approaches for collateral optimization (ColOpt) failed to find global optima in small-scale experiments but produced solutions reasonably close to the optimal, suggesting potential for large instances [supported]
+- [supported] The mixed-integer linear programming (MILP) formulation of ColOpt was successfully implemented and used as a benchmark for QUBO formulations [supported]
+- [supported] Small-scale tests using quantum-inspired methods (e.g., simulated annealing, digital annealing) demonstrated promising performance for QUBO formulations of ColOpt, though results were heuristic and limited by emulator constraints [supported]
+- [speculative] Quantum or quantum-inspired solvers may provide computational or business advantage for large-scale ColOpt instances in the near term [speculative]
+- [speculative] The unbalanced penalization QUBO formulation could reduce resource requirements and search space, but its constraints are less strict, potentially leading to suboptimal solutions [speculative]
+- [disputed] The paper notes that prior work (e.g., Pusey-Nazzaro et al.) found quantum annealing (D-Wave) and classical simulated annealing failed to outperform branch-and-bound methods for certain NP-hard problems, contradicting claims of quantum advantage [disputed]
+- [supported] The study found that off-the-shelf QUBO converters (e.g., ToQUBO.jl, Qiskit) and custom slack-based formulations successfully solved small Knapsack problem instances, but required more runs than classical solvers [supported]
+- [speculative] The authors suggest that hybrid quantum-classical approaches (e.g., QAOA, quantum annealing) could be viable for ColOpt once hardware capabilities improve [speculative]
 
-**Results summary:** The paper investigates collateral optimization (ColOpt) in financial services, presenting both MILP and QUBO formulations. Small-scale experiments using QUBO-based approaches (e.g., simulated annealing, digital annealing emulators) demonstrated suboptimal but promising results, failing to achieve global optima but remaining close to optimal solutions. The study tested various QUBO encodings for the Knapsack problem, a simplified version of ColOpt, and found that some methods (e.g., log encoding, one-hot encoding) successfully identified optimal solutions. The unbalanced penalization approach reduced resource requirements but occasionally violated constraints. While the paper suggests potential quantum advantage for large-scale ColOpt instances, all results are derived from simulations, and no empirical advantage over classical solvers is demonstrated. The MILP formulation remains the standard for small-scale problems, with quantum approaches positioned as future alternatives pending hardware advancements.
+**Results summary:** The paper presents a mixed-integer linear programming (MILP) formulation for collateral optimization (ColOpt) and reformulates it as a quadratic unconstrained binary optimization (QUBO) problem to explore hybrid quantum and quantum-inspired solutions. Small-scale experiments using quantum-inspired methods (e.g., simulated annealing, digital annealing) demonstrated that QUBO approaches, while failing to find global optima, produced solutions close to optimal, indicating potential for larger instances. The study highlights the limitations of current quantum hardware and emulators but suggests that quantum or quantum-inspired solvers could offer advantages for large-scale ColOpt problems in the future. The paper also surveys alternative QUBO formulations and solvers, noting their trade-offs in resource requirements and solution quality.
 
 **Performance claims:**
-- QUBO-based approaches achieved solutions within reasonable proximity to global optima in small-scale experiments (specific accuracy metrics not provided).
-- Log encoding and one-hot encoding QUBO formulations successfully found optimal solutions for the Knapsack problem instance (objective value of 309).
-- Unbalanced penalization QUBO formulations reduced the number of variables required but occasionally violated weight constraints.
+- QUBO-based approaches achieved near-optimal solutions in small-scale ColOpt experiments, though global optima were not reached
+- Off-the-shelf QUBO converters (ToQUBO.jl, Qiskit) and custom slack-based formulations solved small Knapsack problem instances with known optimal solutions
+- Simulated annealing and digital annealing required more runs than classical MILP solvers to reach optimal solutions for small instances
 ## Quantum advantage claim
 **Classification:** speculative
 
-The paper suggests that quantum or quantum-inspired solvers may offer computational or business advantage for large-scale ColOpt instances, but all results are from simulations (e.g., simulated annealing, digital annealing emulators). No empirical quantum advantage is demonstrated on real hardware, and the claim remains theoretical.
+The paper suggests that quantum or quantum-inspired solvers may provide computational or business advantage for large-scale ColOpt instances, but this claim is based on heuristic results from small-scale simulations and emulations. No empirical demonstration of quantum advantage on real hardware was provided, and prior literature (e.g., Pusey-Nazzaro et al.) disputes such claims for similar problems.
 ## Limitations
-- Small-scale experiments limit the generalizability of results to larger, real-world collateral optimization problems
+- Small-scale experiments limit the generalizability of findings to larger, real-world collateral optimization problems
 - QUBO-based approaches failed to find global optima in small-scale experiments, only achieving near-optimal solutions
-- Experiments conducted using emulators and simulated annealing rather than real quantum hardware, limiting insights into real-world performance
-- [inferred] Hardware noise and decoherence effects in NISQ devices were not addressed, which may impact solution quality on real quantum hardware
-- [inferred] Limited qubit count (not explicitly stated but implied by small-scale tests) restricts the complexity of problems that can be solved
-- No comparison with state-of-the-art classical solvers (e.g., MILP solvers like CPLEX or Gurobi) to benchmark quantum-inspired approaches
-- Binarization of decision variables reduces allocation precision, potentially leading to suboptimal solutions
-- Slack-based QUBO formulations require a large number of bits for encoding, increasing resource requirements
-- Unbalanced penalization approaches may softly break constraints (e.g., weight limits) in larger problem instances
-- Lack of empirical validation for alternative approaches (e.g., Q-FW, GABO, GNNs) mentioned in the survey section
-- No noise mitigation techniques were applied, which may affect reproducibility and reliability of results on real hardware
-- [inferred] Limited dataset size (small KnapsackProb and ColOpt instances) may not reflect real-world financial data complexity
-- Heuristic nature of quantum-inspired solvers may conceal their applicability for larger problem instances
+- Experiments conducted using software development kits and emulators, not real quantum hardware, limiting assessment of real-world performance [inferred]
+- Hardware noise and qubit count constraints in NISQ devices may significantly degrade solution quality for larger problem instances [inferred]
+- Lack of comparison with state-of-the-art classical MILP solvers (e.g., IBM CPLEX, Gurobi) for benchmarking performance [inferred]
+- Limited dataset size and use of synthetic data rather than real market data for collateral optimization tests
+- Reproducibility challenges due to heuristic nature of quantum and quantum-inspired solvers (e.g., simulated annealing, digital annealing)
+- Scalability to production-level collateral optimization problems remains untested due to small problem instance sizes
+- Unbalanced penalization approaches may softly break constraints (e.g., weight limits in knapsack problems), leading to infeasible solutions [inferred]
+- Internal validity concerns due to reliance on emulators and lack of real quantum hardware validation
+- Potential bias in noise of circuits implementing variational quantum algorithms (VQAs) may unfavorably affect convergence ratios [inferred]
+- Resource-intensive hyperparameter tuning required for QUBO formulations, which may not be feasible for large-scale problems [inferred]
+- Limited exploration of alternative QUBO encodings (e.g., one-hot encoding) due to high bit requirements for large problem instances
+- Lack of empirical validation for theoretical advantages of quantum approaches in financial optimization
 ## Open questions
-- How do QUBO-based approaches perform on real quantum hardware compared to emulators?
-- What is the impact of hardware noise and decoherence on the solution quality of collateral optimization problems?
-- Can unbalanced penalization approaches reliably satisfy constraints in large-scale problem instances?
-- How does the performance of quantum-inspired solvers scale with increasing problem size and complexity?
-- What is the trade-off between binarization precision (number of bits) and solution quality in QUBO formulations?
-- How do alternative approaches (e.g., Q-FW, GABO, GNNs) compare to traditional QUBO solvers for collateral optimization?
-- What are the computational and business advantages of quantum-inspired solvers over classical solvers for large-scale ColOpt problems?
-- How can hybrid quantum-classical approaches be optimized to handle the constraints of collateral optimization more effectively?
+- How do QUBO-based approaches perform on real quantum hardware compared to classical MILP solvers for collateral optimization?
+- What is the impact of decoherence and hardware noise on solution quality for larger problem instances?
+- Can hybrid quantum-classical approaches (e.g., QAOA, quantum annealing) achieve computational advantage for large-scale collateral optimization?
+- How does the performance of quantum-inspired methods (e.g., digital annealing) scale with problem size compared to classical solvers?
+- What are the trade-offs between solution accuracy and resource usage (e.g., qubit count, runtime) for different QUBO formulations?
+- How do alternative approaches (e.g., GNNs, SQA, quantum hybrid Frank–Wolfe) compare to traditional QUBO solvers for financial optimization?
+- What is the minimum qubit count required to achieve practical advantage for real-world collateral optimization problems?
+- How can constraint violations in unbalanced penalization approaches be minimized or mitigated?
+- What are the implications of relaxing exposure constraints (e.g., from inequality to equality) on solution feasibility and optimality?
+- How do different binary encodings (e.g., log encoding vs. one-hot encoding) affect solution quality and resource requirements?
 
 **Future work:**
-- Test QUBO formulations on real quantum hardware (e.g., IBM Eagle, D-Wave) to assess performance under noise and decoherence
-- Extend experiments to larger problem instances to evaluate scalability and practical applicability
-- Compare quantum-inspired solvers with state-of-the-art classical solvers (e.g., MILP) to benchmark performance and identify advantages
+- Test QUBO formulations on real quantum hardware (e.g., IBM Eagle, D-Wave Advantage) for collateral optimization
+- Extend experiments to larger problem instances to assess scalability and performance
+- Benchmark quantum and quantum-inspired approaches against state-of-the-art classical MILP solvers (e.g., IBM CPLEX, Gurobi)
 - Explore noise mitigation techniques to improve solution quality on NISQ devices
-- Investigate alternative QUBO formulations (e.g., unbalanced penalization) for larger problem instances to assess constraint satisfaction
-- Develop hybrid quantum-classical approaches tailored for collateral optimization to leverage the strengths of both paradigms
-- Apply advanced binarization techniques to improve allocation precision without significantly increasing resource requirements
-- Benchmark alternative approaches (e.g., Q-FW, GABO, GNNs) for collateral optimization to identify promising directions
-- Extend the problem formulation to include equity and bonds, requiring integer constraints for asset allocation
-- Explore the use of quantum-inspired hardware (e.g., Fujitsu’s digital annealer) for solving large-scale ColOpt problems
+- Investigate hybrid quantum-classical algorithms (e.g., QAOA) for collateral optimization with real market data
+- Develop automated approaches for hyperparameter tuning in QUBO formulations to reduce resource overhead
+- Apply alternative QUBO encodings (e.g., unbalanced penalization) to larger problem instances and assess constraint adherence
+- Compare performance of quantum-inspired methods (e.g., digital annealing, simulated annealing) with classical solvers for financial optimization
+- Explore the use of graph neural networks (GNNs) and other machine learning techniques for QUBO-based collateral optimization
+- Assess the feasibility of quantum advantage for collateral optimization in production environments
+- Investigate the impact of different constraint formulations (e.g., equality vs. inequality) on solution quality and feasibility
+- Develop frameworks for integrating quantum and classical solvers in hybrid optimization pipelines
 ## Key ideas
 - #idea:hybrid-approach — Hybrid quantum-classical methods (QUBO + MILP) are proposed as a practical path for collateral optimization in NISQ-era devices
 - #idea:near-term-feasibility — The paper argues for the suitability of NISQ-era devices for financial optimization problems like collateral allocation
@@ -151,3 +160,27 @@ The paper suggests that quantum or quantum-inspired solvers may offer computatio
 
 ## Researcher notes
 <!-- Researcher-added — not LLM generated -->
+
+## Experiment details
+### Input
+{'knapsack_problem': {'source': 'Synthetic dataset from literature', 'size': '10 items', 'features': ['weight', 'value'], 'preprocessing': 'Binary encoding of decision variables, slack variable representation for constraints'}, 'collateral_optimization': {'source': 'Hypothetical financial data', 'size': 'Small-scale instances with a few assets and accounts', 'features': ['asset quantity', 'market value', 'tier', 'haircut', 'exposure requirement', 'account duration'], 'preprocessing': 'Discretization of fractional allocations into binary variables, constraint binarization'}}
+
+### Process
+1. Formulate the collateral optimization problem as an MILP. 2. Convert the MILP into a QUBO model using both balanced (slack-based) and unbalanced penalization approaches. 3. Encode decision variables into binary representations. 4. Implement QUBO formulations using software development kits (Qiskit, PyQUBO, ToQUBO.jl, Fujitsu Digital Annealer). 5. Run heuristic optimizers (simulated annealing, digital annealing) to solve the QUBO instances. 6. Compare results against classical MILP solvers (HiGHS, GLPK) for optimality and constraint satisfaction.
+
+### Output
+{'metrics_reported': ['Objective function value (cost of collateral)', 'Constraint satisfaction (exposure, consistency, limits)', 'Solution optimality (comparison to MILP baseline)'], 'comparison_baselines': ['Classical MILP solvers (HiGHS, GLPK)', 'Balanced vs. unbalanced QUBO formulations'], 'output_format': 'Optimal asset allocations, objective function values, constraint violation metrics'}
+
+### Parameters
+- qubit_count: None
+- circuit_depth: None
+- shots: None
+- optimizer: Simulated Annealing (neal), Digital Annealing (Fujitsu)
+- learning_rate: None
+- hyperparameters: {'penalty_weights': ['λ0', 'λ1', 'λ2', 'λ3'], 'binary_precision': 'B (number of bits for discretization)', 'slack_variable_encoding': ['log encoding', 'one-hot encoding']}
+
+### Hardware
+{'simulator': 'D-Wave simulated annealer (neal), Fujitsu Digital Annealer emulator, Qiskit Aer simulator', 'QPU_model': None, 'cloud_provider': None, 'transpilation_settings': None}
+
+### Reproducibility
+The paper provides detailed formulations and parameter settings for both MILP and QUBO models. Code and data are not explicitly linked, but the methodology descriptions are sufficiently detailed to replicate the small-scale experiments. The use of synthetic datasets ensures reproducibility for the tested instances.

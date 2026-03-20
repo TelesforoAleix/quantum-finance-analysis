@@ -1,8 +1,8 @@
 {
-  "generated": "2026-03-19T21:25:25.563223+00:00",
+  "generated": "2026-03-20T00:11:47.551428+00:00",
   "model": "Mistral-Large-3",
-  "topics_analyzed": 10,
-  "total_contradictions": 83,
+  "topics_analyzed": 11,
+  "total_contradictions": 84,
   "contradictions": [
     {
       "paper_a": "2021_Martin_TowardPricingFinancial.md",
@@ -295,6 +295,16 @@
       "severity": "high",
       "explanation": "Paper A disputes quantum advantage claims by showing quantum annealing's inferiority to classical methods, while Paper B demonstrates QAOA and QNNs outperforming classical benchmarks in portfolio optimization, creating a direct contradiction.",
       "topic": "portfolio-optimisation"
+    },
+    {
+      "paper_a": "2024_Bhasin_EnhancingQuantumMachine.md",
+      "claim_a": "The QSVM algorithm may offer exponential speedup for financial portfolio optimization due to quantum parallelism (speculative claim). The paper also claims a 'quantum advantage' in financial decision-making based on simulation results.",
+      "paper_b": "2024_Mustafa_QuantumGraphNeural.md",
+      "claim_b": "All results are derived from noiseless quantum simulations, not real quantum hardware, and no clear advantage is demonstrated over classical methods in the tested regimes. Optimization challenges (e.g., barren plateaus) limit scalability in simulations.",
+      "type": "quantum-advantage",
+      "severity": "high",
+      "explanation": "Paper A explicitly claims a 'quantum advantage' in financial decision-making and suggests exponential speedup potential, while Paper B demonstrates no clear advantage over classical methods and highlights scalability limitations (e.g., barren plateaus) that undermine claims of quantum advantage. Both papers rely on simulations, but Paper B's findings directly contradict Paper A's speculative claims of superiority.",
+      "topic": "quantum-ML"
     },
     {
       "paper_a": "2025_Mahmod_StateQuantumComputing.md",

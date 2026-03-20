@@ -13,34 +13,35 @@ contradiction_flags:
 doi: 10.21203/rs.3.rs-8297477/v1
 evidence_type: ''
 idea_tags:
+- idea:quantum-advantage
 - idea:near-term-feasibility
 - idea:hybrid-approach
-- idea:quantum-advantage
 journal_or_venue: Research Square (preprint)
 methodology_tags:
 - QAOA
-- quantum-annealing
-- variational
 - QUBO
+- variational
 - grover
+- quantum-simulation
+- classical-simulation
 paper_type: ''
 quantum_advantage_claim: speculative
 related_papers: []
 relevance_phase1: medium
-relevance_phase3: not-yet-assessed
+relevance_phase3: high
 source_type: preprint
 source_type_confidence: high
-step1_date: '2026-03-19T13:54:38.388549'
+step1_date: '2026-03-20T00:44:29.637010'
 step1_model: Mistral-Large-3
-step2_date: '2026-03-19T13:55:53.855435'
+step2_date: '2026-03-20T00:44:33.946128'
 step2_model: Mistral-Large-3
-step3_date: '2026-03-19T13:56:22.962054'
+step3_date: '2026-03-20T00:44:47.626080'
 step3_model: Mistral-Large-3
-step4_date: '2026-03-19T13:56:51.092631'
+step4_date: '2026-03-20T00:44:58.339316'
 step4_model: Mistral-Large-3
-step5_date: '2026-03-19T13:57:13.842547'
+step5_date: '2026-03-20T00:45:44.256839'
 step5_model: Mistral-Large-3
-step6_date: '2026-03-19T13:57:25.235309'
+step6_date: '2026-03-20T00:46:46.753583'
 step6_model: Mistral-Large-3
 steps_completed:
 - 1
@@ -53,13 +54,14 @@ tags:
 - topic/portfolio-optimisation
 - topic/high-frequency-trading
 - method/QAOA
-- method/quantum-annealing
-- method/variational
 - method/QUBO
+- method/variational
 - method/grover
+- method/quantum-simulation
+- method/classical-simulation
+- idea/quantum-advantage
 - idea/near-term-feasibility
 - idea/hybrid-approach
-- idea/quantum-advantage
 - contradiction/scalability
 title: 'Shallow and Robust QAOA: Improving Feasibility and Hardware Performance via
   Linear-Chain and Ramp Schedules'
@@ -73,76 +75,83 @@ zotero_key: ''
 ## Abstract summary
 This preprint explores hardware-aware adaptations of the Quantum Approximate Optimization Algorithm (QAOA) to address challenges in near-term quantum computing, such as constraint handling and circuit depth limitations. The authors introduce a linear-ramp parameter schedule and a Linear-Chain (LC) ansatz that restricts interactions to nearest neighbors, reducing swap overhead and improving noise robustness. The study benchmarks these methods against standard QAOA variants on small Vehicle Routing Problem (VRP) instances, demonstrating improved feasibility and solution quality across simulations and real hardware runs.
 ## Methodology
-The paper presents an empirical study comparing five variants of the Quantum Approximate Optimization Algorithm (QAOA) for solving the Vehicle Routing Problem (VRP). The variants include Standard QAOA, Two-Step QAOA, Grover-Mixer QAOA (GM-QAOA), Linear-Ramp Initialized QAOA (LRI-QAOA), and Linear-Chain QAOA (LC-QAOA). The research employs a hardware-aware co-design approach, integrating linear-ramp parameter schedules with a Linear-Chain (LC) ansatz to reduce circuit depth and improve noise robustness. The study benchmarks these variants across ideal simulation, shot-based Aer simulation, and real quantum hardware (IBM Eagle and Heron processors). The methodology involves formulating the VRP as a Quadratic Unconstrained Binary Optimization (QUBO) problem, converting it to an Ising Hamiltonian, and implementing the QAOA circuits using Qiskit. Performance is evaluated based on feasibility of solutions, solution quality (finding the known optimum), circuit depth, gate requirements, and robustness to noise. Error suppression techniques like dynamical decoupling (XpXm) and Conditional Value at Risk (CVaR) are also tested to enhance optimization outcomes on hardware.
+The paper presents an empirical study comparing five variants of the Quantum Approximate Optimization Algorithm (QAOA) for solving the Vehicle Routing Problem (VRP). The variants include Standard QAOA, Two-Step QAOA, Grover-Mixer QAOA, Linear-Ramp Initialized QAOA (LRI-QAOA), and Linear-Chain QAOA (LC-QAOA). The research employs a hardware-aware co-design approach, focusing on a linear-ramp parameter schedule and a Linear-Chain ansatz to reduce circuit depth and improve noise robustness. The study benchmarks these variants across ideal simulation, Aer simulation, and real quantum hardware (IBM Eagle and Heron processors). The methodology involves formulating the VRP as a Quadratic Unconstrained Binary Optimization (QUBO) problem, converting it to an Ising Hamiltonian, and implementing the QAOA variants using the Qiskit SDK. The evaluation metrics include feasibility of solutions, solution quality (finding the known optimum route), quantum circuit depth, gate requirements, and robustness to noise on real hardware. The experiments use a small VRP instance with a single depot, three customer nodes, and two vehicles, and a larger 30-qubit instance to test scalability. Error suppression techniques like dynamical decoupling (XpXm) and Conditional Value at Risk (CVaR) are also explored to enhance performance.
 
-**Algorithms used:** QAOA, Two-Step QAOA, Grover-Mixer QAOA, Linear-Ramp Initialized QAOA, Linear-Chain QAOA
+**Algorithms used:** QAOA, Two-Step QAOA, Grover-Mixer QAOA, Linear-Ramp Initialized QAOA (LRI-QAOA), Linear-Chain QAOA (LC-QAOA)
 **Frameworks:** Qiskit
 
-**Experimental setup:** Experiments were implemented using Qiskit SDK (version 2.1.1) within the Qiskit Runtime environment. The setup included classical simulators (statevector and Aer), as well as real quantum processors (IBM Eagle and Heron). The QAOA circuits were optimized using the COBYQA optimizer, targeting a low expectation value of the VRP cost Hamiltonian. For each set of optimized parameters, 10,000 measurement outcomes (shots) were sampled to estimate solution statistics. Hardware experiments involved parameter transfer from simulation to hardware, with lightweight error suppression techniques like dynamical decoupling (XpXm) applied to improve feasibility and solution quality.
+**Experimental setup:** Experiments were implemented using Qiskit SDK (version 2.1.1) within the Qiskit Runtime environment. The setup included classical simulators (statevector and Aer simulator) and real quantum processors (IBM Eagle and Heron). The VRP instances were formulated as QUBO problems, converted to Ising Hamiltonians, and optimized using the COBYQA optimizer. Each QAOA variant was evaluated for feasibility, solution quality, circuit depth, and noise robustness.
 
-**Dataset:** A representative Vehicle Routing Problem (VRP) instance comprising a single depot, three customer nodes, and two vehicles was used for benchmarking. Customer locations were randomly distributed on a two-dimensional Euclidean plane, with pairwise edge weights computed as squared Euclidean distances. Larger instances (e.g., 5-node, 2-vehicle problem requiring 30 qubits) were also tested to assess scaling performance.
+**Dataset:** A representative Vehicle Routing Problem (VRP) instance comprising a single depot, three customer nodes, and two vehicles for small-scale experiments. A larger 30-qubit instance (5 nodes, 2 vehicles) was used for scaling tests. Customer locations were randomly distributed on a 2D Euclidean plane, with edge weights computed as squared Euclidean distances.
 ## Findings
-- [supported] Linear-Ramp LC-QAOA improves convergence and feasibility compared to standard QAOA, Two-Step QAOA, and Grover-Mixer QAOA in noiseless and shot-based simulations on small VRP instances.
-- [supported] Linear-Chain (LC) QAOA reduces two-qubit gate depth and boosts noise robustness, achieving the shallowest circuits on IBM Eagle/Heron hardware.
-- [supported] On real hardware (IBM Eagle/Heron), LC-QAOA with XpXm dynamical decoupling more than doubles feasibility (from <1% to >2%) and recovers the optimal VRP solution in several trials.
-- [supported] Grover-Mixer QAOA and Two-Step QAOA show high feasibility in simulation (e.g., 21% for GM-QAOA at p=8) but are hampered by deeper circuits, making them less effective on real hardware.
-- [supported] Linear-ramp initialization (LRI-QAOA) concentrates probability on feasible solutions, outperforming random initialization in simulations (e.g., 47.6% feasibility vs. 2% for standard QAOA at p=8).
-- [supported] Dynamical decoupling (XpXm) improves hardware performance (e.g., optimal solution rank improved from 235 to 15 on IBM Rensselaer), while heavier error mitigation (e.g., ZNE, Pauli twirling) degrades performance due to circuit distortion.
-- [supported] LC-QAOA scales efficiently to larger VRP instances (30 qubits), reliably recovering the optimal route at depths p>16 on both IBM Eagle and Heron, with higher success on lower-error devices.
-- [supported] CVaR (Conditional Value at Risk) objective improves optimization by biasing search toward high-quality solutions, enabling reliable performance at larger scales.
-- [speculative] Hardware-aligned ansätze and structured schedules (e.g., linear-ramp) may provide a scalable path for quantum optimization in logistics, though absolute feasibility remains low on current hardware.
-- [speculative] Co-design of algorithm, schedule, and compilation could unlock reliable performance at the edge of today’s hardware capabilities, but extensions to capacitated/time-window VRPs remain untested.
-- [disputed] Heavy post-processing error mitigation (e.g., ZNE, Pauli twirling) is less effective than lightweight error suppression (e.g., dynamical decoupling) for QAOA, contradicting some prior literature on mitigation strategies.
+- [supported] Linear-Ramp LC-QAOA improves convergence and feasibility compared to standard QAOA, Two-Step QAOA, and Grover-Mixer QAOA on small Vehicle Routing Problem (VRP) instances in noiseless simulations.
+- [supported] Linear-Chain (LC) QAOA reduces two-qubit gate depth and boosts noise robustness, achieving the shallowest circuit depth on IBM Eagle/Heron hardware.
+- [supported] On real hardware (IBM Eagle/Heron), LC-QAOA with XpXm dynamical decoupling more than doubles feasibility (<1% to >2%) and recovers the optimum in several trials.
+- [supported] Linear-ramp initialization (LRI-QAOA) concentrates probability on feasible solutions, improving feasibility rates from ~2% (standard QAOA) to ~47.6% in statevector simulations.
+- [supported] Grover-Mixer QAOA yields high feasibility in simulations (21% at p=8) but is hampered by deep circuits on hardware, failing to compile for p > 5.
+- [supported] Two-Step QAOA improves feasibility over standard QAOA in simulations (5.6% vs. 2.4% at p=4) but struggles with constraint leakage and deeper circuits.
+- [supported] Dynamical decoupling (XpXm) improves hardware performance, boosting feasibility from 1.14% to 1.60% and improving optimal solution rank from 16 to 6 on IBM Fez.
+- [supported] Heavy error mitigation (e.g., Pauli twirling, ZNE) underperforms compared to lightweight dynamical decoupling, reducing feasibility from 1.80% to 0.60%.
+- [supported] LC-QAOA scales to larger VRP instances (30 qubits), reliably recovering the optimal route at p > 16 on IBM Eagle/Heron, with CVaR objective further improving results.
+- [speculative] Hardware-aligned ansätze and structured schedules (e.g., linear-ramp) may enable quantum advantage for combinatorial optimization at larger scales.
+- [speculative] Co-design of algorithm, compilation, and hardware could unlock reliable performance at the edge of current NISQ capabilities.
+- [disputed] The paper claims that Grover-Mixer and Two-Step QAOA are theoretically promising but practically limited by circuit depth, contradicting prior work emphasizing their feasibility-preserving benefits.
 
-**Results summary:** The paper presents a hardware-aware co-design approach for QAOA applied to the Vehicle Routing Problem (VRP), demonstrating that linear-ramp parameter schedules and Linear-Chain (LC) ansätze significantly improve feasibility, solution quality, and noise robustness. In simulations, LC-QAOA and LRI-QAOA outperform standard QAOA and other variants (e.g., Grover-Mixer, Two-Step) by concentrating probability on feasible solutions and reducing two-qubit gate depth. On real hardware (IBM Eagle/Heron), LC-QAOA with dynamical decoupling achieves >2% feasibility and recovers optimal solutions, while deeper variants (e.g., Grover-Mixer) fail due to noise. The study also shows that lightweight error suppression outperforms heavy mitigation techniques, and CVaR improves scalability to 30-qubit instances. However, absolute feasibility remains low (<1%), and results depend on backend calibration.
+**Results summary:** The paper presents a hardware-aware co-design of the Quantum Approximate Optimization Algorithm (QAOA) for the Vehicle Routing Problem (VRP), demonstrating that linear-ramp parameter schedules and Linear-Chain (LC) ansätze significantly improve feasibility and noise robustness. In simulations, LC-QAOA and Linear-Ramp Initialized QAOA (LRI-QAOA) outperform standard QAOA, Two-Step QAOA, and Grover-Mixer QAOA in feasibility and solution quality. On real hardware (IBM Eagle/Heron), LC-QAOA achieves the shallowest circuit depth and, combined with dynamical decoupling, doubles feasibility rates and recovers optimal solutions. However, heavy error mitigation techniques degrade performance, while lightweight suppression (e.g., XpXm) enhances results. The study also shows that LC-QAOA scales to larger instances (30 qubits) with CVaR objective, suggesting a practical path for near-term quantum optimization.
 
 **Performance claims:**
-- Linear-ramp initialization improves feasibility from 2% (standard QAOA) to 47.6% (LRI-QAOA) in noiseless simulations at p=8.
-- LC-QAOA achieves the shallowest two-qubit gate depth (e.g., significantly lower than Grover-Mixer QAOA, which exceeds 3000 gates at p=2).
-- LC-QAOA with XpXm dynamical decoupling doubles feasibility on hardware (from <1% to >2%) and improves optimal solution rank (e.g., from 235 to 15 on IBM Rensselaer).
-- Grover-Mixer QAOA achieves 21% feasibility in simulation at p=8, but feasibility drops to near-zero on hardware due to circuit depth.
-- CVaR enables reliable recovery of the optimal route at p>16 for 30-qubit VRP instances on both IBM Eagle and Heron.
-- Dynamical decoupling (XpXm) improves feasibility from 1.14% to 1.60% on IBM Fez and optimal solution rank from 16 to 6.
+- 47.6% feasibility for LRI-QAOA in statevector simulations (vs. ~2% for standard QAOA)
+- 21% feasibility for Grover-Mixer QAOA at p=8 in simulations
+- 5.6% feasibility for Two-Step QAOA at p=4 (vs. 2.4% for standard QAOA)
+- >2% feasibility on IBM Eagle hardware with LC-QAOA and XpXm (vs. <1% without mitigation)
+- Optimal solution rank improved from 16 to 6 on IBM Fez with XpXm decoupling
+- Feasibility improved from 1.14% to 1.60% on IBM Fez with XpXm decoupling
+- LC-QAOA achieves the shallowest two-qubit gate depth (e.g., significantly lower than Grover-Mixer QAOA, which fails to compile for p > 5)
+- LC-QAOA recovers the optimal route at p > 16 for 30-qubit VRP instances on IBM Eagle/Heron
 ## Quantum advantage claim
 **Classification:** speculative
 
-The paper claims that hardware-aligned ansätze (e.g., LC-QAOA) and structured schedules (e.g., linear-ramp) provide a promising path for near-term quantum optimization, but quantum advantage is not demonstrated. Results are from small-scale simulations and real hardware with low feasibility (<2%), and no comparison to state-of-the-art classical solvers (e.g., CPLEX) is provided for larger instances. The advantage is framed as theoretical/scalability potential rather than empirical.
+The paper suggests that hardware-aligned ansätze and structured schedules could enable quantum advantage for combinatorial optimization, but all results are from simulations or small-scale hardware experiments. No empirical demonstration of quantum advantage is provided, and the scalability claims remain unvalidated on real hardware for larger problem sizes.
 ## Limitations
 - Absolute feasibility on current hardware remains low (<1% without mitigation), limiting practical applicability [inferred]
-- Experiments limited to small VRP instances (e.g., 3 customers, 2 vehicles) due to hardware constraints and simulation limitations
+- Experiments limited to small VRP instances (3-5 nodes) due to hardware constraints, not representative of real-world problem sizes
 - Results heavily depend on backend calibration and mapping, introducing variability across devices [inferred]
-- No comparison with state-of-the-art classical solvers (e.g., CPLEX) in terms of runtime or solution quality for larger instances [inferred]
-- Extending to capacitated or time-window VRPs will stress both qubit count and circuit depth, which was not tested
-- The study does not explore hybrid quantum-classical workflows for larger instances, which may be necessary for practical deployment [inferred]
-- Hardware noise and decoherence dominate performance, even with error suppression techniques
-- Lack of peer review (preprint status) may affect methodological rigor and reproducibility [inferred]
-- Linear-Chain QAOA trades expressiveness for hardware efficiency, potentially missing optimal solutions due to restricted connectivity [inferred]
-- Parameter transfer from simulation to hardware may not generalize across different problem instances or hardware generations [inferred]
-- Error mitigation techniques like Pauli twirling and ZNE underperformed compared to simple dynamical decoupling, suggesting limited utility for QAOA [inferred]
-- The study focuses on a single problem family (VRP), limiting generalizability to other combinatorial optimization problems [inferred]
-- No analysis of how qubit error rates or gate fidelities directly impact solution quality [inferred]
-- The paper does not address the scalability of the proposed methods to industry-relevant problem sizes (e.g., 50+ nodes) [inferred]
+- No comparison with state-of-the-art classical solvers (e.g., advanced heuristics or metaheuristics) for benchmarking [inferred]
+- Lack of peer review as this is a preprint, potentially affecting methodological rigor [inferred]
+- Proprietary hardware access (IBM Eagle/Heron) may limit reproducibility for independent researchers [inferred]
+- Linear-Chain QAOA sacrifices expressiveness by removing non-adjacent ZZ interactions, potentially missing optimal solutions
+- Two-Step QAOA and Grover-Mixer QAOA produce deep circuits that exceed error tolerance of current hardware
+- Parameter transfer from simulation to hardware may not generalize across different problem instances [inferred]
+- Advanced error mitigation techniques (e.g., ZNE, Pauli twirling) underperformed compared to simple dynamical decoupling, suggesting limited applicability
+- CVaR optimization introduces a hyperparameter (α) that requires problem-specific tuning [inferred]
+- No exploration of capacitated or time-window VRPs, which are more realistic but complex [inferred]
+- Hardware noise and decoherence dominate results, making it difficult to isolate algorithmic performance
+- Limited sampling (10,000 shots) may not capture rare high-quality solutions in noisy environments [inferred]
 ## Open questions
-- How does the algorithm perform with more than 5 nodes or 2 vehicles in hardware experiments?
-- What is the impact of decoherence and gate errors on solution quality at higher depths (p > 20)?
-- Can the linear-ramp schedule and LC-QAOA maintain performance on larger, more constrained problems (e.g., capacitated VRP)?
-- How do the proposed methods compare to quantum annealing or hybrid quantum-classical approaches for the same problem instances?
-- What is the minimum hardware fidelity required to achieve >10% feasibility for VRP instances?
-- Can adaptive schedules or parameter transfer techniques improve performance across diverse problem instances?
-- How does the choice of penalty weight (λ) affect feasibility and solution quality in larger instances?
-- What are the trade-offs between qubit count, circuit depth, and solution quality for industry-relevant problem sizes?
-- Can hardware-aware compilation (e.g., qubit placement, chain orientation) further reduce circuit depth without sacrificing performance?
+- How does LC-QAOA perform on larger, more realistic VRP instances (e.g., 20+ nodes) with real-world constraints?
+- What is the trade-off between circuit depth and solution quality for LC-QAOA at scale?
+- Can adaptive schedules (e.g., gradient-based) outperform fixed linear-ramp initialization?
+- How do hardware-aware compilation techniques (e.g., qubit placement, chain orientation) impact performance?
+- What is the minimal qubit count and gate fidelity required for QAOA to outperform classical solvers on VRP?
+- How does the performance of QAOA variants compare to quantum annealing or hybrid quantum-classical methods?
+- What is the impact of different penalty weights (λ) on feasibility and solution quality?
+- Can error mitigation techniques be co-designed with QAOA to improve robustness without increasing circuit depth?
+- How does the choice of mixer Hamiltonian (e.g., XY vs. Grover) affect feasibility and convergence?
+- What is the role of warm-starting (e.g., classical heuristics) in improving QAOA performance?
 
 **Future work:**
-- Expand problem realism by incorporating capacities, time windows, and multi-objective costs (e.g., emissions) into VRP benchmarks
-- Study adaptive schedule families that adjust to measured gradients on-device and quantify cross-instance parameter transfer
+- Extend to capacitated and time-window VRPs to assess realism and scalability
+- Benchmark against advanced classical solvers (e.g., metaheuristics, exact methods) for head-to-head comparisons
+- Explore adaptive parameter schedules that adjust to hardware noise and problem structure
 - Co-optimize qubit placement, chain orientation, and dynamical decoupling timing for hardware-aware compilation
-- Benchmark against VQE-style problem-inspired ansätze and annealing/CQM baselines on the same instances
-- Test hybrid strategies combining classical heuristics (e.g., decomposition, warm starts) with LC-QAOA for larger problems
-- Investigate the scalability of LC-QAOA with CVaR to industry-relevant problem sizes (e.g., 50+ nodes)
-- Explore alternative error suppression techniques (e.g., pulse-level optimization) to improve hardware performance
-- Develop encodings that balance qubit count against feasibility guarantees for constrained problems
-- Validate the proposed methods on diverse combinatorial optimization problems (e.g., portfolio optimization, scheduling)
+- Investigate hybrid strategies combining classical decomposition with QAOA subproblem solving
+- Study multi-objective optimization (e.g., cost vs. emissions) in VRP using QAOA
+- Develop noise-resilient variants of QAOA that integrate error mitigation into the algorithmic design
+- Test on larger quantum processors (e.g., 100+ qubits) to evaluate scaling behavior
+- Compare LC-QAOA with problem-inspired ansätze (e.g., VQE-style) on the same instances
+- Quantify cross-instance parameter transferability at fixed circuit depth (p)
+- Explore alternative initial state preparation methods for Grover-Mixer QAOA to reduce circuit depth
+- Investigate the impact of different penalty encodings (e.g., QUBO vs. Ising) on feasibility and solution quality
 ## Key ideas
 - #idea:near-term-feasibility — Hardware-aware QAOA variants (e.g., Linear-Chain QAOA) reduce circuit depth and improve noise robustness, making them viable for near-term quantum devices in logistics and potentially financial optimization problems like portfolio-optimisation or high-frequency-trading
 - #idea:hybrid-approach — Co-design strategies combining classical optimization (e.g., COBYQA, CVaR) with quantum algorithms enhance solution quality and feasibility for VRP, suggesting potential for hybrid approaches in financial use cases
@@ -157,3 +166,27 @@ The paper claims that hardware-aligned ansätze (e.g., LC-QAOA) and structured s
 
 ## Researcher notes
 <!-- Researcher-added — not LLM generated -->
+
+## Experiment details
+### Input
+{'source': 'Synthetic VRP instances generated for the study', 'size': {'small_instance': '1 depot, 3 customer nodes, 2 vehicles (small-scale)', 'large_instance': '5 nodes, 2 vehicles (30 qubits)'}, 'features': 'Pairwise edge weights as squared Euclidean distances between customer locations', 'preprocessing_steps': 'Conversion from VRP to QUBO using quadratic penalties, normalization of coefficients, transformation to Ising Hamiltonian'}
+
+### Process
+1. Formulate VRP as a QUBO problem using DOcplex and convert to QuadraticProgram in Qiskit. 2. Transform QUBO to Ising Hamiltonian. 3. Implement QAOA variants using Qiskit's QAOAAnsatz, EstimatorV2, and SamplerV2 classes. 4. Optimize parameters using COBYQA optimizer targeting low expectation value of the VRP cost Hamiltonian. 5. Sample 10,000 measurement outcomes (shots) per circuit evaluation. 6. Apply error suppression techniques (e.g., dynamical decoupling) and CVaR for larger instances. 7. Transfer optimized parameters from simulation to hardware for execution.
+
+### Output
+{'metrics_reported': ['Feasibility percentage', 'Solution quality (optimal route rank)', 'Two-qubit gate depth', 'Noise robustness'], 'comparison_baselines': ['Standard QAOA', 'Two-Step QAOA', 'Grover-Mixer QAOA', 'Classical CPLEX solver for optimal solution validation'], 'output_format': 'Feasibility ratios, optimal solution ranks, circuit depth metrics, and hardware performance statistics'}
+
+### Parameters
+- qubit_count: {'small_instance': '12-14 qubits', 'large_instance': '30 qubits'}
+- circuit_depth: Varied by QAOA variant and p (number of layers), e.g., p=4 to p=19
+- shots: 10000
+- optimizer: COBYQA
+- learning_rate: Not explicitly stated
+- hyperparameters: {'penalty_factor_lambda': '2 * sum of absolute edge weights', 'CVaR_alpha': 'Adjusted based on hardware noise and sampling variance'}
+
+### Hardware
+{'simulator': 'Qiskit Aer statevector and QASM simulators', 'QPU_models': ['IBM Eagle (Rensselaer)', 'IBM Heron (Fez)'], 'cloud_provider': 'IBM Quantum', 'transpilation_settings': 'Optimized for heavy-hex topology, nearest-neighbor interactions for LC-QAOA'}
+
+### Reproducibility
+Code and data are available on GitHub (links provided). Sufficient methodological detail is provided to replicate the experiments, including problem formulation, QUBO conversion, and parameter optimization steps.

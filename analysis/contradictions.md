@@ -1,12 +1,12 @@
 # Contradiction Detection Report
 
-Generated: 2026-03-19
+Generated: 2026-03-20
 
 ## Summary
 
-- Topics analyzed: 10
-- Total contradictions found: 83
-- High severity: 38
+- Topics analyzed: 11
+- Total contradictions found: 84
+- High severity: 39
 - Medium severity: 40
 - Low severity: 5
 
@@ -415,6 +415,20 @@ Generated: 2026-03-19
 > QAOA solved Markowitz’s mean-variance optimization problem for n=20 assets using 6 qubits, achieving solutions within 92% of classical benchmarks, and QNNs achieved 30% improved Sharpe ratios relative to classical Markowitz models.
 
 **Analysis:** Paper A disputes quantum advantage claims by showing quantum annealing's inferiority to classical methods, while Paper B demonstrates QAOA and QNNs outperforming classical benchmarks in portfolio optimization, creating a direct contradiction.
+
+---
+
+### quantum-advantage — [[2024_Bhasin_EnhancingQuantumMachine]] vs [[2024_Mustafa_QuantumGraphNeural]]
+
+**Topic:** quantum-ML
+
+**Paper A** ([[2024_Bhasin_EnhancingQuantumMachine]]):
+> The QSVM algorithm may offer exponential speedup for financial portfolio optimization due to quantum parallelism (speculative claim). The paper also claims a 'quantum advantage' in financial decision-making based on simulation results.
+
+**Paper B** ([[2024_Mustafa_QuantumGraphNeural]]):
+> All results are derived from noiseless quantum simulations, not real quantum hardware, and no clear advantage is demonstrated over classical methods in the tested regimes. Optimization challenges (e.g., barren plateaus) limit scalability in simulations.
+
+**Analysis:** Paper A explicitly claims a 'quantum advantage' in financial decision-making and suggests exponential speedup potential, while Paper B demonstrates no clear advantage over classical methods and highlights scalability limitations (e.g., barren plateaus) that undermine claims of quantum advantage. Both papers rely on simulations, but Paper B's findings directly contradict Paper A's speculative claims of superiority.
 
 ---
 
