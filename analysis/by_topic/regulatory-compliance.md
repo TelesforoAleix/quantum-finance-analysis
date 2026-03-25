@@ -1,71 +1,62 @@
 # Regulatory Compliance
 
-**Papers:** 9 | **Theoretical:** 3 | **Review:** 2
+**Papers:** 6 | **Empirical:** 1 | **Theoretical:** 3
 
 ## Papers
 
 | Paper | Year | Source Type | Methods | QA Claim | Relevance |
 |-------|------|-------------|---------|----------|-----------|
-| [[2026_DECCANINTERNATIONALACADEMICPUBLISHERS_QuantumComputingAlgorithms]] | 2026 | other | grover, variational, quantum-simulation, classical-simulation, quantum-ML | speculative | medium |
-| [[2026_Gnal_ScenarioBasedMacroeconomic]] | 2026 | peer-reviewed-theoretical | quantum-annealing, variational, amplitude-estimation, quantum-ML, quantum-simulation, classical-simulation | theoretical | high |
-| [[2025_Hlatshwayo_TechnicalReviewQuantum]] | 2025 | preprint | HHL, grover, quantum-walk, amplitude-estimation, quantum-simulation, quantum-ML | speculative | high |
-| [[2025_NeelotpalDey_QuantumComputingFinancial]] | 2025 | peer-reviewed-theoretical | QAOA, VQE, quantum-ML, amplitude-estimation, QUBO, variational, classical-simulation | theoretical | high |
-| [[2025_ThirumalGunasekaran_ExploringRevolutionaryPotential]] | 2025 | peer-reviewed-theoretical | grover, quantum-ML, quantum-simulation | theoretical | high |
-| [[2026_Mahmod_StateQuantumComputing]] | 2025 | review-article | HHL, QAOA, VQE, quantum-annealing, grover, quantum-ML, quantum-SVM, variational, QUBO, quantum-simulation | theoretical | high |
-| [[2023_Markna_UnveilingAdvancedComputational]] | 2023 | review-article | QAOA, quantum-annealing, HHL, quantum-ML, quantum-SVM, amplitude-estimation, QUBO, variational, grover, quantum-simulation, classical-simulation | speculative | high |
-| [[2022_Biesner_SolvingSubsetSum]] | 2022 | preprint | QUBO, classical-simulation | speculative | medium |
-| [[2020_Kommadi_QuantumComputingSolutions]] | 2020 | technical-report | QAOA, grover, quantum-ML, quantum-SVM, quantum-annealing, variational, quantum-walk, quantum-simulation, classical-simulation | speculative | high |
+| [[2026_Gnal_QuantumComputingApproaches]] | 2026 | peer-reviewed-theoretical | quantum-annealing, VQE, QUBO, variational | theoretical | high |
+| [[2025_GauthamPanneerSelvam_DrivingOperationalEfficiency]] | 2025 | peer-reviewed-empirical | — | speculative | low |
+| [[2025_ThirumalGunasekaran_ExploringRevolutionaryPotential]] | 2025 | peer-reviewed-theoretical | grover, quantum-ML, classical-simulation | theoretical | high |
+| [[2026_Barbaresco_IqnnCsInterpretable]] | 2025 | preprint | quantum-ML, variational, classical-simulation | not-applicable | high |
+| [[2023_Alsalman_AcceleratingQuantumReadiness]] | 2023 | peer-reviewed-theoretical | — | not-applicable | medium |
+| [[2022_Biesner_SolvingSubsetSum]] | 2022 | preprint | QUBO | speculative | medium |
 
 ## Key Findings
 
-- [supported] Current quantum hardware limitations (noise, qubit counts, error propagation) constrain the scalability and reliability of quantum-enhanced forecasting models in the NISQ era — [[2026_Gnal_ScenarioBasedMacroeconomic]]
-- [supported] Integrating quantum outputs into established econometric frameworks requires methodological transparency and interpretability to ensure policy relevance — [[2026_Gnal_ScenarioBasedMacroeconomic]]
-- [supported] Quantum computing has demonstrated practical applications across multiple industries, including agriculture, defense, energy, finance, healthcare, infrastructure, manufacturing, and technology, with quantified performance improvements in specific use cases — [[2026_Mahmod_StateQuantumComputing]]
-- [supported] Google's Willow quantum chip achieved real-time error correction on a superconducting system with 105 qubits, completing a computation in under five minutes that would take the world's fastest supercomputer an estimated 10^25 years — [[2026_Mahmod_StateQuantumComputing]]
-- [supported] D-Wave’s Advantage2 hybrid solver demonstrated the ability to solve problems with up to 2 million variable constraints, accessible via cloud service from over 40 countries as of 2025 — [[2026_Mahmod_StateQuantumComputing]]
-- [supported] Caltech researchers built an array of 6,100 neutral atom qubits with 99.98% fidelity in single-qubit operations and maintained quantum coherence for about 13 seconds, showing progress toward scalable quantum computers — [[2026_Mahmod_StateQuantumComputing]]
-- [supported] A hybrid quantum-classical approach for precision agriculture in India achieved 96.26% prediction accuracy, 24-28% reductions in resource usage, and 24-26% yield improvements compared to classical methods like GWO — [[2026_Mahmod_StateQuantumComputing]]
-- [supported] The Australian Army and Q-CTRL reduced convoy deployment time by over two hours using a hybrid quantum-classical algorithm for logistics optimization, demonstrating a 12x increase in the likelihood of achieving optimal solutions — [[2026_Mahmod_StateQuantumComputing]]
-- [supported] HSBC and IBM demonstrated a quantum-enabled algorithm for bond trading that achieved up to 34% accuracy improvement over traditional approaches on production-scale trading data using IBM's Heron quantum processor — [[2026_Mahmod_StateQuantumComputing]]
-- [supported] Quantum-enhanced medical models achieved 97%+ accuracy in Alzheimer's detection (vs. 92% classical), 98% accuracy in skin lesion classification (vs. 81-97% classical), and 98.36% accuracy in knee osteoarthritis classification — [[2026_Mahmod_StateQuantumComputing]]
-- [supported] ExxonMobil and IBM's quantum optimization for LNG vessel routing demonstrated trade-offs between QAOA (better for sampling) and VQE (better for success rates with fewer samples) in solving combinatorial problems — [[2026_Mahmod_StateQuantumComputing]]
-- [supported] NTT DOCOMO achieved a 15% reduction in paging signals and enabled handling 20% more active devices using D-Wave’s hybrid quantum solver for telecommunication network optimization — [[2026_Mahmod_StateQuantumComputing]]
-- [supported] Volkswagen’s quantum-powered traffic-routing system in Lisbon reduced passenger waiting times by optimizing bus routes, and their quantum algorithm improved paint shop efficiency in manufacturing — [[2026_Mahmod_StateQuantumComputing]]
-- [supported] Origin Wukong, a 72-qubit quantum computer, improved AI model training with a 15% reduction in training loss for psychological counseling tasks and increased mathematical reasoning accuracy from 68% to 82% — [[2026_Mahmod_StateQuantumComputing]]
-- [supported] Quantum Key Distribution (QKD) technology, such as Toshiba’s Quantum Secure Metro Network, demonstrated resistance to cyber and quantum attacks by leveraging quantum physics for encryption — [[2026_Mahmod_StateQuantumComputing]]
-- [supported] Gradient descent on Hopfield Networks reliably finds solutions to the subset sum problem for both artificial and real financial data, including tables with up to 256 numbers and magnitudes up to 1e+6. — [[2022_Biesner_SolvingSubsetSum]]
-- [supported] The Hopfield algorithm successfully solved all subset sum problems in parsed financial documents (190 columns) with 100% accuracy under the given constraints. — [[2022_Biesner_SolvingSubsetSum]]
-- [supported] Computation time for the Hopfield algorithm scales more significantly with the magnitude of numbers (Xmax) than with the number of values (n) in the subset sum problem. — [[2022_Biesner_SolvingSubsetSum]]
-- [speculative] Quantum computing harnesses superposition, entanglement, and quantum interference to solve complex problems intractable for classical machines — [[2026_DECCANINTERNATIONALACADEMICPUBLISHERS_QuantumComputingAlgorithms]]
-- [speculative] The book claims quantum computing can provide transformative advancements in cryptography, optimization, artificial intelligence, materials science, healthcare, and finance — [[2026_DECCANINTERNATIONALACADEMICPUBLISHERS_QuantumComputingAlgorithms]]
+- [supported] The paper does not report any original empirical quantum computing results in financial services; quantum computing is mentioned only as a future opportunity for risk modeling, optimization, and strategic planning. — [[2025_GauthamPanneerSelvam_DrivingOperationalEfficiency]]
+- [supported] The article’s reported findings focus on strategic automation in finance operations (e.g., RPA, AI, dashboards, cloud systems), claiming reduced processing times, fewer errors, and faster decision-making, but these claims are presented without paper-specific quantitative estimates or confidence intervals. — [[2025_GauthamPanneerSelvam_DrivingOperationalEfficiency]]
+- [supported] The implementation examples described in compensation administration, performance dashboards, incentive compensation, and executive reporting appear to be illustrative or synthesized case narratives rather than controlled empirical evaluations with reproducible quantitative benchmarks. — [[2025_GauthamPanneerSelvam_DrivingOperationalEfficiency]]
+- [supported] IQNN-CS is a hybrid classical-quantum multiclass credit scoring framework that combines a variational QNN with post-hoc interpretability methods and a new Inter-Class Attribution Alignment (ICAA) metric. — [[2026_Barbaresco_IqnnCsInterpretable]]
+- [supported] All experiments were conducted on a quantum circuit simulator (PennyLane default.qubit) on CPU, not on real quantum hardware. — [[2026_Barbaresco_IqnnCsInterpretable]]
+- [supported] On Dataset 1, the model achieved 100% accuracy and 1.00 F1-score for all three classes (Low, Average, High). — [[2026_Barbaresco_IqnnCsInterpretable]]
+- [supported] On Dataset 2, the model achieved 77.3% accuracy, with class-wise precision/recall/F1 of 0.64/0.97/0.77 for Low, 0.73/0.84/0.78 for Average, and 0.95/0.67/0.79 for High. — [[2026_Barbaresco_IqnnCsInterpretable]]
+- [supported] Training on Dataset 1 converged rapidly and stably, with accuracy stabilizing above 98% across train/validation/test splits and loss dropping sharply with minimal train-validation gap. — [[2026_Barbaresco_IqnnCsInterpretable]]
+- [supported] Training on Dataset 2 was unstable, with validation and test accuracy remaining below 80% and a persistent train-validation gap indicating weaker generalization and possible overfitting. — [[2026_Barbaresco_IqnnCsInterpretable]]
+- [supported] t-SNE visualizations of quantum embeddings showed clear class separation for Dataset 1 but overlapping clusters, especially between Average and High classes, for Dataset 2. — [[2026_Barbaresco_IqnnCsInterpretable]]
+- [supported] Saliency-based attribution maps were concentrated and more interpretable for Dataset 1, while Dataset 2 produced diffuse and noisy attributions that varied across runs. — [[2026_Barbaresco_IqnnCsInterpretable]]
+- [supported] Occlusion analysis showed sharp confidence drops on Dataset 1 when top-ranked features were removed, suggesting reliance on a few informative features; Dataset 2 showed more gradual and less structured degradation. — [[2026_Barbaresco_IqnnCsInterpretable]]
+- [supported] ICAA indicated lower inter-class attribution similarity for Dataset 1 and greater overlap in attribution logic for Dataset 2, suggesting less disentangled class reasoning on the harder dataset. — [[2026_Barbaresco_IqnnCsInterpretable]]
+- [supported] Attribution stability analysis under 20 Gaussian perturbations identified one indecisive case in Dataset 2 (sample 12, saliency std 0.2797 versus 0.1426 on Dataset 1), indicating unreliable class evidence for that sample. — [[2026_Barbaresco_IqnnCsInterpretable]]
+- [supported] Example-based attribution using cosine similarity showed coherent same-class nearest training examples for Dataset 1, whereas Dataset 2 often matched highly similar examples from different classes, indicating ambiguous internal representations. — [[2026_Barbaresco_IqnnCsInterpretable]]
+- [supported] The paper reformulates the subset sum problem as a QUBO and equivalent Ising optimization problem, enabling solution via Hopfield-network energy minimization. — [[2022_Biesner_SolvingSubsetSum]]
+- [supported] A stochastic Hopfield-network gradient-descent algorithm reliably found correct subset-sum solutions on both artificial and real financial-table data within the tested setup. — [[2022_Biesner_SolvingSubsetSum]]
+- [supported] On artificial datasets, the algorithm solved all tested samples for configurations up to n=128 across Xmax values of 1e4, 1e5, and 1e6, and also solved all tested samples for n=16, 32, and 64 in the reported configurations. — [[2022_Biesner_SolvingSubsetSum]]
+- [supported] For the hardest reported artificial configuration (n=256, Xmax=1e6), the algorithm did not solve all samples within the run budget, finding solutions for 2 of 5 samples. — [[2022_Biesner_SolvingSubsetSum]]
+- [supported] On real financial data parsed from a Deutsche Bank report, the algorithm found correct solutions for all 190 subset-sum instances across four table groups under the maximum iteration budget. — [[2022_Biesner_SolvingSubsetSum]]
 
 ## Methodologies Used
 
 | Method | Papers |
 |--------|--------|
-| quantum-ML | 8 |
-| quantum-simulation | 7 |
-| grover | 6 |
-| variational | 6 |
-| classical-simulation | 6 |
-| quantum-annealing | 4 |
-| amplitude-estimation | 4 |
-| QAOA | 4 |
-| QUBO | 4 |
-| HHL | 3 |
-| quantum-SVM | 3 |
-| quantum-walk | 2 |
-| VQE | 2 |
+| QUBO | 2 |
+| variational | 2 |
+| quantum-ML | 2 |
+| classical-simulation | 2 |
+| quantum-annealing | 1 |
+| VQE | 1 |
+| grover | 1 |
 
 ## Open Questions
 
-- How can quantum algorithms for financial applications (e.g., portfolio optimization) be adapted to current NISQ devices with limited qubits and high noise? — [[2026_DECCANINTERNATIONALACADEMICPUBLISHERS_QuantumComputingAlgorithms]]
-- What are the specific hardware requirements (qubit count, coherence time, gate fidelity) for quantum computing to achieve practical advantage in financial services? — [[2026_DECCANINTERNATIONALACADEMICPUBLISHERS_QuantumComputingAlgorithms]]
-- How do quantum algorithms compare to state-of-the-art classical methods in terms of accuracy, speed, and scalability for real-world financial problems? — [[2026_DECCANINTERNATIONALACADEMICPUBLISHERS_QuantumComputingAlgorithms]]
-- What are the most effective error mitigation strategies for quantum financial applications, and how do they impact solution quality? — [[2026_DECCANINTERNATIONALACADEMICPUBLISHERS_QuantumComputingAlgorithms]]
-- How can hybrid quantum-classical approaches be optimized for financial use cases, and what are their limitations? — [[2026_DECCANINTERNATIONALACADEMICPUBLISHERS_QuantumComputingAlgorithms]]
-- What are the potential risks and ethical considerations of deploying quantum computing in financial services (e.g., cryptography, fraud detection)? — [[2026_DECCANINTERNATIONALACADEMICPUBLISHERS_QuantumComputingAlgorithms]]
-- Empirical validation of quantum algorithms on real quantum hardware for financial applications — [[2026_DECCANINTERNATIONALACADEMICPUBLISHERS_QuantumComputingAlgorithms]]
-- Development of noise-resilient quantum algorithms tailored for NISQ devices in financial services — [[2026_DECCANINTERNATIONALACADEMICPUBLISHERS_QuantumComputingAlgorithms]]
-- Benchmarking quantum solutions against classical methods for specific financial problems (e.g., option pricing, risk analysis) — [[2026_DECCANINTERNATIONALACADEMICPUBLISHERS_QuantumComputingAlgorithms]]
-- Exploration of hybrid quantum-classical frameworks for large-scale financial datasets — [[2026_DECCANINTERNATIONALACADEMICPUBLISHERS_QuantumComputingAlgorithms]]
+- Under what conditions can hybrid quantum-classical methods outperform advanced classical portfolio optimization techniques in practice? — [[2026_Gnal_QuantumComputingApproaches]]
+- How much of the theoretical quantum advantage survives when realistic hardware noise and limited qubit resources are taken into account? — [[2026_Gnal_QuantumComputingApproaches]]
+- Can quantum-enhanced sampling materially improve estimation of tail-risk measures such as VaR and CVaR for realistic portfolios? — [[2026_Gnal_QuantumComputingApproaches]]
+- How scalable are QUBO-based and variational formulations when the asset universe grows to hundreds or thousands of securities? — [[2026_Gnal_QuantumComputingApproaches]]
+- What are the most effective ways to encode portfolio constraints and uncertainty scenarios into quantum optimization frameworks? — [[2026_Gnal_QuantumComputingApproaches]]
+- How should interpretability and transparency be ensured so that quantum-generated portfolio decisions satisfy regulatory and governance requirements? — [[2026_Gnal_QuantumComputingApproaches]]
+- Which classes of market uncertainty or dependency structures are most likely to benefit from quantum methods? — [[2026_Gnal_QuantumComputingApproaches]]
+- What validation standards and benchmarking protocols are needed for financial institutions to trust quantum-assisted optimization outputs? — [[2026_Gnal_QuantumComputingApproaches]]
+- Develop and test practical hybrid quantum-classical portfolio optimization architectures. — [[2026_Gnal_QuantumComputingApproaches]]
+- Address NISQ-era limitations such as hardware noise and limited scalability to improve feasibility. — [[2026_Gnal_QuantumComputingApproaches]]

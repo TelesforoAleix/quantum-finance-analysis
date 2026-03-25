@@ -1,76 +1,66 @@
 # Quantum Simulation
 
-**Papers:** 30 | **Empirical:** 5 | **Theoretical:** 7 | **Review:** 2
+**Papers:** 22 | **Empirical:** 3 | **Theoretical:** 6
 
 ## Papers
 
 | Paper | Year | Source Type | Topics | QA Claim | Relevance |
 |-------|------|-------------|--------|----------|-----------|
-| [[2026_Azfar_ShallowRobustQaoa]] | 2026 | preprint | portfolio-optimisation, high-frequency-trading | speculative | medium |
-| [[2026_DECCANINTERNATIONALACADEMICPUBLISHERS_QuantumComputingAlgorithms]] | 2026 | other | portfolio-optimisation, risk-modelling, derivatives-pricing, fraud-detection, credit-scoring, high-frequency-trading, asset-pricing, quantum-cryptography, regulatory-compliance, market-simulation | speculative | medium |
-| [[2026_Dechant_ErrorResourceEstimates]] | 2026 | preprint | derivatives-pricing, asset-pricing | speculative | high |
-| [[2026_Gnal_ScenarioBasedMacroeconomic]] | 2026 | peer-reviewed-theoretical | risk-modelling, market-simulation, regulatory-compliance | theoretical | high |
-| [[2026_Nawaz_ExploringQuantumMachine]] | 2026 | peer-reviewed-theoretical | portfolio-optimisation, risk-modelling, derivatives-pricing, fraud-detection, credit-scoring, high-frequency-trading, asset-pricing, quantum-cryptography | theoretical | high |
+| [[2026_DECCANINTERNATIONALACADEMICPUBLISHERS_QuantumComputingAlgorithms]] | 2026 | other | — | speculative | low |
 | [[2026_Prasad_QuantumAlgorithmsStochastic]] | 2026 | preprint | derivatives-pricing, asset-pricing, market-simulation | speculative | high |
 | [[2024_Ghysels_QuantumFinance]] | 2025 | other | portfolio-optimisation, asset-pricing, risk-modelling, derivatives-pricing, credit-scoring | speculative | high |
-| [[2025_Chaudhary_PracticalQuantumSolver]] | 2025 | conference-paper | derivatives-pricing, asset-pricing | theoretical | high |
-| [[2025_Cibrario_AutocallableOptionsPricing]] | 2025 | conference-paper | derivatives-pricing | speculative | high |
-| [[2025_Hlatshwayo_TechnicalReviewQuantum]] | 2025 | preprint | portfolio-optimisation, risk-modelling, derivatives-pricing, fraud-detection, credit-scoring, high-frequency-trading, asset-pricing, quantum-cryptography, regulatory-compliance, market-simulation | speculative | high |
+| [[2024_Tancara_HighDimensionalCounterdiabatic]] | 2025 | preprint | portfolio-optimisation | speculative | high |
+| [[2025_Chuvakov_FactoringDecisionSupport]] | 2025 | peer-reviewed-theoretical | risk-modelling | theoretical | high |
+| [[2025_Frana_QuantumSpeedUps]] | 2025 | preprint | portfolio-optimisation, risk-modelling, asset-pricing | speculative | high |
+| [[2025_Guseynov_QuantumAlgorithmLocal]] | 2025 | preprint | derivatives-pricing | speculative | high |
+| [[2025_Hlatshwayo_TechnicalReviewQuantum]] | 2025 | preprint | portfolio-optimisation, risk-modelling, derivatives-pricing, fraud-detection, credit-scoring, asset-pricing, quantum-cryptography, market-simulation | speculative | high |
 | [[2025_Springer_QuantumFinance]] | 2025 | conference-paper | asset-pricing, portfolio-optimisation, risk-modelling | speculative | medium |
-| [[2025_ThirumalGunasekaran_ExploringRevolutionaryPotential]] | 2025 | peer-reviewed-theoretical | portfolio-optimisation, risk-modelling, derivatives-pricing, fraud-detection, credit-scoring, quantum-cryptography, regulatory-compliance, market-simulation | theoretical | high |
-| [[2025_Vangibhuratha_QuantumMachineLearning]] | 2025 | peer-reviewed-theoretical | portfolio-optimisation, risk-modelling, fraud-detection, credit-scoring, high-frequency-trading, asset-pricing, quantum-cryptography | theoretical | high |
-| [[2026_Mahmod_StateQuantumComputing]] | 2025 | review-article | portfolio-optimisation, risk-modelling, derivatives-pricing, fraud-detection, credit-scoring, high-frequency-trading, asset-pricing, quantum-cryptography, regulatory-compliance, market-simulation | theoretical | high |
+| [[2025_Zhang_QuantumComputingQuantum]] | 2025 | peer-reviewed-empirical | — | speculative | low |
 | [[2024_KI_QuantumFinance]] | 2024 | peer-reviewed-theoretical | portfolio-optimisation | theoretical | high |
-| [[2023_Markna_UnveilingAdvancedComputational]] | 2023 | review-article | portfolio-optimisation, risk-modelling, derivatives-pricing, fraud-detection, credit-scoring, high-frequency-trading, asset-pricing, quantum-cryptography, regulatory-compliance, market-simulation | speculative | high |
+| [[2023_Ferro_DUpdateReview]] | 2023 | technical-report | derivatives-pricing, risk-modelling, asset-pricing | theoretical | high |
 | [[2021_Stamatopoulos_TowardsQuantumAdvantage]] | 2022 | peer-reviewed-empirical | derivatives-pricing, risk-modelling | theoretical | high |
-| [[2022_Doriguello_QuantumAlgorithmStochastic]] | 2022 | conference-paper | derivatives-pricing, risk-modelling | theoretical | high |
-| [[2022_Saha_IntermediateQutritBased]] | 2022 | peer-reviewed-theoretical | derivatives-pricing | theoretical | high |
-| [[2022_Sun_PortfolioOptimizationBased]] | 2022 | peer-reviewed-empirical | portfolio-optimisation | theoretical | high |
-| [[2022_Zhao_QuantumInspiredVariational]] | 2022 | peer-reviewed-empirical | derivatives-pricing, asset-pricing | theoretical | high |
-| [[2021_Anshu_ImprovedApproximationAlgorithms]] | 2021 | preprint | portfolio-optimisation, risk-modelling | speculative | medium |
-| [[2021_Martin_TowardPricingFinancial]] | 2021 | peer-reviewed-empirical | derivatives-pricing, asset-pricing | speculative | high |
-| [[2020_Kommadi_QuantumComputingSolutions]] | 2020 | technical-report | portfolio-optimisation, risk-modelling, derivatives-pricing, fraud-detection, credit-scoring, asset-pricing, quantum-cryptography, regulatory-compliance, market-simulation | speculative | high |
-| [[2020_Milek_QuantumImplementationRisk]] | 2020 | peer-reviewed-empirical | risk-modelling | theoretical | high |
-| [[2020_Miyamoto_ReductionQubitsQuantum]] | 2020 | preprint | risk-modelling, derivatives-pricing | theoretical | high |
+| [[2022_Herbert_QuantumMonteCarlo]] | 2022 | peer-reviewed-theoretical | risk-modelling, derivatives-pricing, market-simulation | theoretical | high |
+| [[2022_Wolf_QuantumAlgorithmPricing]] | 2022 | peer-reviewed-theoretical | derivatives-pricing | theoretical | high |
+| [[2021_Kubo_VariationalQuantumSimulations]] | 2021 | peer-reviewed-theoretical | derivatives-pricing, market-simulation | theoretical | high |
+| [[2021_Lu_AlgorithmsQuantumSimulation]] | 2021 | peer-reviewed-theoretical | — | theoretical | low |
+| [[2020_Milek_QuantumImplementationRisk]] | 2020 | preprint | risk-modelling | speculative | high |
 | [[2019_Kerenidis_QuantumAlgorithmsPortfolio]] | 2019 | conference-paper | portfolio-optimisation | theoretical | high |
+| [[2019_Li_ResearchQuantumComputing]] | 2019 | conference-paper | quantum-cryptography | speculative | medium |
 | [[2018_Rebentrost_QuantumComputationalFinance]] | 2018 | preprint | derivatives-pricing, risk-modelling | theoretical | high |
-| [[2015_McClean_ClockQuantumMonte]] | 2014 | peer-reviewed-theoretical | — | not-applicable | medium |
-| [[2012_Dickson_AlgorithmicApproachAdiabatic]] | 2011 | preprint | portfolio-optimisation | speculative | medium |
+| [[2025_Kao_MixedSignalQuantum]] | — | peer-reviewed-empirical | derivatives-pricing | theoretical | high |
 
 ## Topics Using This Method
 
 | Topic | Papers |
 |-------|--------|
-| derivatives-pricing | 19 |
-| risk-modelling | 17 |
-| portfolio-optimisation | 16 |
-| asset-pricing | 14 |
-| credit-scoring | 9 |
-| fraud-detection | 8 |
-| quantum-cryptography | 8 |
-| market-simulation | 8 |
-| high-frequency-trading | 7 |
-| regulatory-compliance | 7 |
+| derivatives-pricing | 11 |
+| risk-modelling | 10 |
+| portfolio-optimisation | 7 |
+| asset-pricing | 6 |
+| market-simulation | 4 |
+| credit-scoring | 2 |
+| quantum-cryptography | 2 |
+| fraud-detection | 1 |
 
 ## Key Findings
 
-- [supported] Linear-Ramp LC-QAOA improves convergence and feasibility compared to standard QAOA, Two-Step QAOA, and Grover-Mixer QAOA on small Vehicle Routing Problem (VRP) instances in noiseless simulations. — [[2026_Azfar_ShallowRobustQaoa]]
-- [supported] Linear-Chain (LC) QAOA reduces two-qubit gate depth and boosts noise robustness, achieving the shallowest circuit depth on IBM Eagle/Heron hardware. — [[2026_Azfar_ShallowRobustQaoa]]
-- [supported] On real hardware (IBM Eagle/Heron), LC-QAOA with XpXm dynamical decoupling more than doubles feasibility (<1% to >2%) and recovers the optimum in several trials. — [[2026_Azfar_ShallowRobustQaoa]]
-- [supported] Linear-ramp initialization (LRI-QAOA) concentrates probability on feasible solutions, improving feasibility rates from ~2% (standard QAOA) to ~47.6% in statevector simulations. — [[2026_Azfar_ShallowRobustQaoa]]
-- [supported] Grover-Mixer QAOA yields high feasibility in simulations (21% at p=8) but is hampered by deep circuits on hardware, failing to compile for p > 5. — [[2026_Azfar_ShallowRobustQaoa]]
-- [supported] Two-Step QAOA improves feasibility over standard QAOA in simulations (5.6% vs. 2.4% at p=4) but struggles with constraint leakage and deeper circuits. — [[2026_Azfar_ShallowRobustQaoa]]
-- [supported] Dynamical decoupling (XpXm) improves hardware performance, boosting feasibility from 1.14% to 1.60% and improving optimal solution rank from 16 to 6 on IBM Fez. — [[2026_Azfar_ShallowRobustQaoa]]
-- [supported] Heavy error mitigation (e.g., Pauli twirling, ZNE) underperforms compared to lightweight dynamical decoupling, reducing feasibility from 1.80% to 0.60%. — [[2026_Azfar_ShallowRobustQaoa]]
-- [supported] LC-QAOA scales to larger VRP instances (30 qubits), reliably recovering the optimal route at p > 16 on IBM Eagle/Heron, with CVaR objective further improving results. — [[2026_Azfar_ShallowRobustQaoa]]
-- [supported] The paper provides rigorous error and resource estimates for variational quantum algorithms (VQAs) solving differential equations (DEs) using Runge-Kutta methods (RKMs), accounting for truncation errors and shot noise in quantum measurements. — [[2026_Dechant_ErrorResourceEstimates]]
-- [supported] Higher-order RKMs (e.g., order 4 for a 1D ODE and order 2 for option pricing via the Black-Scholes equation) minimize the total number of quantum circuit evaluations required to achieve a target error. — [[2026_Dechant_ErrorResourceEstimates]]
-- [supported] The total error in VQAs for solving DEs is bounded by the sum of the parameter error (from RKM approximations) and the representation error (from the quantum Ansatz), with the former analyzed in detail. — [[2026_Dechant_ErrorResourceEstimates]]
-- [supported] The minimal number of RKM time steps and measurements per function evaluation is derived for both noiseless and shot-noise scenarios, providing a framework for optimizing quantum resource usage. — [[2026_Dechant_ErrorResourceEstimates]]
-- [supported] The paper demonstrates that the variational quantum algorithm can solve both ordinary and partial differential equations (e.g., Black-Scholes equation) by mapping them to imaginary-time Schrödinger equations. — [[2026_Dechant_ErrorResourceEstimates]]
-- [supported] The total number of quantum circuit evaluations scales quadratically with the number of variational parameters (NV), highlighting the resource-intensive nature of VQAs for large-scale problems. — [[2026_Dechant_ErrorResourceEstimates]]
-- [supported] Current quantum hardware limitations (noise, qubit counts, error propagation) constrain the scalability and reliability of quantum-enhanced forecasting models in the NISQ era — [[2026_Gnal_ScenarioBasedMacroeconomic]]
-- [supported] Integrating quantum outputs into established econometric frameworks requires methodological transparency and interpretability to ensure policy relevance — [[2026_Gnal_ScenarioBasedMacroeconomic]]
-- [supported] The study provides a unified comparative framework for QML algorithms, highlighting their optimization capabilities, practical feasibility, and limitations within a single analytical structure — [[2026_Nawaz_ExploringQuantumMachine]]
-- [supported] Key challenges hindering real-world deployment of QML include quantum noise, scalability constraints, hardware limitations, and algorithmic performance trade-offs — [[2026_Nawaz_ExploringQuantumMachine]]
 - [supported] For linear and semilinear SDEs with Lipschitz coefficients, quantum algorithms estimate relevant quantities (option prices, expected hitting times, moments) to accuracy ε in time ˜O(poly(d)polylog(1/ε)), versus classical O(poly(d)/ε²). — [[2026_Prasad_QuantumAlgorithmsStochastic]]
+- [supported] Quantum simulation of the Fokker-Planck equation achieves accuracy ε in time ˜O(d · log(1/ε)), compared to classical finite-difference solvers at O(n^{d+1}_s). — [[2026_Prasad_QuantumAlgorithmsStochastic]]
+- [supported] Numerical simulations on small instances (e.g., 2D Black-Scholes, 3D Langevin) demonstrate polynomial-to-super-polynomial empirical speedups in accuracy for fixed runtime. — [[2026_Prasad_QuantumAlgorithmsStochastic]]
+- [supported] Resource requirements for d-dimensional SDEs: ~150 qubits for d=10, ε=10⁻³, and δx=10⁻² in finance applications. — [[2026_Prasad_QuantumAlgorithmsStochastic]]
+- [supported] Quantum annealing hardware is currently the most reliable scaled hardware for optimization tasks in finance — [[2024_Ghysels_QuantumFinance]]
+- [supported] The paper extends digitized counterdiabatic quantum computing from qubits to qutrits for quadratic optimization problems by deriving qutrit Hamiltonian encodings and approximate counterdiabatic drivings based on the first-order nested-commutator adiabatic gauge potential. — [[2024_Tancara_HighDimensionalCounterdiabatic]]
+- [supported] Across 1000 random instances each of multiway number partitioning, max 3-cut, and portfolio optimization, qutrit encodings generally achieved higher success probability than qubit encodings under the studied simulated dynamics. — [[2024_Tancara_HighDimensionalCounterdiabatic]]
+- [supported] For max 3-cut on 6-node random graphs, qutrits outperformed qubits in all 1000 tested instances for the reported evolution times. — [[2024_Tancara_HighDimensionalCounterdiabatic]]
+- [supported] The largest reported improvement was for max 3-cut, where some instances achieved success-probability enhancement P3/2 greater than 90 relative to qubits. — [[2024_Tancara_HighDimensionalCounterdiabatic]]
+- [supported] Mean success-probability enhancement for max 3-cut was reported as 35.34 at T = 0.1ω0^-1, 30.41 at T = 1ω0^-1, and 6.99 at T = 10ω0^-1. — [[2024_Tancara_HighDimensionalCounterdiabatic]]
+- [supported] For multiway number partitioning, mean success-probability enhancement was modest but above 1 on average: 1.31 at T = 0.1ω0^-1, 1.23 at T = 1ω0^-1, and 1.07 at T = 10ω0^-1. — [[2024_Tancara_HighDimensionalCounterdiabatic]]
+- [supported] For multiway number partitioning, the fraction of instances with qutrit improvement over qubits was 84.6% at T = 0.1ω0^-1, 79.8% at T = 1ω0^-1, and 74.8% at T = 10ω0^-1. — [[2024_Tancara_HighDimensionalCounterdiabatic]]
+- [supported] For portfolio optimization, qutrits improved over qubits in all tested instances at T = 0.1ω0^-1 and T = 1ω0^-1, with mean enhancement 3.56 and 1.54 respectively; at T = 10ω0^-1, more than 80% of instances improved with mean enhancement 1.12. — [[2024_Tancara_HighDimensionalCounterdiabatic]]
+- [supported] In illustrative portfolio optimization examples using yfinance data for six assets from 2020-2023, qutrit performance was visibly better than qubits over the simulated evolution, although one tested setting still remained far from the adiabatic regime. — [[2024_Tancara_HighDimensionalCounterdiabatic]]
+- [supported] The authors attribute qutrit performance gains to more efficient problem codings that reduce redundant states and lower the density of near-ground-state level crossings during evolution compared with qubit encodings. — [[2024_Tancara_HighDimensionalCounterdiabatic]]
+- [supported] The article constructs explicit quantum circuit designs for interest-rate risk based on bounded trinomial trees derived from mean-reverting short-rate models such as Vasicek. — [[2025_Chuvakov_FactoringDecisionSupport]]
+- [supported] The article constructs explicit quantum circuit designs for reduced-form credit-risk models in which survival/default over discrete time steps is encoded with one qubit per step. — [[2025_Chuvakov_FactoringDecisionSupport]]
+- [supported] End-to-end QMC/QAE schemes are presented that combine scenario generation, risk-measure encoding, and amplitude estimation for financial risk analysis. — [[2025_Chuvakov_FactoringDecisionSupport]]
+- [supported] Using a quantum emulator, the authors report that measured values converge to expected values and that estimation error tends toward zero as the number of output qubits increases. — [[2025_Chuvakov_FactoringDecisionSupport]]
+- [supported] The quantum algorithm based on matrix multiplicative weights achieves a runtime of O(n^k ε^{-4} + n^{k/2} ε^{-5}) for approximating Lasserre’s hierarchy values for polynomial optimization under specific conditions (e.g., optimal value attained within an ℓ1-ball or simplex constraints). — [[2025_Frana_QuantumSpeedUps]]

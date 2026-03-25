@@ -1,80 +1,75 @@
 # Fraud Detection
 
-**Papers:** 18 | **Empirical:** 4 | **Theoretical:** 5 | **Review:** 2
+**Papers:** 13 | **Empirical:** 2 | **Theoretical:** 5 | **Review:** 2
 
 ## Papers
 
 | Paper | Year | Source Type | Methods | QA Claim | Relevance |
 |-------|------|-------------|---------|----------|-----------|
-| [[2026_DECCANINTERNATIONALACADEMICPUBLISHERS_QuantumComputingAlgorithms]] | 2026 | other | grover, variational, quantum-simulation, classical-simulation, quantum-ML | speculative | medium |
-| [[2026_Dehn_ExtrapolationMethodOptimize]] | 2026 | peer-reviewed-empirical | QAOA, QUBO, variational, classical-simulation | theoretical | high |
-| [[2026_Nawaz_ExploringQuantumMachine]] | 2026 | peer-reviewed-theoretical | QAOA, VQE, quantum-ML, quantum-SVM, grover, variational, quantum-simulation | theoretical | high |
-| [[2025_Ganguly_HybridClassicalQuantum]] | 2025 | conference-paper | quantum-ML, variational, QUBO, classical-simulation | speculative | high |
-| [[2025_Hlatshwayo_TechnicalReviewQuantum]] | 2025 | preprint | HHL, grover, quantum-walk, amplitude-estimation, quantum-simulation, quantum-ML | speculative | high |
+| [[2026_Nawaz_ExploringQuantumMachine]] | 2026 | review-article | QAOA, VQE, quantum-ML, quantum-SVM, variational, grover | theoretical | medium |
+| [[2025_Akinyemi_BigDataFinancial]] | 2025 | peer-reviewed-theoretical | — | speculative | medium |
+| [[2025_Chawla_QuantumComputingUnderlying]] | 2025 | peer-reviewed-theoretical | QAOA, VQE, quantum-ML, quantum-SVM, amplitude-estimation, grover | theoretical | medium |
+| [[2025_Hlatshwayo_TechnicalReviewQuantum]] | 2025 | preprint | QAOA, VQE, quantum-annealing, HHL, quantum-ML, quantum-SVM, amplitude-estimation, QUBO, variational, grover, quantum-walk, quantum-simulation | speculative | high |
 | [[2025_JETIR_QuantumFinance]] | 2025 | peer-reviewed-theoretical | QAOA, VQE, quantum-ML, amplitude-estimation, variational, classical-simulation | theoretical | high |
-| [[2025_Jiang_RasenganTransitionHamiltonian]] | 2025 | conference-paper | variational, QAOA, VQE, quantum-annealing, QUBO | theoretical | high |
-| [[2025_NeelotpalDey_QuantumComputingFinancial]] | 2025 | peer-reviewed-theoretical | QAOA, VQE, quantum-ML, amplitude-estimation, QUBO, variational, classical-simulation | theoretical | high |
-| [[2025_ThirumalGunasekaran_ExploringRevolutionaryPotential]] | 2025 | peer-reviewed-theoretical | grover, quantum-ML, quantum-simulation | theoretical | high |
-| [[2025_Vangibhuratha_QuantumMachineLearning]] | 2025 | peer-reviewed-theoretical | quantum-ML, quantum-SVM, variational, quantum-annealing, QAOA, HHL, quantum-simulation, classical-simulation | theoretical | high |
-| [[2026_Mahmod_StateQuantumComputing]] | 2025 | review-article | HHL, QAOA, VQE, quantum-annealing, grover, quantum-ML, quantum-SVM, variational, QUBO, quantum-simulation | theoretical | high |
-| [[2023_Thakkar_ImprovedFinancialForecasting]] | 2024 | peer-reviewed-empirical | quantum-ML, variational, quantum-SVM | speculative | high |
-| [[2025_Deshmukh_QuantumMachineLearning]] | 2024 | peer-reviewed-empirical | quantum-ML, quantum-SVM, VQE, QAOA, variational | speculative | high |
-| [[2023_Markna_UnveilingAdvancedComputational]] | 2023 | review-article | QAOA, quantum-annealing, HHL, quantum-ML, quantum-SVM, amplitude-estimation, QUBO, variational, grover, quantum-simulation, classical-simulation | speculative | high |
-| [[2022_Biesner_SolvingSubsetSum]] | 2022 | preprint | QUBO, classical-simulation | speculative | medium |
-| [[2022_Sen_VariationalQuantumClassifiers]] | 2022 | peer-reviewed-empirical | quantum-ML, variational | speculative | medium |
-| [[2020_Kommadi_QuantumComputingSolutions]] | 2020 | technical-report | QAOA, grover, quantum-ML, quantum-SVM, quantum-annealing, variational, quantum-walk, quantum-simulation, classical-simulation | speculative | high |
-| [[2016_Petrosyan_GroverSearchAlgorithm]] | 2015 | preprint | grover | speculative | medium |
+| [[2025_NeelotpalDey_QuantumComputingFinancial]] | 2025 | peer-reviewed-theoretical | QAOA, VQE, quantum-ML, amplitude-estimation, variational | theoretical | high |
+| [[2025_ThirumalGunasekaran_ExploringRevolutionaryPotential]] | 2025 | peer-reviewed-theoretical | grover, quantum-ML, classical-simulation | theoretical | high |
+| [[2023_Thakkar_ImprovedFinancialForecasting]] | 2024 | preprint | quantum-ML, variational, classical-simulation | speculative | high |
+| [[2024_Gujju_QuantumMachineLearning]] | 2024 | review-article | quantum-ML, quantum-SVM, VQE, variational | disputed | high |
+| [[2024_Mitsuda_ApproximateComplexAmplitude]] | 2024 | peer-reviewed-empirical | quantum-ML, variational, classical-simulation | speculative | high |
+| [[2025_Deshmukh_QuantumMachineLearning]] | 2024 | peer-reviewed-empirical | QAOA, VQE, quantum-ML, quantum-SVM, variational | speculative | medium |
+| [[2021_Pistoia_QuantumMachineLearning]] | 2021 | preprint | HHL, quantum-ML, quantum-SVM, quantum-annealing, QUBO, variational, amplitude-estimation | speculative | high |
+| [[2020_Kommadi_QuantumComputingSolutions]] | 2020 | other | QAOA, VQE, quantum-annealing, HHL, quantum-ML, quantum-SVM, variational, grover, quantum-walk, classical-simulation | speculative | medium |
 
 ## Key Findings
 
-- [supported] The linear-ramp QAOA (LR-QAOA) with extrapolation-based parameter optimization demonstrates superior runtime scaling compared to classical MQLib/Burer2002 for portfolio optimization problems up to 28 qubits, with quantum scaling exponent α = 0.219 vs. classical α = 0.323 — [[2026_Dehn_ExtrapolationMethodOptimize]]
-- [supported] For portfolio optimization, the quantum runtime (total circuit depth D) scales as 2^0.219N, while the classical runtime scales as 2^0.323N, indicating a potential quantum scaling advantage [supported] — [[2026_Dehn_ExtrapolationMethodOptimize]]
-- [supported] The extrapolation method for LR-QAOA parameters (Δγ, Δβ, p) from smaller subproblems (4-10 qubits) to larger problems (up to 28 qubits) yields results close to direct optimization minima, validating the approach [supported] — [[2026_Dehn_ExtrapolationMethodOptimize]]
-- [supported] Universal parameter scaling (algebraic fits for Δγ, Δβ, p across instances) reduces outliers and improves runtime scaling for feature selection, clustering, and MaxCut problems, achieving near-parity with classical benchmarks [supported] — [[2026_Dehn_ExtrapolationMethodOptimize]]
-- [supported] The probability of measuring the optimal solution (P_opt) remains above 0.1 on average for all problem classes, with portfolio optimization and MaxCut showing near-constant or slightly increasing P_opt with problem size [supported] — [[2026_Dehn_ExtrapolationMethodOptimize]]
-- [supported] The study provides a unified comparative framework for QML algorithms, highlighting their optimization capabilities, practical feasibility, and limitations within a single analytical structure — [[2026_Nawaz_ExploringQuantumMachine]]
-- [supported] Key challenges hindering real-world deployment of QML include quantum noise, scalability constraints, hardware limitations, and algorithmic performance trade-offs — [[2026_Nawaz_ExploringQuantumMachine]]
-- [supported] QLSTM test predictions for NVIDIA stock data were slightly superior to classical LSTM, particularly around volatile peaks, indicating better alignment with real-life data — [[2025_Ganguly_HybridClassicalQuantum]]
-- [supported] QLSTM demonstrated earlier prediction of turning points in stock market trends compared to classical LSTM, potentially offering advantages in forecasting market movements — [[2025_Ganguly_HybridClassicalQuantum]]
-- [supported] QLSTM training loss exhibited smoothing over time, unlike classical LSTM where loss spikes appeared more pronounced toward the end of training — [[2025_Ganguly_HybridClassicalQuantum]]
-- [supported] qGAN successfully modeled cryptocurrency data distributions with fewer iterations than classical GANs, achieving equilibrium in generator and discriminator loss functions — [[2025_Ganguly_HybridClassicalQuantum]]
-- [supported] qGAN combined with QUBO optimization predicted BNBBTC as the optimal cryptocurrency investment based on real-world Binance data — [[2025_Ganguly_HybridClassicalQuantum]]
-- [supported] QCBM with SPSA optimization closely approximated the target probability distribution for the synthetic BAS dataset, outperforming other optimizers like Cobyla — [[2025_Ganguly_HybridClassicalQuantum]]
-- [supported] Training time for QLSTM was highly dependent on GPU type, with NVIDIA RTX 3070 showing a 50% reduction in training time per epoch compared to RTX 3060 (780s vs. 1600s) — [[2025_Ganguly_HybridClassicalQuantum]]
-- [supported] CUDA-Q acceleration significantly improved QLSTM training performance, reducing training time per epoch from 780s to 18s on an RTX 3070 — [[2025_Ganguly_HybridClassicalQuantum]]
-- [supported] Rasengan improves accuracy by 4.12× compared to state-of-the-art QAOA (Choco-Q) on constrained binary optimization problems across 2000 cases from five domains (facility location, k-partition, job scheduling, set covering, and graph coloring). — [[2025_Jiang_RasenganTransitionHamiltonian]]
-- [supported] Rasengan reduces circuit depth by 1.96× compared to prior variational quantum algorithms (VQAs) in noise-free simulations. — [[2025_Jiang_RasenganTransitionHamiltonian]]
-- [supported] On real-world quantum hardware (IBM Kyiv and Brisbane), Rasengan achieves a 379× improvement in solution quality over the mean quality of feasible solution baselines, marking the first quantum algorithm to outperform this baseline. — [[2025_Jiang_RasenganTransitionHamiltonian]]
-- [supported] Rasengan’s Hamiltonian simplification and pruning techniques reduce circuit depth by over 94.6%, making it deployable on current NISQ devices (e.g., reducing depth from ~7000 to ~50 for a 24-variable graph coloring problem). — [[2025_Jiang_RasenganTransitionHamiltonian]]
-- [supported] Rasengan’s error mitigation technique improves accuracy by more than 303× on noisy hardware by purifying infeasible solutions after each segment. — [[2025_Jiang_RasenganTransitionHamiltonian]]
+- [supported] The review identifies QAOA, VQE, QNNs, QSVMs, Grover-based methods, QPCA, and quantum k-means as the main QML approaches studied for optimization across finance, logistics, AI, and chemistry. — [[2026_Nawaz_ExploringQuantumMachine]]
+- [supported] Across the reviewed literature, the paper finds a broad theme that QML methods show potential for exploring large solution spaces, faster convergence, and improved optimization performance relative to some classical approaches, but this is not established as a general empirical superiority. — [[2026_Nawaz_ExploringQuantumMachine]]
+- [supported] The review concludes that QAOA and VQE are the most prominent optimization-oriented QML methods, with QAOA emphasized for combinatorial optimization and VQE for energy/molecular optimization. — [[2026_Nawaz_ExploringQuantumMachine]]
+- [supported] The review identifies portfolio optimization in finance as a key application area, arguing that QAOA, VQE, and Grover-style search are being explored for asset allocation, risk management, and option-pricing-related tasks. — [[2026_Nawaz_ExploringQuantumMachine]]
+- [supported] A consensus theme in the reviewed literature is that current practical deployment is constrained by NISQ-era limitations, especially quantum noise, decoherence, limited qubit counts, and shallow-circuit requirements. — [[2026_Nawaz_ExploringQuantumMachine]]
+- [supported] The review finds that hybrid quantum-classical approaches are the dominant practical strategy in current QML optimization work and are presented as the most feasible near-term path to real-world use. — [[2026_Nawaz_ExploringQuantumMachine]]
+- [supported] The review highlights scalability as a major unresolved issue, with larger real-world optimization problems still difficult to handle because qubit availability, coherence time, and error-correction overhead remain insufficient. — [[2026_Nawaz_ExploringQuantumMachine]]
+- [supported] The review identifies noise sensitivity and error accumulation as recurring limitations for iterative variational methods such as QAOA and VQE, reducing reliability on current hardware. — [[2026_Nawaz_ExploringQuantumMachine]]
+- [supported] The review notes that algorithm design issues, including ansatz selection, parameter tuning, and quantum-classical interface overhead, materially affect optimization quality and convergence. — [[2026_Nawaz_ExploringQuantumMachine]]
+- [supported] The review finds that QNNs and QSVMs are frequently positioned for learning-based optimization and classification tasks, but their practical value is limited by trainability issues, barren plateaus, and hardware instability. — [[2026_Nawaz_ExploringQuantumMachine]]
+- [supported] The review reports that QPCA and Grover-based methods are commonly associated with theoretical speedup claims, but their practical usefulness is limited by hardware requirements and implementation difficulty. — [[2026_Nawaz_ExploringQuantumMachine]]
+- [supported] The review identifies an area of disagreement across the literature: while many studies claim speedups or improved optimization behavior, the paper also notes that classical methods remain competitive in several domains and that practical quantum benefit is often hardware-dependent. — [[2026_Nawaz_ExploringQuantumMachine]]
+- [supported] The review identifies future research priorities as scalable hardware, improved qubit coherence, advanced error correction, better hybrid models, and new quantum heuristics tailored to sectors such as banking, healthcare, and logistics. — [[2026_Nawaz_ExploringQuantumMachine]]
+- [supported] The paper's main supported conclusions concern big data rather than quantum computing: big data and real-time analytics can improve speed, precision, and comprehensiveness of financial risk management when paired with strong governance and compliance controls. — [[2025_Akinyemi_BigDataFinancial]]
+- [supported] The paper reports illustrative case-study claims that real-time analytics reduced fraud response time to within two seconds, saved $4.5 million, reduced complaints by 65%, predicted liquidity issues up to 48 hours ahead, and saved $12 million during a crisis, though these are not quantum-related results. — [[2025_Akinyemi_BigDataFinancial]]
+- [supported] A DPP-enhanced Random Forest (DPP-RF) improved churn-prediction precision at 6% recall from 71.6% to 77.5%, an increase of 5.9 percentage points on the bank dataset. — [[2023_Thakkar_ImprovedFinancialForecasting]]
+- [supported] On the churn use case, DPP-RF increased the average share of total withdrawals captured among the top 500 flagged customers from 61.42% to 62.77%, a gain of 1.35 percentage points over 11 test months. — [[2023_Thakkar_ImprovedFinancialForecasting]]
+- [supported] On the same churn task, DPP-RF increased the average share of maximum possible withdrawals captured from 69.18% to 70.72%, a gain of 1.54 percentage points. — [[2023_Thakkar_ImprovedFinancialForecasting]]
+- [supported] The classical DPP-RF model trained much more slowly than the benchmark Random Forest, taking 54 minutes versus 311 seconds, with DPP sampling identified as the computational bottleneck. — [[2023_Thakkar_ImprovedFinancialForecasting]]
+- [supported] On several OpenML tabular classification benchmarks, DPP-RF sometimes modestly outperformed standard Random Forest in ROC-AUC, but gains were dataset-dependent and not universal. — [[2023_Thakkar_ImprovedFinancialForecasting]]
 
 ## Methodologies Used
 
 | Method | Papers |
 |--------|--------|
-| variational | 14 |
-| quantum-ML | 14 |
-| QAOA | 10 |
-| classical-simulation | 9 |
-| grover | 8 |
-| quantum-simulation | 8 |
-| QUBO | 7 |
+| quantum-ML | 12 |
+| variational | 10 |
+| VQE | 8 |
+| QAOA | 7 |
 | quantum-SVM | 7 |
-| VQE | 6 |
-| quantum-annealing | 5 |
-| HHL | 4 |
-| amplitude-estimation | 4 |
+| grover | 5 |
+| amplitude-estimation | 5 |
+| classical-simulation | 5 |
+| quantum-annealing | 3 |
+| HHL | 3 |
+| QUBO | 2 |
 | quantum-walk | 2 |
+| quantum-simulation | 1 |
 
 ## Open Questions
 
-- How can quantum algorithms for financial applications (e.g., portfolio optimization) be adapted to current NISQ devices with limited qubits and high noise? — [[2026_DECCANINTERNATIONALACADEMICPUBLISHERS_QuantumComputingAlgorithms]]
-- What are the specific hardware requirements (qubit count, coherence time, gate fidelity) for quantum computing to achieve practical advantage in financial services? — [[2026_DECCANINTERNATIONALACADEMICPUBLISHERS_QuantumComputingAlgorithms]]
-- How do quantum algorithms compare to state-of-the-art classical methods in terms of accuracy, speed, and scalability for real-world financial problems? — [[2026_DECCANINTERNATIONALACADEMICPUBLISHERS_QuantumComputingAlgorithms]]
-- What are the most effective error mitigation strategies for quantum financial applications, and how do they impact solution quality? — [[2026_DECCANINTERNATIONALACADEMICPUBLISHERS_QuantumComputingAlgorithms]]
-- How can hybrid quantum-classical approaches be optimized for financial use cases, and what are their limitations? — [[2026_DECCANINTERNATIONALACADEMICPUBLISHERS_QuantumComputingAlgorithms]]
-- What are the potential risks and ethical considerations of deploying quantum computing in financial services (e.g., cryptography, fraud detection)? — [[2026_DECCANINTERNATIONALACADEMICPUBLISHERS_QuantumComputingAlgorithms]]
-- Empirical validation of quantum algorithms on real quantum hardware for financial applications — [[2026_DECCANINTERNATIONALACADEMICPUBLISHERS_QuantumComputingAlgorithms]]
-- Development of noise-resilient quantum algorithms tailored for NISQ devices in financial services — [[2026_DECCANINTERNATIONALACADEMICPUBLISHERS_QuantumComputingAlgorithms]]
-- Benchmarking quantum solutions against classical methods for specific financial problems (e.g., option pricing, risk analysis) — [[2026_DECCANINTERNATIONALACADEMICPUBLISHERS_QuantumComputingAlgorithms]]
-- Exploration of hybrid quantum-classical frameworks for large-scale financial datasets — [[2026_DECCANINTERNATIONALACADEMICPUBLISHERS_QuantumComputingAlgorithms]]
+- When and under what conditions will QML deliver practical quantum advantage over classical optimization methods in real-world settings such as finance and logistics? — [[2026_Nawaz_ExploringQuantumMachine]]
+- How can QML algorithms be scaled beyond current NISQ-era qubit and coherence limitations? — [[2026_Nawaz_ExploringQuantumMachine]]
+- What are the most effective noise-mitigation and error-correction strategies for optimization-focused QML algorithms? — [[2026_Nawaz_ExploringQuantumMachine]]
+- How should hybrid quantum-classical workflows be designed to minimize communication overhead and maximize optimization efficiency? — [[2026_Nawaz_ExploringQuantumMachine]]
+- What ansatz designs are most effective for different classes of optimization problems? — [[2026_Nawaz_ExploringQuantumMachine]]
+- How can barren plateaus, vanishing gradients, and trainability issues in QNNs be mitigated at larger qubit counts? — [[2026_Nawaz_ExploringQuantumMachine]]
+- How can QML models be regularized to avoid overfitting and improve generalization on unseen data? — [[2026_Nawaz_ExploringQuantumMachine]]
+- Which industries and problem classes are most likely to benefit first from domain-specific quantum algorithms? — [[2026_Nawaz_ExploringQuantumMachine]]
+- For finance specifically, how well do QML methods perform on realistic portfolio optimization problems with market uncertainty, regulatory constraints, and large asset universes? — [[2026_Nawaz_ExploringQuantumMachine]]
+- How robust are reported QML advantages when compared against strong modern classical heuristics and optimization solvers? — [[2026_Nawaz_ExploringQuantumMachine]]

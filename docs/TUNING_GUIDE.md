@@ -54,7 +54,7 @@ Edit `config/extraction_config.json`. Each step has a `model` field:
 ```json
 "step4": {
   "name": "findings_extraction",
-  "model": "Mistral-Large-3",    ← change this
+  "model": "gpt-5.1",    ← change this
   "temperature": 0.3,
   "max_tokens": 1500,
   "prompt_file": "prompts/step4_findings.txt",
@@ -70,7 +70,7 @@ You can use different models for different steps — for example, a cheaper mode
 2. Add the deployment name to `.env`:
 
 ```
-AZURE_DEPLOYMENTS=Kimi-K2.5,Mistral-Large-3,GPT-4o-mini
+AZURE_DEPLOYMENTS=Kimi-K2.5,Mistral-Large-3,gpt-5.1,GPT-4o-mini
 ```
 
 3. Use the deployment name in `config/extraction_config.json`:

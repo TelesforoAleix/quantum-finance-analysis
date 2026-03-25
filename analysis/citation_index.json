@@ -1,35 +1,14 @@
 {
-  "generated": "2026-03-20T00:02:04.117682+00:00",
-  "papers_with_dois": 59,
-  "papers_without_dois": 10,
+  "generated": "2026-03-25T15:20:11.014576+00:00",
+  "papers_with_dois": 80,
+  "papers_without_dois": 75,
   "papers": {
-    "2012_Dickson_AlgorithmicApproachAdiabatic.md": {
-      "doi": "10.48550/arXiv.1108.3303",
-      "openalex_cited_by_count": 0,
+    "2012_Neuscamman_OptimizingLargeParameter.md": {
+      "doi": "10.1103/PhysRevB.85.045103",
+      "openalex_cited_by_count": 121,
       "references_in_collection": [],
       "cited_by_in_collection": [],
-      "total_references": 0
-    },
-    "2015_McClean_ClockQuantumMonte.md": {
-      "doi": "10.48550/arXiv.1410.1877",
-      "openalex_cited_by_count": 0,
-      "references_in_collection": [],
-      "cited_by_in_collection": [],
-      "total_references": 0
-    },
-    "2016_Petrosyan_GroverSearchAlgorithm.md": {
-      "doi": "10.48550/arXiv.1512.05588",
-      "openalex_cited_by_count": 0,
-      "references_in_collection": [],
-      "cited_by_in_collection": [],
-      "total_references": 0
-    },
-    "2018_Rebentrost_QuantumComputationalFinance.md": {
-      "doi": "10.48550/arXiv.1805.00109",
-      "openalex_cited_by_count": 0,
-      "references_in_collection": [],
-      "cited_by_in_collection": [],
-      "total_references": 0
+      "total_references": 29
     },
     "2019_Kerenidis_QuantumAlgorithmsPortfolio.md": {
       "doi": "10.1145/3318041.3355465",
@@ -47,47 +26,45 @@
       "cited_by_in_collection": [],
       "total_references": 0
     },
-    "2020_Miyamoto_ReductionQubitsQuantum.md": {
-      "doi": "10.48550/arXiv.1911.12469",
+    "2021_Coyle_QuantumVersusClassical.md": {
+      "doi": "10.1088/2058-9565/abd3db",
       "openalex_cited_by_count": 2,
       "references_in_collection": [],
       "cited_by_in_collection": [],
-      "total_references": 0
+      "total_references": 96
     },
-    "2021_Anshu_ImprovedApproximationAlgorithms.md": {
-      "doi": "10.48550/arXiv.2105.01193",
+    "2021_Egger_WarmStartingQuantum.md": {
+      "doi": "10.22331/q-2021-07-01-479",
       "openalex_cited_by_count": 0,
       "references_in_collection": [],
       "cited_by_in_collection": [],
       "total_references": 0
     },
-    "2021_Bennett_QuantumOptimisationVia.md": {
-      "doi": "10.48550/arXiv.2111.00796",
-      "openalex_cited_by_count": 0,
+    "2021_Kubo_VariationalQuantumSimulations.md": {
+      "doi": "10.1103/PhysRevA.103.052425",
+      "openalex_cited_by_count": 47,
       "references_in_collection": [],
       "cited_by_in_collection": [],
-      "total_references": 4
+      "total_references": 55
     },
-    "2021_Kolotouros_EvolvingObjectiveFunction.md": {
-      "doi": "10.48550/arXiv.2105.11766",
-      "openalex_cited_by_count": 2,
+    "2021_Lu_AlgorithmsQuantumSimulation.md": {
+      "doi": "10.1103/PRXQuantum.2.020321",
+      "openalex_cited_by_count": 109,
       "references_in_collection": [],
-      "cited_by_in_collection": [],
-      "total_references": 42
+      "cited_by_in_collection": [
+        "2025_Zhang_QuantumComputingQuantum.md"
+      ],
+      "total_references": 111
     },
     "2021_Martin_TowardPricingFinancial.md": {
       "doi": "10.1103/PhysRevResearch.3.013167",
       "openalex_cited_by_count": 61,
       "references_in_collection": [],
-      "cited_by_in_collection": [],
+      "cited_by_in_collection": [
+        "2022_Wolf_QuantumAlgorithmPricing.md",
+        "2024_Gujju_QuantumMachineLearning.md"
+      ],
       "total_references": 33
-    },
-    "2021_Stamatopoulos_TowardsQuantumAdvantage.md": {
-      "doi": "10.48550/arXiv.2111.12509",
-      "openalex_cited_by_count": 0,
-      "references_in_collection": [],
-      "cited_by_in_collection": [],
-      "total_references": 0
     },
     "2022_Biesner_SolvingSubsetSum.md": {
       "doi": "10.36227/techrxiv.18994160.v1",
@@ -103,6 +80,15 @@
       "cited_by_in_collection": [],
       "total_references": 0
     },
+    "2022_Hegade_PortfolioOptimizationDigitized.md": {
+      "doi": "10.1103/PhysRevResearch.4.043204",
+      "openalex_cited_by_count": 53,
+      "references_in_collection": [],
+      "cited_by_in_collection": [
+        "2025_Uotila_HigherOrderPortfolio.md"
+      ],
+      "total_references": 64
+    },
     "2022_Kolotouros_EvolvingObjectiveFunction.md": {
       "doi": "10.1103/PhysRevResearch.4.023225",
       "openalex_cited_by_count": 24,
@@ -111,13 +97,6 @@
         "2025_Cai_EnhancingQuantumApproximate.md"
       ],
       "total_references": 68
-    },
-    "2022_Saha_IntermediateQutritBased.md": {
-      "doi": "10.48550/arXiv.2205.15822",
-      "openalex_cited_by_count": 1,
-      "references_in_collection": [],
-      "cited_by_in_collection": [],
-      "total_references": 0
     },
     "2022_Sen_VariationalQuantumClassifiers.md": {
       "doi": "10.1371/journal.pone.0262346",
@@ -135,12 +114,28 @@
       ],
       "total_references": 18
     },
-    "2022_Zhao_QuantumInspiredVariational.md": {
-      "doi": "10.48550/arXiv.2207.10838",
-      "openalex_cited_by_count": 0,
+    "2022_Wolf_QuantumAlgorithmPricing.md": {
+      "doi": "10.3390/risks10120221",
+      "openalex_cited_by_count": 2,
+      "references_in_collection": [
+        "2021_Martin_TowardPricingFinancial.md"
+      ],
+      "cited_by_in_collection": [],
+      "total_references": 34
+    },
+    "2023_Alsalman_AcceleratingQuantumReadiness.md": {
+      "doi": "10.4236/jqis.2023.132003",
+      "openalex_cited_by_count": 7,
       "references_in_collection": [],
       "cited_by_in_collection": [],
-      "total_references": 0
+      "total_references": 3
+    },
+    "2023_Chowdhury_AcceleratedQuantumMonte.md": {
+      "doi": "10.1038/s42005-023-01202-3",
+      "openalex_cited_by_count": 28,
+      "references_in_collection": [],
+      "cited_by_in_collection": [],
+      "total_references": 64
     },
     "2023_Fernandes_SystematicLiteratureReview.md": {
       "doi": "10.1109/PUNECON58714.2023.10450063",
@@ -156,12 +151,16 @@
       "cited_by_in_collection": [],
       "total_references": 102
     },
-    "2023_Kobayashi_CrossSectionalStock.md": {
-      "doi": "10.48550/arXiv.2304.12501",
-      "openalex_cited_by_count": 2,
-      "references_in_collection": [],
-      "cited_by_in_collection": [],
-      "total_references": 29
+    "2023_Saini_CurrentChallengeLimitations.md": {
+      "doi": "10.36893/JNAO.2022.V13I02.0026-035",
+      "openalex_cited_by_count": 3,
+      "references_in_collection": [
+        "2023_Saini_CurrentChallengeLimitations.md"
+      ],
+      "cited_by_in_collection": [
+        "2023_Saini_CurrentChallengeLimitations.md"
+      ],
+      "total_references": 19
     },
     "2023_Shan_QuantumComputingSimulated.md": {
       "doi": "10.4108/eai.1-9-2023.2338767",
@@ -170,12 +169,33 @@
       "cited_by_in_collection": [],
       "total_references": 10
     },
-    "2023_Thakkar_ImprovedFinancialForecasting.md": {
-      "doi": "10.48550/arXiv.2306.12965",
-      "openalex_cited_by_count": 1,
+    "2023_Simula_QuantumMonteCarlo.md": {
+      "doi": "10.1103/PhysRevB.108.045201",
+      "openalex_cited_by_count": 4,
+      "references_in_collection": [],
+      "cited_by_in_collection": [],
+      "total_references": 53
+    },
+    "2023_Udvarnoki_QuantumAdvantageMonte.md": {
+      "doi": "10.1088/2399-6528/acd2a4",
+      "openalex_cited_by_count": 8,
+      "references_in_collection": [],
+      "cited_by_in_collection": [],
+      "total_references": 36
+    },
+    "2023_YonaEkaPratiwi_PengembanganAlgoritmaKuantum.md": {
+      "doi": "10.59031/jnts.v1i2.773",
+      "openalex_cited_by_count": 0,
       "references_in_collection": [],
       "cited_by_in_collection": [],
       "total_references": 0
+    },
+    "2024_AkaashVishalHazarika_DistributedQuantumComputing.md": {
+      "doi": "10.30574/ijsra.2024.13.2.2602",
+      "openalex_cited_by_count": 4,
+      "references_in_collection": [],
+      "cited_by_in_collection": [],
+      "total_references": 7
     },
     "2024_Bhasin_EnhancingQuantumMachine.md": {
       "doi": "10.1109/INCOS59338.2024.10527612",
@@ -183,8 +203,24 @@
       "references_in_collection": [
         "2022_Sun_PortfolioOptimizationBased.md"
       ],
-      "cited_by_in_collection": [],
+      "cited_by_in_collection": [
+        "2026_C_AdvancingStockPrice.md"
+      ],
       "total_references": 8
+    },
+    "2024_CadiTazi_FoldedSpectrumVqe.md": {
+      "doi": "10.1021/acs.jctc.3c01378",
+      "openalex_cited_by_count": 18,
+      "references_in_collection": [],
+      "cited_by_in_collection": [],
+      "total_references": 54
+    },
+    "2024_Carrascal_BacktestingQuantumComputing.md": {
+      "doi": "10.1109/TQE.2023.3337328",
+      "openalex_cited_by_count": 8,
+      "references_in_collection": [],
+      "cited_by_in_collection": [],
+      "total_references": 63
     },
     "2024_Chou_QutritBasedQuantum.md": {
       "doi": "10.1109/QCE60285.2024.10403",
@@ -200,6 +236,22 @@
       "cited_by_in_collection": [],
       "total_references": 0
     },
+    "2024_Gujju_QuantumMachineLearning.md": {
+      "doi": "10.1103/PhysRevApplied.21.067001",
+      "openalex_cited_by_count": 55,
+      "references_in_collection": [
+        "2021_Martin_TowardPricingFinancial.md"
+      ],
+      "cited_by_in_collection": [],
+      "total_references": 328
+    },
+    "2024_Huang_EvaluatingQuantumClassical.md": {
+      "doi": "10.1103/PhysRevResearch.6.043063",
+      "openalex_cited_by_count": 12,
+      "references_in_collection": [],
+      "cited_by_in_collection": [],
+      "total_references": 74
+    },
     "2024_KI_QuantumFinance.md": {
       "doi": "10.1007/s13218-024-00870-9",
       "openalex_cited_by_count": 63,
@@ -210,6 +262,16 @@
         "2025_Uotila_HigherOrderPortfolio.md"
       ],
       "total_references": 70
+    },
+    "2024_Kea_HybridQuantumClassical.md": {
+      "doi": "10.3390/e26110954",
+      "openalex_cited_by_count": 12,
+      "references_in_collection": [],
+      "cited_by_in_collection": [
+        "2025_Vellaipandiyan_HybridQlstmFramework.md",
+        "2026_C_AdvancingStockPrice.md"
+      ],
+      "total_references": 56
     },
     "2024_Leipold_TrainScalingQuantum.md": {
       "doi": "10.1109/QCE60285.2024.10266",
@@ -225,6 +287,13 @@
       "cited_by_in_collection": [],
       "total_references": 10
     },
+    "2024_Mitsuda_ApproximateComplexAmplitude.md": {
+      "doi": "10.1103/PhysRevA.109.052423",
+      "openalex_cited_by_count": 15,
+      "references_in_collection": [],
+      "cited_by_in_collection": [],
+      "total_references": 48
+    },
     "2024_Mustafa_QuantumGraphNeural.md": {
       "doi": "10.1109/TQCEBT59414.2024.10545170",
       "openalex_cited_by_count": 1,
@@ -232,12 +301,33 @@
       "cited_by_in_collection": [],
       "total_references": 18
     },
+    "2024_Yu_ImprovedQuantumApproximate.md": {
+      "doi": "10.21203/rs.3.rs-4582391/v1",
+      "openalex_cited_by_count": 1,
+      "references_in_collection": [],
+      "cited_by_in_collection": [],
+      "total_references": 0
+    },
     "2025_Aggarwal_BridgingQuantumAlgorithms.md": {
       "doi": "10.1109/UPWIECON67212.2025.11390104",
       "openalex_cited_by_count": 0,
       "references_in_collection": [],
       "cited_by_in_collection": [],
       "total_references": 18
+    },
+    "2025_Akinyemi_BigDataFinancial.md": {
+      "doi": "10.30574/wjarr.2025.28.1.3375",
+      "openalex_cited_by_count": 0,
+      "references_in_collection": [],
+      "cited_by_in_collection": [],
+      "total_references": 0
+    },
+    "2025_Azadi_QuantumMonteCarlo.md": {
+      "doi": "10.1103/3wjg-y6qk",
+      "openalex_cited_by_count": 1,
+      "references_in_collection": [],
+      "cited_by_in_collection": [],
+      "total_references": 61
     },
     "2025_Benamer_VariationalQuantumAlgorithms.md": {
       "doi": "10.20944/preprints202508.1482.v1",
@@ -248,13 +338,6 @@
     },
     "2025_Berkowitz_QuantumComputingMeets.md": {
       "doi": "10.1103/Physics.18.154",
-      "openalex_cited_by_count": 0,
-      "references_in_collection": [],
-      "cited_by_in_collection": [],
-      "total_references": 0
-    },
-    "2025_Bhattacharyya_SolvingGeneralQubos.md": {
-      "doi": "XXXXXXX.XXXXXXX",
       "openalex_cited_by_count": 0,
       "references_in_collection": [],
       "cited_by_in_collection": [],
@@ -275,6 +358,20 @@
       "references_in_collection": [],
       "cited_by_in_collection": [],
       "total_references": 25
+    },
+    "2025_Chawla_QuantumComputingUnderlying.md": {
+      "doi": "10.33889/PMSL.2025.4.2.020",
+      "openalex_cited_by_count": 0,
+      "references_in_collection": [],
+      "cited_by_in_collection": [],
+      "total_references": 78
+    },
+    "2025_Chuvakov_FactoringDecisionSupport.md": {
+      "doi": "10.15622/ia.24.2.11",
+      "openalex_cited_by_count": 0,
+      "references_in_collection": [],
+      "cited_by_in_collection": [],
+      "total_references": 18
     },
     "2025_Cibrario_AutocallableOptionsPricing.md": {
       "doi": "10.1109/QCE65121.2025.00267",
@@ -298,11 +395,18 @@
       "total_references": 0
     },
     "2025_Gibadullin_QuantumAlgorithmsSolving.md": {
-      "doi": "10.1007/978-3-031-94273-0_1",
+      "doi": "10.1007/978-3-031-94273-0_7",
       "openalex_cited_by_count": 0,
       "references_in_collection": [],
       "cited_by_in_collection": [],
-      "total_references": 14
+      "total_references": 15
+    },
+    "2025_Gngr_QuantumComputingEntrepreneurial.md": {
+      "doi": "10.62802/4mjhs818",
+      "openalex_cited_by_count": 0,
+      "references_in_collection": [],
+      "cited_by_in_collection": [],
+      "total_references": 7
     },
     "2025_Hlatshwayo_TechnicalReviewQuantum.md": {
       "doi": "10.20944/preprints202511.1802.v1",
@@ -311,12 +415,26 @@
       "cited_by_in_collection": [],
       "total_references": 0
     },
-    "2025_Huot_CorrectionsEnhancingKnapsack.md": {
-      "doi": "10.1109/ACCESS.2024.3506981",
-      "openalex_cited_by_count": 7,
+    "2025_Hsiao_ComprehensiveSurveyModern.md": {
+      "doi": "10.54254/2754-1169/166/2025.21140",
+      "openalex_cited_by_count": 0,
       "references_in_collection": [],
       "cited_by_in_collection": [],
-      "total_references": 45
+      "total_references": 0
+    },
+    "2025_Hunout_VariationalQuantumAlgorithm.md": {
+      "doi": "10.1103/PhysRevA.111.062404",
+      "openalex_cited_by_count": 1,
+      "references_in_collection": [],
+      "cited_by_in_collection": [],
+      "total_references": 63
+    },
+    "2025_Huot_CorrectionsEnhancingKnapsack.md": {
+      "doi": "10.1109/ACCESS.2025.3611744",
+      "openalex_cited_by_count": 0,
+      "references_in_collection": [],
+      "cited_by_in_collection": [],
+      "total_references": 1
     },
     "2025_Innan_QuantumPortfolioOptimization.md": {
       "doi": "10.1109/QCE65121.2025.10344",
@@ -337,12 +455,26 @@
       "cited_by_in_collection": [],
       "total_references": 37
     },
+    "2025_Lai_TowardsArbitraryQubo.md": {
+      "doi": "10.1088/2632-2153/addb97",
+      "openalex_cited_by_count": 3,
+      "references_in_collection": [],
+      "cited_by_in_collection": [],
+      "total_references": 96
+    },
     "2025_Malhotra_ComparativeStudyQuantum.md": {
       "doi": "10.1007/978-3-031-80842-5_8",
       "openalex_cited_by_count": 2,
       "references_in_collection": [],
       "cited_by_in_collection": [],
       "total_references": 26
+    },
+    "2025_Mustapha_ComparativeAnalysisLoan.md": {
+      "doi": "10.21203/rs.3.rs-7907390/v1",
+      "openalex_cited_by_count": 0,
+      "references_in_collection": [],
+      "cited_by_in_collection": [],
+      "total_references": 29
     },
     "2025_Springer_QuantumFinance.md": {
       "doi": "10.1007/978-3-031-94273-0",
@@ -362,6 +494,7 @@
       "doi": "10.1109/QCE65121.2025.00244",
       "openalex_cited_by_count": 0,
       "references_in_collection": [
+        "2022_Hegade_PortfolioOptimizationDigitized.md",
         "2024_KI_QuantumFinance.md"
       ],
       "cited_by_in_collection": [],
@@ -370,9 +503,34 @@
     "2025_Vellaipandiyan_HybridQlstmFramework.md": {
       "doi": "10.1109/ICIMIA67127.2025.11200988",
       "openalex_cited_by_count": 0,
-      "references_in_collection": [],
+      "references_in_collection": [
+        "2024_Kea_HybridQuantumClassical.md"
+      ],
       "cited_by_in_collection": [],
       "total_references": 13
+    },
+    "2025_Wei_SolvingMultipleDiscretization.md": {
+      "doi": "10.1007/s10614-025-11061-5",
+      "openalex_cited_by_count": 0,
+      "references_in_collection": [],
+      "cited_by_in_collection": [],
+      "total_references": 62
+    },
+    "2025_Zhang_QuantumComputingQuantum.md": {
+      "doi": "10.1103/jt8s-hzhd",
+      "openalex_cited_by_count": 3,
+      "references_in_collection": [
+        "2021_Lu_AlgorithmsQuantumSimulation.md"
+      ],
+      "cited_by_in_collection": [],
+      "total_references": 100
+    },
+    "2025_Zhong_ClassicalOptimizationImaginary.md": {
+      "doi": "10.1103/gtq3-j37b",
+      "openalex_cited_by_count": 1,
+      "references_in_collection": [],
+      "cited_by_in_collection": [],
+      "total_references": 50
     },
     "2026_Azfar_ShallowRobustQaoa.md": {
       "doi": "10.21203/rs.3.rs-8297477/v1",
@@ -399,15 +557,18 @@
       "cited_by_in_collection": [],
       "total_references": 17
     },
+    "2026_C_AdvancingStockPrice.md": {
+      "doi": "10.54392/irjmt26114",
+      "openalex_cited_by_count": 0,
+      "references_in_collection": [
+        "2024_Bhasin_EnhancingQuantumMachine.md",
+        "2024_Kea_HybridQuantumClassical.md"
+      ],
+      "cited_by_in_collection": [],
+      "total_references": 16
+    },
     "2026_DECCANINTERNATIONALACADEMICPUBLISHERS_QuantumComputingAlgorithms.md": {
       "doi": "10.5281/zenodo.18811726",
-      "openalex_cited_by_count": 0,
-      "references_in_collection": [],
-      "cited_by_in_collection": [],
-      "total_references": 0
-    },
-    "2026_Dechant_ErrorResourceEstimates.md": {
-      "doi": "10.48550/arXiv.2412.12262",
       "openalex_cited_by_count": 0,
       "references_in_collection": [],
       "cited_by_in_collection": [],
@@ -419,6 +580,13 @@
       "references_in_collection": [],
       "cited_by_in_collection": [],
       "total_references": 24
+    },
+    "2026_Gnal_QuantumComputingApproaches.md": {
+      "doi": "10.62802/h0w3vm29",
+      "openalex_cited_by_count": 0,
+      "references_in_collection": [],
+      "cited_by_in_collection": [],
+      "total_references": 7
     },
     "2026_Gnal_ScenarioBasedMacroeconomic.md": {
       "doi": "10.62802/zacbaj90",
@@ -440,44 +608,39 @@
       "references_in_collection": [],
       "cited_by_in_collection": [],
       "total_references": 0
+    },
+    "2026_Shaon_ReviewRoutingResource.md": {
+      "doi": "10.3390/electronics15030557",
+      "openalex_cited_by_count": 0,
+      "references_in_collection": [],
+      "cited_by_in_collection": [],
+      "total_references": 48
     }
   },
   "missing_papers": [
     {
-      "doi": "10.1016/j.revip.2019.100028",
-      "title": "Quantum computing for finance: Overview and prospects",
-      "first_author": "Rom\u00e1n Or\u00fas",
-      "year": 2019,
+      "doi": "10.22331/q-2018-08-06-79",
+      "title": "Quantum Computing in the NISQ era and beyond",
+      "first_author": "John Preskill",
+      "year": 2018,
       "cited_by_in_collection": [
-        "2021_Kolotouros_EvolvingObjectiveFunction.md",
+        "2021_Coyle_QuantumVersusClassical.md",
+        "2021_Kubo_VariationalQuantumSimulations.md",
         "2021_Martin_TowardPricingFinancial.md",
+        "2022_Hegade_PortfolioOptimizationDigitized.md",
         "2022_Kolotouros_EvolvingObjectiveFunction.md",
+        "2022_Sen_VariationalQuantumClassifiers.md",
+        "2022_Wolf_QuantumAlgorithmPricing.md",
+        "2023_Chowdhury_AcceleratedQuantumMonte.md",
         "2023_Fernandes_SystematicLiteratureReview.md",
-        "2024_KI_QuantumFinance.md",
-        "2025_Benamer_VariationalQuantumAlgorithms.md",
-        "2025_Cibrario_AutocallableOptionsPricing.md",
-        "2025_Ganguly_HybridClassicalQuantum.md",
-        "2025_Uotila_HigherOrderPortfolio.md"
-      ],
-      "citation_count_in_collection": 9,
-      "openalex_cited_by_count": 0
-    },
-    {
-      "doi": "10.3389/fphy.2014.00005",
-      "title": "Ising formulations of many NP problems",
-      "first_author": "Andrew Lucas",
-      "year": 2014,
-      "cited_by_in_collection": [
-        "2021_Kolotouros_EvolvingObjectiveFunction.md",
-        "2022_Biesner_SolvingSubsetSum.md",
-        "2022_Kolotouros_EvolvingObjectiveFunction.md",
-        "2023_Giron_ApproachingCollateralOptimization.md",
-        "2024_KI_QuantumFinance.md",
+        "2024_Gujju_QuantumMachineLearning.md",
         "2025_Cai_EnhancingQuantumApproximate.md",
-        "2025_Ganguly_HybridClassicalQuantum.md",
-        "2025_Uotila_HigherOrderPortfolio.md"
+        "2025_Gibadullin_QuantumAlgorithmsSolving.md",
+        "2025_Mustapha_ComparativeAnalysisLoan.md",
+        "2025_Zhang_QuantumComputingQuantum.md",
+        "2026_Barbaresco_QPortQuantum.md"
       ],
-      "citation_count_in_collection": 8,
+      "citation_count_in_collection": 15,
       "openalex_cited_by_count": 0
     },
     {
@@ -486,15 +649,215 @@
       "first_author": "Alberto Peruzzo",
       "year": 2014,
       "cited_by_in_collection": [
-        "2021_Kolotouros_EvolvingObjectiveFunction.md",
+        "2021_Kubo_VariationalQuantumSimulations.md",
+        "2021_Lu_AlgorithmsQuantumSimulation.md",
         "2022_Kolotouros_EvolvingObjectiveFunction.md",
         "2022_Sen_VariationalQuantumClassifiers.md",
+        "2024_CadiTazi_FoldedSpectrumVqe.md",
+        "2024_Gujju_QuantumMachineLearning.md",
+        "2024_Huang_EvaluatingQuantumClassical.md",
         "2025_Benamer_VariationalQuantumAlgorithms.md",
+        "2025_Hunout_VariationalQuantumAlgorithm.md",
         "2025_Innan_QuantumPortfolioOptimization.md",
         "2025_Jiang_RasenganTransitionHamiltonian.md",
+        "2025_Lai_TowardsArbitraryQubo.md",
+        "2025_Zhang_QuantumComputingQuantum.md",
         "2026_Barbaresco_QPortQuantum.md"
       ],
-      "citation_count_in_collection": 7,
+      "citation_count_in_collection": 14,
+      "openalex_cited_by_count": 0
+    },
+    {
+      "doi": "10.1016/j.revip.2019.100028",
+      "title": "Quantum computing for finance: Overview and prospects",
+      "first_author": "Rom\u00e1n Or\u00fas",
+      "year": 2019,
+      "cited_by_in_collection": [
+        "2021_Martin_TowardPricingFinancial.md",
+        "2022_Hegade_PortfolioOptimizationDigitized.md",
+        "2022_Kolotouros_EvolvingObjectiveFunction.md",
+        "2023_Fernandes_SystematicLiteratureReview.md",
+        "2023_Udvarnoki_QuantumAdvantageMonte.md",
+        "2024_Gujju_QuantumMachineLearning.md",
+        "2024_KI_QuantumFinance.md",
+        "2025_Benamer_VariationalQuantumAlgorithms.md",
+        "2025_Chuvakov_FactoringDecisionSupport.md",
+        "2025_Cibrario_AutocallableOptionsPricing.md",
+        "2025_Ganguly_HybridClassicalQuantum.md",
+        "2025_Uotila_HigherOrderPortfolio.md",
+        "2025_Wei_SolvingMultipleDiscretization.md"
+      ],
+      "citation_count_in_collection": 13,
+      "openalex_cited_by_count": 0
+    },
+    {
+      "doi": "10.1109/tqe.2020.3030314",
+      "title": "Quantum Computing for Finance: State-of-the-Art and Future Prospects",
+      "first_author": "Daniel J. Egger",
+      "year": 2020,
+      "cited_by_in_collection": [
+        "2023_Fernandes_SystematicLiteratureReview.md",
+        "2023_Giron_ApproachingCollateralOptimization.md",
+        "2024_Carrascal_BacktestingQuantumComputing.md",
+        "2024_Gujju_QuantumMachineLearning.md",
+        "2024_KI_QuantumFinance.md",
+        "2024_Mustafa_QuantumGraphNeural.md",
+        "2025_Chawla_QuantumComputingUnderlying.md",
+        "2025_Chuvakov_FactoringDecisionSupport.md",
+        "2025_Cibrario_AutocallableOptionsPricing.md",
+        "2025_Innan_QuantumPortfolioOptimization.md",
+        "2025_Uotila_HigherOrderPortfolio.md"
+      ],
+      "citation_count_in_collection": 11,
+      "openalex_cited_by_count": 0
+    },
+    {
+      "doi": "10.1038/s41467-018-07090-4",
+      "title": "Barren plateaus in quantum neural network training landscapes",
+      "first_author": "Jarrod R. McClean",
+      "year": 2018,
+      "cited_by_in_collection": [
+        "2021_Coyle_QuantumVersusClassical.md",
+        "2022_Hegade_PortfolioOptimizationDigitized.md",
+        "2022_Kolotouros_EvolvingObjectiveFunction.md",
+        "2022_Sen_VariationalQuantumClassifiers.md",
+        "2024_Gujju_QuantumMachineLearning.md",
+        "2024_Kea_HybridQuantumClassical.md",
+        "2024_Mitsuda_ApproximateComplexAmplitude.md",
+        "2025_Benamer_VariationalQuantumAlgorithms.md",
+        "2025_Hunout_VariationalQuantumAlgorithm.md",
+        "2025_Zhang_QuantumComputingQuantum.md"
+      ],
+      "citation_count_in_collection": 10,
+      "openalex_cited_by_count": 0
+    },
+    {
+      "doi": "10.1103/physrevlett.103.150502",
+      "title": "Quantum Algorithm for Linear Systems of Equations",
+      "first_author": "Aram W. Harrow",
+      "year": 2009,
+      "cited_by_in_collection": [
+        "2019_Kerenidis_QuantumAlgorithmsPortfolio.md",
+        "2021_Coyle_QuantumVersusClassical.md",
+        "2021_Kubo_VariationalQuantumSimulations.md",
+        "2021_Martin_TowardPricingFinancial.md",
+        "2022_Sun_PortfolioOptimizationBased.md",
+        "2024_Gujju_QuantumMachineLearning.md",
+        "2024_KI_QuantumFinance.md",
+        "2024_Mitsuda_ApproximateComplexAmplitude.md",
+        "2025_Chaudhary_PracticalQuantumSolver.md",
+        "2025_Hunout_VariationalQuantumAlgorithm.md"
+      ],
+      "citation_count_in_collection": 10,
+      "openalex_cited_by_count": 0
+    },
+    {
+      "doi": "10.1038/nature23879",
+      "title": "Hardware-efficient variational quantum eigensolver for small molecules and quantum magnets",
+      "first_author": "Abhinav Kandala",
+      "year": 2017,
+      "cited_by_in_collection": [
+        "2021_Kubo_VariationalQuantumSimulations.md",
+        "2021_Martin_TowardPricingFinancial.md",
+        "2022_Kolotouros_EvolvingObjectiveFunction.md",
+        "2024_CadiTazi_FoldedSpectrumVqe.md",
+        "2024_Mitsuda_ApproximateComplexAmplitude.md",
+        "2025_Benamer_VariationalQuantumAlgorithms.md",
+        "2025_Hunout_VariationalQuantumAlgorithm.md",
+        "2025_Jiang_RasenganTransitionHamiltonian.md",
+        "2025_Zhang_QuantumComputingQuantum.md"
+      ],
+      "citation_count_in_collection": 9,
+      "openalex_cited_by_count": 0
+    },
+    {
+      "doi": "10.1145/237814.237866",
+      "title": "A fast quantum mechanical algorithm for database search",
+      "first_author": "Lov K. Grover",
+      "year": 1996,
+      "cited_by_in_collection": [
+        "2019_Kerenidis_QuantumAlgorithmsPortfolio.md",
+        "2023_Chowdhury_AcceleratedQuantumMonte.md",
+        "2023_Saini_CurrentChallengeLimitations.md",
+        "2024_Gujju_QuantumMachineLearning.md",
+        "2024_KI_QuantumFinance.md",
+        "2025_Chawla_QuantumComputingUnderlying.md",
+        "2025_Chuvakov_FactoringDecisionSupport.md",
+        "2025_Malhotra_ComparativeStudyQuantum.md"
+      ],
+      "citation_count_in_collection": 8,
+      "openalex_cited_by_count": 0
+    },
+    {
+      "doi": "10.3389/fphy.2014.00005",
+      "title": "Ising formulations of many NP problems",
+      "first_author": "Andrew Lucas",
+      "year": 2014,
+      "cited_by_in_collection": [
+        "2022_Biesner_SolvingSubsetSum.md",
+        "2022_Kolotouros_EvolvingObjectiveFunction.md",
+        "2023_Giron_ApproachingCollateralOptimization.md",
+        "2024_KI_QuantumFinance.md",
+        "2025_Cai_EnhancingQuantumApproximate.md",
+        "2025_Ganguly_HybridClassicalQuantum.md",
+        "2025_Uotila_HigherOrderPortfolio.md",
+        "2025_Zhong_ClassicalOptimizationImaginary.md"
+      ],
+      "citation_count_in_collection": 8,
+      "openalex_cited_by_count": 0
+    },
+    {
+      "doi": "10.1038/s41534-019-0130-6",
+      "title": "Quantum risk analysis",
+      "first_author": "Stefan Woerner",
+      "year": 2019,
+      "cited_by_in_collection": [
+        "2021_Martin_TowardPricingFinancial.md",
+        "2022_Wolf_QuantumAlgorithmPricing.md",
+        "2023_Udvarnoki_QuantumAdvantageMonte.md",
+        "2024_Carrascal_BacktestingQuantumComputing.md",
+        "2024_KI_QuantumFinance.md",
+        "2025_Chawla_QuantumComputingUnderlying.md",
+        "2025_Wei_SolvingMultipleDiscretization.md",
+        "2026_Barbaresco_QuantumAmplitudeEstimation.md"
+      ],
+      "citation_count_in_collection": 8,
+      "openalex_cited_by_count": 0
+    },
+    {
+      "doi": "10.1007/s42484-019-00001-w",
+      "title": "Reverse quantum annealing approach to portfolio optimization problems",
+      "first_author": "Davide Venturelli",
+      "year": 2019,
+      "cited_by_in_collection": [
+        "2021_Martin_TowardPricingFinancial.md",
+        "2022_Hegade_PortfolioOptimizationDigitized.md",
+        "2022_Kolotouros_EvolvingObjectiveFunction.md",
+        "2023_Fernandes_SystematicLiteratureReview.md",
+        "2024_Bhasin_EnhancingQuantumMachine.md",
+        "2024_Carrascal_BacktestingQuantumComputing.md",
+        "2024_KI_QuantumFinance.md",
+        "2025_Uotila_HigherOrderPortfolio.md"
+      ],
+      "citation_count_in_collection": 8,
+      "openalex_cited_by_count": 0
+    },
+    {
+      "doi": "10.1038/s42254-021-00348-9",
+      "title": "Variational quantum algorithms",
+      "first_author": "M. Cerezo",
+      "year": 2021,
+      "cited_by_in_collection": [
+        "2022_Kolotouros_EvolvingObjectiveFunction.md",
+        "2023_Giron_ApproachingCollateralOptimization.md",
+        "2024_Gujju_QuantumMachineLearning.md",
+        "2024_Leipold_TrainScalingQuantum.md",
+        "2025_Chaudhary_PracticalQuantumSolver.md",
+        "2025_Hunout_VariationalQuantumAlgorithm.md",
+        "2025_Jiang_RasenganTransitionHamiltonian.md",
+        "2025_Zhang_QuantumComputingQuantum.md"
+      ],
+      "citation_count_in_collection": 8,
       "openalex_cited_by_count": 0
     },
     {
@@ -506,60 +869,125 @@
         "2023_Giron_ApproachingCollateralOptimization.md",
         "2024_KI_QuantumFinance.md",
         "2025_Aggarwal_BridgingQuantumAlgorithms.md",
-        "2025_Huot_CorrectionsEnhancingKnapsack.md",
         "2025_Jiang_RasenganTransitionHamiltonian.md",
         "2025_Uotila_HigherOrderPortfolio.md",
+        "2025_Wei_SolvingMultipleDiscretization.md",
         "2026_Dehn_ExtrapolationMethodOptimize.md"
       ],
       "citation_count_in_collection": 7,
       "openalex_cited_by_count": 0
     },
     {
-      "doi": "10.1109/tqe.2020.3030314",
-      "title": "Quantum Computing for Finance: State-of-the-Art and Future Prospects",
-      "first_author": "Daniel J. Egger",
-      "year": 2020,
-      "cited_by_in_collection": [
-        "2023_Fernandes_SystematicLiteratureReview.md",
-        "2023_Giron_ApproachingCollateralOptimization.md",
-        "2024_KI_QuantumFinance.md",
-        "2024_Mustafa_QuantumGraphNeural.md",
-        "2025_Cibrario_AutocallableOptionsPricing.md",
-        "2025_Innan_QuantumPortfolioOptimization.md",
-        "2025_Uotila_HigherOrderPortfolio.md"
-      ],
-      "citation_count_in_collection": 7,
-      "openalex_cited_by_count": 0
-    },
-    {
-      "doi": "10.1007/s42484-019-00001-w",
-      "title": "Reverse quantum annealing approach to portfolio optimization problems",
-      "first_author": "Davide Venturelli",
+      "doi": "10.1038/s41534-019-0223-2",
+      "title": "Quantum Generative Adversarial Networks for learning and loading random distributions",
+      "first_author": "Christa Zoufal",
       "year": 2019,
       "cited_by_in_collection": [
-        "2021_Kolotouros_EvolvingObjectiveFunction.md",
-        "2021_Martin_TowardPricingFinancial.md",
-        "2022_Kolotouros_EvolvingObjectiveFunction.md",
-        "2023_Fernandes_SystematicLiteratureReview.md",
-        "2024_Bhasin_EnhancingQuantumMachine.md",
-        "2024_KI_QuantumFinance.md",
-        "2025_Uotila_HigherOrderPortfolio.md"
+        "2021_Coyle_QuantumVersusClassical.md",
+        "2021_Kubo_VariationalQuantumSimulations.md",
+        "2022_Wolf_QuantumAlgorithmPricing.md",
+        "2023_Udvarnoki_QuantumAdvantageMonte.md",
+        "2024_Gujju_QuantumMachineLearning.md",
+        "2025_Chuvakov_FactoringDecisionSupport.md",
+        "2025_Ganguly_HybridClassicalQuantum.md"
       ],
       "citation_count_in_collection": 7,
       "openalex_cited_by_count": 0
     },
     {
-      "doi": "10.22331/q-2018-08-06-79",
-      "title": "Quantum Computing in the NISQ era and beyond",
-      "first_author": "John Preskill",
+      "doi": "10.1103/physreva.98.022321",
+      "title": "Quantum computational finance: Monte Carlo pricing of financial derivatives",
+      "first_author": "Patrick Rebentrost",
       "year": 2018,
       "cited_by_in_collection": [
+        "2019_Kerenidis_QuantumAlgorithmsPortfolio.md",
+        "2021_Coyle_QuantumVersusClassical.md",
+        "2021_Kubo_VariationalQuantumSimulations.md",
         "2021_Martin_TowardPricingFinancial.md",
+        "2022_Wolf_QuantumAlgorithmPricing.md",
+        "2023_Udvarnoki_QuantumAdvantageMonte.md",
+        "2025_Cibrario_AutocallableOptionsPricing.md"
+      ],
+      "citation_count_in_collection": 7,
+      "openalex_cited_by_count": 0
+    },
+    {
+      "doi": "10.1038/s41586-019-1666-5",
+      "title": "Quantum supremacy using a programmable superconducting processor",
+      "first_author": "Frank Arute",
+      "year": 2019,
+      "cited_by_in_collection": [
+        "2021_Coyle_QuantumVersusClassical.md",
+        "2021_Kubo_VariationalQuantumSimulations.md",
+        "2021_Lu_AlgorithmsQuantumSimulation.md",
+        "2022_Kolotouros_EvolvingObjectiveFunction.md",
+        "2023_Chowdhury_AcceleratedQuantumMonte.md",
+        "2025_Ganguly_HybridClassicalQuantum.md",
+        "2025_Zhang_QuantumComputingQuantum.md"
+      ],
+      "citation_count_in_collection": 7,
+      "openalex_cited_by_count": 0
+    },
+    {
+      "doi": "10.48550/arxiv.1411.4028",
+      "title": "A Quantum Approximate Optimization Algorithm",
+      "first_author": "Edward Farhi",
+      "year": 2014,
+      "cited_by_in_collection": [
+        "2021_Coyle_QuantumVersusClassical.md",
+        "2021_Lu_AlgorithmsQuantumSimulation.md",
         "2022_Kolotouros_EvolvingObjectiveFunction.md",
         "2022_Sen_VariationalQuantumClassifiers.md",
+        "2023_Giron_ApproachingCollateralOptimization.md",
+        "2024_Carrascal_BacktestingQuantumComputing.md"
+      ],
+      "citation_count_in_collection": 6,
+      "openalex_cited_by_count": 0
+    },
+    {
+      "doi": "10.22331/q-2019-12-09-214",
+      "title": "An initialization strategy for addressing barren plateaus in parametrized quantum circuits",
+      "first_author": "Edward Grant",
+      "year": 2019,
+      "cited_by_in_collection": [
+        "2021_Coyle_QuantumVersusClassical.md",
+        "2022_Hegade_PortfolioOptimizationDigitized.md",
+        "2022_Sen_VariationalQuantumClassifiers.md",
+        "2024_Gujju_QuantumMachineLearning.md",
+        "2024_Mitsuda_ApproximateComplexAmplitude.md",
+        "2025_Hunout_VariationalQuantumAlgorithm.md"
+      ],
+      "citation_count_in_collection": 6,
+      "openalex_cited_by_count": 0
+    },
+    {
+      "doi": "10.1038/s41467-021-21728-w",
+      "title": "Cost function dependent barren plateaus in shallow parametrized quantum circuits",
+      "first_author": "M. Cerezo",
+      "year": 2021,
+      "cited_by_in_collection": [
+        "2022_Hegade_PortfolioOptimizationDigitized.md",
+        "2022_Sen_VariationalQuantumClassifiers.md",
+        "2024_Gujju_QuantumMachineLearning.md",
+        "2024_Kea_HybridQuantumClassical.md",
+        "2024_Mitsuda_ApproximateComplexAmplitude.md",
+        "2025_Hunout_VariationalQuantumAlgorithm.md"
+      ],
+      "citation_count_in_collection": 6,
+      "openalex_cited_by_count": 0
+    },
+    {
+      "doi": "10.1103/physrevresearch.4.013006",
+      "title": "Dynamic portfolio optimization with real datasets using quantum processors and quantum-inspired tensor networks",
+      "first_author": "Samuel Mugel",
+      "year": 2022,
+      "cited_by_in_collection": [
+        "2022_Hegade_PortfolioOptimizationDigitized.md",
+        "2022_Kolotouros_EvolvingObjectiveFunction.md",
         "2023_Fernandes_SystematicLiteratureReview.md",
-        "2025_Cai_EnhancingQuantumApproximate.md",
-        "2026_Barbaresco_QPortQuantum.md"
+        "2024_Carrascal_BacktestingQuantumComputing.md",
+        "2025_Uotila_HigherOrderPortfolio.md",
+        "2025_Wei_SolvingMultipleDiscretization.md"
       ],
       "citation_count_in_collection": 6,
       "openalex_cited_by_count": 0
@@ -570,41 +998,152 @@
       "first_author": "Stuart Hadfield",
       "year": 2019,
       "cited_by_in_collection": [
-        "2021_Kolotouros_EvolvingObjectiveFunction.md",
+        "2022_Hegade_PortfolioOptimizationDigitized.md",
         "2022_Kolotouros_EvolvingObjectiveFunction.md",
+        "2024_Gujju_QuantumMachineLearning.md",
         "2024_KI_QuantumFinance.md",
         "2024_Leipold_TrainScalingQuantum.md",
         "2025_Benamer_VariationalQuantumAlgorithms.md"
       ],
-      "citation_count_in_collection": 5,
+      "citation_count_in_collection": 6,
       "openalex_cited_by_count": 0
     },
     {
-      "doi": "10.1038/nature23879",
-      "title": "Hardware-efficient variational quantum eigensolver for small molecules and quantum magnets",
-      "first_author": "Abhinav Kandala",
-      "year": 2017,
+      "doi": "10.22331/q-2020-07-06-291",
+      "title": "Option Pricing using Quantum Computers",
+      "first_author": "Nikitas Stamatopoulos",
+      "year": 2020,
       "cited_by_in_collection": [
-        "2021_Kolotouros_EvolvingObjectiveFunction.md",
         "2021_Martin_TowardPricingFinancial.md",
-        "2022_Kolotouros_EvolvingObjectiveFunction.md",
+        "2022_Wolf_QuantumAlgorithmPricing.md",
+        "2023_Udvarnoki_QuantumAdvantageMonte.md",
+        "2025_Cibrario_AutocallableOptionsPricing.md",
+        "2025_Ganguly_HybridClassicalQuantum.md",
+        "2026_Barbaresco_QuantumAmplitudeEstimation.md"
+      ],
+      "citation_count_in_collection": 6,
+      "openalex_cited_by_count": 0
+    },
+    {
+      "doi": "10.1090/conm/305/05215",
+      "title": "Quantum amplitude amplification and estimation",
+      "first_author": "Gilles Brassard",
+      "year": 2002,
+      "cited_by_in_collection": [
+        "2021_Kubo_VariationalQuantumSimulations.md",
+        "2022_Sun_PortfolioOptimizationBased.md",
+        "2022_Wolf_QuantumAlgorithmPricing.md",
+        "2024_Gujju_QuantumMachineLearning.md",
+        "2025_Chuvakov_FactoringDecisionSupport.md",
+        "2026_Barbaresco_QuantumAmplitudeEstimation.md"
+      ],
+      "citation_count_in_collection": 6,
+      "openalex_cited_by_count": 0
+    },
+    {
+      "doi": "10.1103/physreva.98.032309",
+      "title": "Quantum circuit learning",
+      "first_author": "Kosuke Mitarai",
+      "year": 2018,
+      "cited_by_in_collection": [
+        "2021_Coyle_QuantumVersusClassical.md",
+        "2021_Kubo_VariationalQuantumSimulations.md",
+        "2022_Sen_VariationalQuantumClassifiers.md",
+        "2024_Gujju_QuantumMachineLearning.md",
+        "2024_Kea_HybridQuantumClassical.md",
+        "2025_Hunout_VariationalQuantumAlgorithm.md"
+      ],
+      "citation_count_in_collection": 6,
+      "openalex_cited_by_count": 0
+    },
+    {
+      "doi": "10.1088/1367-2630/18/2/023023",
+      "title": "The theory of variational hybrid quantum-classical algorithms",
+      "first_author": "Jarrod R. McClean",
+      "year": 2016,
+      "cited_by_in_collection": [
+        "2024_CadiTazi_FoldedSpectrumVqe.md",
+        "2024_Huang_EvaluatingQuantumClassical.md",
+        "2024_Leipold_TrainScalingQuantum.md",
         "2025_Benamer_VariationalQuantumAlgorithms.md",
-        "2025_Jiang_RasenganTransitionHamiltonian.md"
+        "2025_Chawla_QuantumComputingUnderlying.md",
+        "2025_Hunout_VariationalQuantumAlgorithm.md"
+      ],
+      "citation_count_in_collection": 6,
+      "openalex_cited_by_count": 0
+    },
+    {
+      "doi": "10.1103/physrevlett.127.120502",
+      "title": "Training Variational Quantum Algorithms Is NP-Hard",
+      "first_author": "Lennart Bittel",
+      "year": 2021,
+      "cited_by_in_collection": [
+        "2022_Kolotouros_EvolvingObjectiveFunction.md",
+        "2023_Giron_ApproachingCollateralOptimization.md",
+        "2025_Benamer_VariationalQuantumAlgorithms.md",
+        "2025_Hunout_VariationalQuantumAlgorithm.md",
+        "2025_Zhang_QuantumComputingQuantum.md",
+        "2025_Zhong_ClassicalOptimizationImaginary.md"
+      ],
+      "citation_count_in_collection": 6,
+      "openalex_cited_by_count": 0
+    },
+    {
+      "doi": "10.22331/q-2021-06-01-463",
+      "title": "A Threshold for Quantum Advantage in Derivative Pricing",
+      "first_author": "Shouvanik Chakrabarti",
+      "year": 2021,
+      "cited_by_in_collection": [
+        "2022_Wolf_QuantumAlgorithmPricing.md",
+        "2023_Udvarnoki_QuantumAdvantageMonte.md",
+        "2024_KI_QuantumFinance.md",
+        "2025_Chuvakov_FactoringDecisionSupport.md",
+        "2025_Cibrario_AutocallableOptionsPricing.md"
       ],
       "citation_count_in_collection": 5,
       "openalex_cited_by_count": 0
     },
     {
-      "doi": "10.1103/physrevlett.103.150502",
-      "title": "Quantum Algorithm for Linear Systems of Equations",
-      "first_author": "Aram W. Harrow",
-      "year": 2009,
+      "doi": "10.1038/s41598-023-45392-w",
+      "title": "Best practices for portfolio optimization by quantum computing, experimented on real quantum devices",
+      "first_author": "Giuseppe Buonaiuto",
+      "year": 2023,
       "cited_by_in_collection": [
-        "2019_Kerenidis_QuantumAlgorithmsPortfolio.md",
-        "2021_Martin_TowardPricingFinancial.md",
-        "2022_Sun_PortfolioOptimizationBased.md",
-        "2024_KI_QuantumFinance.md",
-        "2025_Chaudhary_PracticalQuantumSolver.md"
+        "2024_Carrascal_BacktestingQuantumComputing.md",
+        "2025_Innan_QuantumPortfolioOptimization.md",
+        "2025_Uotila_HigherOrderPortfolio.md",
+        "2025_Wei_SolvingMultipleDiscretization.md",
+        "2026_Barbaresco_QPortQuantum.md"
+      ],
+      "citation_count_in_collection": 5,
+      "openalex_cited_by_count": 0
+    },
+    {
+      "doi": "10.1103/physreva.99.032331",
+      "title": "Evaluating analytic gradients on quantum hardware",
+      "first_author": "Maria Schuld",
+      "year": 2019,
+      "cited_by_in_collection": [
+        "2021_Coyle_QuantumVersusClassical.md",
+        "2022_Sen_VariationalQuantumClassifiers.md",
+        "2024_Gujju_QuantumMachineLearning.md",
+        "2025_Benamer_VariationalQuantumAlgorithms.md",
+        "2025_Lai_TowardsArbitraryQubo.md"
+      ],
+      "citation_count_in_collection": 5,
+      "openalex_cited_by_count": 0
+    },
+    {
+      "doi": "10.1145/227683.227684",
+      "title": "Improved approximation algorithms for maximum cut and satisfiability problems using semidefinite programming",
+      "first_author": "Michel X. Goemans",
+      "year": 1995,
+      "cited_by_in_collection": [
+        "2023_Giron_ApproachingCollateralOptimization.md",
+        "2025_Benamer_VariationalQuantumAlgorithms.md",
+        "2025_Cai_EnhancingQuantumApproximate.md",
+        "2025_Zhong_ClassicalOptimizationImaginary.md",
+        "2026_Dehn_ExtrapolationMethodOptimize.md"
       ],
       "citation_count_in_collection": 5,
       "openalex_cited_by_count": 0
@@ -617,122 +1156,223 @@
       "cited_by_in_collection": [
         "2022_Kolotouros_EvolvingObjectiveFunction.md",
         "2025_Cai_EnhancingQuantumApproximate.md",
-        "2025_Huot_CorrectionsEnhancingKnapsack.md",
         "2025_Jiang_RasenganTransitionHamiltonian.md",
+        "2025_Zhong_ClassicalOptimizationImaginary.md",
         "2026_Dehn_ExtrapolationMethodOptimize.md"
       ],
       "citation_count_in_collection": 5,
       "openalex_cited_by_count": 0
     },
     {
-      "doi": "10.1038/s42254-021-00348-9",
-      "title": "Variational quantum algorithms",
-      "first_author": "M. Cerezo",
-      "year": 2021,
+      "doi": "10.1017/cbo9780511976667",
+      "title": "Quantum Computation and Quantum Information",
+      "first_author": "Michael A. Nielsen",
+      "year": 2012,
       "cited_by_in_collection": [
-        "2022_Kolotouros_EvolvingObjectiveFunction.md",
-        "2023_Giron_ApproachingCollateralOptimization.md",
-        "2024_Leipold_TrainScalingQuantum.md",
-        "2025_Chaudhary_PracticalQuantumSolver.md",
+        "2021_Kubo_VariationalQuantumSimulations.md",
+        "2024_Gujju_QuantumMachineLearning.md",
+        "2025_Malhotra_ComparativeStudyQuantum.md",
+        "2025_Uotila_HigherOrderPortfolio.md",
+        "2025_Wei_SolvingMultipleDiscretization.md"
+      ],
+      "citation_count_in_collection": 5,
+      "openalex_cited_by_count": 0
+    },
+    {
+      "doi": "10.3929/ethz-b-000382432",
+      "title": "Quantum Generative Adversarial Networks for learning and loading random distributions",
+      "first_author": "Christa Zoufal",
+      "year": 2019,
+      "cited_by_in_collection": [
+        "2021_Kubo_VariationalQuantumSimulations.md",
+        "2022_Wolf_QuantumAlgorithmPricing.md",
+        "2023_Udvarnoki_QuantumAdvantageMonte.md",
+        "2024_Gujju_QuantumMachineLearning.md",
+        "2025_Chuvakov_FactoringDecisionSupport.md"
+      ],
+      "citation_count_in_collection": 5,
+      "openalex_cited_by_count": 0
+    },
+    {
+      "doi": "10.1103/revmodphys.92.015003",
+      "title": "Quantum computational chemistry",
+      "first_author": "Sam McArdle",
+      "year": 2020,
+      "cited_by_in_collection": [
+        "2021_Coyle_QuantumVersusClassical.md",
+        "2021_Kubo_VariationalQuantumSimulations.md",
+        "2024_Gujju_QuantumMachineLearning.md",
+        "2024_Huang_EvaluatingQuantumClassical.md",
+        "2025_Zhang_QuantumComputingQuantum.md"
+      ],
+      "citation_count_in_collection": 5,
+      "openalex_cited_by_count": 0
+    },
+    {
+      "doi": "10.1016/j.physrep.2022.08.003",
+      "title": "The Variational Quantum Eigensolver: A review of methods and best practices",
+      "first_author": "Jules Tilly",
+      "year": 2022,
+      "cited_by_in_collection": [
+        "2024_CadiTazi_FoldedSpectrumVqe.md",
+        "2024_Gujju_QuantumMachineLearning.md",
+        "2025_Chawla_QuantumComputingUnderlying.md",
+        "2025_Hunout_VariationalQuantumAlgorithm.md",
         "2025_Jiang_RasenganTransitionHamiltonian.md"
       ],
       "citation_count_in_collection": 5,
       "openalex_cited_by_count": 0
     },
     {
-      "doi": "10.48550/arxiv.1411.4028",
-      "title": "A Quantum Approximate Optimization Algorithm",
+      "doi": "10.1126/science.1057726",
+      "title": "A Quantum Adiabatic Evolution Algorithm Applied to Random Instances of an NP-Complete Problem",
       "first_author": "Edward Farhi",
-      "year": 2014,
+      "year": 2001,
       "cited_by_in_collection": [
-        "2021_Kolotouros_EvolvingObjectiveFunction.md",
-        "2022_Kolotouros_EvolvingObjectiveFunction.md",
-        "2022_Sen_VariationalQuantumClassifiers.md",
-        "2023_Giron_ApproachingCollateralOptimization.md"
+        "2022_Hegade_PortfolioOptimizationDigitized.md",
+        "2023_Chowdhury_AcceleratedQuantumMonte.md",
+        "2023_Giron_ApproachingCollateralOptimization.md",
+        "2025_Zhong_ClassicalOptimizationImaginary.md"
       ],
       "citation_count_in_collection": 4,
       "openalex_cited_by_count": 0
     },
     {
-      "doi": "10.1038/s41467-018-07090-4",
-      "title": "Barren plateaus in quantum neural network training landscapes",
-      "first_author": "Jarrod R. McClean",
+      "doi": "10.1103/revmodphys.90.015002",
+      "title": "Adiabatic quantum computation",
+      "first_author": "Tameem Albash",
       "year": 2018,
       "cited_by_in_collection": [
-        "2021_Kolotouros_EvolvingObjectiveFunction.md",
         "2022_Kolotouros_EvolvingObjectiveFunction.md",
-        "2022_Sen_VariationalQuantumClassifiers.md",
+        "2023_Chowdhury_AcceleratedQuantumMonte.md",
+        "2023_Giron_ApproachingCollateralOptimization.md",
+        "2025_Zhang_QuantumComputingQuantum.md"
+      ],
+      "citation_count_in_collection": 4,
+      "openalex_cited_by_count": 0
+    },
+    {
+      "doi": "10.1109/sfcs.1994.365700",
+      "title": "Algorithms for quantum computation: discrete logarithms and factoring",
+      "first_author": "Peter W. Shor",
+      "year": 2002,
+      "cited_by_in_collection": [
+        "2025_Chawla_QuantumComputingUnderlying.md",
+        "2025_Jiang_RasenganTransitionHamiltonian.md",
+        "2025_Wei_SolvingMultipleDiscretization.md",
+        "2025_Zhong_ClassicalOptimizationImaginary.md"
+      ],
+      "citation_count_in_collection": 4,
+      "openalex_cited_by_count": 0
+    },
+    {
+      "doi": "10.1103/physrevlett.94.170201",
+      "title": "Computational Complexity and Fundamental Limitations to Fermionic Quantum Monte Carlo Simulations",
+      "first_author": "Matthias Troyer",
+      "year": 2005,
+      "cited_by_in_collection": [
+        "2021_Lu_AlgorithmsQuantumSimulation.md",
+        "2023_Chowdhury_AcceleratedQuantumMonte.md",
+        "2024_Huang_EvaluatingQuantumClassical.md",
+        "2025_Zhang_QuantumComputingQuantum.md"
+      ],
+      "citation_count_in_collection": 4,
+      "openalex_cited_by_count": 0
+    },
+    {
+      "doi": "10.1103/prxquantum.3.010313",
+      "title": "Connecting Ansatz Expressibility to Gradient Magnitudes and Barren Plateaus",
+      "first_author": "Zo\u00eb Holmes",
+      "year": 2022,
+      "cited_by_in_collection": [
+        "2025_Benamer_VariationalQuantumAlgorithms.md",
+        "2025_Cai_EnhancingQuantumApproximate.md",
+        "2025_Zhang_QuantumComputingQuantum.md",
+        "2025_Zhong_ClassicalOptimizationImaginary.md"
+      ],
+      "citation_count_in_collection": 4,
+      "openalex_cited_by_count": 0
+    },
+    {
+      "doi": "10.1038/s41567-019-0704-4",
+      "title": "Determining eigenstates and thermal states on a quantum computer using quantum imaginary time evolution",
+      "first_author": "M\u00e1rio Motta",
+      "year": 2019,
+      "cited_by_in_collection": [
+        "2021_Lu_AlgorithmsQuantumSimulation.md",
+        "2024_Huang_EvaluatingQuantumClassical.md",
+        "2025_Lai_TowardsArbitraryQubo.md",
+        "2025_Zhong_ClassicalOptimizationImaginary.md"
+      ],
+      "citation_count_in_collection": 4,
+      "openalex_cited_by_count": 0
+    },
+    {
+      "doi": "10.7566/jpsj.90.032001",
+      "title": "Hybrid Quantum-Classical Algorithms and Quantum Error Mitigation",
+      "first_author": "Suguru Endo",
+      "year": 2021,
+      "cited_by_in_collection": [
+        "2021_Kubo_VariationalQuantumSimulations.md",
+        "2024_Gujju_QuantumMachineLearning.md",
+        "2024_Kea_HybridQuantumClassical.md",
+        "2025_Zhang_QuantumComputingQuantum.md"
+      ],
+      "citation_count_in_collection": 4,
+      "openalex_cited_by_count": 0
+    },
+    {
+      "doi": "10.1137/s0036144598347011",
+      "title": "Polynomial-Time Algorithms for Prime Factorization and Discrete Logarithms on a Quantum Computer",
+      "first_author": "Peter W. Shor",
+      "year": 1999,
+      "cited_by_in_collection": [
+        "2023_Chowdhury_AcceleratedQuantumMonte.md",
+        "2024_Gujju_QuantumMachineLearning.md",
+        "2025_Chawla_QuantumComputingUnderlying.md",
+        "2025_Malhotra_ComparativeStudyQuantum.md"
+      ],
+      "citation_count_in_collection": 4,
+      "openalex_cited_by_count": 0
+    },
+    {
+      "doi": "10.1103/physreva.92.042303",
+      "title": "Progress towards practical quantum variational algorithms",
+      "first_author": "Dave Wecker",
+      "year": 2015,
+      "cited_by_in_collection": [
+        "2022_Kolotouros_EvolvingObjectiveFunction.md",
+        "2024_Gujju_QuantumMachineLearning.md",
+        "2025_Benamer_VariationalQuantumAlgorithms.md",
+        "2025_Zhang_QuantumComputingQuantum.md"
+      ],
+      "citation_count_in_collection": 4,
+      "openalex_cited_by_count": 0
+    },
+    {
+      "doi": "10.1103/physrevlett.122.040504",
+      "title": "Quantum Machine Learning in Feature Hilbert Spaces",
+      "first_author": "Maria Schuld",
+      "year": 2019,
+      "cited_by_in_collection": [
+        "2021_Coyle_QuantumVersusClassical.md",
+        "2021_Kubo_VariationalQuantumSimulations.md",
+        "2024_Gujju_QuantumMachineLearning.md",
         "2025_Benamer_VariationalQuantumAlgorithms.md"
       ],
       "citation_count_in_collection": 4,
       "openalex_cited_by_count": 0
     },
     {
-      "doi": "10.1103/physrevresearch.4.013006",
-      "title": "Dynamic portfolio optimization with real datasets using quantum processors and quantum-inspired tensor networks",
-      "first_author": "Samuel Mugel",
-      "year": 2022,
+      "doi": "10.1103/physrevlett.113.130503",
+      "title": "Quantum Support Vector Machine for Big Data Classification",
+      "first_author": "Patrick Rebentrost",
+      "year": 2014,
       "cited_by_in_collection": [
-        "2021_Kolotouros_EvolvingObjectiveFunction.md",
-        "2022_Kolotouros_EvolvingObjectiveFunction.md",
-        "2023_Fernandes_SystematicLiteratureReview.md",
-        "2025_Uotila_HigherOrderPortfolio.md"
-      ],
-      "citation_count_in_collection": 4,
-      "openalex_cited_by_count": 0
-    },
-    {
-      "doi": "10.1145/227683.227684",
-      "title": "Improved approximation algorithms for maximum cut and satisfiability problems using semidefinite programming",
-      "first_author": "Michel X. Goemans",
-      "year": 1995,
-      "cited_by_in_collection": [
-        "2023_Giron_ApproachingCollateralOptimization.md",
-        "2025_Benamer_VariationalQuantumAlgorithms.md",
-        "2025_Cai_EnhancingQuantumApproximate.md",
-        "2026_Dehn_ExtrapolationMethodOptimize.md"
-      ],
-      "citation_count_in_collection": 4,
-      "openalex_cited_by_count": 0
-    },
-    {
-      "doi": "10.22331/q-2020-07-06-291",
-      "title": "Option Pricing using Quantum Computers",
-      "first_author": "Nikitas Stamatopoulos",
-      "year": 2020,
-      "cited_by_in_collection": [
-        "2021_Martin_TowardPricingFinancial.md",
-        "2025_Cibrario_AutocallableOptionsPricing.md",
-        "2025_Ganguly_HybridClassicalQuantum.md",
-        "2026_Barbaresco_QuantumAmplitudeEstimation.md"
-      ],
-      "citation_count_in_collection": 4,
-      "openalex_cited_by_count": 0
-    },
-    {
-      "doi": "10.22331/q-2021-07-01-491",
-      "title": "Quantum annealing initialization of the quantum approximate optimization algorithm",
-      "first_author": "Stefan Sack",
-      "year": 2021,
-      "cited_by_in_collection": [
-        "2021_Kolotouros_EvolvingObjectiveFunction.md",
-        "2022_Kolotouros_EvolvingObjectiveFunction.md",
-        "2025_Cai_EnhancingQuantumApproximate.md",
-        "2026_Dehn_ExtrapolationMethodOptimize.md"
-      ],
-      "citation_count_in_collection": 4,
-      "openalex_cited_by_count": 0
-    },
-    {
-      "doi": "10.1103/physreva.97.022304",
-      "title": "Quantum approximate optimization algorithm for MaxCut: A fermionic view",
-      "first_author": "Zhihui Wang",
-      "year": 2018,
-      "cited_by_in_collection": [
-        "2021_Kolotouros_EvolvingObjectiveFunction.md",
-        "2022_Kolotouros_EvolvingObjectiveFunction.md",
-        "2025_Benamer_VariationalQuantumAlgorithms.md",
-        "2025_Cai_EnhancingQuantumApproximate.md"
+        "2024_Carrascal_BacktestingQuantumComputing.md",
+        "2024_Gujju_QuantumMachineLearning.md",
+        "2024_KI_QuantumFinance.md",
+        "2024_Mitsuda_ApproximateComplexAmplitude.md"
       ],
       "citation_count_in_collection": 4,
       "openalex_cited_by_count": 0
@@ -743,87 +1383,273 @@
       "first_author": "Dylan Herman",
       "year": 2023,
       "cited_by_in_collection": [
+        "2024_Gujju_QuantumMachineLearning.md",
         "2025_Aggarwal_BridgingQuantumAlgorithms.md",
         "2025_Cibrario_AutocallableOptionsPricing.md",
-        "2025_Huot_CorrectionsEnhancingKnapsack.md",
         "2025_Innan_QuantumPortfolioOptimization.md"
       ],
       "citation_count_in_collection": 4,
       "openalex_cited_by_count": 0
     },
     {
-      "doi": "10.1007/978-94-015-8330-5_4",
-      "title": "A Direct Search Optimization Method That Models the Objective and Constraint Functions by Linear Interpolation",
-      "first_author": "M. J. D. Powell",
-      "year": 1994,
+      "doi": "10.1038/nphys3029",
+      "title": "Quantum principal component analysis",
+      "first_author": "Seth Lloyd",
+      "year": 2014,
       "cited_by_in_collection": [
-        "2021_Kolotouros_EvolvingObjectiveFunction.md",
-        "2022_Kolotouros_EvolvingObjectiveFunction.md",
-        "2025_Jiang_RasenganTransitionHamiltonian.md"
-      ],
-      "citation_count_in_collection": 3,
-      "openalex_cited_by_count": 0
-    },
-    {
-      "doi": "10.1145/237814.237866",
-      "title": "A fast quantum mechanical algorithm for database search",
-      "first_author": "Lov K. Grover",
-      "year": 1996,
-      "cited_by_in_collection": [
-        "2019_Kerenidis_QuantumAlgorithmsPortfolio.md",
+        "2021_Martin_TowardPricingFinancial.md",
+        "2024_Gujju_QuantumMachineLearning.md",
         "2024_KI_QuantumFinance.md",
-        "2025_Malhotra_ComparativeStudyQuantum.md"
+        "2024_Mitsuda_ApproximateComplexAmplitude.md"
       ],
-      "citation_count_in_collection": 3,
+      "citation_count_in_collection": 4,
       "openalex_cited_by_count": 0
     },
     {
-      "doi": "10.1103/revmodphys.90.015002",
-      "title": "Adiabatic quantum computation",
-      "first_author": "Tameem Albash",
-      "year": 2018,
+      "doi": "10.1098/rspa.2015.0301",
+      "title": "Quantum speedup of Monte Carlo methods",
+      "first_author": "Ashley Montanaro",
+      "year": 2015,
       "cited_by_in_collection": [
-        "2021_Kolotouros_EvolvingObjectiveFunction.md",
-        "2022_Kolotouros_EvolvingObjectiveFunction.md",
-        "2023_Giron_ApproachingCollateralOptimization.md"
+        "2022_Wolf_QuantumAlgorithmPricing.md",
+        "2023_Chowdhury_AcceleratedQuantumMonte.md",
+        "2023_Udvarnoki_QuantumAdvantageMonte.md",
+        "2025_Cibrario_AutocallableOptionsPricing.md"
       ],
-      "citation_count_in_collection": 3,
+      "citation_count_in_collection": 4,
       "openalex_cited_by_count": 0
     },
     {
-      "doi": "10.1038/s41598-023-45392-w",
-      "title": "Best practices for portfolio optimization by quantum computing, experimented on real quantum devices",
-      "first_author": "Giuseppe Buonaiuto",
+      "doi": "10.1007/bf02650179",
+      "title": "Simulating physics with computers",
+      "first_author": "Richard P. Feynman",
+      "year": 1982,
+      "cited_by_in_collection": [
+        "2021_Lu_AlgorithmsQuantumSimulation.md",
+        "2022_Sun_PortfolioOptimizationBased.md",
+        "2023_Chowdhury_AcceleratedQuantumMonte.md",
+        "2024_Carrascal_BacktestingQuantumComputing.md"
+      ],
+      "citation_count_in_collection": 4,
+      "openalex_cited_by_count": 0
+    },
+    {
+      "doi": "10.1109/rasse60029.2023.10363533",
+      "title": "The Potential of Quantum Techniques for Stock Price Prediction",
+      "first_author": "Naman Srivastava",
       "year": 2023,
       "cited_by_in_collection": [
-        "2025_Innan_QuantumPortfolioOptimization.md",
-        "2025_Uotila_HigherOrderPortfolio.md",
-        "2026_Barbaresco_QPortQuantum.md"
+        "2024_Carrascal_BacktestingQuantumComputing.md",
+        "2024_Kea_HybridQuantumClassical.md",
+        "2025_Vellaipandiyan_HybridQlstmFramework.md",
+        "2026_C_AdvancingStockPrice.md"
+      ],
+      "citation_count_in_collection": 4,
+      "openalex_cited_by_count": 0
+    },
+    {
+      "doi": "10.1119/1.1463744",
+      "title": "<i>Quantum Computation and Quantum Information</i>",
+      "first_author": "Michael A. Nielsen",
+      "year": 2002,
+      "cited_by_in_collection": [
+        "2021_Kubo_VariationalQuantumSimulations.md",
+        "2023_Udvarnoki_QuantumAdvantageMonte.md",
+        "2024_KI_QuantumFinance.md"
       ],
       "citation_count_in_collection": 3,
       "openalex_cited_by_count": 0
     },
     {
-      "doi": "10.1103/physreva.99.032331",
-      "title": "Evaluating analytic gradients on quantum hardware",
-      "first_author": "Maria Schuld",
+      "doi": "10.1103/physrevlett.98.110201",
+      "title": "Alleviation of the Fermion-Sign Problem by Optimization of Many-Body Wave Functions",
+      "first_author": "C. J. Umrigar",
+      "year": 2007,
+      "cited_by_in_collection": [
+        "2012_Neuscamman_OptimizingLargeParameter.md",
+        "2023_Simula_QuantumMonteCarlo.md",
+        "2025_Azadi_QuantumMonteCarlo.md"
+      ],
+      "citation_count_in_collection": 3,
+      "openalex_cited_by_count": 0
+    },
+    {
+      "doi": "10.22331/q-2020-05-11-263",
+      "title": "An Adaptive Optimizer for Measurement-Frugal Variational Algorithms",
+      "first_author": "Jonas M. K\u00fcbler",
+      "year": 2020,
+      "cited_by_in_collection": [
+        "2021_Coyle_QuantumVersusClassical.md",
+        "2024_Gujju_QuantumMachineLearning.md",
+        "2025_Hunout_VariationalQuantumAlgorithm.md"
+      ],
+      "citation_count_in_collection": 3,
+      "openalex_cited_by_count": 0
+    },
+    {
+      "doi": "10.1103/physrevapplied.15.014012",
+      "title": "Benchmarking Quantum Annealing Controls with Portfolio Optimization",
+      "first_author": "Erica Grant",
+      "year": 2021,
+      "cited_by_in_collection": [
+        "2022_Hegade_PortfolioOptimizationDigitized.md",
+        "2024_Carrascal_BacktestingQuantumComputing.md",
+        "2025_Uotila_HigherOrderPortfolio.md"
+      ],
+      "citation_count_in_collection": 3,
+      "openalex_cited_by_count": 0
+    },
+    {
+      "doi": "10.1038/s43588-022-00311-3",
+      "title": "Challenges and opportunities in quantum machine learning",
+      "first_author": "M. Cerezo",
+      "year": 2022,
+      "cited_by_in_collection": [
+        "2024_Gujju_QuantumMachineLearning.md",
+        "2024_Kea_HybridQuantumClassical.md",
+        "2024_Mustafa_QuantumGraphNeural.md"
+      ],
+      "citation_count_in_collection": 3,
+      "openalex_cited_by_count": 0
+    },
+    {
+      "doi": "10.1038/s42256-022-00468-6",
+      "title": "Combinatorial optimization with physics-inspired graph neural networks",
+      "first_author": "Martin J. A. Schuetz",
+      "year": 2022,
+      "cited_by_in_collection": [
+        "2023_Giron_ApproachingCollateralOptimization.md",
+        "2025_Lai_TowardsArbitraryQubo.md",
+        "2025_Uotila_HigherOrderPortfolio.md"
+      ],
+      "citation_count_in_collection": 3,
+      "openalex_cited_by_count": 0
+    },
+    {
+      "doi": "10.1126/science.1252319",
+      "title": "Defining and detecting quantum speedup",
+      "first_author": "Troels F. R\u00f8nnow",
+      "year": 2014,
+      "cited_by_in_collection": [
+        "2021_Coyle_QuantumVersusClassical.md",
+        "2023_Chowdhury_AcceleratedQuantumMonte.md",
+        "2026_Dehn_ExtrapolationMethodOptimize.md"
+      ],
+      "citation_count_in_collection": 3,
+      "openalex_cited_by_count": 0
+    },
+    {
+      "doi": "10.1103/physreva.98.062324",
+      "title": "Differentiable learning of quantum circuit Born machines",
+      "first_author": "Jin-Guo Liu",
+      "year": 2018,
+      "cited_by_in_collection": [
+        "2021_Coyle_QuantumVersusClassical.md",
+        "2024_Mitsuda_ApproximateComplexAmplitude.md",
+        "2025_Ganguly_HybridClassicalQuantum.md"
+      ],
+      "citation_count_in_collection": 3,
+      "openalex_cited_by_count": 0
+    },
+    {
+      "doi": "10.1103/physrevapplied.15.034027",
+      "title": "Efficient State Preparation for Quantum Amplitude Estimation",
+      "first_author": "Almudena Carrera Vazquez",
+      "year": 2021,
+      "cited_by_in_collection": [
+        "2022_Wolf_QuantumAlgorithmPricing.md",
+        "2024_Gujju_QuantumMachineLearning.md",
+        "2025_Chuvakov_FactoringDecisionSupport.md"
+      ],
+      "citation_count_in_collection": 3,
+      "openalex_cited_by_count": 0
+    },
+    {
+      "doi": "10.1103/physrevx.7.021050",
+      "title": "Efficient Variational Quantum Simulator Incorporating Active Error Minimization",
+      "first_author": "Ying Li",
+      "year": 2017,
+      "cited_by_in_collection": [
+        "2021_Kubo_VariationalQuantumSimulations.md",
+        "2024_Gujju_QuantumMachineLearning.md",
+        "2025_Zhang_QuantumComputingQuantum.md"
+      ],
+      "citation_count_in_collection": 3,
+      "openalex_cited_by_count": 0
+    },
+    {
+      "doi": "10.1103/physrevlett.119.180509",
+      "title": "Error Mitigation for Short-Depth Quantum Circuits",
+      "first_author": "Kristan Temme",
+      "year": 2017,
+      "cited_by_in_collection": [
+        "2021_Martin_TowardPricingFinancial.md",
+        "2024_Gujju_QuantumMachineLearning.md",
+        "2025_Zhang_QuantumComputingQuantum.md"
+      ],
+      "citation_count_in_collection": 3,
+      "openalex_cited_by_count": 0
+    },
+    {
+      "doi": "10.1038/s41586-019-1040-7",
+      "title": "Error mitigation extends the computational reach of a noisy quantum processor",
+      "first_author": "Abhinav Kandala",
       "year": 2019,
       "cited_by_in_collection": [
-        "2022_Sen_VariationalQuantumClassifiers.md",
-        "2023_Kobayashi_CrossSectionalStock.md",
+        "2021_Martin_TowardPricingFinancial.md",
+        "2024_Gujju_QuantumMachineLearning.md",
         "2025_Benamer_VariationalQuantumAlgorithms.md"
       ],
       "citation_count_in_collection": 3,
       "openalex_cited_by_count": 0
     },
     {
-      "doi": "10.25080/tcwv9851",
-      "title": "Exploring Network Structure, Dynamics, and Function using NetworkX",
-      "first_author": "Aric Hagberg",
-      "year": 2008,
+      "doi": "10.1021/acs.jctc.8b01004",
+      "title": "Generalized Unitary Coupled Cluster Wave functions for Quantum Computation",
+      "first_author": "Joonho Lee",
+      "year": 2018,
       "cited_by_in_collection": [
-        "2021_Kolotouros_EvolvingObjectiveFunction.md",
         "2022_Kolotouros_EvolvingObjectiveFunction.md",
+        "2024_CadiTazi_FoldedSpectrumVqe.md",
+        "2025_Hunout_VariationalQuantumAlgorithm.md"
+      ],
+      "citation_count_in_collection": 3,
+      "openalex_cited_by_count": 0
+    },
+    {
+      "doi": "10.22331/q-2021-04-08-428",
+      "title": "Grover Adaptive Search for Constrained Polynomial Binary Optimization",
+      "first_author": "Austin Gilliam",
+      "year": 2021,
+      "cited_by_in_collection": [
+        "2024_Carrascal_BacktestingQuantumComputing.md",
+        "2024_Gujju_QuantumMachineLearning.md",
+        "2025_Jiang_RasenganTransitionHamiltonian.md"
+      ],
+      "citation_count_in_collection": 3,
+      "openalex_cited_by_count": 0
+    },
+    {
+      "doi": "10.1126/science.abb9811",
+      "title": "Hartree-Fock on a superconducting qubit quantum computer",
+      "first_author": "Google AI Quantum and Collaborators",
+      "year": 2020,
+      "cited_by_in_collection": [
+        "2021_Coyle_QuantumVersusClassical.md",
+        "2025_Chawla_QuantumComputingUnderlying.md",
+        "2025_Zhang_QuantumComputingQuantum.md"
+      ],
+      "citation_count_in_collection": 3,
+      "openalex_cited_by_count": 0
+    },
+    {
+      "doi": "10.22331/q-2020-04-20-256",
+      "title": "Improving Variational Quantum Optimization using CVaR",
+      "first_author": "Panagiotis Kl. Barkoutsos",
+      "year": 2020,
+      "cited_by_in_collection": [
+        "2022_Kolotouros_EvolvingObjectiveFunction.md",
+        "2024_Carrascal_BacktestingQuantumComputing.md",
         "2025_Cai_EnhancingQuantumApproximate.md"
       ],
       "citation_count_in_collection": 3,
@@ -835,7 +1661,7 @@
       "first_author": "Song Cheng",
       "year": 2018,
       "cited_by_in_collection": [
-        "2021_Kolotouros_EvolvingObjectiveFunction.md",
+        "2021_Coyle_QuantumVersusClassical.md",
         "2022_Kolotouros_EvolvingObjectiveFunction.md",
         "2025_Ganguly_HybridClassicalQuantum.md"
       ],
@@ -843,14 +1669,27 @@
       "openalex_cited_by_count": 0
     },
     {
-      "doi": "10.1103/physrevlett.125.260505",
-      "title": "Obstacles to Variational Quantum Optimization from Symmetry Protection",
-      "first_author": "Sergey Bravyi",
-      "year": 2020,
+      "doi": "10.1038/s41534-021-00379-1",
+      "title": "Iterative quantum amplitude estimation",
+      "first_author": "Dmitry Grinko",
+      "year": 2021,
       "cited_by_in_collection": [
-        "2021_Kolotouros_EvolvingObjectiveFunction.md",
-        "2022_Kolotouros_EvolvingObjectiveFunction.md",
-        "2025_Cai_EnhancingQuantumApproximate.md"
+        "2023_Udvarnoki_QuantumAdvantageMonte.md",
+        "2025_Cibrario_AutocallableOptionsPricing.md",
+        "2026_Barbaresco_QuantumAmplitudeEstimation.md"
+      ],
+      "citation_count_in_collection": 3,
+      "openalex_cited_by_count": 0
+    },
+    {
+      "doi": "10.1088/1361-6633/aab406",
+      "title": "Machine learning &amp; artificial intelligence in the quantum domain: a review of recent progress",
+      "first_author": "Vedran Dunjko",
+      "year": 2018,
+      "cited_by_in_collection": [
+        "2024_Gujju_QuantumMachineLearning.md",
+        "2024_Mitsuda_ApproximateComplexAmplitude.md",
+        "2026_Shaon_ReviewRoutingResource.md"
       ],
       "citation_count_in_collection": 3,
       "openalex_cited_by_count": 0
@@ -869,14 +1708,27 @@
       "openalex_cited_by_count": 0
     },
     {
-      "doi": "10.1103/physreve.99.013304",
-      "title": "Performance of hybrid quantum-classical variational heuristics for combinatorial optimization",
-      "first_author": "Giacomo Nannicini",
-      "year": 2019,
+      "doi": "10.1088/1361-6633/ab85b8",
+      "title": "Perspectives of quantum annealing: methods and implementations",
+      "first_author": "Philipp Hauke",
+      "year": 2020,
       "cited_by_in_collection": [
-        "2021_Kolotouros_EvolvingObjectiveFunction.md",
-        "2022_Kolotouros_EvolvingObjectiveFunction.md",
-        "2023_Giron_ApproachingCollateralOptimization.md"
+        "2022_Biesner_SolvingSubsetSum.md",
+        "2023_Giron_ApproachingCollateralOptimization.md",
+        "2024_Gujju_QuantumMachineLearning.md"
+      ],
+      "citation_count_in_collection": 3,
+      "openalex_cited_by_count": 0
+    },
+    {
+      "doi": "10.2139/ssrn.3333537",
+      "title": "Portfolio Asset Identification Using Graph Algorithms on a Quantum Annealer",
+      "first_author": "Angad Kalra",
+      "year": 2018,
+      "cited_by_in_collection": [
+        "2024_Carrascal_BacktestingQuantumComputing.md",
+        "2024_Leipold_TrainScalingQuantum.md",
+        "2025_Wei_SolvingMultipleDiscretization.md"
       ],
       "citation_count_in_collection": 3,
       "openalex_cited_by_count": 0
@@ -908,14 +1760,66 @@
       "openalex_cited_by_count": 0
     },
     {
-      "doi": "10.1017/cbo9780511976667",
-      "title": "Quantum Computation and Quantum Information",
-      "first_author": "Michael A. Nielsen",
-      "year": 2012,
+      "doi": "10.5281/zenodo.2562111",
+      "title": "Qiskit: An Open-source Framework for Quantum Computing",
+      "first_author": "Gadi Aleksandrowicz",
+      "year": 2019,
       "cited_by_in_collection": [
-        "2021_Bennett_QuantumOptimisationVia.md",
-        "2025_Malhotra_ComparativeStudyQuantum.md",
-        "2025_Uotila_HigherOrderPortfolio.md"
+        "2022_Wolf_QuantumAlgorithmPricing.md",
+        "2024_CadiTazi_FoldedSpectrumVqe.md",
+        "2024_Carrascal_BacktestingQuantumComputing.md"
+      ],
+      "citation_count_in_collection": 3,
+      "openalex_cited_by_count": 0
+    },
+    {
+      "doi": "10.1021/acs.chemrev.8b00803",
+      "title": "Quantum Chemistry in the Age of Quantum Computing",
+      "first_author": "Yudong Cao",
+      "year": 2019,
+      "cited_by_in_collection": [
+        "2021_Kubo_VariationalQuantumSimulations.md",
+        "2024_CadiTazi_FoldedSpectrumVqe.md",
+        "2025_Zhang_QuantumComputingQuantum.md"
+      ],
+      "citation_count_in_collection": 3,
+      "openalex_cited_by_count": 0
+    },
+    {
+      "doi": "10.1103/physrevlett.122.230401",
+      "title": "Quantum Computation of Electronic Transitions Using a Variational Quantum Eigensolver",
+      "first_author": "Robert M. Parrish",
+      "year": 2019,
+      "cited_by_in_collection": [
+        "2021_Lu_AlgorithmsQuantumSimulation.md",
+        "2022_Sen_VariationalQuantumClassifiers.md",
+        "2025_Zhang_QuantumComputingQuantum.md"
+      ],
+      "citation_count_in_collection": 3,
+      "openalex_cited_by_count": 0
+    },
+    {
+      "doi": "10.1007/s10614-025-10894-4",
+      "title": "Quantum Finance: Exploring the Implications of Quantum Computing on Financial Models",
+      "first_author": "Jiawei Zhou",
+      "year": 2025,
+      "cited_by_in_collection": [
+        "2025_Innan_QuantumPortfolioOptimization.md",
+        "2026_C_AdvancingStockPrice.md",
+        "2026_Gnal_ScenarioBasedMacroeconomic.md"
+      ],
+      "citation_count_in_collection": 3,
+      "openalex_cited_by_count": 0
+    },
+    {
+      "doi": "10.1103/physrevlett.121.040502",
+      "title": "Quantum Generative Adversarial Learning",
+      "first_author": "Seth Lloyd",
+      "year": 2018,
+      "cited_by_in_collection": [
+        "2021_Coyle_QuantumVersusClassical.md",
+        "2024_Gujju_QuantumMachineLearning.md",
+        "2025_Ganguly_HybridClassicalQuantum.md"
       ],
       "citation_count_in_collection": 3,
       "openalex_cited_by_count": 0
@@ -934,40 +1838,157 @@
       "openalex_cited_by_count": 0
     },
     {
-      "doi": "10.1103/physreva.98.022321",
-      "title": "Quantum computational finance: Monte Carlo pricing of financial derivatives",
-      "first_author": "Patrick Rebentrost",
-      "year": 2018,
+      "doi": "10.1103/revmodphys.73.33",
+      "title": "Quantum Monte Carlo simulations of solids",
+      "first_author": "W. M. C. Foulkes",
+      "year": 2001,
       "cited_by_in_collection": [
-        "2019_Kerenidis_QuantumAlgorithmsPortfolio.md",
-        "2021_Martin_TowardPricingFinancial.md",
-        "2025_Cibrario_AutocallableOptionsPricing.md"
+        "2012_Neuscamman_OptimizingLargeParameter.md",
+        "2023_Simula_QuantumMonteCarlo.md",
+        "2024_Huang_EvaluatingQuantumClassical.md"
       ],
       "citation_count_in_collection": 3,
       "openalex_cited_by_count": 0
     },
     {
-      "doi": "10.1103/physrevresearch.2.023074",
-      "title": "Quantum optimization with a novel Gibbs objective function and ansatz architecture search",
-      "first_author": "Li Li",
+      "doi": "10.22331/q-2020-05-25-269",
+      "title": "Quantum Natural Gradient",
+      "first_author": "James Stokes",
       "year": 2020,
       "cited_by_in_collection": [
-        "2021_Kolotouros_EvolvingObjectiveFunction.md",
+        "2022_Sen_VariationalQuantumClassifiers.md",
+        "2024_Gujju_QuantumMachineLearning.md",
+        "2025_Hunout_VariationalQuantumAlgorithm.md"
+      ],
+      "citation_count_in_collection": 3,
+      "openalex_cited_by_count": 0
+    },
+    {
+      "doi": "10.1103/physrevlett.100.160501",
+      "title": "Quantum Random Access Memory",
+      "first_author": "Vittorio Giovannetti",
+      "year": 2008,
+      "cited_by_in_collection": [
+        "2024_Gujju_QuantumMachineLearning.md",
+        "2024_Mitsuda_ApproximateComplexAmplitude.md",
+        "2025_Hunout_VariationalQuantumAlgorithm.md"
+      ],
+      "citation_count_in_collection": 3,
+      "openalex_cited_by_count": 0
+    },
+    {
+      "doi": "10.22331/q-2021-07-01-491",
+      "title": "Quantum annealing initialization of the quantum approximate optimization algorithm",
+      "first_author": "Stefan Sack",
+      "year": 2021,
+      "cited_by_in_collection": [
         "2022_Kolotouros_EvolvingObjectiveFunction.md",
+        "2025_Cai_EnhancingQuantumApproximate.md",
+        "2026_Dehn_ExtrapolationMethodOptimize.md"
+      ],
+      "citation_count_in_collection": 3,
+      "openalex_cited_by_count": 0
+    },
+    {
+      "doi": "10.1103/physreva.97.022304",
+      "title": "Quantum approximate optimization algorithm for MaxCut: A fermionic view",
+      "first_author": "Zhihui Wang",
+      "year": 2018,
+      "cited_by_in_collection": [
+        "2022_Kolotouros_EvolvingObjectiveFunction.md",
+        "2025_Benamer_VariationalQuantumAlgorithms.md",
         "2025_Cai_EnhancingQuantumApproximate.md"
       ],
       "citation_count_in_collection": 3,
       "openalex_cited_by_count": 0
     },
     {
-      "doi": "10.1038/s41534-019-0130-6",
-      "title": "Quantum risk analysis",
-      "first_author": "Stefan Woerner",
-      "year": 2019,
+      "doi": "10.1038/s41567-020-01105-y",
+      "title": "Quantum approximate optimization of non-planar graph problems on a planar superconducting processor",
+      "first_author": "Matthew P. Harrigan",
+      "year": 2021,
       "cited_by_in_collection": [
-        "2021_Martin_TowardPricingFinancial.md",
-        "2024_KI_QuantumFinance.md",
-        "2026_Barbaresco_QuantumAmplitudeEstimation.md"
+        "2021_Coyle_QuantumVersusClassical.md",
+        "2024_Gujju_QuantumMachineLearning.md",
+        "2025_Zhong_ClassicalOptimizationImaginary.md"
+      ],
+      "citation_count_in_collection": 3,
+      "openalex_cited_by_count": 0
+    },
+    {
+      "doi": "10.1007/s11128-022-03777-2",
+      "title": "Quantum computing for financial risk measurement",
+      "first_author": "Sascha Wilkens",
+      "year": 2023,
+      "cited_by_in_collection": [
+        "2024_Gujju_QuantumMachineLearning.md",
+        "2024_Kea_HybridQuantumClassical.md",
+        "2025_Chuvakov_FactoringDecisionSupport.md"
+      ],
+      "citation_count_in_collection": 3,
+      "openalex_cited_by_count": 0
+    },
+    {
+      "doi": "10.1103/physreva.98.012324",
+      "title": "Quantum generative adversarial networks",
+      "first_author": "Pierre-Luc Dallaire-Demers",
+      "year": 2018,
+      "cited_by_in_collection": [
+        "2021_Coyle_QuantumVersusClassical.md",
+        "2024_Gujju_QuantumMachineLearning.md",
+        "2025_Ganguly_HybridClassicalQuantum.md"
+      ],
+      "citation_count_in_collection": 3,
+      "openalex_cited_by_count": 0
+    },
+    {
+      "doi": "10.1103/physreva.83.032302",
+      "title": "Quantum-state preparation with universal gate decompositions",
+      "first_author": "Martin Plesch",
+      "year": 2011,
+      "cited_by_in_collection": [
+        "2022_Wolf_QuantumAlgorithmPricing.md",
+        "2024_Gujju_QuantumMachineLearning.md",
+        "2024_Mitsuda_ApproximateComplexAmplitude.md"
+      ],
+      "citation_count_in_collection": 3,
+      "openalex_cited_by_count": 0
+    },
+    {
+      "doi": "10.1103/physrevresearch.2.043158",
+      "title": "Sequential minimal optimization for quantum-classical hybrid algorithms",
+      "first_author": "Ken M. Nakanishi",
+      "year": 2020,
+      "cited_by_in_collection": [
+        "2022_Kolotouros_EvolvingObjectiveFunction.md",
+        "2024_Gujju_QuantumMachineLearning.md",
+        "2025_Hunout_VariationalQuantumAlgorithm.md"
+      ],
+      "citation_count_in_collection": 3,
+      "openalex_cited_by_count": 0
+    },
+    {
+      "doi": "10.1126/science.1113479",
+      "title": "Simulated Quantum Computation of Molecular Energies",
+      "first_author": "Al\u00e1n Aspuru\u2010Guzik",
+      "year": 2005,
+      "cited_by_in_collection": [
+        "2021_Lu_AlgorithmsQuantumSimulation.md",
+        "2024_Huang_EvaluatingQuantumClassical.md",
+        "2025_Zhang_QuantumComputingQuantum.md"
+      ],
+      "citation_count_in_collection": 3,
+      "openalex_cited_by_count": 0
+    },
+    {
+      "doi": "10.1109/jstsp.2016.2574703",
+      "title": "Solving the Optimal Trading Trajectory Problem Using a Quantum Annealer",
+      "first_author": "Gili Rosenberg",
+      "year": 2016,
+      "cited_by_in_collection": [
+        "2022_Hegade_PortfolioOptimizationDigitized.md",
+        "2025_Uotila_HigherOrderPortfolio.md",
+        "2025_Wei_SolvingMultipleDiscretization.md"
       ],
       "citation_count_in_collection": 3,
       "openalex_cited_by_count": 0
@@ -986,27 +2007,92 @@
       "openalex_cited_by_count": 0
     },
     {
+      "doi": "10.1038/s41586-019-0980-2",
+      "title": "Supervised learning with quantum-enhanced feature spaces",
+      "first_author": "Vojt\u011bch Havl\u00ed\u010dek",
+      "year": 2019,
+      "cited_by_in_collection": [
+        "2021_Coyle_QuantumVersusClassical.md",
+        "2024_Gujju_QuantumMachineLearning.md",
+        "2025_Benamer_VariationalQuantumAlgorithms.md"
+      ],
+      "citation_count_in_collection": 3,
+      "openalex_cited_by_count": 0
+    },
+    {
+      "doi": "10.1109/tcad.2005.855930",
+      "title": "Synthesis of quantum-logic circuits",
+      "first_author": "Vivek Shende",
+      "year": 2006,
+      "cited_by_in_collection": [
+        "2022_Wolf_QuantumAlgorithmPricing.md",
+        "2023_Udvarnoki_QuantumAdvantageMonte.md",
+        "2024_Gujju_QuantumMachineLearning.md"
+      ],
+      "citation_count_in_collection": 3,
+      "openalex_cited_by_count": 0
+    },
+    {
+      "doi": "10.1038/s42254-019-0086-7",
+      "title": "Tensor networks for complex quantum systems",
+      "first_author": "Rom\u00e1n Or\u00fas",
+      "year": 2019,
+      "cited_by_in_collection": [
+        "2024_Gujju_QuantumMachineLearning.md",
+        "2025_Wei_SolvingMultipleDiscretization.md",
+        "2025_Zhang_QuantumComputingQuantum.md"
+      ],
+      "citation_count_in_collection": 3,
+      "openalex_cited_by_count": 0
+    },
+    {
+      "doi": "10.1038/s41534-020-00288-9",
+      "title": "The Born supremacy: quantum advantage and training of an Ising Born machine",
+      "first_author": "Brian Coyle",
+      "year": 2020,
+      "cited_by_in_collection": [
+        "2021_Coyle_QuantumVersusClassical.md",
+        "2024_Mitsuda_ApproximateComplexAmplitude.md",
+        "2025_Ganguly_HybridClassicalQuantum.md"
+      ],
+      "citation_count_in_collection": 3,
+      "openalex_cited_by_count": 0
+    },
+    {
+      "doi": "10.1086/260062",
+      "title": "The Pricing of Options and Corporate Liabilities",
+      "first_author": "Fischer Black",
+      "year": 1973,
+      "cited_by_in_collection": [
+        "2021_Kubo_VariationalQuantumSimulations.md",
+        "2023_Udvarnoki_QuantumAdvantageMonte.md",
+        "2026_Barbaresco_QuantumAmplitudeEstimation.md"
+      ],
+      "citation_count_in_collection": 3,
+      "openalex_cited_by_count": 0
+    },
+    {
       "doi": "10.22331/q-2022-07-07-759",
       "title": "The Quantum Approximate Optimization Algorithm and the Sherrington-Kirkpatrick Model at Infinite Size",
       "first_author": "Edward Farhi",
       "year": 2022,
       "cited_by_in_collection": [
-        "2021_Kolotouros_EvolvingObjectiveFunction.md",
         "2022_Kolotouros_EvolvingObjectiveFunction.md",
+        "2025_Zhong_ClassicalOptimizationImaginary.md",
         "2026_Dehn_ExtrapolationMethodOptimize.md"
       ],
       "citation_count_in_collection": 3,
       "openalex_cited_by_count": 0
     },
     {
-      "doi": "10.1103/physrevlett.127.120502",
-      "title": "Training Variational Quantum Algorithms Is NP-Hard",
-      "first_author": "Lennart Bittel",
-      "year": 2021,
+      "doi": "10.1038/s41586-021-04351-z",
+      "title": "Unbiasing fermionic quantum Monte Carlo with a quantum computer",
+      "first_author": "William J. Huggins",
+      "year": 2022,
       "cited_by_in_collection": [
-        "2022_Kolotouros_EvolvingObjectiveFunction.md",
-        "2023_Giron_ApproachingCollateralOptimization.md",
-        "2025_Benamer_VariationalQuantumAlgorithms.md"
+        "2023_Chowdhury_AcceleratedQuantumMonte.md",
+        "2024_Huang_EvaluatingQuantumClassical.md",
+        "2025_Zhang_QuantumComputingQuantum.md"
       ],
       "citation_count_in_collection": 3,
       "openalex_cited_by_count": 0
@@ -1017,11 +2103,23 @@
       "first_author": "Daniel J. Egger",
       "year": 2021,
       "cited_by_in_collection": [
-        "2021_Kolotouros_EvolvingObjectiveFunction.md",
         "2022_Kolotouros_EvolvingObjectiveFunction.md",
+        "2022_Wolf_QuantumAlgorithmPricing.md",
         "2023_Giron_ApproachingCollateralOptimization.md"
       ],
       "citation_count_in_collection": 3,
+      "openalex_cited_by_count": 0
+    },
+    {
+      "doi": "10.1007/978-94-015-8330-5_4",
+      "title": "A Direct Search Optimization Method That Models the Objective and Constraint Functions by Linear Interpolation",
+      "first_author": "M. J. D. Powell",
+      "year": 1994,
+      "cited_by_in_collection": [
+        "2022_Kolotouros_EvolvingObjectiveFunction.md",
+        "2025_Jiang_RasenganTransitionHamiltonian.md"
+      ],
+      "citation_count_in_collection": 2,
       "openalex_cited_by_count": 0
     },
     {
@@ -1032,18 +2130,6 @@
       "cited_by_in_collection": [
         "2026_Barbaresco_QPortQuantum.md",
         "2026_Barbaresco_QuantumAmplitudeEstimation.md"
-      ],
-      "citation_count_in_collection": 2,
-      "openalex_cited_by_count": 0
-    },
-    {
-      "doi": "10.22331/q-2021-06-01-463",
-      "title": "A Threshold for Quantum Advantage in Derivative Pricing",
-      "first_author": "Shouvanik Chakrabarti",
-      "year": 2021,
-      "cited_by_in_collection": [
-        "2024_KI_QuantumFinance.md",
-        "2025_Cibrario_AutocallableOptionsPricing.md"
       ],
       "citation_count_in_collection": 2,
       "openalex_cited_by_count": 0
@@ -1061,13 +2147,13 @@
       "openalex_cited_by_count": 0
     },
     {
-      "doi": "10.1007/s10462-022-10273-7",
-      "title": "A brief review of portfolio optimization techniques",
-      "first_author": "Abhishek Gunjan",
-      "year": 2022,
+      "doi": "10.1007/s11128-021-03140-x",
+      "title": "A comparison of various classical optimizers for a variational quantum linear solver",
+      "first_author": "Aidan Pellow-Jarman",
+      "year": 2021,
       "cited_by_in_collection": [
-        "2025_Huot_CorrectionsEnhancingKnapsack.md",
-        "2025_Innan_QuantumPortfolioOptimization.md"
+        "2024_Gujju_QuantumMachineLearning.md",
+        "2025_Hunout_VariationalQuantumAlgorithm.md"
       ],
       "citation_count_in_collection": 2,
       "openalex_cited_by_count": 0
@@ -1078,7 +2164,7 @@
       "first_author": "Marcello Benedetti",
       "year": 2019,
       "cited_by_in_collection": [
-        "2021_Kolotouros_EvolvingObjectiveFunction.md",
+        "2021_Coyle_QuantumVersusClassical.md",
         "2022_Kolotouros_EvolvingObjectiveFunction.md"
       ],
       "citation_count_in_collection": 2,
@@ -1097,6 +2183,30 @@
       "openalex_cited_by_count": 0
     },
     {
+      "doi": "10.1103/physrevresearch.4.033029",
+      "title": "Adaptive quantum approximate optimization algorithm for solving combinatorial problems on a quantum computer",
+      "first_author": "Linghua Zhu",
+      "year": 2022,
+      "cited_by_in_collection": [
+        "2022_Hegade_PortfolioOptimizationDigitized.md",
+        "2025_Cai_EnhancingQuantumApproximate.md"
+      ],
+      "citation_count_in_collection": 2,
+      "openalex_cited_by_count": 0
+    },
+    {
+      "doi": "10.1038/s41534-023-00681-0",
+      "title": "Adaptive, problem-tailored variational quantum eigensolver mitigates rough parameter landscapes and barren plateaus",
+      "first_author": "Harper R. Grimsley",
+      "year": 2023,
+      "cited_by_in_collection": [
+        "2024_CadiTazi_FoldedSpectrumVqe.md",
+        "2024_Huang_EvaluatingQuantumClassical.md"
+      ],
+      "citation_count_in_collection": 2,
+      "openalex_cited_by_count": 0
+    },
+    {
       "doi": "10.48550/arxiv.1806.02287",
       "title": "Addressing hard classical problems with Adiabatically Assisted Variational Quantum Eigensolvers",
       "first_author": "Artur Garc\u00eda-S\u00e1ez",
@@ -1104,6 +2214,78 @@
       "cited_by_in_collection": [
         "2022_Sen_VariationalQuantumClassifiers.md",
         "2025_Benamer_VariationalQuantumAlgorithms.md"
+      ],
+      "citation_count_in_collection": 2,
+      "openalex_cited_by_count": 0
+    },
+    {
+      "doi": "10.1007/978-94-015-8330-5",
+      "title": "Advances in Optimization and Numerical Analysis",
+      "first_author": "Susana G\u00f3mez",
+      "year": 1994,
+      "cited_by_in_collection": [
+        "2022_Kolotouros_EvolvingObjectiveFunction.md",
+        "2025_Hunout_VariationalQuantumAlgorithm.md"
+      ],
+      "citation_count_in_collection": 2,
+      "openalex_cited_by_count": 0
+    },
+    {
+      "doi": "10.1007/s11128-021-03215-9",
+      "title": "Amplitude estimation via maximum likelihood on noisy quantum computer",
+      "first_author": "Tomoki Tanaka",
+      "year": 2021,
+      "cited_by_in_collection": [
+        "2023_Udvarnoki_QuantumAdvantageMonte.md",
+        "2026_Barbaresco_QuantumAmplitudeEstimation.md"
+      ],
+      "citation_count_in_collection": 2,
+      "openalex_cited_by_count": 0
+    },
+    {
+      "doi": "10.1007/s11128-019-2565-2",
+      "title": "Amplitude estimation without phase estimation",
+      "first_author": "Yohichi Suzuki",
+      "year": 2020,
+      "cited_by_in_collection": [
+        "2023_Udvarnoki_QuantumAdvantageMonte.md",
+        "2026_Barbaresco_QuantumAmplitudeEstimation.md"
+      ],
+      "citation_count_in_collection": 2,
+      "openalex_cited_by_count": 0
+    },
+    {
+      "doi": "10.1038/s41467-019-10988-2",
+      "title": "An adaptive variational algorithm for exact molecular simulations on a quantum computer",
+      "first_author": "Harper R. Grimsley",
+      "year": 2019,
+      "cited_by_in_collection": [
+        "2025_Benamer_VariationalQuantumAlgorithms.md",
+        "2025_Zhang_QuantumComputingQuantum.md"
+      ],
+      "citation_count_in_collection": 2,
+      "openalex_cited_by_count": 0
+    },
+    {
+      "doi": "10.1103/physreva.78.052310",
+      "title": "Architectures for a quantum random access memory",
+      "first_author": "Vittorio Giovannetti",
+      "year": 2008,
+      "cited_by_in_collection": [
+        "2024_Gujju_QuantumMachineLearning.md",
+        "2024_KI_QuantumFinance.md"
+      ],
+      "citation_count_in_collection": 2,
+      "openalex_cited_by_count": 0
+    },
+    {
+      "doi": "10.1016/s0079-6727(98)00004-4",
+      "title": "Basics of quantum computation",
+      "first_author": "Vlatko Vedral",
+      "year": 1998,
+      "cited_by_in_collection": [
+        "2024_Kea_HybridQuantumClassical.md",
+        "2025_Chawla_QuantumComputingUnderlying.md"
       ],
       "citation_count_in_collection": 2,
       "openalex_cited_by_count": 0
@@ -1121,49 +2303,145 @@
       "openalex_cited_by_count": 0
     },
     {
-      "doi": "10.1137/080724083",
-      "title": "Benchmarking Derivative-Free Optimization Algorithms",
-      "first_author": "Jorge J. Mor\u00e8",
-      "year": 2009,
+      "doi": "10.1007/bf01343193",
+      "title": "Beweis des Adiabatensatzes",
+      "first_author": "Marise Ph. Born",
+      "year": 1928,
       "cited_by_in_collection": [
-        "2021_Kolotouros_EvolvingObjectiveFunction.md",
-        "2022_Kolotouros_EvolvingObjectiveFunction.md"
+        "2023_Chowdhury_AcceleratedQuantumMonte.md",
+        "2026_Dehn_ExtrapolationMethodOptimize.md"
       ],
       "citation_count_in_collection": 2,
       "openalex_cited_by_count": 0
     },
     {
-      "doi": "10.1038/s42256-022-00468-6",
-      "title": "Combinatorial optimization with physics-inspired graph neural networks",
-      "first_author": "Martin J. A. Schuetz",
-      "year": 2022,
-      "cited_by_in_collection": [
-        "2023_Giron_ApproachingCollateralOptimization.md",
-        "2025_Uotila_HigherOrderPortfolio.md"
-      ],
-      "citation_count_in_collection": 2,
-      "openalex_cited_by_count": 0
-    },
-    {
-      "doi": "10.1103/prxquantum.3.010313",
-      "title": "Connecting Ansatz Expressibility to Gradient Magnitudes and Barren Plateaus",
-      "first_author": "Zo\u00eb Holmes",
-      "year": 2022,
-      "cited_by_in_collection": [
-        "2025_Benamer_VariationalQuantumAlgorithms.md",
-        "2025_Cai_EnhancingQuantumApproximate.md"
-      ],
-      "citation_count_in_collection": 2,
-      "openalex_cited_by_count": 0
-    },
-    {
-      "doi": "10.1038/s41586-019-1040-7",
-      "title": "Error mitigation extends the computational reach of a noisy quantum processor",
-      "first_author": "Abhinav Kandala",
+      "doi": "10.1103/physrevlett.122.020502",
+      "title": "Black-Box Quantum State Preparation without Arithmetic",
+      "first_author": "Yuval R. Sanders",
       "year": 2019,
       "cited_by_in_collection": [
-        "2021_Martin_TowardPricingFinancial.md",
-        "2025_Benamer_VariationalQuantumAlgorithms.md"
+        "2024_Gujju_QuantumMachineLearning.md",
+        "2024_Mitsuda_ApproximateComplexAmplitude.md"
+      ],
+      "citation_count_in_collection": 2,
+      "openalex_cited_by_count": 0
+    },
+    {
+      "doi": "10.1103/physreva.101.032308",
+      "title": "Circuit-centric quantum classifiers",
+      "first_author": "Maria Schuld",
+      "year": 2020,
+      "cited_by_in_collection": [
+        "2021_Coyle_QuantumVersusClassical.md",
+        "2024_Mustafa_QuantumGraphNeural.md"
+      ],
+      "citation_count_in_collection": 2,
+      "openalex_cited_by_count": 0
+    },
+    {
+      "doi": "10.1109/qce49297.2020.00041",
+      "title": "Classical Optimizers for Noisy Intermediate-Scale Quantum Devices",
+      "first_author": "W. Lavrijsen",
+      "year": 2020,
+      "cited_by_in_collection": [
+        "2021_Coyle_QuantumVersusClassical.md",
+        "2024_Gujju_QuantumMachineLearning.md"
+      ],
+      "citation_count_in_collection": 2,
+      "openalex_cited_by_count": 0
+    },
+    {
+      "doi": "10.1140/epjqt/s40507-021-00091-1",
+      "title": "Commercial applications of quantum computing",
+      "first_author": "Frank J. Bova",
+      "year": 2021,
+      "cited_by_in_collection": [
+        "2022_Hegade_PortfolioOptimizationDigitized.md",
+        "2024_Gujju_QuantumMachineLearning.md"
+      ],
+      "citation_count_in_collection": 2,
+      "openalex_cited_by_count": 0
+    },
+    {
+      "doi": "10.1088/2058-9565/ac7ba3",
+      "title": "Compact quantum kernel-based binary classifier",
+      "first_author": "Carsten Blank",
+      "year": 2022,
+      "cited_by_in_collection": [
+        "2024_Gujju_QuantumMachineLearning.md",
+        "2024_Mitsuda_ApproximateComplexAmplitude.md"
+      ],
+      "citation_count_in_collection": 2,
+      "openalex_cited_by_count": 0
+    },
+    {
+      "doi": "10.1103/physrevresearch.1.033063",
+      "title": "Continuous-variable quantum neural networks",
+      "first_author": "Nathan Killoran",
+      "year": 2019,
+      "cited_by_in_collection": [
+        "2024_Gujju_QuantumMachineLearning.md",
+        "2025_Mustapha_ComparativeAnalysisLoan.md"
+      ],
+      "citation_count_in_collection": 2,
+      "openalex_cited_by_count": 0
+    },
+    {
+      "doi": "10.22331/q-2024-04-30-1322",
+      "title": "Derivative Pricing using Quantum Signal Processing",
+      "first_author": "Nikitas Stamatopoulos",
+      "year": 2024,
+      "cited_by_in_collection": [
+        "2025_Chuvakov_FactoringDecisionSupport.md",
+        "2025_Cibrario_AutocallableOptionsPricing.md"
+      ],
+      "citation_count_in_collection": 2,
+      "openalex_cited_by_count": 0
+    },
+    {
+      "doi": "10.1103/physrevlett.88.217901",
+      "title": "Direct Estimations of Linear and Nonlinear Functionals of a Quantum State",
+      "first_author": "Artur Ekert",
+      "year": 2002,
+      "cited_by_in_collection": [
+        "2021_Lu_AlgorithmsQuantumSimulation.md",
+        "2024_Huang_EvaluatingQuantumClassical.md"
+      ],
+      "citation_count_in_collection": 2,
+      "openalex_cited_by_count": 0
+    },
+    {
+      "doi": "10.1103/physreva.103.032430",
+      "title": "Effect of data encoding on the expressive power of variational quantum-machine-learning models",
+      "first_author": "Maria Schuld",
+      "year": 2021,
+      "cited_by_in_collection": [
+        "2024_Gujju_QuantumMachineLearning.md",
+        "2024_Kea_HybridQuantumClassical.md"
+      ],
+      "citation_count_in_collection": 2,
+      "openalex_cited_by_count": 0
+    },
+    {
+      "doi": "10.1103/prxquantum.4.040335",
+      "title": "Efficient Estimation of Trainability for Variational Quantum Circuits",
+      "first_author": "Valentin Heyraud",
+      "year": 2023,
+      "cited_by_in_collection": [
+        "2024_Gujju_QuantumMachineLearning.md",
+        "2025_Hunout_VariationalQuantumAlgorithm.md"
+      ],
+      "citation_count_in_collection": 2,
+      "openalex_cited_by_count": 0
+    },
+    {
+      "doi": "10.1002/qute.202500753",
+      "title": "End\u2010to\u2010End Portfolio Optimization with Hybrid Quantum Annealing",
+      "first_author": "Sai Nandan Morapakula",
+      "year": 2025,
+      "cited_by_in_collection": [
+        "2026_Barbaresco_QPortQuantum.md",
+        "2026_Gnal_QuantumComputingApproaches.md"
       ],
       "citation_count_in_collection": 2,
       "openalex_cited_by_count": 0
@@ -1176,6 +2454,102 @@
       "cited_by_in_collection": [
         "2026_Barbaresco_QPortQuantum.md",
         "2026_Barbaresco_QuantumAmplitudeEstimation.md"
+      ],
+      "citation_count_in_collection": 2,
+      "openalex_cited_by_count": 0
+    },
+    {
+      "doi": "10.1038/s41467-023-37587-6",
+      "title": "Evaluating the evidence for exponential quantum advantage in ground-state quantum chemistry",
+      "first_author": "Seunghoon Lee",
+      "year": 2023,
+      "cited_by_in_collection": [
+        "2024_CadiTazi_FoldedSpectrumVqe.md",
+        "2024_Huang_EvaluatingQuantumClassical.md"
+      ],
+      "citation_count_in_collection": 2,
+      "openalex_cited_by_count": 0
+    },
+    {
+      "doi": "10.1038/s41586-023-06096-3",
+      "title": "Evidence for the utility of quantum computing before fault tolerance",
+      "first_author": "Young\u2010Seok Kim",
+      "year": 2023,
+      "cited_by_in_collection": [
+        "2024_Gujju_QuantumMachineLearning.md",
+        "2024_Kea_HybridQuantumClassical.md"
+      ],
+      "citation_count_in_collection": 2,
+      "openalex_cited_by_count": 0
+    },
+    {
+      "doi": "10.1126/sciadv.adm6761",
+      "title": "Evidence of scaling advantage for the quantum approximate optimization algorithm on a classically intractable problem",
+      "first_author": "Ruslan Shaydulin",
+      "year": 2024,
+      "cited_by_in_collection": [
+        "2025_Zhong_ClassicalOptimizationImaginary.md",
+        "2026_Dehn_ExtrapolationMethodOptimize.md"
+      ],
+      "citation_count_in_collection": 2,
+      "openalex_cited_by_count": 0
+    },
+    {
+      "doi": "10.25080/tcwv9851",
+      "title": "Exploring Network Structure, Dynamics, and Function using NetworkX",
+      "first_author": "Aric Hagberg",
+      "year": 2008,
+      "cited_by_in_collection": [
+        "2022_Kolotouros_EvolvingObjectiveFunction.md",
+        "2025_Cai_EnhancingQuantumApproximate.md"
+      ],
+      "citation_count_in_collection": 2,
+      "openalex_cited_by_count": 0
+    },
+    {
+      "doi": "10.1109/sse60056.2023.00037",
+      "title": "Exploring the Vulnerabilities of Machine Learning and Quantum Machine Learning to Adversarial Attacks Using a Malware Dataset: A Comparative Analysis",
+      "first_author": "Mst Shapna Akter",
+      "year": 2023,
+      "cited_by_in_collection": [
+        "2024_Gujju_QuantumMachineLearning.md",
+        "2025_Mustapha_ComparativeAnalysisLoan.md"
+      ],
+      "citation_count_in_collection": 2,
+      "openalex_cited_by_count": 0
+    },
+    {
+      "doi": "10.1063/1.5027484",
+      "title": "Faster ground state preparation and high-precision ground energy estimation with fewer qubits",
+      "first_author": "Yimin Ge",
+      "year": 2019,
+      "cited_by_in_collection": [
+        "2021_Lu_AlgorithmsQuantumSimulation.md",
+        "2025_Zhang_QuantumComputingQuantum.md"
+      ],
+      "citation_count_in_collection": 2,
+      "openalex_cited_by_count": 0
+    },
+    {
+      "doi": "10.1109/tqe.2020.2965803",
+      "title": "Fault-Tolerant Resource Estimation of Quantum Random-Access Memories",
+      "first_author": "Olivia Di Matteo",
+      "year": 2020,
+      "cited_by_in_collection": [
+        "2024_KI_QuantumFinance.md",
+        "2025_Hunout_VariationalQuantumAlgorithm.md"
+      ],
+      "citation_count_in_collection": 2,
+      "openalex_cited_by_count": 0
+    },
+    {
+      "doi": "10.1006/aphy.2002.6254",
+      "title": "Fermionic Quantum Computation",
+      "first_author": "Sergey Bravyi",
+      "year": 2002,
+      "cited_by_in_collection": [
+        "2024_CadiTazi_FoldedSpectrumVqe.md",
+        "2025_Zhang_QuantumComputingQuantum.md"
       ],
       "citation_count_in_collection": 2,
       "openalex_cited_by_count": 0
@@ -1205,30 +2579,6 @@
       "openalex_cited_by_count": 0
     },
     {
-      "doi": "10.48550/arxiv.1812.04170",
-      "title": "For Fixed Control Parameters the Quantum Approximate Optimization Algorithm's Objective Function Value Concentrates for Typical Instances",
-      "first_author": "Fernando G. S. L. Brand\u00e3o",
-      "year": 2018,
-      "cited_by_in_collection": [
-        "2021_Kolotouros_EvolvingObjectiveFunction.md",
-        "2022_Kolotouros_EvolvingObjectiveFunction.md"
-      ],
-      "citation_count_in_collection": 2,
-      "openalex_cited_by_count": 0
-    },
-    {
-      "doi": "10.1021/acs.jctc.8b01004",
-      "title": "Generalized Unitary Coupled Cluster Wave functions for Quantum Computation",
-      "first_author": "Joonho Lee",
-      "year": 2018,
-      "cited_by_in_collection": [
-        "2021_Kolotouros_EvolvingObjectiveFunction.md",
-        "2022_Kolotouros_EvolvingObjectiveFunction.md"
-      ],
-      "citation_count_in_collection": 2,
-      "openalex_cited_by_count": 0
-    },
-    {
       "doi": "10.1103/physreva.64.022307",
       "title": "Grover algorithm with zero theoretical failure rate",
       "first_author": "Gui\u2010Lu Long",
@@ -1241,37 +2591,85 @@
       "openalex_cited_by_count": 0
     },
     {
-      "doi": "10.1103/physrevlett.86.1889",
-      "title": "Implementation of the Quantum Fourier Transform",
-      "first_author": "Yossi Weinstein",
-      "year": 2001,
+      "doi": "10.22331/q-2024-02-01-1239",
+      "title": "Hamiltonian variational ansatz without barren plateaus",
+      "first_author": "Chae-Yeun Park",
+      "year": 2024,
       "cited_by_in_collection": [
-        "2022_Sun_PortfolioOptimizationBased.md",
-        "2025_Huot_CorrectionsEnhancingKnapsack.md"
+        "2024_Gujju_QuantumMachineLearning.md",
+        "2025_Hunout_VariationalQuantumAlgorithm.md"
       ],
       "citation_count_in_collection": 2,
       "openalex_cited_by_count": 0
     },
     {
-      "doi": "10.22331/q-2020-04-20-256",
-      "title": "Improving Variational Quantum Optimization using CVaR",
-      "first_author": "Panagiotis Kl. Barkoutsos",
-      "year": 2020,
-      "cited_by_in_collection": [
-        "2022_Kolotouros_EvolvingObjectiveFunction.md",
-        "2025_Cai_EnhancingQuantumApproximate.md"
-      ],
-      "citation_count_in_collection": 2,
-      "openalex_cited_by_count": 0
-    },
-    {
-      "doi": "10.1038/s41534-021-00379-1",
-      "title": "Iterative quantum amplitude estimation",
-      "first_author": "Dmitry Grinko",
+      "doi": "10.1103/physrevresearch.3.033083",
+      "title": "Hardware-efficient variational quantum algorithms for time evolution",
+      "first_author": "Marcello Benedetti",
       "year": 2021,
       "cited_by_in_collection": [
-        "2025_Cibrario_AutocallableOptionsPricing.md",
-        "2026_Barbaresco_QuantumAmplitudeEstimation.md"
+        "2024_Gujju_QuantumMachineLearning.md",
+        "2024_Kea_HybridQuantumClassical.md"
+      ],
+      "citation_count_in_collection": 2,
+      "openalex_cited_by_count": 0
+    },
+    {
+      "doi": "10.1103/physreva.95.042308",
+      "title": "Hybrid quantum-classical hierarchy for mitigation of decoherence and determination of excited states",
+      "first_author": "Jarrod R. McClean",
+      "year": 2017,
+      "cited_by_in_collection": [
+        "2021_Lu_AlgorithmsQuantumSimulation.md",
+        "2024_CadiTazi_FoldedSpectrumVqe.md"
+      ],
+      "citation_count_in_collection": 2,
+      "openalex_cited_by_count": 0
+    },
+    {
+      "doi": "10.1209/0295-5075/119/60002",
+      "title": "Implementing a distance-based classifier with a quantum interference circuit",
+      "first_author": "M. Schuld",
+      "year": 2017,
+      "cited_by_in_collection": [
+        "2024_Gujju_QuantumMachineLearning.md",
+        "2024_Mitsuda_ApproximateComplexAmplitude.md"
+      ],
+      "citation_count_in_collection": 2,
+      "openalex_cited_by_count": 0
+    },
+    {
+      "doi": "10.1103/physreva.70.052328",
+      "title": "Improved simulation of stabilizer circuits",
+      "first_author": "Scott Aaronson",
+      "year": 2004,
+      "cited_by_in_collection": [
+        "2024_Huang_EvaluatingQuantumClassical.md",
+        "2024_Mitsuda_ApproximateComplexAmplitude.md"
+      ],
+      "citation_count_in_collection": 2,
+      "openalex_cited_by_count": 0
+    },
+    {
+      "doi": "10.1103/physreve.74.066701",
+      "title": "Inhomogeneous backflow transformations in quantum Monte Carlo calculations",
+      "first_author": "Pablo L\u00f3pez R\u00edos",
+      "year": 2006,
+      "cited_by_in_collection": [
+        "2023_Simula_QuantumMonteCarlo.md",
+        "2025_Azadi_QuantumMonteCarlo.md"
+      ],
+      "citation_count_in_collection": 2,
+      "openalex_cited_by_count": 0
+    },
+    {
+      "doi": "10.1103/physrevb.70.235119",
+      "title": "Jastrow correlation factor for atoms, molecules, and solids",
+      "first_author": "N. D. Drummond",
+      "year": 2004,
+      "cited_by_in_collection": [
+        "2023_Simula_QuantumMonteCarlo.md",
+        "2025_Azadi_QuantumMonteCarlo.md"
       ],
       "citation_count_in_collection": 2,
       "openalex_cited_by_count": 0
@@ -1294,8 +2692,68 @@
       "first_author": "Andrea Skolik",
       "year": 2021,
       "cited_by_in_collection": [
-        "2021_Kolotouros_EvolvingObjectiveFunction.md",
-        "2022_Kolotouros_EvolvingObjectiveFunction.md"
+        "2022_Kolotouros_EvolvingObjectiveFunction.md",
+        "2024_Gujju_QuantumMachineLearning.md"
+      ],
+      "citation_count_in_collection": 2,
+      "openalex_cited_by_count": 0
+    },
+    {
+      "doi": "10.1088/1367-2630/aae94a",
+      "title": "Learning the quantum algorithm for state overlap",
+      "first_author": "Lukasz Cincio",
+      "year": 2018,
+      "cited_by_in_collection": [
+        "2021_Coyle_QuantumVersusClassical.md",
+        "2024_Gujju_QuantumMachineLearning.md"
+      ],
+      "citation_count_in_collection": 2,
+      "openalex_cited_by_count": 0
+    },
+    {
+      "doi": "10.1126/science.aaa8415",
+      "title": "Machine learning: Trends, perspectives, and prospects",
+      "first_author": "Michael I. Jordan",
+      "year": 2015,
+      "cited_by_in_collection": [
+        "2024_Gujju_QuantumMachineLearning.md",
+        "2026_Shaon_ReviewRoutingResource.md"
+      ],
+      "citation_count_in_collection": 2,
+      "openalex_cited_by_count": 0
+    },
+    {
+      "doi": "10.1080/14789940801912366",
+      "title": "Matrix product states, projected entangled pair states, and variational renormalization group methods for quantum spin systems",
+      "first_author": "Frank Verstraete",
+      "year": 2008,
+      "cited_by_in_collection": [
+        "2021_Lu_AlgorithmsQuantumSimulation.md",
+        "2024_Gujju_QuantumMachineLearning.md"
+      ],
+      "citation_count_in_collection": 2,
+      "openalex_cited_by_count": 0
+    },
+    {
+      "doi": "10.1016/j.asoc.2020.106943",
+      "title": "Mean\u2013variance portfolio optimization using machine learning-based stock price prediction",
+      "first_author": "Wei Chen",
+      "year": 2020,
+      "cited_by_in_collection": [
+        "2024_Gujju_QuantumMachineLearning.md",
+        "2024_Kea_HybridQuantumClassical.md"
+      ],
+      "citation_count_in_collection": 2,
+      "openalex_cited_by_count": 0
+    },
+    {
+      "doi": "10.1103/physreva.104.062432",
+      "title": "Modeling and simulating the noisy behavior of near-term quantum computers",
+      "first_author": "\u039a\u03c9\u03bd\u03c3\u03c4\u03b1\u03bd\u03c4\u03af\u03bd\u03bf\u03c2 \u0393\u03b5\u03c9\u03c1\u03b3\u03cc\u03c0\u03bf\u03c5\u03bb\u03bf\u03c2",
+      "year": 2021,
+      "cited_by_in_collection": [
+        "2023_Udvarnoki_QuantumAdvantageMonte.md",
+        "2024_CadiTazi_FoldedSpectrumVqe.md"
       ],
       "citation_count_in_collection": 2,
       "openalex_cited_by_count": 0
@@ -1313,6 +2771,42 @@
       "openalex_cited_by_count": 0
     },
     {
+      "doi": "10.1038/s41586-022-04603-6",
+      "title": "Multi-qubit entanglement and algorithms on a neutral-atom quantum computer",
+      "first_author": "Trent Graham",
+      "year": 2022,
+      "cited_by_in_collection": [
+        "2025_Jiang_RasenganTransitionHamiltonian.md",
+        "2025_Lai_TowardsArbitraryQubo.md"
+      ],
+      "citation_count_in_collection": 2,
+      "openalex_cited_by_count": 0
+    },
+    {
+      "doi": "10.1109/9.119632",
+      "title": "Multivariate stochastic approximation using a simultaneous perturbation gradient approximation",
+      "first_author": "James C. Spall",
+      "year": 1992,
+      "cited_by_in_collection": [
+        "2025_Benamer_VariationalQuantumAlgorithms.md",
+        "2025_Hunout_VariationalQuantumAlgorithm.md"
+      ],
+      "citation_count_in_collection": 2,
+      "openalex_cited_by_count": 0
+    },
+    {
+      "doi": "10.22331/q-2020-12-14-372",
+      "title": "Near-optimal ground state preparation",
+      "first_author": "Lin Lin",
+      "year": 2020,
+      "cited_by_in_collection": [
+        "2021_Lu_AlgorithmsQuantumSimulation.md",
+        "2025_Zhang_QuantumComputingQuantum.md"
+      ],
+      "citation_count_in_collection": 2,
+      "openalex_cited_by_count": 0
+    },
+    {
       "doi": "10.1109/iolts65288.2025.11116981",
       "title": "Next-Generation Quantum Neural Networks: Enhancing Efficiency, Security, and Privacy",
       "first_author": "Nouhaila Innan",
@@ -1325,12 +2819,60 @@
       "openalex_cited_by_count": 0
     },
     {
+      "doi": "10.1038/s41534-017-0037-z",
+      "title": "Non-stoquastic Hamiltonians in quantum annealing via geometric phases",
+      "first_author": "Walter Vinci",
+      "year": 2017,
+      "cited_by_in_collection": [
+        "2022_Hegade_PortfolioOptimizationDigitized.md",
+        "2023_Chowdhury_AcceleratedQuantumMonte.md"
+      ],
+      "citation_count_in_collection": 2,
+      "openalex_cited_by_count": 0
+    },
+    {
+      "doi": "10.1103/physrevlett.125.260505",
+      "title": "Obstacles to Variational Quantum Optimization from Symmetry Protection",
+      "first_author": "Sergey Bravyi",
+      "year": 2020,
+      "cited_by_in_collection": [
+        "2022_Kolotouros_EvolvingObjectiveFunction.md",
+        "2025_Cai_EnhancingQuantumApproximate.md"
+      ],
+      "citation_count_in_collection": 2,
+      "openalex_cited_by_count": 0
+    },
+    {
+      "doi": "10.1088/1751-8121/abfac7",
+      "title": "On barren plateaus and cost function locality in variational quantum algorithms",
+      "first_author": "A V Uvarov",
+      "year": 2021,
+      "cited_by_in_collection": [
+        "2022_Sen_VariationalQuantumClassifiers.md",
+        "2024_Gujju_QuantumMachineLearning.md"
+      ],
+      "citation_count_in_collection": 2,
+      "openalex_cited_by_count": 0
+    },
+    {
       "doi": "10.1007/s00220-009-0930-1",
       "title": "On the Relationship Between Continuous- and Discrete-Time Quantum Walk",
       "first_author": "Andrew M. Childs",
       "year": 2009,
       "cited_by_in_collection": [
         "2021_Martin_TowardPricingFinancial.md",
+        "2024_KI_QuantumFinance.md"
+      ],
+      "citation_count_in_collection": 2,
+      "openalex_cited_by_count": 0
+    },
+    {
+      "doi": "10.1088/1367-2630/17/12/123010",
+      "title": "On the robustness of bucket brigade quantum RAM",
+      "first_author": "Srinivasan Arunachalam",
+      "year": 2015,
+      "cited_by_in_collection": [
+        "2024_Gujju_QuantumMachineLearning.md",
         "2024_KI_QuantumFinance.md"
       ],
       "citation_count_in_collection": 2,
@@ -1361,61 +2903,97 @@
       "openalex_cited_by_count": 0
     },
     {
-      "doi": "10.48550/arxiv.1811.08419",
-      "title": "Performance of the Quantum Approximate Optimization Algorithm on the Maximum Cut Problem",
-      "first_author": "Gavin E. Crooks",
-      "year": 2018,
+      "doi": "10.1126/science.220.4598.671",
+      "title": "Optimization by Simulated Annealing",
+      "first_author": "Scott Kirkpatrick",
+      "year": 1983,
       "cited_by_in_collection": [
-        "2021_Kolotouros_EvolvingObjectiveFunction.md",
-        "2022_Kolotouros_EvolvingObjectiveFunction.md"
+        "2025_Lai_TowardsArbitraryQubo.md",
+        "2025_Zhong_ClassicalOptimizationImaginary.md"
       ],
       "citation_count_in_collection": 2,
       "openalex_cited_by_count": 0
     },
     {
-      "doi": "10.1088/1361-6633/ab85b8",
-      "title": "Perspectives of quantum annealing: methods and implementations",
-      "first_author": "Philipp Hauke",
-      "year": 2020,
+      "doi": "10.1103/physrevlett.60.1719",
+      "title": "Optimized trial wave functions for quantum Monte Carlo calculations",
+      "first_author": "C. J. Umrigar",
+      "year": 1988,
       "cited_by_in_collection": [
-        "2022_Biesner_SolvingSubsetSum.md",
+        "2024_CadiTazi_FoldedSpectrumVqe.md",
+        "2025_Azadi_QuantumMonteCarlo.md"
+      ],
+      "citation_count_in_collection": 2,
+      "openalex_cited_by_count": 0
+    },
+    {
+      "doi": "10.1111/j.1540-6261.1952.tb01525.x",
+      "title": "PORTFOLIO SELECTION*",
+      "first_author": "Harry M. Markowitz",
+      "year": 1952,
+      "cited_by_in_collection": [
+        "2024_Carrascal_BacktestingQuantumComputing.md",
+        "2025_Wei_SolvingMultipleDiscretization.md"
+      ],
+      "citation_count_in_collection": 2,
+      "openalex_cited_by_count": 0
+    },
+    {
+      "doi": "10.1103/physreve.99.013304",
+      "title": "Performance of hybrid quantum-classical variational heuristics for combinatorial optimization",
+      "first_author": "Giacomo Nannicini",
+      "year": 2019,
+      "cited_by_in_collection": [
+        "2022_Kolotouros_EvolvingObjectiveFunction.md",
         "2023_Giron_ApproachingCollateralOptimization.md"
       ],
       "citation_count_in_collection": 2,
       "openalex_cited_by_count": 0
     },
     {
-      "doi": "10.1103/physreva.92.042303",
-      "title": "Progress towards practical quantum variational algorithms",
-      "first_author": "Dave Wecker",
-      "year": 2015,
+      "doi": "10.1137/s0097539795293172",
+      "title": "Polynomial-Time Algorithms for Prime Factorization and Discrete Logarithms on a Quantum Computer",
+      "first_author": "Peter W. Shor",
+      "year": 1997,
       "cited_by_in_collection": [
-        "2022_Kolotouros_EvolvingObjectiveFunction.md",
-        "2025_Benamer_VariationalQuantumAlgorithms.md"
+        "2021_Coyle_QuantumVersusClassical.md",
+        "2021_Martin_TowardPricingFinancial.md"
       ],
       "citation_count_in_collection": 2,
       "openalex_cited_by_count": 0
     },
     {
-      "doi": "10.22331/q-2018-01-31-49",
-      "title": "ProjectQ: an open source software framework for quantum computing",
-      "first_author": "Damian S. Steiger",
-      "year": 2018,
+      "doi": "10.2307/2975974",
+      "title": "Portfolio Selection",
+      "first_author": "Harry M. Markowitz",
+      "year": 1952,
       "cited_by_in_collection": [
-        "2025_Huot_CorrectionsEnhancingKnapsack.md",
-        "2025_Malhotra_ComparativeStudyQuantum.md"
+        "2022_Hegade_PortfolioOptimizationDigitized.md",
+        "2026_Dehn_ExtrapolationMethodOptimize.md"
       ],
       "citation_count_in_collection": 2,
       "openalex_cited_by_count": 0
     },
     {
-      "doi": "10.21105/joss.03066",
-      "title": "PyPortfolioOpt: portfolio optimization in Python",
-      "first_author": "Robert Martin",
-      "year": 2021,
+      "doi": "10.1038/s41567-020-0932-7",
+      "title": "Predicting many properties of a quantum system from very few measurements",
+      "first_author": "Hsin-Yuan Huang",
+      "year": 2020,
       "cited_by_in_collection": [
-        "2025_Huot_CorrectionsEnhancingKnapsack.md",
-        "2025_Uotila_HigherOrderPortfolio.md"
+        "2024_Huang_EvaluatingQuantumClassical.md",
+        "2024_Mitsuda_ApproximateComplexAmplitude.md"
+      ],
+      "citation_count_in_collection": 2,
+      "openalex_cited_by_count": 0
+    },
+    {
+      "doi": "10.1109/sfcs.1994",
+      "title": "Proceedings 35th Annual Symposium on Foundations of Computer Science",
+      "first_author": "",
+      "year": 1994,
+      "cited_by_in_collection": [
+        "2021_Kubo_VariationalQuantumSimulations.md",
+        "2025_Hunout_VariationalQuantumAlgorithm.md"
       ],
       "citation_count_in_collection": 2,
       "openalex_cited_by_count": 0
@@ -1445,6 +3023,42 @@
       "openalex_cited_by_count": 0
     },
     {
+      "doi": "10.1103/physrevlett.83.5162",
+      "title": "Quantum Algorithm Providing Exponential Speed Increase for Finding Eigenvalues and Eigenvectors",
+      "first_author": "Daniel S. Abrams",
+      "year": 1999,
+      "cited_by_in_collection": [
+        "2021_Lu_AlgorithmsQuantumSimulation.md",
+        "2025_Zhang_QuantumComputingQuantum.md"
+      ],
+      "citation_count_in_collection": 2,
+      "openalex_cited_by_count": 0
+    },
+    {
+      "doi": "10.1103/physrevlett.109.050505",
+      "title": "Quantum Algorithm for Data Fitting",
+      "first_author": "Nathan Wiebe",
+      "year": 2012,
+      "cited_by_in_collection": [
+        "2024_Gujju_QuantumMachineLearning.md",
+        "2024_KI_QuantumFinance.md"
+      ],
+      "citation_count_in_collection": 2,
+      "openalex_cited_by_count": 0
+    },
+    {
+      "doi": "10.1007/s00220-017-3002-y",
+      "title": "Quantum Algorithm for Linear Differential Equations with Exponentially Improved Dependence on Precision",
+      "first_author": "Dominic W. Berry",
+      "year": 2017,
+      "cited_by_in_collection": [
+        "2021_Kubo_VariationalQuantumSimulations.md",
+        "2025_Hunout_VariationalQuantumAlgorithm.md"
+      ],
+      "citation_count_in_collection": 2,
+      "openalex_cited_by_count": 0
+    },
+    {
       "doi": "10.1137/16m1087072",
       "title": "Quantum Algorithm for Systems of Linear Equations with Exponentially Improved Dependence on Precision",
       "first_author": "Andrew M. Childs",
@@ -1452,6 +3066,54 @@
       "cited_by_in_collection": [
         "2024_KI_QuantumFinance.md",
         "2025_Chaudhary_PracticalQuantumSolver.md"
+      ],
+      "citation_count_in_collection": 2,
+      "openalex_cited_by_count": 0
+    },
+    {
+      "doi": "10.1021/acs.chemrev.9b00829",
+      "title": "Quantum Algorithms for Quantum Chemistry and Quantum Materials Science",
+      "first_author": "Bela Bauer",
+      "year": 2020,
+      "cited_by_in_collection": [
+        "2021_Lu_AlgorithmsQuantumSimulation.md",
+        "2025_Zhang_QuantumComputingQuantum.md"
+      ],
+      "citation_count_in_collection": 2,
+      "openalex_cited_by_count": 0
+    },
+    {
+      "doi": "10.1007/s10288-019-00424-y",
+      "title": "Quantum Bridge Analytics I: a tutorial on formulating and using QUBO models",
+      "first_author": "Fred Glover",
+      "year": 2019,
+      "cited_by_in_collection": [
+        "2023_Shan_QuantumComputingSimulated.md",
+        "2025_Lai_TowardsArbitraryQubo.md"
+      ],
+      "citation_count_in_collection": 2,
+      "openalex_cited_by_count": 0
+    },
+    {
+      "doi": "10.1103/physrevlett.93.130502",
+      "title": "Quantum Circuits for General Multiqubit Gates",
+      "first_author": "Mikko M\u00f6tt\u00f6nen",
+      "year": 2004,
+      "cited_by_in_collection": [
+        "2022_Wolf_QuantumAlgorithmPricing.md",
+        "2024_Mitsuda_ApproximateComplexAmplitude.md"
+      ],
+      "citation_count_in_collection": 2,
+      "openalex_cited_by_count": 0
+    },
+    {
+      "doi": "10.3390/fi15030094",
+      "title": "Quantum Computing for Healthcare: A Review",
+      "first_author": "Raihan Ur Rasool",
+      "year": 2023,
+      "cited_by_in_collection": [
+        "2024_Gujju_QuantumMachineLearning.md",
+        "2025_Aggarwal_BridgingQuantumAlgorithms.md"
       ],
       "citation_count_in_collection": 2,
       "openalex_cited_by_count": 0
@@ -1469,13 +3131,25 @@
       "openalex_cited_by_count": 0
     },
     {
-      "doi": "10.1007/s10614-025-10894-4",
-      "title": "Quantum Finance: Exploring the Implications of Quantum Computing on Financial Models",
-      "first_author": "Jiawei Zhou",
-      "year": 2025,
+      "doi": "10.1103/physrevlett.87.167902",
+      "title": "Quantum Fingerprinting",
+      "first_author": "Harry Buhrman",
+      "year": 2001,
       "cited_by_in_collection": [
-        "2025_Innan_QuantumPortfolioOptimization.md",
-        "2026_Gnal_ScenarioBasedMacroeconomic.md"
+        "2024_Gujju_QuantumMachineLearning.md",
+        "2024_KI_QuantumFinance.md"
+      ],
+      "citation_count_in_collection": 2,
+      "openalex_cited_by_count": 0
+    },
+    {
+      "doi": "10.1109/icassp43922.2022.9747369",
+      "title": "Quantum Long Short-Term Memory",
+      "first_author": "Samuel Yen-Chi Chen",
+      "year": 2022,
+      "cited_by_in_collection": [
+        "2024_Kea_HybridQuantumClassical.md",
+        "2025_Ganguly_HybridClassicalQuantum.md"
       ],
       "citation_count_in_collection": 2,
       "openalex_cited_by_count": 0
@@ -1493,6 +3167,18 @@
       "openalex_cited_by_count": 0
     },
     {
+      "doi": "10.3390/e25020287",
+      "title": "Quantum Machine Learning: A Review and Case Studies",
+      "first_author": "Amine Zeguendry",
+      "year": 2023,
+      "cited_by_in_collection": [
+        "2024_Kea_HybridQuantumClassical.md",
+        "2025_Mustapha_ComparativeAnalysisLoan.md"
+      ],
+      "citation_count_in_collection": 2,
+      "openalex_cited_by_count": 0
+    },
+    {
       "doi": "10.1364/on.11.2.000011",
       "title": "Quantum Mechanical Computers",
       "first_author": "Richard P. Feynman",
@@ -1505,25 +3191,205 @@
       "openalex_cited_by_count": 0
     },
     {
-      "doi": "10.1090/conm/305/05215",
-      "title": "Quantum amplitude amplification and estimation",
-      "first_author": "Gilles Brassard",
-      "year": 2002,
+      "doi": "10.1038/nature09770",
+      "title": "Quantum Metropolis sampling",
+      "first_author": "Kristan Temme",
+      "year": 2011,
       "cited_by_in_collection": [
-        "2022_Sun_PortfolioOptimizationBased.md",
-        "2026_Barbaresco_QuantumAmplitudeEstimation.md"
+        "2021_Lu_AlgorithmsQuantumSimulation.md",
+        "2023_Udvarnoki_QuantumAdvantageMonte.md"
       ],
       "citation_count_in_collection": 2,
       "openalex_cited_by_count": 0
     },
     {
-      "doi": "10.1103/physreva.98.032309",
-      "title": "Quantum circuit learning",
-      "first_author": "Kosuke Mitarai",
-      "year": 2018,
+      "doi": "10.1021/cr2001564",
+      "title": "Quantum Monte Carlo and Related Approaches",
+      "first_author": "Brian Austin",
+      "year": 2011,
+      "cited_by_in_collection": [
+        "2023_Chowdhury_AcceleratedQuantumMonte.md",
+        "2024_Huang_EvaluatingQuantumClassical.md"
+      ],
+      "citation_count_in_collection": 2,
+      "openalex_cited_by_count": 0
+    },
+    {
+      "doi": "10.1088/1367-2630/15/1/013021",
+      "title": "Quantum algorithm and circuit design solving the Poisson equation",
+      "first_author": "Yudong Cao",
+      "year": 2013,
+      "cited_by_in_collection": [
+        "2025_Chaudhary_PracticalQuantumSolver.md",
+        "2025_Hunout_VariationalQuantumAlgorithm.md"
+      ],
+      "citation_count_in_collection": 2,
+      "openalex_cited_by_count": 0
+    },
+    {
+      "doi": "10.1103/physreva.93.032324",
+      "title": "Quantum algorithms and the finite element method",
+      "first_author": "Ashley Montanaro",
+      "year": 2016,
+      "cited_by_in_collection": [
+        "2025_Chaudhary_PracticalQuantumSolver.md",
+        "2025_Hunout_VariationalQuantumAlgorithm.md"
+      ],
+      "citation_count_in_collection": 2,
+      "openalex_cited_by_count": 0
+    },
+    {
+      "doi": "10.1038/npjqi.2015.23",
+      "title": "Quantum algorithms: an overview",
+      "first_author": "Ashley Montanaro",
+      "year": 2016,
+      "cited_by_in_collection": [
+        "2022_Hegade_PortfolioOptimizationDigitized.md",
+        "2023_Udvarnoki_QuantumAdvantageMonte.md"
+      ],
+      "citation_count_in_collection": 2,
+      "openalex_cited_by_count": 0
+    },
+    {
+      "doi": "10.1016/0009-2614(94)00117-0",
+      "title": "Quantum annealing: A new method for minimizing multidimensional functions",
+      "first_author": "A.B. Finnila",
+      "year": 1994,
+      "cited_by_in_collection": [
+        "2023_Giron_ApproachingCollateralOptimization.md",
+        "2024_Gujju_QuantumMachineLearning.md"
+      ],
+      "citation_count_in_collection": 2,
+      "openalex_cited_by_count": 0
+    },
+    {
+      "doi": "10.1088/2058-9565/aa8072",
+      "title": "Quantum autoencoders for efficient compression of quantum data",
+      "first_author": "Jonathan Romero",
+      "year": 2017,
       "cited_by_in_collection": [
         "2022_Sen_VariationalQuantumClassifiers.md",
-        "2023_Kobayashi_CrossSectionalStock.md"
+        "2024_Gujju_QuantumMachineLearning.md"
+      ],
+      "citation_count_in_collection": 2,
+      "openalex_cited_by_count": 0
+    },
+    {
+      "doi": "10.1145/167088.167097",
+      "title": "Quantum complexity theory",
+      "first_author": "Ethan Bernstein",
+      "year": 1993,
+      "cited_by_in_collection": [
+        "2023_Chowdhury_AcceleratedQuantumMonte.md",
+        "2025_Chawla_QuantumComputingUnderlying.md"
+      ],
+      "citation_count_in_collection": 2,
+      "openalex_cited_by_count": 0
+    },
+    {
+      "doi": "10.1017/s0960129507006317",
+      "title": "Quantum computation and quantum information",
+      "first_author": "Thierry Paul",
+      "year": 2007,
+      "cited_by_in_collection": [
+        "2021_Kubo_VariationalQuantumSimulations.md",
+        "2024_CadiTazi_FoldedSpectrumVqe.md"
+      ],
+      "citation_count_in_collection": 2,
+      "openalex_cited_by_count": 0
+    },
+    {
+      "doi": "10.1145/505482.505499",
+      "title": "Quantum computation and quantum information",
+      "first_author": "Jim Law",
+      "year": 2001,
+      "cited_by_in_collection": [
+        "2023_Saini_CurrentChallengeLimitations.md",
+        "2025_Hunout_VariationalQuantumAlgorithm.md"
+      ],
+      "citation_count_in_collection": 2,
+      "openalex_cited_by_count": 0
+    },
+    {
+      "doi": "10.48550/arxiv.1811.03975",
+      "title": "Quantum computational finance: quantum algorithm for portfolio optimization",
+      "first_author": "Patrick Rebentrost",
+      "year": 2018,
+      "cited_by_in_collection": [
+        "2023_Giron_ApproachingCollateralOptimization.md",
+        "2024_Carrascal_BacktestingQuantumComputing.md"
+      ],
+      "citation_count_in_collection": 2,
+      "openalex_cited_by_count": 0
+    },
+    {
+      "doi": "10.1038/nature08812",
+      "title": "Quantum computers",
+      "first_author": "Thaddeus D. Ladd",
+      "year": 2010,
+      "cited_by_in_collection": [
+        "2023_Giron_ApproachingCollateralOptimization.md",
+        "2025_Chawla_QuantumComputingUnderlying.md"
+      ],
+      "citation_count_in_collection": 2,
+      "openalex_cited_by_count": 0
+    },
+    {
+      "doi": "10.1007/s12525-022-00570-y",
+      "title": "Quantum computing",
+      "first_author": "Roman Rietsche",
+      "year": 2022,
+      "cited_by_in_collection": [
+        "2025_Aggarwal_BridgingQuantumAlgorithms.md",
+        "2025_Chawla_QuantumComputingUnderlying.md"
+      ],
+      "citation_count_in_collection": 2,
+      "openalex_cited_by_count": 0
+    },
+    {
+      "doi": "10.1038/s41567-019-0648-8",
+      "title": "Quantum convolutional neural networks",
+      "first_author": "Iris Cong",
+      "year": 2019,
+      "cited_by_in_collection": [
+        "2021_Kubo_VariationalQuantumSimulations.md",
+        "2022_Sen_VariationalQuantumClassifiers.md"
+      ],
+      "citation_count_in_collection": 2,
+      "openalex_cited_by_count": 0
+    },
+    {
+      "doi": "10.1103/revmodphys.81.865",
+      "title": "Quantum entanglement",
+      "first_author": "Ryszard Horodecki",
+      "year": 2009,
+      "cited_by_in_collection": [
+        "2025_Chawla_QuantumComputingUnderlying.md",
+        "2026_Shaon_ReviewRoutingResource.md"
+      ],
+      "citation_count_in_collection": 2,
+      "openalex_cited_by_count": 0
+    },
+    {
+      "doi": "10.1038/nature23474",
+      "title": "Quantum machine learning",
+      "first_author": "Jacob Biamonte",
+      "year": 2017,
+      "cited_by_in_collection": [
+        "2024_Gujju_QuantumMachineLearning.md",
+        "2024_Mitsuda_ApproximateComplexAmplitude.md"
+      ],
+      "citation_count_in_collection": 2,
+      "openalex_cited_by_count": 0
+    },
+    {
+      "doi": "10.1098/rspa.2017.0551",
+      "title": "Quantum machine learning: a classical perspective",
+      "first_author": "Carlo Ciliberto",
+      "year": 2018,
+      "cited_by_in_collection": [
+        "2024_Gujju_QuantumMachineLearning.md",
+        "2024_Mitsuda_ApproximateComplexAmplitude.md"
       ],
       "citation_count_in_collection": 2,
       "openalex_cited_by_count": 0
@@ -1541,6 +3407,18 @@
       "openalex_cited_by_count": 0
     },
     {
+      "doi": "10.1103/physrevresearch.2.023074",
+      "title": "Quantum optimization with a novel Gibbs objective function and ansatz architecture search",
+      "first_author": "Li Li",
+      "year": 2020,
+      "cited_by_in_collection": [
+        "2022_Kolotouros_EvolvingObjectiveFunction.md",
+        "2025_Cai_EnhancingQuantumApproximate.md"
+      ],
+      "citation_count_in_collection": 2,
+      "openalex_cited_by_count": 0
+    },
+    {
       "doi": "10.1140/epjqt/s40507-022-00125-2",
       "title": "Quantum pricing with a smile: implementation of local volatility model on quantum computer",
       "first_author": "Kazuya Kaneko",
@@ -1553,25 +3431,73 @@
       "openalex_cited_by_count": 0
     },
     {
-      "doi": "10.1038/nphys3029",
-      "title": "Quantum principal component analysis",
-      "first_author": "Seth Lloyd",
-      "year": 2014,
+      "doi": "10.1145/3313276.3316366",
+      "title": "Quantum singular value transformation and beyond: exponential improvements for quantum matrix arithmetics",
+      "first_author": "Andr\u00e1s Gily\u00e9n",
+      "year": 2019,
       "cited_by_in_collection": [
-        "2021_Martin_TowardPricingFinancial.md",
+        "2024_KI_QuantumFinance.md",
+        "2025_Zhong_ClassicalOptimizationImaginary.md"
+      ],
+      "citation_count_in_collection": 2,
+      "openalex_cited_by_count": 0
+    },
+    {
+      "doi": "10.1109/qce49297.2020.00017",
+      "title": "Quantum-Enhanced Simulation-Based Optimization",
+      "first_author": "Julien Gacon",
+      "year": 2020,
+      "cited_by_in_collection": [
+        "2024_Bhasin_EnhancingQuantumMachine.md",
+        "2024_Carrascal_BacktestingQuantumComputing.md"
+      ],
+      "citation_count_in_collection": 2,
+      "openalex_cited_by_count": 0
+    },
+    {
+      "doi": "10.22331/q-2023-08-03-1072",
+      "title": "Quantum-assisted Monte Carlo algorithms for fermions",
+      "first_author": "Xiaosi Xu",
+      "year": 2023,
+      "cited_by_in_collection": [
+        "2024_Huang_EvaluatingQuantumClassical.md",
+        "2025_Zhang_QuantumComputingQuantum.md"
+      ],
+      "citation_count_in_collection": 2,
+      "openalex_cited_by_count": 0
+    },
+    {
+      "doi": "10.1098/rspa.1992.0167",
+      "title": "Rapid solution of problems by quantum computation",
+      "first_author": "David Deutsch",
+      "year": 1992,
+      "cited_by_in_collection": [
+        "2025_Chawla_QuantumComputingUnderlying.md",
+        "2025_Malhotra_ComparativeStudyQuantum.md"
+      ],
+      "citation_count_in_collection": 2,
+      "openalex_cited_by_count": 0
+    },
+    {
+      "doi": "10.1038/nphys3272",
+      "title": "Read the fine print",
+      "first_author": "Scott Aaronson",
+      "year": 2015,
+      "cited_by_in_collection": [
+        "2024_Gujju_QuantumMachineLearning.md",
         "2024_KI_QuantumFinance.md"
       ],
       "citation_count_in_collection": 2,
       "openalex_cited_by_count": 0
     },
     {
-      "doi": "10.1038/s41586-019-1666-5",
-      "title": "Quantum supremacy using a programmable superconducting processor",
-      "first_author": "Frank Arute",
-      "year": 2019,
+      "doi": "10.1143/ptp.56.1454",
+      "title": "Relationship between d-Dimensional Quantal Spin Systems and (d+1)-Dimensional Ising Systems: Equivalence, Critical Exponents and Systematic Approximants of the Partition Function and Spin Correlations",
+      "first_author": "Masuo Suzuki",
+      "year": 1976,
       "cited_by_in_collection": [
-        "2022_Kolotouros_EvolvingObjectiveFunction.md",
-        "2025_Ganguly_HybridClassicalQuantum.md"
+        "2023_Chowdhury_AcceleratedQuantumMonte.md",
+        "2024_Huang_EvaluatingQuantumClassical.md"
       ],
       "citation_count_in_collection": 2,
       "openalex_cited_by_count": 0
@@ -1582,32 +3508,296 @@
       "first_author": "Hans Kellerer",
       "year": 2000,
       "cited_by_in_collection": [
-        "2021_Kolotouros_EvolvingObjectiveFunction.md",
+        "2022_Hegade_PortfolioOptimizationDigitized.md",
         "2022_Kolotouros_EvolvingObjectiveFunction.md"
       ],
       "citation_count_in_collection": 2,
       "openalex_cited_by_count": 0
     },
     {
-      "doi": "10.1088/1367-2630/18/2/023023",
-      "title": "The theory of variational hybrid quantum-classical algorithms",
-      "first_author": "Jarrod R. McClean",
-      "year": 2016,
+      "doi": "10.1103/physrev.140.a1133",
+      "title": "Self-Consistent Equations Including Exchange and Correlation Effects",
+      "first_author": "W. Kohn",
+      "year": 1965,
       "cited_by_in_collection": [
-        "2024_Leipold_TrainScalingQuantum.md",
-        "2025_Benamer_VariationalQuantumAlgorithms.md"
+        "2023_Simula_QuantumMonteCarlo.md",
+        "2025_Azadi_QuantumMonteCarlo.md"
       ],
       "citation_count_in_collection": 2,
       "openalex_cited_by_count": 0
     },
     {
-      "doi": "10.48550/arxiv.1507.08969",
-      "title": "Towards Practical Quantum Variational Algorithms",
-      "first_author": "Dave Wecker",
+      "doi": "10.1145/2830556.2830563",
+      "title": "Solving the optimal trading trajectory problem using a quantum annealer",
+      "first_author": "Gili Rosenberg",
       "year": 2015,
       "cited_by_in_collection": [
-        "2021_Kolotouros_EvolvingObjectiveFunction.md",
-        "2022_Kolotouros_EvolvingObjectiveFunction.md"
+        "2023_Giron_ApproachingCollateralOptimization.md",
+        "2024_Carrascal_BacktestingQuantumComputing.md"
+      ],
+      "citation_count_in_collection": 2,
+      "openalex_cited_by_count": 0
+    },
+    {
+      "doi": "10.1007/978-1-4757-4296-1",
+      "title": "Stochastic Calculus for Finance II",
+      "first_author": "Steven E. Shreve",
+      "year": 2004,
+      "cited_by_in_collection": [
+        "2021_Kubo_VariationalQuantumSimulations.md",
+        "2021_Martin_TowardPricingFinancial.md"
+      ],
+      "citation_count_in_collection": 2,
+      "openalex_cited_by_count": 0
+    },
+    {
+      "doi": "10.1515/9783110212075",
+      "title": "Stochastic Finance: An Introduction in Discrete Time",
+      "first_author": "Hans F\u00f6llmer",
+      "year": 2002,
+      "cited_by_in_collection": [
+        "2024_KI_QuantumFinance.md",
+        "2024_KI_QuantumFinance.md"
+      ],
+      "citation_count_in_collection": 2,
+      "openalex_cited_by_count": 0
+    },
+    {
+      "doi": "10.22331/q-2020-08-31-314",
+      "title": "Stochastic gradient descent for hybrid quantum-classical optimization",
+      "first_author": "Ryan Sweke",
+      "year": 2020,
+      "cited_by_in_collection": [
+        "2024_Gujju_QuantumMachineLearning.md",
+        "2025_Hunout_VariationalQuantumAlgorithm.md"
+      ],
+      "citation_count_in_collection": 2,
+      "openalex_cited_by_count": 0
+    },
+    {
+      "doi": "10.17169/refubium-28427",
+      "title": "Stochastic gradient descent for hybrid quantum-classical optimization",
+      "first_author": "Ryan Sweke",
+      "year": 2020,
+      "cited_by_in_collection": [
+        "2024_Gujju_QuantumMachineLearning.md",
+        "2025_Hunout_VariationalQuantumAlgorithm.md"
+      ],
+      "citation_count_in_collection": 2,
+      "openalex_cited_by_count": 0
+    },
+    {
+      "doi": "10.1103/physrevresearch.1.033062",
+      "title": "Subspace-search variational quantum eigensolver for excited states",
+      "first_author": "Ken M. Nakanishi",
+      "year": 2019,
+      "cited_by_in_collection": [
+        "2022_Sen_VariationalQuantumClassifiers.md",
+        "2025_Zhang_QuantumComputingQuantum.md"
+      ],
+      "citation_count_in_collection": 2,
+      "openalex_cited_by_count": 0
+    },
+    {
+      "doi": "10.1007/978-3-319-96424-9",
+      "title": "Supervised Learning with Quantum Computers",
+      "first_author": "Maria Schuld",
+      "year": 2018,
+      "cited_by_in_collection": [
+        "2024_Gujju_QuantumMachineLearning.md",
+        "2024_Mitsuda_ApproximateComplexAmplitude.md"
+      ],
+      "citation_count_in_collection": 2,
+      "openalex_cited_by_count": 0
+    },
+    {
+      "doi": "10.1103/physrevlett.85.1334",
+      "title": "Synthesis of Quantum Superpositions by Quantum Computation",
+      "first_author": "Lov K. Grover",
+      "year": 2000,
+      "cited_by_in_collection": [
+        "2024_Gujju_QuantumMachineLearning.md",
+        "2024_Mitsuda_ApproximateComplexAmplitude.md"
+      ],
+      "citation_count_in_collection": 2,
+      "openalex_cited_by_count": 0
+    },
+    {
+      "doi": "10.1038/nature07127",
+      "title": "The quantum internet",
+      "first_author": "H. J. Kimble",
+      "year": 2008,
+      "cited_by_in_collection": [
+        "2025_Chawla_QuantumComputingUnderlying.md",
+        "2026_Shaon_ReviewRoutingResource.md"
+      ],
+      "citation_count_in_collection": 2,
+      "openalex_cited_by_count": 0
+    },
+    {
+      "doi": "10.1007/s11128-014-0809-8",
+      "title": "The quest for a Quantum Neural Network",
+      "first_author": "Maria Schuld",
+      "year": 2014,
+      "cited_by_in_collection": [
+        "2022_Sen_VariationalQuantumClassifiers.md",
+        "2024_Gujju_QuantumMachineLearning.md"
+      ],
+      "citation_count_in_collection": 2,
+      "openalex_cited_by_count": 0
+    },
+    {
+      "doi": "10.1007/s10878-014-9734-0",
+      "title": "The unconstrained binary quadratic programming problem: a survey",
+      "first_author": "Gary Kochenberger",
+      "year": 2014,
+      "cited_by_in_collection": [
+        "2025_Cai_EnhancingQuantumApproximate.md",
+        "2025_Zhong_ClassicalOptimizationImaginary.md"
+      ],
+      "citation_count_in_collection": 2,
+      "openalex_cited_by_count": 0
+    },
+    {
+      "doi": "10.1103/physrevb.94.035126",
+      "title": "Theory of finite size effects for electronic quantum Monte Carlo calculations of liquids and solids",
+      "first_author": "Markus Holzmann",
+      "year": 2016,
+      "cited_by_in_collection": [
+        "2023_Simula_QuantumMonteCarlo.md",
+        "2025_Azadi_QuantumMonteCarlo.md"
+      ],
+      "citation_count_in_collection": 2,
+      "openalex_cited_by_count": 0
+    },
+    {
+      "doi": "10.22331/q-2019-10-07-191",
+      "title": "Theory of variational quantum simulation",
+      "first_author": "Xiao Yuan",
+      "year": 2019,
+      "cited_by_in_collection": [
+        "2021_Kubo_VariationalQuantumSimulations.md",
+        "2024_Gujju_QuantumMachineLearning.md"
+      ],
+      "citation_count_in_collection": 2,
+      "openalex_cited_by_count": 0
+    },
+    {
+      "doi": "10.22331/q-2022-07-20-770",
+      "title": "Towards Quantum Advantage in Financial Market Risk using Quantum Gradient Algorithms",
+      "first_author": "Nikitas Stamatopoulos",
+      "year": 2022,
+      "cited_by_in_collection": [
+        "2022_Wolf_QuantumAlgorithmPricing.md",
+        "2024_KI_QuantumFinance.md"
+      ],
+      "citation_count_in_collection": 2,
+      "openalex_cited_by_count": 0
+    },
+    {
+      "doi": "10.1103/physrevlett.128.180505",
+      "title": "Trainability of Dissipative Perceptron-Based Quantum Neural Networks",
+      "first_author": "Kunal Sharma",
+      "year": 2022,
+      "cited_by_in_collection": [
+        "2022_Sen_VariationalQuantumClassifiers.md",
+        "2024_Gujju_QuantumMachineLearning.md"
+      ],
+      "citation_count_in_collection": 2,
+      "openalex_cited_by_count": 0
+    },
+    {
+      "doi": "10.1126/science.273.5278.1073",
+      "title": "Universal Quantum Simulators",
+      "first_author": "Seth Lloyd",
+      "year": 1996,
+      "cited_by_in_collection": [
+        "2021_Lu_AlgorithmsQuantumSimulation.md",
+        "2024_Gujju_QuantumMachineLearning.md"
+      ],
+      "citation_count_in_collection": 2,
+      "openalex_cited_by_count": 0
+    },
+    {
+      "doi": "10.22331/q-2019-07-01-156",
+      "title": "Variational Quantum Computation of Excited States",
+      "first_author": "Oscar Higgott",
+      "year": 2019,
+      "cited_by_in_collection": [
+        "2022_Sen_VariationalQuantumClassifiers.md",
+        "2024_CadiTazi_FoldedSpectrumVqe.md"
+      ],
+      "citation_count_in_collection": 2,
+      "openalex_cited_by_count": 0
+    },
+    {
+      "doi": "10.22331/q-2023-11-22-1188",
+      "title": "Variational Quantum Linear Solver",
+      "first_author": "Carlos Bravo-Prieto",
+      "year": 2023,
+      "cited_by_in_collection": [
+        "2024_KI_QuantumFinance.md",
+        "2025_Hunout_VariationalQuantumAlgorithm.md"
+      ],
+      "citation_count_in_collection": 2,
+      "openalex_cited_by_count": 0
+    },
+    {
+      "doi": "10.1063/1.5144288",
+      "title": "Variational and diffusion quantum Monte Carlo calculations with the CASINO code",
+      "first_author": "R. J. Needs",
+      "year": 2020,
+      "cited_by_in_collection": [
+        "2023_Simula_QuantumMonteCarlo.md",
+        "2025_Azadi_QuantumMonteCarlo.md"
+      ],
+      "citation_count_in_collection": 2,
+      "openalex_cited_by_count": 0
+    },
+    {
+      "doi": "10.1038/s41534-019-0187-2",
+      "title": "Variational ansatz-based quantum simulation of imaginary time evolution",
+      "first_author": "Sam McArdle",
+      "year": 2019,
+      "cited_by_in_collection": [
+        "2021_Kubo_VariationalQuantumSimulations.md",
+        "2025_Zhong_ClassicalOptimizationImaginary.md"
+      ],
+      "citation_count_in_collection": 2,
+      "openalex_cited_by_count": 0
+    },
+    {
+      "doi": "10.1103/physreva.101.010301",
+      "title": "Variational quantum algorithms for nonlinear problems",
+      "first_author": "Michael Lubasch",
+      "year": 2020,
+      "cited_by_in_collection": [
+        "2021_Kubo_VariationalQuantumSimulations.md",
+        "2025_Hunout_VariationalQuantumAlgorithm.md"
+      ],
+      "citation_count_in_collection": 2,
+      "openalex_cited_by_count": 0
+    },
+    {
+      "doi": "10.1038/s41534-022-00611-6",
+      "title": "Variational quantum state eigensolver",
+      "first_author": "M. Cerezo",
+      "year": 2022,
+      "cited_by_in_collection": [
+        "2021_Coyle_QuantumVersusClassical.md",
+        "2024_Gujju_QuantumMachineLearning.md"
+      ],
+      "citation_count_in_collection": 2,
+      "openalex_cited_by_count": 0
+    },
+    {
+      "doi": "10.1007/bf01331938",
+      "title": "\ufffdber das Paulische \ufffdquivalenzverbot",
+      "first_author": "P. Jordan",
+      "year": 1928,
+      "cited_by_in_collection": [
+        "2024_CadiTazi_FoldedSpectrumVqe.md",
+        "2024_Huang_EvaluatingQuantumClassical.md"
       ],
       "citation_count_in_collection": 2,
       "openalex_cited_by_count": 0

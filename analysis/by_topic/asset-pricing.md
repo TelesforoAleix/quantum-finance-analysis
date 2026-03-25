@@ -1,85 +1,80 @@
 # Asset Pricing
 
-**Papers:** 22 | **Empirical:** 3 | **Theoretical:** 2 | **Review:** 2
+**Papers:** 18 | **Empirical:** 4
 
 ## Papers
 
 | Paper | Year | Source Type | Methods | QA Claim | Relevance |
 |-------|------|-------------|---------|----------|-----------|
-| [[2026_DECCANINTERNATIONALACADEMICPUBLISHERS_QuantumComputingAlgorithms]] | 2026 | other | grover, variational, quantum-simulation, classical-simulation, quantum-ML | speculative | medium |
-| [[2026_Dechant_ErrorResourceEstimates]] | 2026 | preprint | variational, VQE, quantum-simulation | speculative | high |
-| [[2026_Nawaz_ExploringQuantumMachine]] | 2026 | peer-reviewed-theoretical | QAOA, VQE, quantum-ML, quantum-SVM, grover, variational, quantum-simulation | theoretical | high |
 | [[2026_Prasad_QuantumAlgorithmsStochastic]] | 2026 | preprint | HHL, amplitude-estimation, quantum-simulation, variational, quantum-ML, classical-simulation | speculative | high |
 | [[2024_Ghysels_QuantumFinance]] | 2025 | other | quantum-annealing, QUBO, quantum-simulation | speculative | high |
-| [[2025_Benamer_VariationalQuantumAlgorithms]] | 2025 | preprint | VQE, QAOA, quantum-ML, variational, amplitude-estimation | speculative | high |
-| [[2025_Berkowitz_QuantumComputingMeets]] | 2025 | other | quantum-annealing, QUBO | speculative | high |
-| [[2025_Chaudhary_PracticalQuantumSolver]] | 2025 | conference-paper | variational, quantum-simulation, classical-simulation | theoretical | high |
-| [[2025_Ganguly_HybridClassicalQuantum]] | 2025 | conference-paper | quantum-ML, variational, QUBO, classical-simulation | speculative | high |
-| [[2025_Hlatshwayo_TechnicalReviewQuantum]] | 2025 | preprint | HHL, grover, quantum-walk, amplitude-estimation, quantum-simulation, quantum-ML | speculative | high |
+| [[2025_Berkowitz_QuantumComputingMeets]] | 2025 | other | quantum-annealing, QUBO, HHL | speculative | high |
+| [[2025_Choudhary_HqnnFspHybrid]] | 2025 | preprint | quantum-ML, variational, classical-simulation | speculative | medium |
+| [[2025_Frana_QuantumSpeedUps]] | 2025 | preprint | quantum-simulation, variational | speculative | high |
+| [[2025_Ganguly_HybridClassicalQuantum]] | 2025 | conference-paper | quantum-ML, QUBO, variational, classical-simulation | speculative | high |
+| [[2025_Hlatshwayo_TechnicalReviewQuantum]] | 2025 | preprint | QAOA, VQE, quantum-annealing, HHL, quantum-ML, quantum-SVM, amplitude-estimation, QUBO, variational, grover, quantum-walk, quantum-simulation | speculative | high |
 | [[2025_Springer_QuantumFinance]] | 2025 | conference-paper | VQE, grover, QAOA, variational, quantum-simulation, classical-simulation | speculative | medium |
-| [[2025_Vangibhuratha_QuantumMachineLearning]] | 2025 | peer-reviewed-theoretical | quantum-ML, quantum-SVM, variational, quantum-annealing, QAOA, HHL, quantum-simulation, classical-simulation | theoretical | high |
-| [[2025_Vellaipandiyan_HybridQlstmFramework]] | 2025 | conference-paper | quantum-ML, variational | speculative | high |
-| [[2026_Mahmod_StateQuantumComputing]] | 2025 | review-article | HHL, QAOA, VQE, quantum-annealing, grover, quantum-ML, quantum-SVM, variational, QUBO, quantum-simulation | theoretical | high |
+| [[2025_Vellaipandiyan_HybridQlstmFramework]] | 2025 | peer-reviewed-empirical | quantum-ML, variational | speculative | medium |
 | [[2023_Kobayashi_CrossSectionalStock]] | 2024 | preprint | quantum-ML, variational, classical-simulation | speculative | high |
-| [[2024_M_OptimizingMutualFund]] | 2024 | conference-paper | quantum-ML, variational | speculative | medium |
-| [[2024_Mustafa_QuantumGraphNeural]] | 2024 | conference-paper | quantum-ML, variational, classical-simulation | speculative | high |
-| [[2023_Markna_UnveilingAdvancedComputational]] | 2023 | review-article | QAOA, quantum-annealing, HHL, quantum-ML, quantum-SVM, amplitude-estimation, QUBO, variational, grover, quantum-simulation, classical-simulation | speculative | high |
-| [[2023_Vishwakarma_QuantumComputingAlgorithms]] | 2023 | peer-reviewed-empirical | QAOA, VQE, variational, quantum-ML, hybrid-approach | speculative | high |
-| [[2022_Zhao_QuantumInspiredVariational]] | 2022 | peer-reviewed-empirical | variational, quantum-ML, quantum-simulation, classical-simulation | theoretical | high |
-| [[2021_Martin_TowardPricingFinancial]] | 2021 | peer-reviewed-empirical | quantum-simulation, quantum-ML, variational, classical-simulation | speculative | high |
-| [[2020_Kommadi_QuantumComputingSolutions]] | 2020 | technical-report | QAOA, grover, quantum-ML, quantum-SVM, quantum-annealing, variational, quantum-walk, quantum-simulation, classical-simulation | speculative | high |
+| [[2024_Bhasin_EnhancingQuantumMachine]] | 2024 | conference-paper | quantum-ML, quantum-SVM | speculative | high |
+| [[2024_Kea_HybridQuantumClassical]] | 2024 | peer-reviewed-empirical | quantum-ML, variational, classical-simulation | speculative | medium |
+| [[2024_Mustafa_QuantumGraphNeural]] | 2024 | peer-reviewed-empirical | quantum-ML, variational, classical-simulation | not-applicable | medium |
+| [[2023_Ferro_DUpdateReview]] | 2023 | technical-report | amplitude-estimation, grover, quantum-ML, quantum-walk, quantum-simulation | theoretical | high |
+| [[2023_S_PotentialQuantumTechniques]] | 2023 | preprint | quantum-annealing, QUBO, quantum-ML, quantum-SVM, classical-simulation | speculative | medium |
+| [[2021_Martin_TowardPricingFinancial]] | 2021 | peer-reviewed-empirical | classical-simulation | speculative | high |
+| [[2021_Pistoia_QuantumMachineLearning]] | 2021 | preprint | HHL, quantum-ML, quantum-SVM, quantum-annealing, QUBO, variational, amplitude-estimation | speculative | high |
+| [[2020_Kommadi_QuantumComputingSolutions]] | 2020 | other | QAOA, VQE, quantum-annealing, HHL, quantum-ML, quantum-SVM, variational, grover, quantum-walk, classical-simulation | speculative | medium |
 
 ## Key Findings
 
-- [supported] The paper provides rigorous error and resource estimates for variational quantum algorithms (VQAs) solving differential equations (DEs) using Runge-Kutta methods (RKMs), accounting for truncation errors and shot noise in quantum measurements. — [[2026_Dechant_ErrorResourceEstimates]]
-- [supported] Higher-order RKMs (e.g., order 4 for a 1D ODE and order 2 for option pricing via the Black-Scholes equation) minimize the total number of quantum circuit evaluations required to achieve a target error. — [[2026_Dechant_ErrorResourceEstimates]]
-- [supported] The total error in VQAs for solving DEs is bounded by the sum of the parameter error (from RKM approximations) and the representation error (from the quantum Ansatz), with the former analyzed in detail. — [[2026_Dechant_ErrorResourceEstimates]]
-- [supported] The minimal number of RKM time steps and measurements per function evaluation is derived for both noiseless and shot-noise scenarios, providing a framework for optimizing quantum resource usage. — [[2026_Dechant_ErrorResourceEstimates]]
-- [supported] The paper demonstrates that the variational quantum algorithm can solve both ordinary and partial differential equations (e.g., Black-Scholes equation) by mapping them to imaginary-time Schrödinger equations. — [[2026_Dechant_ErrorResourceEstimates]]
-- [supported] The total number of quantum circuit evaluations scales quadratically with the number of variational parameters (NV), highlighting the resource-intensive nature of VQAs for large-scale problems. — [[2026_Dechant_ErrorResourceEstimates]]
-- [supported] The study provides a unified comparative framework for QML algorithms, highlighting their optimization capabilities, practical feasibility, and limitations within a single analytical structure — [[2026_Nawaz_ExploringQuantumMachine]]
-- [supported] Key challenges hindering real-world deployment of QML include quantum noise, scalability constraints, hardware limitations, and algorithmic performance trade-offs — [[2026_Nawaz_ExploringQuantumMachine]]
 - [supported] For linear and semilinear SDEs with Lipschitz coefficients, quantum algorithms estimate relevant quantities (option prices, expected hitting times, moments) to accuracy ε in time ˜O(poly(d)polylog(1/ε)), versus classical O(poly(d)/ε²). — [[2026_Prasad_QuantumAlgorithmsStochastic]]
 - [supported] Quantum simulation of the Fokker-Planck equation achieves accuracy ε in time ˜O(d · log(1/ε)), compared to classical finite-difference solvers at O(n^{d+1}_s). — [[2026_Prasad_QuantumAlgorithmsStochastic]]
 - [supported] Numerical simulations on small instances (e.g., 2D Black-Scholes, 3D Langevin) demonstrate polynomial-to-super-polynomial empirical speedups in accuracy for fixed runtime. — [[2026_Prasad_QuantumAlgorithmsStochastic]]
 - [supported] Resource requirements for d-dimensional SDEs: ~150 qubits for d=10, ε=10⁻³, and δx=10⁻² in finance applications. — [[2026_Prasad_QuantumAlgorithmsStochastic]]
 - [supported] Quantum annealing hardware is currently the most reliable scaled hardware for optimization tasks in finance — [[2024_Ghysels_QuantumFinance]]
-- [supported] VQE achieved chemical accuracy (< 1.6 mHa) for small molecules like H2, LiH, and BeH2 using hardware-efficient ansätze on superconducting qubits — [[2025_Benamer_VariationalQuantumAlgorithms]]
-- [supported] QAOA on 20-node Max-Cut problems achieved an approximation ratio of ~0.755 at depth p=1, outperforming random guessing (0.5) — [[2025_Benamer_VariationalQuantumAlgorithms]]
-- [supported] Advanced QAOA variants with tailored mixer Hamiltonians at depth p=2 achieved approximation ratios >0.9 under ideal simulation conditions, surpassing the classical Goemans–Williamson bound (~0.878) — [[2025_Benamer_VariationalQuantumAlgorithms]]
-- [supported] Quantum Neural Networks (QNNs) achieved 94.3% classification accuracy in thoracic CT scans, 8.2% higher than classical CNNs, with 60% fewer parameters — [[2025_Benamer_VariationalQuantumAlgorithms]]
-- [supported] QNNs in quantum portfolio optimization attained 30% improved Sharpe ratios compared to classical Markowitz models — [[2025_Benamer_VariationalQuantumAlgorithms]]
-- [supported] QAOA solved Markowitz’s mean-variance optimization problem for n=20 assets using 6 qubits, achieving solutions within 92% of classical benchmarks — [[2025_Benamer_VariationalQuantumAlgorithms]]
-- [supported] Variational quantum circuits for Value-at-Risk (VaR) calculations reduced calculation variance by 40% compared to classical Monte Carlo methods for up to 8 risk factors — [[2025_Benamer_VariationalQuantumAlgorithms]]
+- [supported] The proposed hybrid quantum-classical models (HybridQNN1 and HybridQNN2) achieved lower RMSE than the standalone CustomQNN across all tested qubit settings on simulator-based experiments. — [[2025_Choudhary_HqnnFspHybrid]]
+- [supported] HybridQNN2 achieved the best RMSE among the quantum-enhanced models, with average RMSE values of 0.02312, 0.01959, and 0.01920 for 3, 4, and 5 qubits respectively under TimeSeriesSplit. — [[2025_Choudhary_HqnnFspHybrid]]
+- [supported] HybridQNN1 achieved average RMSE values of 0.02605, 0.02161, and 0.01740 for 3, 4, and 5 qubits respectively, outperforming CustomQNN but with higher training cost at 5 qubits. — [[2025_Choudhary_HqnnFspHybrid]]
+- [supported] The standalone CustomQNN performed substantially worse than the hybrid variants, with average RMSE values of 0.07603, 0.05528, and 0.06120 for 3, 4, and 5 qubits respectively. — [[2025_Choudhary_HqnnFspHybrid]]
+- [supported] Classical benchmark models outperformed all quantum and hybrid models in this study, with RMSE around 0.00649-0.00781 depending on architecture and feature count. — [[2025_Choudhary_HqnnFspHybrid]]
+- [supported] All three quantum-related models showed reasonable overlap with actual prices during a relatively stable regime (Phase 1) but failed to track a sharp downward regime shift in Phase 2. — [[2025_Choudhary_HqnnFspHybrid]]
+- [supported] Error distribution analysis indicated that HybridQNN1 and HybridQNN2 had narrower error distributions and lower variance than CustomQNN, suggesting more stable predictions. — [[2025_Choudhary_HqnnFspHybrid]]
+- [supported] Increasing qubit count generally improved predictive accuracy for the hybrid models, but also increased training time, revealing a clear accuracy-computation trade-off. — [[2025_Choudhary_HqnnFspHybrid]]
+- [supported] HybridQNN2 was more computationally efficient than HybridQNN1 across the tested settings, with notably lower training times while maintaining the best hybrid RMSE. — [[2025_Choudhary_HqnnFspHybrid]]
+- [supported] The experiments were conducted on a quantum simulator (QULACS) and HPC infrastructure rather than real quantum hardware. — [[2025_Choudhary_HqnnFspHybrid]]
+- [supported] The quantum algorithm based on matrix multiplicative weights achieves a runtime of O(n^k ε^{-4} + n^{k/2} ε^{-5}) for approximating Lasserre’s hierarchy values for polynomial optimization under specific conditions (e.g., optimal value attained within an ℓ1-ball or simplex constraints). — [[2025_Frana_QuantumSpeedUps]]
+- [supported] For unconstrained polynomial optimization, the quantum algorithm achieves a runtime of O((n^{2k})^{1/2} + (1/ε) n^{k/2}) ε^{-4}) to approximate the optimal value with accuracy ε^{1-r}, where r is the radius of the ℓ1-ball containing the optimal solution. — [[2025_Frana_QuantumSpeedUps]]
+- [supported] For inequality-constrained polynomial optimization, the quantum algorithm achieves a runtime of O(s_g (n^{2k}^{1/2} + (Σ_{i=0}^m n^{k-d_i})^{1/2} (1/ε)) ε^{-4}), where s_g bounds the sparsity of coefficient-matching matrices. — [[2025_Frana_QuantumSpeedUps]]
+- [supported] The quantum algorithm for portfolio optimization achieves a runtime of O(n ε^{-4} + √n ε^{-5}), improving over the classical O(n^{ω+1} log(1/ε)) bound with ω ≈ 2.373. — [[2025_Frana_QuantumSpeedUps]]
+- [supported] The quantum algorithm demonstrates improved asymptotic performance for large-scale polynomial optimization problems compared to classical and quantum interior-point methods, despite worse dependence on the precision parameter ε. — [[2025_Frana_QuantumSpeedUps]]
 
 ## Methodologies Used
 
 | Method | Papers |
 |--------|--------|
-| variational | 19 |
-| quantum-ML | 17 |
-| quantum-simulation | 14 |
-| classical-simulation | 12 |
-| QAOA | 8 |
-| grover | 7 |
-| VQE | 6 |
+| quantum-ML | 13 |
+| variational | 12 |
+| classical-simulation | 10 |
+| quantum-simulation | 6 |
 | quantum-annealing | 6 |
-| quantum-SVM | 5 |
+| QUBO | 6 |
 | HHL | 5 |
-| QUBO | 5 |
+| quantum-SVM | 5 |
 | amplitude-estimation | 4 |
-| quantum-walk | 2 |
-| hybrid-approach | 1 |
+| grover | 4 |
+| QAOA | 3 |
+| VQE | 3 |
+| quantum-walk | 3 |
 
 ## Open Questions
 
-- How can quantum algorithms for financial applications (e.g., portfolio optimization) be adapted to current NISQ devices with limited qubits and high noise? — [[2026_DECCANINTERNATIONALACADEMICPUBLISHERS_QuantumComputingAlgorithms]]
-- What are the specific hardware requirements (qubit count, coherence time, gate fidelity) for quantum computing to achieve practical advantage in financial services? — [[2026_DECCANINTERNATIONALACADEMICPUBLISHERS_QuantumComputingAlgorithms]]
-- How do quantum algorithms compare to state-of-the-art classical methods in terms of accuracy, speed, and scalability for real-world financial problems? — [[2026_DECCANINTERNATIONALACADEMICPUBLISHERS_QuantumComputingAlgorithms]]
-- What are the most effective error mitigation strategies for quantum financial applications, and how do they impact solution quality? — [[2026_DECCANINTERNATIONALACADEMICPUBLISHERS_QuantumComputingAlgorithms]]
-- How can hybrid quantum-classical approaches be optimized for financial use cases, and what are their limitations? — [[2026_DECCANINTERNATIONALACADEMICPUBLISHERS_QuantumComputingAlgorithms]]
-- What are the potential risks and ethical considerations of deploying quantum computing in financial services (e.g., cryptography, fraud detection)? — [[2026_DECCANINTERNATIONALACADEMICPUBLISHERS_QuantumComputingAlgorithms]]
-- Empirical validation of quantum algorithms on real quantum hardware for financial applications — [[2026_DECCANINTERNATIONALACADEMICPUBLISHERS_QuantumComputingAlgorithms]]
-- Development of noise-resilient quantum algorithms tailored for NISQ devices in financial services — [[2026_DECCANINTERNATIONALACADEMICPUBLISHERS_QuantumComputingAlgorithms]]
-- Benchmarking quantum solutions against classical methods for specific financial problems (e.g., option pricing, risk analysis) — [[2026_DECCANINTERNATIONALACADEMICPUBLISHERS_QuantumComputingAlgorithms]]
-- Exploration of hybrid quantum-classical frameworks for large-scale financial datasets — [[2026_DECCANINTERNATIONALACADEMICPUBLISHERS_QuantumComputingAlgorithms]]
+- How do the proposed quantum algorithms perform on real quantum hardware with current error rates and qubit counts? — [[2026_Prasad_QuantumAlgorithmsStochastic]]
+- What is the impact of hardware noise (e.g., gate errors, decoherence) on the empirical speedups observed in simulations? — [[2026_Prasad_QuantumAlgorithmsStochastic]]
+- Can the polynomial-to-super-polynomial speedups be maintained for larger problem instances (e.g., d > 20) on near-term devices? — [[2026_Prasad_QuantumAlgorithmsStochastic]]
+- How do the variational quantum schemes for nonlinear SDEs compare to classical methods in terms of accuracy, robustness, and scalability? — [[2026_Prasad_QuantumAlgorithmsStochastic]]
+- What are the trade-offs between circuit depth, qubit count, and accuracy for practical financial applications (e.g., option pricing with d=100)? — [[2026_Prasad_QuantumAlgorithmsStochastic]]
+- How sensitive are the results to the choice of ansatz and training strategy for variational schemes? — [[2026_Prasad_QuantumAlgorithmsStochastic]]
+- Can the proposed methods be extended to SDEs with non-Lipschitz coefficients or unbounded domains (e.g., rough volatility models)? — [[2026_Prasad_QuantumAlgorithmsStochastic]]
+- What are the implications of state space truncation for long-time simulations (e.g., T >> 1) or heavy-tailed distributions? — [[2026_Prasad_QuantumAlgorithmsStochastic]]
+- How do the quantum algorithms perform in the presence of correlated noise or crosstalk on real hardware? — [[2026_Prasad_QuantumAlgorithmsStochastic]]
+- What are the minimal hardware requirements (e.g., qubit count, gate fidelity) to achieve a practical quantum advantage for SDE solving? — [[2026_Prasad_QuantumAlgorithmsStochastic]]

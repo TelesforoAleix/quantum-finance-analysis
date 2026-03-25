@@ -1,51 +1,53 @@
 # Quantum Walk
 
-**Papers:** 5 | **Theoretical:** 2 | **Review:** 1
+**Papers:** 8 | **Empirical:** 1 | **Theoretical:** 1 | **Review:** 1
 
 ## Papers
 
 | Paper | Year | Source Type | Topics | QA Claim | Relevance |
 |-------|------|-------------|--------|----------|-----------|
-| [[2025_Hlatshwayo_TechnicalReviewQuantum]] | 2025 | preprint | portfolio-optimisation, risk-modelling, derivatives-pricing, fraud-detection, credit-scoring, high-frequency-trading, asset-pricing, quantum-cryptography, regulatory-compliance, market-simulation | speculative | high |
+| [[2025_Hlatshwayo_TechnicalReviewQuantum]] | 2025 | preprint | portfolio-optimisation, risk-modelling, derivatives-pricing, fraud-detection, credit-scoring, asset-pricing, quantum-cryptography, market-simulation | speculative | high |
 | [[2024_KI_QuantumFinance]] | 2024 | peer-reviewed-theoretical | portfolio-optimisation | theoretical | high |
-| [[2023_Fernandes_SystematicLiteratureReview]] | 2023 | review-article | portfolio-optimisation | speculative | high |
-| [[2021_Bennett_QuantumOptimisationVia]] | 2022 | peer-reviewed-theoretical | portfolio-optimisation | theoretical | high |
-| [[2020_Kommadi_QuantumComputingSolutions]] | 2020 | technical-report | portfolio-optimisation, risk-modelling, derivatives-pricing, fraud-detection, credit-scoring, asset-pricing, quantum-cryptography, regulatory-compliance, market-simulation | speculative | high |
+| [[2023_Fernandes_SystematicLiteratureReview]] | 2023 | review-article | portfolio-optimisation, risk-modelling | speculative | high |
+| [[2023_Ferro_DUpdateReview]] | 2023 | technical-report | derivatives-pricing, risk-modelling, asset-pricing | theoretical | high |
+| [[2021_Bennett_QuantumOptimisationVia]] | 2022 | preprint | portfolio-optimisation | speculative | high |
+| [[2022_Wang_ClassicallyBoostedQuantum]] | 2022 | preprint | portfolio-optimisation | speculative | medium |
+| [[2021_Slate_QuantumWalkBased]] | 2021 | peer-reviewed-empirical | portfolio-optimisation | speculative | high |
+| [[2020_Kommadi_QuantumComputingSolutions]] | 2020 | other | portfolio-optimisation, risk-modelling, derivatives-pricing, fraud-detection, credit-scoring, high-frequency-trading, asset-pricing, quantum-cryptography | speculative | medium |
 
 ## Topics Using This Method
 
 | Topic | Papers |
 |-------|--------|
-| portfolio-optimisation | 5 |
-| risk-modelling | 2 |
-| derivatives-pricing | 2 |
+| portfolio-optimisation | 7 |
+| risk-modelling | 4 |
+| derivatives-pricing | 3 |
+| asset-pricing | 3 |
 | fraud-detection | 2 |
 | credit-scoring | 2 |
-| asset-pricing | 2 |
 | quantum-cryptography | 2 |
-| regulatory-compliance | 2 |
-| market-simulation | 2 |
+| market-simulation | 1 |
 | high-frequency-trading | 1 |
 
 ## Key Findings
 
-- [supported] The review analyzes 44 papers from 2003 to 2023 on classical and quantum machine learning (QML) approaches for mutual fund portfolio optimization (PO), identifying a significant gap in literature focusing on mutual funds rather than stocks — [[2023_Fernandes_SystematicLiteratureReview]]
-- [supported] Approximately 67.81% of the reviewed papers were published between 2019 and 2023, indicating QML as a rapidly developing field in financial services — [[2023_Fernandes_SystematicLiteratureReview]]
-- [supported] Quantum algorithms like QAOA and VQE are highlighted as promising tools for solving NP-hard PO problems, though current implementations are limited to NISQ (Noisy Intermediate-Scale Quantum) devices — [[2023_Fernandes_SystematicLiteratureReview]]
-- [supported] Hybrid quantum-classical approaches (e.g., QUBO with simulated annealing, reverse quantum annealing on D-Wave) are the most common implementations due to limited qubit counts and noise in NISQ devices — [[2023_Fernandes_SystematicLiteratureReview]]
-- [supported] Quantum annealers and QUBO models are emerging as de facto standards for solving NP-complete/hard problems in finance, with demonstrated success in small-scale portfolio optimization — [[2023_Fernandes_SystematicLiteratureReview]]
-- [supported] Key research gaps include limited qubit stability, coherence time, error correction, and the need for more effective quantum gate accuracy in NISQ devices — [[2023_Fernandes_SystematicLiteratureReview]]
-- [supported] Most QML implementations for PO rely on hybrid techniques, with classical benchmarks like genetic algorithms, simulated annealing, and Gekko solvers used for evaluation — [[2023_Fernandes_SystematicLiteratureReview]]
-- [supported] The Maximum Amplification Optimisation Algorithm (MAOA) achieves maximum amplification of optimal solutions in combinatorial optimization problems under restricted circuit depth, outperforming Quantum Approximate Optimisation Algorithm (QAOA) and Quantum Walk Optimisation Algorithm (QWOA) in simulation. — [[2021_Bennett_QuantumOptimisationVia]]
-- [supported] MAOA avoids the computationally expensive variational procedure of QAOA by using a binary marking function on a complete graph with analytically derived optimal parameters (γ = π and t = π/N), repeated for r iterations. — [[2021_Bennett_QuantumOptimisationVia]]
-- [supported] The MAOA demonstrates substantial speedup over classical random sampling in finding optimal solutions for vehicle routing, portfolio optimization, and normally distributed solution quality problems, with numerical convergence to a theoretically derived upper bound. — [[2021_Bennett_QuantumOptimisationVia]]
-- [supported] A binary marking function on a complete graph produces the highest amplification of a single marked (optimal) solution, with maximum amplification achieved by repeated application of the same phase-shift and walk-time parameters. — [[2021_Bennett_QuantumOptimisationVia]]
-- [supported] The MAOA's threshold-finding process reliably navigates to the low-convergence regime of the threshold response curve, ensuring maximum amplification (2r + 1)^2 of marked solutions for a given restricted circuit depth r. — [[2021_Bennett_QuantumOptimisationVia]]
-- [speculative] Quantum computing is expected to solve problems intractable for classical computing, such as simulation of complex quantum many-body systems, with linear scaling in system size compared to exponential scaling for classical methods — [[2025_Hlatshwayo_TechnicalReviewQuantum]]
-- [speculative] Quantum computing could provide speed-ups for classically tractable problems like searching, with proposed algorithms ranging from quadratic to exponential speed-ups over classical counterparts — [[2025_Hlatshwayo_TechnicalReviewQuantum]]
-- [speculative] Finance and economics, due to their reliance on complex calculations, large datasets, and optimization problems, are high-potential sectors for quantum computing applications, particularly in risk assessment, portfolio optimization, fraud detection, and high-frequency trading — [[2025_Hlatshwayo_TechnicalReviewQuantum]]
-- [speculative] Quantum computing could enable efficient handling of large-scale, high-dimensional problems in finance and economics without resorting to approximations or truncations required by classical methods, potentially improving accuracy and reducing computational time — [[2025_Hlatshwayo_TechnicalReviewQuantum]]
-- [speculative] Quantum computing may face bottlenecks in data loading and readout efficiency, limiting near-term practical gains — [[2025_Hlatshwayo_TechnicalReviewQuantum]]
-- [speculative] Three definitions of quantum advantage are proposed: Computational Advantage (quantum supremacy), Quantum Utility, and Practical Quantum Advantage (PQA), with PQA being the most relevant for real-world applications in finance and economics — [[2025_Hlatshwayo_TechnicalReviewQuantum]]
-- [speculative] Practical Quantum Advantage (PQA) in finance could contribute up to $622 billion globally by 2035, with the UK potentially seeing an 8.3% economy-wide productivity boost by 2055 due to quantum computing adoption — [[2025_Hlatshwayo_TechnicalReviewQuantum]]
-- [speculative] Quantum Phase Estimation (QPE) is a foundational quantum subroutine with applications in Shor’s algorithm, Hamiltonian diagonalization, and solving linear systems, but requires fault-tolerant quantum computing for high accuracy — [[2025_Hlatshwayo_TechnicalReviewQuantum]]
+- [supported] The review identifies portfolio optimization for mutual funds as a central NP-hard/combinatorial finance problem and synthesizes classical and quantum machine learning approaches applied to it. — [[2023_Fernandes_SystematicLiteratureReview]]
+- [supported] The authors state that the literature search examined 44 papers from 2003 to 2023 for the review scope, while also reporting a broader survey corpus of 87 papers, indicating some inconsistency in corpus reporting. — [[2023_Fernandes_SystematicLiteratureReview]]
+- [supported] The review finds that most relevant papers use stocks or equities rather than actual mutual fund datasets, and identifies this as a major gap in the literature on mutual fund portfolio optimization. — [[2023_Fernandes_SystematicLiteratureReview]]
+- [supported] The review reports that quantum machine learning is a developing field, with approximately 67.81% of the collected papers published between 2019 and 2023. — [[2023_Fernandes_SystematicLiteratureReview]]
+- [supported] Among machine-learning applications in quantitative finance, the review highlights return forecasting, portfolio design, and risk modeling as the most common use cases in the surveyed literature. — [[2023_Fernandes_SystematicLiteratureReview]]
+- [supported] For portfolio construction, multilayer perceptrons are identified as the most commonly used classical ML technique in the reviewed papers, followed by random forests/decision trees, LSTM, SVM, and Gaussian process regression. — [[2023_Fernandes_SystematicLiteratureReview]]
+- [supported] The review concludes that classical ML approaches for portfolio optimization face limitations including long training/simulation times, high computational cost, curse of dimensionality, and difficulty handling discrete constraints. — [[2023_Fernandes_SystematicLiteratureReview]]
+- [supported] The review identifies hybrid quantum-classical methods as the dominant near-term approach for portfolio optimization because current quantum hardware lacks enough high-quality qubits for fully quantum large-scale optimization. — [[2023_Fernandes_SystematicLiteratureReview]]
+- [supported] Quantum annealing and QUBO formulations are presented in the reviewed literature as the main practical quantum approaches for NP-hard portfolio optimization problems. — [[2023_Fernandes_SystematicLiteratureReview]]
+- [supported] The review notes that benchmark classical comparators used in prominent quantum portfolio optimization papers include genetic algorithms, simulated annealing, Gekko, and exhaustive solvers. — [[2023_Fernandes_SystematicLiteratureReview]]
+- [supported] The review highlights research gaps including limited NISQ performance, difficulty validating noisy quantum outputs, constraints on applying quantum linear algebra methods, and unresolved issues in error correction, coherence time, and qubit stability. — [[2023_Fernandes_SystematicLiteratureReview]]
+- [supported] The review finds that the specific application of quantum machine learning to mutual fund portfolio optimization remains underexplored despite perceived potential. — [[2023_Fernandes_SystematicLiteratureReview]]
+- [supported] The report concludes that there have been no major breakthroughs in quantum computing for derivatives pricing and VaR since the prior 2022 review; most recent work is incremental and focused on adapting established methods to NISQ constraints. — [[2023_Ferro_DUpdateReview]]
+- [supported] The report emphasizes that many proposed pricing and VaR algorithms require more qubits, lower noise, and deeper circuits than current hardware can support, making practical deployment difficult on present-day devices. — [[2023_Ferro_DUpdateReview]]
+- [supported] For state initialization, no reviewed algorithm satisfies all desirable properties simultaneously (efficiency, robustness to noise, controllable precision, determinism, efficient compilation, phase preservation, and low ancilla use). — [[2023_Ferro_DUpdateReview]]
+- [supported] Under NISQ constraints, approximate or variational state-preparation methods can outperform exact loading methods in practice because shorter circuits reduce noise accumulation. — [[2023_Ferro_DUpdateReview]]
+- [supported] The report identifies noise, rather than qubit count alone, as the dominant practical limitation in many real-hardware experiments for finance-relevant quantum algorithms. — [[2023_Ferro_DUpdateReview]]
+- [supported] The review states that when all error sources in QAMC are considered, a clean quadratic improvement over ideal classical Monte Carlo is not guaranteed by current analyses, though this does not definitively rule out practical speedups because the comparison conditions are asymmetric. — [[2023_Ferro_DUpdateReview]]
+- [supported] Parallel amplitude estimation methods are generally more flexible in controlling circuit depth and are therefore considered more suitable for NISQ devices, while sequential methods tend to offer stronger theoretical guarantees. — [[2023_Ferro_DUpdateReview]]
+- [supported] Simulations and hardware studies reviewed in the report indicate that noise can prevent amplitude-estimation-based methods from realizing their asymptotic quadratic speedup on realistic devices. — [[2023_Ferro_DUpdateReview]]

@@ -355,14 +355,14 @@ The last two sections are never overwritten by the pipeline — they're reserved
 
 ### Current setup
 
-The pipeline uses **Azure AI Foundry** with the **Mistral-Large-3** model deployment.
+The pipeline uses **Azure AI Foundry** with the **gpt-5.1** model deployment.
 
 | Component | Detail |
 |-----------|--------|
 | Provider | Azure AI Foundry |
-| Model | Mistral-Large-3 (all 6 steps) |
+| Model | gpt-5.1 (all 6 steps) |
 | API | OpenAI-compatible via `openai.AzureOpenAI` client |
-| Rate limit | 20 requests per minute (client-enforced) + 20K tokens per minute (Azure-enforced) |
+| Rate limit | 20,000 requests per minute (client-enforced) + 4,000,000 tokens per minute (Azure-enforced) |
 | Retries | 3 attempts with exponential backoff (2s → 4s → 8s) |
 
 ### Model routing
@@ -372,13 +372,13 @@ The LLM client routes calls based on the model name:
 - If the model name starts with `gpt` → Standard OpenAI API
 - Otherwise → Azure AI Foundry (default)
 
-This allows mixing models — for example, using Mistral-Large-3 for most steps but GPT-4o for synthesis.
+This allows mixing models — for example, using gpt-5.1 for most steps but a different model for synthesis.
 
 ### Rate limiting
 
-A sliding-window rate limiter tracks the last 60 seconds of requests. If 20 requests have been made in the last minute, the client blocks until a slot opens. This prevents Azure 429 (Too Many Requests) errors.
+A sliding-window rate limiter tracks the last 60 seconds of requests. If 20,000 requests have been made in the last minute, the client blocks until a slot opens. This prevents Azure 429 (Too Many Requests) errors.
 
-Azure also enforces a 20,000 tokens-per-minute limit server-side. When hit, the client's retry logic (exponential backoff) handles the delay.
+Azure also enforces a 2,000,000 tokens-per-minute limit server-side. When hit, the client's retry logic (exponential backoff) handles the delay.
 
 ---
 
@@ -425,9 +425,9 @@ Defines the 9 source types with:
     "2023_Bova_QuantumFinance.md": {
       "steps_completed": [1, 2, 3, 4, 5, 6],
       "step1_date": "2026-03-18T20:37:29.695922",
-      "step1_model": "Mistral-Large-3",
+      "step1_model": "gpt-5.1",
       "step2_date": "2026-03-18T20:37:35.123456",
-      "step2_model": "Mistral-Large-3",
+      "step2_model": "gpt-5.1",
       "last_updated": "2026-03-18T20:40:15.789123"
     }
   }
