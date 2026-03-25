@@ -29,18 +29,18 @@ relevance_phase1: high
 relevance_phase3: medium
 source_type: conference-paper
 source_type_confidence: high
-step1_date: '2026-03-19T23:34:57.963251'
-step1_model: Mistral-Large-3
-step2_date: '2026-03-19T23:35:00.144239'
-step2_model: Mistral-Large-3
-step3_date: '2026-03-19T23:35:05.694876'
-step3_model: Mistral-Large-3
-step4_date: '2026-03-19T23:35:47.810176'
-step4_model: Mistral-Large-3
-step5_date: '2026-03-19T23:35:54.698419'
-step5_model: Mistral-Large-3
-step6_date: '2026-03-19T23:35:57.974055'
-step6_model: Mistral-Large-3
+step1_date: '2026-03-25T16:01:46.512126'
+step1_model: gpt-5.1
+step2_date: '2026-03-25T16:01:51.046160'
+step2_model: gpt-5.1
+step3_date: '2026-03-25T16:02:15.251603'
+step3_model: gpt-5.4
+step4_date: '2026-03-25T16:02:29.104437'
+step4_model: gpt-5.4
+step5_date: '2026-03-25T16:02:49.681193'
+step5_model: gpt-5.4
+step6_date: '2026-03-25T16:03:02.051385'
+step6_model: gpt-5.4
 steps_completed:
 - 1
 - 2
@@ -67,69 +67,81 @@ zotero_key: ''
 ---
 
 ## Abstract summary
-This paper explores the application of quantum annealing algorithms to portfolio optimization in financial services. It proposes a quantum computing-based framework to model and solve portfolio investment problems, leveraging quantum tunneling effects to improve optimization efficiency. The study integrates modern portfolio theory with quantum annealing techniques, demonstrating how quantum properties can enhance traditional optimization approaches for real-world stock price trends.
+The paper develops a quantum annealing based modelling and solution framework for portfolio optimization grounded in modern portfolio theory. It formulates the portfolio selection problem as a QUBO, incorporates budget and risk constraints via penalty terms, and implements the approach in Python to construct risk-seeking and risk-averse strategies. The authors compare these quantum-annealing-derived portfolios to benchmarks such as the DOW index and random strategies, and discuss open issues around parameter tuning and conditions under which quantum annealing outperforms classical simulated annealing.
 ## Methodology
-The paper proposes a quantum annealing (QA) algorithm for portfolio optimization within the framework of Modern Portfolio Theory (MPT). The methodology involves modeling the portfolio optimization problem as a Quadratic Unconstrained Binary Optimization (QUBO) problem, where binary variables represent the inclusion or exclusion of stocks in the portfolio. The quantum annealing algorithm is used to escape local optima via quantum tunneling, leveraging the quantum adiabatic theorem to find the global optimum. The objective function combines return and risk metrics, adjusted by a smoothness index to reflect investor risk preferences. Constraints such as investment budget are incorporated using penalty functions. The algorithm is simulated using Python, and two portfolio strategies (risk-seeking and risk-averse) are constructed and compared against the DOW index and stochastic measures.
+This conference paper presents a modelling study for portfolio optimization using a quantum annealing-inspired approach formulated as a QUBO problem under modern portfolio theory. The authors define stock return as the relative change between purchase and sale prices, model portfolio return as a weighted sum over binary stock-selection variables, and model risk using pairwise stock covariances. These are combined into a scalar objective that trades off return and risk through a smoothness index L, then augmented with a quadratic penalty term to enforce an investment budget constraint, yielding a QUBO-style objective. The paper also outlines a generic quantum annealing procedure based on a Hamiltonian composed of potential and kinetic terms, with iterative state perturbation, energy-difference-based acceptance, and gradual reduction of transverse field strength. For implementation, the authors state that Python was used to simulate the quantum annealing algorithm and generate two portfolio strategies corresponding to risk-seeking and risk-averse investors. The resulting portfolio return and asset trend time series were compared visually against a DOW index investment strategy and a stochastic buying strategy. The paper appears to be a conference paper and is primarily a simulation/modeling study rather than an experiment on real quantum hardware.
 
-**Algorithms used:** Quantum Annealing
+**Algorithms used:** Quantum Annealing, QUBO
+**Frameworks:** Python
 
-**Experimental setup:** The quantum annealing algorithm was simulated using Python. The experimental setup involved constructing portfolio strategies based on investor risk preferences, with specific parameters for investment budget, risk-free interest rate, and smoothness indices for risk-seeking and risk-averse portfolios.
+**Experimental setup:** The study used a Python-based simulation of the quantum annealing algorithm. No real quantum processing unit, annealer, or named simulator platform is reported. Two simulated portfolio strategies were constructed: risk-seeking and risk-averse.
 
-**Dataset:** Real stock price trends from financial markets, though specific datasets (e.g., stock symbols, time periods) are not explicitly mentioned.
+**Dataset:** Real stock price trends from financial markets are referenced, and results are compared with the DOW index and a stochastic buying strategy. However, the paper does not clearly specify the exact stock universe, source, sample size, or time horizon of the stock data.
 ## Findings
-- [supported] The quantum annealing algorithm was simulated in Python to optimize portfolio strategies for risk-seeking and risk-averse investors, with results showing superior performance compared to the DOW index and stochastic buying approaches
-- [supported] The optimized portfolio data outperformed baseline strategies (DOW index and random selection) in terms of return and stability, as demonstrated in Fig. 1
-- [speculative] Quantum annealing algorithms may excel in both speed and stability over simulated annealing algorithms when the data size is sufficiently large
-- [speculative] The paper suggests that quantum annealing could provide new possibilities for solving complex optimization problems as quantum computing technology advances
-- [disputed] The claim that quantum annealing is consistently superior to simulated annealing is unresolved, with no empirical validation provided in this paper
-- [speculative] The authors propose future exploration of web crawling techniques to adjust stock values based on news sentiment for predictive investment strategies
+- [supported] The paper formulates portfolio optimization as a QUBO-style objective combining return, covariance-based risk, a budget penalty term, and a risk-free rate term.
+- [supported] The implementation was performed in Python as a simulation of a quantum annealing algorithm rather than on real quantum hardware.
+- [supported] The study constructed two portfolio strategies by varying the smoothness index: a risk-seeking portfolio with L=200 and a risk-averse portfolio with L=0.2.
+- [supported] In the reported experiment, the investment budget was set to K=1000 and the risk-free interest rate to r=2%.
+- [supported] The authors report that the optimized portfolio data outperformed the original data and that parameter changes could reflect different investor preferences, but they do not provide numerical performance metrics.
+- [speculative] The paper argues that quantum annealing can use quantum tunnelling to escape local optima and improve the chance of reaching a global optimum in portfolio optimization.
+- [speculative] The authors suggest that quantum annealing may significantly improve the efficiency and effectiveness of portfolio optimization solutions.
+- [speculative] The conclusion claims quantum annealing appears superior to simulated annealing in speed and stability when data size is sufficiently large, but no direct benchmark results are reported in the paper.
+- [supported] The authors explicitly note unresolved issues, including how to choose parameters quantitatively and under what conditions quantum annealing is consistently superior to simulated annealing.
+- [supported] The paper states that the current optimization model is not sufficient for predictive investment strategy generation because stock prices are influenced by many factors.
 
-**Results summary:** The paper presents a quantum annealing-based framework for portfolio optimization, modeled using Quadratic Unconstrained Binary Optimization (QUBO). Simulations in Python demonstrated that the algorithm outperformed classical benchmarks (DOW index and stochastic buying) for both risk-seeking and risk-averse strategies. While the results show improved returns and stability, the paper acknowledges unresolved questions about the conditions under which quantum annealing surpasses classical methods like simulated annealing. The work is purely simulation-based, with no real hardware validation.
+**Results summary:** This conference paper presents a simulated quantum annealing framework for portfolio optimization based on modern portfolio theory and a QUBO-like formulation. The model combines stock returns, covariance-based risk, and a budget constraint enforced through a penalty term. The authors implemented the approach in Python simulation and generated two portfolio strategies corresponding to risk-seeking and risk-averse preferences by changing the smoothness index. They compare portfolio return trends visually against the DOW index and a stochastic buying strategy, and conclude qualitatively that the optimized data outperformed the original data and can reflect investor preferences. However, the paper does not report quantitative benchmark metrics, confidence intervals, or direct empirical comparisons against simulated annealing or real quantum hardware.
 
 **Performance claims:**
-- Portfolio strategies optimized via quantum annealing outperformed the DOW index and stochastic buying in simulated tests
-- Risk-seeking and risk-averse portfolios were constructed with an investment budget of 1000 and risk-free rate of 2%
+- Python simulation of quantum annealing with investment budget K=1000
+- Risk-free interest rate set to r=2%
+- Risk-seeking smoothness index L=200
+- Risk-averse smoothness index L=0.2
 ## Quantum advantage claim
 **Classification:** speculative
 
-The paper suggests theoretical advantages in speed and stability for quantum annealing over simulated annealing for large datasets, but these claims are not empirically validated. All results are derived from simulations, not real quantum hardware.
+The paper suggests quantum annealing may improve efficiency, stability, and speed, especially for large datasets, but provides no quantitative benchmark against classical methods and uses simulation rather than real quantum hardware.
 ## Limitations
-- The paper relies on simulations rather than real quantum hardware, limiting validation of quantum advantage [inferred]
-- Experiments are conducted with a small investment budget (K = 1000) and synthetic or simplified data, which may not scale to real-world portfolio sizes [inferred]
-- Binary variables (0 or 1) are used to represent stock purchases, which oversimplifies real-world portfolio allocation (e.g., fractional shares or continuous weights) [inferred]
-- No comparison with state-of-the-art classical portfolio optimization methods (e.g., convex optimization, genetic algorithms) to benchmark performance [inferred]
-- The paper does not address hardware noise or decoherence effects, which are critical for real quantum annealing devices [inferred]
-- Parameter tuning (e.g., smoothness index L, penalty coefficient λ) is arbitrary and lacks a quantitative strategy, as noted by the authors
-- The study does not explore the impact of varying qubit counts or problem sizes on algorithm performance [inferred]
-- Constraints are enforced via penalty functions, which may not guarantee feasibility in all cases and could introduce suboptimality [inferred]
-- The paper does not validate the model on real market data, relying instead on simulated or historical trends [inferred]
-- Page-limit constraints of the conference paper may have restricted detailed discussion of methodology or results [inferred]
+- Determining how to adjust model parameters or provide quantitative parameter-setting strategies remains unresolved
+- It is unclear under what conditions quantum annealing algorithms are consistently superior to simulated annealing algorithms
+- The model is not yet sufficient for predicting investment portfolio strategies because stock prices are influenced by many factors
+- The paper only reports a Python simulation of the quantum annealing algorithm rather than execution on actual quantum annealing hardware
+- [inferred] No empirical comparison against strong classical portfolio optimization baselines is provided beyond DOW index and stochastic buying references
+- [inferred] Experimental evaluation appears limited in scale, with no evidence of large asset universes, long horizons, or stress tests for scalability
+- [inferred] The study uses a simplified binary stock-selection formulation, which may not capture realistic portfolio allocation with continuous weights, transaction costs, turnover, liquidity, or cardinality constraints
+- [inferred] The choice of key hyperparameters such as the smoothness index and penalty coefficient is not systematically justified, which may affect internal validity
+- [inferred] No discussion of hardware noise, embedding constraints, qubit count limits, or chain breaks is included, limiting practical relevance to near-term quantum devices
+- [inferred] Reproducibility is limited because the paper does not provide sufficient implementation details, datasets, code, or exact experimental settings
+- [inferred] Results appear to rely on a narrow experimental setup and possibly a single market context, limiting generalizability
+- [inferred] The conference-paper format may have constrained methodological detail, experimental reporting, and ablation analysis
 ## Open questions
-- Under what conditions (e.g., problem size, noise levels) do quantum annealing algorithms consistently outperform simulated annealing?
-- How can parameters (e.g., smoothness index L, penalty coefficient λ) be quantitatively optimized for different investor risk profiles?
-- What is the scalability of the proposed method for large-scale portfolios (e.g., >100 assets) on current or near-term quantum hardware?
-- How does the algorithm perform when extended to multi-period portfolio optimization or dynamic rebalancing?
-- What is the impact of quantum noise and error rates on solution quality in real quantum annealing devices?
-- Can the model incorporate real-time data (e.g., news sentiment, trading volumes) to improve predictive accuracy, as suggested in the future work?
+- How should the model parameters be adjusted in a principled and quantitative way for different investor preferences and market conditions?
+- Under what conditions are quantum annealing algorithms consistently better than simulated annealing algorithms?
+- What is the genuine practical potential of increasingly sophisticated quantum annealing devices for portfolio optimization and other optimization problems?
+- Can quantum-computing-based portfolio optimization be extended from fitting historical data to producing reliable predictive investment strategies?
+- How can external information such as news or trading data be incorporated effectively into the optimization framework?
+- [inferred] How does the approach perform on larger and more realistic portfolio instances with many assets and constraints?
+- [inferred] Would any observed advantage remain after comparison with state-of-the-art classical solvers and heuristics?
+- [inferred] How robust are the results to different choices of penalty weights, budget levels, risk-free rates, and smoothness parameters?
+- [inferred] How well would the QUBO formulation map to real quantum annealers with limited connectivity and noisy hardware?
 
 **Future work:**
-- Test the algorithm on real quantum hardware (e.g., D-Wave systems) to validate performance under noise and hardware constraints
-- Extend the model to handle continuous or fractional portfolio weights instead of binary decisions
-- Compare the quantum annealing approach with classical optimization methods (e.g., convex solvers, genetic algorithms) to benchmark quantum advantage
-- Develop quantitative strategies for parameter tuning (e.g., smoothness index L, penalty coefficient λ) based on investor risk preferences
-- Incorporate real-time data (e.g., web-crawled news or trading data) to adjust stock valuations dynamically and improve predictive capabilities
-- Explore multi-period portfolio optimization to account for time-varying market conditions
-- Investigate hybrid quantum-classical approaches to mitigate hardware limitations (e.g., qubit count, noise)
+- Develop quantitative strategies for tuning model parameters
+- Investigate the conditions under which quantum annealing outperforms simulated annealing
+- Explore the feasibility of using web crawling to retrieve stock-related news information or trading data
+- Adjust stock values based on positive or negative external information to support predictive portfolio strategies
+- Continue modelling studies to better understand the use of quantum computing techniques for complex financial optimization problems
+- [inferred] Validate the method on actual quantum annealing hardware rather than only in Python simulation
+- [inferred] Benchmark against stronger classical optimization methods and simulated annealing baselines on standardized datasets
+- [inferred] Extend the portfolio model to include more realistic financial constraints and objectives, such as transaction costs, rebalancing, and continuous allocations
+- [inferred] Test the framework on larger, real-world datasets across multiple market regimes to assess scalability and robustness
+- [inferred] Improve reproducibility by releasing code, data sources, and full experimental settings
 ## Key ideas
-- #idea:quantum-advantage — Quantum annealing leverages quantum tunneling to escape local optima, potentially outperforming classical simulated annealing for large datasets in portfolio optimization
-- #idea:near-term-feasibility — The paper demonstrates near-term applicability of quantum annealing for portfolio optimization using simulations, though real hardware validation is pending
-- #idea:hybrid-approach — The framework integrates classical preprocessing (QUBO formulation) with quantum annealing, suggesting a hybrid path for practical implementation
-- #limitation:simulation-only — Results are derived from classical simulations, not real quantum hardware, limiting insights into noise and scalability
-- #limitation:qubit-count — Binary asset selection and small investment budget (K=1000) may not scale to real-world portfolio sizes or constraints
-- #limitation:no-empirical-validation — Claims of quantum advantage over simulated annealing are speculative and lack empirical validation on real quantum devices
+- #idea:hybrid-approach — The paper formulates modern portfolio optimization as a QUBO with return, covariance-based risk, and budget-penalty terms, then solves it via a simulated quantum annealing workflow.
+- #idea:near-term-feasibility — The study presents a Python-based annealing simulation to generate risk-seeking and risk-averse portfolio strategies, positioning the approach as an early practical exploration rather than a hardware demonstration.
+- #idea:quantum-advantage — The authors argue that quantum annealing could exploit tunnelling to escape local optima and potentially outperform simulated annealing in speed, stability, and solution quality on large portfolio problems.
 ## Contradictions
-- #contradiction:classical-vs-quantum — The paper speculates quantum annealing may outperform simulated annealing for large datasets, but this is disputed due to lack of empirical validation and unclear conditions for superiority (e.g., problem size, noise levels).
-- #contradiction:scalability — The study uses a small investment budget and binary asset selection, which may not reflect real-world scalability challenges (e.g., fractional investments, larger asset universes).
+- The paper suggests quantum annealing may be superior to simulated annealing, but this is not empirically established because the study reports only Python simulation results, no direct benchmark against strong classical solvers, and no real QPU execution.
+- The paper implies scalability to larger portfolio problems, yet the evaluation uses a simplified binary stock-selection model with limited experimental detail, no evidence of large asset universes, and no demonstration of mapping to real annealing hardware constraints.
 ## Notable quotes
 <!-- Researcher-added — verbatim quotes with page references -->
 
@@ -138,24 +150,25 @@ The paper suggests theoretical advantages in speed and stability for quantum ann
 
 ## Experiment details
 ### Input
-Stock purchase and sale prices, binary variables for stock inclusion, covariance matrices for risk calculation, and predefined parameters such as investment budget (K = 1000), risk-free interest rate (r = 2%), and smoothness indices (L_s = 200 for risk-seeking, L_a = 0.2 for risk-averse).
+Input consists of stock purchase prices, sale prices over time, binary stock-selection variables, and covariance estimates between stocks. The paper references real market stock price trends and comparison to the DOW index, but does not provide the data source, number of stocks, observation period, feature count, or preprocessing details.
 
 ### Process
-1. Formulate the portfolio optimization problem as a QUBO objective function combining return and risk. 2. Encode constraints (e.g., investment budget) using penalty functions. 3. Simulate quantum annealing to find the optimal portfolio configuration. 4. Adjust parameters (e.g., smoothness index) to reflect risk preferences. 5. Compare portfolio performance against benchmarks (DOW index and stochastic measures).
+1. Define stock returns from purchase and sale prices. 2. Compute portfolio return as a sum over binary stock-selection variables. 3. Compute portfolio risk using pairwise covariance terms. 4. Form a combined objective balancing return and risk via smoothness index L. 5. Add a quadratic penalty term to enforce the investment budget constraint and obtain a QUBO-style objective. 6. Simulate a quantum annealing procedure in Python using Hamiltonian-based state updates, random perturbations, energy-difference acceptance criteria, and annealing of the transverse field strength until termination. 7. Run the model under two parameter settings representing risk-seeking and risk-averse investors. 8. Compare resulting portfolio return and trend series against DOW index investing and stochastic buying. The paper does not report iteration counts, stopping tolerances beyond the generic algorithm description, or sampling/shots.
 
 ### Output
-Time series of portfolio returns and rates of return for risk-seeking and risk-averse strategies, compared against the DOW index and a stochastic buying approach. Metrics include portfolio return trends and relative performance.
+Outputs are portfolio return and rate-of-return time series for risk-seeking and risk-averse strategies, shown graphically and compared against a DOW index fund strategy and a stochastic buying baseline. The paper claims the optimized data significantly outperformed the original data, but does not report standard quantitative evaluation metrics such as Sharpe ratio, volatility, drawdown, or statistical significance.
 
 ### Parameters
-- investment_budget: 1000
-- risk_free_interest_rate: 0.02
-- smoothness_index_risk_seeking: 200
-- smoothness_index_risk_averse: 0.2
-- penalty_coefficient: λ (unspecified value)
-- binary_variables: x_i ∈ {0, 1} for stock inclusion
+- investment_budget_K: 1000
+- risk_free_interest_rate_r: 0.02
+- smoothness_index_risk_seeking_Ls: 200
+- smoothness_index_risk_averse_La: 0.2
+- max_steps: mentioned symbolically as MaxSteps, exact value not reported
+- transverse_field_strength: Gamma, annealed during optimization; initial value not reported
+- penalty_coefficient: lambda, included in objective but numeric value not reported
 
 ### Hardware
-Simulated quantum annealing using Python; no specific hardware (QPU or simulator) mentioned.
+{'hardware_type': 'classical simulation', 'implementation_environment': 'Python', 'qpu_model': None, 'simulator_name': None, 'cloud_provider': None, 'transpilation_settings': None}
 
 ### Reproducibility
-The paper provides a detailed description of the quantum annealing algorithm and the QUBO formulation, but no code or dataset is explicitly made available. The methodology is sufficiently described for replication, though specific implementation details (e.g., Python libraries used) are omitted.
+Reproducibility is limited. The paper provides the mathematical formulation and some parameter values (budget, risk-free rate, smoothness indices), but omits key details such as the exact dataset, stock universe, time period, covariance estimation procedure, annealing schedule values, iteration settings, and source code. No code or data repository is mentioned.

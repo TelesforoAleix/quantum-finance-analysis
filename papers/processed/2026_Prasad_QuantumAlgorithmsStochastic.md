@@ -15,7 +15,7 @@ idea_tags:
 - idea:quantum-advantage
 - idea:near-term-feasibility
 - idea:hybrid-approach
-journal_or_venue: Authorea Preprints
+journal_or_venue: Authorea Preprint
 methodology_tags:
 - HHL
 - amplitude-estimation
@@ -30,14 +30,14 @@ relevance_phase1: high
 relevance_phase3: high
 source_type: preprint
 source_type_confidence: high
-step1_date: '2026-03-20T01:01:04.330726'
-step1_model: Mistral-Large-3
-step2_date: '2026-03-20T01:01:07.588619'
-step2_model: Mistral-Large-3
-step3_date: '2026-03-20T01:01:22.247831'
-step3_model: Mistral-Large-3
-step4_date: '2026-03-20T01:01:32.279642'
-step4_model: Mistral-Large-3
+step1_date: '2026-03-25T16:15:37.946757'
+step1_model: gpt-5.1
+step2_date: '2026-03-25T16:15:42.197861'
+step2_model: gpt-5.1
+step3_date: '2026-03-25T16:16:28.105047'
+step3_model: gpt-5.4
+step4_date: '2026-03-25T16:17:00.464299'
+step4_model: gpt-5.4
 step5_date: '2026-03-20T01:01:49.424120'
 step5_model: Mistral-Large-3
 step6_date: '2026-03-20T01:01:52.350647'
@@ -74,16 +74,16 @@ zotero_key: ''
 ---
 
 ## Abstract summary
-This preprint introduces a framework of quantum algorithms for simulating and solving stochastic differential equations (SDEs), which are critical in finance, chemistry, and climate science. The paper demonstrates how quantum computing techniques—such as Hamiltonian simulation, quantum random number generation, and amplitude estimation—can achieve polynomial and super-polynomial speedups over classical methods, particularly for high-dimensional systems. The work focuses on both linear and nonlinear SDEs, providing theoretical complexity bounds and practical resource estimates for applications like multi-asset option pricing and molecular dynamics.
+The paper proposes a set of quantum algorithms for simulating and solving stochastic differential equations (SDEs), targeting applications in areas such as quantitative finance, molecular dynamics, and climate science. It combines Hamiltonian simulation for drift, quantum random number generation for noise, and quantum amplitude estimation for expectations to obtain better scaling in dimension and accuracy than classical Monte Carlo and PDE-based methods, with formal complexity results for linear and semilinear SDEs. For nonlinear SDEs, it introduces variational quantum schemes with design choices aimed at avoiding barren plateaus, and illustrates the approach on multi-asset Black–Scholes, Heston volatility, and Langevin dynamics, including resource estimates and small-scale numerical simulations.
 ## Methodology
-The paper presents a theoretical and empirical framework for solving stochastic differential equations (SDEs) using quantum algorithms, targeting applications in finance, molecular dynamics, and climate science. The methodology combines Hamiltonian simulation for drift terms, quantum random number generation for noise increments, and quantum amplitude estimation for computing expectations. For linear and semilinear SDEs, the authors prove polynomial and super-polynomial speedups over classical methods, with complexity scaling as ˜O(poly(d)polylog(1/ε)) versus classical O(poly(d)/ε²). For nonlinear SDEs, variational quantum schemes with parameterized circuits are introduced, incorporating barren plateau mitigation strategies such as problem-informed ansätze, shallow circuits, and layer-wise training. The paper includes theoretical proofs for speedups in linear SDEs and Fokker-Planck PDEs, resource quantification (qubits, gate depth, oracle calls), and numerical simulations on small-scale instances using Qiskit to demonstrate empirical speedups.
+This preprint is primarily a theoretical-methods paper with a small empirical simulation component. It proposes a quantum framework for solving stochastic differential equations (SDEs) by combining amplitude-encoded state representations, Hamiltonian simulation for drift dynamics, quantum random number generation for stochastic noise increments, and quantum amplitude estimation for expectation estimation. For linear and semilinear SDEs, the paper develops complexity results under Lipschitz and boundedness assumptions, using time discretization, sparse/dense Hamiltonian simulation arguments, and query-complexity analysis to claim improved scaling over classical Monte Carlo and finite-difference PDE methods. For nonlinear SDEs, it introduces variational quantum schemes with problem-informed ansatz circuits, shallow depth, layer-wise training, and local cost functions to mitigate barren plateaus, together with an a priori error bound depending on parameter count and hardware noise. The paper analyzes finance-relevant models including multi-asset Black-Scholes and Heston, plus Langevin dynamics, and reports small-scale numerical simulations implemented in Qiskit on classical simulators with IBM-inspired noise models. These experiments compare quantum-estimated quantities such as option prices and rare-event probabilities against analytic Black-Scholes values or high-precision classical Monte Carlo / Brownian-dynamics references, using bias, RMSE, circuit depth, gate counts, runtime, and sample-efficiency as evaluation criteria. As a preprint, the work has not been peer reviewed.
 
-**Algorithms used:** Hamiltonian simulation, Quantum random number generation, Quantum amplitude estimation, Trotter-Suzuki decomposition, Linear combination of unitaries (LCU), Variational quantum eigensolver (implicit in variational schemes), Maximum-likelihood amplitude estimation
-**Frameworks:** Qiskit
+**Algorithms used:** Hamiltonian simulation, Quantum amplitude estimation, Maximum-likelihood amplitude estimation, Iterative amplitude estimation, LCU, Trotter-Suzuki decomposition, Schrödingerization, Variational quantum algorithm, Quantum random number generation
+**Frameworks:** Qiskit, Qiskit Terra, Qiskit Aer, IBM Quantum
 
-**Experimental setup:** Numerical simulations were conducted using Qiskit Terra 0.46 and Aer 0.15 on classical backends with noise models calibrated to IBM heavy-hex devices. The experiments included small-scale instances of multi-asset Black-Scholes models (2D, 10 qubits) and Langevin dynamics for molecular coarse-graining (3D). Simulations were run on both statevector and noisy QASM simulators with shot counts of 8192 per circuit.
+**Experimental setup:** Small-scale numerical simulations were performed in Qiskit on classical backends, including Aer statevector and noisy QASM simulation. The appendix states simulations used Qiskit Terra 0.46 and Aer 0.15 with noise models calibrated to IBM heavy-hex devices, basis gates {u3, cx}, transpilation optimization level 2, layout restricted to 27-qubit heavy-hex graphs, and 8192 shots per circuit. Reported examples include a 2D Black-Scholes basket option using 10 qubits and a Langevin coarse-grained model with 3 beads; the paper also mentions 2- to 4-asset Black-Scholes instances with 10-12 qubits.
 
-**Dataset:** The paper does not use external datasets but simulates synthetic financial and molecular dynamics scenarios, including multi-asset Black-Scholes models (e.g., basket options for two correlated assets) and Langevin dynamics for coarse-grained molecular systems (e.g., protein models with 3 beads).
+**Dataset:** No external benchmark dataset is used. Inputs are synthetic/model-based financial and physical systems: multi-asset Black-Scholes basket option instances with specified drift, volatility, correlation matrix, maturity, and strike; a 2D Heston stochastic-volatility model; and coarse-grained Langevin dynamics / protein models. Reference values are obtained from analytic Black-Scholes pricing where available, or from high-precision classical Monte Carlo / Brownian-dynamics simulations.
 ## Findings
 - [supported] For linear and semilinear SDEs with Lipschitz coefficients, quantum algorithms estimate relevant quantities (option prices, expected hitting times, moments) to accuracy ε in time ˜O(poly(d)polylog(1/ε)), versus classical O(poly(d)/ε²).
 - [supported] Quantum simulation of the Fokker-Planck equation achieves accuracy ε in time ˜O(d · log(1/ε)), compared to classical finite-difference solvers at O(n^{d+1}_s).
@@ -169,41 +169,31 @@ The paper claims polynomial and super-polynomial speedups for SDE solving, but t
 
 ## Experiment details
 ### Input
-Synthetic problem instances were used, including:
-1. Multi-asset Black-Scholes: Parameters for drift (µ), volatility (σ), correlation matrix, maturity (T), and strike (K). Log-returns were discretized and encoded as quantum states.
-2. Langevin dynamics: Coarse-grained coordinates (q) and velocities (v) for molecular systems, with parameters for potential energy (U), friction (γ), and temperature (kBT).
-Preprocessing involved discretizing state spaces and encoding initial distributions as quantum states.
+Model-generated inputs rather than a fixed dataset. Black-Scholes experiments use 2- to 4-asset synthetic instances (including a 2D correlated basket option example), with problem parameters explicitly described as drift mu, volatility sigma, correlation matrix, maturity T, and strike K. State variables are encoded as discretized log-prices over bounded intervals [y_min, y_max], with l qubits per asset. Theoretical sections assume state-space truncation to [-R, R]^d and grid spacing delta_x chosen as Theta(epsilon / L_f). Langevin experiments use a coarse-grained molecular/protein model with 3 beads, encoding coordinates and velocities and evaluating barrier-crossing / hitting-time observables. No real market time series, sample count, or historical period is reported.
 
 ### Process
-1. **Encoding**: Discretize state space and encode initial distributions as quantum states (amplitude encoding).
-2. **Drift Simulation**: Use Hamiltonian simulation (Trotter-Suzuki or LCU) to evolve the drift term.
-3. **Noise Generation**: Inject Gaussian noise increments via quantum random number generation.
-4. **Amplitude Estimation**: Apply quantum amplitude estimation to compute expectations (e.g., option prices, hitting times). For variational schemes:
-   - Design parameterized circuits with drift, noise, and mixer blocks.
-   - Train using layer-wise optimization to minimize the difference between quantum and classical expectations.
-   - Use local cost functions to mitigate barren plateaus.
-5. **Execution**: Run circuits on Qiskit simulators (statevector or noisy QASM) with 8192 shots per circuit.
-6. **Post-processing**: Estimate observables (e.g., option prices, rare event probabilities) and compute error metrics (bias, RMSE).
+The experimental pipeline is described as follows: (1) specify SDE/model parameters such as drift, volatility, correlations, maturity, and payoff definition; (2) discretize time into n_t steps and encode the state distribution or discretized variables into qubit registers; (3) build an SDE simulation circuit U_SDE using drift blocks (Hamiltonian simulation or parameterized drift unitaries), noise-generation blocks approximating Gaussian increments, and mixing/entangling blocks for correlations; (4) append a payoff-encoding unitary U_f that maps the terminal state to an ancilla amplitude corresponding to the target observable; (5) run amplitude estimation, either standard Qiskit AmplitudeEstimation or a custom maximum-likelihood estimator, on Aer statevector or noisy QASM simulators; (6) for variational nonlinear-SDE settings, train shallow problem-informed ansatz circuits layer-wise using local cost functions of the form sum_i (E_quantum[f_i(X)] - E_classical[f_i(X)])^2; (7) repeat runs to estimate variance and RMSE; and (8) compare against analytic Black-Scholes prices, classical Monte Carlo, or Brownian-dynamics simulations using BAOAB for Langevin dynamics. The appendix reports 8192 shots per circuit. The main text also mentions 32 amplitude-estimation calls for the 2D Black-Scholes example. For theory, time stepping uses second-order weak schemes such as Milstein or high-order Runge-Kutta-type integrators, and Langevin ansatz construction references a Trotterized BAOAB splitting scheme.
 
 ### Output
-Outputs included:
-1. Estimated financial metrics: Option prices (e.g., basket option prices for Black-Scholes), Sharpe ratios, or hitting times.
-2. Molecular dynamics metrics: Rare event probabilities (e.g., barrier crossing in Langevin dynamics).
-3. Error metrics: Bias (|quantum estimate - classical reference|), RMSE, and circuit metrics (depth, two-qubit gate count).
-4. Speedup comparisons: Empirical speedups (e.g., 3x for Black-Scholes, 100x for Langevin) relative to classical Monte Carlo for fixed accuracy or runtime.
+Outputs include estimated option prices, expected values, rare-event probabilities, and hitting-time indicators. Evaluation metrics reported are bias relative to analytic or high-precision classical references, RMSE, variance from repeated runs, circuit depth, two-qubit gate count, runtime/wall-clock comparisons, and qualitative/quantitative speedup claims. Baselines include classical Monte Carlo for Black-Scholes and Heston, finite-difference PDE solvers in the theoretical comparison, and classical Brownian-dynamics simulations with BAOAB for Langevin dynamics. Example reported results include a 2D Black-Scholes case where classical Monte Carlo used 10,000 samples for 0.1% accuracy versus a simulated quantum approach with 32 amplitude-estimation calls, and claims that amplitude estimation reduces required samples by about an order of magnitude for fixed accuracy.
 
 ### Parameters
-- qubits: 10-150 qubits (e.g., 10 qubits for 2D Black-Scholes, ~150 qubits for d=10 assets with ε=10⁻³, δx=10⁻²).
-- circuit_depth: ˜O(poly(d) log(1/ε)) (e.g., polynomial in dimension and logarithmic in accuracy).
+- qubits_reported: [10, '10-12', 150]
 - shots: 8192
-- time_steps: nt = ˜O(polylog(1/ε)) (e.g., O(log(1/ε)) for high-order integrators).
-- optimizer: Layer-wise training for variational schemes (no specific classical optimizer named).
-- learning_rate: Not specified.
-- discretization: δx = Θ(ε/Lf) for spatial discretization, where Lf is the Lipschitz constant of the payoff function.
-- noise_model: IBM heavy-hex device noise model (error rates: 10⁻⁴ for single-qubit gates, 10⁻³ for two-qubit gates).
+- basis_gates: ['u3', 'cx']
+- transpilation_optimization_level: 2
+- layout_constraint: 27-qubit heavy-hex graph
+- noise_model_error_rates: {'one_qubit': 0.0001, 'two_qubit': 0.001}
+- amplitude_estimation_calls_example: 32
+- classical_monte_carlo_samples_example: 10000
+- classical_langevin_trajectories_example: 100000
+- ansatz_depth_scaling: L = O(log d)
+- time_discretization: n_t time steps; theory discusses second-order weak schemes such as Milstein / high-order Runge-Kutta-type integrators
+- state_space_discretization: grid spacing delta_x = Theta(epsilon / L_f), truncated domain [-R, R]^d
+- black_scholes_register_encoding: l qubits per asset for discretized log-prices
 
 ### Hardware
-Simulations were run on Qiskit Aer statevector and noisy QASM simulators. Noise models were calibrated to IBM heavy-hex devices (e.g., 27-qubit layouts). Transpilation was performed at optimization level 2 with basis gates {u3, cx}.
+No real QPU execution is reported. Simulations were run with Qiskit Terra 0.46 and Aer 0.15 on classical backends, including Aer statevector and noisy QASM simulators, using noise models calibrated to IBM heavy-hex devices. Basis gates were {u3, cx}; transpilation used optimization level 2 with layouts restricted to 27-qubit heavy-hex graphs. The paper discusses IBM Quantum / heavy-hex hardware characteristics and near-term feasibility but does not report execution on an actual IBM QPU.
 
 ### Reproducibility
-The paper provides sufficient theoretical detail for replication, including proofs, ansatz designs, and parameter choices. Numerical simulations were conducted using Qiskit, but the code is not explicitly linked or made available in the preprint. Data is synthetic, so no external datasets are required. The appendix includes detailed assumptions, discretization schemes, and proof sketches, enhancing reproducibility.
+Partial reproducibility only. The paper provides substantial methodological detail in the appendix, including circuit structure, encoding choices, simulator stack, shot count, transpilation settings, and evaluation metrics, but no code repository, scripts, or exact parameter files are provided. Inputs are mostly synthetic/model-based rather than external datasets, so data availability is not a major barrier. Replication of the general setup is plausible, but exact reproduction of all numerical claims would be difficult without code and fuller specification of instance parameters and implementation details. Preprint; not peer reviewed.

@@ -8,38 +8,38 @@ authors:
 - Reuben Tate
 auto_detected: true
 classification: ''
-contradiction_flags: []
-doi: XXXXXXX.XXXXXXX
+contradiction_flags:
+- contradiction:classical-vs-quantum
+- contradiction:scalability
+doi: ''
 evidence_type: ''
 idea_tags:
-- idea:quantum-advantage
-- idea:hybrid-approach
 - idea:near-term-feasibility
+- idea:hybrid-approach
 journal_or_venue: ACM Transactions on Quantum Computing
 methodology_tags:
 - QAOA
 - QUBO
-- variational
 - classical-simulation
 paper_type: ''
-quantum_advantage_claim: speculative
+quantum_advantage_claim: not-applicable
 related_papers: []
 relevance_phase1: high
 relevance_phase3: medium
 source_type: peer-reviewed-empirical
 source_type_confidence: high
-step1_date: '2026-03-20T00:10:04.268324'
-step1_model: Mistral-Large-3
-step2_date: '2026-03-20T00:10:08.958862'
-step2_model: Mistral-Large-3
-step3_date: '2026-03-20T00:10:21.762896'
-step3_model: Mistral-Large-3
-step4_date: '2026-03-20T00:10:51.114088'
-step4_model: Mistral-Large-3
-step5_date: '2026-03-20T00:10:59.467445'
-step5_model: Mistral-Large-3
-step6_date: '2026-03-20T00:11:01.937508'
-step6_model: Mistral-Large-3
+step1_date: '2026-03-25T16:06:51.678886'
+step1_model: gpt-5.1
+step2_date: '2026-03-25T16:06:57.683072'
+step2_model: gpt-5.1
+step3_date: '2026-03-25T16:07:43.955375'
+step3_model: gpt-5.4
+step4_date: '2026-03-25T16:08:20.526391'
+step4_model: gpt-5.4
+step5_date: '2026-03-25T16:08:50.097094'
+step5_model: gpt-5.4
+step6_date: '2026-03-25T16:09:04.988108'
+step6_model: gpt-5.4
 steps_completed:
 - 1
 - 2
@@ -51,11 +51,11 @@ tags:
 - topic/portfolio-optimisation
 - method/QAOA
 - method/QUBO
-- method/variational
 - method/classical-simulation
-- idea/quantum-advantage
-- idea/hybrid-approach
 - idea/near-term-feasibility
+- idea/hybrid-approach
+- contradiction/classical-vs-quantum
+- contradiction/scalability
 title: Solving General QUBOs with Warm-Start QAOA via a Reduction to Max-Cut
 topic_tags:
 - portfolio-optimisation
@@ -64,81 +64,94 @@ zotero_key: ''
 ---
 
 ## Abstract summary
-This paper introduces a method to solve Quadratic Unconstrained Binary Optimization (QUBO) problems using the Quantum Approximate Optimization Algorithm (QAOA) by reducing them to Max-Cut problems. The authors leverage semidefinite programming (SDP) relaxations to warm-start QAOA, aiming to improve approximation ratios at lower circuit depths. The study empirically compares this approach with a direct QUBO relaxation method across various QUBO instances, including random QUBOs and specific problems like the traveling salesman problem and portfolio optimization. The findings highlight that the optimal warm-start strategy depends on the problem type and performance metric.
+The paper studies how to apply semidefinite-programming-based warm-start strategies for QAOA to general QUBO problems by first reducing them to Max-Cut instances. The authors empirically compare this Max-Cut-based warm-start approach against a direct QUBO relaxation warm-start across several classes of QUBOs, including random instances and structured problems like TSP, maximum independent set, and portfolio optimization. They show that performance depends strongly on the problem type and discuss how the auxiliary variable introduced by the QUBO-to-Max-Cut mapping can be exploited to improve warm-start heuristics.
 ## Methodology
-The paper presents an empirical study comparing two warm-start approaches for the Quantum Approximate Optimization Algorithm (QAOA) applied to Quadratic Unconstrained Binary Optimization (QUBO) problems. The first approach, QUBO-Relaxed, relaxes the QUBO constraints directly and uses the relaxed solution to initialize the QAOA. The second approach maps QUBO instances to Max-Cut problems and applies a semidefinite programming (SDP) relaxation-based warm-start, specifically using the Goemans-Williamson (GW) and Burer-Monteiro (BM) relaxations. The study evaluates these approaches on various QUBO instances, including randomly generated QUBOs, traveling salesman problems (TSP), portfolio optimization, and maximum independent set (MIS) problems. The experiments involve generating 1000 problem instances for each type, running QAOA at depths from 0 to 5, and comparing performance metrics such as approximation ratio and optimal sampling probability.
+The paper presents an empirical benchmarking study of warm-started QAOA for general QUBO problems by introducing a reduction from an n-variable QUBO to an equivalent (n+1)-vertex Max-Cut instance and then applying semidefinite-programming-based warm starts originally developed for Max-Cut. The authors compare this QUBO-to-Max-Cut warm-start strategy against a direct QUBO-relaxation warm-start baseline. They evaluate several warm-start variants derived from semidefinite relaxations, specifically Goemans-Williamson projected to 2 or 3 dimensions (GW2, GW3) and Burer-Monteiro relaxations in 2 or 3 dimensions (BM2, BM3), as well as the QUBO-relaxed initialization. For Max-Cut-based warm starts, they also test vertex-at-top rotation choices (first qubit, last/auxiliary qubit, or no rotation). Experiments are conducted on multiple classes of QUBO instances up to 16 variables: random continuous and discrete QUBOs, traveling salesman problem, portfolio optimization, and maximum independent set on two graph ensembles. For each problem class, 1000 instances are generated and evaluated at depth p=0, and 10 of those instances are further run for QAOA depths 1 through 5. Performance is assessed using two normalized metrics: an instance-specific approximation ratio and the probability of sampling an optimal solution. Results are reported as averages with shaded bands of ±0.25 standard deviations, and comparisons are made across warm-start families, rotation choices, and for QUBO-relaxed, different numbers of random initializations (10 vs 50).
 
-**Algorithms used:** QAOA
+**Algorithms used:** QAOA, Warm-start QAOA, Goemans-Williamson relaxation, Burer-Monteiro relaxation, QUBO-relaxation, L-BFGS-B, COBYLA
 
-**Experimental setup:** The experiments were conducted using a custom QAOA simulator based on prior work. The QAOA parameters were optimized using the COBYLA optimizer. For each circuit, the optimization loop was run 10 times with different initial parameter settings. Simulations were performed for QUBO problems with up to 16 variables, corresponding to 17-vertex graphs for Max-Cut instances.
+**Experimental setup:** All experiments were simulation-based using a custom QAOA simulator. QUBO instances had 16 binary variables; after reduction to Max-Cut, corresponding graphs had 17 vertices/qubits. Depth-0 experiments were run on 1000 instances per problem class; 10 selected instances per class were then run for QAOA depths p=1 to 5. QAOA parameter optimization used COBYLA, with 10 optimization restarts per circuit. For p=1, all 10 initial parameter settings were drawn uniformly; for p>1, 9 were random and 1 was seeded from the best solution at depth p-1. The final circuit parameters were chosen as the best-cost result among the 10 runs. Warm-start generation used GW2, GW3, BM2, BM3, and QUBO-relaxed methods, with vertex-at-top rotations tested on the first qubit, last auxiliary qubit, or none.
 
-**Dataset:** The datasets include randomly generated QUBOs (both continuous and discrete), QUBOs derived from specific combinatorial optimization problems such as the traveling salesman problem (TSP), portfolio optimization, and maximum independent set (MIS) on Erdős–Rényi (GNP) and Newman–Watts–Strogatz (NWS) graphs.
+**Dataset:** Synthetic benchmark instances only. These include 16-variable random QUBOs with entries sampled either continuously from Uniform[-1,1] or discretely from {-1,1}; 5-city TSP instances generated from random points in [-1,1]^2; portfolio optimization instances generated from simulated geometric Brownian motion stock prices for 16 assets over 250 time steps; and maximum independent set instances on 16-node Erdős-Rényi and Newman-Watts-Strogatz random graphs.
 ## Findings
-- [supported] The warm-start QAOA approach using a reduction to Max-Cut achieves higher approximation ratios and optimal sampling probabilities for specific QUBO problems (e.g., portfolio optimization) compared to the QUBO-relaxation approach, with results dependent on the problem type and warm-start method.
-- [supported] The Goemans-Williamson (GW2) warm-start with a vertex-at-top rotation on the auxiliary qubit (last qubit) consistently outperforms other rotation choices (first qubit or no rotation) across most problem instances, including random QUBOs, portfolio optimization, and maximum independent set (MIS).
-- [supported] For the traveling salesman problem (TSP), the GW2 warm-start with no rotation achieves the highest optimal sampling probability, while the QUBO-relaxation approach performs better in terms of approximation ratio.
-- [supported] The QUBO-relaxation warm-start's performance improves with more random initializations (50 vs. 10), particularly for constrained optimization problems like TSP and MIS, but remains problem-dependent.
-- [supported] The GW2 warm-start achieves approximation ratios above 0.9 for portfolio optimization and MIS problems at depth p=5, with optimal sampling probabilities within ±0.25 standard deviations of QUBO-relaxation results.
-- [speculative] The auxiliary qubit introduced in the QUBO-to-Max-Cut mapping may inherently possess a different structural role, making it the optimal choice for vertex-at-top rotations.
-- [speculative] Quantum advantage for QAOA in solving QUBO problems may emerge at larger problem sizes (beyond 16 variables), where the warm-start techniques could provide more pronounced benefits over classical methods.
+- [supported] The paper empirically evaluates warm-start QAOA for general QUBOs by reducing them to Max-Cut and finds that the best warm-start strategy is strongly problem-dependent across random QUBOs, traveling salesman, portfolio optimization, and maximum independent set instances.
+- [supported] Among SDP-based warm-starts tested, Goemans-Williamson projected to 2 dimensions (GW2) was the best overall performer, with BM2/BM3 achieving similar approximation ratios but significantly lower optimal sampling probabilities.
+- [supported] For most problem classes except TSP, applying the vertex-at-top rotation to the auxiliary qubit introduced by the QUBO-to-Max-Cut mapping gave the best GW2 performance; the ranking was typically last-qubit rotation > first-qubit rotation > no rotation.
+- [supported] For random QUBOs, GW2 achieved better instance-specific approximation ratios than QUBO-Relaxed, but worse optimal sampling probabilities, indicating GW2 often concentrates amplitude on high-quality but not necessarily optimal solutions.
+- [supported] For portfolio optimization, GW2 outperformed QUBO-Relaxed on both metrics tested, with very high approximation ratios and high optimal sampling probabilities.
+- [supported] For MIS instances, GW2 performance was intermediate between QUBO-Relaxed with 10 and 50 random initializations, and usually within 0.25 standard deviations of QUBO-Relaxed with 50 initializations.
+- [supported] For TSP, GW2 produced the best optimal sampling probability among compared methods, but QUBO-Relaxed with 50 initializations achieved better approximation ratio.
+- [supported] Increasing QUBO-Relaxed local-optimizer restarts from 10 to 50 generally improved performance, with the largest gains observed on constrained problems such as TSP and MIS.
+- [supported] Portfolio optimization is a special case where the QUBO relaxation is convex/efficiently solvable because the QUBO matrix is negative semidefinite, so QUBO-Relaxed does not depend on the number of random initializations for the warm-start construction.
+- [supported] All reported results are from classical simulation of QAOA circuits on problem sizes up to 16 QUBO variables (17 vertices after reduction), not from real quantum hardware.
+- [speculative] The authors suggest that larger QUBO-Relaxed problems would likely require more optimizer iterations/random initializations because the underlying nonconvex relaxation has no performance guarantees.
 
-**Results summary:** The paper empirically evaluates warm-start QAOA techniques for solving QUBO problems via a reduction to Max-Cut. The study compares the Goemans-Williamson (GW2) warm-start, Burer-Monteiro (BM2/BM3) warm-starts, and QUBO-relaxation warm-starts across six problem types: continuous and discrete random QUBOs, traveling salesman problem (TSP), portfolio optimization, and maximum independent set (MIS) on two graph ensembles. Results demonstrate that the GW2 warm-start with a vertex-at-top rotation on the auxiliary qubit generally outperforms other methods, particularly for portfolio optimization and MIS. The QUBO-relaxation approach shows improved performance with more initializations but remains problem-dependent. Performance metrics (approximation ratio and optimal sampling probability) vary significantly across problem types, with constrained problems like TSP posing greater challenges. All results are derived from simulations, not real quantum hardware.
+**Results summary:** This peer-reviewed empirical study benchmarks warm-start QAOA for general QUBOs by mapping them to Max-Cut and comparing SDP-based warm-starts (GW2, GW3, BM2, BM3) against a direct QUBO-Relaxed warm-start. Experiments were run in classical simulation on 1000 instances per problem class at depth p=0 and on 10 selected instances for depths 1 to 5, using 16-variable QUBOs. The main empirical conclusion is that no single warm-start dominates across all tasks, but GW2 is the strongest SDP-based method overall. The auxiliary-qubit vertex-at-top rotation usually improves performance and is often the best rotation choice. GW2 tends to deliver stronger approximation ratios on random QUBOs and clearly outperforms QUBO-Relaxed on portfolio optimization, while QUBO-Relaxed can be competitive or better on constrained problems depending on the metric and number of optimizer restarts. The study does not demonstrate quantum advantage; results are simulation-based and compare warm-start heuristics within QAOA rather than against best classical solvers at scale.
 
 **Performance claims:**
-- GW2 warm-start with last-qubit rotation achieves approximation ratios >0.9 for portfolio optimization at depth p=5
-- GW2 warm-start with last-qubit rotation achieves optimal sampling probabilities within 0.25 standard deviations of QUBO-relaxation (50 initializations) for MIS problems
-- QUBO-relaxation with 50 initializations outperforms GW2 in approximation ratio for TSP by >0.25 standard deviations
-- GW2 warm-start with no rotation achieves the highest optimal sampling probability for TSP (though still low in absolute terms)
-- GW2 warm-start outperforms QUBO-relaxation in approximation ratio for random QUBOs by >0.25 standard deviations
-- Portfolio optimization (a QUBO-relaxed problem) shows the highest approximation ratios (>0.95) across all warm-start methods
+- 1000 instances per problem type evaluated at depth p=0; 10 of those 1000 evaluated at depths 1<=p<=5
+- Problem size: 16 QUBO variables, mapped to 17-vertex Max-Cut instances
+- For continuous random QUBOs at p=5, GW2 last-rotation achieved alpha=0.9315±0.2107 and P=0.1938±0.2107
+- For discrete random QUBOs at p=5, GW2 last-rotation achieved alpha=0.9311±0.2182 and P=0.2238±0.2182
+- For TSP at p=5, GW2 no-rotation achieved P=0.0026±0.0037, while GW2 last-rotation achieved alpha=0.9488±0.0020
+- For portfolio optimization at p=5, GW2 last-rotation achieved alpha=0.9993±0.2266 and P=0.9215±0.2266
+- For MIS-GNP at p=5, GW2 last-rotation achieved alpha=0.9222±0.1458 and P=0.1134±0.1458
+- For MIS-NWS at p=5, GW2 first-rotation achieved alpha=0.8851±0.0475 and P=0.1139±0.1429; GW2 last-rotation achieved alpha=0.8672±0.1057 and P=0.0699±0.1057
+- For portfolio optimization, QUBO-Relaxed BM2 baseline values were alpha=0.9684±0.0075 and P=0.0016±0.0075, substantially below GW2 on P
+- The paper reports shaded uncertainty bands of ±0.25 standard deviations in depth plots rather than confidence intervals
 ## Quantum advantage claim
-**Classification:** speculative
+**Classification:** not-applicable
 
-The paper does not demonstrate quantum advantage on real hardware. All results are from simulations of up to 17 qubits (16-variable QUBOs). While the warm-start QAOA shows promise in improving approximation ratios and sampling probabilities, the claimed advantages are theoretical and problem-specific. No comparison to state-of-the-art classical solvers is provided to validate quantum advantage.
+The paper does not demonstrate or rigorously claim quantum advantage. It compares warm-start variants of simulated QAOA on small instances and reports heuristic performance differences, without showing superiority over state-of-the-art classical optimization methods or using real quantum hardware.
 ## Limitations
-- Experiments limited to QUBOs with up to 16 variables (17 qubits for Max-Cut reduction) due to computational constraints
-- Performance evaluation conducted only on synthetic or randomly generated problem instances (e.g., random QUBOs, synthetic portfolio data, simulated TSP instances)
-- [inferred] No comparison with state-of-the-art classical optimization solvers (e.g., Gurobi, CPLEX) to benchmark quantum advantage
-- [inferred] Limited exploration of noise mitigation techniques, which may affect performance on real quantum hardware
-- [inferred] No assessment of the impact of hardware noise or decoherence on the proposed warm-start QAOA approaches
-- QUBO-Relaxed warm-start performance is highly dependent on the number of random initializations, lacking guarantees for general QUBOs
-- Vertex-at-top rotation heuristic introduces an O(n) overhead, which may not scale efficiently for larger problem sizes
-- Empirical results show strong problem-dependent performance, limiting generalizability of findings
-- [inferred] No analysis of how the proposed methods perform under varying qubit connectivity constraints (e.g., NISQ-era hardware limitations)
-- Portfolio optimization results may not generalize to real-world financial datasets with non-stationary or noisy asset returns
+- Experiments are limited to QUBO instances with up to 16 variables (and 17 vertices after the QUBO-to-Max-Cut mapping), restricting conclusions about larger-scale problems.
+- Only 10 of the 1000 generated instances per problem class were evaluated at QAOA depths 1 through 5, limiting statistical strength for depth-dependent performance claims.
+- The study uses simulation rather than real quantum hardware, so decoherence, gate errors, readout noise, and calibration drift are not empirically assessed.
+- The QUBO-to-Max-Cut reduction introduces an additional auxiliary qubit/variable, increasing resource requirements and potentially worsening scalability.
+- For general QUBOs, the QUBO-relaxed warm-start relies on solving a nonconvex relaxation with local optimization, which has no performance guarantees.
+- Performance of the QUBO-relaxed approach is strongly dependent on the number of random initial conditions tested, making results sensitive to optimizer budget and initialization choices.
+- The paper only studies shallow depths up to p = 5, so behavior at larger depths and asymptotic trends remain unclear.
+- Benchmarking is restricted to a narrow set of synthetic or generated problem families (random QUBOs, small TSP, simulated portfolio optimization, MIS), limiting external validity to real financial production instances.
+- Portfolio optimization experiments are based on simulated geometric Brownian motion price series rather than real market data.
+- The TSP benchmark is especially small (5 cities), so conclusions for constrained combinatorial problems may not transfer to more realistic sizes.
+- The study reports that the best warm-start is highly problem- and metric-dependent, which limits the ability to recommend a universally effective method.
+- The vertex-at-top heuristic can incur O(n) overhead if multiple candidate vertices are tested.
+- [inferred] No comparison is provided against strong state-of-the-art classical optimization baselines for the underlying QUBO instances, so practical quantum advantage is not established.
+- [inferred] Because all results are simulator-based, the claimed low-depth benefits may not survive hardware noise or connectivity constraints on NISQ devices.
+- [inferred] The use of custom simulation and multiple heuristic choices (optimizer settings, random bases, random initializations) may make exact reproducibility sensitive to implementation details and random seeds.
+- [inferred] The added auxiliary qubit and SDP-based preprocessing may create classical and quantum overheads that reduce production scalability for financial services use cases.
+- [inferred] The paper does not evaluate runtime, wall-clock cost, or end-to-end hybrid workflow efficiency, which matters for deployment in financial settings.
 ## Open questions
-- How does the performance of warm-start QAOA scale with problem size beyond 16 variables?
-- What is the impact of hardware noise and decoherence on the proposed warm-start approaches when executed on real quantum devices?
-- Can the observed problem-dependent performance differences between warm-start methods be theoretically explained or predicted?
-- How do the proposed warm-start QAOA methods compare to classical optimization solvers in terms of solution quality and runtime?
-- What is the trade-off between the overhead of vertex-at-top rotations and the performance gains in practical applications?
-- How does the auxiliary qubit introduced in the QUBO-to-Max-Cut mapping affect the algorithm's robustness to noise?
-- Can the warm-start approaches be extended or adapted to handle constrained optimization problems more effectively?
-- What are the implications of the skewed α-distributions for QAOA performance on constrained problems like TSP and MIS?
-- How does the choice of hyperparameters (e.g., ε in QUBO-Relaxed, step size η in BM relaxations) affect the stability and performance of the warm-start methods?
+- How do the relative advantages of GW-based versus QUBO-relaxed warm-starts scale beyond 16-variable QUBOs?
+- Why is warm-start performance so strongly dependent on problem type and on the chosen success metric (approximation ratio versus optimal sampling probability)?
+- Under what structural conditions does the auxiliary qubit become the best choice for the vertex-at-top heuristic?
+- How many random initializations are needed for the QUBO-relaxed warm-start to remain competitive as problem size grows?
+- Will the observed simulator-based improvements persist on noisy quantum hardware?
+- How does the QUBO-to-Max-Cut reduction affect circuit depth, routing overhead, and error accumulation on hardware with limited connectivity?
+- Can these warm-start methods handle realistic financial portfolio optimization instances built from real market data, larger asset universes, and richer constraints?
+- How do these methods compare with advanced classical heuristics and exact solvers on the same benchmark instances?
+- What is the trade-off between better initialization quality and the extra classical preprocessing cost of SDP-based warm-starts?
+- Do the conclusions hold for deeper QAOA circuits or alternative ansätze and mixer choices?
 
 **Future work:**
-- Extend empirical evaluations to larger problem sizes (e.g., 30+ variables) to assess scalability
-- Test the proposed warm-start QAOA methods on real quantum hardware to evaluate noise resilience and practical applicability
-- Compare the performance of warm-start QAOA with state-of-the-art classical solvers for benchmark problems
-- Explore hybrid quantum-classical approaches that combine warm-start QAOA with classical post-processing techniques
-- Investigate adaptive warm-start strategies that dynamically select the best relaxation method based on problem characteristics
-- Develop noise mitigation techniques tailored to warm-start QAOA to improve performance on NISQ devices
-- Extend the QUBO-to-Max-Cut mapping to other combinatorial optimization problems beyond those tested in this work
-- Analyze the theoretical underpinnings of the observed problem-dependent performance differences between warm-start methods
-- Optimize the vertex-at-top rotation heuristic to reduce overhead while maintaining performance gains
-- Apply the proposed methods to real-world financial datasets (e.g., portfolio optimization with market data) to validate practical utility
+- Better understand the mechanisms behind the problem- and metric-dependent performance differences between GW2 warm-starts and QUBO-relaxed warm-starts.
+- Study larger problem instances, especially since the authors expect more iterations to be needed for larger non-QUBO-relaxed problems.
+- Investigate scalability of the proposed QUBO-to-Max-Cut warm-start approach beyond the small instances tested here.
+- Evaluate the methods on real quantum hardware to assess robustness to noise and hardware constraints.
+- Test the approach on more realistic and larger financial optimization datasets, including real portfolio data.
+- Develop improved strategies for selecting or learning the best vertex-at-top rotation rather than relying on heuristic choices.
+- Explore more efficient or more reliable optimization methods for the nonconvex QUBO-relaxed warm-start.
+- Benchmark against stronger classical baselines and measure end-to-end computational cost.
+- Examine whether the auxiliary-variable insight can be generalized to other reductions and other combinatorial optimization problems.
+- Assess performance at greater QAOA depths and with alternative warm-start constructions such as GW3 and Burer-Monteiro variants on larger benchmarks.
 ## Key ideas
-- #idea:quantum-advantage — GW2 warm-start QAOA achieves higher approximation ratios (~0.95) for portfolio optimization at p=5 compared to QUBO-relaxation (~0.90), suggesting potential quantum advantage for specific problem types
-- #idea:hybrid-approach — Warm-starting QAOA with classical SDP relaxations (e.g., Goemans-Williamson) improves performance for portfolio optimization and other QUBO problems
-- #idea:hybrid-approach — Mapping QUBO to Max-Cut enables leveraging classical optimization techniques to enhance quantum algorithm performance
-- #idea:near-term-feasibility — Demonstrates feasibility of warm-start QAOA for small-scale (16-variable) portfolio optimization on simulators, though scalability is untested
-- #limitation:simulation-only — All results are from classical simulations, with no empirical validation on real quantum hardware
-- #limitation:qubit-count — Experiments limited to 16-variable QUBOs (17 qubits), insufficient for practical financial applications
-- #limitation:data-encoding — Performance is highly problem-dependent, with synthetic datasets limiting generalizability to real-world financial scenarios
+- #idea:hybrid-approach — The paper proposes a hybrid workflow where classical SDP-based relaxations (especially GW2) are used to warm-start QAOA for general QUBO problems, including portfolio optimization.
+- #idea:hybrid-approach — Reducing QUBO to Max-Cut allows reuse of Max-Cut warm-start heuristics, and the auxiliary qubit introduced by the reduction can be exploited via vertex-at-top rotation.
+- #idea:near-term-feasibility — Warm-started QAOA is benchmarked at shallow depths p=0 to 5 on small portfolio-optimization QUBOs, showing that low-depth heuristic improvements are observable in simulation.
+- #idea:hybrid-approach — For portfolio optimization specifically, GW2 warm-start outperforms the direct QUBO-relaxed warm-start on both approximation ratio and optimal-solution sampling probability in the tested simulator setting.
 ## Contradictions
-<!-- Step 6 output — where this paper contradicts others -->
-
+- The extracted notes label one key idea as #idea:quantum-advantage, but the paper itself explicitly does not demonstrate or rigorously claim quantum advantage; all results are simulator-based and only compare warm-start heuristics within QAOA rather than against strong classical solvers. This supports contradiction:classical-vs-quantum.
+- Although the paper reports strong portfolio-optimization performance on 16-variable instances, its own limitations state that conclusions do not yet scale to realistic financial problems because the study is restricted to tiny simulated instances, adds an auxiliary qubit through the Max-Cut reduction, and does not assess runtime or hardware overhead. This supports contradiction:scalability.
 ## Notable quotes
 <!-- Researcher-added — verbatim quotes with page references -->
 
@@ -147,24 +160,43 @@ The paper does not demonstrate quantum advantage on real hardware. All results a
 
 ## Experiment details
 ### Input
-{'random_qubos': {'source': 'Synthetically generated', 'size': '16 variables', 'number_of_features': 'Symmetric matrix Q ∈ R^16x16', 'preprocessing_steps': 'Matrix elements sampled from uniform distributions: continuous [-1, 1], discrete {-1, 1}'}, 'tsp': {'source': 'Synthetically generated points in [−1, 1]^2', 'size': '5 cities', 'number_of_features': 'Adjacency matrix A ∈ R^5x5 based on Euclidean distances', 'preprocessing_steps': 'Encoded as QUBO with constraints using Lagrange multiplier λ = 1.1 max(A_ij)'}, 'portfolio_optimization': {'source': 'Simulated using Geometric Brownian Motion', 'size': '16 assets, 250 time steps', 'number_of_features': 'Covariance matrix Σ ∈ R^16x16, mean return vector μ ∈ R^16', 'preprocessing_steps': 'Returns computed, budget constraint B = 8, risk parameter q = 0.5'}, 'mis': {'source': 'Synthetically generated graphs (GNP and NWS models)', 'size': '16 vertices', 'number_of_features': 'Adjacency matrix for unweighted graphs', 'preprocessing_steps': 'Encoded as QUBO with penalty term c = 1.1'}}
+Problem inputs were synthetically generated as follows: (1) Random QUBOs: symmetric 16x16 matrices with upper-triangular entries sampled independently either from Uniform[-1,1] or from {-1,1}, then symmetrized. (2) TSP: 5 points sampled uniformly from [-1,1]^2; edge weights set to Euclidean distances; rotational symmetry removed to obtain a 16-variable QUBO; penalty parameter lambda set to 1.1*max(A_ij). (3) Portfolio optimization: 16 assets simulated via geometric Brownian motion for N=250 time steps with initial price 1, drifts sampled uniformly from [-0.05,0.05], volatilities from [-0.20,0.20], returns used to compute mean vector and covariance matrix; budget B=8 and risk-aversion q=0.5; penalty lambda=sum(|Sigma|)+sum(|mu|). (4) MIS: 16-node graphs from Erdős-Rényi G(n=16,p=0.25) and Newman-Watts-Strogatz (n=16,k=3,p=0.5), with rejection sampling to ensure connectivity; penalty coefficient c=1.1. For each problem class, 1000 instances were generated for p=0 analysis, and 10 instances were selected for p=1..5 runs.
 
 ### Process
-1. Generate QUBO instances for each problem type. 2. For each instance, apply warm-start approaches: QUBO-Relaxed (with 10 and 50 random initializations) and SDP-based (GW and BM relaxations with k=2,3). 3. Encode warm-start initial states into quantum circuits. 4. Run QAOA with depths p=0 to 5, optimizing parameters using COBYLA. 5. For each depth, evaluate approximation ratio (α) and optimal sampling probability (P). 6. Compare results across different warm-start approaches and vertex-at-top rotations.
+1. Formulate each benchmark problem as a 16-variable QUBO. 2. Either solve directly with a QUBO-relaxed warm start or map the QUBO to an equivalent 17-vertex Max-Cut instance by adding one auxiliary variable/qubit. 3. Construct warm-start initial states using one of the following: QUBO-relaxed initialization from a continuous relaxation; GWk warm starts from semidefinite relaxation followed by random projection to k=2 or 3 dimensions; or BMk warm starts from low-rank Burer-Monteiro relaxations with k=2 or 3. 4. For GWk, sample 50 random orthonormal bases and choose the projection maximizing tr(J^T Y~^T Y~). 5. For BMk, optimize the low-rank relaxation using randomized stochastic perturbations with step size eta=0.05. 6. For QUBO-relaxed, estimate the relaxed solution yc using L-BFGS-B with 100 iterations and either 10 or 50 random initial conditions for nonconvex cases; for portfolio optimization, solve the convex relaxation directly. 7. Apply optional vertex-at-top rotation to the first qubit, last auxiliary qubit, or none for Max-Cut-based warm starts. 8. Run QAOA at depths p=0..5 with custom warm-start mixer/initial state construction. 9. Optimize QAOA angles using COBYLA with 10 restarts per circuit; for p>1, include the best parameters from depth p-1 as one initialization. 10. Select the best parameter set by achieved cost and compute performance metrics.
 
 ### Output
-{'metrics_reported': ['Approximation ratio (α)', 'Optimal sampling probability (P)'], 'comparison_baselines': ['QUBO-Relaxed with 10 and 50 initializations', 'Different vertex-at-top rotations (first, last, none) for SDP-based warm-starts'], 'output_format': 'Average values and standard deviations of α and P for each problem type and QAOA depth'}
+Outputs are the instance-specific approximation ratio alpha and the optimal sampling probability P, both normalized to [0,1]. Results are reported by problem class and QAOA depth, typically as average values with shaded regions corresponding to ±0.25 standard deviations. Comparisons are made against a no-warmstart baseline, across warm-start families (GW2, GW3, BM2, BM3), across vertex-at-top rotation choices, and against QUBO-relaxed with 10 versus 50 random initializations. The study emphasizes relative performance by problem type and by metric (approximation ratio versus optimal-solution sampling probability).
 
 ### Parameters
-- qubit_count: 17
-- circuit_depth: Varied from 0 to 5
-- shots: None
-- optimizer: COBYLA
-- learning_rate: None
-- hyperparameters: {'ε': 0.1, 'η': 0.05, 'λ (TSP)': '1.1 * max(A_ij)', 'c (MIS)': 1.1, 'q (Portfolio Optimization)': 0.5, 'B (Portfolio Optimization)': 8}
+- qubo_variables: 16
+- maxcut_vertices_after_reduction: 17
+- qaoa_depths: [0, 1, 2, 3, 4, 5]
+- instances_per_problem_for_p0: 1000
+- instances_per_problem_for_p1_to_p5: 10
+- qaoa_optimizer: COBYLA
+- qaoa_optimizer_restarts_per_circuit: 10
+- warmstart_methods: ['GW2', 'GW3', 'BM2', 'BM3', 'QUBO-relaxed']
+- vertex_at_top_options: ['first', 'last', 'none']
+- qubo_relaxed_epsilon: 0.1
+- qubo_relaxed_optimizer: L-BFGS-B
+- qubo_relaxed_iterations: 100
+- qubo_relaxed_random_initializations_compared: [10, 50]
+- bm_step_size_eta: 0.05
+- gw_random_bases_sampled: 50
+- portfolio_time_steps: 250
+- portfolio_assets: 16
+- portfolio_budget_B: 8
+- portfolio_risk_aversion_q: 0.5
+- tsp_cities: 5
+- mis_gnp_n: 16
+- mis_gnp_p: 0.25
+- mis_nws_n: 16
+- mis_nws_k: 3
+- mis_nws_p: 0.5
 
 ### Hardware
-Simulations were performed using a custom QAOA simulator without noise modeling.
+No real quantum hardware was used. All simulations were performed with a custom QAOA simulator based on prior fast simulation work cited as reference [35]. The paper does not report use of a specific commercial SDK, QPU, cloud provider, shots setting, or noise model.
 
 ### Reproducibility
-Code for generating data and running simulations is available at a provided GitHub repository. Problem instances are synthetically generated, allowing for replication. Sufficient methodological detail is provided to replicate the experiments.
+The paper states that all code used to generate the data is available at reference [34], which supports reproducibility. Synthetic data generation procedures and key hyperparameters are described in detail. Replication appears feasible, although some implementation details of the custom simulator and exact instance-selection procedure for the 10 deeper runs may require consulting the linked code.

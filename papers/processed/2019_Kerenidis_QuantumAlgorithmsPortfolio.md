@@ -15,7 +15,8 @@ idea_tags:
 - idea:quantum-advantage
 - idea:near-term-feasibility
 - idea:hybrid-approach
-journal_or_venue: 'AFT ''19: 1st ACM Conference on Advances in Financial Technologies'
+journal_or_venue: 'AFT ''19: Proceedings of the 1st ACM Conference on Advances in
+  Financial Technologies'
 methodology_tags:
 - HHL
 - quantum-simulation
@@ -27,14 +28,14 @@ relevance_phase1: high
 relevance_phase3: high
 source_type: conference-paper
 source_type_confidence: high
-step1_date: '2026-03-19T22:49:53.907749'
-step1_model: Mistral-Large-3
-step2_date: '2026-03-19T22:49:58.333423'
-step2_model: Mistral-Large-3
-step3_date: '2026-03-19T22:51:42.874103'
-step3_model: Mistral-Large-3
-step4_date: '2026-03-19T22:51:49.547170'
-step4_model: Mistral-Large-3
+step1_date: '2026-03-25T15:51:47.565699'
+step1_model: gpt-5.1
+step2_date: '2026-03-25T15:51:52.393447'
+step2_model: gpt-5.1
+step3_date: '2026-03-25T15:52:30.380626'
+step3_model: gpt-5.4
+step4_date: '2026-03-25T15:52:58.541551'
+step4_model: gpt-5.4
 step5_date: '2026-03-19T22:52:55.821918'
 step5_model: Mistral-Large-3
 step6_date: '2026-03-19T22:52:59.667052'
@@ -62,15 +63,16 @@ zotero_key: ''
 ---
 
 ## Abstract summary
-This paper presents the first quantum algorithm for constrained portfolio optimization in financial services, addressing limitations of prior quantum approaches that could not handle positivity or budget constraints. The authors reduce the problem to second-order cone programming (SOCP) and apply a quantum interior point method, achieving a polynomial speedup over classical algorithms. The work explores theoretical and experimental performance, suggesting practical advantages for large-scale problems with complex constraints.
+The paper presents a quantum algorithm for the constrained portfolio optimization problem, including positivity and budget constraints, by reducing it to a second-order cone program and applying a quantum interior-point method. The authors analyze the algorithm’s runtime in terms of problem-dependent conditioning parameters and show that, under reasonable assumptions, it offers a polynomial speedup over classical interior-point solvers. They also report numerical experiments on real financial data suggesting that these parameters behave favorably in practice, leading to an approximate O(n) speedup for large portfolios compared to classical methods.
 ## Methodology
-The paper presents a theoretical and algorithmic framework for solving the constrained portfolio optimization problem using quantum computing. The authors reduce the portfolio optimization problem to a Second Order Cone Program (SOCP) and then apply a quantum interior point method (IPM) to solve it. The quantum algorithm leverages quantum linear algebra techniques, specifically quantum linear system solvers, to achieve a polynomial speedup over classical algorithms. The methodology involves formulating the portfolio optimization problem with positivity and budget constraints, transforming it into an SOCP, and solving it using a quantum short-step interior point method. The paper also includes experimental simulations to analyze problem-dependent parameters such as condition number and tomography precision, demonstrating the potential for an O(n) speedup over classical methods for most instances.
+This conference paper is primarily a peer-reviewed theoretical/algorithmic study with supporting numerical experiments. The authors formulate constrained portfolio optimization in the Markowitz setting with positivity and budget constraints, estimate the mean return vector and covariance structure from historical asset returns, and then reformulate the quadratic portfolio problem as a second-order cone program (SOCP). They build their approach on a quantum short-step interior-point method for SOCPs, itself relying on quantum linear system solving, block encodings, QRAM-based data structures, norm estimation, and quantum state tomography to approximately solve the Newton systems arising at each interior-point iteration. The paper provides formal runtime and convergence guarantees, including dependence on the number of assets, number of constraints, condition number, tomography precision, and a block-encoding parameter. In addition to the theoretical analysis, the authors run classical simulations intended to estimate problem-dependent factors in the runtime bound, especially the Newton-system condition number and tomography precision behavior. These experiments use historical S&P 500 stock data, solve simplified constrained portfolio instances, inject Gaussian noise to emulate tomography error in the quantum algorithm, compare simulated classical and quantum interior-point trajectories, and fit empirical scaling laws for the observed complexity.
 
-**Algorithms used:** Quantum Interior Point Method, Quantum Linear System Solver
+**Algorithms used:** HHL, quantum linear system solver, quantum short-step interior-point method, SOCP interior-point method, quantum state tomography, block encoding
+**Frameworks:** QRAM
 
-**Experimental setup:** The experimental simulations were conducted using a dataset of historical stock prices from the S&P 500 companies over a 9-year period (2007-2016), subsampled to 50 companies and 100 days. The quantum algorithm's performance was simulated by introducing Gaussian noise corresponding to tomography precision. The experiments aimed to bound problem-dependent factors like condition number and tomography precision, assessing their impact on the algorithm's running time.
+**Experimental setup:** The empirical component consists of numerical simulations rather than execution on real quantum hardware. The authors simulate the quantum algorithm by solving the portfolio optimization problem classically while adding Gaussian noise calibrated to the tomography precision required by their convergence theorem. They compare this noisy 'quantum' simulation against the corresponding classical short-step interior-point method, track duality gap, tomography precision, and Newton-matrix condition number across iterations, and estimate average-case complexity from observed parameter values.
 
-**Dataset:** Historical stock prices from S&P 500 companies (2007-2016), subsampled to 50 companies and 100 days of data.
+**Dataset:** Historical stock data from the cvxportfolio repository, containing daily data for S&P 500 companies over 2007-2016. For one main experiment, the dataset was subsampled to 50 companies and the first 100 trading days were used. For scaling experiments, random subsets of 100 companies and random time windows of 10 to 500 days were sampled.
 ## Findings
 - [supported] The paper presents the first quantum algorithm for constrained portfolio optimization, with a running time of e^O(n√r ζ κ / δ² log(1/ϵ)), where n is the number of assets, r is the number of constraints, and ζ, κ, δ are problem-dependent parameters.
 - [supported] The quantum algorithm achieves a polynomial speedup over classical algorithms, which have a complexity of e^O(n^ω √r log(1/ϵ)) (ω ≈ 2.373 theoretically, closer to 3 in practice).
@@ -145,24 +147,26 @@ The quantum advantage is claimed based on theoretical complexity analysis and ex
 
 ## Experiment details
 ### Input
-Subsampled dataset of 50 companies from the S&P 500, with historical stock prices for the first 100 days. The expected reward and risk were estimated from the data, and the covariance matrix was derived. The dataset was used to construct the constraint matrices for the SOCP formulation of the portfolio optimization problem.
+Financial input consists of historical daily returns for S&P 500 stocks from the cvxportfolio dataset (2007-2016). In the first simulation, 50 companies were selected and only the first 100 days were used to compute the mean return vector mu and covariance matrix Sigma for the simplified portfolio problem min x^T Sigma x subject to mu^T x = R and x >= 0. In later scaling experiments, instances were generated by choosing 100 random companies and a random subinterval length t uniformly from 10 to 500 days; the target optimization precision was fixed at epsilon = 0.1. The paper states that mu and Sigma (or equivalently M such that Sigma = M M^T) are computed from the historical returns.
 
 ### Process
-1. Compute vector µ and matrix M from the dataset as per the portfolio optimization formulation. 2. Store the constraint matrix for the SOCP in Quantum Random Access Memory (QRAM). 3. For each iteration of the quantum interior point method: (a) Construct the block encoding for the Newton linear system matrix. (b) Estimate the norm of the Newton system solution. (c) Solve the Newton linear system using quantum linear algebra techniques and perform tomography to obtain classical estimates. (d) Update the solution and store it in QRAM. 4. After T iterations, output the solution to the portfolio optimization problem.
+1. Compute the mean return vector and covariance information from historical asset returns. 2. Formulate the simplified constrained portfolio optimization problem without additional linear budget constraints for the experiments. 3. Solve the problem using the classical short-step interior-point method and, separately, simulate the quantum version by injecting Gaussian noise whose magnitude matches the tomography precision required by the convergence theorem. 4. Across iterations, record the duality gap nu, the tomography precision parameter delta, and the condition number kappa of the Newton matrix. 5. Plot duality gap and tomography precision versus iteration count for classical and simulated quantum runs, and plot condition number versus iteration count. 6. For scaling analysis, repeatedly sample random portfolio instances from the dataset, solve each instance to fixed precision epsilon = 0.1 using the simulated Algorithm 2, and record worst/final values of kappa, delta, and zeta. 7. Fit power-law relationships to empirical observations, including growth of 1/delta^2 with problem size and overall runtime scaling implied by the theoretical complexity expression. No shot counts, variational optimization loops, or QPU execution details are reported because the study is based on theory plus classical simulation.
 
 ### Output
-The solution to the constrained portfolio optimization problem, including the portfolio weights (x). The results were analyzed in terms of duality gap, condition number of the Newton matrix, and tomography precision. The output also included comparisons of the quantum algorithm's performance against classical methods, demonstrating potential speedups.
+Outputs are reported as convergence and complexity diagnostics rather than portfolio performance metrics. The paper reports plots of duality gap and tomography precision versus iteration count for classical and simulated quantum algorithms, plots of Newton-matrix condition number versus iteration count, distributions of condition numbers across sampled instances, empirical growth of 1/delta^2 with problem size, and an estimated average-case runtime scaling of approximately O(n^2.387) with a 95% confidence interval. The main comparison baseline is the classical short-step interior-point method with practical complexity O(n^3.5), against which the authors argue the quantum method could achieve nearly O(n) speedup for most instances.
 
 ### Parameters
-- iterations: O(√r log(n/ϵ))
-- precision: ϵ (desired precision)
-- tomography_precision: δ
-- condition_number: κ (maximum condition number of the Newton matrix over iterations)
-- parameter_zeta: ζ ≤ √n (parameter in quantum linear system solver)
-- duality_gap_reduction_factor: σ = 1 - α/√r (α < 0.1)
+- assets_main_experiment: 50
+- time_horizon_main_experiment_days: 100
+- scaling_experiment_companies: 100
+- scaling_experiment_time_window_days: {'distribution': 'uniform', 'min': 10, 'max': 500}
+- epsilon_scaling_experiments: 0.1
+- noise_model: Gaussian noise added to simulate tomography error
+- iterations: T iterations of short-step IPM; theoretically O(sqrt(r) log(n/epsilon))
+- sigma_classical_ipm: 1 - 0.1/sqrt(r)
 
 ### Hardware
-N/A
+{'hardware_type': 'classical simulation only', 'qpu_used': None, 'simulator': 'custom numerical simulation of the quantum algorithm via noisy classical IPM trajectories', 'cloud_provider': None, 'transpilation_settings': None}
 
 ### Reproducibility
-N/A
+The paper gives substantial theoretical detail and identifies the data source (cvxportfolio), dataset period, subsampling choices, and key experimental procedure, so the simulations are partially reproducible. However, no code repository, exact random seeds, implementation details, or full parameter settings for all experiments are provided, which limits exact replication.

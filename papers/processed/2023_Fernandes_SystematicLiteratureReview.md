@@ -24,29 +24,29 @@ methodology_tags:
 - VQE
 - quantum-annealing
 - HHL
-- quantum-ML
 - QUBO
+- variational
+- grover
 - quantum-walk
-- classical-simulation
 paper_type: ''
 quantum_advantage_claim: speculative
 related_papers: []
 relevance_phase1: high
-relevance_phase3: high
+relevance_phase3: medium
 source_type: review-article
 source_type_confidence: high
-step1_date: '2026-03-19T23:29:13.895048'
-step1_model: Mistral-Large-3
-step2_date: '2026-03-19T23:29:16.607923'
-step2_model: Mistral-Large-3
-step3_date: '2026-03-19T23:29:21.179877'
-step3_model: Mistral-Large-3
-step4_date: '2026-03-19T23:30:26.561058'
-step4_model: Mistral-Large-3
-step5_date: '2026-03-19T23:30:38.125418'
-step5_model: Mistral-Large-3
-step6_date: '2026-03-19T23:30:43.385116'
-step6_model: Mistral-Large-3
+step1_date: '2026-03-25T16:00:06.721410'
+step1_model: gpt-5.1
+step2_date: '2026-03-25T16:00:10.780817'
+step2_model: gpt-5.1
+step3_date: '2026-03-25T16:00:20.732717'
+step3_model: gpt-5.4
+step4_date: '2026-03-25T16:00:46.864935'
+step4_model: gpt-5.4
+step5_date: '2026-03-25T16:01:19.760889'
+step5_model: gpt-5.4
+step6_date: '2026-03-25T16:01:42.386156'
+step6_model: gpt-5.4
 steps_completed:
 - 1
 - 2
@@ -56,14 +56,15 @@ steps_completed:
 - 6
 tags:
 - topic/portfolio-optimisation
+- topic/risk-modelling
 - method/QAOA
 - method/VQE
 - method/quantum-annealing
 - method/HHL
-- method/quantum-ML
 - method/QUBO
+- method/variational
+- method/grover
 - method/quantum-walk
-- method/classical-simulation
 - idea/quantum-advantage
 - idea/near-term-feasibility
 - idea/hybrid-approach
@@ -73,89 +74,106 @@ title: A Systematic Literature Review of Classical and Quantum Machine Learning 
   for Mutual Fund Portfolio Optimization
 topic_tags:
 - portfolio-optimisation
+- risk-modelling
 year: 2023
 zotero_key: ''
 ---
 
 ## Abstract summary
-This review paper systematically examines classical and quantum machine learning approaches for mutual fund portfolio optimization, analyzing 44 papers published between 2003 and 2023. The authors focus on mutual funds within equity markets, comparing traditional and quantum techniques, identifying research gaps, and assessing the potential of quantum computing to address computationally complex optimization problems in financial services.
+The paper presents a systematic literature review of classical and quantum machine learning methods applied to mutual fund portfolio optimization, with a focus on equity-based mutual funds. It surveys 44 papers from 2003 to 2023, characterizing problem types, algorithmic approaches (including quantum annealing and QUBO formulations), benchmarks, and identified research gaps. The authors highlight the limitations of classical ML for NP-hard portfolio problems and discuss how emerging quantum machine learning techniques, particularly on NISQ devices, may address these challenges and open directions for future work.
 ## Methodology
-The paper presents a systematic literature review (SLR) following the PRISMA methodology to examine classical and quantum machine learning approaches for mutual fund portfolio optimization. The review analyzes 44 papers published between 2003 and 2023, sourced from databases such as Scopus, arXiv.org, and academic search engines, including journals like Nature, Quantum Journal, and Physical Review Research. The search strategy focused on papers addressing mutual funds or equities, particularly those leveraging quantum machine learning (QML) and classical machine learning (ML). The review includes a classification of portfolio optimization problems, an analysis of prominent research works, and a synthesis of findings to identify research gaps and trends in the field. The methodology involved defining specific research questions, screening papers based on relevance, and categorizing them by approach, problem type, and geographic distribution of authors.
+This paper is a systematic literature review that explicitly states it follows the PRISMA methodology to survey classical and quantum machine learning approaches for mutual fund portfolio optimization. The authors searched literature from approximately the past 20 years using Scopus as a major source, along with arXiv.org, SSRN, and other academic search engines, and drew from journals such as Nature, Quantum Journal, Physical Review Research, and Quantum Information Processing. The review scope was intentionally narrowed to mutual funds and their equity-market drivers because portfolio optimization is a broad topic; however, the authors note that the search often returned stock-based studies rather than mutual-fund-specific studies, which they identify as a literature gap. The paper reports analyzing 44 papers from 2003 to 2023 in the abstract, while the body also mentions a broader survey corpus of 87 papers, suggesting a two-level screening or descriptive inconsistency. Inclusion emphasized works focused on mutual funds or equities, particularly studies involving machine learning or quantum machine learning, and the paper notes that exceptions were made for two milestone papers with more than 400 citations. The synthesis is narrative and classificatory rather than meta-analytic: the authors organize the literature by classical versus quantum machine learning approaches, summarize problem types in mutual fund portfolio optimization, identify commonly used benchmarks and evaluation criteria, chart publication trends, and extract research gaps. They also provide a taxonomy of portfolio optimization problem types and a critical analysis table of selected milestone papers.
 
-**Algorithms used:** QAOA, VQE, HHL, Quantum Annealing, QUBO, Quantum Walk Optimization Algorithm, Genetic Algorithm, Simulated Annealing
+**Algorithms used:** QAOA, VQE, Grover's algorithm, HHL, NISQ-HHL, Reverse Quantum Annealing, Quantum Annealing, QUBO, Quantum Walk Optimization Algorithm, Quantum Circuit Born Machine, Restricted Boltzmann Machine, Simulated Annealing, Genetic Algorithm, Multilayer Perceptron, Random Forest, Decision Tree, LSTM, SVM, Gaussian Process Regression, Deep Reinforcement Learning, Fuzzy Goal Programming, Neural Network Predictive Modeling
+**Frameworks:** PRISMA, Scopus, arXiv, SSRN, IBM-Q, D-Wave
+
+**Dataset:** No primary dataset was used because this is a review article. The review covers prior studies on mutual funds, equities, stocks, ETFs, fund-of-funds, and related portfolio optimization applications published between 2003 and 2023.
 ## Findings
-- [supported] The review analyzes 44 papers from 2003 to 2023 on classical and quantum machine learning (QML) approaches for mutual fund portfolio optimization (PO), identifying a significant gap in literature focusing on mutual funds rather than stocks
-- [supported] Approximately 67.81% of the reviewed papers were published between 2019 and 2023, indicating QML as a rapidly developing field in financial services
-- [supported] Quantum algorithms like QAOA and VQE are highlighted as promising tools for solving NP-hard PO problems, though current implementations are limited to NISQ (Noisy Intermediate-Scale Quantum) devices
-- [speculative] Quantum computing could provide faster solutions for PO by leveraging superposition and entanglement to process large datasets concurrently, potentially outperforming classical supercomputers
-- [speculative] Quantum-assisted ML algorithms may enable real-time dynamic investment decisions for complex market scenarios, particularly in mutual fund PO
-- [supported] Hybrid quantum-classical approaches (e.g., QUBO with simulated annealing, reverse quantum annealing on D-Wave) are the most common implementations due to limited qubit counts and noise in NISQ devices
-- [supported] Quantum annealers and QUBO models are emerging as de facto standards for solving NP-complete/hard problems in finance, with demonstrated success in small-scale portfolio optimization
-- [disputed] The review claims QML overcomes classical ML challenges (e.g., curse of dimensionality, discrete constraints), but notes that no dynamic QML framework has yet outperformed classical covariance models in real-world datasets
-- [speculative] Quantum advantage in PO may emerge in specific use cases, offering improvements in solution quality, speed, or both, but this remains unproven at scale
-- [supported] Key research gaps include limited qubit stability, coherence time, error correction, and the need for more effective quantum gate accuracy in NISQ devices
-- [supported] Most QML implementations for PO rely on hybrid techniques, with classical benchmarks like genetic algorithms, simulated annealing, and Gekko solvers used for evaluation
-- [speculative] The HHL algorithm and its NISQ-enhanced versions form the basis for several QML models, but prerequisites and constraints may limit their applicability in finance
+- [supported] The review identifies portfolio optimization for mutual funds as a central NP-hard/combinatorial finance problem and synthesizes classical and quantum machine learning approaches applied to it.
+- [supported] The authors state that the literature search examined 44 papers from 2003 to 2023 for the review scope, while also reporting a broader survey corpus of 87 papers, indicating some inconsistency in corpus reporting.
+- [supported] The review finds that most relevant papers use stocks or equities rather than actual mutual fund datasets, and identifies this as a major gap in the literature on mutual fund portfolio optimization.
+- [supported] The review reports that quantum machine learning is a developing field, with approximately 67.81% of the collected papers published between 2019 and 2023.
+- [supported] Among machine-learning applications in quantitative finance, the review highlights return forecasting, portfolio design, and risk modeling as the most common use cases in the surveyed literature.
+- [supported] For portfolio construction, multilayer perceptrons are identified as the most commonly used classical ML technique in the reviewed papers, followed by random forests/decision trees, LSTM, SVM, and Gaussian process regression.
+- [supported] The review concludes that classical ML approaches for portfolio optimization face limitations including long training/simulation times, high computational cost, curse of dimensionality, and difficulty handling discrete constraints.
+- [supported] The review identifies hybrid quantum-classical methods as the dominant near-term approach for portfolio optimization because current quantum hardware lacks enough high-quality qubits for fully quantum large-scale optimization.
+- [supported] Quantum annealing and QUBO formulations are presented in the reviewed literature as the main practical quantum approaches for NP-hard portfolio optimization problems.
+- [supported] The review notes that benchmark classical comparators used in prominent quantum portfolio optimization papers include genetic algorithms, simulated annealing, Gekko, and exhaustive solvers.
+- [supported] The review highlights research gaps including limited NISQ performance, difficulty validating noisy quantum outputs, constraints on applying quantum linear algebra methods, and unresolved issues in error correction, coherence time, and qubit stability.
+- [supported] The review finds that the specific application of quantum machine learning to mutual fund portfolio optimization remains underexplored despite perceived potential.
+- [speculative] The paper argues that quantum computing could enable faster and potentially better portfolio optimization than existing supercomputers for high-return, low-risk investment allocation.
+- [speculative] The paper claims that NISQ devices can perform some calculations better than classical supercomputers, though results may be noisy or inexact.
+- [speculative] The review suggests that quantum-assisted ML could provide real-time solutions for dynamic investment decisions and complex market scenarios in mutual fund portfolio optimization.
+- [speculative] The paper suggests that quantum machine learning will become crucial for optimization problems as quantum technology advances.
+- [speculative] The review suggests that real advantages in solution quality, computing speed, or both may emerge for specific financial use cases.
+- [disputed] The paper states that no dynamic portfolio optimization framework can outperform the covariance model, but this is presented as a cited literature position rather than a settled consensus across all reviewed work.
 
-**Results summary:** This systematic literature review synthesizes findings from 44 papers on classical and quantum machine learning (QML) approaches for mutual fund portfolio optimization (PO). The review highlights the rapid growth of QML research in finance, with nearly 68% of papers published post-2019. While quantum algorithms (e.g., QAOA, VQE) show promise for solving NP-hard PO problems, current implementations are constrained by NISQ device limitations, necessitating hybrid quantum-classical approaches. Quantum annealers and QUBO models are identified as leading methods for tackling combinatorial optimization, with small-scale successes reported. However, the review notes persistent challenges, including qubit instability, decoherence, and the lack of demonstrated quantum advantage over classical methods in real-world datasets. Key gaps include the scarcity of research on mutual funds (vs. stocks) and the need for improved error correction. The consensus is that QML holds theoretical potential for PO, but practical advantages remain speculative until fault-tolerant quantum hardware is available.
+**Results summary:** This review surveys classical and quantum machine learning literature relevant to mutual fund portfolio optimization and finds that the area is still emerging, especially on the quantum side. The authors emphasize that portfolio optimization is widely treated as an NP-hard or combinatorial problem, with classical ML methods commonly used for forecasting, portfolio construction, and risk modeling but limited by dimensionality, computational cost, and discrete constraints. Across the reviewed quantum literature, hybrid quantum-classical approaches, especially quantum annealing and QUBO-based formulations, are the most prominent practical methods, typically benchmarked against genetic algorithms, simulated annealing, and other classical optimizers. A major conclusion is that actual mutual fund-focused quantum studies are scarce, with most work relying on stock or equity datasets instead. The review identifies broad optimism about quantum computing's future role in finance, but also notes substantial barriers including NISQ noise, validation difficulty, limited qubit quality, and unresolved hardware constraints, so any strong advantage for mutual fund portfolio optimization remains prospective rather than demonstrated by this review itself.
 
 **Performance claims:**
-- 67.81% of reviewed papers published between 2019 and 2023
-- Hybrid quantum-classical approaches (e.g., QUBO with simulated annealing) demonstrated on D-Wave quantum annealers
-- Quantum walk optimization algorithm proposed for NISQ devices to find high-quality PO solutions
-- QML models (e.g., QCBMs) tested on near-term quantum computers for generative modeling in finance
+- Approximately 67.81% of the collected papers were published between 2019 and 2023
+- The review states it examined 44 papers from 2003 to 2023
+- The paper also reports a broader survey corpus of 87 papers
+- NISQ devices are described as being in the 50-1000 qubit range
 ## Quantum advantage claim
 **Classification:** speculative
 
-The review suggests theoretical potential for quantum advantage in portfolio optimization, particularly for solving NP-hard problems faster than classical methods. However, all claims are based on simulations or small-scale NISQ device implementations, with no empirical evidence of advantage on real hardware. Key limitations (e.g., noise, qubit count, error correction) remain unresolved, and hybrid approaches dominate current research.
+As a review article, the paper expresses optimism that quantum computing may deliver faster or higher-quality portfolio optimization and real-time financial decision support, but it does not itself demonstrate quantum advantage. The discussion emphasizes early experiments, hybrid methods, and hardware limitations, so advantage claims remain prospective rather than empirically established in this paper.
 ## Limitations
-- Search coverage limited to 44 papers from 2003 to 2023, potentially missing relevant studies outside this range or in non-indexed sources [inferred]
-- Scope restricted to mutual funds and equity markets, excluding other financial instruments like bonds, derivatives, or cryptocurrencies [inferred]
-- Language bias: Papers primarily sourced from English-language journals and databases (Scopus, arXiv), excluding non-English literature [inferred]
-- Grey literature (e.g., industry reports, preprints not on arXiv) excluded from the review [inferred]
-- Recency bias: 67.81% of papers published between 2019–2023, potentially underrepresenting earlier foundational work [inferred]
-- Focus on quantum machine learning (QML) for mutual fund portfolio optimization (PO) may overlook broader applications of quantum computing in finance
-- Limited empirical validation of quantum approaches, as most studies rely on simulations or small-scale quantum hardware (NISQ devices)
-- NISQ-era limitations: Current quantum computers are noisy, lack error correction, and have limited qubit counts, restricting practical applicability
-- Most reviewed papers use hybrid quantum-classical approaches, which may not fully leverage quantum advantages [inferred]
-- Lack of real-world mutual fund datasets in reviewed studies; most use synthetic or equity market data instead
-- Benchmarking gaps: Classical benchmarks (e.g., genetic algorithms, simulated annealing) may not be state-of-the-art for all PO problems [inferred]
-- Geographical bias: Majority of reviewed papers from the USA, with limited representation from emerging economies
-- No discussion of regulatory or ethical constraints in applying quantum computing to financial services [inferred]
+- The review explicitly limits its scope to mutual funds and their driver, the equity markets, excluding broader portfolio optimization settings and other financial instruments.
+- The search yielded mostly papers using stocks/equities rather than mutual fund data, indicating a sparse evidence base specifically for mutual fund portfolio optimization.
+- The surveyed quantum literature is concentrated in a recent period (approximately 67.81% from 2019 to 2023), so the field is still immature and conclusions may be preliminary.
+- Current NISQ technology has limited performance, making it difficult to validate quantum computer outputs and reducing confidence in near-term practical results.
+- Quantum linear-algebra techniques may not be applicable to all financial use cases because of prerequisites and constraint-accommodation issues, which can bottleneck quantum speedups.
+- Machine learning and deep learning approaches for dynamic portfolio optimization still suffer from the curse of dimensionality and have not clearly improved sample-based portfolio performance.
+- No dynamic portfolio optimization framework was found to outperform the covariance model, limiting claims of superiority for newer ML/DL methods.
+- Portfolio optimization remains computationally complex due to frequent rebalancing under market fluctuations.
+- Key quantum hardware challenges remain unresolved, including error correction, coherence time, and qubit stability.
+- Most current quantum portfolio optimization implementations are hybrid classical-quantum methods because quantum computers do not yet have enough functional qubits for standalone effective portfolio optimization.
+- The paper notes that specific applications of QML to mutual fund portfolio optimization have not received enough attention so far, limiting domain-specific evidence.
+- [inferred] The review does not clearly report full systematic-review details such as explicit inclusion/exclusion criteria, screening counts consistency, or quality assessment of included studies, which may affect reproducibility.
+- [inferred] Search coverage may be incomplete because the databases and search engines are described broadly ('Scopus, arXiv.org, and other academic search engines') without a fully specified search string or protocol.
+- [inferred] The inclusion of arXiv and SSRN sources means part of the evidence base may be non-peer-reviewed, which can weaken the reliability of synthesized conclusions.
+- [inferred] There may be language and publication bias, as no multilingual search strategy or grey-literature protocol is described.
+- [inferred] The review appears to emphasize highly cited and milestone papers in parts of the discussion, which may bias interpretation toward influential rather than methodologically strongest studies.
+- [inferred] Because many cited studies use stocks, ETFs, or fund-of-funds rather than actual mutual fund datasets, the transferability of conclusions to mutual fund portfolio optimization is uncertain.
 ## Open questions
-- How do quantum algorithms perform for mutual fund PO with more than 50 assets, given current qubit limitations?
-- What is the impact of quantum decoherence and noise on the accuracy of QML-based PO solutions?
-- Can quantum approaches outperform classical methods for dynamic portfolio rebalancing in real-time market conditions?
-- How do hybrid quantum-classical models compare to pure quantum or classical approaches in terms of solution quality and speed?
-- What are the computational trade-offs between quantum annealing (e.g., D-Wave) and gate-based quantum computing (e.g., IBM-Q) for PO?
-- How can quantum error correction be integrated into QML algorithms to improve reliability for financial applications?
-- What are the implications of quantum computing for risk management models (e.g., Value at Risk, stress testing) in mutual funds?
-- How do quantum algorithms handle non-convex constraints (e.g., transaction costs, tax efficiency) in PO?
-- What are the barriers to adopting quantum computing in financial institutions, beyond hardware limitations (e.g., cost, expertise, regulatory hurdles)?
-- Can quantum machine learning identify hidden patterns in mutual fund data that classical ML cannot?
+- Can quantum machine learning deliver real advantages in solution quality, computing speed, or both for specific mutual fund portfolio optimization use cases?
+- How can quantum computer outputs be reliably validated given the limited performance of NISQ devices?
+- Which financial portfolio optimization problems can genuinely benefit from quantum linear-algebra methods, and where do their prerequisites make them unsuitable?
+- Will QML methods outperform strong classical baselines such as covariance-based models in dynamic portfolio management?
+- How can discrete constraints in mutual fund portfolio optimization be incorporated effectively at scale on quantum hardware?
+- What level of gate accuracy, coherence, and qubit stability is required before quantum methods become practically useful in finance?
+- To what extent can hybrid classical-quantum methods scale as portfolio size, constraints, and market dynamics increase?
+- How well do promising early quantum portfolio optimization results generalize from stocks and ETFs to real mutual fund datasets?
+- Which quantum approaches among annealing, QAOA, quantum walks, and other methods are best suited for different portfolio optimization formulations?
+- Can quantum methods avoid local optima more effectively than classical algorithms in realistic mutual fund optimization settings?
 
 **Future work:**
-- Expand the scope of literature reviews to include non-English sources and grey literature for broader coverage
-- Develop and test QML algorithms on real-world mutual fund datasets, not just synthetic or equity data
-- Compare quantum approaches with state-of-the-art classical methods (e.g., deep reinforcement learning) for PO
-- Explore the use of quantum computing for dynamic portfolio optimization and real-time rebalancing
-- Investigate the scalability of quantum algorithms for large-scale PO problems (e.g., 100+ assets)
-- Develop noise mitigation techniques tailored for QML in financial applications
-- Assess the feasibility of quantum error correction for fault-tolerant quantum computing in finance
-- Study the integration of quantum computing with other emerging technologies (e.g., blockchain, AI) for financial services
-- Conduct empirical studies on the cost-benefit analysis of quantum computing adoption in financial institutions
-- Address regulatory and ethical challenges in deploying quantum computing for mutual fund PO
-- Explore quantum algorithms for other financial problems (e.g., liquidity management, benchmark tracking) in mutual funds
+- Conduct more research specifically on QML applications for mutual fund portfolio optimization, as this area remains underexplored.
+- Develop more effective methods to improve quantum gate accuracy for future implementations.
+- Address core hardware barriers such as error correction, coherence time, and qubit stability to maximize quantum computing utility in finance.
+- Further investigate hybrid classical-quantum approaches, which appear to be the most fruitful near-term path.
+- Explore QAOA and related quantum optimization techniques for portfolio optimization problems with large parameter spaces.
+- Perform more real-world comparisons of classical and quantum models on practical financial datasets.
+- Study the expressive power and efficacy of classical versus quantum models on real-world data as part of the transition to a quantum-ready future.
+- Strengthen collaboration between quantum researchers and financial experts to develop finance-relevant quantum solutions.
+- Investigate quantum approaches for dynamic investment decision-making and real-time portfolio optimization under changing market conditions.
+- [inferred] Expand future reviews to include clearer systematic-review protocols, broader database coverage, and explicit quality appraisal of included studies.
+- [inferred] Build benchmark datasets and evaluation standards using actual mutual fund data rather than relying primarily on stock-based proxies.
+- [inferred] Compare quantum methods against state-of-the-art classical optimization and machine learning baselines under consistent experimental settings.
 ## Key ideas
-- #idea:quantum-advantage — Quantum algorithms (QAOA, VQE) are highlighted as promising for solving NP-hard portfolio optimization problems, though empirical validation on real-world datasets is lacking
-- #idea:near-term-feasibility — Hybrid quantum-classical approaches dominate due to NISQ limitations, with experimental success reported on small-scale problems using quantum annealers and QUBO models
-- #idea:hybrid-approach — Classical preprocessing and optimization are essential for tuning quantum circuits and reducing qubit requirements in portfolio optimization tasks
-- #limitation:noise — NISQ-era hardware limitations (e.g., decoherence, lack of error correction) degrade solution quality, preventing demonstrated quantum advantage
-- #limitation:qubit-count — Current qubit counts restrict the scale of portfolio optimization problems, limiting practical applicability to mutual funds
-- #limitation:no-empirical-validation — Most quantum claims lack empirical validation on real-world mutual fund datasets, relying instead on simulations or stock-based data
+- #idea:near-term-feasibility — The review identifies hybrid quantum-classical methods as the dominant practical path for portfolio optimization under NISQ constraints.
+- #idea:hybrid-approach — Quantum annealing and QUBO formulations are presented as the main near-term quantum approaches for NP-hard portfolio optimization problems.
+- #idea:quantum-advantage — The paper argues that quantum methods may eventually provide faster or better portfolio optimization, but treats this as prospective rather than demonstrated.
+- #idea:near-term-feasibility — Most surveyed quantum finance work is recent and immature, with practical studies concentrated on small-scale or early-stage implementations.
+- #idea:hybrid-approach — Classical optimization and preprocessing remain necessary for tuning quantum methods and handling current hardware limitations.
+- #idea:quantum-advantage — The review frames portfolio optimization as a combinatorial problem where quantum approaches are especially promising relative to classical ML limitations.
 ## Contradictions
-- #contradiction:classical-vs-quantum — The paper claims quantum algorithms *may* outperform classical methods for portfolio optimization, but this is contradicted by NISQ-era limitations (e.g., noise, decoherence) that prevent such advantages from being realized in practice
-- #contradiction:scalability — The paper suggests quantum computing could enable dynamic portfolio optimization, but scalability to real-world problems is unproven due to qubit constraints and computational complexity
+- The paper expresses optimism that quantum algorithms may outperform classical methods in portfolio optimization, but simultaneously concludes that current NISQ noise, validation difficulty, and hardware immaturity prevent any demonstrated superiority in practice.
+- The paper suggests quantum methods could support dynamic or real-time portfolio optimization, yet also states that current qubit limitations, unresolved error correction, coherence constraints, and scaling issues make real-world deployment unproven.
+- The review highlights quantum promise for mutual fund portfolio optimization, but also notes that most evidence comes from stock or equity proxy datasets rather than actual mutual fund data, weakening the basis for domain-specific advantage claims.
+- The paper discusses newer ML and quantum approaches as promising, while also citing literature that no dynamic portfolio optimization framework outperforms the covariance model, creating tension with stronger innovation-driven performance narratives.
 ## Notable quotes
 <!-- Researcher-added — verbatim quotes with page references -->
 

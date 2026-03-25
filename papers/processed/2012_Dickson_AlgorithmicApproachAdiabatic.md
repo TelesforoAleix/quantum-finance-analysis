@@ -9,7 +9,8 @@ auto_detected: true
 classification: ''
 contradiction_flags:
 - contradiction:classical-vs-quantum
-doi: 10.48550/arXiv.1108.3303
+- contradiction:scalability
+doi: ''
 evidence_type: ''
 idea_tags:
 - idea:quantum-advantage
@@ -18,28 +19,27 @@ idea_tags:
 journal_or_venue: arXiv
 methodology_tags:
 - quantum-annealing
-- quantum-simulation
 - classical-simulation
 paper_type: ''
 quantum_advantage_claim: speculative
 related_papers:
-- 2010_Altshuler_AdiabaticQuantumOptimization
+- 2010_Altshuler_AQOFailures
 relevance_phase1: medium
-relevance_phase3: not-yet-assessed
+relevance_phase3: low
 source_type: preprint
 source_type_confidence: high
-step1_date: '2026-03-19T22:44:04.118558'
-step1_model: Mistral-Large-3
-step2_date: '2026-03-19T22:44:08.132553'
-step2_model: Mistral-Large-3
-step3_date: '2026-03-19T22:44:25.063720'
-step3_model: Mistral-Large-3
-step4_date: '2026-03-19T22:45:17.238477'
-step4_model: Mistral-Large-3
-step5_date: '2026-03-19T22:45:27.833416'
-step5_model: Mistral-Large-3
-step6_date: '2026-03-19T22:45:34.310416'
-step6_model: Mistral-Large-3
+step1_date: '2026-03-25T15:50:02.237054'
+step1_model: gpt-5.1
+step2_date: '2026-03-25T15:50:06.786502'
+step2_model: gpt-5.1
+step3_date: '2026-03-25T15:50:55.062590'
+step3_model: gpt-5.4
+step4_date: '2026-03-25T15:51:24.440556'
+step4_model: gpt-5.4
+step5_date: '2026-03-25T15:51:58.364837'
+step5_model: gpt-5.4
+step6_date: '2026-03-25T15:52:07.100724'
+step6_model: gpt-5.4
 steps_completed:
 - 1
 - 2
@@ -50,91 +50,111 @@ steps_completed:
 tags:
 - topic/portfolio-optimisation
 - method/quantum-annealing
-- method/quantum-simulation
 - method/classical-simulation
 - idea/quantum-advantage
 - idea/near-term-feasibility
 - idea/hybrid-approach
 - contradiction/classical-vs-quantum
+- contradiction/scalability
 title: Algorithmic approach to adiabatic quantum optimization
 topic_tags:
 - portfolio-optimisation
-year: 2011
+year: 2024
 zotero_key: ''
 ---
 
 ## Abstract summary
-This preprint introduces a heuristic adiabatic quantum algorithm designed to mitigate inefficiencies in adiabatic quantum optimization caused by exponentially small energy gaps. The algorithm iteratively adjusts single-qubit tunneling energies to penalize pathways leading to local minima, using information gathered from non-adiabatic evolution. The approach is tested on hard instances of the maximum independent set problem, demonstrating its ability to eliminate perturbative crossings in a small number of iterations.
+The paper proposes a heuristic adiabatic quantum algorithm that adaptively modifies the initial Hamiltonian to remove exponentially small gaps arising from perturbative anticrossings between local and global minima in adiabatic quantum optimization. By repeatedly running short, non-adiabatic evolutions, it samples local minima reached after problematic anticrossings and uses this information to penalize those pathways via qubit-dependent tunnelling amplitudes. Using quantum Monte Carlo simulations on specially constructed 64-qubit maximum independent set instances with large clusters of highly degenerate local minima, the authors show that the method can eliminate severe anticrossings and solve all tested instances in on the order of 10 iterations.
 ## Methodology
-The paper presents a heuristic adiabatic quantum algorithm designed to eliminate exponentially small gaps caused by anticrossings between eigenstates corresponding to local and global minima of the problem Hamiltonian in adiabatic quantum optimization (AQO). The algorithm iteratively gathers information about local minima reached after non-adiabatic evolution and uses this to penalize pathways to these local minima by adjusting the initial Hamiltonian's single-qubit tunneling energies (∆i). The study focuses on the maximum independent set (MIS) problem, generating 64-qubit random instances skewed to be extremely hard, with 10^5 to 10^6 highly-degenerate local minima. Quantum Monte Carlo (QMC) simulations are employed to test the algorithm's efficacy, demonstrating that it can solve all generated instances within approximately 10 iterations.
+This preprint presents an empirical-theoretical study of a heuristic adiabatic quantum optimization (AQO) algorithm designed to remove perturbative anticrossings that create exponentially small spectral gaps. The authors first derive the method analytically using perturbation theory for AQO Hamiltonians of the form H = A(s)HB + B(s)HP, with the problem instantiated as Maximum Independent Set (MIS) on graphs mapped to an Ising Hamiltonian. Their iterative algorithm repeatedly runs a fast, non-adiabatic anneal to sample local minima reached after the anticrossing, estimates per-qubit penalty scores mu_i from those sampled minima, and updates the transverse-field coefficients Delta_i to penalize pathways into clusters of local minima while retaining memory of previous iterations through a weighted geometric update rule. To test the method, they generate specially constructed hard 64-node MIS instances with a unique global optimum and very many highly degenerate local minima clustered by 2-bit-flip connectivity. They then evaluate the iterative procedure using quantum Monte Carlo (QMC) simulations rather than a physical QPU, using annealing schedules A(s) and B(s) taken from superconducting flux qubits similar to D-Wave hardware. Success is defined operationally: an instance is considered solved if the estimated adiabatic time falls below a threshold corresponding to high success probability over repeated runs, or if the probability mass in the basin of the global minimum before the perturbative crossing exceeds a threshold. The study reports that all 50 hard instances were solved within 13 iterations, with an average of 3.0 iterations.
 
-**Algorithms used:** Adiabatic Quantum Optimization (AQO), Quantum Monte Carlo (QMC)
+**Algorithms used:** Adiabatic Quantum Optimization, Quantum Monte Carlo, Depth-first search
 
-**Experimental setup:** The experimental setup involves simulating the adiabatic quantum algorithm using Quantum Monte Carlo (QMC) methods. The simulations are performed on 64-qubit random instances of the maximum independent set problem, designed to be extremely challenging with a high number of degenerate local minima. The energy scales A(s) and B(s) are derived from superconducting flux qubits, and the annealing time per computation is set to 0.08 µs with 500 repetitions per iteration.
+**Experimental setup:** The evaluation uses simulated AQO on 64-qubit MIS instances via Quantum Monte Carlo sampling. The annealing schedule uses A(s) and B(s) energy scales extracted from superconducting flux qubits similar to those in prior D-Wave-related work. For each algorithm iteration, the quantum computation is assumed to be run r = 500 times with annealing time t_f = 0.08 microseconds. QMC is used both to sample states near the anticrossing and to estimate adiabatic time and ground-state observables. The feasible range for tunable transverse-field parameters Delta_i is constrained to [1/4, 8], with rescaling after each update.
 
-**Dataset:** 64-qubit random instances of the maximum independent set problem, specifically generated to have a unique maximum independent set and between 10^5 and 10^6 highly-degenerate local minima.
+**Dataset:** Synthetic random graph instances for the Maximum Independent Set problem. The main test set consists of 50 extremely hard 64-node graphs generated by a targeted construction procedure to ensure a unique MIS of size 20 and very many clustered local minima; an initial set of 51 such graphs was generated, with 1 excluded because it lacked a sufficiently small anticrossing for the test scenario. The paper also mentions exploratory comparison against 80 uniform random 128-node graphs with 1,572 edges, used to motivate the hardness construction.
 ## Findings
-- [supported] The proposed adiabatic quantum algorithm successfully eliminates exponentially small gaps caused by anticrossings in the system Hamiltonian for 64-qubit random instances of the maximum independent set (MIS) problem, solving all instances within ~10 iterations using quantum Monte Carlo simulations.
-- [supported] The algorithm leverages non-adiabatic evolution to sample local minima, then penalizes pathways to these minima by adjusting single-qubit tunneling energies (∆i), demonstrating convergence in an average of 3.0 iterations for the tested instances.
-- [speculative] The authors suggest that perturbative crossings, which render adiabatic quantum optimization inefficient, can be systematically avoided by tuning Hamiltonian parameters, though this claim is validated only via simulation and not real hardware.
-- [speculative] The algorithm's success on 64-qubit problems implies potential scalability to larger problem sizes, but this remains untested empirically.
-- [supported] Quantum Monte Carlo (QMC) simulations show that the algorithm reduces the adiabatic time scale (ta) below 16 µs for all tested instances, enabling high-probability (>92%) success in identifying the global minimum within 500 runs per iteration.
-- [disputed] The paper challenges prior findings (e.g., Altshuler et al. 2010) that NP-complete problems cannot be solved efficiently via adiabatic quantum optimization, by demonstrating that perturbative crossings can be mitigated through heuristic parameter tuning.
+- [supported] The paper proposes an iterative adiabatic quantum optimization heuristic that adjusts single-qubit transverse-field strengths to penalize pathways into clusters of local minima associated with perturbative anticrossings.
+- [speculative] The authors argue that perturbative crossings between the global minimum and clustered local minima can be removed by suitably choosing nonuniform qubit tunneling parameters Δ_i.
+- [supported] On 50 generated 64-qubit maximum independent set instances designed to be extremely hard, quantum Monte Carlo simulations indicate that all instances were solved within 13 iterations of the proposed algorithm.
+- [supported] Among those 50 instances, 30 were solved in 2 iterations, all but 1 were solved within 10 iterations, and the average number of iterations required was 3.0.
+- [supported] The generated test instances contained approximately 10^5 to 10^6 highly degenerate local minima and a unique global minimum, creating severe perturbative crossings by construction.
+- [supported] Visualized ground-state expectation values from simulation show sharp transitions consistent with anticrossings in early iterations and smooth evolution after the crossings are removed.
+- [speculative] The method is presented as a constructive way to find adiabatic paths that avoid perturbative crossings for general problems, but this is not established beyond the tested simulated instances.
+- [speculative] The authors suggest the algorithm is robust because the update rule with β = 1/(κ+1) balances memory of prior penalties with adaptation to newly encountered local-minimum clusters.
+- [speculative] The paper argues that severe small-gap failures in AQO may depend strongly on modeling assumptions such as fixed problem Hamiltonians, uniform transverse fields, nondegenerate minima, and single-run execution.
+- [supported] The study's evidence is based on quantum Monte Carlo simulation and constructed problem instances rather than execution on physical quantum hardware.
 
-**Results summary:** The paper introduces a heuristic adiabatic quantum algorithm designed to eliminate exponentially small energy gaps (anticrossings) in the Hamiltonian of hard optimization problems. Using quantum Monte Carlo simulations, the authors demonstrate that the algorithm can solve 64-qubit random instances of the maximum independent set problem—characterized by 10^5 to 10^6 highly degenerate local minima—within an average of 3 iterations. The approach involves non-adiabatic evolution to sample local minima, followed by penalization of pathways to these minima via adjustments to single-qubit tunneling energies. All 50 tested instances were solved within 13 iterations, with 30 solved in just 2 iterations. The results suggest that perturbative crossings, previously thought to limit adiabatic quantum optimization, can be mitigated through iterative parameter tuning, though the findings are derived from simulations rather than real quantum hardware.
+**Results summary:** This preprint introduces a heuristic iterative adiabatic quantum optimization method intended to eliminate exponentially small gaps caused by perturbative anticrossings between the global minimum and clusters of local minima. The method repeatedly samples local minima reached after nonadiabatic passage, computes penalties for qubits implicated in those pathways, and updates the initial Hamiltonian by changing qubit-specific tunneling amplitudes. The authors test the approach on 50 specially generated 64-qubit maximum independent set instances with a unique optimum and very large numbers of degenerate local minima. Using quantum Monte Carlo simulations rather than real hardware, they report that all instances become solvable under their success criterion within 13 iterations, with an average of 3.0 iterations and 30 instances solved in 2 iterations. The paper therefore provides simulated evidence that tuning nonuniform transverse fields can remove perturbative crossings in these constructed hard instances, but any broader quantum advantage claim remains speculative because the results are heuristic, instance-specific, and simulation-based.
 
 **Performance claims:**
-- All 50 tested 64-qubit MIS instances solved within 13 iterations
-- Average of 3.0 iterations required for convergence
-- 30 out of 50 instances solved in 2 iterations
-- Adiabatic time scale (ta) reduced below 16 µs for all instances, enabling >92% success probability per iteration
-- Algorithm runtime per iteration: O(rn^2) on a single classical processor (r = 500 samples, n = 64 qubits)
+- 64-qubit random MIS instances tested
+- Generated instances had between 10^5 and 10^6 highly degenerate local minima
+- 50 difficult instances evaluated after excluding 1 easier generated instance from 51 total
+- All 50 instances solved within 13 iterations
+- 30 of 50 instances solved in 2 iterations
+- 49 of 50 instances solved within 10 iterations
+- Average iterations required: 3.0
+- Per iteration, r = 500 annealing runs were assumed
+- Annealing time per run set to t_f = 0.08 microseconds
+- Instance considered solved if adiabatic time t_a < 16 microseconds or if probability mass in the global-minimum well exceeded 0.005 before the crossing
+- Under that criterion, probability of obtaining the global minimum at least once in 500 runs exceeds 92%
 ## Quantum advantage claim
 **Classification:** speculative
 
-The paper claims that the proposed algorithm can mitigate inefficiencies in adiabatic quantum optimization caused by perturbative crossings, but this advantage is demonstrated only via quantum Monte Carlo simulations and not on real quantum hardware. The scalability and practical feasibility of the approach remain unvalidated empirically, and the results do not conclusively demonstrate a quantum advantage over classical methods for the tested problem instances.
+The paper suggests that adaptive tuning of qubit tunneling energies can overcome small-gap bottlenecks in adiabatic optimization, but evidence is limited to quantum Monte Carlo simulations on specially constructed 64-qubit instances. No real-hardware demonstration or scaling-based quantum advantage over classical methods is established, so any advantage claim is speculative.
 ## Limitations
-- Lack of peer review as the paper is a preprint [inferred]
-- Algorithm tested only on synthetic 64-qubit instances of the maximum independent set problem, not real-world financial services problems [inferred]
-- Experiments limited to quantum Monte Carlo (QMC) simulations; no validation on actual quantum hardware
-- Assumptions about the Hamiltonian structure (e.g., uniform ∆i, non-degenerate states) may not hold in practical scenarios
-- Algorithm relies on perturbative crossings being eliminable via tuning of ∆i, which may not generalize to all problem types
-- Test instances were artificially skewed to be extremely hard, which may not reflect typical problem distributions in financial services [inferred]
-- No comparison with state-of-the-art classical optimization methods for the maximum independent set problem [inferred]
-- Scalability beyond 64 qubits is untested; performance on larger problem sizes remains unclear
-- Algorithm requires multiple iterations (up to 13 in tests), which may limit practical applicability in time-sensitive financial applications [inferred]
-- Dependence on QMC simulations for sampling may not fully capture noise and decoherence effects present in real quantum hardware [inferred]
-- Feasible range of ∆i values (1/4 to 8) is hardware-specific and may not apply to other quantum computing platforms [inferred]
+- The study is a preprint and has not undergone peer review.
+- Experiments are limited to simulated 64-qubit maximum independent set instances rather than demonstrations on physical quantum hardware.
+- Evaluation is restricted to one problem class (maximum independent set), so generality to other optimization problems is not established.
+- The proposed method is explicitly described as a heuristic rather than a guaranteed or 'flawless' algorithm.
+- The approach relies on perturbation theory and focuses on eliminating perturbative crossings; its effectiveness for other sources of small gaps is not established.
+- The test instances are generated from a deliberately skewed distribution designed to create hard perturbative crossings, so results may not reflect performance on representative real-world instances.
+- The instance-generation procedure becomes exponential for larger graphs if the target MIS size scales linearly with problem size, limiting scalability of benchmark creation.
+- Success is assessed using a specific operational criterion tied to chosen annealing schedules, energy scales, and repeated runs, which may not transfer to other hardware settings.
+- Sampling for the update rule uses Quantum Monte Carlo approximations rather than actual dynamical samples from a quantum device.
+- The method approximates the curvature term by replacing cross-coefficients with sampled probabilities, and the paper notes that precise approximation is not used; this may affect accuracy of the update rule.
+- The algorithm requires multiple iterations and repeated anneals, adding overhead beyond a single adiabatic run.
+- The feasible range for tuning single-qubit tunneling energies is imposed externally (e.g., 1/4 to 8), which may constrain applicability on hardware with different control limits.
+- The paper does not provide asymptotic complexity guarantees or scaling evidence beyond 64-node instances.
+- The analysis and simulations emphasize closed-system adiabatic behavior and do not empirically validate robustness under realistic open-system noise and decoherence.
+- [inferred] No comparison is provided against strong classical optimization baselines or alternative quantum heuristics, so relative advantage is unclear.
+- [inferred] No statistical uncertainty estimates or ablation studies are reported for the 50-instance simulation results.
+- [inferred] The use of company-affiliated authors and D-Wave-inspired hardware schedules may introduce potential institutional bias, though this is not evidence of error.
+- [inferred] The method assumes sufficient ability to tune individual qubit transverse-field parameters; such fine-grained control may be difficult or unavailable on some platforms.
+- [inferred] Results on synthetic hard instances do not establish relevance to financial-services optimization workloads.
 ## Open questions
-- How does the algorithm perform on problem instances with degenerate global minima, which are more common in real-world scenarios?
-- What is the impact of hardware noise and decoherence on the algorithm's performance when run on actual quantum devices?
-- Can the algorithm be extended to other NP-hard problems relevant to financial services, such as portfolio optimization or risk analysis?
-- How does the algorithm scale with problem size beyond 64 qubits?
-- What is the trade-off between the number of iterations required and the quality of the solution?
-- How sensitive is the algorithm to the choice of β and other hyperparameters?
-- Can the algorithm be combined with other quantum optimization techniques (e.g., QAOA) to improve performance?
-- What is the minimum gap size that the algorithm can effectively eliminate in practice?
-- How does the algorithm perform on real-world financial datasets, which may have different structural properties than the synthetic instances tested?
+- How does the algorithm scale with problem size beyond the tested 64-qubit instances?
+- Can the method eliminate small gaps arising from mechanisms other than perturbative crossings between local and global minima?
+- How robust is the iterative tuning procedure in the presence of hardware noise, decoherence, calibration errors, and control constraints?
+- Will the approach remain effective on real quantum annealing hardware rather than in Quantum Monte Carlo simulations?
+- How many iterations and samples are required as instance size and landscape complexity grow?
+- Can the method be generalized from maximum independent set to broader classes of NP-hard optimization problems relevant in practice?
+- What is the trade-off between remembering previous penalties and adapting to newly discovered local-minimum clusters?
+- How sensitive is performance to the choice of annealing schedule, feasible parameter range, and update parameter beta?
+- Do the observed improvements translate into any provable or empirical advantage over state-of-the-art classical solvers?
+- How often do representative, non-engineered problem instances exhibit the kind of clustered local minima structure that this method exploits?
 
 **Future work:**
-- Test the algorithm on real quantum hardware (e.g., D-Wave systems) to validate simulation results
-- Extend the algorithm to handle degenerate global minima and other problem types beyond the maximum independent set problem
-- Investigate the scalability of the algorithm to larger problem sizes (e.g., 100+ qubits)
-- Compare the algorithm's performance with state-of-the-art classical optimization methods for relevant financial problems
-- Explore hybrid quantum-classical approaches to improve the algorithm's efficiency and robustness
-- Develop methods to automatically tune hyperparameters (e.g., β, ∆i range) for optimal performance
-- Apply the algorithm to real-world financial datasets to assess its practical utility
-- Study the impact of noise and error mitigation techniques on the algorithm's performance in real hardware
-- Investigate the algorithm's potential for solving multi-period or dynamic optimization problems in finance
+- Test the iterative penalty-tuning algorithm on larger problem instances and study scaling behavior.
+- Validate the approach on physical quantum annealing hardware using actual non-adiabatic runs to gather local-minimum samples.
+- Extend the constructive path-finding idea from MIS to more general optimization problems.
+- Develop stronger theoretical analysis of convergence and conditions under which the iterative updates remove anticrossings.
+- Investigate robustness under open-system dynamics, including decoherence and thermal effects.
+- Explore improved sampling and estimation methods for the update quantities mu_i.
+- Study alternative update rules, memory mechanisms, and parameter schedules beyond beta = 1/(kappa + 1).
+- Benchmark against classical algorithms and other quantum optimization methods on common test sets.
+- Examine hardware-feasible implementations under realistic bounds on tunable single-qubit parameters.
+- Apply the method to more realistic application instances, including domain-specific optimization problems such as those arising in finance.
 ## Key ideas
-- #idea:quantum-advantage — Proposes a heuristic adiabatic quantum algorithm to mitigate inefficiencies from exponentially small energy gaps in hard optimization problems, demonstrated on 64-qubit MIS instances (relevant to portfolio-optimisation via QUBO formulations)
-- #idea:near-term-feasibility — Algorithm shows potential for near-term applicability in solving NP-hard problems with degenerate local minima, though validated only via simulations
-- #idea:hybrid-approach — Iterative adjustment of initial Hamiltonian parameters (e.g., single-qubit tunneling energies) suggests a hybrid quantum-classical tuning mechanism for optimization
-- #limitation:no-empirical-validation — Claims of mitigating AQO inefficiencies are speculative and lack real hardware validation or comparison with classical solvers
-- #limitation:simulation-only — Results are derived from Quantum Monte Carlo simulations, not actual quantum processing units (QPUs)
-- #contradiction:classical-vs-quantum — Challenges prior theoretical assumptions (e.g., Altshuler et al., 2010) about AQO inefficiency for NP-complete problems, arguing they rely on overly restrictive assumptions
+- #idea:hybrid-approach — Proposes an iterative adiabatic/annealing heuristic that uses sampled local minima to classically update qubit-specific transverse-field strengths and reshape the annealing path.
+- #idea:near-term-feasibility — Frames nonuniform control of tunnelling amplitudes as a potentially practical way to mitigate perturbative anticrossings on annealing-style hardware.
+- #idea:quantum-advantage — Suggests adaptive annealing-path design can overcome severe small-gap bottlenecks that would otherwise make AQO ineffective on hard MIS instances.
+- #idea:quantum-advantage — Reports that all 50 specially constructed 64-qubit MIS instances were solved within 13 iterations in QMC simulation, with average 3.0 iterations.
+- #idea:hybrid-approach — Uses repeated short non-adiabatic runs plus classical estimation of per-qubit penalties mu_i to iteratively suppress pathways into clustered local minima.
 ## Contradictions
-- The paper disputes prior theoretical claims (e.g., Altshuler et al., 2010) that adiabatic quantum optimization is inherently inefficient for NP-complete problems due to perturbative crossings, arguing that such claims assume uniform ∆i or non-degenerate minima. However, this contradiction is not empirically validated beyond simulation results.
+- The paper contradicts prior claims such as 2010_Altshuler_AQOFailures that adiabatic quantum optimization generically fails on NP-complete problems due to perturbative crossings, arguing those conclusions depend on restrictive assumptions like uniform transverse fields and nondegenerate minima.
+- The paper implicitly challenges broad pessimistic views on AQO scalability by showing simulated success on engineered 64-qubit hard MIS instances, but this is contradicted by its own lack of scaling evidence beyond 64 nodes and by the use of specially constructed instances rather than realistic large-scale problems.
 ## Notable quotes
 <!-- Researcher-added — verbatim quotes with page references -->
 
@@ -143,24 +163,34 @@ The paper claims that the proposed algorithm can mitigate inefficiencies in adia
 
 ## Experiment details
 ### Input
-The input consists of 64-node graphs with a unique maximum independent set (MIS) of size 20, generated using a targeted approach to ensure extremely small minimum gaps. The graphs have approximately 220 edges and are constructed to include many clusters of local minima connected by 2-bit-flip paths.
+Primary input data are 64-node synthetic graph instances for MIS. Generation procedure: start with 64 nodes and 220 uniformly randomly selected edges; use depth-first search to find an independent set of size 20 to serve as the intended unique MIS; add edges to force this set to be maximal; continue depth-first search to find other independent sets of size 20, reduce each by one node to create size-19 local minima, and add edges so these become maximal while preserving the MIS; repeat until no more size-20 independent sets remain. This yields graphs with a unique MIS of size 20 and typically 10^5 to 10^6 maximal independent sets overall, including thousands of size-19 and tens of thousands of size-18 local minima, often clustered by 2-bit-flip paths. Of 51 generated graphs, 50 were retained for experiments.
 
 ### Process
-1. Initialize ∆i = 1 for all qubits. 2. Perform quantum annealing r=500 times per iteration, saving each result. 3. If a sufficient result (global minimum) is obtained, terminate the process. 4. Compute µi using QMC sampling to estimate the curvature contributions of local minima. 5. Adjust ∆i values using ∆i,new = ∆1-β_i,old * µ-β_i, where β = 1/(κ + 1) and κ is the iteration number. 6. Rescale ∆i values to remain within a feasible range (1/4 to 8). 7. Repeat the process until the global minimum is found or the maximum iterations are reached.
+1. Initialize all transverse-field coefficients Delta_i = 1. 2. For a given iteration kappa, perform r = 500 fast annealing runs with anneal time t_f = 0.08 microseconds; in simulation, use QMC to sample computational basis states just before the perturbative crossing, approximating the distribution that would be reached by non-adiabatic evolution into local-minimum clusters. 3. Optionally apply gradient descent from sampled non-minimum states to identify the local minimum basin reached. 4. Compute per-qubit penalty statistics mu_i from sampled local minima using the perturbative approximation in Eq. (10), based on bit-flip energy costs B_{k,i} and current Delta_j values. 5. Update the transverse-field parameters using Delta_i,new = Delta_i,old^(1-beta) * mu_i^(-beta), with beta = 1/(kappa + 1), so later iterations retain memory of earlier penalties. 6. Rescale Delta_i values into the feasible range [1/4, 8], typically fixing the minimum to 1/4. 7. Re-estimate the adiabatic time and/or the probability mass in the basin of the global minimum using QMC. 8. Declare the instance solved if the estimated adiabatic time is less than 16 microseconds or if the probability of states descending to the global minimum before the crossing exceeds 0.005, corresponding to >92% chance of obtaining the global optimum at least once in 500 runs. 9. Otherwise repeat the iteration until solved. The authors also visualize the process by plotting ground-state expectation values <sigma_z^(i)> across s for all 64 qubits to observe whether anticrossings persist or disappear.
 
 ### Output
-The output includes the identification of the global minimum (MIS) of the problem Hamiltonian, the number of iterations required to eliminate perturbative crossings, and visualizations of the ground state expectation values ⟨σ(i)_z⟩ for each qubit across the adiabatic evolution. Success is defined as either achieving an adiabatic time ta < 16 µs or a probability > 0.005 of states descending to the global minimum before a perturbative crossing.
+Outputs include the number of iterations required to solve each instance, estimated adiabatic time, probability mass in the well of the global minimum before perturbative crossing, and qualitative visualization of ground-state magnetization trajectories <sigma_z^(i)> over the anneal. The main aggregate result is the count of unsolved instances versus iteration number: all 50 hard instances were solved within 13 iterations, 30 were solved in 2 iterations, all but 1 within 10 iterations, and the average number of iterations was 3.0. There is no formal comparison against a separate classical optimization baseline; the implicit baseline is the unmodified AQO path on the same hard instances, which exhibits severe perturbative crossings and very small gaps.
 
 ### Parameters
 - qubits: 64
-- annealing_time: 0.08
-- repetitions_per_iteration: 500
-- iterations: 13
-- feasible_range_∆i: [0.25, 8]
-- β: 1/(κ + 1) where κ is the iteration number
+- problem: Maximum Independent Set
+- initial_edges: 220
+- target_MIS_size: 20
+- runs_per_iteration: 500
+- anneal_time_microseconds: 0.08
+- success_adiabatic_time_threshold_microseconds: 16
+- success_probability_well_threshold: 0.005
+- delta_initial_value: 1
+- delta_feasible_range: [0.25, 8]
+- delta_update_rule: Delta_i,new = Delta_i,old^(1-beta) * mu_i^(-beta)
+- beta_schedule: beta = 1/(kappa + 1)
+- generated_instances: 51
+- evaluated_instances: 50
+- average_iterations_to_solve: 3.0
+- max_iterations_to_solve: 13
 
 ### Hardware
-Simulations are performed using Quantum Monte Carlo (QMC) methods. The energy scales A(s) and B(s) are modeled after superconducting flux qubits similar to those used in D-Wave systems.
+{'execution_mode': 'Simulation', 'simulator': 'Quantum Monte Carlo', 'physical_hardware_used': 'None for main experiments', 'annealing_schedule_source': 'A(s) and B(s) extracted from superconducting flux qubits similar in design to prior D-Wave hardware', 'compute_resources': 'QMC simulations run using donated distributed computing resources from the AQUA@home project'}
 
 ### Reproducibility
-The paper provides detailed steps for generating the problem instances and the iterative algorithm, including parameter choices and rescaling methods. However, the specific QMC simulation code and generated datasets are not explicitly made available. The methodology is described in sufficient detail to replicate the study, assuming access to QMC simulation tools.
+No code repository is provided in the text. The graph-generation procedure, iterative update rule, and key parameter settings are described in substantial detail, so the study is partially reproducible, but exact replication may be difficult because implementation details of the QMC simulation, stopping/estimation procedures, and schedule extraction are not fully specified. Data are synthetic and could in principle be regenerated from the described procedure.

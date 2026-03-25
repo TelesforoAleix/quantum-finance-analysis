@@ -1,8 +1,8 @@
 ---
 aliases:
-- Enhancing Knapsack-Based Financial Portfolio Optimization Using Quantum Approximate
-  Optimization Algorithm
-- Enhancing Knapsack Based Financial
+- Corrections to ‘‘Enhancing Knapsack-Based Financial Portfolio Optimization Using
+  Quantum Approximate Optimization Algorithm’’
+- Corrections Enhancing Knapsack Based
 authors:
 - Chansreynich Huot
 - Kimleang Kea
@@ -10,8 +10,10 @@ authors:
 - Youngsun Han
 auto_detected: true
 classification: ''
-contradiction_flags: []
-doi: 10.1109/ACCESS.2024.3506981
+contradiction_flags:
+- contradiction:classical-vs-quantum
+- contradiction:scalability
+doi: 10.1109/ACCESS.2025.3611744
 evidence_type: ''
 idea_tags:
 - idea:near-term-feasibility
@@ -21,25 +23,25 @@ methodology_tags:
 - QAOA
 - QUBO
 paper_type: ''
-quantum_advantage_claim: not-applicable
+quantum_advantage_claim: speculative
 related_papers:
-- 2023_Holst_ShortTitle
+- 2023_Holst_QAOAKnapsack
 relevance_phase1: high
 relevance_phase3: medium
-source_type: peer-reviewed-empirical
-source_type_confidence: high
-step1_date: '2026-03-20T00:25:22.007760'
-step1_model: Mistral-Large-3
-step2_date: '2026-03-20T00:26:04.031449'
-step2_model: Mistral-Large-3
-step3_date: '2026-03-20T00:27:09.464543'
-step3_model: Mistral-Large-3
-step4_date: '2026-03-20T00:27:13.457931'
-step4_model: Mistral-Large-3
-step5_date: '2026-03-20T00:27:18.215335'
-step5_model: Mistral-Large-3
-step6_date: '2026-03-20T00:27:20.458305'
-step6_model: Mistral-Large-3
+source_type: peer-reviewed-theoretical
+source_type_confidence: medium
+step1_date: '2026-03-25T16:09:46.090888'
+step1_model: gpt-5.1
+step2_date: '2026-03-25T16:09:49.493442'
+step2_model: gpt-5.1
+step3_date: '2026-03-25T16:09:56.782015'
+step3_model: gpt-5.4
+step4_date: '2026-03-25T16:10:15.505074'
+step4_model: gpt-5.4
+step5_date: '2026-03-25T16:10:32.921827'
+step5_model: gpt-5.4
+step6_date: '2026-03-25T16:10:41.350293'
+step6_model: gpt-5.4
 steps_completed:
 - 1
 - 2
@@ -53,66 +55,68 @@ tags:
 - method/QUBO
 - idea/near-term-feasibility
 - idea/hybrid-approach
-title: Enhancing Knapsack-Based Financial Portfolio Optimization Using Quantum Approximate
-  Optimization Algorithm
+- contradiction/classical-vs-quantum
+- contradiction/scalability
+title: Corrections to ‘‘Enhancing Knapsack-Based Financial Portfolio Optimization
+  Using Quantum Approximate Optimization Algorithm’’
 topic_tags:
 - portfolio-optimisation
-year: 2024
+year: 2025
 zotero_key: ''
 ---
 
 ## Abstract summary
-This paper explores the application of the Quantum Approximate Optimization Algorithm (QAOA) to financial portfolio optimization by reformulating the problem as a knapsack model. The authors adapt QAOA to incorporate financial constraints and expected returns from Markowitz analysis, demonstrating its practical use in portfolio selection. The study evaluates the approach on both simulated and real quantum hardware to assess its feasibility for complex financial decision-making.
+This corrections note amends the earlier IEEE Access article on using QAOA for knapsack-based financial portfolio optimization by adding a previously omitted reference and clarifying methodological overlap. It explains how the original work builds on an existing bachelor’s thesis for specific quantum circuit components while extending the approach to financial portfolio selection, and updates the main text and code availability section accordingly.
 ## Methodology
-The paper presents an empirical study enhancing knapsack-based financial portfolio optimization using the Quantum Approximate Optimization Algorithm (QAOA). The methodology involves reformulating the portfolio optimization problem as a knapsack problem, where expected returns from Markowitz analysis are mapped to the knapsack formulation. The study incorporates domain-specific investment constraints and evaluates the QAOA-based approach using both simulated and real quantum devices. The feasibility oracle and mixer components of the QAOA framework are adapted from prior work, with modifications to suit financial portfolio selection. The research demonstrates the practical application of QAOA to complex financial decision problems.
+This text is a correction notice rather than a full methods section, but it clarifies the methodological framing of the underlying study. The approach is a QAOA-based formulation of financial portfolio optimization by recasting the portfolio selection problem as a knapsack problem. Expected returns derived from Markowitz analysis are mapped into the knapsack objective, and domain-specific investment constraints are incorporated into the optimization model. The notice further states that parts of the quantum circuit design, specifically the feasibility oracle and mixer structure, follow prior constructions from Holst's thesis on QAOA for the knapsack problem, while the claimed contribution is the adaptation of that framework to financial portfolio selection. The paper is therefore best characterized as using a formal optimization reformulation grounded in Markowitz portfolio theory and constrained combinatorial optimization, with a quantum approximate optimization framework built on established knapsack-QAOA circuit components. No proofs, propositions, or formal derivations are provided in the correction text itself.
 
-**Algorithms used:** QAOA
-
-**Experimental setup:** The study evaluates the QAOA-based approach using both quantum simulators and real quantum processing units (QPUs).
-
-**Dataset:** Financial data derived from Markowitz portfolio optimization, including expected returns and investment constraints.
+**Algorithms used:** QAOA, Markowitz portfolio optimization, Knapsack problem formulation
 ## Findings
-- [supported] The QAOA-based approach reformulates portfolio optimization as a knapsack problem, incorporating expected returns from Markowitz analysis and domain-specific investment constraints [supported]
-- [supported] The method was evaluated using both simulated and real quantum devices [supported]
-- [speculative] The novelty of the study lies in extending the QAOA framework to financial portfolio selection, though core quantum circuit components (feasibility oracle and mixer) are adapted from prior work [2] [speculative]
-- [supported] The paper demonstrates practical application of QAOA to complex financial decision problems, though no explicit quantum advantage is quantified [supported]
+- [speculative] This correction states that the original work reformulated financial portfolio optimization as a knapsack problem and applied QAOA to that formulation.
+- [speculative] The authors claim the novelty of the original study lies in extending an existing QAOA knapsack framework to financial portfolio selection rather than introducing fundamentally new quantum circuit components.
+- [speculative] The correction explicitly acknowledges that the feasibility oracle and mixer structure are consistent with prior constructions from Holst's 2023 thesis.
+- [speculative] The paper claims to map expected returns from Markowitz analysis into a knapsack formulation and to incorporate domain-specific investment constraints.
+- [speculative] The correction states that the method was evaluated on both simulated and real quantum devices, but provides no quantitative results in the correction text.
+- [speculative] The authors argue that this adaptation illustrates practical applicability of QAOA-based methods to complex financial decision problems.
 
-**Results summary:** The paper presents an empirical evaluation of a QAOA-based approach for financial portfolio optimization, reformulated as a knapsack problem. The study adapts quantum circuit components from prior work and incorporates financial constraints, testing the method on both simulated and real quantum hardware. While the application to portfolio optimization is novel, the core algorithmic components are derived from existing literature, and no explicit quantum advantage over classical methods is demonstrated or claimed.
+**Results summary:** This correction notice does not present new theoretical derivations, theorems, or quantitative results. Its main substantive claim is that the underlying 2024 paper applied QAOA to portfolio optimization by casting the problem as a knapsack problem, mapping Markowitz expected returns into that formulation, and adding investment constraints. The correction also clarifies that key circuit elements, specifically the feasibility oracle and mixer, were derived from prior work and that the claimed novelty is the financial-services application rather than the core QAOA construction. Although the text mentions evaluation on simulated and real quantum devices, it does not report metrics or evidence in the correction itself.
 ## Quantum advantage claim
-**Classification:** not-applicable
+**Classification:** speculative
 
-No quantum advantage is claimed or demonstrated in the paper. The focus is on applying QAOA to a financial problem, with results derived from both simulation and real hardware, but no comparison to classical baselines or speedup claims are presented.
+The correction implies practical applicability of a QAOA-based approach and mentions testing on simulators and real hardware, but it provides no quantitative evidence or demonstrated advantage over classical methods in the text provided.
 ## Limitations
-- Experiments conducted on limited qubit counts (not explicitly stated, but likely constrained by available quantum hardware) [inferred]
-- Use of both simulated and real quantum devices, but real hardware results may be affected by noise and decoherence [inferred]
-- Portfolio optimization problem reformulated as a knapsack problem, which may not fully capture all financial constraints and nuances of real-world portfolio selection [inferred]
-- Reliance on prior work (Holst, 2023) for feasibility oracle and mixer components, limiting novelty in quantum circuit design [inferred]
-- No explicit comparison with state-of-the-art classical portfolio optimization methods to benchmark performance [inferred]
-- Dataset size and diversity not specified, potentially limiting generalizability of results [inferred]
-- Scalability to larger problem instances (e.g., more assets) not demonstrated due to qubit count constraints [inferred]
-- Reproducibility may be limited by proprietary or undisclosed details of the real quantum hardware experiments [inferred]
+- This text is a correction notice rather than the full paper, so it provides very limited direct information about limitations, open questions, or future work.
+- The correction states that key quantum circuit components, including the feasibility oracle and mixer structure, are consistent with prior constructions, limiting methodological novelty to the financial-domain adaptation rather than the core QAOA design.
+- The paper required a post-publication correction to add a missing reference and clarify overlap in mathematical derivation with prior work, indicating incomplete attribution in the original publication.
+- [inferred] As a peer-reviewed theoretical/method-focused work, the practical advantage over classical portfolio optimization methods is not established in this correction text.
+- [inferred] The approach depends on reformulating portfolio optimization as a knapsack problem, which may require simplifying assumptions that do not capture the full Markowitz model or realistic market frictions.
+- [inferred] Mapping expected returns from Markowitz analysis into a knapsack formulation may omit important financial features such as covariance structure, transaction costs, liquidity constraints, and multi-period dynamics.
+- [inferred] Although the correction mentions evaluation on simulated and real quantum devices, no details are given here on hardware scale, noise effects, benchmark size, or reproducibility, limiting assessment of practical performance.
+- [inferred] The gap between theoretical QAOA applicability and production-scale financial portfolio optimization remains unresolved, especially given likely qubit and circuit-depth constraints on current hardware.
 ## Open questions
-- How does the QAOA-based approach perform with a larger number of assets beyond the tested instances?
-- What is the impact of quantum noise and decoherence on solution quality when scaling to more qubits?
-- Can the knapsack-based reformulation effectively handle dynamic or multi-period portfolio optimization problems?
-- How does the proposed method compare to classical optimization techniques in terms of solution quality and computational efficiency?
-- What are the practical limitations of implementing this approach on near-term quantum devices with higher qubit counts?
+- To what extent does the knapsack reformulation preserve the essential risk-return structure of portfolio optimization derived from Markowitz analysis?
+- How much practical improvement, if any, does the QAOA-based method provide over state-of-the-art classical solvers for financial portfolio selection?
+- How well does the method scale as the number of assets and investment constraints increases?
+- What is the impact of real-device noise and limited circuit depth on solution quality for this portfolio optimization formulation?
+- Which parts of the reported performance stem from the financial adaptation versus the previously known feasibility oracle and mixer construction?
+- Can the approach handle more realistic portfolio settings, including covariance-aware risk modeling, transaction costs, cardinality constraints, and dynamic rebalancing?
 
 **Future work:**
-- Extend the QAOA framework to handle more complex financial constraints and multi-period portfolio optimization
-- Conduct experiments on larger-scale quantum hardware to evaluate scalability
-- Benchmark the proposed method against state-of-the-art classical solvers for portfolio optimization
-- Explore noise mitigation techniques to improve performance on real quantum devices
-- Test the approach on real-world financial datasets to assess practical applicability
+- Provide fuller empirical validation comparing the QAOA-based portfolio approach against strong classical optimization baselines.
+- Investigate scalability on larger portfolio instances and more realistic financial datasets.
+- Extend the formulation beyond a basic knapsack model to incorporate richer portfolio constraints and risk measures.
+- Study the robustness of the method on real quantum hardware under noise, limited qubit counts, and depth constraints.
+- Clarify and quantify the unique contribution of the financial-domain adaptation relative to prior QAOA knapsack constructions.
+- Develop more practically relevant formulations for multi-period portfolio optimization and real-world investment decision support.
 ## Key ideas
-- #idea:near-term-feasibility — QAOA is adapted for portfolio optimization via knapsack reformulation, tested on simulated and real quantum hardware, demonstrating practical applicability in financial decision-making
-- #idea:hybrid-approach — Classical Markowitz analysis is integrated for expected returns and constraints, suggesting a hybrid quantum-classical workflow
-- #limitation:qubit-count — Scalability to larger portfolios (>20 assets) is untested due to limited qubit counts
-- #limitation:noise — Real hardware results may be degraded by noise and decoherence, with noise mitigation proposed as future work
-- #limitation:no-empirical-validation — No quantum advantage is demonstrated; results lack benchmarks against classical methods
+- #idea:near-term-feasibility — Adapts an existing QAOA knapsack framework to financial portfolio optimisation and reports evaluation on simulators and real quantum devices, suggesting small-scale NISQ applicability.
+- #idea:hybrid-approach — Uses classical Markowitz-derived expected returns and investment constraints, then encodes them into a knapsack-style optimisation problem for QAOA.
+- #idea:near-term-feasibility — The claimed contribution is primarily the financial-domain adaptation rather than a new QAOA circuit design, with feasibility oracle and mixer inherited from prior work.
+- #idea:hybrid-approach — Portfolio selection is simplified into a constrained combinatorial optimisation model, making it amenable to quantum optimisation workflows but at the cost of financial realism.
 ## Contradictions
-<!-- Step 6 output — where this paper contradicts others -->
-
+- The paper implies practical applicability of QAOA for portfolio optimisation, but the correction text provides no quantitative evidence of superiority over classical solvers; this supports contradiction:classical-vs-quantum.
+- The paper suggests relevance to financial decision problems, yet the open questions and limitations explicitly acknowledge unresolved scaling to realistic asset universes and constraints, supporting contradiction:scalability.
+- Relative to prior knapsack-QAOA work such as 2023_Holst_QAOAKnapsack, the correction reduces the novelty claim from algorithmic innovation to domain adaptation, which weakens any implied broader quantum-performance claim.
 ## Notable quotes
 <!-- Researcher-added — verbatim quotes with page references -->
 
@@ -121,23 +125,19 @@ No quantum advantage is claimed or demonstrated in the paper. The focus is on ap
 
 ## Experiment details
 ### Input
-Expected returns from Markowitz analysis, mapped to a knapsack formulation with domain-specific constraints. Specific dataset details (e.g., source, size, time period) are not explicitly provided in the text.
+N/A
 
 ### Process
-1. Reformulate portfolio optimization as a knapsack problem. 2. Encode expected returns and constraints into the QAOA framework. 3. Implement feasibility oracle and mixer components adapted from prior work. 4. Execute QAOA on both simulated and real quantum devices. 5. Evaluate performance under financial constraints.
+1. Reformulate the portfolio optimization problem as a knapsack problem. 2. Encode expected returns and constraints into the quantum circuit using feasibility oracles. 3. Apply the QAOA algorithm with parameterized quantum circuits. 4. Optimize the circuit parameters using classical optimization techniques. 5. Evaluate the performance on both simulators and real quantum devices.
 
 ### Output
-Performance metrics of the QAOA-based portfolio optimization, likely including solution quality, convergence behavior, and comparison against classical baselines (though specific metrics are not detailed in the text).
+Performance metrics related to portfolio optimization, such as solution quality and convergence behavior of the QAOA algorithm. Comparisons may be drawn against classical optimization baselines, though specific metrics are not detailed in the provided text.
 
 ### Parameters
-- qubit_count: None
-- circuit_depth: None
-- shots: None
-- optimizer: None
-- hyperparameters: None
+N/A
 
 ### Hardware
-Experiments conducted on both quantum simulators and real quantum devices (specific QPU models or providers not mentioned).
+Experiments conducted on both quantum simulators and real quantum devices (QPUs). Specific hardware models or providers are not mentioned in the provided text.
 
 ### Reproducibility
-The paper references a Bachelor's thesis for the feasibility oracle and mixer design, which is publicly available. However, the availability of code or detailed experimental parameters is not explicitly stated in the text. Reproducibility may depend on supplementary materials not described here.
+The paper references a Bachelor thesis that served as a foundation for certain quantum circuit components, suggesting partial reproducibility. However, the availability of code or datasets is not explicitly mentioned in the provided text, limiting a full reproducibility assessment.

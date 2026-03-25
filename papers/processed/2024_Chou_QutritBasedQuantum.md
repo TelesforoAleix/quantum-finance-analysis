@@ -16,32 +16,30 @@ contradiction_flags:
 doi: 10.1109/QCE60285.2024.10403
 evidence_type: ''
 idea_tags:
-- idea:hybrid-approach
 - idea:near-term-feasibility
+- idea:hybrid-approach
 journal_or_venue: 2024 IEEE International Conference on Quantum Computing and Engineering
   (QCE)
-methodology_tags:
-- classical-simulation
-- variational
+methodology_tags: []
 paper_type: ''
-quantum_advantage_claim: speculative
+quantum_advantage_claim: not-applicable
 related_papers: []
-relevance_phase1: high
-relevance_phase3: medium
+relevance_phase1: medium
+relevance_phase3: low
 source_type: conference-paper
 source_type_confidence: high
-step1_date: '2026-03-19T23:52:29.434633'
-step1_model: Mistral-Large-3
-step2_date: '2026-03-19T23:52:33.071094'
-step2_model: Mistral-Large-3
-step3_date: '2026-03-19T23:53:31.577602'
-step3_model: Mistral-Large-3
-step4_date: '2026-03-19T23:54:34.967044'
-step4_model: Mistral-Large-3
-step5_date: '2026-03-19T23:54:39.604669'
-step5_model: Mistral-Large-3
-step6_date: '2026-03-19T23:54:42.453179'
-step6_model: Mistral-Large-3
+step1_date: '2026-03-25T16:03:26.739552'
+step1_model: gpt-5.1
+step2_date: '2026-03-25T16:03:30.362697'
+step2_model: gpt-5.1
+step3_date: '2026-03-25T16:04:04.681157'
+step3_model: gpt-5.4
+step4_date: '2026-03-25T16:04:20.466561'
+step4_model: gpt-5.4
+step5_date: '2026-03-25T16:04:42.278266'
+step5_model: gpt-5.4
+step6_date: '2026-03-25T16:04:51.949839'
+step6_model: gpt-5.4
 steps_completed:
 - 1
 - 2
@@ -51,81 +49,94 @@ steps_completed:
 - 6
 tags:
 - topic/portfolio-optimisation
-- method/classical-simulation
-- method/variational
-- idea/hybrid-approach
+- topic/risk-modelling
 - idea/near-term-feasibility
+- idea/hybrid-approach
 - contradiction/classical-vs-quantum
 - contradiction/scalability
 title: Qutrit-based Quantum-inspired Optimization Model on Real-world Portfolio Optimization
 topic_tags:
 - portfolio-optimisation
+- risk-modelling
 year: 2024
 zotero_key: ''
 ---
 
 ## Abstract summary
-This paper introduces a quantum-inspired optimization model using qutrits—three-level quantum systems—to enhance portfolio optimization in financial services. Unlike traditional binary approaches, the proposed method encodes long-selling, short-selling, and non-investment strategies simultaneously, leveraging quantum-inspired techniques to reduce investment risk and improve stability. The study applies this model to real-world financial data, demonstrating its potential to outperform single-strategy portfolios in volatile markets.
+The paper proposes a quantum-inspired portfolio optimization model that uses a qutrit-based ternary encoding to represent long-selling, short-selling, and non-investment decisions within a single hybrid strategy. Building on Global Best Guided Quantum-inspired Tabu Search, the authors adapt the update mechanism to handle three-state encoding and incorporate a trend ratio metric to favor stable upward portfolio performance. Using real-world DJIA data, they show that the hybrid qutrit-based strategy can reduce risk and improve trend performance compared to separate long-only or short-only strategies.
 ## Methodology
-The paper proposes a quantum-inspired optimization (QIO) model for portfolio optimization using a qutrit-based encoding mechanism. Unlike traditional binary qubit approaches, this method leverages the three-level qutrit system to encode three investment strategies: long-selling (LS), short-selling (SS), and non-investment. The study adopts the Global Best Guided Quantum-inspired Tabu Search (GQTS) algorithm, enhanced with a ternary update mechanism to adjust probabilities based on global best and local worst selections. The trend ratio metric is used to evaluate portfolio performance, aiming for a stable uptrend. The methodology is implemented on a classical computer, simulating quantum behavior to explore a hybrid portfolio strategy that mitigates investment risk by combining LS and SS strategies.
+This conference paper presents an empirical, quantum-inspired optimization approach for portfolio selection using a qutrit-inspired ternary encoding rather than an actual quantum algorithm on quantum hardware. The method extends Global Best Guided Quantum-inspired Tabu Search (GQTS) into a qutrit-based GQTS that represents each asset with three possible states: non-investment, long-selling (LS), and short-selling (SS). The authors modify the GQTS update mechanism by adjusting two boundary parameters (beta_j1 and beta_j2) with a fine-tuned step size theta according to the global-best and local-worst states, enabling search over a ternary solution space. The optimization objective incorporates the trend ratio metric, defined as return per unit risk based on a regression trend line, to favor stable upward-trending portfolios. Empirically, the model is evaluated on real-world Dow Jones Industrial Average (DJIA) data from 2013 to 2022 using a sliding-window protocol with 13 window types and 830 periods. The proposed hybrid strategy is compared against standalone LS and SS strategies, with comparative targets run using EL-GNQTS under settings from prior work. Performance is assessed primarily through risk and trend ratio, with repeated runs used to evaluate robustness.
 
-**Algorithms used:** Global Best Guided Quantum-inspired Tabu Search (GQTS)
+**Algorithms used:** Global Best Guided Quantum-inspired Tabu Search (GQTS), Qutrit-based GQTS, EL-GNQTS
 
-**Experimental setup:** The experiments are conducted on a classical computer using a qutrit-inspired QIO model. The solution space is set to 330, with an initial fund of 10 million dollars. The sliding window (SW) method is used to split training and testing data over an investment period from 2013 to 2022.
+**Experimental setup:** Experiments were conducted on a classical computer using a quantum-inspired optimization model rather than a real quantum processor. The portfolio universe is the DJIA with a ternary search space of 3^30. The initial fund is 10 million USD. Data from 2013 to 2022 were split using a sliding window method into 13 types of windows, yielding 830 periods. Population size was 10. Each period was tested 50 times, and each run executed 10,000 iterations.
 
-**Dataset:** Dow Jones Industrial Average (DJIA) index in the U.S. from 2013 to 2022.
+**Dataset:** Real-world financial data from the U.S. Dow Jones Industrial Average (DJIA) index covering the investment period 2013-2022.
 ## Findings
-- [supported] The qutrit-based quantum-inspired optimization (QIO) model demonstrates superior portfolio performance compared to single long-selling (LS) or short-selling (SS) strategies using real-world financial data from the DJIA index (2013-2022).
-- [supported] The hybrid strategy combining LS and SS reduces portfolio risk and achieves a higher trend ratio (return per unit of risk) than individual strategies across 13 sliding window periods.
-- [supported] The proposed qutrit-based encoding mechanism enables simultaneous search for LS, SS, and non-investment strategies, mitigating risk through complementary fluctuations in a volatile market.
-- [speculative] Qutrit-based systems may offer advantages for quantum error correction and high-fidelity operations in the NISQ era, though these claims are not empirically validated in this study.
-- [speculative] The qutrit-inspired approach could leverage quantum behavior in large solution spaces to enhance search efficiency, but results are derived from classical simulations rather than real quantum hardware.
-- [supported] The Global Best Guided Quantum-inspired Tabu Search (GQTS) with ternary encoding outperforms EL-GNQTS in risk reduction and trend ratio improvement, as shown in comparative experiments.
+- [supported] The paper proposes a qutrit-inspired quantum-inspired optimization (QIO) model for portfolio optimization that uses ternary encoding to represent non-investment, long-selling (LS), and short-selling (SS).
+- [supported] On real-world DJIA data from 2013 to 2022, the proposed hybrid strategy achieved lower risk than LS-only and SS-only portfolios across all 13 sliding-window settings tested.
+- [supported] The proposed hybrid strategy achieved higher trend ratio than LS-only and SS-only strategies in the reported experiments across the 13 sliding-window settings.
+- [supported] The authors report that LS and SS fluctuations were highly symmetric and complementary in the hybrid portfolio, which reduced portfolio risk and produced a more stable upward trend.
+- [supported] The experiments were conducted on a classical computer using a quantum-inspired algorithm rather than on quantum hardware.
+- [speculative] The qutrit-based method is argued to benefit from a larger solution space and more efficient search due to quantum-inspired behavior, but no direct computational speedup versus classical optimization baselines is quantified.
+- [speculative] The authors suggest the approach has significant potential for mitigating investment risk and supporting investor decision-making in volatile markets.
 
-**Results summary:** The paper presents a qutrit-based quantum-inspired optimization model for portfolio optimization, implemented on classical hardware. The model encodes three investment strategies (long-selling, short-selling, and non-investment) using ternary qutrit states, enabling hybrid portfolio construction. Experimental results on DJIA data (2013-2022) show that the hybrid strategy consistently reduces risk and improves trend ratios compared to single-strategy approaches. The study demonstrates the practical utility of quantum-inspired techniques for financial applications, though all results are derived from simulations rather than real quantum devices.
+**Results summary:** This conference paper presents a qutrit-inspired portfolio optimization model implemented as a quantum-inspired optimization algorithm on a classical computer. The method extends binary portfolio encoding to a ternary representation covering long-selling, short-selling, and non-investment, and integrates this encoding into a Global Best Guided Quantum-inspired Tabu Search framework. Using DJIA data from 2013 to 2022, 13 sliding-window configurations, 830 periods, 50 runs per period, and 10,000 iterations per run, the authors report that the hybrid LS/SS strategy consistently produced lower risk and higher trend ratio than LS-only and SS-only comparison strategies. The empirical evidence supports improved portfolio stability from combining LS and SS, but the work does not demonstrate quantum advantage because it is quantum-inspired, classically executed, and does not provide a quantified runtime or complexity advantage over strong classical baselines.
 
 **Performance claims:**
-- Hybrid strategy achieves lower risk than LS or SS in all 13 sliding window periods (Fig. 2a).
-- Hybrid strategy outperforms LS and SS in trend ratio across all tested periods (Fig. 2b).
-- Solution space of 3^30 (≈205 trillion) for 30-stock portfolios, leveraging qutrit encoding.
-- Experiments conducted over 830 periods with 50 trials per period, each running 10,000 iterations.
+- Experiments used DJIA data with a solution space of 3^30
+- Investment period covered 2013 to 2022
+- 830 periods evaluated across 13 types of sliding windows
+- Population size set to 10
+- 50 test runs per period
+- 10,000 iterations per test run
+- Theta parameter set to 0.0003
+- Lower risk than LS-only and SS-only portfolios in all 13 sliding-window settings
+- Higher trend ratio than LS-only and SS-only portfolios across the reported 13 sliding-window settings
 ## Quantum advantage claim
-**Classification:** speculative
+**Classification:** not-applicable
 
-The paper claims potential advantages of qutrit-based systems for quantum error correction and large solution space exploration, but these are not demonstrated empirically. All results are from classical simulations of quantum-inspired algorithms, with no real hardware validation. Quantum advantage is implied theoretically but remains unproven in this work.
+The paper studies a quantum-inspired optimization method executed on a classical computer, not a quantum algorithm on quantum hardware. While it claims benefits from qutrit-inspired encoding and larger solution space exploration, it does not demonstrate or rigorously establish quantum advantage.
 ## Limitations
-- The study uses a quantum-inspired optimization (QIO) model simulated on classical computers, not real quantum hardware, limiting validation of quantum advantages [inferred]
-- Experiments are conducted on a limited solution space (3^30) and a single market index (DJIA), which may not generalize to larger or more diverse financial datasets [inferred]
-- The proposed qutrit-based model is compared only to classical-inspired methods (EL-GNQTS) and not to state-of-the-art classical portfolio optimization techniques [inferred]
-- Page-limit constraints of the conference paper may have restricted detailed discussion of noise resilience, scalability, or failure cases [inferred]
-- The trend ratio metric, while useful, does not fully capture all dimensions of portfolio risk (e.g., tail risk, liquidity risk) [inferred]
-- The study does not address the computational overhead of simulating qutrit states on classical hardware, which may limit practical scalability [inferred]
-- No empirical validation on real quantum hardware (e.g., superconducting qutrits) to test fidelity or error correction assumptions
-- The hybrid strategy assumes symmetric fluctuations between long-selling and short-selling, which may not hold in all market conditions (e.g., asymmetric volatility regimes) [inferred]
-- Parameter tuning (e.g., θ = 0.0003) is fixed and may not be optimal for other datasets or market conditions [inferred]
+- The method is quantum-inspired and executed on a classical computer rather than demonstrated on actual quantum or qutrit hardware.
+- Experiments are limited to the 30-stock DJIA universe, which constrains generalizability to larger and more diverse portfolios.
+- Evaluation uses data from a single market index (U.S. DJIA) over 2013–2022, so robustness across other asset classes, regions, and market regimes is not established.
+- The comparison baseline is limited to long-selling and short-selling portfolios run by EL-GNQTS; broader comparisons with state-of-the-art classical portfolio optimization methods are not reported.
+- The study optimizes primarily via the trend ratio and emphasizes risk reduction, leaving broader objective formulations only partially explored.
+- Parameter choices such as population size, 10,000 iterations, and theta = 0.0003 appear fixed, with limited discussion of sensitivity or robustness to hyperparameter settings.
+- [inferred] No transaction costs, borrowing fees, short-sale constraints, slippage, taxes, or liquidity effects are modeled, which may materially affect real-world portfolio performance.
+- [inferred] The assumption that long-selling and short-selling fluctuations can complement each other may weaken under realistic market frictions and imperfect hedging conditions.
+- [inferred] The paper does not report statistical significance tests or confidence intervals, so it is unclear whether the observed improvements are statistically robust across windows and runs.
+- [inferred] Reproducibility is limited because implementation details beyond high-level settings are sparse, which is common in conference papers with page-limit constraints.
+- [inferred] Scalability beyond the reported 3^30 search space is not empirically demonstrated, so practical performance on larger institutional portfolios remains uncertain.
+- [inferred] Missing empirical validation on live or paper-trading deployment leaves the gap between backtest results and production use unresolved.
 ## Open questions
-- How would the qutrit-based model perform on fault-tolerant quantum hardware compared to NISQ-era simulations?
-- What is the scalability of the proposed method for larger portfolios (e.g., >100 assets) or multi-asset classes (e.g., stocks, bonds, commodities)?
-- How does the model handle non-stationary market conditions where historical trends may not predict future performance?
-- Can the qutrit encoding be extended to incorporate additional investment strategies (e.g., options, leverage) without exponential complexity growth?
-- What are the trade-offs between the computational cost of qutrit simulations and the performance gains over classical methods?
-- How sensitive is the hybrid strategy to parameter choices (e.g., θ, population size) across different market regimes?
+- How well does the qutrit-inspired hybrid strategy scale to portfolios with substantially more than 30 assets?
+- Will the reported risk reduction and trend-ratio gains persist in other stock markets, asset classes, or cross-market portfolios?
+- How sensitive is performance to the sliding-window design, parameter theta, population size, and iteration budget?
+- How does the method compare against stronger classical baselines such as mean-variance optimization, robust optimization, mixed-integer formulations, or modern metaheuristics?
+- What is the impact of realistic trading frictions, especially short-selling costs and constraints, on the hybrid strategy's profitability and stability?
+- Can the ternary qutrit-inspired encoding provide advantages beyond this specific portfolio setting, or are the gains mainly due to the added strategy flexibility?
+- Would the approach retain its benefits if implemented on future qutrit-capable quantum hardware rather than simulated classically?
+- How stable are the complementary LS/SS fluctuation patterns during extreme market stress or structural breaks?
 
 **Future work:**
-- Extend the model to multi-objective optimization (e.g., balancing risk, return, and liquidity)
-- Test the qutrit-based QIO on real quantum hardware to validate quantum advantages
-- Expand experiments to include multiple global stock markets and asset classes
-- Incorporate dynamic parameter adaptation to improve robustness across market conditions
-- Explore hybrid quantum-classical approaches to mitigate classical simulation overhead
-- Investigate the integration of quantum error correction techniques to enhance fidelity in qutrit operations
+- Expand the model to consider multiple objectives, such as both risk and return.
+- Include investments across various stock markets.
+- [inferred] Benchmark against a wider set of classical and quantum-inspired portfolio optimization methods.
+- [inferred] Test the approach on larger portfolios and broader financial universes to assess scalability.
+- [inferred] Incorporate realistic market constraints and frictions, including transaction costs, liquidity limits, and short-selling restrictions.
+- [inferred] Perform sensitivity analyses and ablation studies on encoding choices, update rules, and hyperparameters.
+- [inferred] Explore implementation on actual quantum/qutrit hardware when feasible to assess the gap between inspiration and hardware realization.
+- [inferred] Validate the strategy in out-of-sample, paper-trading, or live-trading settings to evaluate production readiness.
 ## Key ideas
-- #idea:hybrid-approach — Qutrit-based ternary encoding enables simultaneous long-selling, short-selling, and non-investment strategies, improving risk mitigation in portfolio optimization
-- #idea:near-term-feasibility — Quantum-inspired qutrit model demonstrates potential for NISQ-era applicability, though tested only via classical simulation
-- #limitation:simulation-only — Results are derived from classical simulations of quantum-inspired algorithms, not real quantum hardware
-- #limitation:no-empirical-validation — Claims of quantum advantage are speculative and lack empirical validation on actual quantum devices
+- #idea:hybrid-approach — Uses a ternary qutrit-inspired encoding to jointly model non-investment, long-selling, and short-selling within one portfolio optimisation framework.
+- #idea:hybrid-approach — The hybrid LS/SS portfolio is reported to reduce risk and improve trend ratio relative to separate LS-only and SS-only strategies on DJIA data.
+- #idea:near-term-feasibility — Demonstrates a practically executable quantum-inspired approach on classical hardware using real financial data and extensive backtesting windows.
+- #idea:near-term-feasibility — Frames qutrit-inspired search as a way to explore a larger ternary portfolio decision space without requiring actual quantum hardware.
 ## Contradictions
-- The paper claims potential advantages of qutrit-based encoding for efficient solution space exploration (#idea:quantum-advantage), but these claims are contradicted by the lack of real quantum hardware testing (#contradiction:classical-vs-quantum).
-- While the model shows promise for small-scale portfolio optimization (DJIA index with 3^30 solution space), its scalability to larger or more complex financial datasets remains unproven (#contradiction:scalability).
+- The paper suggests benefits from qutrit-inspired search and larger solution-space exploration, but this does not establish quantum superiority because the method is entirely classical and no quantum hardware or quantum speedup is demonstrated.
+- The reported empirical gains are limited to a 30-stock DJIA setting and comparisons against LS-only/SS-only variants, so claims or implications about broader scalability to realistic institutional portfolio sizes remain unproven.
 ## Notable quotes
 <!-- Researcher-added — verbatim quotes with page references -->
 
@@ -134,24 +145,26 @@ The paper claims potential advantages of qutrit-based systems for quantum error 
 
 ## Experiment details
 ### Input
-{'source': 'DJIA index', 'time_period': '2013-2022', 'sliding_window_types': 13, 'periods': 830, 'initial_fund': '10 million dollars', 'preprocessing_steps': 'Sliding window method used to maintain training data freshness. Positive fund trend utilized for short-selling to align with long-selling trends.'}
+DJIA stock market data from the U.S. over 2013-2022, apparently covering 30 index constituents as implied by the 3^30 solution space. The data were partitioned using a sliding window method into 13 sliding-window types and 830 periods to keep training data fresh. The paper also assumes an initial investment fund of 10 million USD. Specific feature definitions, exact train/test window lengths, and preprocessing details beyond the sliding-window split are not fully reported.
 
 ### Process
-1. Encode portfolio strategies (LS, SS, non-investment) using qutrit-based ternary encoding. 2. Apply GQTS with a population size of 10. 3. Adjust probabilities using global best (P_Gb) and local worst (P_Lw) states with a fine-tuned parameter θ = 0.0003. 4. Run 50 tests per period, each with 10,000 iterations. 5. Evaluate portfolio performance using the trend ratio metric.
+1. Encode each stock in a ternary qutrit-inspired state: 0 = non-investment, 1 = long-selling, 2 = short-selling. 2. Initialize a population of candidate portfolios for qutrit-based GQTS. 3. Update each asset's ternary state probabilities using the modified GQTS rule based on the global-best and local-worst selections, adjusting beta_j1 and beta_j2 by theta. 4. Evaluate candidate portfolios using the trend ratio objective, which captures return relative to risk via the regression trend line. 5. Repeat the search for 10,000 iterations per run. 6. Apply the procedure across sliding-window train/test periods. 7. Repeat each experiment 50 times per period. 8. Compare the resulting hybrid strategy portfolio against LS-only and SS-only portfolios, with comparative targets run by EL-GNQTS using parameter settings from the cited prior paper.
 
 ### Output
-{'metrics': ['Trend ratio', 'Risk (volatility)'], 'comparison_baselines': ['Long-selling (LS) strategy', 'Short-selling (SS) strategy', 'EL-GNQTS'], 'visualizations': 'Risk comparison (Fig. 2a), trend ratio comparison (Fig. 2b), and portfolio fund run charts (Fig. 3)'}
+Reported outputs include portfolio risk and trend ratio across 13 sliding-window settings, along with run charts showing standardized portfolio funds over time and corresponding trend lines. The main comparisons are between the proposed hybrid strategy portfolio and LS-only and SS-only portfolios. Results are presented graphically, showing lower risk and higher trend ratio for the hybrid strategy.
 
 ### Parameters
+- solution_space: 3^30
+- initial_fund_usd: 10000000
 - population_size: 10
-- iterations_per_test: 10000
-- tests_per_period: 50
+- runs_per_period: 50
+- iterations_per_run: 10000
 - theta: 0.0003
 - sliding_window_types: 13
-- solution_space: 330
+- periods: 830
 
 ### Hardware
-Classical computer simulation of qutrit-based QIO; no quantum hardware or simulator specified.
+{'hardware_type': 'classical computer', 'qpu_used': False}
 
 ### Reproducibility
-The paper provides detailed parameter settings and methodological steps, but no code or dataset is explicitly made available. Sufficient detail is provided to replicate the experiments, though access to the DJIA dataset is required.
+No code repository or implementation link is mentioned in the provided text. The data source (DJIA market data) is identifiable and likely obtainable, and several key parameters are reported, but exact sliding-window definitions, data preprocessing details, and full implementation specifics are insufficient for straightforward replication.

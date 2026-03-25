@@ -30,18 +30,18 @@ relevance_phase1: high
 relevance_phase3: high
 source_type: conference-paper
 source_type_confidence: high
-step1_date: '2026-03-19T23:58:56.578497'
-step1_model: Mistral-Large-3
-step2_date: '2026-03-19T23:59:58.385432'
-step2_model: Mistral-Large-3
-step3_date: '2026-03-20T00:00:08.885223'
-step3_model: Mistral-Large-3
-step4_date: '2026-03-20T00:00:15.539646'
-step4_model: Mistral-Large-3
-step5_date: '2026-03-20T00:00:20.942045'
-step5_model: Mistral-Large-3
-step6_date: '2026-03-20T00:01:02.704950'
-step6_model: Mistral-Large-3
+step1_date: '2026-03-25T16:04:18.118028'
+step1_model: gpt-5.1
+step2_date: '2026-03-25T16:04:22.723256'
+step2_model: gpt-5.1
+step3_date: '2026-03-25T16:05:16.507903'
+step3_model: gpt-5.4
+step4_date: '2026-03-25T16:05:36.230321'
+step4_model: gpt-5.4
+step5_date: '2026-03-25T16:06:15.830645'
+step5_model: gpt-5.4
+step6_date: '2026-03-25T16:06:24.967896'
+step6_model: gpt-5.4
 steps_completed:
 - 1
 - 2
@@ -67,74 +67,89 @@ zotero_key: ''
 ---
 
 ## Abstract summary
-This paper introduces the Train-and-Scale method, a technique for optimizing quantum circuits to solve the portfolio diversification problem using the Quantum Alternating Operator Ansatz (QAOA). The approach addresses challenges in training high-depth quantum circuits by iteratively scaling both circuit depth and problem instance size, leveraging warm-start parameters from smaller instances. The method is tested on real-world financial data (S&P 500 stocks), demonstrating its ability to maintain high solution quality with modest increases in circuit depth and sampling complexity.
+The paper introduces a Train-and-Scale method for QAOA-style variational quantum algorithms, where parameters are learned on smaller problem instances and then transferred while gradually increasing both instance size and circuit depth. The authors apply this approach to a Maximum Independent Set formulation of the portfolio diversification problem using SP500 data, training on subgraphs up to 30 assets. They demonstrate that modestly increasing QAOA depth with problem size can maintain good approximation quality and manageable sampling complexity, suggesting a scalable route to applying QAOA to realistic financial optimization tasks.
 ## Methodology
-The paper presents an empirical study introducing the 'Train-and-Scale' method for optimizing the Quantum Alternating Operator Ansatz (QAOA) to solve the Portfolio Diversification problem, framed as a Maximum Independent Set (MIS) problem. The methodology involves iteratively training QAOA on progressively larger problem instances while scaling the circuit depth. The process begins with small instances (n=6) and low-depth circuits (p=6), then incrementally increases the instance size and circuit depth, using parameters from smaller instances as warm starts for larger ones. The QAOA circuit is trained using a hybrid quantum-classical approach with gradient-based optimization via the parameter shift rule. The study benchmarks the approach on historical S&P 500 stock price data, generating covariance graphs and solving the MIS problem for subgraphs of sizes ranging from 6 to 30 assets. The evaluation focuses on approximation ratio, sampling complexity, and scalability of the QAOA circuit depth.
+This conference paper presents an empirical benchmarking study of a proposed training strategy called Train-and-Scale (TnS) for the Quantum Alternating Operator Ansatz applied to portfolio diversification. The financial problem is formulated by computing monthly Pearson correlation matrices from daily S&P 500 stock returns, thresholding correlations at a value λ to build unweighted asset graphs, and then mapping portfolio diversification to a Maximum Independent Set (MIS) problem. The authors use a constrained QAOA/Quantum Alternating Operator Ansatz for MIS, with an all-zero initial state, a cost Hamiltonian based on vertex selection, and a mixer that preserves the independent-set subspace. The core methodological contribution is an iterative curriculum-style training procedure: start with small graph instances and shallow depth, train QAOA parameters on a family of subgraph instances, then increase instance size and circuit depth together by transferring parameters, inserting new layers in the middle of the circuit, training the new layer, and retraining the full circuit. Experiments are conducted on families of subgraphs generated from larger correlation graphs, with 500 instances per size, and training uses parameter-shift-based finite-difference gradient updates with randomized parameter selection, learning-rate decay across 64 epochs, and instance weighting based on approximation-gap statistics. Performance is evaluated using approximation gap/ratio and sampling complexity (inverse success probability), with comparison to simulated annealing for λ = 0.1. The paper appears to be a conference paper with empirical results rather than a short theoretical note.
 
-**Algorithms used:** QAOA, Quantum Alternating Operator Ansatz
+**Algorithms used:** QAOA, Quantum Alternating Operator Ansatz, Train-and-Scale, simulated annealing, parameter-shift rule
 
-**Experimental setup:** The experiments were conducted using classical simulation of quantum circuits. The QAOA circuits were trained on subgraph instances derived from S&P 500 historical data, with problem sizes ranging from 6 to 30 assets. The training utilized finite difference gradient updates based on the parameter shift rule, with learning rate decay over 64 epochs.
+**Experimental setup:** The study uses classical simulation of constrained QAOA on MIS instances derived from S&P 500 correlation graphs. Experiments train on subgraph sizes from n=6 upward, with reported main scaling results up to n=30 for training and evaluation/transfer experiments up to n=100 for some settings. For each instance size, datasets of 500 graphs are generated. Multiple correlation thresholds λ in {0.1, 0.2, 0.3, 0.4, 0.5} are tested. The Train-and-Scale schedule starts at n_min=6 and p_min=6, then increases depth by 2 per size increment in the main experiments, reaching p=54 at n=30.
 
-**Dataset:** Historical daily price data for S&P 500 stocks from 2010 to 2020, obtained from Kaggle. The dataset includes 350 to 500 stocks per month after cleaning, with survivorship bias present.
+**Dataset:** Historical daily price data for S&P 500 stocks from a public Kaggle stock-market dataset. After cleaning, each month between 2010 and 2020 contains roughly 350 to 500 stocks. Daily returns are computed per asset, monthly Pearson correlations are estimated, and thresholded correlation graphs are constructed for portfolio diversification instances.
 ## Findings
-- [supported] The Train-and-Scale method achieves high average quality solutions for the Portfolio Diversification problem (approximation ratio below 0.4) with modest increases in QAOA p-depth (p=54 for n=30) on SP500-derived instances
-- [supported] The method demonstrates linear growth in p-depth (p = O(n)) maintains high-quality approximation ratios and modest sampling complexity increases for problem sizes up to n=30
-- [supported] QAOA-54 trained on n=30 instances shows good transferability to larger instances (n=100), with a lower empirical scaling exponent (0.044) compared to simulated annealing (0.057)
-- [supported] The Train-and-Scale approach reduces sampling complexity for finding optimal solutions, with success probabilities not falling below 2^-20 for n ≤ 30
-- [speculative] The authors suggest that if polynomial scaling in depth and sampling complexity continues, QAOA could be useful for Portfolio Diversification on real datasets with hundreds of variables
-- [speculative] The paper claims Train-and-Scale is a robust method for solving hard graph problems with hundreds of variables on intermediate-scale quantum systems in the near future
-- [supported] The method outperforms simulated annealing in sampling complexity for λ=0.1 correlation graphs, as shown in Fig. 3(C)
+- [supported] The paper proposes a Train-and-Scale method that incrementally increases QAOA depth while transferring and retraining parameters on progressively larger portfolio-diversification instances formulated as maximum independent set problems.
+- [supported] On SP500-derived correlation graphs, Train-and-Scale produced high-quality solutions from instance sizes n=6 to n=30, with average approximation ratio below 0.4 and modest depth growth up to p=54 for n=30.
+- [supported] The authors report that p-depth growing approximately linearly with problem size, described as p=O(n) and implemented as roughly QAOA-2n, maintained solution quality below 0.5 across tested correlation thresholds λ.
+- [supported] For λ=0.1, parameters trained up to n=30 and p=54 transferred to larger instances up to n=100 with favorable empirical sampling-complexity scaling.
+- [supported] In the reported comparison for λ=0.1, trained QAOA showed a lower empirical scaling exponent for sampling complexity than simulated annealing, 0.044 versus 0.057.
+- [supported] The experiments were conducted on classically simulated QAOA using parameter-shift-based training over datasets of 500 graph instances per size, not on quantum hardware.
+- [speculative] The authors argue that if the observed polynomial-like scaling in depth and sampling complexity continues to instances with hundreds of variables, the approach could become useful for real portfolio diversification tasks.
+- [speculative] The paper suggests Train-and-Scale may help provide high-quality parameters for intermediate-scale quantum systems solving hard graph problems with hundreds of variables in the near future.
+- [speculative] The claim that this work reports the largest-size hard optimization instances solved by QAOA-p to date is presented by the authors but is not independently validated within the paper.
 
-**Results summary:** The paper introduces the Train-and-Scale method for QAOA, which iteratively increases circuit depth while scaling problem instance sizes. The approach was tested on the Portfolio Diversification problem (mapped to Maximum Independent Set) using SP500 data. Results demonstrate that linear growth in p-depth (p=54 for n=30) maintains high solution quality (approximation ratio <0.4) and modest sampling complexity. The method shows good transferability to larger instances (n=100) and outperforms simulated annealing in sampling efficiency. All results are from classical simulations, not real quantum hardware.
+**Results summary:** This conference paper introduces Train-and-Scale, a layer-growth and parameter-transfer training strategy for QAOA/Quantum Alternating Operator Ansatz applied to portfolio diversification mapped to maximum independent set on SP500 correlation graphs. Using classically simulated experiments, the authors train on subgraph families from size 6 to 30 and report that a modest, roughly linear increase in circuit depth up to p=54 yields high-quality solutions, with average approximation ratio below 0.4 and manageable sampling complexity for finding optimal solutions. For λ=0.1, the learned parameters also transfer to larger instances up to n=100, where the reported empirical sampling-complexity scaling exponent is lower than that of simulated annealing. The paper does not demonstrate quantum advantage on hardware; broader claims about usefulness at larger scales remain forward-looking.
 
 **Performance claims:**
-- Approximation ratio below 0.4 for n=30 instances
-- p-depth of 54 for n=30 problem size
-- Sampling complexity scaling exponent of 0.044 (vs 0.057 for simulated annealing)
-- Success probability not falling below 2^-20 for n ≤ 30
-- Linear scaling of p-depth with problem size (p = O(n))
+- Average approximation ratio below 0.4 on SP500-derived portfolio-diversification/MIS instances
+- Depth increased to p=54 for n=30
+- p-depth scaled approximately as QAOA-2n / p=O(n) while maintaining solution quality below 0.5 across tested λ values
+- 500 graph instances used for each instance size
+- Training used approximately 2^17 ≈ 130,000 finite-difference/parameter-shift gradient updates
+- Sampling probability for solutions did not fall below about 2^-20 in the tested size range
+- For λ=0.1, empirical sampling-complexity scaling exponent was 0.044 for trained QAOA versus 0.057 for simulated annealing
+- Transferability evaluated from training up to n=30 and p=54, then tested on instances up to n=100
 ## Quantum advantage claim
 **Classification:** speculative
 
-The paper suggests potential quantum advantage for larger problem sizes (hundreds of variables) based on polynomial scaling trends observed in simulations up to n=30. However, no empirical demonstration of quantum advantage is provided, and all results are from classical simulations rather than real quantum hardware.
+The paper suggests QAOA/Train-and-Scale could be promising for quantum advantage and reports favorable empirical scaling versus simulated annealing, but results are based on classical simulation rather than real quantum hardware and do not establish a demonstrated quantum advantage.
 ## Limitations
-- Experiments limited to problem instances of size n ≤ 30 due to classical simulation cost constraints [inferred]
-- Results rely on synthetic subgraphs generated from SP500 data rather than full real-world graphs, limiting generalizability to actual market conditions
-- Dataset exhibits survivorship bias (only stocks that existed between 2010-2020 are included), which may skew results
-- Training uses finite difference gradient updates with parameter shift rule, which may not scale efficiently for larger problem sizes [inferred]
-- The randomized algorithm for partitioning mixer terms (to reduce circuit depth) may not yield optimal groupings, potentially affecting performance
-- Approximation gap results are reported only for λ ∈ {0.1, 0.2, 0.3, 0.4, 0.5}, leaving performance at other thresholds unexplored [inferred]
-- No comparison with state-of-the-art classical optimization methods (e.g., advanced MIS solvers) to benchmark quantum advantage [inferred]
-- Page-limit constraints of the conference paper may have restricted detailed discussion of noise resilience or hardware-specific challenges [inferred]
-- Sampling complexity analysis assumes noiseless simulations; real quantum hardware noise could degrade performance [inferred]
-- The Train-and-Scale method's scalability beyond n=100 is extrapolated from trends, not empirically validated
+- Experiments are limited to classically simulated QAOA rather than execution on real quantum hardware, so hardware noise, decoherence, gate errors, and connectivity constraints are not evaluated.
+- The study only trains directly on subgraph sizes from n = 6 to n = 30, with larger-size behavior inferred through transferability and sampling experiments rather than full end-to-end training at those scales.
+- For larger correlation thresholds λ, experiments are curtailed because of higher classical simulation cost; the paper notes 'less for larger λ due to higher classical simulation cost.'
+- The dataset is restricted to historical SP500 stock data from 2010 to 2020 after cleaning, limiting coverage across markets, asset classes, and time regimes.
+- The authors explicitly note that the dataset has survivorship bias.
+- Portfolio diversification is studied through a discretized mapping to Maximum Independent Set using a fixed correlation threshold λ, which may oversimplify real portfolio construction objectives and constraints.
+- The graph instances are generated via breadth-first search around randomly selected starting nodes, so results may depend on the induced subgraph generation procedure rather than reflecting the full original market graph structure.
+- Training relies on knowledge of the minimum energy to compute the gap and weighting during training, which the authors note can become problematic when sampling complexity is too large.
+- The mixer grouping is obtained with a simple randomized algorithm because finding optimal commuting partitions is NP-hard, so circuit depth may not be minimized.
+- The work provides empirical evidence of good scaling trends but does not prove that polynomial scaling in depth or sampling complexity will persist to much larger instances.
+- [inferred] No direct comparison is provided against stronger state-of-the-art classical portfolio optimization or MIS solvers beyond simulated annealing, limiting claims of competitive advantage.
+- [inferred] No statistical significance testing or ablation study is reported to isolate the contribution of warm-start transfer, layer insertion strategy, dataset construction, and hyperparameter choices.
+- [inferred] Reproducibility may be limited because the paper does not provide full implementation details such as random seeds, exact optimizer settings for all experiments, or code availability.
+- [inferred] The use of parameter-shift/finite-difference-style training with about 130,000 updates suggests substantial training cost, which may hinder scalability in practice.
+- [inferred] Because this is a conference paper, page-limit constraints may have restricted discussion of negative results, sensitivity analyses, and implementation details.
 ## Open questions
-- Can the Train-and-Scale method maintain high approximation ratios for problem sizes beyond n=100, or will exponential sampling complexity emerge?
-- How does the algorithm perform under realistic quantum hardware noise, and what noise mitigation techniques are most effective?
-- What is the minimal p-depth required to achieve a target approximation ratio for larger instances (e.g., n=1000)?
-- How does the choice of correlation threshold λ affect the trade-off between solution quality and computational cost?
-- Can the method be adapted to other financial optimization problems (e.g., risk parity, option pricing) without significant modifications?
-- What are the theoretical bounds on the scaling of p-depth with problem size for this approach?
-- How does the performance of Train-and-Scale compare to other warm-starting techniques for QAOA?
+- Will the observed modest growth in p-depth and sampling complexity continue for instances with hundreds of variables, as hypothesized by the authors?
+- How well does Train-and-Scale perform on real noisy quantum devices compared with classical simulation?
+- Can the method avoid barren plateaus and remain trainable at substantially larger depths and problem sizes?
+- How sensitive are results to the choice of correlation threshold λ and to different market regimes or asset universes?
+- Does training on families of subinstances generalize robustly to unseen real-world portfolio instances outside the SP500-derived dataset?
+- How much of the performance gain comes from parameter transfer across instance sizes versus simply increasing circuit depth?
+- What is the best strategy for determining target depth p as instance size grows?
+- How does the approach compare against stronger classical baselines such as exact branch-and-bound MIS solvers, commercial optimizers, or advanced heuristics tailored to portfolio diversification?
+- Can the MIS formulation capture practical financial constraints such as cardinality, turnover, transaction costs, sector exposure, or risk-return tradeoffs without losing trainability?
+- How robust is the method to alternative subgraph sampling schemes beyond breadth-first search?
 
 **Future work:**
-- Extend the Train-and-Scale method to larger problem instances (n > 100) and validate scalability trends empirically
-- Test the approach on real quantum hardware to assess noise resilience and practical applicability
-- Compare performance with state-of-the-art classical solvers (e.g., integer programming, simulated annealing) to quantify quantum advantage
-- Explore adaptive strategies for dynamically adjusting p-depth and λ during training
-- Investigate the impact of different initial states (beyond the all-zeros state) on solution quality and convergence
-- Apply the method to other combinatorial optimization problems in finance (e.g., index tracking, arbitrage detection)
-- Develop hybrid quantum-classical pipelines that integrate Train-and-Scale with classical post-processing techniques
-- Study the effect of noise mitigation techniques (e.g., error mitigation, dynamical decoupling) on real hardware implementations
+- Test whether the observed polynomial-like trends in depth and sampling complexity persist for problem instances with hundreds of variables.
+- Apply Train-and-Scale on intermediate-sized and near-future quantum systems to solve hard graph problems relevant to portfolio diversification.
+- Evaluate the method on real quantum hardware to assess practical performance under noise and hardware constraints.
+- Extend Train-and-Scale beyond QAOA/MIS to other variational quantum algorithms and other size-parameterized optimization problems.
+- Develop improved methods for selecting or adapting target depth as instance size increases.
+- Investigate better mixer-grouping or circuit-compilation strategies to further reduce implementation depth.
+- Study transferability of learned parameters across broader datasets, larger instance sizes, and different λ regimes.
+- Incorporate more realistic financial formulations beyond thresholded-correlation MIS, including richer portfolio constraints and objectives.
+- Benchmark against stronger classical optimization baselines to clarify where, if anywhere, practical quantum advantage may emerge.
+- [inferred] Release code, seeds, and detailed experimental protocols to improve reproducibility and enable independent validation.
 ## Key ideas
-- #idea:quantum-advantage — Train-and-Scale method achieves linear scaling in QAOA depth (p=O(n)) while maintaining high solution quality (approximation ratio <0.4) for portfolio diversification up to n=30
-- #idea:near-term-feasibility — Demonstrates potential for NISQ-era applicability through warm-starting and iterative scaling, though limited to classical simulations
-- #idea:hybrid-approach — Hybrid quantum-classical framework combines gradient-based optimization with classical preprocessing to mitigate barren plateaus and reduce qubit requirements
-- #limitation:simulation-only — Results are based on classical simulations, with no empirical validation on real quantum hardware
-- #limitation:qubit-count — Problem size limited to n=30 due to classical simulation constraints, insufficient for full-scale financial applications
-- #limitation:noise — No noise mitigation techniques applied, limiting direct applicability to near-term quantum devices
+- #idea:hybrid-approach — Proposes Train-and-Scale, a hybrid quantum-classical curriculum training strategy for QAOA on portfolio diversification instances mapped to Maximum Independent Set.
+- #idea:near-term-feasibility — In classical simulation, gradually increasing depth with problem size (roughly p ≈ 2n) maintains good approximation quality on SP500-derived instances up to n = 30.
+- #idea:near-term-feasibility — Parameters learned on smaller instances transfer to larger MIS instances up to n = 100 with favorable empirical sampling-complexity behavior.
+- #idea:quantum-advantage — Reports a lower empirical sampling-complexity scaling exponent for trained QAOA than simulated annealing on λ = 0.1 instances, suggesting possible future advantage if trends persist.
+- #idea:hybrid-approach — Uses constraint-preserving MIS mixers, warm-start parameter transfer, and layer insertion to improve trainability of deeper QAOA circuits.
 ## Contradictions
-- #contradiction:scalability — Claims polynomial scaling potential for hundreds of variables, but results are limited to n=30 and lack empirical validation on real hardware. Contradicts papers like 2021_Marshall_QuantumAnnealingPortfolio (which shows annealing struggles beyond n=50) and 2022_Herman_QAOALimits (which questions QAOA scalability beyond n=20 without error correction).
+- The paper suggests scalable QAOA performance for portfolio diversification and possible usefulness on hundreds of variables, but the evidence is limited to noiseless classical simulation with full training only up to n = 30 and transfer tests up to n = 100; this conflicts with more skeptical scalability assessments such as 2022_Herman_QAOALimits.
+- Its optimistic scaling narrative also contrasts with 2021_Marshall_QuantumAnnealingPortfolio, which reports degradation on larger portfolio-style optimization instances, indicating that favorable small-scale trends may not carry over to realistic problem sizes.
 ## Notable quotes
 <!-- Researcher-added — verbatim quotes with page references -->
 
@@ -143,28 +158,33 @@ The paper suggests potential quantum advantage for larger problem sizes (hundred
 
 ## Experiment details
 ### Input
-{'source': 'Kaggle (publicly available S&P 500 stock market data)', 'size': '350-500 stocks per month, 2010-2020 time period', 'features': 'Daily returns computed as percentage price changes, covariance and correlation matrices derived from daily returns', 'preprocessing_steps': ['Daily returns calculated as rt_k = (price(at_k) - price(at-1_k)) / price(at-1_k)', 'Monthly average returns and covariance matrices computed', 'Pearson correlation coefficients calculated for asset pairs', 'Threshold λ applied to correlation matrix to generate unweighted graphs (λ ∈ {0.1, 0.2, 0.3, 0.4, 0.5})', 'Subgraphs of sizes n=6 to n=30 generated via breadth-first search from larger graphs'], 'number_of_instances': '500 subgraphs per size n for each λ threshold'}
+Input data consists of historical S&P 500 daily stock prices from Kaggle, covering monthly windows from 2010 to 2020. After cleaning, each month contains approximately 350-500 stocks. Daily returns are computed as percentage price changes, then monthly mean returns, covariances, standard deviations, and Pearson correlations are estimated. For each month, an unweighted graph is created by connecting asset pairs whose absolute correlation exceeds threshold λ. Subgraph instances are generated by breadth-first search around a randomly selected starting node. For benchmarking, datasets D_n^500 with 500 graph instances per size are created for n between 6 and 100 and λ in {0.1, 0.2, 0.3, 0.4, 0.5}. The paper notes survivorship bias in the dataset.
 
 ### Process
-['1. Start with QAOA-pmin (pmin=6) on smallest instance size (nmin=6).', '2. Train QAOA-p on dataset Dn_k (k=500 instances) using parameter shift rule for gradient estimation.', '3. Perform 130,000 finite difference gradient updates with learning rate decay from 0.02 to 0.002 over 64 epochs.', '4. For each new instance size n, generate dataset Dn_k via breadth-first search.', '5. Determine target depth ptarget (e.g., p + 2) and insert new layers in the middle of the circuit.', '6. Train the new layer while keeping other parameters fixed, then retrain the entire circuit.', '7. Repeat until p reaches ptarget, then increment n and repeat the process.', '8. Evaluate approximation gap and sampling complexity for each instance size and circuit depth.']
+1. Compute daily returns from cleaned S&P 500 price data and estimate monthly Pearson correlation matrices. 2. Threshold correlations at λ to form unweighted graphs representing portfolio diversification constraints. 3. Generate size-n MIS subgraph instances via breadth-first search from randomly selected seed nodes. 4. Initialize Train-and-Scale with n_min=6 and p_min=6. 5. Train QAOA on the dataset D_n^k for the current size using parameter-shift-based finite-difference gradient updates. 6. For each increase in problem size, transfer the learned parameters to size n+1. 7. Increase target depth, typically by 2 layers per size increment. 8. Insert a new identity layer in the middle of the circuit by inserting zeros into the alpha and beta parameter vectors. 9. Train the newly inserted layer with only the middle layer active, then retrain all circuit parameters jointly. 10. Use approximately 2^17 (~130,000) gradient updates per training stage, selecting one parameter uniformly at random per update. 11. Use an initial learning rate of 0.02, shift size 0.01, and exponentially decay the learning rate over 64 epochs to 0.002. 12. At each epoch, compute energies for each instance, derive approximation gaps, and weight instances according to the standard-deviation range of their gap using temperature parameter beta=1. 13. Evaluate approximation gap and success probability / inverse success probability, and compare sample complexity scaling against simulated annealing for λ=0.1.
 
 ### Output
-{'metrics_reported': ['Approximation ratio (gap between QAOA solution and optimal solution)', 'Sampling complexity (inverse of success probability to find the best solution)', 'Scaling of circuit depth (p) with problem size (n)'], 'comparison_baselines': ['Simulated annealing (constant temperature T=1) for sampling solutions', 'Classical simulation cost for different λ thresholds'], 'output_format': 'Approximation gap and sampling complexity plots for varying problem sizes and circuit depths, comparison of QAOA scaling with simulated annealing'}
+Reported outputs include approximation gap/approximation ratio for QAOA as a function of instance size and correlation threshold, success probability and inverse success probability (sampling complexity) for finding the best solution, and empirical scaling comparisons against simulated annealing. Figures report medians and quartiles over 500 graph instances per size. The paper states average approximation ratio below 0.4 and modest sampling complexity, with p=54 at n=30, and compares empirical scaling exponents of QAOA and simulated annealing for λ=0.1.
 
 ### Parameters
-- qubit_count: Equal to problem size n (6 to 30 qubits)
-- circuit_depth: p-depth ranging from 6 to 54 (p=2n for n=30)
-- shots: Not explicitly stated, but sampling complexity reported as inverse success probability
-- optimizer: Finite difference gradient descent with parameter shift rule
-- learning_rate: {'initial': 0.02, 'final': 0.002, 'decay': 'Exponential over 64 epochs'}
-- shift_size: 0.01
-- gradient_updates: 130000
+- n_min: 6
+- p_min: 6
+- max_reported_training_size: 30
+- max_reported_evaluation_size: 100
+- depth_growth_per_size_step: 2
+- final_reported_depth_at_n30: 54
+- instances_per_size: 500
+- lambda_values: [0.1, 0.2, 0.3, 0.4, 0.5]
+- gradient_updates_per_training_stage: 131072
 - epochs: 64
-- temperature_parameter: 1
-- correlation_thresholds: [0.1, 0.2, 0.3, 0.4, 0.5]
+- initial_learning_rate: 0.02
+- final_learning_rate: 0.002
+- shift_size: 0.01
+- instance_weight_temperature: 1
+- initial_state: |0>^n
 
 ### Hardware
-Classical simulation of QAOA circuits (no real QPU used). Simulation details (e.g., simulator name, noise model) not specified.
+No real quantum hardware is reported. The experiments rely on classical simulation of QAOA circuits; the specific simulator software, compute environment, and transpilation/noise settings are not specified.
 
 ### Reproducibility
-Code availability not explicitly mentioned. Dataset is publicly available from Kaggle. Methodology details are sufficiently described for replication, including algorithm pseudocode, parameter choices, and training protocol. However, lack of explicit code or simulation environment details may hinder full reproducibility.
+Data source is public and described (Kaggle S&P 500 stock dataset), and the paper provides substantial high-level methodological detail on graph construction and training. However, no code repository, simulator implementation details, exact optimizer implementation, or full hyperparameter/configuration details for all experiments are provided, so replication is only partially supported.

@@ -18,35 +18,33 @@ idea_tags:
 - idea:hybrid-approach
 journal_or_venue: International Journal on Science and Technology (IJSAT)
 methodology_tags:
-- quantum-ML
-- quantum-SVM
-- variational
 - quantum-annealing
 - QAOA
-- HHL
-- quantum-simulation
-- classical-simulation
+- quantum-ML
+- quantum-SVM
+- QUBO
+- variational
 paper_type: ''
 quantum_advantage_claim: theoretical
 related_papers:
 - 2023_Smith_ClassicalMLFinance
 - 2024_Google_QuantumSupremacy
 relevance_phase1: high
-relevance_phase3: high
+relevance_phase3: medium
 source_type: peer-reviewed-theoretical
-source_type_confidence: high
-step1_date: '2026-03-20T00:40:15.131157'
-step1_model: Mistral-Large-3
-step2_date: '2026-03-20T00:40:18.384751'
-step2_model: Mistral-Large-3
-step3_date: '2026-03-20T00:40:22.596690'
-step3_model: Mistral-Large-3
-step4_date: '2026-03-20T00:40:31.014708'
-step4_model: Mistral-Large-3
-step5_date: '2026-03-20T00:41:16.452811'
-step5_model: Mistral-Large-3
-step6_date: '2026-03-20T00:42:21.404498'
-step6_model: Mistral-Large-3
+source_type_confidence: medium
+step1_date: '2026-03-25T16:12:22.589217'
+step1_model: gpt-5.1
+step2_date: '2026-03-25T16:12:26.597155'
+step2_model: gpt-5.1
+step3_date: '2026-03-25T16:12:36.313853'
+step3_model: gpt-5.4
+step4_date: '2026-03-25T16:13:10.809548'
+step4_model: gpt-5.4
+step5_date: '2026-03-25T16:13:38.851871'
+step5_model: gpt-5.4
+step6_date: '2026-03-25T16:13:53.053545'
+step6_model: gpt-5.4
 steps_completed:
 - 1
 - 2
@@ -56,20 +54,12 @@ steps_completed:
 - 6
 tags:
 - topic/portfolio-optimisation
-- topic/risk-modelling
-- topic/fraud-detection
-- topic/credit-scoring
-- topic/high-frequency-trading
-- topic/asset-pricing
-- topic/quantum-cryptography
-- method/quantum-ML
-- method/quantum-SVM
-- method/variational
 - method/quantum-annealing
 - method/QAOA
-- method/HHL
-- method/quantum-simulation
-- method/classical-simulation
+- method/quantum-ML
+- method/quantum-SVM
+- method/QUBO
+- method/variational
 - idea/quantum-advantage
 - idea/near-term-feasibility
 - idea/hybrid-approach
@@ -79,88 +69,98 @@ title: 'Quantum Machine Learning for Financial Forecasting and Portfolio Optimiz
   Algorithms, Applications, and Future Prospects'
 topic_tags:
 - portfolio-optimisation
-- risk-modelling
-- fraud-detection
-- credit-scoring
-- high-frequency-trading
-- asset-pricing
-- quantum-cryptography
 year: 2025
 zotero_key: ''
 ---
 
 ## Abstract summary
-This paper examines the role of quantum machine learning (QML) in addressing computational challenges in financial forecasting and portfolio optimization. It evaluates key QML algorithms—such as quantum support vector machines, variational circuits, and quantum annealing—and their sector-specific applications in finance, highlighting their advantages over classical methods in speed, accuracy, and scalability. The paper also identifies current limitations, including hardware constraints and regulatory gaps, while exploring emerging solutions and future prospects for QML adoption in financial services.
+The paper surveys how quantum machine learning methods can be applied to financial forecasting and portfolio optimization, focusing on algorithms such as quantum support vector machines, variational quantum circuits, quantum PCA, and quantum annealing. It discusses sector-specific use cases in forecasting and asset allocation, outlines current hardware, algorithmic, and regulatory barriers, and considers hybrid and quantum-inspired approaches as near-term pathways for adoption in financial markets.
 ## Methodology
-This paper presents a theoretical review and evaluation of quantum machine learning (QML) algorithms and their applications in financial forecasting and portfolio optimization. The methodology involves a comprehensive analysis of existing literature and industry reports to identify core QML algorithms, including Quantum Support Vector Machines (QSVM), Variational Quantum Circuits (VQC), Quantum Principal Component Analysis (QPCA), and Quantum Annealing. The paper systematically examines the theoretical frameworks underlying these algorithms, their financial applications, and the challenges hindering broader adoption. It also explores sector-specific use cases, such as financial forecasting and portfolio optimization, by synthesizing findings from academic research, industry collaborations (e.g., JPMorgan Chase, Goldman Sachs), and market reports. The analysis is structured around four key objectives: evaluating core QML algorithms, analyzing their financial applications, identifying adoption challenges, and examining future prospects. The paper does not conduct original empirical experiments but instead relies on theoretical propositions, conceptual models, and secondary data from industry and academic sources to derive insights.
+The paper adopts a conceptual/theoretical review-style approach rather than presenting original empirical experiments or a formal mathematical model. Its methodology is organized as a structured narrative analysis of quantum machine learning in finance, with the stated objectives of evaluating core QML algorithms, analyzing sector-specific applications, identifying adoption barriers, and discussing future prospects. The article synthesizes prior literature and industry examples to describe four main methodological families relevant to financial services: quantum support vector machines based on quantum feature mapping into Hilbert space for classification; variational quantum circuits framed as hybrid quantum-classical parameterized models trained with classical optimizers for regression and supervised learning; quantum principal component analysis relying theoretically on phase estimation and density-matrix-based dimensionality reduction; and quantum annealing for portfolio optimization via formulation as a quadratic unconstrained binary optimization (QUBO) problem. The paper's theoretical framing assumes that quantum effects such as superposition, entanglement, and tunneling can provide computational advantages for high-dimensional, nonlinear, and constrained financial problems. It does not provide formal propositions, proofs, derivations, or a dedicated methods section; instead, it advances qualitative claims through secondary citation-based synthesis of academic and industry sources.
 
-**Algorithms used:** Quantum Support Vector Machines, Variational Quantum Circuits, Quantum Principal Component Analysis, Quantum Annealing, Quantum Approximate Optimization Algorithm
+**Algorithms used:** Quantum Support Vector Machine, Variational Quantum Circuits, Quantum Principal Component Analysis, Quantum Annealing, Quantum Approximate Optimization Algorithm, Quantum Monte Carlo simulations, Quantum neural networks, Quantum-inspired algorithms, Quantum phase estimation
 ## Findings
-- [speculative] Quantum machine learning (QML) offers significant improvements over classical methods in speed, accuracy, and scalability for financial forecasting and portfolio optimization
-- [speculative] Quantum Support Vector Machines (QSVM) leverage quantum feature mapping to enable faster computation of inner products, reducing runtime from hours to minutes for large, non-linearly separable datasets in finance
-- [speculative] Variational Quantum Circuits (VQCs) are hybrid quantum-classical models that outperform traditional neural networks in capturing complex, non-linear relationships in financial data due to quantum superposition and entanglement
-- [speculative] Quantum Principal Component Analysis (QPCA) identifies principal components of high-dimensional financial datasets exponentially faster than classical PCA, enhancing real-time analytics in high-frequency trading
-- [speculative] Quantum annealing produces comparable or better portfolio optimization outcomes in a fraction of the time required by classical solvers, particularly for large, constrained asset universes
-- [speculative] Hybrid quantum-classical models improve accuracy in predicting financial market volatility indices and yield curves, outperforming traditional models in high-volatility environments
-- [speculative] Quantum machine learning reduces computational time for risk modeling, as demonstrated by JPMorgan’s quantum-powered Monte Carlo simulations
-- [speculative] Quantum-inspired algorithms (classical algorithms using quantum principles) offer computational advantages for non-linear financial problems without requiring quantum hardware, bridging the gap until full-scale quantum systems are available
-- [supported] Early experiments using IBM’s quantum devices show QSVM success in binary classification tasks for financial applications, such as distinguishing bullish/bearish markets or asset risk profiles
-- [speculative] Quantum machine learning’s ability to process high-dimensional data simultaneously enables improved scenario analysis and anomaly detection in financial systems
-- [speculative] Quantum annealing and quantum approximate optimization algorithms (QAOA) effectively handle real-world portfolio constraints (e.g., cardinality limits, transaction costs) that challenge classical methods like Markowitz’s mean-variance optimization
-- [disputed] Current quantum hardware limitations (high error rates, short coherence times) constrain the complexity and reliability of QML models, necessitating hybrid classical-quantum approaches
-- [speculative] The lack of standardized benchmarks and proven performance on real-world financial datasets presents algorithmic barriers to QML adoption in finance
-- [speculative] Regulatory gaps and the experimental nature of QML pose financial and reputational risks for institutions, requiring transparency and accountability frameworks
+- [speculative] The paper argues that quantum machine learning (QML) could improve financial forecasting and portfolio optimization by offering better speed, accuracy, and scalability than classical methods, but it does not present original empirical validation.
+- [speculative] Quantum support vector machines are claimed to benefit finance by embedding classical data into high-dimensional Hilbert spaces, potentially making nonlinearly separable financial data easier to classify under conditions where quantum feature maps are effective.
+- [speculative] The paper claims QSVMs can reduce computational bottlenecks in kernel evaluation and potentially cut runtimes from hours to minutes for some financial classification tasks, but no new theorem, proof, or experiment is provided in this paper.
+- [speculative] Variational quantum circuits are presented as suitable for regression and supervised learning in finance, especially under noisy intermediate-scale quantum conditions, because hybrid quantum-classical training can model nonlinear relationships with parameterized circuits.
+- [speculative] The paper proposes that variational quantum circuits may provide richer or more compact representations than some classical neural networks due to superposition and entanglement, contingent on practical trainability and hardware limitations.
+- [speculative] Quantum principal component analysis is claimed to identify principal components exponentially faster than classical PCA in theory, with the complexity advantage holding only under idealized assumptions typical of qPCA methods such as efficient quantum state preparation and access to suitable density-matrix encodings.
+- [speculative] The paper suggests qPCA could be useful for dimensionality reduction in high-dimensional financial datasets such as portfolio data, macroeconomic indicators, and trading signals, but this is argued conceptually rather than demonstrated.
+- [speculative] Quantum annealing is presented as a promising approach for portfolio optimization by mapping constrained allocation problems to QUBO formulations and using quantum tunneling to escape local minima more effectively than some classical heuristics.
+- [speculative] The paper claims quantum annealing may achieve comparable or better optimization outcomes in less time than classical solvers for some portfolio problems, but this claim is attributed to cited literature rather than established by new results here.
+- [speculative] The authors argue that QML could improve financial forecasting tasks such as volatility prediction, yield-curve modeling, and scenario analysis by handling high-dimensional and nonlinear data more efficiently than classical models.
+- [speculative] A central proposition of the paper is that current hardware immaturity, error rates, limited qubit counts, and short coherence times are major conditions preventing broad deployment of QML in finance.
+- [speculative] The paper contends that because standardized benchmarks and robust real-world financial validations are lacking, near-term adoption will likely depend on hybrid quantum-classical workflows rather than standalone quantum systems.
+- [speculative] Quantum-inspired classical algorithms are proposed as an interim bridge to full quantum deployment in finance, with claimed benefits for nonlinear optimization and diversification, though no original evidence is provided.
+- [speculative] The paper concludes that realizing QML benefits in finance depends on continued advances in hardware, hybrid architectures, benchmarking, and governance rather than on currently demonstrated quantum advantage.
 
-**Results summary:** The paper presents a theoretical evaluation of quantum machine learning (QML) algorithms for financial forecasting and portfolio optimization, highlighting their potential to outperform classical methods in speed, accuracy, and scalability. Key algorithms discussed include Quantum Support Vector Machines (QSVM), Variational Quantum Circuits (VQC), Quantum Principal Component Analysis (QPCA), and quantum annealing, all of which are argued to offer exponential speedups or superior handling of high-dimensional, non-linear financial data. Early experimental results (e.g., IBM’s QSVM for binary classification) are cited as proof of concept, but broader claims of quantum advantage remain speculative due to hardware immaturity and algorithmic barriers. The paper also identifies challenges such as hardware constraints, regulatory gaps, and the need for hybrid architectures, while projecting future adoption through quantum-inspired algorithms and institutional investments.
+**Results summary:** This paper is a theoretical/narrative overview of quantum machine learning for financial forecasting and portfolio optimization rather than an original empirical study. It surveys several algorithm classes—quantum support vector machines, variational quantum circuits, quantum principal component analysis, and quantum annealing—and argues that they may offer computational or modeling advantages for classification, regression, dimensionality reduction, and constrained optimization in finance. The strongest complexity-oriented claim is that qPCA can be exponentially faster than classical PCA in theory, subject to restrictive assumptions about quantum data access and encoding. More broadly, the paper advances a theoretical quantum-advantage narrative for finance, but it does not provide new proofs, formal derivations, benchmarks, or experiments. It also emphasizes that hardware limitations, lack of standardized benchmarks, and regulatory uncertainty currently constrain practical adoption, making hybrid and quantum-inspired approaches the most plausible near-term path.
 
 **Performance claims:**
-- QSVM reduces runtime from hours to minutes for large, non-linearly separable datasets
-- Quantum annealing produces comparable or better portfolio optimization outcomes in a fraction of the time required by classical solvers
-- Hybrid quantum-classical models outperform traditional models in predicting volatility indices and yield curves
-- JPMorgan’s quantum-powered Monte Carlo simulations reduce computational time for risk modeling
+- Market growth claim cited: QML market CAGR of 33.8%, from $1.12 billion in 2024 to $1.5 billion in 2025
+- Market claim cited: quantum computing in financial services valued at $0.3 billion and expected to reach $6.3 billion, with 46.5% growth rate
+- Adoption claim cited: 80% of major global financial institutions are engaging with quantum computing
+- Impact claim cited: quantum impact in finance reaching $622 billion by 2025
+- QSVM runtime claim: potential reduction from hours to minutes for some financial tasks
+- qPCA claim: exponentially faster than classical PCA in theory
+- Quantum annealing claim: comparable or better optimization outcomes in a fraction of the time required by classical solvers
 ## Quantum advantage claim
 **Classification:** theoretical
 
-The paper claims theoretical quantum advantage for QML algorithms (e.g., exponential speedups in QPCA, superior expressivity in VQCs) but acknowledges that these advantages are not empirically validated on real-world financial datasets or large-scale quantum hardware. Early experimental results (e.g., IBM’s QSVM) are limited in scope and do not demonstrate scalable quantum advantage.
+The paper makes broad theoretical and literature-based claims that quantum methods may outperform classical approaches in finance, including an explicit theoretical complexity advantage for qPCA and qualitative speed/optimization advantages for QSVMs and quantum annealing. However, it does not demonstrate quantum advantage with original empirical results or hardware experiments.
 ## Limitations
-- Hardware constraints, including high error rates, limited qubit counts, and short coherence times, restrict the complexity and reliability of quantum machine learning models [author-stated]
-- High cost of quantum hardware limits broader adoption in the financial sector [author-stated]
-- Quantum machine learning algorithms lack standardized benchmarks and proven performance on real-world financial datasets [author-stated]
-- Designing effective quantum circuits for high-dimensional and noisy financial data is complex and experimental [author-stated]
-- Regulatory frameworks for quantum machine learning in finance are underdeveloped, lacking transparency and accountability standards [author-stated]
-- [inferred] Theoretical speedups and advantages of quantum algorithms (e.g., QSVM, QPCA) may not translate to practical performance due to hardware limitations
-- [inferred] No empirical validation or direct comparison with state-of-the-art classical machine learning methods (e.g., deep learning) for financial forecasting tasks
-- [inferred] Hybrid quantum-classical models may only offer marginal improvements over classical methods, limiting their immediate practical impact
-- [inferred] Quantum annealing for portfolio optimization is still constrained by hardware scalability and may not outperform classical solvers in all real-world scenarios
-- [inferred] Lack of detailed discussion on noise mitigation techniques and their impact on algorithm performance in financial applications
+- Current quantum computers are limited by high error rates, short coherence times, and low effective qubit capacity, constraining the complexity and depth of QML models that can be run reliably.
+- High hardware cost is identified as a barrier to broader adoption in financial institutions.
+- Until error rates are reduced and larger-scale systems become available, QML applications are expected to rely on hybrid classical-quantum approaches, yielding only partial rather than full quantum advantages.
+- QML is described as being at an early stage of development, with a lack of standardized benchmarks.
+- The paper states that QML lacks proven performance on real-world financial datasets.
+- Designing effective quantum circuits for high-dimensional and noisy financial data is presented as a complex unresolved challenge.
+- Quantum methods are characterized as experimental and untested relative to mature classical ML methods with validated heuristics.
+- Regulatory frameworks are underdeveloped; beyond broad transparency and accountability requirements, concrete regulation is not yet established.
+- [inferred] The article is primarily a narrative/theoretical overview and does not provide original empirical experiments or quantitative validation of the claimed gains in speed, accuracy, or scalability.
+- [inferred] Many performance claims rely on secondary sources, industry reports, and reviews rather than direct head-to-head evaluation against state-of-the-art classical financial models.
+- [inferred] The paper assumes theoretical quantum speedups will translate into practical financial advantage, but does not analyze data-loading costs, error-correction overhead, or end-to-end workflow bottlenecks.
+- [inferred] No formal problem formulations, complexity analyses, or boundary conditions are given for when specific QML methods outperform classical alternatives in finance.
+- [inferred] The discussion of applications such as forecasting and portfolio optimization is broad and may overgeneralize across heterogeneous financial tasks, asset classes, and market regimes.
+- [inferred] The paper does not address reproducibility in detail, including implementation specifics, benchmark datasets, parameter settings, or evaluation protocols.
+- [inferred] Claims about improved scalability are not reconciled with current NISQ-era limitations, creating a gap between theoretical promise and practical deployment.
 ## Open questions
-- How do quantum machine learning algorithms perform on real-world financial datasets compared to classical methods in terms of accuracy, speed, and scalability?
-- What is the impact of quantum decoherence and noise on the reliability of quantum machine learning models in financial forecasting and portfolio optimization?
-- How can quantum machine learning models be effectively integrated into existing financial workflows while ensuring regulatory compliance?
-- What are the specific computational advantages of quantum algorithms (e.g., QSVM, QPCA) over classical methods for high-dimensional financial data?
-- How will quantum hardware advancements (e.g., error correction, increased qubit counts) influence the practical adoption of quantum machine learning in finance?
-- What are the long-term implications of quantum machine learning for risk management and fraud detection in financial services?
+- When, and under what hardware conditions, will QML deliver practical advantages over classical methods in real financial forecasting and portfolio optimization tasks?
+- Which QML algorithms are most suitable for specific financial use cases such as volatility prediction, yield-curve modeling, credit risk assessment, and constrained portfolio construction?
+- How robust are QML models to the high-dimensionality, noise, non-stationarity, and regime shifts characteristic of financial data?
+- What standardized benchmarks and evaluation protocols should be used to compare QML methods with classical baselines in finance?
+- Can theoretical speedups from methods such as quantum PCA, QSVMs, and quantum annealing be realized after accounting for data encoding and hardware noise?
+- How should financial institutions validate and govern QML systems given the current lack of mature regulatory guidance?
+- What level of transparency, explainability, and auditability is required for QML models in regulated financial settings?
+- To what extent can hybrid quantum-classical systems provide meaningful near-term business value before fault-tolerant quantum computing arrives?
+- How well do quantum-inspired algorithms approximate the benefits of true quantum methods for financial optimization and forecasting?
+- [inferred] What are the precise conditions under which QML outperforms strong modern classical alternatives such as deep learning, gradient-boosted methods, and advanced stochastic optimization?
+- [inferred] How sensitive are proposed QML financial applications to realistic transaction costs, liquidity constraints, and market impact?
 
 **Future work:**
-- Development of quantum-inspired algorithms that leverage quantum principles without requiring full-scale quantum hardware [author-stated]
-- Further exploration of hybrid quantum-classical architectures to enhance computational efficiency in financial applications [author-stated]
-- Investment in talent, infrastructure, and ethical governance to support the adoption of quantum machine learning in finance [author-stated]
-- Benchmarking quantum machine learning algorithms against classical methods on real-world financial datasets
-- Advancement of noise mitigation techniques and error correction methods tailored for financial quantum computing applications
-- Standardization of quantum machine learning models and regulatory frameworks for financial use cases
-- Scaling quantum annealing and variational quantum circuits for large-scale portfolio optimization problems
-- Integration of quantum machine learning into real-time financial decision-making systems (e.g., high-frequency trading, risk assessment)
+- Develop and adopt quantum-inspired algorithms as a near-term bridge before full-scale quantum hardware becomes practical.
+- Continue building hybrid quantum-classical architectures that integrate quantum models with existing financial systems and data pipelines.
+- Embed quantum solvers into traditional workflows for tasks such as real-time optimization and scenario simulation.
+- Advance quantum hardware to reduce errors, improve coherence times, and scale system size so that fuller QML benefits can be realized.
+- Establish standardized benchmarks for evaluating QML methods in financial applications.
+- Demonstrate QML performance on real-world financial datasets rather than relying mainly on theoretical promise or early experiments.
+- Develop clearer regulatory, transparency, and accountability frameworks for QML use in finance.
+- Invest in talent, infrastructure, and ethical governance to support eventual deployment of QML in financial institutions.
+- [inferred] Conduct rigorous empirical comparisons between QML methods and state-of-the-art classical baselines on standardized financial tasks.
+- [inferred] Study end-to-end practicality, including data encoding costs, latency, robustness, and deployment constraints in production financial environments.
+- [inferred] Identify use-case-specific advantage regimes, clarifying which financial problems may benefit in the NISQ era versus requiring fault-tolerant quantum computing.
+- [inferred] Evaluate QML methods under realistic market frictions and operational constraints, including transaction costs, cardinality constraints, and regulatory compliance requirements.
 ## Key ideas
-- #idea:quantum-advantage — QSVM and QPCA offer theoretical exponential/polynomial speedups for financial classification and data compression tasks
-- #idea:quantum-advantage — Quantum annealing demonstrates potential for faster portfolio optimization compared to classical solvers
-- #idea:hybrid-approach — Hybrid quantum-classical models (e.g., VQCs) outperform traditional neural networks in volatility prediction and yield curve modeling
-- #idea:near-term-feasibility — Quantum-inspired algorithms provide computational advantages without requiring quantum hardware, bridging the gap until full-scale systems are viable
-- #idea:hybrid-approach — Classical preprocessing and error mitigation techniques are proposed to address current hardware limitations
-- #limitation:noise — Hardware noise and short coherence times degrade the performance of quantum algorithms in real-world financial applications
-- #limitation:no-empirical-validation — Theoretical claims lack empirical validation on real financial datasets or direct comparisons with state-of-the-art classical methods
+- #idea:quantum-advantage — The paper argues that QSVMs, qPCA, and quantum annealing could provide speed or optimization advantages for financial forecasting and portfolio optimization, though mainly at a theoretical level.
+- #idea:hybrid-approach — Variational quantum circuits are framed as hybrid quantum-classical models suitable for NISQ-era financial learning tasks.
+- #idea:near-term-feasibility — Quantum-inspired algorithms and hybrid workflows are presented as the most plausible near-term route for adoption in finance.
+- #idea:quantum-advantage — Portfolio optimization is highlighted as a key use case via QUBO formulations solved with quantum annealing and discussed alongside QAOA.
+- #idea:hybrid-approach — The paper emphasizes integration of quantum methods with classical preprocessing, optimization, and existing financial workflows rather than standalone quantum deployment.
 ## Contradictions
-- #contradiction:classical-vs-quantum — The paper claims QSVM and quantum annealing outperform classical methods, but lacks empirical validation or benchmarks against classical ML (e.g., XGBoost, deep learning). Contradicts [2023_Smith_ClassicalMLFinance] which shows classical methods still dominate in practice.
-- #contradiction:scalability — Theoretical speedups (e.g., QPCA) are assumed to scale, but hardware limitations (qubit count, error rates) may prevent practical advantages. Contradicts [2024_Google_QuantumSupremacy] which highlights scalability challenges in real-world applications.
+- The paper advances broad claims that QSVMs and quantum annealing may outperform classical approaches in finance, but it provides no original benchmarks or empirical comparisons; this conflicts with more practice-oriented literature such as 2023_Smith_ClassicalMLFinance that reports strong classical ML baselines still dominate real financial tasks.
+- The paper suggests theoretical scaling benefits, especially for qPCA and optimization methods, yet simultaneously acknowledges severe qubit, noise, and coherence constraints that block real deployment; this creates a scalability tension consistent with concerns raised in 2024_Google_QuantumSupremacy.
+- The paper promotes near-term usefulness of QML for forecasting and optimization, but also states that real-world validation, standardized benchmarks, and robust hardware are still lacking, undermining its own superiority narrative.
 ## Notable quotes
 <!-- Researcher-added — verbatim quotes with page references -->
 

@@ -20,30 +20,30 @@ idea_tags:
 - idea:quantum-advantage
 - idea:near-term-feasibility
 - idea:hybrid-approach
-journal_or_venue: Proceedings of the 4th International Conference on Innovative Mechanisms
-  for Industry Applications (ICIMIA-2025)
+journal_or_venue: 2025 4th International Conference on Innovative Mechanisms for Industry
+  Applications (ICIMIA)
 methodology_tags:
 - quantum-ML
 - variational
 paper_type: ''
 quantum_advantage_claim: speculative
 related_papers: []
-relevance_phase1: high
+relevance_phase1: medium
 relevance_phase3: medium
-source_type: conference-paper
+source_type: peer-reviewed-empirical
 source_type_confidence: high
-step1_date: '2026-03-20T00:42:24.862859'
-step1_model: Mistral-Large-3
-step2_date: '2026-03-20T00:42:28.828799'
-step2_model: Mistral-Large-3
-step3_date: '2026-03-20T00:42:39.142878'
-step3_model: Mistral-Large-3
-step4_date: '2026-03-20T00:42:46.208031'
-step4_model: Mistral-Large-3
-step5_date: '2026-03-20T00:42:54.684433'
-step5_model: Mistral-Large-3
-step6_date: '2026-03-20T00:43:26.950414'
-step6_model: Mistral-Large-3
+step1_date: '2026-03-25T16:12:34.285029'
+step1_model: gpt-5.1
+step2_date: '2026-03-25T16:12:38.555569'
+step2_model: gpt-5.1
+step3_date: '2026-03-25T16:13:02.849909'
+step3_model: gpt-5.4
+step4_date: '2026-03-25T16:13:35.120726'
+step4_model: gpt-5.4
+step5_date: '2026-03-25T16:14:06.187375'
+step5_model: gpt-5.4
+step6_date: '2026-03-25T16:14:18.055957'
+step6_model: gpt-5.4
 steps_completed:
 - 1
 - 2
@@ -53,7 +53,6 @@ steps_completed:
 - 6
 tags:
 - topic/asset-pricing
-- topic/high-frequency-trading
 - method/quantum-ML
 - method/variational
 - idea/quantum-advantage
@@ -64,85 +63,99 @@ tags:
 title: Hybrid QLSTM Framework for Time Series Forecasting in Dynamic Financial Markets
 topic_tags:
 - asset-pricing
-- high-frequency-trading
 year: 2025
 zotero_key: ''
 ---
 
 ## Abstract summary
-This paper presents a hybrid quantum-classical framework combining Long Short-Term Memory (LSTM) networks with Quantum Neural Networks (QNN) to improve time series forecasting in financial markets. The study explores various quantum circuit configurations to optimize the QLSTM model, aiming to leverage quantum computing's parallel processing capabilities for capturing complex, non-linear patterns in stock price data. The work focuses on enhancing prediction accuracy and generalization while reducing model complexity for real-world financial applications.
+The paper proposes a hybrid quantum-classical LSTM (QLSTM) framework for financial time series forecasting, focusing on stock price prediction for Apple Inc. using Yahoo Finance data. It combines a classical LSTM with a quantum neural network layer, systematically testing different feature map and ansatz circuit configurations to identify an effective quantum circuit design. The study then empirically compares the resulting QLSTM model against a purely classical LSTM, showing that the tuned hybrid model can better capture nonlinear patterns and improve predictive performance on stock closing prices.
 ## Methodology
-The paper presents a hybrid quantum-classical framework for financial time series forecasting, specifically stock price prediction. The methodology combines a classical Long Short-Term Memory (LSTM) network with a Quantum Neural Network (QNN) to leverage both temporal pattern recognition and quantum computing advantages. The study uses historical stock data from Apple Inc. (AAPL) spanning June 3, 2019, to May 30, 2025, obtained via the yfinance Python library. Data preprocessing involved selecting key features (Open, High, Low, Close, Volume), normalizing values between 0 and 1, and employing a sliding window approach with 20 days of input to predict the next day's closing price. The hybrid model architecture consists of a classical LSTM layer followed by a dense layer to reduce dimensionality, a quantum layer using ZZFeatureMap and RealAmplitudes ansatz circuits with 4 qubits, and a final classical output layer. Multiple quantum circuit configurations were evaluated to identify the optimal design. The model was trained using the RMSprop optimizer with Mean Squared Error (MSE) loss and early stopping to prevent overfitting. Performance was assessed using metrics such as MSE, MAE, RMSE, R², and Explained Variance, with comparisons against classical LSTM models.
+The paper presents an empirical hybrid quantum-classical time-series forecasting study for stock-price prediction using Apple (AAPL) market data. Historical daily data were collected from Yahoo Finance through the yfinance Python library, covering 1,508 trading-day observations from 2019-06-03 to 2025-05-30. The authors performed exploratory data analysis on closing-price trends, moving averages, yearly trading volume, quarterly OHLC trends, and gain/loss day counts. For modeling, they selected Open, High, Low, Close, and Volume columns, removed missing and non-numeric rows, normalized values to the [0,1] range, used Close as the prediction target, and excluded it from the input features. A sliding-window formulation was applied with 20 prior days used to predict the next-day close, and the data were split chronologically into training (48%), validation (32%), and test (20%) sets to avoid leakage. The proposed architecture consists of a classical LSTM layer that encodes temporal dependencies, followed by a dense projection from a 16-dimensional hidden state to a 4-dimensional vector, tanh activation to map values into [-1,1], a quantum neural network layer operating on 4 qubits, and a final classical dense output layer for regression. The quantum layer was implemented as a variational circuit using feature-map/ansatz combinations, with the main reported best design being ZZFeatureMap with 2 repetitions and RealAmplitudes with 2 layers and full entanglement. The model was trained using RMSprop and MSE loss with early stopping. The study also empirically compared multiple quantum circuit configurations in the QNN layer and benchmarked the final QLSTM against a classical LSTM baseline using regression metrics including MSE, MAE, RMSE, R2, and explained variance.
 
-**Algorithms used:** QLSTM, Quantum Neural Network (QNN)
-**Frameworks:** Qiskit
+**Algorithms used:** LSTM, QLSTM, QNN, ZZFeatureMap, PauliFeatureMap, ZFeatureMap, RealAmplitudes, EfficientSU2
+**Frameworks:** yfinance
 
-**Experimental setup:** The hybrid QLSTM model was implemented using a combination of classical deep learning frameworks and quantum computing libraries. The quantum layer utilized Qiskit for constructing and evaluating quantum circuits, including ZZFeatureMap and RealAmplitudes ansatz. Experiments were conducted on a simulator, as no real quantum processing unit (QPU) was mentioned.
+**Experimental setup:** A hybrid QLSTM-QNN regression model was evaluated for next-day stock closing-price prediction. The classical component used an LSTM with hidden size 16 over 20-day input sequences of four features (Open, High, Low, Volume). The LSTM output was reduced by a dense layer to 4 dimensions, passed through tanh, and fed into a 4-qubit quantum neural network. Several feature-map/ansatz combinations were tested, and the best-performing setup used ZZFeatureMap (reps=2) with RealAmplitudes (2 layers, full entanglement). Training used RMSprop, MSE loss, 100 epochs, and early stopping. The paper does not clearly specify whether experiments were run on a simulator or real quantum hardware.
 
-**Dataset:** Historical stock data for Apple Inc. (AAPL) from Yahoo Finance, covering approximately six years (June 3, 2019, to May 30, 2025) with 1,508 daily observations. Features included Open, High, Low, Close prices, and Volume.
+**Dataset:** Historical Apple Inc. (AAPL) stock data from Yahoo Finance accessed via the yfinance Python library, with 1,508 daily trading observations from 2019-06-03 to 2025-05-30. Variables include Open, High, Low, Close, Adjusted Close, and Volume; the model used Open, High, Low, and Volume as inputs and Close as the target.
 ## Findings
-- [supported] The hybrid QLSTM framework combining classical LSTM with a Quantum Neural Network (QNN) achieved superior performance in stock price forecasting, with an R² score of 0.83, MSE of 85.16, MAE of 7.49, and RMSE of 9.23 on AAPL stock data
-- [supported] The QLSTM model demonstrated faster and smoother loss convergence compared to classical LSTM, indicating better generalization and learning efficiency
-- [supported] The optimal quantum circuit configuration (ZZFeatureMap + RealAmplitudes) outperformed other quantum circuit combinations, achieving the lowest error metrics (MSE 0.0018) and highest R² (0.8372)
-- [supported] The QLSTM model required fewer trainable parameters and less training data to achieve better performance than classical LSTM, which had an R² of 0.54 and higher error metrics (MSE 235.74, MAE 13.53)
-- [speculative] The hybrid QLSTM framework may leverage quantum properties like entanglement and parallelism to enhance learning, reduce overfitting, and improve generalization in financial time series forecasting
-- [speculative] Quantum-enhanced models could potentially capture complex nonlinear patterns in financial data that classical models struggle with, particularly in noisy or high-dimensional conditions
-- [disputed] The paper claims that quantum computing enables richer data representations and improved prediction accuracy with fewer parameters, but this is not universally accepted in the literature due to current NISQ hardware limitations
+- [supported] On Apple stock daily data (1,508 observations from 2019-06-03 to 2025-05-30), the hybrid QLSTM outperformed the classical LSTM on next-day closing-price forecasting using a 20-day sliding window.
+- [supported] The best QLSTM configuration used 4 qubits, hidden size 16, learning rate 0.01, RMSprop optimizer, and 100 training epochs, achieving R² = 0.83, MSE = 85.16, MAE = 7.49, RMSE = 9.23, and explained variance = 0.89.
+- [supported] The classical LSTM baseline achieved lower predictive performance, with R² = 0.54, MSE = 235.74, MAE = 13.53, and RMSE = 15.35.
+- [supported] Among tested quantum circuit designs, ZZFeatureMap + RealAmplitudes and PauliFeatureMap + RealAmplitudes performed best in the QNN layer, each with MSE = 0.0018 and RMSE = 0.0424 on the normalized evaluation, with R² values of 0.8372 and 0.8347 respectively.
+- [supported] Quantum circuit choices using EfficientSU2 or ZFeatureMap performed substantially worse, including negative R² values (e.g., -9.9449, -22.0447, -31.9975, -45.3378), indicating unstable or poor predictions.
+- [supported] The authors report smoother training and validation loss convergence for QLSTM than for classical LSTM, interpreting this as better generalization and faster learning in their experiment.
+- [supported] The study's empirical results are based on a hybrid quantum-classical model with simulated quantum circuits/software-based QNN components rather than evidence from real quantum hardware execution.
+- [speculative] The authors argue that the quantum layer improves expressiveness by capturing nonlinear dependencies in Hilbert space that classical models struggle to represent, but this mechanism is inferred from comparative performance rather than directly validated.
+- [speculative] The paper suggests hybrid quantum-classical forecasting may provide a practical route for handling complex financial time series more effectively, but evidence is limited to a single-stock case study.
 
-**Results summary:** The paper presents a hybrid QLSTM framework that integrates classical LSTM with a Quantum Neural Network (QNN) for financial time series forecasting. The model was evaluated on AAPL stock data, demonstrating superior performance over classical LSTM with an R² score of 0.83 versus 0.54. The optimal quantum circuit configuration (ZZFeatureMap + RealAmplitudes) achieved the lowest error metrics (MSE 0.0018) and smooth loss convergence, suggesting better generalization. The QLSTM model also required fewer parameters and less training data. However, all results are based on simulations, and the claimed advantages of quantum properties remain theoretical.
+**Results summary:** The paper evaluates a hybrid QLSTM framework for forecasting Apple stock prices using 1,508 daily observations from Yahoo Finance. The model uses a classical LSTM to encode 20-day temporal windows, a dense projection to 4 dimensions, and a 4-qubit QNN layer built from feature-map and ansatz circuits. In the main comparison, the best QLSTM configuration outperformed a classical LSTM baseline, achieving R² = 0.83 versus 0.54, with lower errors (MSE 85.16 vs 235.74, MAE 7.49 vs 13.53, RMSE 9.23 vs 15.35). The authors also benchmarked multiple quantum circuit designs and found ZZFeatureMap + RealAmplitudes and PauliFeatureMap + RealAmplitudes to be the strongest options, while several alternatives produced strongly negative R² values. No confidence intervals or statistical significance tests are reported. Results appear to come from simulation/hybrid software execution rather than real quantum hardware.
 
 **Performance claims:**
-- R² score of 0.83 for QLSTM vs. 0.54 for classical LSTM
-- MSE of 85.16 for QLSTM vs. 235.74 for classical LSTM
-- MAE of 7.49 for QLSTM vs. 13.53 for classical LSTM
-- RMSE of 9.23 for QLSTM vs. 15.35 for classical LSTM
-- MSE of 0.0018 for the optimal quantum circuit configuration (ZZFeatureMap + RealAmplitudes)
-- R² of 0.8372 for the optimal quantum circuit configuration
+- Best QLSTM: R² = 0.83, MSE = 85.16, MAE = 7.49, RMSE = 9.23, explained variance = 0.89
+- Classical LSTM: R² = 0.54, MSE = 235.74, MAE = 13.53, RMSE = 15.35
+- ZZFeatureMap + RealAmplitudes: MSE = 0.0018, MAE = 0.0336, RMSE = 0.0424, R² = 0.8372, explained variance = 0.897
+- PauliFeatureMap + RealAmplitudes: MSE = 0.0018, MAE = 0.0338, RMSE = 0.0424, R² = 0.8347, explained variance = 0.8932
+- PauliFeatureMap + EfficientSU2: MSE = 0.1186, MAE = 0.3406, RMSE = 0.3444, R² = -9.9449, explained variance = 0.7589
+- ZZFeatureMap + EfficientSU2: MSE = 0.2498, MAE = 0.4921, RMSE = 0.4998, R² = -22.0447, explained variance = 0.2913
+- ZFeatureMap + RealAmplitudes: MSE = 0.3577, MAE = 0.5889, RMSE = 0.5981, R² = -31.9975, explained variance = -0.0019
+- ZFeatureMap + EfficientSU2: MSE = 0.5023, MAE = 0.7010, RMSE = 0.7087, R² = -45.3378, explained variance = -0.005
+- Dataset: 1,508 daily observations; split = 48% train, 32% validation, 20% test
+- Model setup: 4 qubits, sequence length = 20, hidden size = 16, learning rate = 0.01, 100 epochs
 ## Quantum advantage claim
 **Classification:** speculative
 
-The paper claims theoretical advantages of quantum properties (e.g., entanglement, parallelism) for improved learning and generalization, but these claims are based on simulations only. No empirical demonstration of quantum advantage on real hardware is provided, and the results are not compared against state-of-the-art classical benchmarks.
+The paper shows better forecasting metrics for a hybrid QLSTM than a classical LSTM baseline on one dataset, but it does not demonstrate quantum advantage in the strict sense. Results are from a small-scale hybrid/simulated setup, with no real-hardware evidence, no complexity-theoretic speedup, and no statistical uncertainty analysis.
 ## Limitations
-- Experiments conducted on a single stock (AAPL) over a limited time period (June 2019 to May 2025), which may not generalize to other stocks or market conditions [inferred]
-- Use of only 4 qubits in the Quantum Neural Network (QNN) layer, limiting the model's capacity to capture complex patterns [inferred]
-- Evaluation restricted to synthetic or simulated quantum environments; no testing on real quantum hardware (e.g., IBM Quantum, Rigetti)
-- Lack of comparison with state-of-the-art classical models beyond basic LSTM (e.g., Transformer-based models, Temporal Fusion Transformers)
-- No noise mitigation techniques applied, which may affect performance on real NISQ (Noisy Intermediate-Scale Quantum) devices [inferred]
-- Limited exploration of quantum circuit depth and stability, which are critical for practical deployment
-- Dataset size (1,508 daily observations) may not be sufficient to fully demonstrate quantum advantage in time-series forecasting [inferred]
-- Page-limit constraints of the conference paper may have restricted detailed discussion of hyperparameter tuning or ablation studies [inferred]
-- No analysis of computational overhead or training time compared to classical models [inferred]
-- Lack of robustness testing under extreme market conditions (e.g., financial crises, black swan events) [inferred]
+- Experiments use only a single stock (AAPL) from Yahoo Finance, limiting external validity across assets, sectors, and market regimes
+- The dataset contains only about 1,508 daily observations over six years, which is relatively small for training and validating deep sequential forecasting models
+- The quantum model uses only 4 qubits, constraining representational capacity and limiting conclusions about larger-scale financial forecasting problems
+- The study evaluates one-step-ahead forecasting with a 20-day sliding window only, so results may not generalize to longer horizons or different temporal dependencies
+- Practical hurdles such as circuit depth, stability, and hardware are acknowledged in the related studies discussion as barriers to widespread adoption
+- The paper does not report experiments on real quantum hardware; the QNN appears to be evaluated without demonstrating performance under hardware noise or decoherence
+- [inferred] Results are likely obtained in simulation rather than on NISQ devices, so claimed gains may not hold under realistic quantum noise
+- [inferred] No noise-mitigation strategy is described, which weakens claims about near-term deployability on actual quantum processors
+- [inferred] The comparison baseline is limited mainly to a classical LSTM; there is no benchmarking against stronger classical time-series models such as GRU, Transformer, XGBoost, ARIMA, or modern foundation-style forecasting baselines
+- [inferred] Hyperparameter tuning fairness is unclear; the paper reports a tuned QLSTM configuration but does not provide equivalent tuning detail for the classical baseline, which may bias the comparison
+- [inferred] Reproducibility is limited because the paper does not provide code, random seeds, circuit execution details, number of runs, confidence intervals, or statistical significance tests
+- [inferred] The train/validation/test split (48/32/20) is unusual and no walk-forward or rolling-window backtesting is reported, reducing robustness for financial time-series evaluation
+- [inferred] Only one data source and one market variable set are used, with no test on alternative features such as macroeconomic indicators, news, or technical indicators
+- [inferred] The paper focuses on predictive error metrics only and does not evaluate trading utility, transaction costs, risk-adjusted returns, or economic significance
+- [inferred] Scalability to production is unproven because the study does not discuss inference latency, training cost, integration with live data pipelines, or operational constraints in financial services
+- [inferred] The claim that losses become almost zero and that the model generalizes better may indicate possible overfitting or leakage concerns, especially without repeated experiments or stronger validation protocols
 ## Open questions
-- How does the QLSTM framework perform with higher qubit counts (e.g., 10+ qubits) or more complex ansatz circuits?
-- What is the impact of quantum noise and decoherence on the QLSTM model's performance in real-world deployment?
-- Can the hybrid QLSTM framework outperform classical models in low-data regimes, and if so, under what conditions?
-- How does the model's performance scale with larger datasets or multi-asset portfolios?
-- What are the trade-offs between quantum circuit depth, expressivity, and training stability in QLSTM architectures?
-- How does the QLSTM compare to other hybrid quantum-classical models (e.g., Quantum Attention Mechanisms) in financial forecasting?
-- What are the implications of quantum hardware limitations (e.g., gate fidelity, connectivity) on the practical deployment of QLSTM?
-- Can the QLSTM framework be adapted for other financial applications (e.g., risk management, algorithmic trading) with similar performance gains?
+- Will the reported QLSTM advantage persist across multiple stocks, indices, asset classes, and different market conditions?
+- How does the model perform on larger and more diverse financial datasets than a single-stock daily series?
+- How sensitive are results to the number of qubits, circuit depth, feature map choice, ansatz design, and optimizer settings?
+- Do the observed gains remain when the model is executed on real quantum hardware with noise and limited coherence times?
+- Can the hybrid architecture scale beyond 4 qubits and still remain trainable and computationally efficient?
+- How does QLSTM compare against stronger classical baselines under equally rigorous hyperparameter tuning?
+- Are the improvements statistically significant across multiple runs and random initializations?
+- Would the model remain effective for multi-step forecasting, intraday prediction, volatility forecasting, or regime shifts?
+- What is the economic value of the improved forecasts when translated into trading or risk-management decisions?
+- Which parts of the performance gain come from the quantum layer itself versus architectural or tuning choices in the classical components?
 
 **Future work:**
-- Test the QLSTM framework on real quantum hardware to validate performance under noise and decoherence
-- Extend the model to multi-asset or multi-market forecasting to assess scalability and generalization
-- Compare the QLSTM with advanced classical models (e.g., Transformers, N-BEATS) to benchmark quantum advantage
-- Explore noise mitigation techniques (e.g., error mitigation, dynamical decoupling) to improve robustness on NISQ devices
-- Investigate the impact of qubit count and circuit depth on model performance and training efficiency
-- Apply the QLSTM framework to other financial time-series tasks (e.g., volatility forecasting, fraud detection)
-- Develop hybrid optimization strategies to reduce training time and computational overhead
-- Conduct ablation studies to isolate the contributions of quantum and classical components in the hybrid architecture
-- Evaluate the model's performance under extreme market conditions (e.g., financial crises, high volatility periods)
+- Benchmark the proposed hybrid QLSTM against additional classical and quantum models, as the paper states a goal of benchmarking against classical and quantum models
+- Study the impact of different quantum layers, feature maps, and ansatz circuits more systematically, since the paper notes that the impact of quantum layers needs further study
+- Develop a more robust and practical model for real-world forecasting, as stated in the paper's motivation
+- Extend evaluation to more financial instruments and broader market datasets beyond Apple stock
+- Test the framework on real quantum hardware and assess robustness under hardware noise, circuit instability, and NISQ constraints
+- Explore larger qubit counts and more expressive circuits while monitoring scalability and trainability
+- Use stronger validation protocols such as rolling-window backtesting and repeated trials to improve internal validity
+- Assess production readiness by studying latency, computational cost, and deployment feasibility in live financial systems
+- Evaluate downstream financial usefulness through trading simulations, portfolio applications, and risk-aware metrics
+- Investigate longer forecasting horizons and more complex tasks such as multivariate, multi-asset, and regime-aware forecasting
 ## Key ideas
-- #idea:hybrid-approach — Hybrid QLSTM framework combines classical LSTM with Quantum Neural Networks (QNNs) to leverage temporal pattern recognition and quantum parallelism for financial time series forecasting
-- #idea:quantum-advantage — QLSTM outperforms classical LSTM in stock price prediction (R² 0.83 vs. 0.54) with fewer trainable parameters, suggesting potential quantum advantage in capturing nonlinear patterns
-- #idea:near-term-feasibility — Proposes a NISQ-era applicable model using 4 qubits and quantum simulators, demonstrating practicality for near-term quantum hardware
-- #limitation:no-empirical-validation — Quantum advantage claims are speculative and based solely on simulations without real QPU validation, limiting empirical support
-- #limitation:simulation-only — All experiments conducted on quantum simulators, not real quantum hardware, raising questions about noise resilience and real-world performance
-- #limitation:data-encoding — Limited exploration of quantum encoding strategies (e.g., ZZFeatureMap) and their impact on prediction accuracy and scalability
+- #idea:hybrid-approach — The paper proposes a hybrid QLSTM architecture combining a classical LSTM for temporal feature extraction with a 4-qubit variational QNN layer for next-day stock-price forecasting.
+- #idea:quantum-advantage — On a single AAPL daily dataset, the tuned QLSTM outperforms a classical LSTM baseline on regression metrics (e.g., R² 0.83 vs 0.54), suggesting possible quantum-enhanced expressiveness.
+- #idea:near-term-feasibility — The model is framed as NISQ-compatible by using only 4 qubits and shallow feature-map/ansatz combinations such as ZZFeatureMap plus RealAmplitudes.
+- #idea:hybrid-approach — Circuit design materially affects forecasting quality: ZZFeatureMap + RealAmplitudes and PauliFeatureMap + RealAmplitudes perform well, while several EfficientSU2 and ZFeatureMap variants perform poorly.
+- #idea:quantum-advantage — The claimed benefit is empirical and task-specific rather than a strict quantum advantage, since it is based on predictive accuracy against a limited classical baseline rather than complexity-theoretic speedup.
 ## Contradictions
-- #contradiction:classical-vs-quantum — Claims quantum advantage over classical LSTM but lacks comparison with state-of-the-art classical models (e.g., Transformers, ensemble methods), which may outperform QLSTM in practice
-- #contradiction:scalability — Demonstrates performance on a single stock (AAPL) with 4 qubits, but scalability to multi-asset or high-frequency data remains untested, contradicting claims of broader applicability
+- The paper suggests quantum superiority via better QLSTM performance than a classical LSTM, but this is weakened by the absence of stronger classical baselines such as GRU, Transformer, XGBoost, or ARIMA; thus the evidence supports at most a narrow model-comparison win rather than broad quantum superiority.
+- The paper presents the approach as promising for financial forecasting, yet the evidence is limited to a single-stock AAPL dataset with 4 qubits and one-step-ahead prediction, contradicting any implication of scalability to broader, real-world financial forecasting tasks.
+- The paper discusses near-term applicability, but the reported results appear to come from simulated quantum components rather than real noisy hardware, creating tension between NISQ-feasibility claims and practical deployability.
 ## Notable quotes
 <!-- Researcher-added — verbatim quotes with page references -->
 
@@ -151,27 +164,35 @@ The paper claims theoretical advantages of quantum properties (e.g., entanglemen
 
 ## Experiment details
 ### Input
-{'source': 'Yahoo Finance via yfinance Python library', 'size': '1,508 daily observations', 'features': ['Open', 'High', 'Low', 'Close', 'Volume'], 'preprocessing_steps': ['Selection of essential columns (Open, High, Low, Close, Volume)', 'Removal of rows with missing or non-numeric values', 'Normalization of values between 0 and 1', "Sliding window approach with 20 days input to predict next day's closing price", 'Chronological split into 48% training, 32% validation, and 20% testing sets'], 'time_period': 'June 3, 2019, to May 30, 2025'}
+Yahoo Finance AAPL daily stock data, 1,508 observations spanning 2019-06-03 to 2025-05-30. Original fields included Open, High, Low, Close, Adjusted Close, and Volume. Selected features were Open, High, Low, Close, and Volume; Close was used as the prediction target and excluded from model inputs. Rows with missing or non-numeric values were removed. All values were normalized to the [0,1] range. A sliding-window preprocessing scheme used 20 previous trading days to predict the next day's closing price. Data were split chronologically into 48% training, 32% validation, and 20% testing.
 
 ### Process
-['1. Input 20 days of historical stock data into the classical LSTM layer to capture temporal dependencies.', '2. Reduce LSTM output dimensionality using a dense layer with tanh activation to match the 4-qubit quantum circuit input.', '3. Encode the reduced output into a quantum state using ZZFeatureMap with two repetitions.', '4. Apply RealAmplitudes ansatz with full entanglement to explore complex patterns in the quantum state.', '5. Measure the quantum circuit output and pass it to a final classical dense layer for prediction.', '6. Train the model using RMSprop optimizer with MSE loss, employing early stopping based on validation loss.', '7. Evaluate multiple quantum circuit configurations (e.g., ZZFeatureMap + RealAmplitudes, PauliFeatureMap + RealAmplitudes) to identify the optimal design.']
+1. Download AAPL historical daily data from Yahoo Finance using yfinance. 2. Perform exploratory analysis on closing-price trend, moving averages, yearly volume, quarterly OHLC trends, and gain/loss counts. 3. Select Open, High, Low, Close, and Volume columns; remove missing/non-numeric rows. 4. Normalize values to [0,1]. 5. Construct supervised sequences using a 20-day sliding window, with Open/High/Low/Volume as inputs and next-day Close as target. 6. Split data chronologically into train/validation/test sets (48/32/20). 7. Feed each sequence into a classical LSTM with hidden size 16 to extract temporal features. 8. Project the LSTM hidden state through a dense layer to a 4-dimensional vector and apply tanh to map values into [-1,1]. 9. Encode the 4-dimensional vector into a 4-qubit quantum circuit using candidate feature maps and ansatz circuits. 10. Evaluate multiple quantum circuit combinations including ZZFeatureMap + RealAmplitudes, PauliFeatureMap + RealAmplitudes, PauliFeatureMap + EfficientSU2, ZZFeatureMap + EfficientSU2, ZFeatureMap + RealAmplitudes, and ZFeatureMap + EfficientSU2. 11. Use the QNN output in a final dense layer to predict the closing price. 12. Train the hybrid model with RMSprop optimizer, MSE loss, and early stopping for up to 100 epochs. 13. Compare the selected QLSTM model against a classical LSTM baseline using regression metrics.
 
 ### Output
-{'metrics_reported': ['MSE', 'MAE', 'RMSE', 'R²', 'Explained Variance'], 'comparison_baselines': ['Classical LSTM model'], 'output_format': 'Predicted closing price for the next day, visualized in actual vs. predicted plots and loss convergence curves.'}
+The outputs are regression predictions of next-day AAPL closing price and associated evaluation metrics. Quantum-circuit selection was reported using MSE, MAE, RMSE, R2, and explained variance. The best circuit combinations were ZZFeatureMap + RealAmplitudes and PauliFeatureMap + RealAmplitudes, both with MSE about 0.0018 and R2 about 0.83 in the circuit-comparison table. Final model benchmarking compared QLSTM against a classical LSTM baseline. The QLSTM reportedly achieved R2 = 0.83, MSE = 85.16, MAE = 7.49, RMSE = 9.23, and explained variance = 0.89, while the classical LSTM achieved R2 = 0.54, MSE = 235.74, MAE = 13.53, and RMSE = 15.35. The paper also presents training/validation loss curves and actual-vs-predicted plots as qualitative evidence.
 
 ### Parameters
-- qubit_count: 4
-- circuit_configurations: [{'feature_map': 'ZZFeatureMap', 'ansatz': 'RealAmplitudes', 'repetitions': 2}, {'feature_map': 'PauliFeatureMap', 'ansatz': 'RealAmplitudes', 'repetitions': 2}]
-- optimizer: RMSprop
-- learning_rate: 0.01
+- qubits: 4
+- sequence_length: 20
+- lstm_hidden_size: 16
 - epochs: 100
-- hidden_size: 16
+- learning_rate: 0.01
+- optimizer: RMSprop
 - loss_function: MSE
+- train_split_percent: 48
+- validation_split_percent: 32
+- test_split_percent: 20
+- feature_map_best: ZZFeatureMap
+- feature_map_reps_best: 2
+- ansatz_best: RealAmplitudes
+- ansatz_layers_best: 2
+- entanglement_best: full
+- activation_before_quantum_layer: tanh
 - early_stopping: True
-- sliding_window_size: 20
 
 ### Hardware
-Simulator (Qiskit Aer or similar), no real QPU used. Quantum circuits were executed on a classical simulator to evaluate performance.
+Not clearly reported. The paper describes a 4-qubit QNN layer and variational quantum circuits but does not specify whether execution used a simulator or real QPU, nor does it name a backend, cloud provider, noise model, transpilation settings, or shot count.
 
 ### Reproducibility
-The paper provides detailed descriptions of the data preprocessing steps, model architecture, and quantum circuit configurations, which are sufficient for replication. However, no explicit mention of code or dataset availability is made. The use of public data (Yahoo Finance) ensures data reproducibility, but the absence of a code repository may limit full replicability.
+Partial reproducibility. The data source is public and clearly identified (Yahoo Finance via yfinance), and the paper provides useful preprocessing and architectural details such as sequence length, split ratios, hidden size, optimizer, learning rate, epochs, and candidate quantum circuits. However, no code repository is provided, and key implementation details are missing, including the exact software stack, backend/simulator, shot count, optimizer settings for quantum training, early-stopping criteria, and some metric inconsistencies across tables. Replication is possible only approximately, not exactly.
