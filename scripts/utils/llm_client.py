@@ -1,6 +1,7 @@
 """Model-agnostic LLM call wrapper supporting Azure AI Foundry and OpenAI."""
 
 import os
+import threading
 import time
 from collections import deque
 
@@ -29,26 +30,28 @@ load_dotenv(os.path.join(_find_project_root(), ".env"))
 class RateLimiter:
     """Simple sliding-window rate limiter for requests per minute."""
 
-    def __init__(self, max_requests_per_minute: int = 20) -> None:
+    def __init__(self, max_requests_per_minute: int = 4000) -> None:
         self._max_rpm = max_requests_per_minute
         self._timestamps: deque[float] = deque()
+        self._lock = threading.Lock()
 
     def wait_if_needed(self) -> None:
         """Block until we can make another request without exceeding RPM."""
-        now = time.monotonic()
-        # Remove timestamps older than 60 seconds
-        while self._timestamps and self._timestamps[0] < now - 60:
-            self._timestamps.popleft()
+        with self._lock:
+            now = time.monotonic()
+            # Remove timestamps older than 60 seconds
+            while self._timestamps and self._timestamps[0] < now - 60:
+                self._timestamps.popleft()
 
-        if len(self._timestamps) >= self._max_rpm:
-            sleep_time = 60 - (now - self._timestamps[0]) + 0.1
-            if sleep_time > 0:
-                logger.info(
-                    "Rate limit: waiting %.1f seconds", sleep_time
-                )
-                time.sleep(sleep_time)
+            if len(self._timestamps) >= self._max_rpm:
+                sleep_time = 60 - (now - self._timestamps[0]) + 0.1
+                if sleep_time > 0:
+                    logger.info(
+                        "Rate limit: waiting %.1f seconds", sleep_time
+                    )
+                    time.sleep(sleep_time)
 
-        self._timestamps.append(time.monotonic())
+            self._timestamps.append(time.monotonic())
 
 
 class LLMClient:
@@ -152,7 +155,7 @@ class LLMClient:
     ) -> str:
         response = self.azure_client.chat.completions.create(
             model=model,
-            max_tokens=max_tokens,
+            max_completion_tokens=max_tokens,
             temperature=temperature,
             messages=[{"role": "user", "content": prompt}],
         )
@@ -169,7 +172,7 @@ class LLMClient:
     ) -> str:
         response = self.openai_client.chat.completions.create(
             model=model,
-            max_tokens=max_tokens,
+            max_completion_tokens=max_tokens,
             temperature=temperature,
             messages=[{"role": "user", "content": prompt}],
         )

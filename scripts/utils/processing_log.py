@@ -2,11 +2,15 @@
 
 import json
 import os
+import threading
 from datetime import datetime
 
 from .logger import get_logger
 
 logger = get_logger("processing_log")
+
+# Module-level lock for thread-safe read-modify-write cycles on processing_log.json
+_lock = threading.Lock()
 
 
 def _find_project_root() -> str:
@@ -56,23 +60,26 @@ def mark_step_complete(paper_name: str, step: int, model: str) -> None:
     - Records step{N}_date as current ISO timestamp
     - Records step{N}_model
     - Updates last_updated timestamp
+
+    Thread-safe: uses module-level lock around full read-modify-write cycle.
     """
-    log = load_log()
-    papers = log.setdefault("papers", {})
-    entry = papers.setdefault(paper_name, {})
+    with _lock:
+        log = load_log()
+        papers = log.setdefault("papers", {})
+        entry = papers.setdefault(paper_name, {})
 
-    steps = entry.get("steps_completed", [])
-    if step not in steps:
-        steps.append(step)
-        steps.sort()
-    entry["steps_completed"] = steps
+        steps = entry.get("steps_completed", [])
+        if step not in steps:
+            steps.append(step)
+            steps.sort()
+        entry["steps_completed"] = steps
 
-    now = datetime.now().isoformat()
-    entry[f"step{step}_date"] = now
-    entry[f"step{step}_model"] = model
-    entry["last_updated"] = now
+        now = datetime.now().isoformat()
+        entry[f"step{step}_date"] = now
+        entry[f"step{step}_model"] = model
+        entry["last_updated"] = now
 
-    save_log(log)
+        save_log(log)
     logger.info(
         "Marked step %d complete for %s (model=%s)", step, paper_name, model
     )
@@ -99,10 +106,14 @@ def get_papers_by_filter(key: str, value) -> list[str]:
 
 
 def update_paper_field(paper_name: str, key: str, value) -> None:
-    """Update an arbitrary field in a paper's log entry."""
-    log = load_log()
-    papers = log.setdefault("papers", {})
-    entry = papers.setdefault(paper_name, {})
-    entry[key] = value
-    save_log(log)
+    """Update an arbitrary field in a paper's log entry.
+
+    Thread-safe: uses module-level lock around full read-modify-write cycle.
+    """
+    with _lock:
+        log = load_log()
+        papers = log.setdefault("papers", {})
+        entry = papers.setdefault(paper_name, {})
+        entry[key] = value
+        save_log(log)
     logger.debug("Updated %s.%s = %s", paper_name, key, value)

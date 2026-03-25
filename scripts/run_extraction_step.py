@@ -21,6 +21,8 @@ import argparse
 import os
 import shutil
 import sys
+import threading
+from concurrent.futures import ThreadPoolExecutor, as_completed
 
 # Ensure project root is on sys.path
 sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))
@@ -222,6 +224,12 @@ def build_parser() -> argparse.ArgumentParser:
         "--pdf",
         help="Path to the PDF file. Used to extract text for a new paper.",
     )
+    parser.add_argument(
+        "--workers",
+        type=int,
+        default=10,
+        help="Number of parallel workers for batch mode (default: 10)",
+    )
     return parser
 
 
@@ -241,6 +249,9 @@ def validate_args(args: argparse.Namespace) -> str | None:
 
     if args.batch and args.paper:
         return "--batch and --paper are mutually exclusive."
+
+    if args.workers and args.workers < 1:
+        return "--workers must be at least 1."
 
     return None
 
@@ -270,22 +281,61 @@ def main() -> None:
         logger.warning("No papers found for processing.")
         sys.exit(0)
 
-    logger.info("Batch processing %d papers, steps %s", len(papers), steps)
+    total = len(papers)
+    workers = min(args.workers, total)
+    logger.info(
+        "Batch processing %d papers, steps %s, workers %d",
+        total, steps, workers,
+    )
 
+    # Thread-safe counters
+    _counter_lock = threading.Lock()
     succeeded = 0
     failed = 0
-    for paper_name in papers:
-        ok = _run_steps_on_paper(paper_name, steps, pdf_path=args.pdf)
-        if ok:
-            succeeded += 1
-        else:
-            failed += 1
+
+    if workers == 1:
+        # Sequential fallback — no threading overhead
+        for paper_name in papers:
+            ok = _run_steps_on_paper(paper_name, steps, pdf_path=args.pdf)
+            if ok:
+                succeeded += 1
+            else:
+                failed += 1
+            logger.info(
+                "[%d/%d] %s — %s",
+                succeeded + failed, total, paper_name,
+                "ok" if ok else "FAILED",
+            )
+    else:
+        with ThreadPoolExecutor(max_workers=workers) as pool:
+            futures = {
+                pool.submit(_run_steps_on_paper, p, steps, args.pdf): p
+                for p in papers
+            }
+            for future in as_completed(futures):
+                paper_name = futures[future]
+                try:
+                    ok = future.result()
+                except Exception as exc:
+                    logger.error("Unhandled error for %s: %s", paper_name, exc)
+                    ok = False
+                with _counter_lock:
+                    if ok:
+                        succeeded += 1
+                    else:
+                        failed += 1
+                    done = succeeded + failed
+                logger.info(
+                    "[%d/%d] %s — %s (%d failed so far)",
+                    done, total, paper_name,
+                    "ok" if ok else "FAILED", failed,
+                )
 
     logger.info(
         "Batch complete: %d succeeded, %d failed out of %d",
         succeeded,
         failed,
-        len(papers),
+        total,
     )
     sys.exit(0 if failed == 0 else 1)
 

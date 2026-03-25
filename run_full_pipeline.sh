@@ -16,6 +16,7 @@ cd "$SCRIPT_DIR"
 
 PYTHON="${PYTHON:-python}"
 COLLECTION="${ZOTERO_COLLECTION:-PVDPVINK}"
+WORKERS="${WORKERS:-10}"
 
 # Defaults
 SKIP_FETCH=false
@@ -31,6 +32,7 @@ while [[ $# -gt 0 ]]; do
         --skip-extract)  SKIP_EXTRACT=true; shift ;;
         --limit)         LIMIT="$2"; shift 2 ;;
         --rebuild)       REBUILD="--rebuild"; shift ;;
+        --workers)       WORKERS="$2"; shift 2 ;;
         --dry-run)       DRY_RUN=true; shift ;;
         -h|--help)
             head -10 "$0" | tail -7
@@ -75,7 +77,7 @@ if [ "$SKIP_FETCH" = false ] && [ "$SKIP_EXTRACT" = false ]; then
 # Phase 2: Batch extraction only (if skipping fetch but not extract)
 # -----------------------------------------------------------------------
 elif [ "$SKIP_FETCH" = true ] && [ "$SKIP_EXTRACT" = false ]; then
-    run_safe "$PYTHON" scripts/run_extraction_step.py --batch --from-step 1
+    run_safe "$PYTHON" scripts/run_extraction_step.py --batch --from-step 1 --workers "$WORKERS"
 fi
 
 # -----------------------------------------------------------------------
