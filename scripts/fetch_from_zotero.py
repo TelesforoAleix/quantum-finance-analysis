@@ -34,7 +34,11 @@ def _find_project_root():
     return os.getcwd()
 
 PROJECT_ROOT = _find_project_root()
-load_dotenv(os.path.join(PROJECT_ROOT, ".env"))
+
+# Load .env — prefer parent repo (quantum-finance/.env), fall back to local
+_parent_env = os.path.join(os.path.dirname(PROJECT_ROOT), ".env")
+_local_env = os.path.join(PROJECT_ROOT, ".env")
+load_dotenv(_parent_env if os.path.isfile(_parent_env) else _local_env)
 
 RAW_PDFS_DIR = os.path.join(PROJECT_ROOT, "papers", "raw_pdfs")
 PROCESSED_DIR = os.path.join(PROJECT_ROOT, "papers", "processed")

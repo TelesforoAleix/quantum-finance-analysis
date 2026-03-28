@@ -8,12 +8,9 @@
 
 ### 1.1 Research goal
 
-This project supports an MSc thesis at Copenhagen Business School on **quantum computing in financial services**. The thesis follows a four-phase research structure:
+This project supports an MSc thesis at Copenhagen Business School on **quantum computing in financial services**. See [PROJECT_OVERVIEW.md](../PROJECT_OVERVIEW.md) for the full four-step research design, tier definitions, and data flow.
 
-- **Phase 1 — Broad systematic literature review (SLR):** Map the landscape of quantum computing applications in finance across ~400–500 screened papers. Identify use cases, methodologies, and emerging themes.
-- **Phase 2 — Expert interviews:** Validate Phase 1 findings with practitioners and researchers. Narrow focus to one specific use case or vertical.
-- **Phase 3 — Deep-dive review:** Re-examine the knowledge base filtered to the selected use case. Build the theoretical and methodological foundation for the experiment.
-- **Phase 4 — Experiment:** Design and execute a focused experiment based on the selected use case. Reproduce or extend findings from key papers.
+This analysis repo covers the extraction pipeline: fetching PDFs from Zotero, running LLM extraction (6 steps), and generating an Obsidian vault.
 
 ### 1.2 The problem this system solves
 

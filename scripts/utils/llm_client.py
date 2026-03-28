@@ -23,8 +23,22 @@ def _find_project_root() -> str:
     return os.getcwd()
 
 
-# Load .env from project root
-load_dotenv(os.path.join(_find_project_root(), ".env"))
+def _find_env_file() -> str:
+    """Find .env — prefer parent repo (quantum-finance/.env), fall back to local."""
+    project_root = _find_project_root()
+    parent_env = os.path.join(os.path.dirname(project_root), ".env")
+    if os.path.isfile(parent_env):
+        return parent_env
+    return os.path.join(project_root, ".env")
+
+
+load_dotenv(_find_env_file())
+
+# Normalize credential names: accept both AZURE_OPENAI_* (SLR) and AZURE_* (analysis)
+if not os.getenv("AZURE_API_KEY") and os.getenv("AZURE_OPENAI_API_KEY"):
+    os.environ["AZURE_API_KEY"] = os.environ["AZURE_OPENAI_API_KEY"]
+if not os.getenv("AZURE_ENDPOINT") and os.getenv("AZURE_OPENAI_ENDPOINT"):
+    os.environ["AZURE_ENDPOINT"] = os.environ["AZURE_OPENAI_ENDPOINT"]
 
 
 class RateLimiter:
