@@ -9,7 +9,13 @@
     "asset-pricing": "Factor models, pricing of financial instruments",
     "quantum-cryptography": "QKD, post-quantum cryptography in financial contexts",
     "regulatory-compliance": "AML, KYC, reporting automation",
-    "market-simulation": "Agent-based models, market microstructure, scenario generation"
+    "market-simulation": "Agent-based models, market microstructure, scenario generation, Monte Carlo",
+    "forecasting-prediction": "Time-series forecasting, return prediction, regime prediction",
+    "insurance-actuarial": "Insurance, actuarial science, underwriting, reinsurance",
+    "quantum-ml-finance": "QML methods applied to explicitly financial tasks, QNNs, quantum kernel methods",
+    "optimization-methods": "Generic optimization methods with explicit finance application",
+    "benchmarking-advantage": "Benchmarking, utility, complexity, or advantage claims in finance",
+    "trading-execution": "Trading strategies, execution, market microstructure, algorithmic trading"
   },
   "methodology_tags": {
     "QAOA": "Quantum Approximate Optimisation Algorithm",

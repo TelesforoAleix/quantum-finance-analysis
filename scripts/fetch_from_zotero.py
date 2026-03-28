@@ -3,9 +3,13 @@
 
 Connects to the Zotero Web API, downloads PDF attachments, and saves them
 to papers/raw_pdfs/. Can optionally trigger the full extraction pipeline.
+
+Supports tier/group filtering via --tier and --group flags, which resolve
+to a Zotero collection key using the shared/zotero_collection_map.json file.
 """
 
 import argparse
+import json
 import os
 import re
 import sys
@@ -160,6 +164,60 @@ def _generate_paper_name(item_data: dict) -> str:
     return f"{year}_{first_author}_{short_title}.md"
 
 
+def _resolve_tier_collection(tier: str, group: str | None, project_root: str | None) -> str:
+    """Resolve --tier/--group to a Zotero collection key.
+
+    Looks for shared/zotero_collection_map.json in the project root
+    (the parent repo). Uses QUANTUM_FINANCE_PROJECT_ROOT env var, the
+    --project-root flag, or falls back to ../../quantum-finance relative
+    to the analysis repo.
+    """
+    if project_root:
+        search_dirs = [project_root]
+    else:
+        env_root = os.environ.get("QUANTUM_FINANCE_PROJECT_ROOT", "")
+        analysis_root = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+        # Try env var, then sibling directory, then parent dir
+        search_dirs = [
+            env_root,
+            os.path.join(os.path.dirname(analysis_root), "quantum-finance"),
+            os.path.join(analysis_root, "..", "quantum-finance"),
+        ]
+
+    map_path = None
+    for d in search_dirs:
+        if not d:
+            continue
+        candidate = os.path.join(d, "shared", "zotero_collection_map.json")
+        if os.path.isfile(candidate):
+            map_path = candidate
+            break
+
+    if not map_path:
+        raise FileNotFoundError(
+            "Cannot find shared/zotero_collection_map.json. "
+            "Set QUANTUM_FINANCE_PROJECT_ROOT env var or use --project-root."
+        )
+
+    with open(map_path, encoding="utf-8") as f:
+        cmap = json.load(f)
+
+    tier_key = f"tier-{tier}" if not tier.startswith("tier-") else tier
+    tier_data = cmap.get("tiers", {}).get(tier_key)
+    if not tier_data:
+        available = list(cmap.get("tiers", {}).keys())
+        raise ValueError(f"Tier '{tier_key}' not found. Available: {available}")
+
+    if group:
+        group_key = tier_data.get("groups", {}).get(group)
+        if not group_key:
+            available = list(tier_data.get("groups", {}).keys())
+            raise ValueError(f"Group '{group}' not found in {tier_key}. Available: {available}")
+        return group_key
+    else:
+        return tier_data["collection_key"]
+
+
 def fetch_and_save(client: ZoteroClient, item: dict) -> tuple[str | None, str | None]:
     """Fetch PDF for an item. Returns (paper_name, pdf_path) or (None, None)."""
     data = item["data"]
@@ -199,18 +257,33 @@ def main():
             "  %(prog)s --collection PVDPVINK --limit 10\n"
             "  %(prog)s --item TQIJ5LFQ\n"
             "  %(prog)s --collection PVDPVINK --process\n"
+            "  %(prog)s --tier 2 --group portfolio-optimization\n"
+            "  %(prog)s --tier 1 --list\n"
         ),
         formatter_class=argparse.RawDescriptionHelpFormatter,
     )
     parser.add_argument("--collection", help="Zotero collection key")
     parser.add_argument("--item", help="Fetch a single Zotero item by key")
+    parser.add_argument("--tier", help="Tier number (1, 2, or 3) — resolves to a Zotero collection via collection map")
+    parser.add_argument("--group", help="Group within a tier (e.g. portfolio-optimization). Requires --tier")
+    parser.add_argument("--project-root", help="Path to the quantum-finance parent repo (for collection map lookup)")
     parser.add_argument("--list", action="store_true", help="List items only (no download)")
     parser.add_argument("--limit", type=int, default=0, help="Max items to fetch (0 = all)")
     parser.add_argument("--process", action="store_true", help="Run full extraction pipeline after download")
     args = parser.parse_args()
 
+    # Resolve tier/group to collection key
+    if args.tier:
+        if args.collection:
+            parser.error("Cannot use --tier with --collection. Choose one.")
+        if args.group and not args.tier:
+            parser.error("--group requires --tier.")
+        collection_key = _resolve_tier_collection(args.tier, args.group, args.project_root)
+        logger.info("Resolved tier=%s group=%s -> collection %s", args.tier, args.group, collection_key)
+        args.collection = collection_key
+
     if not args.collection and not args.item:
-        parser.error("Either --collection or --item is required.")
+        parser.error("Either --collection, --item, or --tier is required.")
 
     client = ZoteroClient()
 
